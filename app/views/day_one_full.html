@@ -1,0 +1,51 @@
+{{<layout}}
+
+{{$pageTitle}}Department for Work and Pensions{{/pageTitle}}
+
+{{$content}}
+<main id="content" role="main">
+
+	<div class="phase-banner">
+    <p>
+      <strong class="phase-tag">ALPHA</strong>
+      <span>This is a new service – your <a href="/feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+	   <h1 class="heading-xlarge">Increase your chances of finding work</h1>
+	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+      <h2>If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2>
+	   <br>
+	   <br>
+
+
+    	<h2 class="bold-medium">1. Creating an e-mail account.</h2>
+      <div class="text">
+        <p>This takes you to a 
+          <a rel="external" target="_new" href="https://www.google.co.uk/search?q=creating+e-mail&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a&channel=fflb&gfe_rd=cr&ei=aMflVPzMMciq8wfbrIDABg#rls=org.mozilla:en-US:official&channel=fflb&q=creating+e-mail+account" title="title text" alt="alt text">list of popular free email providers.</a>
+        </p>
+      </div>
+
+
+    	<h2 class="bold-medium">2. Create a Universal Jobmatch account.</h2>
+      <div class="text">
+         <p>This takes you to a 
+          <a rel="external" target="_new" href="https://myaccount.gateway.gov.uk/Pages/Registration/RegisterWithUserId.aspx?role=i" title="title text" alt="alt text">Universal Jobmatch registration page.</a>
+        </p>
+      </div>
+
+
+    	<h2 class="bold-medium">3. Create a CV.</h2>
+      <div class="text">
+         <p>This takes you to a 
+          <a rel="external" target="_new" href="https://nationalcareersservice.direct.gov.uk/tools/cv/Pages/default.aspx" title="title text" alt="alt text">CV builder service.</a>
+        </p>
+      </div>
+
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
