@@ -7,5 +7,10 @@ module.exports = {
 
     // add your routes here
 
+     app.get('/admin', function (req, res) {
+      res.render('admin');
+    });
+
+
   }
 };
