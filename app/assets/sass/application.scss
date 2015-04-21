@@ -41,8 +41,7 @@
 
 // Tabs
 
-
-.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
+ .tabs-nav {
    float: left;
    list-style: none;
    margin: 0;
@@ -51,7 +50,7 @@
 }
 
 
-.nav-tabs li, .nav-tabs .tabs-nav li {
+ .tabs-nav li {
    text-transform: none;
    padding: 0;
    margin: 0;
