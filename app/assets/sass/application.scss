@@ -39,3 +39,29 @@
 
 
 
+// Tabs
+
+
+.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
+   float: left;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   z-index: 5;
+}
+
+
+.nav-tabs li, .nav-tabs .tabs-nav li {
+   font-family: "nta",Arial,sans-serif;
+   font-size: 16px;
+   line-height: 1.25;
+   font-weight: 400;
+   text-transform: none;
+   padding: 0;
+   margin: 0;
+   float: left;
+}
+
+
+
