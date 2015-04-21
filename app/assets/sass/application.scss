@@ -41,15 +41,11 @@
 
 // Tabs
 
-
-
-
- .tabs-nav li {
-   text-transform: none;
-   padding: 0;
-   margin: 0;
-   float: left;
+.tabs-nav {
+	float:left;
 }
 
-
+.tabs-nav li {
+	float:left;
+}
 
