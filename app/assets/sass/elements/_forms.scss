@@ -95,7 +95,7 @@ fieldset {
   border: 1px solid $border-colour;
 
   // Disable webkit appearance and remove rounded corners
-  -webkit-appearance: none;
+ // -webkit-appearance: none;
   border-radius: 0;
 
   @include media(tablet) {
