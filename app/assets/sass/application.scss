@@ -60,3 +60,33 @@
   z-index: 5;
 }
 
+// Results
+
+
+ .filter-results-block {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  border-bottom: 1px solid #bfc1c3;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.filter-results-block .filter-results-summary .count {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  float: left;
+  padding-right: 10px;
+  line-height: 1;
+  margin-top: -3px;
+}
+
+.filter-results-block .filter-results-summary strong {
+  font-weight: bold;
+}
