@@ -1,0 +1,118 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+{{$content}}
+<main id="content" role="main">
+
+
+    	<div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
+
+    	   <h1 class="heading-large">Claimant messaging and information system</h1>
+    	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+
+ <div class="grid-row">
+
+    <!--************** Start 1 column **************-->
+
+    <div class="column-third">
+
+          <h3 class="heading-small">EJS Administration</h3>
+          <ul>
+            <li><a href="#">Create user</a></li>
+            <li><a href="#">Data analysis/download</a></li>
+            <li><a href="#">Data search/download</a></li>
+          </ul>  
+
+        <h3 class="heading-small">Records management</h3>
+          <ul>
+            <li><a href="#">Enter data</a></li>
+            <li><a href="#">View/edit data</a></li>
+          </ul>  
+
+    </div>
+
+    <!--************** End 1 column **************-->
+
+
+    <!--************** Start 2 columns  **************-->
+
+    <h2 class="heading-large">Claimant Report</h2>
+
+    <div class="column-two-thirds">
+
+        <div class="form-group">
+          <form onsubmit="return false">
+            <p> <br>
+              Enter NINO</p>
+              <input type="text" list="Scheme" id="color" name="color" size="30">
+              &nbsp;&nbsp;&nbsp; 
+              <a href="#" class="button button-get-started" value="Continue">Search</a>
+          </form>
+        </div>
+
+
+         <div class="filter-results-block">
+            <div class="inner-block">
+                <div class="filter-results-summary">
+                   <br>
+                   <span class="count">3</span> 
+                   <strong>results</strong>
+                 </div>
+            </div>
+        </div>   
+
+        
+
+               <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">View link</th>
+                        <th scope="col">Submitted by user</th>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Mobile number</th>                     
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="table_link" href="#" title="View more info">View</a></td>
+                            <td><a class="table_link" href="#" title="View more info">Louis Pitchford</a></td>
+                            <td>Bloggs</td>
+                            <td>07942 456 345</td>
+                        </tr>  
+                        <tr>
+                            <td><a class="table_link" href="#" title="View more info">View</a></td>
+                            <td><a class="table_link" href="#" title="View more info">Louis Pitchford</a></td>
+                            <td>Ellis</td>
+                            <td>07654 847 329</td>
+                        </tr> 
+                             <tr>
+                            <td><a class="table_link" href="#" title="View more info">View</a></td>
+                            <td><a class="table_link" href="#" title="View more info">Louis Pitchford</a></td>
+                            <td>Smith</td>
+                            <td>07956 222 852</td>
+                        </tr> 
+                    </tbody>
+                </table>  
+
+
+    </div>
+    <!--************** End 2 columns  **************-->
+
+
+
+  </div>
+     <!--************** End 2 grid row  **************-->
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
