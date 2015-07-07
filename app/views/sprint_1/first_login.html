@@ -1,0 +1,73 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+{{$content}}
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">ALPHA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+     <h1 class="heading-large">Enter a password</h1>
+     <h2 class="heading-medium">For security, please enter a memorable password</h2>
+
+
+         <!-- Use .form-group to create spacing when wrapping label and input pairs 
+
+            <div class="form-group">
+              <label class="form-label" for="title">Title</label>
+              <select class="form-control" id="title">
+                  <option value="volvo">Mr</option>
+                  <option value="saab">Mrs</option>
+                  <option value="mercedes">Miss</option>
+                  <option value="mercedes">Ms</option>
+                  <option value="mercedes">Dr</option>
+
+              </select>
+            </div>
+
+
+Beta proposed core elements.
+Personal data – NINO, Mobile (and/or landline) Jobcentre, age cohort, Date of claim, Appointment date/time, claim closure, new claim processed, change of circumstance processed -->
+
+            <div class="form-group">
+                <label class="form-label" for="ni-number">Password</label>
+                <span class="form-hint">Parameters</span>
+                <input class="form-control" id="ni-number" type="text">
+                <label for="filter-category-accounts" class="form-checkbox">
+                  <input id="filter-category-accounts" name="category" value="accounts" type="checkbox" checked="">
+                  Show text
+                </label>
+             </div>     
+
+            <div class="form-group">
+              <label class="form-label" for="middle-name">Repeat password</label>
+              <span class="form-hint">Parameters</span>
+              <input class="form-control" id="middle-name" type="text">
+              <label for="filter-category-accounts" class="form-checkbox">
+                  <input id="filter-category-accounts" name="category" value="accounts" type="checkbox" checked="">
+                  Show text
+              </label>
+            </div>  
+
+            <div class="form-group">
+                <a href="password" class="button button-get-started" value="Login">
+             <!-- <input class="button button-get-started" value="Start Now"> -->
+                Set password</a>
+            </div>
+
+          <p>Already have a password? <a href="login">Login here</a></p> 
+
+    </div>
+
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
