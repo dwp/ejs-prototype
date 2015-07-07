@@ -12,12 +12,16 @@
     </p>
   </div>
 
+  <nav class="back-nav" role="navigation">
+     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+  </nav>
+
      <h1 class="heading-large">For security, please enter a memorable password</h1>
  <!--    <h2 class="heading-medium">For security, please enter a memorable password</h2> -->
 
 
             <div class="form-group">
-                <label class="form-label" for="ni-number">Password</label>
+                <label class="form-label" for="ni-number">Enter password</label>
                 <span class="form-hint">Min 5 characters, 1 upper case, 1 number</span>
                 <input class="form-control" id="ni-number" type="text">
                 <label for="filter-category-accounts" class="form-checkbox">
@@ -27,7 +31,7 @@
              </div>     
 
             <div class="form-group">
-              <label class="form-label" for="middle-name">Repeat password</label>
+              <label class="form-label" for="middle-name">Re-type password</label>
                 <span class="form-hint">Min 5 characters, 1 upper case, 1 number</span>
               <input class="form-control" id="middle-name" type="text">
               <label for="filter-category-accounts" class="form-checkbox">
