@@ -37,6 +37,15 @@
   list-style: none;
 }
 
+.back-nav {
+  margin: 1em 0 0;
+  text-decoration: underline;
+  cursor: pointer; }
+  .back-nav a:link, .back-nav a:visited {
+    color: #000; }
+  .back-nav a:before {
+    content: "◂ "; }
+
 
 
 // Tabs
