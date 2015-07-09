@@ -24,3 +24,16 @@
 .panel-indent .form-group:last-child {
   margin-bottom: 0;
 }
+
+//alerts
+
+.alert-success, .alert-info, .alert-error, .alert-complete {
+  border-left: 4px solid #b10e1e;
+  clear: both;
+  margin: 0 0 1.05263em;
+  padding: 1.05263em;
+}
+
+.alert-success {
+  border-color: #28a197;
+}
