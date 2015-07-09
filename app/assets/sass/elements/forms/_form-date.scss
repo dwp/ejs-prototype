@@ -14,7 +14,7 @@ input[type=number] {
 
   .form-group {
     float: left;
-    width: 150px;
+    width: 100px;
     margin-right: 20px;
     margin-bottom: 0;
     clear: none;
@@ -35,3 +35,9 @@ input[type=number] {
   }
 
 }
+
+.form-group-day .form-control,  
+.form-group-month .form-control,  {
+  width:100%;
+}
+
