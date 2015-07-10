@@ -37,7 +37,17 @@ input[type=number] {
 }
 
 .form-group-day .form-control,  
-.form-group-month .form-control,  {
+.form-group-month .form-control  {
   width:100%;
+}
+
+.form-group-day .form-control,  
+.form-group-month .form-control  {
+  width:100%;
+}
+
+.title .form-control,
+.initial .form-control {
+  width:20%;
 }
 
