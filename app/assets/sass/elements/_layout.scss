@@ -56,3 +56,27 @@
 .column-two-thirds {
   @include grid-column( 2/3 );
 }
+
+// Nasty column hack for full-width view
+.column {
+  width:100% !important;
+  }
+
+// Equally nasty main div hack for same purpose
+#content {
+  width:90% !important;
+  max-width:90% !important;
+}
+
+// Hide logo for internal admin system
+#global-header #logo {
+  display:none !important;
+}
+
+#global-header-bar {
+display:none !important;
+}
+
+.footer-meta {
+  display:none !important;
+}
