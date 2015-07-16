@@ -46,8 +46,11 @@ input[type=number] {
   width:100%;
 }
 
-.title .form-control,
-.initial .form-control {
+.title .form-control {
   width:20%;
+}
+
+.initial .form-control {
+  width:5%;
 }
 
