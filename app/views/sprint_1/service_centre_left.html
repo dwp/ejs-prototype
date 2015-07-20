@@ -13,38 +13,30 @@
 
 <main id="content" role="main">
 
+ <div class="grid-row">        
 
-    	<div class="phase-banner">
-        <p>
-          <strong class="phase-tag">ALPHA</strong>
-          <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
-        </p>
-      </div>
+      <!-- Left hand nav-->
+          {{>includes/left_nav}}
+      <!-- End left hand nav-->
 
-    	   <h1 class="heading-large">Service centre - record entry</h1>
-    	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
 
- <div class="grid-row">
 
-         <div class="column">
-                <div class="section-tabs js-tabs">
-                      <ul>
-                          <li class="active">
-                              <a id="service-tab" href="#">Service Centre</a>
-                          </li>
-                          <li>
-                              <a id="benefit-tab" href="#">Benefit Centre</a>
-                          </li>   
-                           <li>
-                              <a id="job-tab" href="#">Job Centre</a>
-                          </li> 
-                      </ul>       
-                </div>
-         </div>         
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;Service centre</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Service centre - record entry</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+         <ul class="tabs">
+            <li>Nav item</li>
+            <li class="selected">Selected nav item</li>
+            <li>Nav item</li>
+         </ul>
 
     <div class="column-half">    
 
-   <br>
+         <br>
 
             <div class="form-group">
               <label class="form-label" for="title">Benefit type</label>
@@ -736,21 +728,19 @@
        <!-- End column-->       
        </div>
 
-    <!-- End row-->       
-      </div>
-    
-    <!-- Start row-->       
-          <div class="grid-row">
-              <div class="column-half">    
-
-                  <div class="form-group" id="get-started">
+          <div class="column">
+           <div class="form-group" id="get-started">
                     <br>
                       <a href="service_confirm" class="button button-get-started" value="Submit">Submit</a>
                   </div>
+                </div>
 
-           </div>
-        </div>
+  <!-- End three quarters column-->       
+   </div>  
 
+ <!-- End row-->       
+ </div>
+         
 
 </main>
 {{/content}}

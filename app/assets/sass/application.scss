@@ -21,15 +21,18 @@
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
 
+.heading-large {
+  margin-top:10px;
+  margin-bottom:5px;
+}
+
 .dashed {
   border-top: 1px solid #bfc1c3;
 }
 
-
 .bold {
   font-weight: bold;
 }
-
 
 .previous-next-navigation li.next {
   float: right;
@@ -259,4 +262,6 @@
   border: 1px solid #dee0e2;
   border-bottom: none;
 }
+
+
 
