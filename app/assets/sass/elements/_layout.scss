@@ -40,6 +40,7 @@
 // Use .grid-row to define a row for grid columns to sit in
 .grid-row {
   @extend %grid-row;
+  display:flex;
 }
 
 // Use .grid-column to create a grid column with 15px gutter
@@ -130,7 +131,6 @@ display:none !important;
 .column-quarter {
   float: left;
   width: 15%;
-  min-height: 1000px;
   padding-left: 0 !important;
   padding-right: 0 !important;
   -webkit-box-sizing: border-box;
@@ -148,9 +148,18 @@ display:none !important;
   padding-right: 0 !important;
 }
 
+.main-nav {
+  height:100%;
+  min-height:100%;
+}
+
 .main-nav li {
   margin-bottom: 5px;
-  padding: 10px 0 10px 35px; }
+  padding: 10px 0 10px 25px;
+  margin-right:0;
+  font-size:0.9em !important;
+  white-space:nowrap;
+ }
 
 .main-nav li a {
   padding: 10px;
@@ -170,7 +179,6 @@ display:none !important;
 
 .main-nav a {
   color: black;
-  font-size: 19px;
   text-decoration: none; }
 
 .main-nav a:hover {
@@ -178,7 +186,7 @@ display:none !important;
 
 .home li#main-nav-home, .todolist li#main-nav-todo-list, .claimants li#main-nav-claimants, .colleagues li#main-nav-colleagues {
   text-decoration: none;
-  background-color: #28A197; }
+ }
 
 .home li#main-nav-home a, .todolist li#main-nav-todo-list a, .claimants li#main-nav-claimants a, .colleagues li#main-nav-colleagues a {
   color: white; }

@@ -1,52 +1,58 @@
 {{<layout}}
 
-{{$pageTitle}}
-  GOV.UK prototyping kit
-{{/pageTitle}}
+{{$pageTitle}}Admin screen{{/pageTitle}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation}}
+  {{>includes/propositional_navigation_sprint_6}}
 {{/propositionHeader}}
 
 {{$content}}
 
-
 <main id="content" role="main">
 
- <div class="grid-row">        
 
-           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
-              <ul class="main-nav">
-                <li id="nav-home"><a href="login">Home</a></li>
-                <li id="nav-service"><a href="service">Service centre</a></li>
-                <li id="nav-job"><a href="#">Job centre</a></li>
-                <li id="nav-benefit" class="selected"><a href="benefit">Benefit centre</a></li>
-                <li id="nav-admin"><a href="#">Admin</a></li>
-                <li id="nav-stats"><a href="#">Stats</a></li>
-              </ul>
+    	<div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+        </p>
       </div>
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
+  <nav class="back-nav" role="navigation">
+     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+  </nav>
 
+           <h1 class="heading-large">Claim #310 - John Smith</h1>
+    	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
-        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="benefit">Benefit centre</a>&nbsp;>&nbsp;View record</p> 
+ <div class="grid-row">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Benefit centre - Claim #310 - John Smith</h1>
-         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+    <!--************** Start 1 column **************
 
-       <ul class="tabs">
-            <li class="selected">View record</li>
-            <li>Maintenance</li>
-            <li>Payment</li>
-         </ul> 
+    <div class="column-third">
 
+          <h3 class="heading-small">EJS Administration</h3>
+         <ul>
+            <li><a href="#">Create user</a></li>
+            <li><a href="#">Data analysis/search</a></li>
+          </ul> 
 
-      <div class="column-half">   
+        <h3 class="heading-small">Records management</h3>
+          <ul>
+            <li><a href="#">Enter data</a></li>
+            <li><a href="#">View/edit data</a></li>
+          </ul>  
 
-        <br>
+    </div>
 
-   <!--     <div>
+    ************** End 1 column ************** -->
+
+    <!--************** Start 2 columns  **************-->
+
+    <div class="column-two-thirds">    
+
+<br>
+        <div>
              <ul class="tabs-nav">
                   <li class="active"><a href="#">&nbsp;&nbsp;View record&nbsp;&nbsp;</a></li>
                   <li>&nbsp;&nbsp;&nbsp;<a href="maintenance">Edit record</a></li>
@@ -55,18 +61,17 @@
 
          <br>
 
- <hr> -->
+ <hr>
 
     <nav id="show-more-documents" role="navigation">
       <ul class="previous-next-navigation">
           <li class="next">
-            <a href="#"><&nbsp;&nbsp;Prev record</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <a href="#">Next record&nbsp;&nbsp;></a>
+            <a href="#"><&nbsp;&nbsp;Previous submission</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <a href="#">Next submission&nbsp;&nbsp;></a>
           </li>
       </ul>
     </nav>
 
-<br>
     <br>
 
           <h3 class="heading-small">Submission information</h3>
@@ -832,14 +837,9 @@
         </div>
     </div>
 
-         
-      </div>
-      <!-- End col -->
 
- 
-
-    <!-- End row-->       
-      </div>
+    <!--************** End 2 columns  **************-->
+  </div>
 
 
 </main>
