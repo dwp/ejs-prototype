@@ -5,7 +5,7 @@
 {{/pageTitle}}
 
 {{$propositionHeader}}
-  {{>includes/propositional_navigation_sprint_6}}
+  {{>includes/propositional_navigation}}
 {{/propositionHeader}}
 
 {{$content}}
@@ -13,101 +13,40 @@
 
 <main id="content" role="main">
 
+ <div class="grid-row">        
 
-    	<div class="phase-banner">
-        <p>
-          <strong class="phase-tag">ALPHA</strong>
-          <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
-        </p>
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-service"><a href="service">Service centre</a></li>
+                <li id="nav-job"><a href="#">Job centre</a></li>
+                <li id="nav-benefit" class="selected"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
       </div>
 
-    	   <h1 class="heading-large">Benefit centre - payment</h1>
-    	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
-
- <div class="grid-row">
-
-    <!--************** Start 1 column **************
-
-    <div class="column-third">
-
-          <h3 class="heading-small">Nav sub-title</h3>
-         <ul>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-          </ul> 
-
-        <h3 class="heading-small">Nav sub-title</h3>
-          <ul>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
-          </ul>  
-
-    </div> -->
-
-    <!--************** End 1 column **************-->
-
-    <!--************** Start 2 columns  **************-->
-
-    <div class="column-two-thirds">    
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
 
 
-  <!--      <div>
-             <ul class="tabs-nav">
-                  <li class="active"><a href="#">&nbsp;&nbsp;View&nbsp;&nbsp;</a></li>
-                  <li>&nbsp;&nbsp;<a href="#">Edit</a></li>
-            </ul>
-         </div>
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="benefit">Benefit centre</a>&nbsp;>&nbsp;View record</p> 
 
-         <br>
+         <h1 class="heading-large">&nbsp;&nbsp;Benefit centre - Claim #310 - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
- <hr>
-
-    <nav id="show-more-documents" role="navigation">
-      <ul class="previous-next-navigation">
-          <li class="next">
-            <a href="#"><&nbsp;&nbsp;Previous submission</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <a href="#">Next submission&nbsp;&nbsp;></a>
-          </li>
-      </ul>
-    </nav>
-
-    <br> 
-
-          <h3 class="heading-small">Sub title</h3>
-
-            <div>
-                <table>
-                    <tr>
-                        <td>Form:</td>
-                        <td>Claimant messaging and information system</td>
-                    </tr>
-                    <tr>
-                        <td>Submitted by:</td>
-                        <td>Louis Pitchford</td>
-                    </tr>
-                    <tr>
-                        <td>Time:</td>
-                        <td>Friday 20th March 2015 - 4:39pm</td>
-                    </tr>
-                    <tr>
-                        <td>ID:</td>
-                        <td>62.134.56.4</td>
-                    </tr>
-                </table>
+       <ul class="tabs">
+            <li><a href="benefit_record">View record</a></li>
+            <li><a href="maintenance">Maintenance</a></li>
+            <li class="selected"><a href="#">Payment</a></li>
+         </ul> 
 
 
-     
+      <div class="column-half">   
 
-            </div>
+        <br>
 
-           <br> -->
-
-
-  <!--     <h3 class="heading-small">Contact details</h3> -->
-
-   <br>
-
-         <div class="form-group initial">
+       <div class="form-group title">
               <label class="form-label" for="amount">Benefit amount</label>
               <span class="form-hint">eg £25.50</span>
               <input class="form-control" id="amount" type="text" value="£">
@@ -312,12 +251,14 @@
              </div>
 
 
-        </div>
-    </div>
+         
+      </div>
+      <!-- End col -->
 
+ 
 
-    <!--************** End 2 columns  **************-->
-  </div>
+    <!-- End row-->       
+      </div>
 
 
 </main>
