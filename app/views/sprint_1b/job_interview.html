@@ -1,0 +1,165 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-service"><a href="service_search">Service centre</a></li>
+                <li id="nav-job" class="selected"><a href="job">Job centre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+          </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Job centre</a>&nbsp;>&nbsp;Interview</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Job centre - Claim #310 - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+       <ul class="tabs">
+            <li><a href="job_record">View record</a></li>
+            <li><a href="job_edit">Edit record</a></li>
+            <li class="selected"><a href="job_interview">Interview</a></li>
+            <li><a href="job_next">Next appointment</a></li>   
+            <li><a href="job_closure">Closure</a></li>
+         </ul> 
+
+
+    <div class="column-half">    
+
+         <br>
+         <br>
+
+            <div class="form-group title">
+              <label class="form-label" for="title">Failed to attend</label>
+              <select class="select form-control">
+                  <option value="Late">Late</option>
+                  <option value="No-show">No-show</option>
+                  <option value="Other">Other</option>         
+              </select>
+            </div>
+
+        <div class="form-group">
+            <label class="form-label" for="title">Work Coach assigned</label>
+         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+              <input class="form-control" id="inital" type="text">
+              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+            <select class="select form-control">
+                  <option value="Rachel Smith">Rachel Smith</option>
+                  <option value="Derek Brown">Derek Brown</option>
+                  <option value="Julie McDairly">Julie McDairly</option>
+                  <option value="Paul Bombean">Paul Bombean</option>
+                  <option value="Sarah Flannigan">Sarah Flannigan</option>        
+              </select> 
+        </div>  
+
+        <div class="form-group">
+            <label class="form-label" for="title">Evidence verification</label>
+         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+              <input class="form-control" id="inital" type="text">
+              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+            <select class="select form-control">
+                  <option value="2 x forms of ID">2 x forms of ID</option>
+                  <option value="P45">P45</option>
+                  <option value="Home office letters">Home office letters</option>
+                  <option value="Wage slips">Wage slips </option>
+                  <option value="Bank details">Bank details</option>  
+                   <option value="Please arrive 10 mins early">Please arrive 10 mins early</option>
+                  <option value="You both need to attend">You both need to attend</option>
+                  <option value="Verification of student loan/grant">Verification of student loan/grant</option>                         
+              </select> 
+        </div>  
+
+
+            <div class="form-group">
+              <label class="form-label">ID verification</label>
+              <select class="select form-control">
+                  <option value="2 x forms of ID">2 x forms of ID</option>
+                  <option value="P45">P45</option>
+                  <option value="Home office letters">Home office letters</option>
+                  <option value="Wage slips">Wage slips </option>
+                  <option value="Bank details">Bank details</option>  
+                  <option value="Please arrive 10 mins early">Please arrive 10 mins early</option>
+                  <option value="You both need to attend">You both need to attend</option>
+                  <option value="Verification of student loan/grant">Verification of student loan/grant</option>                         
+              </select> 
+          </div>
+
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+          
+          <br>
+          <br>
+
+          <div class="form-group">
+              <label class="form-hint">Signing day (read-only)</label>
+              <select class="select form-control">
+                  <option selected="Tuesday" readonly>Tuesday</option>                       
+              </select> 
+          </div>
+
+          <div class="form-group">
+             <fieldset class="inline">
+                <label class="form-hint">Cycle (read-only)</label>
+                <label class="block-label" for="radio-inline-1">
+                  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes" readonly>
+                  P
+                </label>
+                <label class="block-label" for="radio-inline-2">
+                  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No" readonly checked>
+                  R
+                </label>
+            </fieldset>
+          </div>
+         
+     
+          <div class="form-group">
+              <label class="form-hint">Pay day (read-only)</label>
+              <select class="select form-control">
+                  <option selected="Friday" readonly>Friday</option>                          
+              </select> 
+          </div>
+
+       <!-- End column-->       
+       </div>
+
+          <div class="column">
+           <div class="form-group" id="get-started">
+                    <br>
+                      <a href="service_confirm" class="button button-get-started" value="Submit">Submit</a>
+                  </div>
+                </div>
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

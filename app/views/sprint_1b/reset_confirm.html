@@ -1,0 +1,66 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation_sprint_6}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">ALPHA</strong>
+      <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <nav class="back-nav" role="navigation">
+     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+  </nav>
+
+     <h1 class="heading-large">Password has been reset</h1>
+
+        <div class="alert-success" role="alert">
+    
+      <span class="icon icon-tick" role="presentation"></span>
+      
+      <div class="alert-message">
+        <p>An email with your new password has been sent to you.</p>
+      </div>
+    
+    </div>
+  
+
+<!--     <h2 class="heading-medium">Your new password is <em class="highlight">BL44 BL44</em></h2> -->
+
+
+            <div class="form-group">
+                <label class="form-label" for="ni-number">Staff number</label>
+                <input class="form-control" id="ni-number" type="text">
+            </div>    
+
+            <div class="form-group">
+              <label class="form-label" for="middle-name">Password</label>
+              <span class="form-hint">Use your reset password.</span>              
+              <input class="form-control" id="middle-name" type="text">
+            </div> 
+
+            <div class="form-group">
+                <a href="service_centre" class="button button-get-started" value="Login">
+             <!-- <input class="button button-get-started" value="Start Now"> -->
+                Login</a>
+            </div>
+
+    </div>
+
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

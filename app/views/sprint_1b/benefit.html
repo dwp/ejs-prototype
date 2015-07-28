@@ -1,0 +1,156 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-service"><a href="service_centre_left">Service centre</a></li>
+                <li id="nav-job"><a href="job">Job centre</a></li>
+                <li id="nav-benefit" class="selected"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+          </div>
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;Benefit centre</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Benefit centre - record search</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+   <!--      <ul class="tabs">
+            <li>Nav item</li>
+            <li class="selected">Selected nav item</li>
+            <li>Nav item</li>
+         </ul> -->
+
+      <div class="column-third">   
+
+        <br>
+
+ <!--       <p>Retrieve record by:</p> -->
+
+           <div class="form-group">
+              <label class="form-label" for="inital">NINO</label>
+              <input class="form-control" id="inital" type="text">
+            </div> 
+
+            <div class="form-group">
+              <label class="form-label" for="inital">Contact number</label>
+              <input class="form-control" id="inital" type="text">
+            </div> 
+
+            <div class="form-group">
+                <label class="form-label" for="title">Job centre</label>
+             <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+                  <input class="form-control" id="inital" type="text">
+                  <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+                <select class="select form-control">
+                      <option value="Southampton">Southampton</option>
+                      <option value="Bradford">Bradford</option>
+                      <option value="Derby">Derby</option>
+                      <option value="Liverpool">Liverpool</option>
+                      <option value="Manchester">Manchester</option>
+                      <option value="Portsmouth">Portsmouth</option>
+                      <option value="Southampton">Southampton</option>
+                      <option value="Wolverhampton">Wolverhampton</option>           
+                  </select> 
+            </div> 
+
+       </div>
+
+       <div class="column-half">    
+
+          <br>
+
+
+            <div class="form-group">
+              <label class="form-label" for="inital">Surname</label>
+              <input class="form-control" id="inital" type="text">
+            </div> 
+
+            <div class="form-group initial">
+              <label class="form-label" for="inital">Initial</label>
+              <input class="form-control" id="inital" type="text">
+            </div>   
+
+             <div class="form-group" id="get-started">
+                    <br>
+                      <a href="#" class="button button-get-started" value="Submit">Search</a>
+                  </div>
+
+        </div>    
+
+
+        <div class="column-two-thirds">   
+
+                <h3 class="heading-medium">1 record</h3>
+
+               <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Created by</th>
+                        <th scope="col">NINO</th>
+                        <th scope="col">Phone number</th>                     
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="table_link" href="benefit_record" title="View more info">Smith</a></td>
+                            <td>Louis Pitchford</td>
+                            <td>JC 42 86 47 C</td>
+                            <td>07942 456 345</td>
+                        </tr>  
+          <!--              <tr>
+                            <td><a class="table_link" href="benefit_record" title="View more info">Jones</a></td>
+                            <td>Louis Pitchford</td>
+                            <td>JC 42 86 47 C</td>
+                            <td>07654 847 329</td>
+                        </tr> 
+                             <tr>
+                            <td><a class="table_link" href="benefit_record" title="View more info">Cooper</a></td>
+                            <td>Louis Pitchford</td>
+                            <td>JC 42 86 47 C</td>
+                            <td>07956 222 852</td>
+                        </tr>  -->
+                    </tbody>
+                </table>  
+
+                <br>
+                <br>
+
+         
+      </div>
+      <!-- End col -->
+
+
+
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

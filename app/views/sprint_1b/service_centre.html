@@ -13,43 +13,40 @@
 
 <main id="content" role="main">
 
- <div class="grid-row">        
 
-         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
-              <ul class="main-nav">
-                <li id="nav-home"><a href="login">Home</a></li>
-                <li id="nav-service"><a href="service_search">Service centre</a></li>
-                <li id="nav-job" class="selected"><a href="job">Job centre</a></li>
-                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-                <li id="nav-admin"><a href="#">Admin</a></li>
-                <li id="nav-stats"><a href="#">Stats</a></li>
-              </ul>
-          </div>
+    	<div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
+    	   <h1 class="heading-large">Service centre - record entry</h1>
+    	   <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
+ <div class="grid-row">
 
-        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Job centre</a>&nbsp;>&nbsp;Edit record</p> 
-
-         <h1 class="heading-large">&nbsp;&nbsp;Job centre - Claim #310 - John Smith</h1>
-         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
-
-       <ul class="tabs">
-            <li><a href="job_record">View record</a></li>
-            <li class="selected"><a href="job_edit">Edit record</a></li>
-            <li><a href="job_interview">Interview</a></li>
-            <li><a href="job_next">Next appointment</a></li>               
-            <li><a href="job_closure">Closure</a></li>          
-         </ul> 
-
+         <div class="column">
+                <div class="section-tabs js-tabs">
+                      <ul>
+                          <li class="active">
+                              <a id="service-tab" href="#">Service Centre</a>
+                          </li>
+                          <li>
+                              <a id="benefit-tab" href="#">Benefit Centre</a>
+                          </li>   
+                           <li>
+                              <a id="job-tab" href="#">Job Centre</a>
+                          </li> 
+                      </ul>       
+                </div>
+         </div>         
 
     <div class="column-half">    
 
-         <br>
-         <br>
+   <br>
 
-            <div class="form-group title">
+            <div class="form-group">
               <label class="form-label" for="title">Benefit type</label>
               <select class="select form-control">
                   <option value="Bambury">JSA</option>
@@ -60,81 +57,48 @@
 
 
             <div class="form-group">
-                  <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
-                  <input class="form-control" id="idoc" type="text" value="02/09/2015" readonly>
-             </div>   
-
-                      
-
-
-        <div class="form-group">
-            <label class="form-label" for="title">Job centre</label>
-         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
-              <input class="form-control" id="inital" type="text">
-              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
-            <select class="select form-control">
-                  <option value="Southampton">Southampton</option>
-                  <option value="Bradford">Bradford</option>
-                  <option value="Derby">Derby</option>
-                  <option value="Liverpool">Liverpool</option>
-                  <option value="Manchester">Manchester</option>
-                  <option value="Portsmouth">Portsmouth</option>
-                  <option value="Southampton">Southampton</option>
-                  <option value="Wolverhampton">Wolverhampton</option>           
-              </select> 
-        </div>            
-     
-
-            <div class="form-group title">
-              <label class="form-label" for="title">Title</label>
-              <select class="form-control" id="title">
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
-                  <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-
-              </select>
-            </div>
-
-            <div class="form-group initial">
-              <label class="form-label" for="inital">Initial</label>
-              <input class="form-control" id="inital" type="text">
-            </div> 
-
-            <div class="form-group">
-              <label class="form-label" for="Surname">Surname</label>
-              <input class="form-control" id="Surname" type="text">
-            </div>  
-
-            <div class="form-group">
-              <input id="welsh" type="checkbox" class="inline">
-              <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Job Centre</label>
-            </div>  
-
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-          
-          <br>
-          <br>
-
-           <div class="form-group">
-              <label class="form-label" for="Gender">Gender</label>
-              <select class="select form-control" id="Gender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>         
-              </select>
-            </div>
-
-
-            <div class="form-group">
                  <div class="form-date">
 
              <fieldset class="inline">
-                  <legend class="form-label">Age</legend>
+                  <legend class="form-label">Initial date of contact</legend>
+
+                        <div class="form-group form-group-day">
+               <!--     <label class="form-label">Day:</label> -->
+                             <select class="select form-control" name="dob_day" id="dob_day">
+                                <option selected disabled>Day</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                         </div>   
 
                         <div class="form-group form-group-month">
                 <!--        <label class="form-label">Month:</label> -->
@@ -282,6 +246,72 @@
                  </div>    
             </div> 
 
+
+        <div class="form-group title">
+              <label class="form-label" for="title">Job centre</label>
+              <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+              <input class="form-control" id="inital" type="text">
+              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a>
+        <!--      <select class="select form-control">
+                  <option value="Bambury">Bambury</option>
+                  <option value="Bradford">Bradford</option>
+                  <option value="Derby">Derby</option>
+                  <option value="Liverpool">Liverpool</option>
+                  <option value="Manchester">Manchester</option>
+                  <option value="Portsmouth">Portsmouth</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Wolverhampton">Wolverhampton</option>           
+              </select> -->
+        </div>            
+     
+
+            <div class="form-group title">
+              <label class="form-label" for="title">Title</label>
+              <select class="form-control" id="title">
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Ms">Ms</option>
+                  <option value="Dr">Dr</option>
+
+              </select>
+            </div>
+
+            <div class="form-group initial">
+              <label class="form-label" for="inital">Initial</label>
+              <input class="form-control" id="inital" type="text">
+            </div> 
+
+            <div class="form-group">
+              <label class="form-label" for="Surname">Surname</label>
+              <input class="form-control" id="Surname" type="text">
+            </div>  
+
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+          <br>
+           <div class="form-group">
+              <label class="form-label" for="Gender">Gender</label>
+              <select class="select form-control" id="Gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>         
+              </select>
+            </div>
+
+
+           <div class="form-group">
+              <label class="form-label" for="age">Age</label>
+              <select class="select form-control" id="age">
+                  <option value="18-24 years">18-24 years</option>
+                  <option value="25-35 years">25-35 years</option>
+                  <option value="35-45 years">35-45 years</option>
+                  <option value="45-55 years">45-55 years</option>
+                  <option value="55-65 years">55-65 years</option>          
+              </select>
+            </div> 
 
           <div class="form-group">
               <label class="form-label" for="title">Nationality</label>
@@ -683,8 +713,8 @@
             </div>
 
             <div class="form-group">
-                <label class="form-hint" for="nino">NINO (read-only)</label>
-                <input class="form-control" id="nino" type="text" value="JC 52 72 87 C" readonly>
+                <label class="form-label" for="nino">NINO</label>
+                <input class="form-control" id="nino" type="text">
             </div>
 
             <div class="form-group">
@@ -706,20 +736,20 @@
        <!-- End column-->       
        </div>
 
-          <div class="column">
-           <div class="form-group" id="get-started">
+    <!-- End row-->       
+      </div>
+    
+    <!-- Start row-->       
+          <div class="grid-row">
+              <div class="column-half">    
+
+                  <div class="form-group" id="get-started">
                     <br>
                       <a href="service_confirm" class="button button-get-started" value="Submit">Submit</a>
                   </div>
-                </div>
 
-  <!-- End three quarters column-->       
-   </div>  
-
- 
-
-    <!-- End row-->       
-      </div>
+           </div>
+        </div>
 
 
 </main>
