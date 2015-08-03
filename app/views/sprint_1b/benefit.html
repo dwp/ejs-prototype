@@ -38,17 +38,17 @@
       <ul class="tabs">
             <li class="selected"><a href="#">Basic search</a></li>
             <li><a href="benefit_advanced">Advanced search</a></li>
-            <li><a class="disabled" href="#">View record</a></li>
+            <li><a class="disabled" href="#">Edit record</a></li>
             <li><a class="disabled" href="#">Maintenance</a></li>
             <li><a class="disabled" href="#">Payment</a></li>
             <li><a class="disabled" href="#">Closure</a></li>
          </ul> 
 
 
-      <div class="column-half">   
+       <div class="column-half">   
 
-        <br>
-
+         <h3 class="heading-small">Basic search</h3>
+          <br>
  <!--       <p>Retrieve record by:</p> -->
 
            <div class="form-group">
@@ -61,29 +61,68 @@
 
 
 
-        <div class="column">   
+        <div class="column-two-thirds">   
 
-                <h3 class="heading-medium">0 records</h3>
-
-               <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">Surname</th>
-                        <th scope="col">Created by</th>
-                        <th scope="col">NINO</th>
-                        <th scope="col">Phone number</th>  
-                        <th scope="col">Status</th>                     
-                      </tr>
-                    </thead>
-                    <tbody>
+                <h3 class="heading-medium" style="margin-top:0;">1 record</h3>
+  
+           <div>
+                 <table class="record">
+                    <tr>
+                        <td><a class="none" href="job_edit" title="Edit record">Surname:</a></td>
+                        <td><a class="table_link" href="job_edit" title="Edit record">Smith</a></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>Live</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>NINO:</td>
+                        <td>JC 45 85 96 X</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile:</td>
+                        <td>04585 747 358</td>
+                    </tr>
+     <!--               <tr>
+                        <td>Job Centre:</td>
+                        <td>Bambury</td>
+                    </tr>
+                    <tr>
+                        <td>Age group:</td>
+                        <td>18-25</td>
+                    </tr>
+                     <tr>
+                        <td>Initial date of contact:</td>
+                        <td>04/04/2015</td>
+                    </tr>
+                    <tr>
+                    <td>1st appointment date:</td>
+                        <td>14/04/2015</td>
+                    </tr>
+                     <tr>
+                        <td>1st appointment time:</td>
+                        <td>9.30 am</td>
+                    </tr> -->
+                </table>
+                <br>
+                <table>
+                     </tbody>
                         <tr>
-                            <td colspan="5">No record found - <a class="table_link" href="benefit_advanced" title="View more info">use advanced search.</a></td>
-                        </tr>  
+                            <td colspan="5">No existing record found? <a class="table_link" href="job_advanced" title="View more info">Use advanced search.</a><td>
+                        </tr>   
                     </tbody>
                 </table>  
+           </div>  
 
-                <br>
-                <br>
+           <br>
+           <br>
+
+      <!--   <br>
+               <p><a class="button" href="job_new" title="View more info">Create new record</a></p>
+
+                <br> -->
+   
 
          
       </div>

@@ -31,3 +31,20 @@ table td.numeric {
   @include core-16($tabular-numbers: true);
   text-align: right;
 }
+
+.record tr:hover {
+  background: #f0f1f2;
+  color: #000;
+}
+
+.record tr a {
+  display:block;
+  font-weight:bold;
+  padding:5px;
+  margin:-5px;
+}
+
+.record tr a.none {
+  font-weight:normal;
+  text-decoration:none;
+}
