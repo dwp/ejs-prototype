@@ -61,3 +61,93 @@
   @include core-16;
   color: $error-colour;
 }
+
+
+
+// validation stuff from PTS
+.error, .error-summary {
+  border-left: 5px solid #B10E1E;
+  padding-left: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.error {
+  margin-right: 15px; }
+
+.error .error-message {
+  color: #B10E1E;
+  font-weight: bold;
+  display: block; }
+
+.error-message {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  display: none;
+  clear: both;
+  margin: 0px;
+  padding: 5px 0px 7px; }
+
+.error-summary .error-summary-list a {
+  color: #B10E1E;
+  font-weight: bold;
+  text-decoration: underline; }
+
+.error-summary {
+  border: 5px solid #B10E1E;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px 15px 15px; }
+
+.error-summary .error-summary-heading {
+  margin-top: 0px; }
+
+.error .form-control {
+  border: 4px solid #B10E1E; }
+
+.error .form-hint {
+  margin-bottom: 0px; }
+
+
+
+
+// from http://parsleyjs.org/src/parsley.css 
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+
