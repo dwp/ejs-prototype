@@ -71,13 +71,10 @@
               <input class="form-control" id="inital" type="text">
               <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
             <select class="select form-control">
-                  <option value="2 x forms of ID">2 x forms of ID</option>
                   <option value="P45">P45</option>
                   <option value="Home office letters">Home office letters</option>
-                  <option value="Wage slips">Wage slips </option>
+                  <option value="Wage slips">Wage slips</option>
                   <option value="Bank details">Bank details</option>  
-                   <option value="Please arrive 10 mins early">Please arrive 10 mins early</option>
-                  <option value="You both need to attend">You both need to attend</option>
                   <option value="Verification of student loan/grant">Verification of student loan/grant</option>                         
               </select> 
         </div>  
@@ -96,6 +93,11 @@
             </fieldset>
           </div>
 
+                   <div class="form-group" id="get-started">
+                    <br>
+                      <a href="service_confirm" class="button button-get-started" value="Submit">Submit</a>
+                  </div>
+
       </div>
       <!-- End col -->
 
@@ -107,18 +109,29 @@
 
         
             <div class="form-group">
-              <label class="form-label">ID verification</label>
+    <!--          <label class="form-label">ID verification</label>
               <select class="select form-control">
-                  <option value="2 x forms of ID">2 x forms of ID</option>
-                  <option value="P45">P45</option>
-                  <option value="Home office letters">Home office letters</option>
-                  <option value="Wage slips">Wage slips </option>
-                  <option value="Bank details">Bank details</option>  
-                  <option value="Please arrive 10 mins early">Please arrive 10 mins early</option>
-                  <option value="You both need to attend">You both need to attend</option>
-                  <option value="Verification of student loan/grant">Verification of student loan/grant</option>                         
+                  <option value="Passport">Passport</option>
+                  <option value="Driving licence">Driving licence</option>
+                  <option value="Utility bill">Utility bill</option>                       
               </select> 
-          </div>
+          </div> -->
+
+                  <fieldset class="form-group inline">
+                    <label class="form-label text">ID verification</label>
+                    <label class="block-label" data-target="work-search" for="Passport">
+                        <input id="Passport" type="checkbox" name="Passport" value="work" aria-controls="work-search">
+                        Passport
+                    </label>
+                     <label class="block-label" data-target="work-search" for="Driving">
+                        <input id="Driving" type="checkbox" name="Driving" value="work" aria-controls="work-search">
+                        Driving licence
+                    </label>
+                     <label class="block-label" data-target="work-search" for="Utility">
+                        <input id="Utility" type="checkbox" name="Utility" value="work" aria-controls="work-search">
+                        Utility bill
+                    </label>
+                </fieldset>
 
           <div class="form-group">
               <label class="form-label">Signing day</label>
@@ -139,14 +152,6 @@
 
        <!-- End column-->       
        </div>
-
-          <div class="column">
-           <div class="form-group" id="get-started">
-                    <br>
-                      <a href="service_confirm" class="button button-get-started" value="Submit">Submit</a>
-                  </div>
-                </div>
-
  
 
     <!-- End row-->       
