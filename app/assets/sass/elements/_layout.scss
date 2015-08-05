@@ -130,6 +130,7 @@ display:none !important;
 }
 
 // Left-aligned nav hackiness
+
 .column-quarter {
   float: left;
   width: 15%;
@@ -143,6 +144,7 @@ display:none !important;
 }
 
 // Left-aligned nav hackiness
+
 .column-three-quarters {
   float: left;
   width: 85%;
@@ -191,10 +193,35 @@ display:none !important;
  }
 
 .home li#main-nav-home a, .todolist li#main-nav-todo-list a, .claimants li#main-nav-claimants a, .colleagues li#main-nav-colleagues a {
-  color: white; }
+  color: white; 
+}
+
 
 .bread {
   padding:15px !important;
 }
 
+
+.grid {
+  float:left;
+  overflow:hidden;
+}
+
+.grid-1-2 {
+  width:50%;
+}
+
+.left {
+  margin-right:15px;
+}
+
+.menu-item {
+    background: #f8f8f8;
+    border-bottom: 1px solid #bfc1c3;
+    display: block;
+    padding: 15px 30px;
+    min-height: 2.63158em;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
 
