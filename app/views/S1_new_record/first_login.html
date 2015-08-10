@@ -1,0 +1,63 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <nav class="back-nav" role="navigation">
+     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+  </nav> 
+
+  <br>
+
+     <h1 class="heading-large">For security, please enter a memorable password</h1>
+ <!--    <h2 class="heading-medium">For security, please enter a memorable password</h2> -->
+
+   <div class="grid-row">
+
+    <div class="column-half">
+
+      <br>
+
+            <div class="form-group">
+                <label class="form-label" for="ni-number">Enter password</label>
+                <span class="form-hint">Min 5 characters, 1 upper case, 1 number</span>
+                <input class="form-control" id="ni-number" type="text">
+                <label for="filter-category-accounts" class="form-checkbox">
+                  <input id="filter-category-accounts" name="category" value="accounts" type="checkbox" checked="">
+                  Show text
+                </label>
+             </div>     
+
+            <div class="form-group">
+              <label class="form-label" for="middle-name">Confirm password</label>
+                <span class="form-hint">Min 5 characters, 1 upper case, 1 number</span>
+              <input class="form-control" id="middle-name" type="text">
+              <label for="filter-category-accounts" class="form-checkbox">
+                  <input id="filter-category-accounts" name="category" value="accounts" type="checkbox" checked="">
+                  Show text
+              </label>
+            </div>  
+
+            <div class="form-group">
+                <a href="logged_in" class="button button-get-started" value="Login">
+             <!-- <input class="button button-get-started" value="Start Now"> -->
+                Set password</a>
+            </div>
+
+          <p>Already have a password? <a href="login">Login here</a></p> 
+
+    </div>
+
+  </div>
+
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

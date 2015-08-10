@@ -1,0 +1,70 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home" class="selected"><a href="login">Home</a></li>
+                <li id="nav-job"><a href="job">Job centre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+          </div>
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread">Home&nbsp;></p> 
+
+            <div class="column">   
+
+                <h1 class="heading-large">Log-in successful</h1>
+                <h2>Please choose from the following options:</h2>
+
+                        <h2 class="heading-medium">Job Centre</h2>
+                        <p><a href="job">Record search</a></p>
+                        <h2 class="heading-medium">Benefit Centre</h2>
+                        <p><a href="benefit">Record search</a></p>
+                        <h2 class="heading-medium">Management Information</h2>
+                        <p><a href="#">Link</a></p>
+                        <h2 class="heading-medium">Admin</h2>
+                        <p><a href="#">Link</a></p>
+
+                   <br>     
+                   <nav class="back-nav" role="navigation">
+                     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+                  </nav>
+                  <br>
+
+            </div>     
+            <!-- End 1/2 col -->
+         
+      </div>
+      <!-- End 3/4 col -->
+
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

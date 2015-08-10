@@ -1,0 +1,42 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+{{$content}}
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">ALPHA</strong>
+      <span>This is a new service – your <a href="feedback">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <nav class="back-nav" role="navigation">
+     <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+  </nav>
+
+     <h1 class="heading-large">Reset password</h1>
+
+            <div class="form-group">
+                <label class="form-label" for="ni-number">Staff number</label>
+                <input class="form-control" id="ni-number" type="text">
+             </div>   
+
+            <div class="form-group">
+                <a href="reset_confirm" class="button button-get-started" value="Reset">
+             <!-- <input class="button button-get-started" value="Start Now"> -->
+                Reset password</a>
+            </div>
+            
+      <!--  <p><a href="reset">Reset password</a></p> -->
+
+    </div>
+
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

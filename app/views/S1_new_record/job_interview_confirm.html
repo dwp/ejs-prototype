@@ -1,0 +1,120 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+            </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;
+          <a href="job_interview">NJI capture</a>&nbsp;>&nbsp;NJI capture review</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - NJI capture review</h1>
+
+           <ul class="tabs">
+                <li><a href="job">Basic search</a></li>
+                <li><a href="job_advanced">Advanced search</a></li>
+                <li><a href="job_new">New record</a></li>
+                <li><a href="job_edit">Edit record</a></li>
+                <li class="selected"><a href="job_interview">NJI capture</a></li>
+                <li><a href="job_next">Appointments</a></li>               
+                <li><a href="job_closure">Closure</a></li>          
+             </ul> 
+
+
+      <div class="column-half">   
+
+        <br>
+
+          <h3 class="heading-small">NJI capture review</h3>
+
+           <div>
+                <table>
+                    <tr>
+                        <td>Work coach:</td>
+                        <td>Paul Bombean</td>
+                    </tr>
+                   <tr>
+                        <td>Evidence verification:</td>
+                        <td>Home office letters</td>
+                    </tr>
+                    <tr>
+                        <td>Cycle:</td>
+                        <td>R</td>
+                    </tr>
+                     <tr>
+                        <td>ID verification:</td>
+                        <td>Verified</td>
+                    </tr>
+                    <tr>
+                        <td>Signing type:</td>
+                        <td>Weekly</td>
+                    </tr> 
+                    <tr>
+                        <td>Date:</td>
+                        <td>22/08/15</td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td>10:30</td>
+                    </tr>
+                </table>
+           </div> 
+
+          <br>
+          <br>
+     
+            <div class="form-group" id="get-started">
+                  <a href="job_interview" class="button button" value="Edit">Edit</a>
+                  <a href="job_record_confirm" class="button button" value="Edit">Submit</a>                
+             </div>
+
+            <nav class="back-nav" role="navigation">
+               <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+            </nav>
+
+            <br>            
+         
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+       
+       
+
+       <!-- End column-->       
+       </div>
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
