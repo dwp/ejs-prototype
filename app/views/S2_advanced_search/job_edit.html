@@ -92,9 +92,9 @@
             <div class="form-group title">
               <label class="form-label" for="title">Title</label>
               <select class="form-control" id="title">
+                  <option value="Miss">Miss</option>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
                   <option value="Ms">Ms</option>
                   <option value="Dr">Dr</option>
 
@@ -103,12 +103,12 @@
 
             <div class="form-group initial">
               <label class="form-label" for="inital">Initial</label>
-              <input class="form-control" id="inital" type="text">
+              <input class="form-control" id="inital" type="text" value="R">
             </div> 
 
             <div class="form-group">
               <label class="form-label" for="Surname">Surname</label>
-              <input class="form-control" id="Surname" type="text" value="Smith">
+              <input class="form-control" id="Surname" type="text" value="Peters">
             </div>  
 
             <div class="form-group">
@@ -129,8 +129,8 @@
            <div class="form-group">
               <label class="form-label" for="Gender">Gender</label>
               <select class="select form-control" id="Gender">
-                  <option value="Male">Male</option>
                   <option value="Female">Female</option>         
+                  <option value="Male">Male</option>
               </select>
             </div>
 
@@ -144,7 +144,6 @@
                         <div class="form-group form-group-month">
                 <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
-                                <option selected disabled>Month</option>
                                 <option value="01">Jan</option>
                                 <option value="02">Feb</option>
                                 <option value="03">Mar</option>
@@ -152,7 +151,7 @@
                                 <option value="05">May</option>
                                 <option value="06">Jun</option>
                                 <option value="07">Jul</option>
-                                <option value="08">Aug</option>
+                                <option selected="08">Aug</option>
                                 <option value="09">Sep</option>
                                 <option value="10">Oct</option>
                                 <option value="11">Nov</option>
@@ -187,7 +186,7 @@
                                 <option value="1979">1979</option>
                                 <option value="1978">1978</option>
                                 <option value="1977">1977</option>
-                                <option value="1976">1976</option>
+                                <option selected="1976">1976</option>
                                 <option value="1975">1975</option>
                                 <option value="1974">1974</option>
                                 <option value="1973">1973</option>
@@ -689,7 +688,7 @@
 
             <div class="form-group">
                 <label class="form-hint" for="nino">NINO (read-only)</label>
-                <input class="form-control" id="nino" type="text" value="JC 52 72 87 C" readonly>
+                <input class="form-control" id="nino" type="text" value="AB 123456 A" readonly>
             </div>
 
             <div class="form-group">

@@ -207,8 +207,22 @@ display:none !important;
   overflow:hidden;
 }
 
+.grid .selected {
+  min-height: 1.9em;
+  border-bottom: 5px solid #bfc1c3 !important;
+  margin-bottom: 11px !important;
+}
+
 .grid-1-2 {
   width:50%;
+}
+
+.grid-1-4 {
+  width:25%;
+}
+
+.grid-1-5 {
+  width:20%;
 }
 
 .left {
@@ -219,9 +233,10 @@ display:none !important;
     background: #f8f8f8;
     border-bottom: 1px solid #bfc1c3;
     display: block;
-    padding: 15px 30px;
-    min-height: 2.63158em;
+    padding: 15px 30px 0px 30px;
+    min-height: 2em;
     margin-bottom: 15px;
     text-decoration: none;
+    white-space: nowrap;
 }
 

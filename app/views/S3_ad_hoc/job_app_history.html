@@ -1,0 +1,112 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-job" class="selected"><a href="#">Jobcentre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+      </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - Claim #310 - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+       <ul class="tabs">
+            <li><a href="job">Basic search</a></li>
+            <li><a href="job_advanced">Advanced search</a></li>
+            <li><a href="job_new">New record</a></li>
+            <li><a href="job_edit">Edit record</a></li>
+            <li><a href="job_interview">NJI capture</a></li>
+            <li class="selected"><a href="job_next">Appointments</a></li>               
+            <li><a href="job_closure">Closure</a></li>          
+         </ul> 
+
+
+
+      <div class="column">
+
+        <div class="column-half" style="padding-left:0;">
+
+          <h3 class="heading-small">Appointment history</h3>
+          <br>
+
+          <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+                        <td class="bold">Time</td>
+                        <td class="bold">FTA</td>
+                    </tr>
+                   <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>23/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>16/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>19/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>02/10/15</td>
+                        <td>10:15</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+              </table>
+
+                <br>
+
+                <div class="form-group" id="get-started">
+                <br>
+                  <a href="#" class="button button-get-started" value="Submit">Submit</a>
+             </div>
+
+          </div>
+
+      </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
