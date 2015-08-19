@@ -34,15 +34,69 @@
 
          <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - review record</h1>
 
-           <ul class="tabs">
+         <ul class="tabs">
                 <li><a href="job">Basic search</a></li>
                 <li><a href="job_advanced">Advanced search</a></li>
-                <li class="selected"><a href="job_edit">Edit record</a></li>
-                <li><a href="job_record">New record</a></li>
-                <li><a href="job_interview">NJI capture</a></li>
-                <li><a href="job_next">Appointments</a></li>               
-                <li><a href="job_closure">Closure</a></li>          
+                <li><a href="job_new">New record</a></li>
+  <!--              <li><a href="benefit_edit">Edit record</a></li>
+                <li><a href="maintenance">Maintenance</a></li>
+                <li><a href="payment">Payment</a></li>
+                <li><a href="closure">Closure</a></li>      -->  
              </ul> 
+
+
+      <div class="column">   
+
+        <br>
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="view_record" href="job_record_confirm" class="menu-item action ">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item action selected">
+                      <strong>Edit record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="interview" href="job_interview" class="menu-item">
+                      <strong>Interview</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next" class="menu-item action">
+                      <strong>Appointments</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="closure" href="job_closure" class="menu-item">
+                      <strong>Closure</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+     </div>   
 
 
       <div class="column-half">   
@@ -105,10 +159,7 @@
      
             <div class="form-group" id="get-started">
                   <a href="job_edit" class="button button" value="Edit">Edit</a>
-                  <a href="job_interview" class="button button" value="Interview">NJI capture</a>
-                  <a href="job_next" class="button button" value="Appointments">Appointments</a>
-                  <a href="job_closure" class="button button" value="Closure">Closure</a>
-
+                  <a href="job_record_confirm" class="button button" value="Submit">Submit</a>
              </div>
 
             <nav class="back-nav" role="navigation">
