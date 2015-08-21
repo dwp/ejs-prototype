@@ -105,18 +105,18 @@
 
         <br>
 
-          <div class="form-group title">
+ <!--         <div class="form-group title">
               <label class="form-label" for="amount">Final payment amount</label>
               <span class="form-hint">eg £25.50</span>
               <input class="form-control" id="amount" type="text" value="£">
-            </div> 
+            </div>  -->
 
                   
           <div class="form-group">
              <div class="form-date">
 
              <fieldset class="inline">
-                  <legend class="form-label">Final payment date</legend>
+                  <legend class="form-label">Closure date</legend>
 
                         <div class="form-group form-group-day">
                <!--     <label class="form-label">Day:</label> -->
@@ -304,33 +304,37 @@
 
 
                 <div class="form-group">
-              <label class="form-label" for="circs">Change of circumstances received</label>
+              <label class="form-label" for="circs">Reason</label>
               <select class="select form-control" id="circs">
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="Select">Select</option>
+                  <option value="FTA">FTA</option>
+                  <option value="Found work">Found employment</option>
+                  <option value="Found work">Benefit change</option>
+                  <option value="Found work">Other</option>
+
               </select>
             </div>
 
 
-              <fieldset class="form-group inline">
+     <!--         <fieldset class="form-group inline">
                     <label class="form-label text">Claim closure</label>
                     <label class="block-label" data-target="work-search" for="pension-type-work">
                         <input id="pension-type-work" type="checkbox" name="pension-type" value="work" aria-controls="work-search">
                         Confirm closure?
                     </label>
-                </fieldset>
-
+                </fieldset> -->
+ 
 
        
             <div class="form-group" id="get-started">
                 <br>
-                  <a href="#" class="button button-get-started" value="Submit">Save and send text</a>
+                  <a href="closure_confirm" class="button button-get-started" value="Submit">Save and send text</a>
              </div>
 
 
-             <nav class="back-nav" role="navigation">
+  <!--           <nav class="back-nav" role="navigation">
                <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
-            </nav>
+            </nav> -->
 
             <br>
 
