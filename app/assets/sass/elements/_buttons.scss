@@ -49,3 +49,45 @@
     padding: em(3.5) em(20.5) em(0) em(8);
     font-size: 1.25em;
 }
+
+
+// EJS File function buttons
+
+.grid {
+  float:left;
+  overflow:hidden;
+}
+
+.grid-1-2 {
+  width:50%;
+}
+
+.grid-1-4 {
+  width:25%;
+}
+
+.grid-1-5 {
+  width:20%;
+}
+
+.left {
+  margin-right:15px;
+}
+
+.menu-item {
+    background: #f8f8f8;
+    border-bottom: 1px solid #bfc1c3;
+    display: block;
+    padding: 15px 30px 0px 30px;
+    min-height: 2em;
+    margin-bottom: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.grid .selected {
+  background: #f2f0f0;
+  min-height: 1.85em;
+  border-bottom: 5px solid #969799 !important;
+  margin-bottom: 11px !important;
+}
