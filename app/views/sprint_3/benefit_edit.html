@@ -99,11 +99,13 @@
 
 
 
-    <div class="column-half">    
+  <div class="column-half">    
 
         <h3 class="heading-small">Edit record</h3>
 
         <br>
+
+        <form method="post" class="group" id="form" data-parsley-validate>
 
             <div class="form-group title">
               <label class="form-label" for="title">Benefit type</label>
@@ -116,12 +118,10 @@
 
 
             <div class="form-group">
-                  <label class="form-label" for="idoc">Initial date of contact</label>
-                  <input class="form-control" id="idoc" type="text" value="01/04/2015">
+                  <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
+                  <input class="form-control" id="idoc" type="text" value="14/04/2015" readonly>
              </div>   
-
-                      
-
+             
 
         <div class="form-group">
             <label class="form-label" for="title">Jobcentre</label>
@@ -129,6 +129,7 @@
               <input class="form-control" id="inital" type="text">
               <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
             <select class="select form-control">
+                  <option value="Bambury">Bambury</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Bradford">Bradford</option>
                   <option value="Derby">Derby</option>
@@ -155,17 +156,17 @@
 
             <div class="form-group initial">
               <label class="form-label" for="inital">Initial</label>
-              <input class="form-control" id="inital" type="text">
+              <input class="form-control" id="inital" type="text" value="J">
             </div> 
 
             <div class="form-group">
               <label class="form-label" for="Surname">Surname</label>
-              <input class="form-control" id="Surname" type="text">
+              <input class="form-control" id="Surname" type="text" value="Smith">
             </div>  
 
             <div class="form-group">
               <input id="welsh" type="checkbox" class="inline">
-              <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Job Centre</label>
+              <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Jobcentre</label>
             </div>  
 
       </div>
@@ -196,7 +197,7 @@
                         <div class="form-group form-group-month">
                 <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
-                                <option selected disabled>Month</option>
+                                <option selected>Sep</option>
                                 <option value="01">Jan</option>
                                 <option value="02">Feb</option>
                                 <option value="03">Mar</option>
@@ -215,7 +216,7 @@
                         <div class="form-group form-group-year">
                   <!--      <label class="form-label">Year:</label> -->
                             <select class="select form-control" name="dob_year" id="dob_year">
-                                <option selected disabled>Year</option>
+                                <option selected>1981</option>
                                 <option value="1999">1999</option>                                
                                 <option value="1998">1998</option>
                                 <option value="1997">1997</option>
@@ -740,18 +741,18 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="nino">NINO</label>
-                <input class="form-control" id="nino" type="text" value="JC 52 72 87 C" readonly>
+                <label class="form-hint" for="nino">NINO (read-only)</label>
+                <input class="form-control" id="nino" type="text" value="JC 45 85 96 X" readonly>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
-              <input class="form-control" id="mobile" type="text">
+              <input class="form-control" id="mobile" type="text" value="04585 747 358">
             </div>  
 
             <div class="form-group">
               <label class="form-label" for="other">Other number (optional)</label>
-              <input class="form-control" id="other" type="text" value="+44">
+              <input class="form-control" id="other" type="text">
             </div>  
 
 
@@ -762,7 +763,6 @@
 
        <!-- End column-->       
        </div>
-
           <div class="column">
            <div class="form-group" id="get-started">
                     <br>
