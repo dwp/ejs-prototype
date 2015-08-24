@@ -730,16 +730,13 @@
                       <a href="maintenance_confirm" class="button button-get-started" value="Submit">Save and send text</a>
               </div>
 
-            <div class="form-group">
+   <!--         <div class="form-group">
                 <label class="form-label" for="title">Evidence required</label>
-             <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
-                  <input class="form-control" id="inital" type="text">
-                  <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
                 <select class="select form-control">
                       <option value="2 x forms of ID">2 x forms of ID</option>
                       <option value="P45">P45</option>
                       <option value="Home office letters">Home office letters</option>
-                      <option value="Wage slips">Wage slips </option>
+                      <option value="Wage slips">Wage slips</option>
                       <option value="Bank details">Bank details</option>  
                        <option value="Please arrive 10 mins early">Please arrive 10 mins early</option>
                       <option value="You both need to attend">You both need to attend</option>
@@ -748,7 +745,25 @@
                     <br>
                     <br>
                       <a href="maintenance_confirm" class="button button-get-started" value="Submit">Save and send text</a>
-              </div>
+              </div> -->
+
+              <fieldset class="inline">
+                  <div class="form-group">
+                    <label class="form-label" for="title">Evidence required</label>
+                    <input id="id" type="checkbox" class="inline">
+                    <label class="form-label" for="id">&nbsp;&nbsp;2 x forms of ID</label>
+                    <input id="P45" type="checkbox" class="inline">
+                    <label class="form-label" for="P45">&nbsp;&nbsp;P45</label>
+                    <input id="Home" type="checkbox" class="inline">
+                    <label class="form-label" for="Home">&nbsp;&nbsp;Home office letters</label> 
+                    <input id="Wage" type="checkbox" class="inline">
+                    <label class="form-label" for="Wage">&nbsp;&nbsp;Wage slips</label>                   
+                    <input id="Bank" type="checkbox" class="inline">
+                    <label class="form-label" for="Bank">&nbsp;&nbsp;Bank details</label>
+                    <input type="text"
+                    <a href="maintenance_confirm" class="button button-get-started" value="Submit">Save and send text</a>
+                  </div>
+              </fieldset> 
 
               <div class="form-group">
                 <label class="form-label" for="title">Evidence received</label>
