@@ -1,0 +1,317 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-job" class="selected"><a href="#">Jobcentre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+      </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - Claim #310 - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+            <ul class="tabs">
+                <li><a href="job">Basic search</a></li>
+                <li><a href="job_advanced">Advanced search</a></li>
+                <li><a href="job_new">New record</a></li>
+  <!--              <li><a href="benefit_edit">Edit record</a></li>
+                <li><a href="maintenance">Maintenance</a></li>
+                <li><a href="payment">Payment</a></li>
+                <li><a href="closure">Closure</a></li>      -->  
+             </ul> 
+
+
+      <div class="column">   
+
+        <br>
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="view_record" href="job_record_confirm" class="menu-item">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item">
+                      <strong>Edit record</strong>
+                    </a>
+                  </div>
+                </div>
+
+        <!--        <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="interview" href="job_interview" class="menu-item">
+                      <strong>Interview</strong>
+                    </a>
+                  </div>
+                </div> -->
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next" class="menu-item selected">
+                      <strong>Appointments</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="closure" href="job_closure" class="menu-item">
+                      <strong>Closure</strong>
+                    </a>
+                  </div>
+                </div>
+
+             </div> 
+
+     </div>   
+
+      <div class="column-half">   
+
+        <h3 class="heading-small">Next appointment</h3>
+
+        <br>
+
+
+     <!--       <div class="form-group">
+              <label class="form-label" for="title">Failed to attend?</label>
+              <select class="select form-control">
+                  <option value="Late">Not applicable</option>
+                  <option value="Late">Late</option>
+                  <option value="No-show">No-show</option>
+                  <option value="Other">Other</option>         
+              </select>
+            </div> -->
+
+          <div class="form-group">
+             <div class="form-date">
+
+             <fieldset class="inline">
+                  <legend class="form-label">Date</legend>
+
+                        <div class="form-group form-group-day">
+               <!--     <label class="form-label">Day:</label> -->
+                             <select class="select form-control" name="dob_day" id="dob_day">
+                                <option selected disabled>Day</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                         </div>   
+
+                        <div class="form-group form-group-month">
+                <!--        <label class="form-label">Month:</label> -->
+                            <select class="select form-control" name="dob_day" id="dob_day">
+                                <option selected disabled>Month</option>
+                                <option value="01">Jan</option>
+                                <option value="02">Feb</option>
+                                <option value="03">Mar</option>
+                                <option value="04">Apr</option>
+                                <option value="05">May</option>
+                                <option value="06">Jun</option>
+                                <option value="07">Jul</option>
+                                <option value="08">Aug</option>
+                                <option value="09">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>                            
+                            </select>
+                         </div>   
+
+                        <div class="form-group form-group-year">
+                  <!--      <label class="form-label">Year:</label> -->
+                            <select class="select form-control" name="dob_year" id="dob_year">
+                                <option selected disabled>Year</option>
+                                <option value="2015">2015</option>                                
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                            </select>
+                          </div>
+
+                 </fieldset>  
+                     
+                 </div>    
+            </div> 
+
+
+          <div class="form-group">
+             <div class="form-date">
+
+             <fieldset class="inline">
+                  <legend class="form-label">Time</legend>
+
+                        <div class="form-group form-group-day">
+               <!--     <label class="form-label">Day:</label> -->
+                             <select class="select form-control" name="dob_day" id="dob_day">
+                                <option selected disabled>Hour</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                            </select>
+                         </div>   
+
+                        <div class="form-group form-group-month">
+                <!--        <label class="form-label">Month:</label> -->
+                            <select class="select form-control" name="dob_day" id="dob_day">
+                                <option selected disabled>Min</option>
+                                <option value="01">00</option>
+                                <option value="02">10</option>
+                                <option value="03">20</option>
+                                <option value="04">30</option>
+                                <option value="05">40</option>
+                                <option value="06">50</option>                                                                
+                            </select>
+                         </div>   
+
+
+                 </fieldset>  
+                     
+                 </div>    
+            </div> 
+
+
+       
+            <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_next_confirm" class="button button-get-started" value="Submit">Text appointment</a>
+             </div>
+
+            <br>
+
+         
+      </div>
+      <!-- End col -->
+
+        <div class="column-half">
+
+          <h3 class="heading-small">Appointment history</h3>
+          <br>
+
+          <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+                        <td class="bold">Time</td>
+                        <td class="bold">FTA</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                   <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>23/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>16/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>19/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>02/10/15</td>
+                        <td>10:15</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                </tbody>
+              </table>
+
+                <br>
+
+                <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_fta_confirm" class="button button-get-started" value="Submit">Save FTA</a>
+             </div>
+
+          </div>
+
+      </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
