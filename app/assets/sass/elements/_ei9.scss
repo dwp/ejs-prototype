@@ -1,15 +1,10 @@
 // It had to be done! Internal users on standard kit use locked-down ie9. Bad for flex etc... :/
 // ==========================================================================
 
-.column-quarter {
-  height:100%;
-  float: left;
-  width: 15%;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #F8F8F8;
-  border-right: 1px solid #bfc1c3;
+// body:nth-child(n) {border:1px solid purple \9; /*Should target IE9 only - not fully tested.*/}
+
+
+.column-quarter:nth-child(n) {
+  height:100% \9;
+  background-color: red \9;
 }
