@@ -150,7 +150,11 @@ display:none !important;
 // Left-aligned nav hackiness
 
 .column-three-quarters {
+  display:flex;
+  flex-direction:column;
   float: left;
+  height:100%;
+  min-height:100%;
   width: 85%;
   padding-left: 0 !important;
   padding-right: 0 !important;
