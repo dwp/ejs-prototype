@@ -133,9 +133,20 @@ display:none !important;
   display:none !important;
 }
 
+
+// Left-aligned content wrapper hackiness
+
+.column-three-quarters {
+  float: left;
+  width: 85%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 // Left-aligned nav hackiness
 
 .column-quarter {
+  height:1000px;
   float: left;
   width: 15%;
   padding-left: 0 !important;
@@ -145,15 +156,6 @@ display:none !important;
   box-sizing: border-box;
   background-color: #F8F8F8;
   border-right: 1px solid #bfc1c3;
-}
-
-// Left-aligned nav hackiness
-
-.column-three-quarters {
-  float: left;
-  width: 85%;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
 .main-nav {
