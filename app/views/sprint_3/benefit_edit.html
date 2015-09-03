@@ -99,7 +99,7 @@
 
 
 
-  <div class="column-half">    
+    <div class="column-half">    
 
         <h3 class="heading-small">Edit record</h3>
 
@@ -107,39 +107,6 @@
 
         <form method="post" class="group" id="form" data-parsley-validate>
 
-            <div class="form-group title">
-              <label class="form-label" for="title">Benefit type</label>
-             <select class="select form-control">
-                  <option value="JSA">JSA</option>
-                  <option value="ESA" disabled>ESA</option>
-                  <option value="IS" disabled>IS</option>         
-              </select>
-            </div>
-
-
-            <div class="form-group">
-                  <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
-                  <input class="form-control" id="idoc" type="text" value="14/08/2015" readonly>
-             </div>   
-             
-
-        <div class="form-group">
-            <label class="form-label" for="title">Jobcentre</label>
-         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
-              <input class="form-control" id="inital" type="text">
-              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
-            <select class="select form-control">
-                  <option value="Bambury">Bambury</option>
-                  <option value="Southampton">Southampton</option>
-                  <option value="Bradford">Bradford</option>
-                  <option value="Derby">Derby</option>
-                  <option value="Liverpool">Liverpool</option>
-                  <option value="Manchester">Manchester</option>
-                  <option value="Portsmouth">Portsmouth</option>
-                  <option value="Southampton">Southampton</option>
-                  <option value="Wolverhampton">Wolverhampton</option>           
-              </select> 
-        </div>            
      
 
             <div class="form-group title">
@@ -164,22 +131,7 @@
               <input class="form-control" id="Surname" type="text" value="Smith">
             </div>  
 
-            <div class="form-group">
-              <input id="welsh" type="checkbox" class="inline">
-              <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Jobcentre</label>
-            </div>  
-
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-          
-          <br>
-          <br>
-          <br>
-
-           <div class="form-group">
+                       <div class="form-group">
               <label class="form-label" for="Gender">Gender</label>
               <select class="select form-control" id="Gender">
                   <option value="Male">Male</option>
@@ -740,6 +692,23 @@
               </select>
             </div>
 
+
+            <div class="form-group">
+              <input id="welsh" type="checkbox" class="inline">
+              <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Jobcentre</label>
+            </div>  
+
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+          
+          <br>
+          <br>
+          <br>
+
+
             <div class="form-group">
                 <label class="form-hint" for="nino">NINO (read-only)</label>
                 <input class="form-control" id="nino" type="text" value="JC 45 85 96 X" readonly>
@@ -750,25 +719,74 @@
               <input class="form-control" id="mobile" type="text" value="04585 747 358">
             </div>  
 
-            <div class="form-group">
-              <label class="form-label" for="other">Other number (optional)</label>
-              <input class="form-control" id="other" type="text">
-            </div>  
-
-
+            
             <div class="form-group">
               <input id="none" type="checkbox" class="inline">
               <label class="form-label" for="none">&nbsp;&nbsp;No contact number</label>
             </div>  
 
+            <div class="form-group">
+                <label class="form-label" for="title">Work coach</label>
+           <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+                <input class="form-control" id="inital" type="text">
+                <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+                <select class="select form-control">
+                    <option value="David Bradshaw">David Bradshaw</option>
+                    <option value="Luke Jones">Luke Jones</option>
+                    <option value="Rachel Evans">Rachel Evans</option>
+                    <option value="Lucy Porter">Lucy Porter</option>
+                    <option value="Brian McDermott">Brian McDermott</option>
+                    <option value="Kate Briers">Kate Briers</option>
+                    <option value="Suzie Smith">Suzie Smith</option>
+                    <option value="Paul Shaw">Paul Shaw</option>           
+                  </select> 
+            </div>
+
+                        <div class="form-group title">
+              <label class="form-label" for="title">Benefit type</label>
+              <select class="select form-control">
+                  <option value="JSA">JSA</option>
+                  <option value="ESA" disabled>ESA</option>
+                  <option value="IS" disabled>IS</option>         
+              </select>
+            </div>
+
+
+            <div class="form-group">
+                  <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
+                  <input class="form-control" id="idoc" type="text" value="14/04/2015" readonly>
+             </div>   
+             
+
+        <div class="form-group">
+            <label class="form-label" for="title">Jobcentre</label>
+         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+              <input class="form-control" id="inital" type="text">
+              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+            <select class="select form-control">
+                  <option value="Bambury">Bambury</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Bradford">Bradford</option>
+                  <option value="Derby">Derby</option>
+                  <option value="Liverpool">Liverpool</option>
+                  <option value="Manchester">Manchester</option>
+                  <option value="Portsmouth">Portsmouth</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Wolverhampton">Wolverhampton</option>           
+              </select> 
+        </div>            
+
        <!-- End column-->       
        </div>
+
           <div class="column">
            <div class="form-group" id="get-started">
                     <br>
-                      <a href="benefit_edit_confirm" class="button button-get-started" value="Submit">Submit</a>
+                     <a href="benefit_edit_confirm" class="button button-get-started" value="Submit">Submit</a>
                   </div>
                 </div>
+
+          </form>      
 
   <!-- End three quarters column-->       
    </div>  
