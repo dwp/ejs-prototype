@@ -1,0 +1,122 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="login">Home</a></li>
+                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+          </div>
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;Jobcentre</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - record search</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+      <ul class="tabs">
+            <li class="selected"><a href="job">Search</a></li>
+            <li><a href="job_advanced">Advanced search</a></li>
+            <li><a class="disabled" href="#">New record</a></li> 
+      <!--      <li><a class="disabled" href="#">Edit record</a></li>
+            <li><a class="disabled" href="#">NJI capture</a></li>
+            <li><a class="disabled" href="#">Appointments</a></li>
+            <li><a class="disabled" href="#">Closure</a></li> --> 
+      </ul> 
+
+
+      <div class="column-half">   
+
+         <h3 class="heading-small">Basic search</h3>
+          <br>
+ <!--       <p>Retrieve record by:</p> -->
+
+           <div class="form-group">
+              <label class="form-label" for="inital">NINO</label>
+              <input class="form-control" id="inital" type="text"> &nbsp;
+              <a href="#" class="button button-get-started" value="Submit">Search</a>
+            </div> 
+
+
+               <h3 class="heading-small">1 record</h3>
+
+                   <div class="todo-list">
+                        <ul>
+                          <li class="single " data-todo="">
+                            <a class="title" href="job_record_confirm">
+                              <strong class="qa-todo-title">View record</strong>
+                              <span class="meta">
+                                John Smith
+                              </span>
+                              <span class="meta">
+                                NINO: JC 45 85 96 X
+                              </span>
+                              <span class="meta">
+                                Mobile: 04585 747 358
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+           <div>
+
+
+
+         <!--       <table>
+                     </tbody>
+                        <tr>
+                            <td colspan="5">No existing record found? <a class="table_link" href="job_advanced" title="View more info">Use advanced search.</a><td>
+                        </tr>   
+                    </tbody>
+                </table>   -->
+           </div>  
+
+           <br>
+           <br>
+
+      
+
+    <!--      <br>
+               <p><a class="button" href="job_new" title="View more info">Create new record</a></p>
+
+                <br> -->
+   
+
+         
+      </div>
+      <!-- End col -->
+
+
+
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
