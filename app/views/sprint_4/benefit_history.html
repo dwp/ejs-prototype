@@ -15,42 +15,43 @@
 
  <div class="grid-row">        
 
-         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
                 <li id="nav-job"><a href="job">Jobcentre</a></li>
                 <li id="nav-benefit" class="selected"><a href="benefit">Benefit centre</a></li>
                 <li id="nav-admin"><a href="#">Admin</a></li>
                 <li id="nav-stats"><a href="#">Stats</a></li>
               </ul>
-          </div>
+      </div>
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
 
-        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Benefit centre</a>&nbsp;>&nbsp;Payment</p> 
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;History</p> 
 
-         <h1 class="heading-large">&nbsp;&nbsp;Payments to claim #310 - John Smith</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Benefit centre - John Smith history</h1>
          <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
             <ul class="tabs">
-                <li><a href="benefit">Start search</a></li>
-                <li><a href="benefit_advanced">Advanced search</a></li>
-                <li><a href="benefit_new">Create record</a></li>
-      <!--          <li><a href="benefit_edit">Edit record</a></li>
+                <li><a href="job">Start search</a></li>
+                <li><a href="job_advanced">Advanced search</a></li>
+                <li><a href="job_new">Create record</a></li>
+  <!--              <li><a href="benefit_edit">Edit record</a></li>
                 <li><a href="maintenance">Maintenance</a></li>
                 <li><a href="payment">Payment</a></li>
-                <li><a href="closure">Closure</a></li>   -->    
+                <li><a href="closure">Closure</a></li>      -->  
              </ul> 
 
-               <div class="column">   
+
+      <div class="column">   
 
         <br>
 
         <!-- 3rd level nav buttons -->
             <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
 
-              <div class="grid grid-1-6">
+                <div class="grid grid-1-6">
                   <div class="inner-block left">
                     <a id="view_record" href="benefit_record_confirm" class="menu-item">
                       <strong>View record</strong>
@@ -76,7 +77,7 @@
 
                <div class="grid grid-1-6">
                   <div class="inner-block left">
-                    <a id="payment" href="payment" class="menu-item selected">
+                    <a id="payment" href="payment" class="menu-item">
                       <strong>Payment</strong>
                     </a>
                   </div>
@@ -84,7 +85,7 @@
 
                <div class="grid grid-1-6">
                   <div class="inner-block left">
-                    <a id="payment" href="payment" class="menu-item">
+                    <a id="payment" href="payment" class="menu-item selected">
                       <strong>History</strong>
                     </a>
                   </div>
@@ -98,54 +99,87 @@
                   </div>
                 </div>
 
+                
+
              </div> 
+
 
      </div>   
 
+      <div class="column-two-thirds">   
 
+          <h3 class="heading-small">SMS history</h3>
+          <br>
 
-     <div class="column-half">   
-
-        <br>
-
-          <h3 class="heading-small">Confirm payment</h3>
-
-           <div>
                 <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+      <!--              <td class="bold">Time</td> -->
+                        <td class="bold">Trigger</td>
+                        <td class="bold">Mobile</td>
+                        <td class="bold">Sender</td>
+                    </tr>
                    <tr>
-                        <td>Date:</td>
-                        <td>14/09/2015</td>
+                        <td>&nbsp;</td>
+           <!--         <td>&nbsp;</td> -->
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Amount:</td>
-                        <td>£73.10</td>
+                        <td>23/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Closure</td>
+                        <td>07845953764</td>
+                        <td>David Bradshaw</td>
                     </tr>
-                </table>
-           </div> 
+                    <tr>
+                        <td>16/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Payment</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                    <tr>
+                        <td>19/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Evidence received</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                    <tr>
+                        <td>02/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Evidence required</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                </tbody>
+              </table>
 
-          <br>
-          <br>
-     
-            <div class="form-group" id="get-started">
-                  <a href="payment" class="button button" value="Edit">Edit</a>
-                  <a href="benefit_record_confirm" class="button button" value="Submit">Submit</a>
-             </div>
+             <br>
 
-    <!--        <nav class="back-nav" role="navigation">
-               <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
-            </nav> -->
- 
-            <br>            
+    <!--    <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_fta_confirm" class="button button-get-started" value="Submit">Save FTA</a>
+             </div>   -->       
+
+      <br>
+      <br>
          
       </div>
       <!-- End col -->
 
+      </div>  
+
+<br>
+<br>
  
 
     <!-- End row-->       
       </div>
-
-
+ 
 </main>
 {{/content}}
 
