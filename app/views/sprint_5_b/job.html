@@ -1,0 +1,144 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+            <!--    <li id="nav-home"><a href="login">Home</a></li> -->
+                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
+         <!--         <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+      <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li> -->
+              </ul>
+          </div>
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;Jobcentre</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - record search</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+      <ul class="tabs">
+            <li class="selected"><a href="#">Start search</a></li>
+      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
+            <li><a href="#">Create record</a></li>       
+      <!--      <li><a class="disabled" href="#">Edit record</a></li>
+            <li><a class="disabled" href="#">NJI capture</a></li>
+            <li><a class="disabled" href="#">Appointments</a></li>
+            <li><a class="disabled" href="#">Closure</a></li> --> 
+      </ul> 
+
+
+      <div class="column-half">   
+
+         <h3 class="heading-small">Start search</h3>
+          <br>
+ <!--       <p>Retrieve record by:</p> -->
+
+           <div class="form-group">
+              <label class="form-label" for="inital">Enter NINO</label>
+              <input class="form-control" id="inital" type="text"> &nbsp;
+              <a href="job_nino" class="button button-get-started" value="Submit">Search</a>
+            </div> 
+
+       </div>
+
+
+
+   <!--       <div class="column-two-thirds">   
+
+                <h3 class="heading-medium" style="margin-top:0;">0 records</h3>
+  
+           <div>
+              <table class="record">
+                    <tr>
+                        <td><a class="none" href="job_edit" title="Edit record">Surname:</a></td>
+                        <td><a class="table_link" href="job_edit" title="Edit record">Smith</a></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>Live</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>NINO:</td>
+                        <td>JC 45 85 96 X</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile:</td>
+                        <td>04585 747 358</td>
+                    </tr>
+                <tr>
+                        <td>Job Centre:</td>
+                        <td>Bambury</td>
+                    </tr>
+                    <tr>
+                        <td>Age group:</td>
+                        <td>18-25</td>
+                    </tr>
+                     <tr>
+                        <td>Initial date of contact:</td>
+                        <td>04/04/2015</td>
+                    </tr>
+                    <tr>
+                    <td>1st appointment date:</td>
+                        <td>14/04/2015</td>
+                    </tr>
+                     <tr>
+                        <td>1st appointment time:</td>
+                        <td>9.30 am</td>
+                    </tr> 
+                </table> 
+                <table>
+                     </tbody>
+                        <tr>
+                            <td colspan="5">No existing record found? <a class="table_link" href="job_advanced" title="View more info">Use advanced search.</a><td>
+                        </tr>   
+                    </tbody>
+                </table>  
+           </div>  
+
+           <br>
+           <br>
+
+      
+
+         <br>
+               <p><a class="button" href="job_new" title="View more info">Create new record</a></p>
+
+                <br> -->
+   
+
+         
+      </div>
+      <!-- End col -->
+
+
+
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
