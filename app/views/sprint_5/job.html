@@ -50,14 +50,22 @@
       <div class="column-half">   
 
          <h3 class="heading-small">Start search</h3>
-          <br>
  <!--       <p>Retrieve record by:</p> -->
 
-           <div class="form-group">
+   <!--        <div class="form-group">
               <label class="form-label" for="inital">Enter NINO</label>
               <input class="form-control" id="inital" type="text"> &nbsp;
               <a href="job_new" class="button button-get-started" value="Submit">Search</a>
-            </div> 
+            </div> -->
+
+            <div class="searchfield">
+                <input type="search" autocomplete="off" name="q" id="site-search-text" title="Search for a NINO" value="" placeholder="Search for a NINO" autofocus="autofocus" class="js-search-focus">
+                <a href="job_new"><button id="search-submit" class="search-submit">Search</button></a>
+                <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
+            </div>
+
+            <br>
+            <br>
 
        </div>
 
