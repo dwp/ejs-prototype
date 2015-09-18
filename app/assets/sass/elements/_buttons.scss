@@ -104,7 +104,7 @@
     box-shadow: 0 2px 0 #6F777B;
 }
 
-// Search button
+// NINO Search button
 
 .searchfield {
     position: relative;
@@ -138,15 +138,10 @@
     height: 50px;
     border-color: #bfc1c3;
     border-right: none;
-}
+  }
 
 .searchfield button {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
     position: absolute;
     z-index: 4;
     right: 0;
@@ -161,6 +156,10 @@
     background-image: url('/images/search-button.png');
     background-repeat: no-repeat;
     background-position: -12.5% 50%;
+}
+
+ .searchfield button:hover {
+  background-color: #004f8b;
 }
 
 
