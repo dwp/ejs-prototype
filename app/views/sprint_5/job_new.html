@@ -61,8 +61,6 @@
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
                   <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-
               </select>
             </div>
 
@@ -77,14 +75,33 @@
             </div>  
 
 
-           <div class="form-group">
+          <div class="form-group">
               <label class="form-label" for="Gender">Gender</label>
               <select class="select form-control" id="Gender">
                   <option value="Select">Select</option>
                   <option value="Male">Male</option>
-                  <option value="Female">Female</option>         
+                  <option value="Female">Female</option>    
+                  <option value="Female">Other gender identity</option>    
               </select>
-            </div>
+            </div> 
+
+  <!--          <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Gender</legend>
+                  <label for="male">
+                    <input id="male" name="male" type="checkbox" value="male">
+                    Male
+                  </label><br>
+                  <label for="female">
+                    <input id="female" name="female" type="checkbox" value="female">
+                    Female
+                  </label><br>
+                  <label for="other">
+                    <input id="other" name="other" type="checkbox" value="other">
+                    Other gender identity
+                  </label>
+              </fieldset>
+            </div> -->
 
 
   <!--          <div class="form-group">
@@ -688,8 +705,8 @@
             <div class="form-group">
                 <label class="form-label" for="nino">NINO (tick box if temporary)</label>
                   <fieldset class="inline">
-                    <input class="form-control" id="nino" type="text">
-                    <input id="temp" type="checkbox">    
+                    <input class="form-control" id="nino" type="text"><br>
+                    <input id="temp" type="checkbox">Temporary    
                   </fieldset>               
             </div>
 
@@ -957,11 +974,14 @@
 
 
         <div class="form-group">
-            <label class="form-label" for="title">Jobcentre</label>
+            <label class="form-label" for="jobcentre">Jobcentre</label>
          <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
               <input class="form-control" id="inital" type="text">
               <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
-            <select class="select form-control">
+              <input class="form-control" id="jobcentre" type="text">
+
+
+     <!--       <select class="select form-control">
                   <option value="Select">Select</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Bradford">Bradford</option>
@@ -971,8 +991,9 @@
                   <option value="Portsmouth">Portsmouth</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Wolverhampton">Wolverhampton</option>           
-              </select> 
-        </div>          
+              </select>    -->  
+
+        </div> 
 
 
        <!-- End column-->       
