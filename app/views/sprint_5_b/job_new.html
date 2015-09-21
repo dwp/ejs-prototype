@@ -28,16 +28,18 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-   <!--     <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;New record</p> -->
 
-        <br>
-         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - Claim #310 - John Smith</h1>
+  <!--   <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;New record</p> -->
+
+  <br>
+
+         <h1 class="heading-large">&nbsp;&nbsp;Create record</h1>
          <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
        <ul class="tabs">
-                <li><a href="job">Start search</a></li>
+                <li><a href="job">NINO search</a></li>
       <!--      <li><a href="job_advanced">Advanced search</a></li> -->
-                <li class="selected"><a href="job_new">Create record</a></li>
+            <li class="selected"><a href="job_new">Create record</a></li>
       <!--      <li><a class="disabled" href="#">Edit record</a></li>
             <li><a class="disabled" href="#">NJI capture</a></li>
             <li><a class="disabled" href="#">Appointments</a></li>
@@ -47,7 +49,7 @@
 
     <div class="column-half">    
 
-         <h3 class="heading-small">New record</h3>
+         <h3 class="heading-small">Create record</h3>
 
         <br>
 
@@ -85,14 +87,13 @@
             </div>
 
 
-            <div class="form-group">
+  <!--          <div class="form-group">
                  <div class="form-date">
 
              <fieldset class="inline">
                   <legend class="form-label">Age</legend>
 
                         <div class="form-group form-group-month">
-                <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Month</option>
                                 <option value="01">Jan</option>
@@ -111,7 +112,6 @@
                          </div>   
 
                         <div class="form-group form-group-year">
-                  <!--      <label class="form-label">Year:</label> -->
                             <select class="select form-control" name="dob_year" id="dob_year">
                                 <option selected disabled>Year</option>
                                 <option value="1999">1999</option>                                
@@ -235,7 +235,37 @@
                  </fieldset>  
                      
                  </div>    
-            </div> 
+            </div> -->
+
+            <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Date of birth
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 3 1980</p>
+
+           <!--           <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                      </div> -->
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
 
 
           <div class="form-group">
@@ -707,14 +737,13 @@
             </div>
 
 
-            <div class="form-group">
+<!--            <div class="form-group">
                  <div class="form-date">
 
              <fieldset class="inline">
                   <legend class="form-label">Initial date of claim</legend>
 
                         <div class="form-group form-group-day">
-               <!--     <label class="form-label">Day:</label> -->
                              <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Day</option>
                                 <option value="01">1</option>
@@ -752,7 +781,6 @@
                          </div>   
 
                         <div class="form-group form-group-month">
-                <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Month</option>
                                 <option value="01">Jan</option>
@@ -771,7 +799,6 @@
                          </div>   
 
                         <div class="form-group form-group-year">
-                  <!--      <label class="form-label">Year:</label> -->
                             <select class="select form-control" name="dob_year" id="dob_year">
                                 <option selected disabled>Year</option>
                                 <option value="1999">1999</option>                                
@@ -895,7 +922,37 @@
                  </fieldset>  
                      
                  </div>    
-            </div> 
+            </div> -->
+
+                <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Initial date of claim
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 8 2015</p>
+
+           <!--           <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                      </div> -->
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
 
 
 
@@ -924,7 +981,7 @@
           <div class="column">
            <div class="form-group" id="get-started">
                     <br>
-                      <a href="job_record_confirm" class="button button-get-started" value="Submit">Submit</a>
+                      <a href="job_record_confirm" class="button" value="Submit">Submit</a>
                   </div>
                 </div>
 
