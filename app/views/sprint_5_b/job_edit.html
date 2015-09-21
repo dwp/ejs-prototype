@@ -142,14 +142,31 @@
               <input class="form-control" id="Surname" type="text" value="Smith">
             </div>  
 
-                       <div class="form-group">
+  <!--  <div class="form-group">
               <label class="form-label" for="Gender">Gender</label>
               <select class="select form-control" id="Gender">
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>         
               </select>
-            </div>
+            </div> -->
 
+            <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Gender</legend>
+                  <label for="male">
+                    <input id="male" name="male" type="checkbox" value="male" checked>
+                    Male
+                  </label><br>
+                  <label for="female">
+                    <input id="female" name="female" type="checkbox" value="female">
+                    Female
+                  </label><br>
+                  <label for="other">
+                    <input id="other" name="other" type="checkbox" value="other">
+                    Other gender identity
+                  </label>
+              </fieldset>
+            </div> 
 
  <!--      <div class="form-group">
                  <div class="form-date">
@@ -781,14 +798,32 @@
                   </select> 
             </div>
 
-                        <div class="form-group title">
+<!--   <div class="form-group title">
               <label class="form-label" for="title">Benefit type</label>
               <select class="select form-control">
                   <option value="JSA">JSA</option>
                   <option value="ESA" disabled>ESA</option>
                   <option value="IS" disabled>IS</option>         
               </select>
-            </div>
+            </div> -->
+
+          <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Benefit type</legend>
+                  <label for="JSA">
+                    <input id="JSA" name="JSA" type="checkbox" value="JSA" checked>
+                    JSA
+                  </label><br>
+                  <label class="disabled" for="ESA">
+                    <input id="ESA" name="ESA" type="checkbox" value="ESA" disabled>
+                    ESA
+                  </label><br>
+                  <label class="disabled" for="IS">
+                    <input id="IS" name="IS" type="checkbox" value="IS" disabled>
+                    IS
+                  </label>
+              </fieldset>
+            </div> 
 
 
             <div class="form-group">

@@ -61,6 +61,7 @@
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
                   <option value="Ms">Ms</option>
+                  <option value="Ms">Dr</option>
               </select>
             </div>
 
@@ -75,7 +76,7 @@
             </div>  
 
 
-          <div class="form-group">
+  <!--        <div class="form-group">
               <label class="form-label" for="Gender">Gender</label>
               <select class="select form-control" id="Gender">
                   <option value="Select">Select</option>
@@ -83,9 +84,9 @@
                   <option value="Female">Female</option>    
                   <option value="Female">Other gender identity</option>    
               </select>
-            </div> 
+            </div> -->
 
-  <!--          <div class="form-group"> 
+            <div class="form-group"> 
               <fieldset>
                   <legend class="form-label">Gender</legend>
                   <label for="male">
@@ -101,7 +102,7 @@
                     Other gender identity
                   </label>
               </fieldset>
-            </div> -->
+            </div> 
 
 
   <!--          <div class="form-group">
@@ -744,14 +745,32 @@
               </select> 
         </div>
 
-            <div class="form-group title">
+         <!--   <div class="form-group title">
               <label class="form-label" for="title">Benefit type</label>
               <select class="select form-control">
                   <option value="JSA">JSA</option>
                   <option value="ESA" disabled>ESA</option>
                   <option value="IS" disabled>IS</option>        
               </select>
-            </div>
+            </div> -->
+
+           <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Benefit type</legend>
+                  <label for="JSA">
+                    <input id="JSA" name="JSA" type="checkbox" value="JSA">
+                    JSA
+                  </label><br>
+                  <label class="disabled" for="ESA">
+                    <input id="ESA" name="ESA" type="checkbox" value="ESA" disabled>
+                    ESA
+                  </label><br>
+                  <label class="disabled" for="IS">
+                    <input id="IS" name="IS" type="checkbox" value="IS" disabled>
+                    IS
+                  </label>
+              </fieldset>
+            </div> 
 
 
 <!--            <div class="form-group">
@@ -978,10 +997,10 @@
          <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
               <input class="form-control" id="inital" type="text">
               <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
-              <input class="form-control" id="jobcentre" type="text">
+          <!--    <input class="form-control" id="jobcentre" type="text"> -->
 
 
-     <!--       <select class="select form-control">
+          <select class="select form-control">
                   <option value="Select">Select</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Bradford">Bradford</option>
@@ -991,7 +1010,7 @@
                   <option value="Portsmouth">Portsmouth</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Wolverhampton">Wolverhampton</option>           
-              </select>    -->  
+              </select>     
 
         </div> 
 
