@@ -151,14 +151,13 @@
             </div>
 
 
-            <div class="form-group">
+ <!--      <div class="form-group">
                  <div class="form-date">
 
              <fieldset class="inline">
                   <legend class="form-label">Age</legend>
 
                         <div class="form-group form-group-month">
-                <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected>Sep</option>
                                 <option value="01">Jan</option>
@@ -177,7 +176,6 @@
                          </div>   
 
                         <div class="form-group form-group-year">
-                  <!--      <label class="form-label">Year:</label> -->
                             <select class="select form-control" name="dob_year" id="dob_year">
                                 <option selected>1981</option>
                                 <option value="1999">1999</option>                                
@@ -301,7 +299,37 @@
                  </fieldset>  
                      
                  </div>    
-            </div> 
+            </div>  -->
+
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Date of birth
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 3 1980</p>
+
+           <!--           <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                      </div> -->
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="8">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="1981">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div> 
 
 
           <div class="form-group">

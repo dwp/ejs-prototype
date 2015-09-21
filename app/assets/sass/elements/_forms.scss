@@ -164,3 +164,17 @@ fieldset {
 @import "forms/form-date";
 @import "forms/form-block-labels";
 @import "forms/form-ni";
+
+
+// Dates
+.form-date .form-group {
+    float: left;
+    width: 50px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    clear: none;
+}
+
+.form-date .form-group-year {
+    width: 70px;
+}
