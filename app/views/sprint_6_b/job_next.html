@@ -17,9 +17,10 @@
 
            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
+            <!--    <li id="nav-home"><a href="login">Home</a></li> -->
                 <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
-     <!--            <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-       <li id="nav-admin"><a href="#">Admin</a></li> 
+         <!--         <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+      <li id="nav-admin"><a href="#">Admin</a></li>
                 <li id="nav-stats"><a href="#">Stats</a></li> -->
               </ul>
       </div>
@@ -27,11 +28,10 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
+<!--   <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> -->
 
-   <!--   <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> -->
-
-      <br>
-         <h1 class="heading-large">&nbsp;&nbsp;New appointment - John Smith</h1>
+    <br>
+         <h1 class="heading-large">&nbsp;&nbsp;Appointments - John Smith</h1>
          <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
             <ul class="tabs">
@@ -84,9 +84,9 @@
                   </div>
                 </div>
 
-         <!--      <div class="grid grid-1-5">
+    <!--            <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="history" href="history" class="menu-item">
+                    <a id="interview" href="history" class="menu-item">
                       <strong>History</strong>
                     </a>
                   </div>
@@ -104,24 +104,16 @@
 
      </div>   
 
-      <div class="column-half">   
+<!--      <div class="column-half">   
 
         <h3 class="heading-small">Create new appointment</h3>
 
         <br>
 
 
-     <!--       <div class="form-group">
-              <label class="form-label" for="title">Failed to attend?</label>
-              <select class="select form-control">
-                  <option value="Late">Not applicable</option>
-                  <option value="Late">Late</option>
-                  <option value="No-show">No-show</option>
-                  <option value="Other">Other</option>         
-              </select>
-            </div> -->
+  
 
- <!--     <div class="form-group">
+          <div class="form-group">
              <div class="form-date">
 
              <fieldset class="inline">
@@ -195,62 +187,10 @@
                  </fieldset>  
                      
                  </div>    
-            </div> -->
+            </div> 
 
-               <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Date
-                      </span>
-                    </legend>
-                    <div class="form-date">
 
-                      <p class="form-hint">For example, 01 09 2015</p>
-
-                     <div class="form-group form-group-day">
-                        <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-                      </div> 
-
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                      </div>
-
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                      </div>
-                    </div>
-
-                  </fieldset>
-              </div>       
-
-             <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Time
-                      </span>
-                    </legend>
-                    <div class="form-date">
-
-                      <p class="form-hint">For example, 13 30</p>
-
-                     <div class="form-group form-group-day">
-                        <label for="hour">Hour</label>
-                        <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
-                      </div> 
-
-                      <div class="form-group form-group-month">
-                        <label for="min">Min</label>
-                        <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
-                      </div>
-                  </fieldset>
-              </div>    
-
- <!--     <div class="form-group">
+          <div class="form-group">
              <div class="form-date">
 
              <fieldset class="inline">
@@ -287,24 +227,60 @@
                  </fieldset>  
                      
                  </div>    
-            </div> -->
+            </div> 
 
 
        
             <div class="form-group" id="get-started">
                 <br>
-                  <a href="job_record_confirm" class="button button-get-started" value="Submit">Create appointment</a>
+                  <a href="job_new_confirm" class="button button-get-started" value="Submit">Text appointment</a>
              </div>
 
             <br>
 
          
-      </div>
-      <!-- End col -->
+      </div> -->
 
         <div class="column-half">
 
-       
+          <h3 class="heading-small">Update existing appointment</h3>
+          <br>
+
+          <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+                        <td class="bold">Time</td>
+                        <td class="bold">Update</td>
+                    </tr>
+                   <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>23/10/15</td>
+                        <td>11:45</td>
+                        <td>
+                          <select class="select form-control" id="update">
+                              <option value="FTA">FTA</option>
+                              <option value="Attended">Attended</option>
+                              <option value="Immediate">Immediate</option>
+                              <option value="No">Not required</option>
+                          </select>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+
+                <br>
+
+                <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_next_confirm" class="button" value="Submit">Submit</a>
+             </div>
+
+          </div>
 
       </div>  
 

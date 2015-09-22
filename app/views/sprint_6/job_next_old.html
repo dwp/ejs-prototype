@@ -17,10 +17,10 @@
 
            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
-                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
-     <!--            <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-       <li id="nav-admin"><a href="#">Admin</a></li> 
-                <li id="nav-stats"><a href="#">Stats</a></li> -->
+                <li id="nav-job" class="selected"><a href="#">Jobcentre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
               </ul>
       </div>
 
@@ -28,15 +28,14 @@
   <div class="column-three-quarters">
 
 
-   <!--   <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> -->
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> 
 
-      <br>
-         <h1 class="heading-large">&nbsp;&nbsp;New appointment - John Smith</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Jobcentre - Claim #310 - John Smith</h1>
          <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
 
             <ul class="tabs">
-                <li><a href="job">NINO search</a></li>
-      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
+                <li><a href="job">Start search</a></li>
+                <li><a href="job_advanced">Advanced search</a></li>
                 <li><a href="job_new">Create record</a></li>
   <!--              <li><a href="benefit_edit">Edit record</a></li>
                 <li><a href="maintenance">Maintenance</a></li>
@@ -84,13 +83,13 @@
                   </div>
                 </div>
 
-         <!--      <div class="grid grid-1-5">
+               <div class="grid grid-1-5">
                   <div class="inner-block left">
                     <a id="history" href="history" class="menu-item">
                       <strong>History</strong>
                     </a>
                   </div>
-                </div> -->
+                </div>
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
@@ -106,7 +105,7 @@
 
       <div class="column-half">   
 
-        <h3 class="heading-small">Create new appointment</h3>
+        <h3 class="heading-small">Next appointment</h3>
 
         <br>
 
@@ -121,13 +120,14 @@
               </select>
             </div> -->
 
- <!--     <div class="form-group">
+          <div class="form-group">
              <div class="form-date">
 
              <fieldset class="inline">
                   <legend class="form-label">Date</legend>
 
                         <div class="form-group form-group-day">
+               <!--     <label class="form-label">Day:</label> -->
                              <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Day</option>
                                 <option value="01">1</option>
@@ -165,6 +165,7 @@
                          </div>   
 
                         <div class="form-group form-group-month">
+                <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Month</option>
                                 <option value="01">Jan</option>
@@ -183,6 +184,7 @@
                          </div>   
 
                         <div class="form-group form-group-year">
+                  <!--      <label class="form-label">Year:</label> -->
                             <select class="select form-control" name="dob_year" id="dob_year">
                                 <option selected disabled>Year</option>
                                 <option value="2015">2015</option>                                
@@ -195,68 +197,17 @@
                  </fieldset>  
                      
                  </div>    
-            </div> -->
+            </div> 
 
-               <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Date
-                      </span>
-                    </legend>
-                    <div class="form-date">
 
-                      <p class="form-hint">For example, 01 09 2015</p>
-
-                     <div class="form-group form-group-day">
-                        <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-                      </div> 
-
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                      </div>
-
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                      </div>
-                    </div>
-
-                  </fieldset>
-              </div>       
-
-             <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Time
-                      </span>
-                    </legend>
-                    <div class="form-date">
-
-                      <p class="form-hint">For example, 13 30</p>
-
-                     <div class="form-group form-group-day">
-                        <label for="hour">Hour</label>
-                        <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
-                      </div> 
-
-                      <div class="form-group form-group-month">
-                        <label for="min">Min</label>
-                        <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
-                      </div>
-                  </fieldset>
-              </div>    
-
- <!--     <div class="form-group">
+          <div class="form-group">
              <div class="form-date">
 
              <fieldset class="inline">
                   <legend class="form-label">Time</legend>
 
                         <div class="form-group form-group-day">
+               <!--     <label class="form-label">Day:</label> -->
                              <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Hour</option>
                                 <option value="09">9</option>
@@ -272,6 +223,7 @@
                          </div>   
 
                         <div class="form-group form-group-month">
+                <!--        <label class="form-label">Month:</label> -->
                             <select class="select form-control" name="dob_day" id="dob_day">
                                 <option selected disabled>Min</option>
                                 <option value="01">00</option>
@@ -287,13 +239,13 @@
                  </fieldset>  
                      
                  </div>    
-            </div> -->
+            </div> 
 
 
        
             <div class="form-group" id="get-started">
                 <br>
-                  <a href="job_record_confirm" class="button button-get-started" value="Submit">Create appointment</a>
+                  <a href="job_next_confirm" class="button button-get-started" value="Submit">Text appointment</a>
              </div>
 
             <br>
@@ -304,7 +256,58 @@
 
         <div class="column-half">
 
-       
+          <h3 class="heading-small">Appointment history</h3>
+          <br>
+
+          <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+                        <td class="bold">Time</td>
+                        <td class="bold">FTA</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                   <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>23/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>16/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>19/10/15</td>
+                        <td>11:45</td>
+                        <td><input type="checkbox"></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                    <tr>
+                        <td>02/10/15</td>
+                        <td>10:15</td>
+                        <td><input type="checkbox" checked></td>
+                        <td><a href="#">Remove</a></td>
+                    </tr>
+                </tbody>
+              </table>
+
+                <br>
+
+                <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_fta_confirm" class="button button-get-started" value="Submit">Save FTA</a>
+             </div>
+
+          </div>
 
       </div>  
 
