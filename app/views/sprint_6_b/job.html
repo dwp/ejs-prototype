@@ -15,55 +15,41 @@
 
  <div class="grid-row">        
 
-           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+      <!--     <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
-            <!--    <li id="nav-home"><a href="login">Home</a></li> -->
+              <li id="nav-home"><a href="login">Home</a></li>
                 <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
-         <!--         <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-      <li id="nav-admin"><a href="#">Admin</a></li>
-                <li id="nav-stats"><a href="#">Stats</a></li> -->
+                 <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+                <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li>
               </ul>
-          </div>
+          </div> -->
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home" class="selected"><a href="job">NINO search</a></li>
+                <li id="nav-job" class="disabled"><a href="#">Create record</a></li>
+              </ul>
+          </div> 
 
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
-
-
-  <!--      <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;Jobcentre</p>  -->
   <br>
 
          <h1 class="heading-large">&nbsp;&nbsp;NINO search</h1>
-         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
-
-      <ul class="tabs">
-            <li class="selected"><a href="#">NINO search</a></li>
-      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
-            <li><a href="job_new">Create record</a></li>       
-      <!--      <li><a class="disabled" href="#">Edit record</a></li>
-            <li><a class="disabled" href="#">NJI capture</a></li>
-            <li><a class="disabled" href="#">Appointments</a></li>
-            <li><a class="disabled" href="#">Closure</a></li> --> 
-      </ul> 
+         <br>
 
 
       <div class="column-half">   
-
-         <h3 class="heading-small">Enter a NINO</h3>
- <!--       <p>Retrieve record by:</p> -->
-
-   <!--        <div class="form-group">
-              <label class="form-label" for="inital">Enter NINO</label>
-              <input class="form-control" id="inital" type="text"> &nbsp;
-              <a href="job_new" class="button button-get-started" value="Submit">Search</a>
-            </div> -->
 
             <div class="searchfield">
                 <input type="search" autocomplete="off" name="q" id="site-search-text" title="Search for a NINO" value="" placeholder="Enter a NINO" autofocus="autofocus" class="js-search-focus">
                 <a href="job_record_confirm"><button id="search-submit" class="search-submit">Search</button></a>
                 <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
             </div>
-
+            <br>
+            <input id="temp" type="checkbox">Temporary NINO    
             <br>
             <br>
 

@@ -184,6 +184,11 @@ display:none !important;
   color: white;
   background-color: #00beb7; }
 
+.main-nav li.disabled {
+  text-decoration: none;
+  color: #ccc;
+  background-color: none; }
+
 .main-nav li.selected a:hover {
   text-decoration: underline; }
 

@@ -15,14 +15,13 @@
 
  <div class="grid-row">        
 
-            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
-                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
-       <!--           <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-                <li id="nav-admin"><a href="#">Admin</a></li> 
-                <li id="nav-stats"><a href="#">Stats</a></li> -->
+                <li id="nav-home"><a href="job">NINO search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
               </ul>
-            </div>
+          </div> 
+
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
@@ -32,18 +31,7 @@
 
         <br>
 
-         <h1 class="heading-large">&nbsp;&nbsp;View record - John Smith</h1>
-
-           <ul class="tabs">
-                <li><a href="job">NINO search</a></li>
-      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
-                <li><a href="job_new">Create record</a></li>
-  <!--              <li><a href="benefit_edit">Edit record</a></li>
-                <li><a href="maintenance">Maintenance</a></li>
-                <li><a href="payment">Payment</a></li>
-                <li><a href="closure">Closure</a></li>      -->  
-             </ul> 
-
+         <h1 class="heading-large">&nbsp;&nbsp;View record</h1>
 
       <div class="column">   
 
@@ -173,12 +161,11 @@
 
           <nav class="back-nav" role="navigation">
                <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
-            </nav> -->
+            </nav> 
 
             <div class="form-group" id="get-started">
                   <a href="job_edit" class="button" value="Edit record">Edit record</a>
-    <!--              <a href="job_record_confirm" class="button button" value="Interview">Submit</a> -->
-             </div> 
+             </div> -->
          
       </div>
       <!-- End col -->
@@ -193,13 +180,14 @@
                     <tr>
                         <td>Next appointment:</td>
                         <td>01/10/2015</td>
-                        <td><a class="button" href="job_next" style="padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;">Update appointment</a></td>
+                        <td><!-- <a class="button" href="job_next" style="padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;">Update appointment</a> --> 
+                          13:30</td>
                     </tr>
-                     <tr>
+                  <!--   <tr>
                         <td>Next appointment:</td>
                         <td>None</td>
-                        <td><a class="button" href="job_next_new" style="padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;">New appointment</a></td>
-                    </tr>
+                        <td><<a class="button" href="job_next_new" style="padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0;">New appointment</a> </td>
+                    </tr> -->
                 </table>
            </div> 
 
