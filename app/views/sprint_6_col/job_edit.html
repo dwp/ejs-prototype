@@ -103,11 +103,11 @@
         <br>
 
         <form method="post" class="group" id="form" data-parsley-validate>
-          
+
             <div class="form-group">
                 <label class="form-hint" for="nino">NINO (read-only)</label>
                 <input class="form-control" id="nino" type="text" value="JC 45 85 96 X" readonly><br>
-              <!--  <input id="temp" type="checkbox">Temporary   -->
+             <!--   <input id="temp" type="checkbox">Temporary   -->
             </div>
 
             <div class="form-group title">
@@ -744,6 +744,7 @@
               <label class="form-label" for="welsh">&nbsp;&nbsp;Needs Welsh speaker at Jobcentre</label>
             </div>  -->
 
+          <br>
 
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
@@ -755,6 +756,27 @@
               <input id="none" type="checkbox" class="inline">
               <label class="form-label" for="none">&nbsp;&nbsp;No mobile number</label>
             </div>  
+
+                         
+
+        <div class="form-group">
+            <label class="form-label" for="title">Jobcentre</label>
+         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
+              <input class="form-control" id="inital" type="text">
+              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
+            <select class="select form-control">
+                  <option value="Bambury">Bambury</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Bradford">Bradford</option>
+                  <option value="Derby">Derby</option>
+                  <option value="Liverpool">Liverpool</option>
+                  <option value="Manchester">Manchester</option>
+                  <option value="Portsmouth">Portsmouth</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Wolverhampton">Wolverhampton</option>           
+              </select> 
+        </div>            
+
 
             <div class="form-group">
                 <label class="form-label" for="title">Work coach</label>
@@ -805,25 +827,6 @@
                   <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
                   <input class="form-control" id="idoc" type="text" value="14/04/2015" readonly>
              </div>   
-             
-
-        <div class="form-group">
-            <label class="form-label" for="title">Jobcentre</label>
-         <!--         <span class="form-hint">Enter claimant postcode, eg LS11 3PH</span>
-              <input class="form-control" id="inital" type="text">
-              <a href="service_confirm" class="button button-get-started postcode-finder" value="Submit">Find address</a> -->
-            <select class="select form-control">
-                  <option value="Bambury">Bambury</option>
-                  <option value="Southampton">Southampton</option>
-                  <option value="Bradford">Bradford</option>
-                  <option value="Derby">Derby</option>
-                  <option value="Liverpool">Liverpool</option>
-                  <option value="Manchester">Manchester</option>
-                  <option value="Portsmouth">Portsmouth</option>
-                  <option value="Southampton">Southampton</option>
-                  <option value="Wolverhampton">Wolverhampton</option>           
-              </select> 
-        </div>            
 
        <!-- End column-->       
        </div>
