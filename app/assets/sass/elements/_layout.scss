@@ -158,6 +158,19 @@ display:none !important;
   border-right: 1px solid #bfc1c3;
 }
 
+.column-quarter_1_col {
+  height:1500px\9; //Oh yeah - nasty ie9 hack for nav-bar height. Needed for internal users on locked-down ie9 profiles. Feel the shame! 
+  float: left;
+  width: 15%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #F8F8F8;
+  border-right: 1px solid #bfc1c3;
+}
+
 .main-nav {
   height:100%;
   min-height:100%;
