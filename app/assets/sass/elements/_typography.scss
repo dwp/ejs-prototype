@@ -177,4 +177,42 @@ code {
   color: #0076c0;
 }
 
+// Performance dashboard text
+
+.stat-over {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+.stat-over h2 {
+  margin-top:15px;
+}
+
+.stat {
+  font-size:48px;
+  font-weight:bold;
+  margin-bottom:0;
+}
+
+.stat-detail {
+  font-size:16px;
+}
+
+.stat-up {
+    color:#019b95;
+
+    .bold {
+      font-weight:bold;
+      font-size:30px
+    }
+}
+
+.stat-down {
+    color:#cc3300;
+
+    .bold {
+      font-weight:bold;
+      font-size:30px
+    }
+}
 
