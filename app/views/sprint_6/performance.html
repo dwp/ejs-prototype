@@ -11,6 +11,21 @@
 {{$content}}
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    {column_number : 0},
+    {column_number : 3},
+    ]);
+});
+</script>
+
 <main id="content" role="main">
 
  <div class="grid-row">        
@@ -28,9 +43,9 @@
     <div class="column-three-quarters">
     <br>
 
-         <h1 class="heading-large">&nbsp;&nbsp;Performance - overview</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Performance - table</h1>
 
-         <div class="column">   
+           <div class="column">
 
         <br>
 
@@ -56,47 +71,179 @@
                  </div> 
 
             </div>   
-    
-          
-            <div class="column"> 
 
-                  <div class="column-half">    
+         <div class="column">   
 
-              <!--        <h3 class="heading-small">Create record</h3> -->
+<div id="container">
+ <div id="external_filter_container_wrapper">
+        <div id="external_filter_container"></div>
+      </div>
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+          <thead>
+            <tr>
+              <th>Workcoach</th>
+              <th>NINO</th>
+              <th>Surname</th>
+              <th>Status</th>
+              <th>IDOC</th>
+              <th>13 weeks</th>
+              <th>Last seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd gradeX">
+              <td>Some Data 1</td>
+              <td>1000</td>
+              <td>Yes</td>
+              <td>a_value,b_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
+            </tr>
+            <tr class="even gradeC">
+              <td>Some Data 2</td>
+              <td>22</td>
+              <td>No</td>
+              <td>b_value,c_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
+            </tr>
+            <tr class="odd gradeA">
+              <td>Some Data 3</td>
+              <td>33</td>
+              <td>Yes</td>
+              <td>a_value</td>
+              <td><span class="label lightblue">Tag2</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
+            </tr>
+            <tr class="even gradeA">
+              <td>Some Data 4</td>
+              <td>44</td>
+              <td>No</td>
+              <td>b_value</td>
+              <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
+            </tr>
+            <tr class="odd gradeA">
+              <td>Some Data 5</td>
+              <td>55</td>
+              <td>Yes</td>
+              <td>a_value,b_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>            
+            </tr>
+            <tr class="even gradeA">
+              <td>Some Data 1</td>
+              <td>111</td>
+              <td>No</td>
+              <td>c_value,d_value</td>
+              <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 2</td>
+              <td>22</td>
+              <td>Yes</td>
+              <td>e_value,f_value</td>
+              <td><span class="label lightblue">Tag3</span><span class="label lightblue">Tag4</span><span class="label lightblue">Tag5</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 3</td>
+              <td>33</td>
+              <td>No</td>
+              <td>a_value,bb_value</td>
+              <td><span class="label lightblue">Tag5</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>             
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 4</td>
+              <td>44</td>
+              <td>Yes</td>
+              <td>a_value,f_value</td>
+              <td><span class="label lightblue">Tag4</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 5</td>
+              <td>55</td>
+              <td>No</td>
+              <td>a_value,c_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 1</td>
+              <td>10</td>
+              <td>Yes</td>
+              <td>a_value,b_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 2</td>
+              <td>22</td>
+              <td>No</td>
+              <td>d_value,aa_value</td>
+              <td><span class="label lightblue">Tag1</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 3</td>
+              <td>33</td>
+              <td>Yes</td>
+              <td>a_value,c_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 4</td>
+              <td>44</td>
+              <td>No</td>
+              <td>a_value,bb_value</td>
+              <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 5</td>
+              <td>55</td>
+              <td>Yes</td>
+              <td>c_value,e_value</td>
+              <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>             
+            </tr>
+            <tr class="gradeA">
+              <td>Some Data 1</td>
+              <td>101</td>
+              <td>No</td>
+              <td>a_value,e_value</td>
+              <td><span class="label lightblue">Tag1</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
+            </tr>
+          </tbody>
+        </table>
 
-                      <h3 class="heading-small">Workcoach overview</h3>
-                      
-                        <p>One<p>
 
-                  </div>
-                  <!-- End col half -->
-
-                  <!-- Start col -->      
-                  <div class="column-half">    
-                      
-                        <h3 class="heading-small">Office overview</h3>
-
-                          <ul>
-                              <li><a href="perf-office">Report 1</a></li>
-                              <li><a href="perf-office">Report 2</a></li>
-                              <li><a href="perf-office">Report 3</a></li>
-                              <li><a href="perf-office">Report 4</a></li>
-                              <li><a href="perf-office">Report 5</a></li>
-                              <li><a href="perf-office">Report 6</a></li>
-                              <li><a href="perf-office">Report 7</a></li>
-                              <li><a href="perf-office">Report 8</a></li>
-                          </ul>
-
-                          <br>
+    </div>
+  </div>
 
 
-                   <!-- End col half-->       
-                   </div>
-
-            </div>
-            <!-- End full column -->
-
-
+</div>
 
 
   <!-- End three quarters column-->       
