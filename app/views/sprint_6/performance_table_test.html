@@ -21,9 +21,8 @@
 $(document).ready(function(){
   $('#example').dataTable().yadcf([
     {column_number : 0},
-      {column_number : 2, data: ["Yes", "No"], filter_default_label: "Select Yes/No"},
-      {column_number : 3, text_data_delimiter: ",", filter_type: "auto_complete"},
-      {column_number : 4, column_data_type: "html", html_data_type: "text", filter_default_label: "Select tag"}]);
+    {column_number : 3},
+    ]);
 });
 </script>
 
@@ -82,11 +81,13 @@ $(document).ready(function(){
       <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
           <thead>
             <tr>
-              <th>Some Data</th>
-              <th>Numbers</th>
-              <th>Yes / No</th>
-              <th>Values</th>
-              <th>Tags</th>
+              <th>Workcoach</th>
+              <th>NINO</th>
+              <th>Surname</th>
+              <th>Status</th>
+              <th>IDOC</th>
+              <th>13 weeks</th>
+              <th>Last seen</th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +97,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value,b_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
             </tr>
             <tr class="even gradeC">
               <td>Some Data 2</td>
@@ -103,6 +106,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>b_value,c_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
             </tr>
             <tr class="odd gradeA">
               <td>Some Data 3</td>
@@ -110,6 +115,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value</td>
               <td><span class="label lightblue">Tag2</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
             </tr>
             <tr class="even gradeA">
               <td>Some Data 4</td>
@@ -117,6 +124,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>b_value</td>
               <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>
             </tr>
             <tr class="odd gradeA">
               <td>Some Data 5</td>
@@ -124,6 +133,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value,b_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>            
             </tr>
             <tr class="even gradeA">
               <td>Some Data 1</td>
@@ -131,6 +142,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>c_value,d_value</td>
               <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 2</td>
@@ -138,6 +151,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>e_value,f_value</td>
               <td><span class="label lightblue">Tag3</span><span class="label lightblue">Tag4</span><span class="label lightblue">Tag5</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 3</td>
@@ -145,6 +160,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>a_value,bb_value</td>
               <td><span class="label lightblue">Tag5</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>             
             </tr>
             <tr class="gradeA">
               <td>Some Data 4</td>
@@ -152,6 +169,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value,f_value</td>
               <td><span class="label lightblue">Tag4</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 5</td>
@@ -159,6 +178,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>a_value,c_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 1</td>
@@ -166,6 +187,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value,b_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag3</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 2</td>
@@ -173,6 +196,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>d_value,aa_value</td>
               <td><span class="label lightblue">Tag1</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 3</td>
@@ -180,6 +205,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>a_value,c_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 4</td>
@@ -187,6 +214,8 @@ $(document).ready(function(){
               <td>No</td>
               <td>a_value,bb_value</td>
               <td><span class="label lightblue">Tag1</span><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
             <tr class="gradeA">
               <td>Some Data 5</td>
@@ -194,6 +223,8 @@ $(document).ready(function(){
               <td>Yes</td>
               <td>c_value,e_value</td>
               <td><span class="label lightblue">Tag2</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>             
             </tr>
             <tr class="gradeA">
               <td>Some Data 1</td>
@@ -201,9 +232,12 @@ $(document).ready(function(){
               <td>No</td>
               <td>a_value,e_value</td>
               <td><span class="label lightblue">Tag1</span></td>
+              <td class="numeric" scope="col">7 days</td>
+              <td class="numeric">10 days ago</td>              
             </tr>
           </tbody>
         </table>
+
 
     </div>
   </div>
