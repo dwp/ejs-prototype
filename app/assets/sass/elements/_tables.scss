@@ -59,6 +59,7 @@ table td.numeric {
 table.dataTable thead th {
   cursor: pointer;
   *cursor: hand;
+  width:100px !important;
 }
 
 
@@ -216,9 +217,20 @@ table.dataTable thead th {
 /*
  * Sorting
  */
-.sorting { background: url('/public/images/sort_both.png') no-repeat center right; }
-.sorting_asc { background: url('/public/images/sort_asc.png') no-repeat center right; }
-.sorting_desc { background: url('/public/images/sort_desc.png') no-repeat center right; }
+.sorting { 
+  background: url('/public/images/sort_both.png') no-repeat 50% 15px; 
+  width:100px !important;
+  }
+
+.sorting_asc { 
+  background: url('/public/images/sort_asc.png') no-repeat 50% 15px; 
+  width:100px !important;
+ }
+
+.sorting_desc { 
+  background: url('/public/images/sort_desc.png') no-repeat 50% 15px; 
+  width:100px !important;
+ }
 
 .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
 .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
