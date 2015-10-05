@@ -79,6 +79,7 @@ table.dataTable thead th {
  * Page length menu
  */
 .dataTables_length {
+  margin: 0 0 10px 0;
   float: left;
 }
 
@@ -104,6 +105,12 @@ table.dataTable thead th {
 /*
  * Pagination
  */
+
+.dataTables_paginate, .dataTables_info {
+  margin: 20px 0 20px 0;
+}
+
+
 .dataTables_paginate {
   float: right;
   text-align: right;
