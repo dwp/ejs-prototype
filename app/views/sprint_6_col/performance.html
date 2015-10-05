@@ -11,6 +11,21 @@
 {{$content}}
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    {column_number : 0},
+    {column_number : 3},
+    ]);
+});
+</script>
+
 <main id="content" role="main">
 
  <div class="grid-row">        
@@ -24,37 +39,214 @@
           </div> 
 
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
-  <br>
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+    <br>
 
-         <h1 class="heading-large">&nbsp;&nbsp;Performance dashboard</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Performance - Jobcentre level</h1>
 
-
-    <div class="column-half">    
-
-  <!--        <h3 class="heading-small">Create record</h3> -->
+           <div class="column">
 
         <br>
-          
-            <p>One<p>
 
-          
+            <!-- 3rd level nav buttons -->
+                <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                    <div class="grid grid-1-5">
+                      <div class="inner-block left">
+                        <a id="perf-work" href="perf-work" class="menu-item action">
+                          <strong>Workcoach</strong>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-1-5">
+                      <div class="inner-block left">
+                        <a id="perf-office" href="perf-office" class="menu-item action">
+                          <strong>Office</strong>
+                        </a>
+                      </div>
+                    </div>            
+
+                 </div> 
+
+            </div>   
+
+         <div class="column">   
           <br>
 
-    
-            <p>Two</p>
+              <div id="container">
+                 <!--   <div id="external_filter_container_wrapper">
+                      <div id="external_filter_container"></div>
+                    </div> -->
+                    
+                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+                        <thead>
+                          <tr>
+                            <th>Coach</th>
+                            <th>NINO</th>
+                            <th>Surname</th>
+                            <th>Status</th>
+                            <th>IDOC</th>
+                            <th>Cohort 13<br>(days)</th>
+                            <th>Last seen</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxA</td>
+                            <td>Williams</td>
+                            <td>Live</td>
+                            <td>10/08/2015</td>
+                            <td>2</td>
+                            <td>05/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Jones</td>
+                            <td>Live</td>
+                            <td>01/07/2015</td>
+                            <td>7</td>
+                            <td>28/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxB</td>
+                            <td>Smith</td>
+                            <td>Dormant</td>
+                            <td>14/08/2015</td>
+                            <td>14</td>
+                            <td>31/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxB</td>
+                            <td>Brown</td>
+                            <td>Live</td>
+                            <td>23/07/2015</td>
+                            <td>10</td>
+                            <td>01/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Docherty</td>
+                            <td>Dormant</td>
+                            <td>14/09/2015</td>
+                            <td>40</td>
+                            <td>03/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxA</td>
+                            <td>Peters</td>
+                            <td>Live</td>
+                            <td>30/09/2015</td>
+                            <td>61</td>
+                            <td>30/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxB</td>
+                            <td>Shaw</td>
+                            <td>Live</td>
+                            <td>23/08/2015</td>
+                            <td>34</td>
+                            <td>02/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxA</td>
+                            <td>Peel</td>
+                            <td>Dormant</td>
+                            <td>09/07/2015</td>
+                            <td>49</td>
+                            <td>01/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Gathercole</td>
+                            <td>Live</td>
+                            <td>23/09/2015</td>
+                            <td>46</td>
+                            <td>03/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Kane</td>
+                            <td>Live</td>
+                            <td>05/09/2015</td>
+                            <td>2</td>
+                            <td>25/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxB</td>
+                            <td>Tong</td>
+                            <td>Dormant</td>
+                            <td>01/07/2015</td>
+                            <td>58</td>
+                            <td>27/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxA</td>
+                            <td>West</td>
+                            <td>Live</td>
+                            <td>05/08/2015</td>
+                            <td>71</td>
+                            <td>02/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxA</td>
+                            <td>Fielding</td>
+                            <td>Dormant</td>
+                            <td>14/07/2015</td>
+                            <td>17</td>
+                            <td>05/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Gallagher</td>
+                            <td>Dormant</td>
+                            <td>05/10/2015</td>
+                            <td>5</td>
+                            <td>01/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxB</td>
+                            <td>Riley</td>
+                            <td>Live</td>
+                            <td>27/09/2015</td>
+                            <td>12</td>
+                            <td>26/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxC</td>
+                            <td>Burrows</td>
+                            <td>Live</td>
+                            <td>10/08/2015</td>
+                            <td>37</td>
+                            <td>28/09/2015</td>
+                          </tr>
+                        </tbody>
+                      </table>
 
 
-       <!-- End column-->       
-       </div>
+                  </div>
+                </div>
 
-    <!--  <div class="column">
-           <div class="form-group" id="get-started">
-                    <br>
-                      <a href="#" class="button" value="Submit">View report</a>
-            </div>
-       </div> -->
+
+</div>
+
 
   <!-- End three quarters column-->       
    </div>  
