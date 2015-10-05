@@ -218,7 +218,7 @@ table.dataTable thead th {
  * Sorting
  */
 .sorting { 
-  background: url('/public/images/sort_both.png') no-repeat 50% 15px; 
+  background: url('/public/images/sort_both.png') no-repeat 50% 12px; 
   width:100px !important;
   }
 
@@ -235,9 +235,19 @@ table.dataTable thead th {
 .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
 .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
  
+table.dataTable thead th {
+  vertical-align: text-top;
+} 
+
 table.dataTable thead th:active,
 table.dataTable thead td:active {
   outline: none;
+}
+
+// Filter selects 
+
+.yadcf-filter-wrapper {
+  padding-top:5px;
 }
 
 
