@@ -1893,7 +1893,7 @@ var yadcf = (function ($) {
 
 				if (filter_default_label === undefined) {
 					if (columnObj.filter_type === "select" || columnObj.filter_type === 'custom_func') {
-						filter_default_label = "Select value";
+						filter_default_label = "Select";
 					} else if (columnObj.filter_type === "multi_select" || columnObj.filter_type === 'multi_select_custom_func') {
 						filter_default_label = "Select values";
 					} else if (columnObj.filter_type === "auto_complete" || columnObj.filter_type === "text") {
