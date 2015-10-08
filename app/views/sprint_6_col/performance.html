@@ -11,9 +11,9 @@
 {{$content}}
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
 <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
 
 
@@ -21,8 +21,8 @@
 $(document).ready(function(){
   $('#example').dataTable().yadcf([
     {column_number : 0},
-    {column_number : 3},
-    {column_number : 4}, 
+    {column_number : 3, filter_type: "range_number" }, 
+    {column_number : 4},
     ]);
 });
 </script>
@@ -44,7 +44,7 @@ $(document).ready(function(){
     <div class="column-three-quarters">
     <br>
 
-         <h1 class="heading-large">&nbsp;&nbsp;Performance - Jobcentre level</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Performance - Office</h1>
 
            <div class="column">
 
@@ -53,21 +53,21 @@ $(document).ready(function(){
             <!-- 3rd level nav buttons -->
                 <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
 
+                  <div class="grid grid-1-5">
+                      <div class="inner-block left">
+                        <a id="performance" href="performance" class="menu-item selected">
+                          <strong>Office</strong>
+                        </a>
+                      </div>
+                    </div>       
+
                     <div class="grid grid-1-5">
                       <div class="inner-block left">
                         <a id="perf-work" href="perf-work" class="menu-item action">
                           <strong>Workcoach</strong>
                         </a>
                       </div>
-                    </div>
-
-                    <div class="grid grid-1-5">
-                      <div class="inner-block left">
-                        <a id="perf-office" href="perf-office" class="menu-item action">
-                          <strong>Office</strong>
-                        </a>
-                      </div>
-                    </div>            
+                    </div>     
 
                  </div> 
 
@@ -77,19 +77,17 @@ $(document).ready(function(){
           <br>
 
               <div id="container">
-                 <!--   <div id="external_filter_container_wrapper">
-                      <div id="external_filter_container"></div>
-                    </div> -->
-                    
-                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+
+                    <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
                         <thead>
                           <tr>
                             <th>Coach</th>
                             <th>NINO</th>
                             <th>Surname</th>
+                            <th>Age</th>
                             <th>Status</th>
                             <th>IDOC</th>
-                            <th>Cohort 13<br>(days)</th>
+                            <th>Cohort 13<br>(days left)</th>
                             <th>Last seen</th>
                           </tr>
                         </thead>
@@ -98,6 +96,7 @@ $(document).ready(function(){
                             <td>Workcoach 1</td>
                             <td>JCxxxxxxA</td>
                             <td><a href="job_record_confirm">Williams</a></td>
+                            <td>18</td>
                             <td>Live</td>
                             <td>10/08/2015</td>
                             <td>2</td>
@@ -107,6 +106,7 @@ $(document).ready(function(){
                             <td>Workcoach 2</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Jones</a></td>
+                            <td>25</td>
                             <td>Live</td>
                             <td>01/07/2015</td>
                             <td>7</td>
@@ -116,15 +116,17 @@ $(document).ready(function(){
                             <td>Workcoach 3</td>
                             <td>JCxxxxxxB</td>
                             <td><a href="job_record_confirm">Smith</a></td>
+                            <td>39</td>
                             <td>Dormant</td>
-                            <td>14/08/2015</td>
-                            <td>14</td>
-                            <td>31/09/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 4</td>
                             <td>JCxxxxxxB</td>
                             <td><a href="job_record_confirm">Brown</a></td>
+                            <td>45</td>
                             <td>Live</td>
                             <td>23/07/2015</td>
                             <td>10</td>
@@ -134,15 +136,17 @@ $(document).ready(function(){
                             <td>Workcoach 5</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Docherty</a></td>
+                            <td>32</td>
                             <td>Dormant</td>
-                            <td>14/09/2015</td>
-                            <td>40</td>
-                            <td>03/10/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 1</td>
                             <td>JCxxxxxxA</td>
                             <td><a href="job_record_confirm">Peters</a></td>
+                            <td>27</td>
                             <td>Live</td>
                             <td>30/09/2015</td>
                             <td>61</td>
@@ -152,6 +156,7 @@ $(document).ready(function(){
                             <td>Workcoach 2</td>
                             <td>JCxxxxxxB</td>
                             <td><a href="job_record_confirm">Shaw</a></td>
+                            <td>19</td>
                             <td>Live</td>
                             <td>23/08/2015</td>
                             <td>34</td>
@@ -161,15 +166,17 @@ $(document).ready(function(){
                             <td>Workcoach 3</td>
                             <td>JCxxxxxxA</td>
                             <td><a href="job_record_confirm">Peel</a></td>
+                            <td>21</td>
                             <td>Dormant</td>
-                            <td>09/07/2015</td>
-                            <td>49</td>
-                            <td>01/10/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 4</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Gathercole</a></td>
+                            <td>51</td>
                             <td>Live</td>
                             <td>23/09/2015</td>
                             <td>46</td>
@@ -179,6 +186,7 @@ $(document).ready(function(){
                             <td>Workcoach 5</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Kane</a></td>
+                            <td>26</td>
                             <td>Live</td>
                             <td>05/09/2015</td>
                             <td>2</td>
@@ -188,15 +196,17 @@ $(document).ready(function(){
                             <td>Workcoach 1</td>
                             <td>JCxxxxxxB</td>
                             <td><a href="job_record_confirm">Tong</a></td>
+                            <td>44</td>
                             <td>Dormant</td>
-                            <td>01/07/2015</td>
-                            <td>58</td>
-                            <td>27/09/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 2</td>
                             <td>JCxxxxxxA</td>
                             <td><a href="job_record_confirm">West</a></td>
+                            <td>39</td>
                             <td>Live</td>
                             <td>05/08/2015</td>
                             <td>71</td>
@@ -206,24 +216,27 @@ $(document).ready(function(){
                             <td>Workcoach 3</td>
                             <td>JCxxxxxxA</td>
                             <td><a href="job_record_confirm">Fielding</a></td>
+                            <td>21</td>
                             <td>Dormant</td>
-                            <td>14/07/2015</td>
-                            <td>17</td>
-                            <td>05/10/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 4</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Gallagher</a></td>
+                            <td>26</td>
                             <td>Dormant</td>
-                            <td>05/10/2015</td>
-                            <td>5</td>
-                            <td>01/10/2015</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                           </tr>
                           <tr>
                             <td>Workcoach 5</td>
                             <td>JCxxxxxxB</td>
                             <td><a href="job_record_confirm">Riley</a></td>
+                            <td>45</td>
                             <td>Live</td>
                             <td>27/09/2015</td>
                             <td>12</td>
@@ -233,6 +246,7 @@ $(document).ready(function(){
                             <td>Workcoach 1</td>
                             <td>JCxxxxxxC</td>
                             <td><a href="job_record_confirm">Burrows</a></td>
+                            <td>51</td>
                             <td>Live</td>
                             <td>10/08/2015</td>
                             <td>37</td>
@@ -242,7 +256,6 @@ $(document).ready(function(){
                       </table>
 
 
-                  </div>
                 </div>
 
 
