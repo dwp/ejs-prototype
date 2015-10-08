@@ -278,9 +278,9 @@ table.dataTable thead td:active {
   width:20px;
   height:20px;
   margin:0;
-  width:20px\9; //IE9 hack - feel the shame!
-  height:20px\9; //IE9 hack - feel the shame!
-  padding:0 1px 4px 0\9; //IE9 hack - feel the shame!
+  width:20px \9; //IE9 hack - feel the shame!
+  height:20px \9; //IE9 hack - feel the shame!
+  padding:0 1px 5px 0 \9; //IE9 hack - feel the shame!
 }
 
 
