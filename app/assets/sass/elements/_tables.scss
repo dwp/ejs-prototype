@@ -278,6 +278,8 @@ table.dataTable thead td:active {
   width:20px;
   height:20px;
   margin:0;
+  width:22px\9; //IE9 hack - feel the shame!
+  height:22px\9; //IE9 hack - feel the shame!
 }
 
 
