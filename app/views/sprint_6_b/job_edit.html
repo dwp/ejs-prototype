@@ -67,7 +67,7 @@
 
                <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="appointments" href="job_next" class="menu-item action">
+                    <a id="appointments" href="job_next_new" class="menu-item action">
                       <strong>Appointment</strong>
                     </a>
                   </div>
@@ -106,9 +106,8 @@
         <form method="post" class="group" id="form" data-parsley-validate>
 
             <div class="form-group">
-                <label class="form-hint" for="nino">National Insurance number (read-only)</label>
-                <input class="form-control" id="nino" type="text" value="JC 45 85 96 X" readonly><br>
-             <!--   <input id="temp" type="checkbox">Temporary   -->
+                <label class="form-label" for="nino">National Insurance number</label>
+                <input class="form-control" id="nino" type="text" value="JC 45 85 96 X">
             </div>
 
             <div class="form-group title">
@@ -152,7 +151,7 @@
                     <input id="female" name="female" type="radio" value="female">
                     Female
                   </label><br>
-              <!--    <label for="other">
+             <!--     <label for="other">
                     <input id="other" name="other" type="radio" value="other">
                     Other gender identity
                   </label> -->
@@ -759,7 +758,7 @@
             </div>  
 
             
-    <!--        <div class="form-group">
+  <!--          <div class="form-group">
               <input id="none" type="checkbox" class="inline">
               <label class="form-label" for="none">&nbsp;&nbsp;No mobile number</label>
             </div>   -->
@@ -843,10 +842,40 @@
             </div> 
 
 
-            <div class="form-group">
-                  <label class="form-hint" for="idoc">Initial date of contact (read-only)</label>
-                  <input class="form-control" id="idoc" type="text" value="14/04/2015" readonly>
-             </div>   
+       <!--     <div class="form-group">
+                  <label class="form-label" for="idoc">Initial date of claim</label>
+                  <input class="form-control" id="idoc" type="text" value="14/04/2015">
+             </div>    -->
+
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Initial date of claim
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 08 2015</p>
+
+                     <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="14">
+                      </div>
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="04">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="2015">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
 
        <!-- End column-->       
        </div>
