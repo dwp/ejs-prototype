@@ -424,7 +424,7 @@ var yadcf = (function ($) {
 				enable_auto_complete : false,
 				sort_as : "alpha",
 				sort_order : "asc",
-				date_format : "mm/dd/yyyy",
+				date_format : "dd/mm/yyyy",
 				ignore_char : undefined,
 				filter_match_mode : "contains",
 				select_type : undefined,
