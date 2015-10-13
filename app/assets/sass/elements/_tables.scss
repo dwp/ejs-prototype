@@ -125,11 +125,10 @@ table.dataTable thead th {
 .paginate_enabled_previous,
 .paginate_disabled_next,
 .paginate_enabled_next {
-  height: 40px;
-  float: left;
-  cursor: pointer;
-  *cursor: hand;
-
+    height: 40px;
+    float: left;
+    cursor: pointer;
+    *cursor: hand;
     font-size: 27px;
     line-height: 1.11111;
     font-weight: 400;
@@ -247,12 +246,12 @@ table.dataTable thead th {
   }
 
 .sorting_asc { 
-  background: url('/public/images/sort_asc.png') no-repeat 60% 15px; 
+  background: url('/public/images/sort_asc.png') no-repeat 60% 12px; 
   width:100px !important;
  }
 
 .sorting_desc { 
-  background: url('/public/images/sort_desc.png') no-repeat 60% 15px; 
+  background: url('/public/images/sort_desc.png') no-repeat 60% 12px; 
   width:100px !important;
  }
 
