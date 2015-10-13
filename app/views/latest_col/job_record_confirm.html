@@ -1,0 +1,156 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Performance</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;View record</h1>
+
+      <div class="column">   
+
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="view_record" href="job_record_confirm" class="menu-item action selected">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item action">
+                      <strong>Edit record</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next_new" class="menu-item action">
+                      <strong>Appointment</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="closure" href="job_closure" class="menu-item">
+                      <strong>Claim closure</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+     </div>   
+
+      <div class="column-half">   
+
+           <div>
+                <table>
+                    <tr>
+                        <td>Title:</td>
+                        <td>Mr</td>
+                    </tr>
+                    <tr>
+                        <td>Initial:</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td>Surname:</td>
+                        <td>Smith</td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>National Insurance number:</td>
+                        <td>JC628596A</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile number:</td>
+                        <td>07585747358</td>
+                    </tr>
+                    <tr>
+                        <td>Benefit type:</td>
+                        <td>Jobseekers Allowance</td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>Live</td>
+                    </tr>                   
+                    <tr>
+                        <td>Initial date of claim:</td>
+                        <td>14/04/2015</td>
+                    </tr>
+                    <tr>
+                        <td>Job Centre:</td>
+                        <td>Worcester</td>
+                    </tr>                    
+                    <tr>
+                        <td>Work coach:</td>
+                        <td>amanda.wright</td>  
+                    </tr>                        
+                </table>
+           </div> 
+              
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">  
+               
+           <div>
+                <table>
+                    <tr>
+                        <td>Next appointment:</td>
+                        <td>None</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                </table>
+           </div> 
+
+
+       <!-- End column-->       
+       </div>
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

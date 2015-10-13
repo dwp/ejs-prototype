@@ -1,0 +1,275 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    {column_number : 0},
+    {column_number : 3, filter_type: "range_number" }, 
+    {column_number : 4},
+    ]);
+});
+</script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf" class="selected"><a href="performance">Performance</a></li>
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Performance - Office</h1>
+
+           <div class="column">
+
+            <!-- 3rd level nav buttons -->
+                <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                  <div class="grid grid-1-5">
+                      <div class="inner-block left">
+                        <a id="performance" href="performance" class="menu-item selected">
+                          <strong>Office</strong>
+                        </a>
+                      </div>
+                    </div>       
+
+                    <div class="grid grid-1-5">
+                      <div class="inner-block left">
+                        <a id="perf-work" href="perf-work" class="menu-item action">
+                          <strong>Workcoach</strong>
+                        </a>
+                      </div>
+                    </div>     
+
+                 </div> 
+
+            </div>   
+
+         <div class="column">   
+          <br>
+
+              <div id="container">
+
+                    <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+                        <thead>
+                          <tr>
+                            <th>Coach</th>
+                            <th>NINO</th>
+                            <th>Surname</th>
+                            <th>Age</th>
+                            <th>Status</th>
+                            <th>IDOC</th>
+                            <th>Cohort 13<br>(days left)</th>
+                            <th>Last seen</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Williams</a></td>
+                            <td>18</td>
+                            <td>Live</td>
+                            <td>10/08/2015</td>
+                            <td>24</td>
+                            <td>05/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Jones</a></td>
+                            <td>25</td>
+                            <td>Live</td>
+                            <td>24/07/2015</td>
+                            <td>7</td>
+                            <td>28/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Smith</a></td>
+                            <td>39</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Brown</a></td>
+                            <td>45</td>
+                            <td>Live</td>
+                            <td>23/07/2015</td>
+                            <td>6</td>
+                            <td>01/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Docherty</a></td>
+                            <td>32</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Peters</a></td>
+                            <td>27</td>
+                            <td>Live</td>
+                            <td>30/09/2015</td>
+                            <td>75</td>
+                            <td>30/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Shaw</a></td>
+                            <td>19</td>
+                            <td>Live</td>
+                            <td>23/08/2015</td>
+                            <td>37</td>
+                            <td>02/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Peel</a></td>
+                            <td>21</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Gathercole</a></td>
+                            <td>51</td>
+                            <td>Live</td>
+                            <td>23/09/2015</td>
+                            <td>68</td>
+                            <td>03/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Kane</a></td>
+                            <td>26</td>
+                            <td>Live</td>
+                            <td>05/09/2015</td>
+                            <td>50</td>
+                            <td>25/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Tong</a></td>
+                            <td>44</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 2</td>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">West</a></td>
+                            <td>39</td>
+                            <td>Live</td>
+                            <td>05/08/2015</td>
+                            <td>19</td>
+                            <td>02/10/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 3</td>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Fielding</a></td>
+                            <td>21</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 4</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Gallagher</a></td>
+                            <td>26</td>
+                            <td>Dormant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 5</td>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Riley</a></td>
+                            <td>45</td>
+                            <td>Live</td>
+                            <td>27/09/2015</td>
+                            <td>72</td>
+                            <td>26/09/2015</td>
+                          </tr>
+                          <tr>
+                            <td>Workcoach 1</td>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Burrows</a></td>
+                            <td>51</td>
+                            <td>Live</td>
+                            <td>10/08/2015</td>
+                            <td>24</td>
+                            <td>28/09/2015</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                </div>
+
+
+</div>
+
+
+  <!-- End three quarters column-->       
+   </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

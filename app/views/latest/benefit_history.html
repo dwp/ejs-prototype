@@ -1,0 +1,187 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+           <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-job"><a href="job">Jobcentre</a></li>
+                <li id="nav-benefit" class="selected"><a href="benefit">Benefit centre</a></li>
+    <!--    <li id="nav-admin"><a href="#">Admin</a></li> -->
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+      </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;History</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;History - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+            <ul class="tabs">
+                <li><a href="benefit">Start search</a></li>
+       <!--     <li><a href="benefit_advanced">Advanced search</a></li> -->
+                <li><a href="benefit_new">Create record</a></li>
+  <!--              <li><a href="benefit_edit">Edit record</a></li>
+                <li><a href="maintenance">Maintenance</a></li>
+                <li><a href="payment">Payment</a></li>
+                <li><a href="closure">Closure</a></li>      -->  
+             </ul> 
+
+
+      <div class="column">   
+
+        <br>
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="view_record" href="benefit_record_confirm" class="menu-item">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="benefit_edit" class="menu-item">
+                      <strong>Edit record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="Maintenance" href="maintenance" class="menu-item">
+                      <strong>Maintenance</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="payment" href="payment" class="menu-item">
+                      <strong>Payment</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="history" href="benefit_history" class="menu-item selected">
+                      <strong>History</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-6">
+                  <div class="inner-block left">
+                    <a id="closure" href="closure" class="menu-item">
+                      <strong>Claim closure</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+
+     </div>   
+
+      <div class="column-two-thirds">   
+
+          <h3 class="heading-small">SMS history</h3>
+          <br>
+
+                <table>
+                  <tbody>
+                      <tr>
+                        <td class="bold">Date</td>
+      <!--              <td class="bold">Time</td> -->
+                        <td class="bold">Trigger</td>
+                        <td class="bold">Mobile</td>
+                        <td class="bold">Sender</td>
+                    </tr>
+                   <tr>
+                        <td>&nbsp;</td>
+           <!--         <td>&nbsp;</td> -->
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>23/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Closure</td>
+                        <td>07845953764</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                    <tr>
+                        <td>16/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Payment</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                    <tr>
+                        <td>19/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Evidence received</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                    <tr>
+                        <td>02/10/15</td>
+           <!--         <td>11:45</td> -->
+                        <td>Evidence required</td>
+                        <td>07425748992</td>
+                        <td>David Bradshaw</td>
+                    </tr>
+                </tbody>
+              </table>
+
+             <br>
+
+    <!--    <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_fta_confirm" class="button button-get-started" value="Submit">Save FTA</a>
+             </div>   -->       
+
+      <br>
+      <br>
+         
+      </div>
+      <!-- End col -->
+
+      </div>  
+
+<br>
+<br>
+ 
+
+    <!-- End row-->       
+      </div>
+ 
+</main>
+{{/content}}
+
+{{/layout}}
+
