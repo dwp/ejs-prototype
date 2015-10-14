@@ -53,6 +53,10 @@ table td.numeric {
 
 // Datatables for performance dashboard
 
+#container {
+  padding-top:20px;
+}
+
 .dataTables_filter {
   display:none;
 }
