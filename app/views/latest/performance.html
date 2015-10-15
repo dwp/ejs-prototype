@@ -21,10 +21,10 @@
 $(document).ready(function(){
   $('#example').dataTable().yadcf([
     {column_number : 3, filter_type: "range_number" }, 
-    {column_number : 4}
+    {column_number : 4},
     ]);
 });
-
+$('#example').removeClass('class');
 
 </script>
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
                         <thead>
                           <tr>
                             <th>Workcoach</th>
-                            <th class="nino no-sort">NINO</th>
+                            <th class="nino">NINO</th>
                             <th>Surname</th>
                             <th>Age</th>
                             <th>Status</th>
