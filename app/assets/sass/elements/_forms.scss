@@ -16,6 +16,10 @@ fieldset {
   @include media(tablet) {
     margin-bottom: $gutter;
   }
+    .readonly {
+      background:#ececec;
+      color:#626161;
+    }
 }
 
 .form-group-related {
