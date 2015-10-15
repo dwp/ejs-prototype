@@ -275,6 +275,9 @@ table.dataTable thead td:active {
   background:none !important;
 }
 
+// prevent sort in table
+.no-sort::after { display: none!important; }
+.no-sort { pointer-events: none!important; cursor: default!important; }
 
 // Filter selects 
 
