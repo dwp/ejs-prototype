@@ -51,9 +51,18 @@ fieldset {
   color: $text-colour;
 }
 
+// .form-label {
+//  @include core-19;
+//  margin-bottom: 5px;
+// }
+
+// Changed default form lables to bold to save Valtech dev re-work
 .form-label {
-  @include core-19;
-  margin-bottom: 5px;
+  @include bold-24;
+  margin-bottom: 0;
+  .form-hint {
+    @include core-19;
+  }
 }
 
 .form-label-bold {
