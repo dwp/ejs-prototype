@@ -55,6 +55,7 @@ table td.numeric {
 
 #container {
   padding-top:20px;
+  margin-bottom:40px;
 }
 
 .dataTables_filter {
@@ -83,6 +84,7 @@ table.dataTable thead th {
  * Page length menu
  */
 .dataTables_length {
+  display:none; // Temporarily removed selector for displaying 10,25,50 results - for MVP
   margin: 0 0 10px 0;
   float: left;
 }
@@ -101,6 +103,7 @@ table.dataTable thead th {
  * Table information
  */
 .dataTables_info {
+  display:none; // Temporarily removed pagination text - xx of xx pages - for MVP
   clear: both;
   float: left;
   padding:10px 0 0 0;
@@ -115,6 +118,7 @@ table.dataTable thead th {
  */
 
 .dataTables_paginate, .dataTables_info {
+  display:none; // Temporarily removed pagination text - xx of xx pages - for MVP
   margin: 40px 0 40px 0;
 }
 
