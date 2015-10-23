@@ -18,100 +18,54 @@
         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
                 <li id="nav-home"><a href="job">Search</a></li>
-                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-job" class="selected"><a href="job_new">Create record</a></li>
                 <li id="nav-perf"><a href="performance">Performance</a></li>
               </ul>
           </div> 
 
+
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Edit record</h1>
-
-      <div class="column">   
-
-
-        <!-- 3rd level nav buttons -->
-            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-              <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="view_record" href="job_record_confirm" class="menu-item">
-                      <strong>View record</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item selected">
-                      <strong>Edit claimant</strong>
-                    </a>
-                  </div>
-                </div>
-
-               <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="appointments" href="job_next_new" class="menu-item">
-                      <strong>Appointment</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="closure" href="job_closure" class="menu-item">
-                      <strong>Claim</strong>
-                    </a>
-                  </div>
-                </div>
-
-                
-
-             </div> 
-
-     </div>   
-
+         <h1 class="heading-large">&nbsp;&nbsp;Create record</h1>
 
 
     <div class="column-half">    
 
-        <form method="post" class="group" id="form" data-parsley-validate>
-
             <div class="form-group">
-                <label class="form-hint" for="nino">National Insurance number (read-only)</label>
-                <input class="form-control readonly" id="nino" type="text" value="JC628596A" readonly>
+                <label class="form-label" for="nino">National Insurance number</label>
+                <input class="form-control" id="nino" type="text">
             </div>
 
             <div class="form-group title">
               <label class="form-label" for="title">Title</label>
               <select class="form-control" id="title">
+                  <option value="Select">Select</option>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
                   <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-
+                  <option value="Other">Other</option>
               </select>
             </div>
 
             <div class="form-group initial">
               <label class="form-label" for="inital">Initial</label>
-              <input class="form-control" id="inital" type="text" value="J">
+              <input class="form-control" id="inital" type="text">
             </div> 
 
             <div class="form-group">
               <label class="form-label" for="Surname">Surname</label>
-              <input class="form-control" id="Surname" type="text" value="Smith">
+              <input class="form-control" id="Surname" type="text">
             </div>  
 
             <div class="form-group"> 
-              <fieldset>
+              <fieldset class="inline">
                   <legend class="form-label">Gender</legend>
                   <label class="block-label" for="male">
-                    <input id="male" name="male" type="radio" value="male" checked>
+                    <input id="male" name="male" type="radio" value="male">
                     Male
-                  </label><br>
+                  </label>
                   <label class="block-label" for="female">
                     <input id="female" name="female" type="radio" value="female">
                     Female
@@ -120,7 +74,8 @@
             </div> 
 
 
-              <div class="form-group">
+
+            <div class="form-group">
                   <fieldset>
                     <legend>
                       <span class="form-label">
@@ -128,36 +83,33 @@
                       </span>
                     </legend>
                     <div class="form-date">
+
                       <p class="form-hint">For example, 03 1980</p>
+
                       <div class="form-group form-group-month">
                         <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="08">
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
                       </div>
 
                       <div class="form-group form-group-year">
                         <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="1981">
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
                       </div>
                     </div>
 
                   </fieldset>
-              </div> 
+              </div>
 
-      </div>
-      <!-- End col -->
 
-      <!-- Start col -->      
-      <div class="column-half">    
-          
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
-              <input class="form-control" id="mobile" type="text" value="07585747358">
-            </div>  
+              <input class="form-control" id="mobile" type="text">
+            </div>        
 
         <div class="form-group">
-            <label class="form-label" for="title">Jobcentre</label>
-            <select class="select form-control">
-                  <option value="Bambury">Bambury</option>
+            <label class="form-label" for="jobcentre">Jobcentre</label>
+          <select class="select form-control">
+                  <option value="Select">Select</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Bradford">Bradford</option>
                   <option value="Derby">Derby</option>
@@ -166,14 +118,13 @@
                   <option value="Portsmouth">Portsmouth</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Wolverhampton">Wolverhampton</option>           
-              </select> 
-        </div>            
+              </select>     
+        </div> 
 
-
-            <div class="form-group">
-                <label class="form-label" for="title">Work coach</label>
+        <div class="form-group">
+            <label class="form-label" for="title">Work coach</label>
               <select class="select form-control">
-                  <option value="amanda.wright">amanda.wright</option>
+                  <option value="Select">Select</option>
                   <option value="richard.kaine">richard.kaine</option>
                   <option value="john.smith2">john.smith2</option>
                   <option value="amanda.wright">amanda.wright</option>
@@ -183,29 +134,30 @@
                   <option value="harry.brown2">harry.brown2</option>
                   <option value="julia.granger">julia.granger</option>  
                   <option value="paul.brookes1">paul.brookes1</option>  
-                  <option value="sarah.fielding">sarah.fielding</option>                   
+                  <option value="sarah.fielding">sarah.fielding</option>                
               </select> 
-            </div>
+        </div>
 
-          <div class="form-group"> 
+
+           <div class="form-group"> 
               <fieldset>
                   <legend class="form-label">Benefit type</legend>
                   <label class="block-label" for="JSA">
                     <input id="JSA" name="JSA" type="radio" value="JSA" checked>
                     Jobseekers Allowance
                   </label><br>
-                  <label class="block-label" class="disabled" for="ESA">
+                  <label class="disabled block-label" for="ESA">
                     <input id="ESA" name="ESA" type="radio" value="ESA" disabled>
                     Employment Support Allowance
                   </label><br>
-                  <label class="block-label" class="disabled" for="IS">
+                  <label class="disabled block-label" for="IS">
                     <input id="IS" name="IS" type="radio" value="IS" disabled>
                     Income Support
                   </label>
               </fieldset>
             </div> 
 
-              <div class="form-group">
+                <div class="form-group">
                   <fieldset>
                     <legend>
                       <span class="form-label">
@@ -218,33 +170,32 @@
 
                      <div class="form-group form-group-day">
                         <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="14">
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
                       </div>
 
                       <div class="form-group form-group-month">
                         <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="09">
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
                       </div>
 
                       <div class="form-group form-group-year">
                         <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="2015">
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
                       </div>
                     </div>
 
                   </fieldset>
               </div>
 
+
        <!-- End column-->       
        </div>
 
           <div class="column">
            <div class="form-group" id="get-started">
-                     <a href="job_record_confirm" class="button" value="Save">Save</a>
+                      <a href="job_record_confirm" class="button" value="Submit">Save</a>
                   </div>
                 </div>
-
-          </form>      
 
   <!-- End three quarters column-->       
    </div>  
