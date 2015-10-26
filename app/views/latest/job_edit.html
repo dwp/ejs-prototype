@@ -105,13 +105,13 @@
               <input class="form-control" id="Surname" type="text" value="Smith">
             </div>  
 
-            <div class="form-group"> 
-              <fieldset>
+           <div class="form-group"> 
+              <fieldset class="inline">
                   <legend class="form-label">Gender</legend>
                   <label class="block-label" for="male">
                     <input id="male" name="male" type="radio" value="male" checked>
                     Male
-                  </label><br>
+                  </label>
                   <label class="block-label" for="female">
                     <input id="female" name="female" type="radio" value="female">
                     Female
@@ -119,6 +119,12 @@
               </fieldset>
             </div> 
 
+
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
 
               <div class="form-group">
                   <fieldset>
@@ -142,12 +148,6 @@
 
                   </fieldset>
               </div> 
-
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
           
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
@@ -187,53 +187,6 @@
               </select> 
             </div>
 
-          <div class="form-group"> 
-              <fieldset>
-                  <legend class="form-label">Benefit type</legend>
-                  <label class="block-label" for="JSA">
-                    <input id="JSA" name="JSA" type="radio" value="JSA" checked>
-                    Jobseekers Allowance
-                  </label><br>
-                  <label class="block-label" class="disabled" for="ESA">
-                    <input id="ESA" name="ESA" type="radio" value="ESA" disabled>
-                    Employment Support Allowance
-                  </label><br>
-                  <label class="block-label" class="disabled" for="IS">
-                    <input id="IS" name="IS" type="radio" value="IS" disabled>
-                    Income Support
-                  </label>
-              </fieldset>
-            </div> 
-
-              <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Initial date of claim
-                      </span>
-                    </legend>
-                    <div class="form-date">
-
-                      <p class="form-hint">For example, 01 08 2015</p>
-
-                     <div class="form-group form-group-day">
-                        <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="14">
-                      </div>
-
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="09">
-                      </div>
-
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="2015">
-                      </div>
-                    </div>
-
-                  </fieldset>
-              </div>
 
        <!-- End column-->       
        </div>
