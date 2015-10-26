@@ -26,7 +26,7 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Claim closure</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Claim (active)</h1>
 
       <div class="column">   
 
@@ -60,7 +60,7 @@
 
                   <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="closure" href="job_closure" class="menu-item selected">
+                      <a id="claim_active" href="job_claim_active" class="menu-item selected">
                         <strong>Claim</strong>
                       </a>
                     </div>
@@ -74,6 +74,59 @@
 
       <div class="column-half">   
 
+                  <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Benefit type</legend>
+                  <label class="block-label" for="JSA">
+                    <input id="JSA" name="JSA" type="radio" value="JSA" checked>
+                    Jobseekers Allowance
+                  </label><br>
+                  <label class="block-label disabled" class="disabled" for="ESA">
+                    <input id="ESA" name="ESA" type="radio" value="ESA" disabled>
+                    Employment Support Allowance
+                  </label><br>
+                  <label class="block-label disabled" class="disabled" for="IS">
+                    <input id="IS" name="IS" type="radio" value="IS" disabled>
+                    Income Support
+                  </label>
+              </fieldset>
+            </div> 
+
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Initial date of claim
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 08 2015</p>
+
+                     <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="14">
+                      </div>
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="09">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="2015">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
+       
+      </div>
+      <!-- End col -->
+
+      <div class="column-half">
+          
               <div class="form-group">
                   <fieldset>
                     <legend>
@@ -105,7 +158,7 @@
               </div>  
 
             <div class="form-group">
-              <label class="form-label" for="circs">Claim closure reasons</label>
+              <label class="form-label" for="circs">Claim closure</label>
               <select class="select form-control" id="circs">
                   <option value="Select">Select</option>
                   <option value="Found work">Found work</option>
@@ -119,15 +172,16 @@
                   <option value="To Pension">To Pension</option>
               </select>
             </div>
-       
-            <div class="form-group" id="get-started">
-                  <a href="job_record_confirm" class="button" value="Save">Save</a>
-             </div>
 
       </div>
-      <!-- End col -->
+      <!-- End column -->
 
- 
+          <div class="column">
+              <div class="form-group" id="get-started">
+                  <a href="job_record_confirm" class="button" value="Save">Save</a>
+                  <a href="job_record_confirm" class="button secondary-button" value="Close claim">Close claim</a>               
+              </div>
+          </div>     
 
     <!-- End row-->       
       </div>
