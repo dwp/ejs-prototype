@@ -1,0 +1,57 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+
+{{$content}}
+
+<main id="content" role="main">
+
+
+   <h1 class="heading-large">Password confirmation</h1>
+
+   <div class="grid-row">
+
+    <div class="column-three-quarters">
+
+     <div class="form-group">
+         <p>Please copy and paste this password into an email to your manager.</p>
+        
+    <!--   <p class="bold login_pass">****************************************************************</p> -->
+      
+       <form name="select_all">
+          <textarea name="text_area" class="login_pass" onClick="javascript:this.form.text_area.focus();this.form.text_area.select();">****************************************************************</textarea>
+      </form> 
+
+      <br>
+
+            <details>
+    <summary role="button" tabindex="0"><span class="summary">Help</span></summary>
+    <div class="panel-indent" id="details-content-0" style="display: block;">
+     <ul class="list-bullet">
+        <li>A personal pension is a way of saving for retirement that is independent of an employer</li>
+        <li>A workplace pension is a way of saving for retirement that’s arranged by an employer.<br>
+        Some are called ‘occupational’, ‘works’, ‘company’ or ‘work-based’ pensions.</li>
+     </ul>
+     <p>Further information is available <a rel="external" target="_blank" href="https://www.gov.uk/plan-retirement-income/private-pensions" title="Further information link">on this page</a></p>   
+    </div>
+  </details>
+
+    </div> 
+
+      <div class="form-group">
+         <a href="login" class="button" value="Done">Done</a>
+      </div>   
+
+    </div>
+    <!-- End column -->
+
+  </div>
+  <!-- End row -->
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
