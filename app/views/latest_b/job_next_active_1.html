@@ -1,0 +1,124 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+<!--   <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;Appointments</p> -->
+
+         <h1 class="heading-large">&nbsp;&nbsp;Update appointment</h1>
+
+      <div class="column">   
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="view_record" href="job_record_confirm_active_1" class="menu-item">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit_active_1" class="menu-item">
+                      <strong>Edit claimant</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next_active_1" class="menu-item selected">
+                      <strong>Appointment</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="claim_dormant" href="job_claim_active_1" class="menu-item">
+                      <strong>Claim</strong>
+                    </a>
+                  </div>
+                </div>
+             </div> 
+
+     </div>   
+
+        <div class="column-half">
+
+          <div class="form-group">
+              <table>
+                <tbody>
+                          <tr>
+                            <td class="bold">Date</td>
+                            <td class="bold">Time</td>
+                            <td class="bold">Update</td>
+                        </tr>
+                       <tr>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>07/11/2015</td>
+                            <td>11:30</td>
+                            <td>
+                              <select class="select form-control" id="update">
+                                  <option value="Select">Select</option>
+                                  <option value="FTA">FTA</option>
+                                  <option value="Attended">Attended</option>
+                                  <option value="Immediate">Immediate</option>
+                                  <option value="Rebook">Rebook</option>
+                              </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+              </div>    
+
+
+                <div class="form-group">
+                  <a href="job_next_new_active_1" class="button" value="Submit">Save</a>
+                </div>
+
+          </div>
+
+      </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
