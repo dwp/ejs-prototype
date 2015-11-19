@@ -31,7 +31,8 @@
                 <div class="column-half">   
                     <div class="searchfield">
                       <form action="job_new" method="get" class="form">
-                        <input type="search" autocomplete="off" name="q" id="site-search-text" autofocus="autofocus" class="js-search-focus">
+                        <label class="form-hint" for="nino">Enter a valid NINO or 12-digit reference number</label>
+                        <input type="search" autocomplete="off" name="nino" id="site-search-text" autofocus="autofocus" class="js-search-focus">
                         <a href="job_new"><button id="search-submit" input type="submit" class="search-submit">Search</button></a>
                         <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
                       </form>  
