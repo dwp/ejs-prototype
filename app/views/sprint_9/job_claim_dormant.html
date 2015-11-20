@@ -1,0 +1,181 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Claim</h1>
+
+      <div class="column">   
+
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                    <div class="inner-block left">
+                      <a id="view_record" href="job_record_confirm_dormant" class="menu-item">
+                        <strong>View record</strong>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-1-5">
+                    <div class="inner-block left">
+                      <a id="edit_record" href="job_edit_dormant" class="menu-item">
+                         <strong>Claimant</strong>
+                      </a>
+                    </div>
+                  </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="#" class="menu-item disabled">
+                      <strong>Appointment</strong>
+                    </a>
+                  </div>
+                </div>
+
+                  <div class="grid grid-1-5">
+                    <div class="inner-block left">
+                      <a id="claim_active" href="job_claim_dormant" class="menu-item selected">
+                        <strong>Claim</strong>
+                      </a>
+                    </div>
+                  </div>
+
+             </div> 
+
+     </div>   
+
+
+
+      <div class="column-half">   
+
+            <div class="form-group"> 
+              <fieldset>
+                  <legend class="form-label">Benefit type</legend>
+                  <label class="block-label" for="JSA">
+                    <input id="JSA" name="JSA" type="radio" value="JSA" checked>
+                    Jobseekers Allowance
+                  </label><br>
+                  <label class="block-label disabled" class="disabled" for="ESA">
+                    <input id="ESA" name="ESA" type="radio" value="ESA" disabled>
+                    Employment Support Allowance
+                  </label><br>
+                  <label class="block-label disabled" class="disabled" for="IS">
+                    <input id="IS" name="IS" type="radio" value="IS" disabled>
+                    Income Support
+                  </label>
+              </fieldset>
+            </div> 
+
+
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Initial date of claim
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 08 2015</p>
+
+                     <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="">
+                      </div>
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
+
+        <div class="form-group">
+            <label class="form-label" for="title">Jobcentre</label>
+            <select class="select form-control">
+                  <option value="">Select</option>
+                  <option value="Bambury">Bambury</option>
+                  <option value="Bradford">Bradford</option>
+                  <option value="Derby">Derby</option>
+                  <option value="Liverpool">Liverpool</option>
+                  <option value="Manchester">Manchester</option>
+                  <option value="Portsmouth">Portsmouth</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Wolverhampton">Wolverhampton</option>           
+                  <option value="Worcester">Worcester</option>           
+              </select> 
+        </div>            
+
+            <div class="form-group">
+                <label class="form-label" for="title">Work coach</label>
+              <select class="select form-control">
+                  <option value="">Select</option>
+                  <option value="amanda.wright">amanda.wright</option>
+                  <option value="richard.kaine">richard.kaine</option>
+                  <option value="john.smith2">john.smith2</option>
+                  <option value="amanda.wright">amanda.wright</option>
+                  <option value="darren.moody">darren.moody</option>
+                  <option value="mark.jones1">mark.jones1</option>
+                  <option value="sam.steel">sam.steel</option>
+                  <option value="harry.brown2">harry.brown2</option>
+                  <option value="julia.granger">julia.granger</option>  
+                  <option value="paul.brookes1">paul.brookes1</option>  
+                  <option value="sarah.fielding">sarah.fielding</option>                   
+              </select> 
+            </div>
+
+              <div class="form-group" id="get-started">
+                  <a href="job_record_confirm" class="button" value="Save">Save</a>
+              </div>
+       
+      </div>
+      <!-- End col -->
+
+    <!--      <div class="column">
+              <div class="form-group" id="get-started">
+                  <a href="job_record_confirm" class="button" value="Save">Save</a>
+              </div>
+          </div>   -->  
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

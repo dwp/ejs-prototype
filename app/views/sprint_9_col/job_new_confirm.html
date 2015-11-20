@@ -1,0 +1,160 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+            <!--    <li id="nav-home"><a href="login">Home</a></li> -->
+                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
+         <!--         <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+      <li id="nav-admin"><a href="#">Admin</a></li>
+                <li id="nav-stats"><a href="#">Stats</a></li> -->
+              </ul>
+            </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;
+          <a href="job_next">Appointments</a>&nbsp;>&nbsp;Confirm next appointment</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Confirm new appointment - John Smith</h1>
+
+         <ul class="tabs">
+                <li><a href="job">Start search</a></li>
+      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
+                <li><a href="job_new">Create record</a></li>
+  <!--              <li><a href="benefit_edit">Edit record</a></li>
+                <li><a href="maintenance">Maintenance</a></li>
+                <li><a href="payment">Payment</a></li>
+                <li><a href="closure">Closure</a></li>      -->  
+             </ul> 
+
+
+      <div class="column">   
+
+        <br>
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="view_record" href="job_record_confirm" class="menu-item action ">
+                      <strong>View record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item action">
+                      <strong>Edit record</strong>
+                    </a>
+                  </div>
+                </div>
+
+        <!--        <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="interview" href="job_interview" class="menu-item">
+                      <strong>Interview</strong>
+                    </a>
+                  </div>
+                </div> -->
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next" class="menu-item selected">
+                      <strong>Appointments</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="history" href="history" class="menu-item">
+                      <strong>History</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="closure" href="job_closure" class="menu-item">
+                      <strong>Claim closure</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+     </div>   
+
+
+      <div class="column-half">   
+
+          <h3 class="heading-small">Confirm new appointment</h3>
+
+           <div>
+                <table>
+                    <tr>
+                        <td>New appointment date:</td>
+                        <td>14/10/2015</td>
+                    </tr>
+                    <tr>
+                        <td>New appointment time:</td>
+                        <td>11:30</td>
+                    </tr>
+                </table>
+           </div> 
+
+          <br>
+          <br>
+     
+            <div class="form-group" id="get-started">
+                  <a href="job_next_new" class="button button" value="Edit">Edit</a>
+                  <a href="job_record_confirm" class="button button" value="Submit">Submit</a>
+             </div>
+
+    <!--        <nav class="back-nav" role="navigation">
+               <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
+            </nav> -->
+ 
+            <br>            
+         
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+       
+       
+
+       <!-- End column-->       
+       </div>
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

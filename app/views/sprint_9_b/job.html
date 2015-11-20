@@ -1,0 +1,60 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home" class="selected"><a href="job">Search</a></li>
+                <li id="nav-job" class="disabled"><a href="#">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+  <!-- Start three quarters container for main content columns -->
+      <div class="column-three-quarters">
+
+             <h1 class="heading-large">&nbsp;&nbsp;Enter a National Insurance or reference number</h1>
+
+    <!--     <div class="column-half">   
+                    <div class="searchfield">
+                        <input type="search" autocomplete="off" name="q" id="site-search-text" autofocus="autofocus" class="js-search-focus">
+                        <a href="job_record_confirm"><button id="search-submit" class="search-submit">Search</button></a>
+                        <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
+                    </div>
+               </div>   -->
+
+                <div class="column-half">   
+                    <div class="searchfield">
+                      <form action="job_record_confirm" method="get" class="form">
+                        <input type="search" autocomplete="off" name="q" id="site-search-text" autofocus="autofocus" class="js-search-focus">
+                        <a href="job_record_confirm"><button id="search-submit" input type="submit" class="search-submit">Search</button></a>
+                        <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
+                      </form>  
+                    </div>
+               </div>
+           
+          </div>
+          <!-- End col -->
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
