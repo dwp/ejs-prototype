@@ -26,7 +26,7 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant - disability</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant - sector preference</h1>
 
       <div class="column">   
 
@@ -73,8 +73,8 @@
             <div class="column">
                 <ul class="tabs" id="claimant_details">
                     <li><a href="job_edit">Basic record</a></li>
-                    <li class="selected"><a href="job_edit_details">Disability</a></li>
-                    <li><a href="job_sector">Sector</a></li>
+                    <li><a href="job_edit_details">Disability</a></li>
+                    <li class="selected"><a href="job_sector">Sector</a></li>
                     <li><a href="job_day_one">Day one</a></li>
                 </ul> 
             </div>
@@ -86,7 +86,7 @@
               <div class="example">
                   <form>
                     <fieldset>
-                    <legend class="form-label">Person with disability</legend>
+                    <legend class="form-label">Sector preference</legend>
                       <div class="form-group form-group-compound">
                         <!--  <label class="block-label" for="radio-indent-1">
                             <input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes">
@@ -97,7 +97,7 @@
                               Yes
                           </label>
                             <label class="block-label" data-target="example-ni-number1" for="radio-indent-3">
-                            <input id="radio-indent-3" type="radio" name="radio-indent-group" value="No" aria-controls="example-ni-number1">
+                            <input id="radio-indent-3" type="radio" name="radio-indent-group" value="No" aria-controls="example-ni-number1" checked>
                               No
                           </label>
                         </div>
@@ -108,12 +108,12 @@
 
               <div class="panel-indent js-hidden" id="example-ni-number">    
                   <div class="form-group">
-                        <p>Select all that apply</p>
+                <!--    <p>Select enter an industry sector</p> -->
 
-                            <form>
-                              <fieldset>
+                          <form>
+                     <!--     <fieldset>
 
-                                <legend class="visuallyhidden">Which disability applies to the claimant?</legend>
+                                <legend class="visuallyhidden">Which industry sector applies to the claimant?</legend>
 
                                 <label class="block-label" for="dis-1">
                                   <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
@@ -136,7 +136,32 @@
                                   Refugee
                                 </label>
 
-                              </fieldset>
+                              </fieldset> -->
+
+                              <div class="form-group">
+                                  <label class="form-label" for="nino">Industry sector</label>
+                                  <input class="form-control" id="nino" type="text">
+                              </div>  
+
+                              <div class="form-group">                              
+                                      <details>
+                                        <summary><span class="summary">Help with industry sectors</span></summary>
+                                        <div class="panel-indent">
+                                          <p>View a <a target="_blank" href="https://jobsearch.direct.gov.uk/jobsearch/Browse.aspx?sc=in">list of sectors</a> on
+                                            the Universal Jobmatch site.<p>
+                                        </div>
+                                      </details>
+                                </div>
+
+                              <div class="form-group">
+                                <label class="form-label" for="nino">Notes</label>
+                                <textarea class="form-control" id="textarea" rows="10"></textarea>
+                              </div>
+
+                                <div class="form-group" id="save">
+                                  <a href="job_record_confirm" class="button" value="Save">Save</a>
+                                </div>
+
                             </form>
 
                   </div>
@@ -155,7 +180,7 @@
        <!-- End column-->       
        </div>
 
-                <!-- <div class="column">
+           <!--     <div class="column">
                   <div class="form-group" id="get-started">
                      <a href="job_record_confirm" class="button" value="Save">Save</a>
                   </div>
