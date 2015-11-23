@@ -86,12 +86,34 @@
 
         <form method="post" class="group" id="form" data-parsley-validate>
 
+             <div class="example">
+                  <form>
+                    <fieldset>
+                    <legend class="form-label">Day one conditionality</legend>
+                      <div class="form-group form-group-compound">
+                        <!--  <label class="block-label" for="radio-indent-1">
+                            <input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes">
+                             Employer
+                          </label> -->
+                          <label class="block-label" for="radio-indent-2">
+                            <input id="radio-indent-2" type="radio" name="radio-indent-group" value="No" checked>
+                              Yes
+                          </label>
+                            <label class="block-label" data-target="example-ni-number" for="radio-indent-3">
+                            <input id="radio-indent-3" type="radio" name="radio-indent-group" value="No" aria-controls="example-ni-number">
+                              No
+                          </label>
+                        </div>
+                      </fieldset>
+                    </form>
+                </div>
 
-                  <div class="form-group">
-
+                <div class="panel-indent js-hidden" id="example-ni-number">    
+                      <div class="form-group">
+                         <p>Select all that apply</p>
                             <form>
                               <fieldset>
-                                <legend class="form-label">Day one conditionality</legend>
+                                <legend class="visuallyhidden">Day one conditionality</legend>
                                   <label class="block-label" for="dis-1">
                                     <input id="dis-1" name="dis-1" type="checkbox" value="CV">
                                     CV
@@ -106,14 +128,11 @@
                                   </label>
                               </fieldset>
                             </form>
-
-                  </div>
-
+                        </div>
                                 <div class="form-group" id="save">
                                   <a href="job_record_confirm" class="button" value="Save">Save</a>
                                 </div>
-
-
+                 </div>       
 
       </div>
       <!-- End col -->
