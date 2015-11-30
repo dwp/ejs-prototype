@@ -26,7 +26,7 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Edit basic record</h1>
 
       <div class="column">   
 
@@ -36,8 +36,8 @@
 
               <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="view_record" href="job_record_confirm" class="menu-item">
-                      <strong>View record</strong>
+                    <a id="Summary" href="job_record_confirm" class="menu-item">
+                      <strong>Summary</strong>
                     </a>
                   </div>
                 </div>
@@ -66,11 +66,23 @@
                   </div>
                 </div>
 
-                
-
              </div> 
 
      </div>   
+
+       <div class="column">
+                <ul class="tabs" id="claimant_details">
+                    <li><a href="job_edit_confirm">View record</a></li>
+                    <li class="selected"><a href="job_edit">Edit record</a></li>
+                    <li><a href="job_edit_details">Barriers</a></li>
+                    <li><a href="job_edit_disability">Disability</a></li>
+                    <li><a href="job_sector">Sector</a></li>
+                    <li><a href="job_day_one">Day one</a></li>
+                    <li><a href="job_prog">Programmes</a></li>
+  <!--   <li><a href="job_exp">Experience</a></li>   
+                    <li><a href="job_vol">Voluntary</a></li>   -->              
+                </ul> 
+            </div>
 
 
 
@@ -119,13 +131,7 @@
               </fieldset>
             </div> 
 
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-
-             <div class="form-group">
+            <div class="form-group">
                   <fieldset>
                     <legend>
                       <span class="form-label">
@@ -147,15 +153,29 @@
                   </fieldset>
               </div> 
 
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+
             <div class="form-group">
               <label class="form-label" for="email">Email address</label>
-              <input class="form-control" id="email" type="text" value="john_smith@gmail.com">
+              <input class="form-control" id="email" type="text" value="john_smith@gmail.com"><br>
+                  <label class="block-label" for="contact">
+                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
+                  Do not contact
+                </label>  
             </div>  
 
           
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
-              <input class="form-control" id="mobile" type="text" value="07585747358">
+              <input class="form-control" id="mobile" type="text" value="07585747358"><br>
+                  <label class="block-label" for="contact">
+                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
+                  Do not contact
+                </label>  
             </div>  
 
             <div class="form-group">
@@ -163,13 +183,21 @@
               <input class="form-control" id="postcode" type="text">
             </div>  
 
+            <div class="form-group">  
+              <label class="form-label" for="mobile">Language</label>
+                <label class="block-label" for="contact1">
+                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
+                   Welsh speaker
+                  </label>
+             </div>  
+
 
        <!-- End column-->       
        </div>
 
           <div class="column">
-           <div class="form-group" id="get-started">
-                     <a href="job_record_confirm" class="button" value="Save">Save</a>
+           <div class="form-group" id="save">
+                     <a href="job_edit_confirm" class="button" value="Save">Save</a>
                   </div>
                 </div>
 
