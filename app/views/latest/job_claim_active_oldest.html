@@ -26,7 +26,7 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Claim</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Summary</h1>
 
       <div class="column">   
 
@@ -165,15 +165,11 @@
              <div class="example">
                   <form>
                     <fieldset>
-                    <legend class="form-label">Close claim</legend>
-                      <div class="form-group form-group-compound inline">
+                    <legend class="form-label">Work programme</legend>
+                      <div class="form-group form-group-compound">
                            <label class="block-label" data-target="example-ni-number" for="radio-indent-4">
                             <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Completed" aria-controls="example-ni-number">
-                              Yes
-                          </label>
-                            <label class="block-label" for="close-no">
-                            <input id="close-no" type="radio" name="radio-indent-group" value="No" checked>
-                              No
+                              Close Claim
                           </label>
                         </div>
                       </fieldset>
@@ -183,57 +179,78 @@
 
               <div class="panel-indent js-hidden" id="example-ni-number">    
                   <div class="form-group">
+                        <p>Select all 'Help to Work' options that apply</p>
 
-                       <div class="form-group">
-                            <fieldset>
-                              <legend>
-                                <span class="form-label">
-                                  Last effective date (optional)
-                                </span>
-                              </legend>
-                              <div class="form-date">
+                            <form>
+                              <fieldset>
 
-                                <p class="form-hint">For example, 01 09 2015</p>
+                                <legend class="visuallyhidden">Select all 'Help to Work' options that apply</legend>
 
-                               <div class="form-group form-group-day">
-                                  <label for="dob-day">Day</label>
-                                  <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="">
-                                </div> 
-
-                                <div class="form-group form-group-month">
-                                  <label for="dob-month">Month</label>
-                                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
-                                </div>
-
-                                <div class="form-group form-group-year">
-                                  <label for="dob-year">Year</label>
-                                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015" value="">
-                                </div>
-                              </div>
-
-                            </fieldset>
-                        </div>  
-
-                          <div class="form-group">
-                            <label class="form-label" for="circs">Closure reason</label>
-                            <select class="select form-control" id="circs">
-                                <option value="Select">Select</option>
-                                <option value="Found work">Found work</option>
-                                <option value="Self employed">Self employed</option>
-                                <option value="Failed to attend">Failed to attend</option>
-                                <option value="Gone abroad">Gone abroad</option>
-                                <option value="Other">Other</option>
-                                <option value="To JSA">To JSA</option>
-                                <option value="To ESA">To ESA</option>
-                                <option value="To IS">To IS</option>
-                                <option value="To Pension">To Pension</option>
-                            </select>
-                          </div>
+                                <label class="block-label" for="dis-1">
+                                  <input id="dis-1" name="help" type="radio" value="Attend Jobcentre every day">
+                                  Attend Jobcentre every day
+                                </label>
+                                   <label class="block-label" for="dis-2">
+                                  <input id="dis-2" name="help" type="radio" value="Community Work Placement">
+                                  Community Work Placement
+                                </label>
+                                   <label class="block-label" for="dis-3">
+                                  <input id="dis-3" name="help" type="radio" value="Intensive support">
+                                  Intensive support 
+                                </label>
+                              </fieldset>
+                            </form>
 
                   </div>
 
-               </div>   
           
+              <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Last effective date (optional)
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 09 2015</p>
+
+                     <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="">
+                      </div> 
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015" value="">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>  
+
+
+            <div class="form-group">
+              <label class="form-label" for="circs">Claim closure (optional)</label>
+              <select class="select form-control" id="circs">
+                  <option value="Select">Select</option>
+                  <option value="Found work">Found work</option>
+                  <option value="Self employed">Self employed</option>
+                  <option value="Failed to attend">Failed to attend</option>
+                  <option value="Gone abroad">Gone abroad</option>
+                  <option value="Other">Other</option>
+                  <option value="To JSA">To JSA</option>
+                  <option value="To ESA">To ESA</option>
+                  <option value="To IS">To IS</option>
+                  <option value="To Pension">To Pension</option>
+              </select>
+            </div>
+
       </div>
       <!-- End column -->
 
@@ -248,9 +265,6 @@
 
 
 </main>
-
-<script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
-
 {{/content}}
 
 {{/layout}}

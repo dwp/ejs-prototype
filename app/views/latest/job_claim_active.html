@@ -78,7 +78,7 @@
               <fieldset>
                   <legend class="form-label">Benefit type</legend>
                   <label class="block-label" for="JSA">
-                    <input id="JSA" name="JSA" type="radio" value="JSA" checked>
+                    <input id="JSA" name="JSA" type="radio" value="JSA" disabled>
                     Jobseekers Allowance
                   </label><br>
                   <label class="block-label disabled" class="disabled" for="ESA">
@@ -86,11 +86,58 @@
                     Employment Support Allowance
                   </label><br>
                   <label class="block-label disabled" class="disabled" for="IS">
-                    <input id="IS" name="IS" type="radio" value="IS" disabled>
+                    <input id="IS" name="IS" type="radio" value="IS" checked>
                     Income Support
                   </label>
               </fieldset>
             </div> 
+
+             <div class="panel-indent js-hidden" id="example-ni-number1">    
+                  <div class="form-group">
+                   <label class="form-label" for="title">Income Support options</label>
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Income Support options</legend>
+                                <label class="block-label" for="dis-4" data-target="example-ni-number2">
+                                  <input id="dis-4" name="is-group" type="checkbox" value="Lone parent" aria-controls="example-ni-number2">
+                                  Lone parent
+                                </label>
+                                   <label class="block-label" for="dis-5">
+                                  <input id="dis-5" name="is-group" type="checkbox" value="Carer">
+                                  Carer
+                                </label>
+                                   <label class="block-label" for="dis-6">
+                                  <input id="dis-6" name="is-group" type="checkbox" value="Pregnant">
+                                  Pregnant
+                                </label>
+                                 </label>
+                                   <label class="block-label" for="dis-7">
+                                  <input id="dis-7" name="is-group" type="checkbox" value="Student">
+                                  Student
+                                </label>
+                              </fieldset>
+                            </form>
+                  </div>
+              </div>    
+
+              <div class="panel-indent js-hidden" id="example-ni-number2">    
+                  <div class="form-group">
+                   <label class="form-label" for="title">Date of youngest child's 5th birthday</label>       
+                      <fieldset>
+                        <div class="form-date">
+                          <p class="form-hint">For example, 03 1980</p>
+                          <div class="form-group form-group-month">
+                            <label for="dob-month">Month</label>
+                            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                          </div>
+                          <div class="form-group form-group-year">
+                            <label for="dob-year">Year</label>
+                            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                          </div>
+                        </div>
+                      </fieldset>
+                  </div>
+              </div>  
 
 
               <div class="form-group">
