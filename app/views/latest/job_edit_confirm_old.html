@@ -15,174 +15,143 @@
 
  <div class="grid-row">        
 
-            <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
               <ul class="main-nav">
-            <!--    <li id="nav-home"><a href="login">Home</a></li> -->
-                <li id="nav-job" class="selected"><a href="job">Jobcentre</a></li>
-         <!--         <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
-      <li id="nav-admin"><a href="#">Admin</a></li>
-                <li id="nav-stats"><a href="#">Stats</a></li> -->
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
               </ul>
-            </div>
+          </div> 
+
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-
-        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Jobcentre</a>&nbsp;>&nbsp;
-          <a href="job_advanced">Edit record</a>&nbsp;>&nbsp;Review record</p> 
-
-         <h1 class="heading-large">&nbsp;&nbsp;Confirm record edit</h1>
-
-         <ul class="tabs">
-                <li><a href="job">Start search</a></li>
-      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
-                <li><a href="job_new">Create record</a></li>
-  <!--              <li><a href="benefit_edit">Edit record</a></li>
-                <li><a href="maintenance">Maintenance</a></li>
-                <li><a href="payment">Payment</a></li>
-                <li><a href="closure">Closure</a></li>      -->  
-             </ul> 
-
+         <h1 class="heading-large">&nbsp;&nbsp;Claimant details</h1>
 
       <div class="column">   
 
-        <br>
 
         <!-- 3rd level nav buttons -->
             <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
 
-                <div class="grid grid-1-5">
+              <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="view_record" href="job_record_confirm" class="menu-item action ">
-                      <strong>View record</strong>
+                    <a id="Summary" href="job_record_confirm" class="menu-item">
+                      <strong>Summary</strong>
                     </a>
                   </div>
                 </div>
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item action selected">
-                      <strong>Edit record</strong>
+                    <a id="edit_record" href="job_edit" class="menu-item selected">
+                      <strong>Claimant</strong>
                     </a>
                   </div>
                 </div>
-
-        <!--        <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="interview" href="job_interview" class="menu-item">
-                      <strong>Interview</strong>
-                    </a>
-                  </div>
-                </div> -->
 
                <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="appointments" href="job_next" class="menu-item action">
-                      <strong>Appointments</strong>
+                    <a id="appointments" href="job_next_new" class="menu-item">
+                      <strong>Appointment</strong>
                     </a>
                   </div>
                 </div>
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="history" href="history" class="menu-item">
-                      <strong>History</strong>
+                    <a id="claim_active" href="job_claim_active" class="menu-item">
+                      <strong>Claim</strong>
                     </a>
                   </div>
                 </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="closure" href="job_closure" class="menu-item">
-                      <strong>Claim closure</strong>
-                    </a>
-                  </div>
-                </div>
-
-                
 
              </div> 
 
      </div>   
 
+       <div class="column">
+                <ul class="tabs" id="claimant_details">
+                    <li class="selected"><a href="job_edit_confirm">View record</a></li>
+                    <li><a href="job_edit">Edit record</a></li>
+                    <li><a href="job_edit_details">Barriers</a></li>
+                    <li><a href="job_edit_disability">Disability</a></li>
+                    <li><a href="job_sector">Sector</a></li>
+                    <li><a href="job_day_one">Day one</a></li>
+                    <li><a href="job_prog">Programmes</a></li>
+  <!--   <li><a href="job_exp">Experience</a></li>   
+                    <li><a href="job_vol">Voluntary</a></li>   --> 
+                </ul> 
+            </div>
 
-      <div class="column-half">   
 
-        <br>
 
-          <h3 class="heading-small">Confirm record edit</h3>
-
+    <div class="column-half">
+     <!--     <h2 class="heading-small">Day one conditionality</h2>
            <div>
                 <table>
                     <tr>
-                        <td>Benefit type:</td>
-                        <td>JSA</td>
-                    </tr>
-                   <tr>
-                    <td>Initial date of claim:</td>
-                        <td>14/04/2015</td>
-                    </tr>
+                        <td>1. CV&nbsp;<i class="fa fa-times red-cross"></i></td>
+                        <td>2. Universal Jobmatch profile&nbsp;<i class="fa fa-times red-cross"></i></td>
+                        <td>3. Email address&nbsp;<i class="fa fa-times red-cross"></i></td>                     
+                     </tr>   
+                </table>
+            </div>     -->
+          <h2 class="heading-small">Barriers to work</h2>
+           <div>
+                <table>
                     <tr>
-                        <td>Job Centre:</td>
-                        <td>Bambury</td>
-                    </tr>
+                        <td>1. Literacy/numeracy</td>
+                        <td>2. IT skills</td>
+                     </tr>   
+                </table>
+            </div>    
+
+          <h2 class="heading-small">Sector preference</h2>
+           <div>
+                <table>
                     <tr>
-                        <td>Title:</td>
-                        <td>Mr</td>
+                        <td>Warehousing</td>
                     </tr>
-                    <tr>
-                        <td>Initial:</td>
-                        <td>J</td>
-                    </tr>
-                    <tr>
-                        <td>Surname:</td>
-                        <td>Smith</td>
-                    </tr>
-                    <tr>
-                        <td>Age:</td>
-                        <td>34</td>
-                    </tr>
-                    <tr>
-                        <td>Nationality:</td>
-                        <td>United Kingdom</td>
-                    </tr>
-                    <tr>
-                        <td>NINO:</td>
-                        <td>JC 45 85 96 X</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile number:</td>
-                        <td>04585 747 358</td>
-                    </tr>
-                    <tr>
-                        <td>Needs Welsh speaker:</td>
-                        <td>Yes</td>
+                </table>
+           </div> 
+              
+      </div>
+      <!-- End col -->
+
+
+
+      <!-- Start col -->      
+      <div class="column-half">  
+          <h2 class="heading-small">Work programmes</h2>
+           <div>
+                <table>
+                        <td>Undertaking Community Work Placement</td>
                     </tr>
                 </table>
            </div> 
 
-          <br>
-          <br>
-     
-            <div class="form-group" id="get-started">
-                  <a href="job_edit" class="button button" value="Edit">Edit</a>
-                  <a href="job_record_confirm" class="button button" value="Submit">Submit</a>
-             </div>
-
-    <!--        <nav class="back-nav" role="navigation">
-               <a id="backButton" onclick="window.history.go(-1); return false;">Back</a> 
-            </nav> -->
- 
-            <br>            
-         
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-       
-       
+    <!--      <h2 class="heading-small">Work experience</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. ASDA - 8 week placement in run-up to Christmas. Receive a City &amp; Guilds   
+    Accredited Certificate.</td>
+                     </tr>   
+                     <tr>
+                        <td>2. Primark - 12 warehouse operative placement, June - Sep 2015.</td>
+                     </tr>   
+                </table>
+            </div>    
+          <h2 class="heading-small">Voluntary work</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. Oxfam</td>
+                    </tr>
+                </table>
+           </div> -->
 
        <!-- End column-->       
        </div>
