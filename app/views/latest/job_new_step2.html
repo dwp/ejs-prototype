@@ -40,8 +40,8 @@
                     <form>
                       <fieldset>
                         <legend class="visuallyhidden">Choose benefit type:</legend>
-                        <label class="block-label" for="radio-1">
-                          <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance">
+                        <label class="block-label" for="radio-1" data-target="example-ni-number0">
+                          <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance" aria-controls="example-ni-number0">
                           Jobseekers Allowance
                         </label>
                         <label class="block-label" data-target="example-ni-number" for="radio-2">
@@ -55,6 +55,29 @@
                       </fieldset>
                     </form>
             </div> 
+
+              <div class="panel-indent js-hidden" id="example-ni-number0">    
+                  <div class="form-group">
+                    <label class="form-label" for="title">Day one evidence provided</label>
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Day one conditionality</legend>
+                                <label class="block-label" for="dis-1">
+                                  <input id="dis-1" type="checkbox" name="esa-group" value="Work Related Activity Group">
+                                    CV
+                                </label>
+                                   <label class="block-label" for="dis-2">
+                                  <input id="dis-2" type="checkbox" name="esa-group" value="Support Group">
+                                    Email address
+                                </label>
+                                   <label class="block-label" for="dis-3">
+                                  <input id="dis-3" type="checkbox" name="esa-group" value="Pre Assessment">
+                                    Universal Jobmatch profile
+                                </label>
+                              </fieldset>
+                            </form>
+                  </div>
+              </div>  
 
              <div class="panel-indent js-hidden" id="example-ni-number">    
                   <div class="form-group">
