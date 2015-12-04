@@ -1,0 +1,56 @@
+{{<layout}}
+
+{{$pageTitle}}Admin screen{{/pageTitle}}
+
+
+{{$content}}
+
+<main id="content" role="main">
+
+
+   <h1 class="heading-large">Password confirmation</h1>
+
+   <div class="grid-row">
+
+    <div class="column-three-quarters">
+
+     <div class="form-group">
+         <p>Please click inside the box below.<br>
+          Then copy and paste this password into an email to your manager.</p>
+        
+    <!--   <p class="bold login_pass">****************************************************************</p> -->
+      
+       <form name="select_all">
+          <textarea name="text_area" class="login_pass" onClick="javascript:this.form.text_area.focus();this.form.text_area.select();">****************************************************************</textarea>
+      </form> 
+
+      <details>
+        <summary><span class="summary">Instructions</span></summary>
+        <div class="panel-indent">
+          <ol class="list-number">
+              <li>Click inside the box. The whole password should automatically be highlighted.</li>
+              <li>Copy the highlighted password ('right click + Copy' using your mouse, or 'Ctrl + c' on your keyboard).</li>
+              <li>Paste the copied password ('right click + Paste' using your mouse, or 'Ctrl + v' on your keyboard) into an email.</li>
+              <li>Send the email, with the pasted password, to your manager.</li>
+           </ol>  
+        </div>
+      </details>
+
+    </div> 
+
+      <div class="form-group">
+         <a href="login" class="button" value="Done">Done</a>
+      </div>   
+
+    </div>
+    <!-- End column -->
+
+  </div>
+  <!-- End row -->
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
