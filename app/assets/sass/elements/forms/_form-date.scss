@@ -36,6 +36,36 @@ input[type=number] {
 
 }
 
+.form-postcode {
+
+  .form-group {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 0;
+    clear: none;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+    }
+
+  }
+
+  .form-group-area {
+    width: 85px;
+  }
+
+  .form-group-local {
+    width: 35px;
+  }
+
+}
+
+
 .form-group-day .form-control,  
 .form-group-month .form-control  {
   width:100%;
