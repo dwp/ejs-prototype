@@ -95,6 +95,7 @@
                         <label for="dob-year">Year</label>
                         <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
                       </div>
+
                     </div>
 
                   </fieldset>
@@ -124,11 +125,34 @@
                   </label>               
               </div>   
 
-           <div class="form-group">
+  <!--         <div class="form-group">
               <label class="form-label" for="postcode">Postcode</label>
-      <!--        <label class="form-hint" for="postcode">For example, WR2 3UB</label> -->
               <input class="form-control" id="postcode" type="text">
-            </div>  
+            </div>   -->
+
+
+            <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Postcode
+                      </span>
+                    </legend>
+                   
+                    <div class="form-postcode">
+                        <p class="form-hint">For example, WR1&nbsp;&nbsp;5</p>
+                        <div class="form-group form-group-area">
+                     <!--     <label for="area">Area code</label> -->
+                          <input class="form-control" id="area">
+                        </div>
+                        <div class="form-group form-group-local">
+                     <!--     <label for="local">Local code</label> -->
+                          <input class="form-control" id="local">
+                        </div>
+                    </div>
+
+                  </fieldset>
+              </div>
 
             <div class="form-group">  
               <label class="form-label" for="mobile">Language (optional)</label>
