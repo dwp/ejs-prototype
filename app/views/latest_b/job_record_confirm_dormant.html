@@ -37,7 +37,7 @@
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="Summary" href="job_record_confirm" class="menu-item selected">
+                    <a id="Summary" href="job_record_confirm_dormant" class="menu-item selected">
                       <strong>Summary</strong>
                     </a>
                   </div>
@@ -45,7 +45,7 @@
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item">
+                    <a id="edit_record" href="job_edit_dormant" class="menu-item">
                       <strong>Claimant</strong>
                     </a>
                   </div>
@@ -53,7 +53,7 @@
 
                <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="appointments" href="job_next_new" class="menu-item">
+                    <a id="appointments" href="#" class="menu-item disabled">
                       <strong>Appointment</strong>
                     </a>
                   </div>
@@ -61,7 +61,7 @@
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="claim_active" href="job_claim_active" class="menu-item">
+                    <a id="claim_dormant" href="job_claim_dormant" class="menu-item">
                       <strong>Claim</strong>
                     </a>
                   </div>
@@ -75,56 +75,46 @@
 
       <div class="column-half">   
           <h2 class="heading-small">Claimant details</h2>
-              <table>
+           <div>
+                <table>
                     <tr>
-                        <td>Name:</td>
-                        <td>Mr&nbsp;&nbsp;J&nbsp;&nbsp;Smith</td>
+                        <td>Title:</td>
+                        <td>Mr</td>
+                    </tr>
+                    <tr>
+                        <td>Initial:</td>
+                        <td>J</td>
+                    </tr>
+                    <tr>
+                        <td>Surname:</td>
+                        <td>Smith</td>
                     </tr>
                     <tr>
                         <td>Age:</td>
                         <td>34</td>
                     </tr>
                     <tr>
-                        <td>National Insurance:</td>
+                        <td>National Insurance number:</td>
                         <td>JC628596A</td>
                     </tr>
                     <tr>
                         <td>Mobile number:</td>
                         <td>07585 747358</td>
-                    </tr>   
-                     <tr>
+                    </tr>  
+                    <tr>
                         <td>Email address:</td>
                         <td>james_smith@gmail.com</td>
                     </tr>                      
-      <!--          <tr>
+                    <tr>
                         <td>Postcode:</td>
                         <td>WR14 4QT</td>
-                    </tr>     -->
+                    </tr>    
                     <tr>
                         <td>Language:</td>
                         <td>Welsh</td>
-                    </tr> 
-                    <tr>
-                        <td>Industry sector:</td>
-                        <td>Logistics/transportation</td>
-                    </tr>                                      
-                    <tr>
-                        <td>Markers:</td>
-                        <td>Ex-offender, homeless</td>
-                    </tr>   
-                    </tbody>
-                </table> 
-
-       <!--     <h2 class="heading-small">Day one conditionality</h2>
-                <table>
-                    <tbody>
-                      <tr>
-                        <td>1. CV&nbsp;<i class="fa fa-times red-cross"></i></td>
-                        <td>2. Universal Jobmatch profile&nbsp;<i class="fa fa-times red-cross"></i></td>
-                        <td>3. Email address&nbsp;<i class="fa fa-times red-cross"></i></td>                     
-                     </tr>   
-                </tbody>
-              </table> -->
+                    </tr>                  
+                </table>
+           </div> 
               
       </div>
       <!-- End col -->
@@ -134,23 +124,27 @@
       <!-- Start col -->      
       <div class="column-half">  
 
-          <h2 class="heading-small">Latest claim</h2>
+            <h2 class="heading-small">Latest claim</h2>
                 <table>
                     <tr>
                         <td>Benefit type:</td>
-                        <td>Employment Support Allowance</td>
+                        <td>Income Support</td>
                     </tr>
                     <tr>
-                        <td>Benefit option:</td>
-                        <td>Support group</td>
-                    </tr>
+                        <td>Income Support option:</td>
+                        <td>Carer</td>
+                    </tr>                    
                     <tr>
                         <td>Initial date of claim:</td>
-                        <td>14/09/2015</td>
+                        <td>10/10/2015</td>
+                    </tr>
+                    <tr>
+                        <td>Last effective date:</td>
+                        <td>28/11/2015</td>
                     </tr>
                     <tr>
                         <td>Status:</td>
-                        <td>Live</td>
+                        <td>Dormant</td>
                     </tr>                   
                     <tr>
                         <td>Jobcentre:</td>
@@ -160,12 +154,6 @@
                         <td>Work coach:</td>
                         <td>amanda.wright</td>  
                     </tr>  
-               <!--     <tr>
-                        <td>Day one:</td>
-                        <td>CV&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
-                        Universal Jobmatch&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
-                        Email&nbsp;<i class="fa fa-times red-cross"></i></td>                     
-                     </tr>   --> 
                 </table>
 
             <h2 class="heading-small">Next appointment</h2>
@@ -173,16 +161,8 @@
                     <tr>
                         <td>None</td>
                      </tr>
-                     
-                    <!-- tr>
-                        <td>Date:</td>
-                        <td>30/10/2015</td>
-                     </tr>
-                     <tr>   
-                        <td>Time:</td>
-                        <td>11:30</td>
-                    </tr> -->
                 </table>
+
 
        <!-- End column-->       
        </div>

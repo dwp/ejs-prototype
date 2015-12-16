@@ -19,7 +19,7 @@
               <ul class="main-nav">
                 <li id="nav-home"><a href="job">Search</a></li>
                 <li id="nav-job"><a href="job_new">Create record</a></li>
-                <li id="nav-perf"><a href="performance">Caseload</a></li>
+                <li id="nav-perf"><a href="performance">Performance</a></li>
               </ul>
           </div> 
 
@@ -36,7 +36,7 @@
 
                 <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="Summary" href="job_record_confirm_dormant" class="menu-item">
+                      <a id="view_record" href="job_record_confirm" class="menu-item">
                         <strong>Summary</strong>
                       </a>
                     </div>
@@ -44,23 +44,23 @@
 
                   <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="edit_record" href="job_edit_dormant" class="menu-item">
-                         <strong>Claimant</strong>
+                      <a id="edit_record" href="job_edit_confirm" class="menu-item">
+                        <strong>Claimant</strong>
                       </a>
                     </div>
                   </div>
 
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="appointments" href="#" class="menu-item disabled">
-                      <strong>Appointment</strong>
-                    </a>
+                 <div class="grid grid-1-5">
+                    <div class="inner-block left">
+                      <a id="appointments" href="job_next_new" class="menu-item">
+                        <strong>Appointment</strong>
+                      </a>
+                    </div>
                   </div>
-                </div>
 
                   <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="claim_active" href="job_claim_dormant" class="menu-item selected">
+                      <a id="claim_active" href="job_claim_active" class="menu-item selected">
                         <strong>Claim</strong>
                       </a>
                     </div>
@@ -75,73 +75,24 @@
       <div class="column-half">   
 
            <div class="form-group"> 
-                <label class="form-label" for="title">Benefit type</label>
-                    <form>
-                      <fieldset>
-                        <legend class="visuallyhidden">Choose benefit type:</legend>
-                        <label class="block-label" for="radio-1" data-target="example-ni-number0">
-                          <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance" aria-controls="example-ni-number0">
-                          Jobseekers Allowance
-                        </label>
-                        <label class="block-label" data-target="example-ni-number" for="radio-2">
-                          <input id="radio-2" type="radio" name="radio-group" value="Employment Support Allowance" aria-controls="example-ni-number">
-                          Employment Support Allowance
-                        </label>
-                        <label class="block-label" for="radio-3" data-target="example-ni-number1">
-                          <input id="radio-3" type="radio" name="radio-group" value="Income Support" aria-controls="example-ni-number1">
-                          Income Support
-                        </label>
-                      </fieldset>
-                    </form>
+              <fieldset>
+                  <legend class="form-label">Benefit type</legend>
+                  <label class="block-label disabled" for="JSA">
+                    <input id="JSA" name="JSA" type="radio" value="JSA" disabled>
+                    Jobseekers Allowance
+                  </label><br>
+                  <label class="block-label disabled" for="ESA">
+                    <input id="ESA" name="ESA" type="radio" value="ESA" disabled>
+                    Employment Support Allowance
+                  </label><br>
+                  <label class="block-label" for="IS">
+                    <input id="IS" name="IS" type="radio" value="IS" checked>
+                    Income Support
+                  </label>
+              </fieldset>
             </div> 
 
-              <div class="panel-indent js-hidden" id="example-ni-number0">    
-                  <div class="form-group">
-                    <label class="form-label" for="title">Day one evidence provided</label>
-                            <form>
-                              <fieldset>
-                                <legend class="visuallyhidden">Day one conditionality</legend>
-                                <label class="block-label" for="dis-1">
-                                  <input id="dis-1" type="checkbox" name="esa-group" value="Work Related Activity Group">
-                                    CV
-                                </label>
-                                   <label class="block-label" for="dis-2">
-                                  <input id="dis-2" type="checkbox" name="esa-group" value="Support Group">
-                                    Email address
-                                </label>
-                                   <label class="block-label" for="dis-3">
-                                  <input id="dis-3" type="checkbox" name="esa-group" value="Pre Assessment">
-                                    Universal Jobmatch profile
-                                </label>
-                              </fieldset>
-                            </form>
-                  </div>
-              </div>  
-
-             <div class="panel-indent js-hidden" id="example-ni-number">    
-                  <div class="form-group">
-                    <label class="form-label" for="title">Employment Support Allowance options</label>
-                            <form>
-                              <fieldset>
-                                <legend class="visuallyhidden">Employment Support Allowance options</legend>
-                                <label class="block-label" for="dis-1">
-                                  <input id="dis-1" type="radio" name="esa-group" value="Work Related Activity Group">
-                                    Work Related Activity Group
-                                </label>
-                                   <label class="block-label" for="dis-2">
-                                  <input id="dis-2" type="radio" name="esa-group" value="Support Group">
-                                    Support Group
-                                </label>
-                                   <label class="block-label" for="dis-3">
-                                  <input id="dis-3" type="radio" name="esa-group" value="Pre Assessment">
-                                    Pre Assessment
-                                </label>
-                              </fieldset>
-                            </form>
-                  </div>
-              </div>    
-
-              <div class="panel-indent js-hidden" id="example-ni-number1">    
+              <div class="panel-indent" id="example-ni-number1">    
                   <div class="form-group">
                    <label class="form-label" for="title">Income Support options</label>
                             <form>
@@ -152,7 +103,7 @@
                                   Lone parent
                                 </label>
                                    <label class="block-label" for="dis-5">
-                                  <input id="dis-5" name="is-group" type="checkbox" value="Carer">
+                                  <input id="dis-5" name="is-group" type="checkbox" value="Carer" checked>
                                   Carer
                                 </label>
                                    <label class="block-label" for="dis-6">
@@ -187,13 +138,9 @@
                       </fieldset>
                   </div>
               </div>  
-       
-      </div>
-      <!-- End col -->
 
-      <div class="column-half">
 
-            <div class="form-group">
+              <div class="form-group">
                   <fieldset>
                     <legend>
                       <span class="form-label">
@@ -206,28 +153,34 @@
 
                      <div class="form-group form-group-day">
                         <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="">
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="14">
                       </div>
 
                       <div class="form-group form-group-month">
                         <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="09">
                       </div>
 
                       <div class="form-group form-group-year">
                         <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="">
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="2015">
                       </div>
                     </div>
 
                   </fieldset>
-             </div>
-        
-        <div class="form-group">
+              </div>
+       
+      </div>
+      <!-- End col -->
+
+      <div class="column-half">
+
+      <div class="form-group">
             <label class="form-label" for="title">Jobcentre</label>
             <select class="select form-control">
-                  <option value="">Select</option>
+                  <option value="Worcester">Worcester</option>
                   <option value="Bambury">Bambury</option>
+                  <option value="Southampton">Southampton</option>
                   <option value="Bradford">Bradford</option>
                   <option value="Derby">Derby</option>
                   <option value="Liverpool">Liverpool</option>
@@ -235,14 +188,13 @@
                   <option value="Portsmouth">Portsmouth</option>
                   <option value="Southampton">Southampton</option>
                   <option value="Wolverhampton">Wolverhampton</option>           
-                  <option value="Worcester">Worcester</option>           
               </select> 
         </div>            
 
-            <div class="form-group">
+
+           <div class="form-group">
                 <label class="form-label" for="title">Work coach</label>
               <select class="select form-control">
-                  <option value="">Select</option>
                   <option value="amanda.wright">amanda.wright</option>
                   <option value="richard.kaine">richard.kaine</option>
                   <option value="john.smith2">john.smith2</option>
@@ -257,11 +209,84 @@
               </select> 
             </div>
 
-      </div>
+             <div class="example">
+                  <form>
+                    <fieldset>
+                    <legend class="form-label">Close claim</legend>
+                      <div class="form-group form-group-compound inline">
+                           <label class="block-label" data-target="example-ni-number" for="radio-indent-4">
+                            <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Completed" aria-controls="example-ni-number">
+                              Yes
+                          </label>
+                            <label class="block-label" for="close-no">
+                            <input id="close-no" type="radio" name="radio-indent-group" value="No" checked>
+                              No
+                          </label>
+                        </div>
+                      </fieldset>
+                    </form>
+                </div>
 
-          <div class="column">
-                  <div class="form-group" id="get-started">
-                  <a href="job_record_confirm" class="button" value="Save">Save</a>
+
+              <div class="panel-indent js-hidden" id="example-ni-number">    
+                  <div class="form-group">
+
+                       <div class="form-group">
+                            <fieldset>
+                              <legend>
+                                <span class="form-label">
+                                  Last effective date (optional)
+                                </span>
+                              </legend>
+                              <div class="form-date">
+
+                                <p class="form-hint">For example, 01 09 2015</p>
+
+                               <div class="form-group form-group-day">
+                                  <label for="dob-day">Day</label>
+                                  <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31" value="">
+                                </div> 
+
+                                <div class="form-group form-group-month">
+                                  <label for="dob-month">Month</label>
+                                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                  <label for="dob-year">Year</label>
+                                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015" value="">
+                                </div>
+                              </div>
+
+                            </fieldset>
+                        </div>  
+
+                          <div class="form-group">
+                            <label class="form-label" for="circs">Closure reason</label>
+                            <select class="select form-control" id="circs">
+                                <option value="Select">Select</option>
+                                <option value="Found work">Found work</option>
+                                <option value="Self employed">Self employed</option>
+                                <option value="Failed to attend">Failed to attend</option>
+                                <option value="Gone abroad">Gone abroad</option>
+                                <option value="Other">Other</option>
+                                <option value="To JSA">To JSA</option>
+                                <option value="To ESA">To ESA</option>
+                                <option value="To IS">To IS</option>
+                                <option value="To Pension">To Pension</option>
+                            </select>
+                          </div>
+
+                  </div>
+
+               </div>   
+          
+      </div>
+      <!-- End column -->
+
+        <div class="column">
+              <div class="form-group" id="get-started">
+                  <a href="job_record_confirm_dormant" class="button" value="Save">Save</a>
               </div>
           </div>   
 
@@ -270,6 +295,7 @@
 
 
 </main>
+
 <script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
 
 {{/content}}

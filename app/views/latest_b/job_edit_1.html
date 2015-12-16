@@ -26,7 +26,7 @@
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant record</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant</h1>
 
       <div class="column">   
 
@@ -36,7 +36,7 @@
 
               <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="Summary" href="job_record_confirm" class="menu-item">
+                    <a id="Summary" href="job_record_confirm_1" class="menu-item">
                       <strong>Summary</strong>
                     </a>
                   </div>
@@ -44,15 +44,15 @@
 
                 <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item selected">
-                      <strong>Claimant</strong>
+                    <a id="edit_record" href="job_edit_1" class="menu-item selected">
+                      <strong>Edit claimant</strong>
                     </a>
                   </div>
                 </div>
 
                <div class="grid grid-1-5">
                   <div class="inner-block left">
-                    <a id="appointments" href="job_next_new" class="menu-item">
+                    <a id="appointments" href="job_next" class="menu-item">
                       <strong>Appointment</strong>
                     </a>
                   </div>
@@ -66,24 +66,11 @@
                   </div>
                 </div>
 
+                
+
              </div> 
 
      </div>   
-
-       <!--  <div class="column">
-                <ul class="tabs" id="claimant_details">
-                    <li><a href="job_edit_confirm">Overview</a></li>
-                    <li class="selected"><a href="job_edit">Edit record</a></li>
-                    <li><a href="job_edit_details">Edit details</a></li>
-                    <li><a href="job_edit_disability">Disability</a></li>
-                    <li class="selected"><a href="job_sector">Sector</a></li>
-                    <li><a href="job_day_one">Day one</a></li> 
-                    <li><a href="job_prog">Programmes</a></li>
-                    <li><a href="job_exp">Experience</a></li>   
-                    <li><a href="job_vol">Voluntary</a></li> 
-                </ul>  
-            </div>   --> 
-
 
 
 
@@ -92,8 +79,8 @@
         <form method="post" class="group" id="form" data-parsley-validate>
 
             <div class="form-group">
-                <label class="form-label" for="nino">National Insurance number</label>
-                <input class="form-control" id="nino" type="text" value="JC628596A">
+                <label class="form-hint" for="nino">National Insurance number (read-only)</label>
+                <input class="form-control readonly" id="nino" type="text" value="JC628596A" readonly>
             </div>
 
             <div class="form-group title">
@@ -118,7 +105,13 @@
               <input class="form-control" id="Surname" type="text" value="Smith">
             </div>  
 
-             <div class="form-group"> 
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+
+           <div class="form-group"> 
               <fieldset class="inline">
                   <legend class="form-label">Gender</legend>
                   <label class="block-label" for="male">
@@ -132,7 +125,7 @@
               </fieldset>
             </div> 
 
-            <div class="form-group">
+              <div class="form-group">
                   <fieldset>
                     <legend>
                       <span class="form-label">
@@ -151,87 +144,22 @@
                         <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="1981">
                       </div>
                     </div>
+
                   </fieldset>
               </div> 
-
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
-              <input class="form-control" id="email" type="text" value="john_smith@gmail.com"><br>
-                  <label class="block-label" for="contact">
-                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
-                  Do not contact
-                </label>  
-            </div>  
-
           
             <div class="form-group">
               <label class="form-label" for="mobile">Mobile number</label>
-              <input class="form-control" id="mobile" type="text" value="07585747358"><br>
-                  <label class="block-label" for="contact">
-                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
-                  Do not contact
-                </label>  
+              <input class="form-control" id="mobile" type="text" value="07585747358">
             </div>  
-
-       <!--     <div class="form-group">
-              <label class="form-label" for="postcode">Postcode</label>
-              <input class="form-control" id="postcode" type="text">
-            </div>   -->
-
-            <div class="form-group">
-                  <fieldset>
-
-                    <legend>
-                      <span class="form-label">
-                        Postcode
-                      </span>
-                    </legend>
-                   
-                    <div class="form-postcode">
-                        <p class="form-hint">For example, WR1&nbsp;&nbsp;5</p>
-                          <div class="form-group form-group-area">
-                     <!--     <label for="area">Area code</label> -->
-                          <input class="form-control" id="area" value="WR2">
-                        </div>
-                        <div class="form-group form-group-local">
-                     <!--     <label for="local">Local code</label> -->
-                          <input class="form-control" id="local" value="3">
-                        </div>
-                    </div>
-                   </fieldset>
-
-               <!--     <details>
-                      <summary><span class="summary">Why are characters hidden?</span></summary>
-                      <div class="panel panel-border-narrow">
-                        <p>
-                          For security, the last 2 characters are hidden.
-                        </p>
-                      </div>
-                    </details> -->
-
-              </div>
-
-            <div class="form-group">  
-              <label class="form-label" for="mobile">Language</label>
-                <label class="block-label" for="contact1">
-                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
-                   Welsh speaker
-                  </label>
-             </div>  
 
 
        <!-- End column-->       
        </div>
 
           <div class="column">
-           <div class="form-group" id="save">
-                     <a href="claimant_details" class="button" value="Continue">Continue</a>
+           <div class="form-group" id="get-started">
+                     <a href="job_record_confirm_1" class="button" value="Save">Save</a>
                   </div>
                 </div>
 

@@ -19,14 +19,14 @@
               <ul class="main-nav">
                 <li id="nav-home"><a href="job">Search</a></li>
                 <li id="nav-job"><a href="job_new">Create record</a></li>
-                <li id="nav-perf"><a href="performance">Caseload</a></li>
+                <li id="nav-perf"><a href="performance">Performance</a></li>
               </ul>
           </div> 
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Claim</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Summary</h1>
 
       <div class="column">   
 
@@ -36,7 +36,7 @@
 
                 <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="Summary" href="job_record_confirm_1" class="menu-item">
+                      <a id="view_record" href="job_record_confirm" class="menu-item">
                         <strong>Summary</strong>
                       </a>
                     </div>
@@ -44,7 +44,7 @@
 
                   <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="edit_record" href="job_edit_1" class="menu-item">
+                      <a id="edit_record" href="job_edit_confirm" class="menu-item">
                         <strong>Claimant</strong>
                       </a>
                     </div>
@@ -52,7 +52,7 @@
 
                  <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="appointments" href="job_next" class="menu-item">
+                      <a id="appointments" href="job_next_new" class="menu-item">
                         <strong>Appointment</strong>
                       </a>
                     </div>
@@ -60,7 +60,7 @@
 
                   <div class="grid grid-1-5">
                     <div class="inner-block left">
-                      <a id="claim_active" href="job_claim_active_1" class="menu-item selected">
+                      <a id="claim_active" href="job_claim_active" class="menu-item selected">
                         <strong>Claim</strong>
                       </a>
                     </div>
@@ -128,7 +128,7 @@
 
       <div class="column-half">
 
-                <div class="form-group">
+      <div class="form-group">
             <label class="form-label" for="title">Jobcentre</label>
             <select class="select form-control">
                   <option value="Worcester">Worcester</option>
@@ -161,6 +161,47 @@
                   <option value="sarah.fielding">sarah.fielding</option>                   
               </select> 
             </div>
+
+             <div class="example">
+                  <form>
+                    <fieldset>
+                    <legend class="form-label">Work programme</legend>
+                      <div class="form-group form-group-compound">
+                           <label class="block-label" data-target="example-ni-number" for="radio-indent-4">
+                            <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Completed" aria-controls="example-ni-number">
+                              Close Claim
+                          </label>
+                        </div>
+                      </fieldset>
+                    </form>
+                </div>
+
+
+              <div class="panel-indent js-hidden" id="example-ni-number">    
+                  <div class="form-group">
+                        <p>Select all 'Help to Work' options that apply</p>
+
+                            <form>
+                              <fieldset>
+
+                                <legend class="visuallyhidden">Select all 'Help to Work' options that apply</legend>
+
+                                <label class="block-label" for="dis-1">
+                                  <input id="dis-1" name="help" type="radio" value="Attend Jobcentre every day">
+                                  Attend Jobcentre every day
+                                </label>
+                                   <label class="block-label" for="dis-2">
+                                  <input id="dis-2" name="help" type="radio" value="Community Work Placement">
+                                  Community Work Placement
+                                </label>
+                                   <label class="block-label" for="dis-3">
+                                  <input id="dis-3" name="help" type="radio" value="Intensive support">
+                                  Intensive support 
+                                </label>
+                              </fieldset>
+                            </form>
+
+                  </div>
 
           
               <div class="form-group">
@@ -215,7 +256,7 @@
 
         <div class="column">
               <div class="form-group" id="get-started">
-                  <a href="job_record_confirm_1" class="button" value="Save">Save</a>
+                  <a href="job_record_confirm_dormant" class="button" value="Save">Save</a>
               </div>
           </div>   
 
