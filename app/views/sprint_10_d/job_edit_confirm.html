@@ -1,0 +1,167 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Claimant details</h1>
+
+      <div class="column">   
+
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+              <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="Summary" href="job_record_confirm" class="menu-item">
+                      <strong>Summary</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item selected">
+                      <strong>Claimant</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="job_next_new" class="menu-item">
+                      <strong>Appointment</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="claim_active" href="job_claim_active" class="menu-item">
+                      <strong>Claim</strong>
+                    </a>
+                  </div>
+                </div>
+
+             </div> 
+
+     </div>   
+
+            <div class="column">
+                <ul class="tabs" id="claimant_details">
+                    <li class="selected"><a href="job_edit_confirm">Overview</a></li>
+                    <li><a href="job_edit">Edit record</a></li>
+                    <li><a href="job_edit_details">Edit details</a></li>
+           <!--     <li><a href="job_edit_disability">Disability</a></li>
+                    <li class="selected"><a href="job_sector">Sector</a></li>
+                    <li><a href="job_day_one">Day one</a></li> 
+                    <li><a href="job_prog">Programmes</a></li>
+                    <li><a href="job_exp">Experience</a></li>   
+                    <li><a href="job_vol">Voluntary</a></li>   --> 
+                </ul>  
+            </div>
+
+
+
+    <div class="column-half">
+     <!--     <h2 class="heading-small">Day one conditionality</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. CV&nbsp;<i class="fa fa-times red-cross"></i></td>
+                        <td>2. Universal Jobmatch profile&nbsp;<i class="fa fa-times red-cross"></i></td>
+                        <td>3. Email address&nbsp;<i class="fa fa-times red-cross"></i></td>                     
+                     </tr>   
+                </table>
+            </div>     -->
+          <h2 class="heading-small">Disadvantage markers</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. Literacy/numeracy</td>
+                        <td>2. IT skills</td>
+                     </tr>   
+                </table>
+            </div>    
+
+          <h2 class="heading-small">Sector preference</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>Warehousing</td>
+                    </tr>
+                </table>
+           </div> 
+              
+      </div>
+      <!-- End col -->
+
+
+
+      <!-- Start col -->      
+      <div class="column-half">  
+          <h2 class="heading-small">Work programmes</h2>
+           <div>
+                <table>
+                        <td>Undertaking Community Work Placement</td>
+                    </tr>
+                </table>
+           </div> 
+
+    <!--      <h2 class="heading-small">Work experience</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. ASDA - 8 week placement in run-up to Christmas. Receive a City &amp; Guilds   
+    Accredited Certificate.</td>
+                     </tr>   
+                     <tr>
+                        <td>2. Primark - 12 warehouse operative placement, June - Sep 2015.</td>
+                     </tr>   
+                </table>
+            </div>    
+          <h2 class="heading-small">Voluntary work</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>1. Oxfam</td>
+                    </tr>
+                </table>
+           </div> -->
+
+       <!-- End column-->       
+       </div>
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

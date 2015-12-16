@@ -1,0 +1,164 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job" class="selected"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Create claimant</h1>
+
+
+    <div class="column-half">    
+
+            <div class="form-group">
+                <label class="form-label" for="nino">National Insurance number</label>
+                <input class="form-control" id="nino" type="text">
+            </div>
+
+            <div class="form-group title">
+              <label class="form-label" for="title">Title</label>
+              <select class="form-control" id="title">
+                  <option value="Select">Select</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Ms">Ms</option>
+                  <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group initial">
+              <label class="form-label" for="inital">Initial</label>
+              <input class="form-control" id="inital" type="text">
+            </div> 
+
+            <div class="form-group">
+              <label class="form-label" for="Surname">Surname</label>
+              <input class="form-control" id="Surname" type="text">
+            </div>  
+
+            <div class="form-group"> 
+              <fieldset class="inline">
+                  <legend class="form-label">Gender</legend>
+                  <label class="block-label" for="male">
+                    <input id="male" name="male" type="radio" value="male">
+                    Male
+                  </label>
+                  <label class="block-label" for="female">
+                    <input id="female" name="female" type="radio" value="female">
+                    Female
+                  </label>
+              </fieldset>
+            </div> 
+
+
+
+            <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Date of birth
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 03 1980</p>
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
+
+      </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">    
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-control" id="email" type="text"><br>
+                <label class="block-label" for="contact">
+                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
+                  Do not contact
+                </label>            
+             </div>  
+
+             <div class="form-group">
+                <label class="form-label" for="mobile">Mobile number</label>
+                <input class="form-control" id="mobile" type="text"><br>
+                <label class="block-label" for="contact1">
+                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
+                    Do not contact
+                  </label>               
+              </div>   
+
+           <div class="form-group">
+              <label class="form-label" for="postcode">Postcode</label>
+              <input class="form-control" id="postcode" type="text">
+            </div>  
+
+            <div class="form-group">  
+              <label class="form-label" for="mobile">Language (optional)</label>
+                <label class="block-label" for="contact1">
+                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
+                   Welsh speaker
+                  </label>
+             </div>      
+     
+       <!-- End column-->       
+       </div>
+
+          <div class="column">
+           <div class="form-group" id="get-started">
+                      <a href="job_new_step2" class="button" value="Continue">Continue</a>
+                  </div>
+                </div>
+
+  <!-- End three quarters column-->       
+   </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+<script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
+
+{{/content}}
+
+{{/layout}}
+

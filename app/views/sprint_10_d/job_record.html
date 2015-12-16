@@ -1,0 +1,107 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+         <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-job" class="selected"><a href="job">Job centre</a></li>
+                <li id="nav-benefit"><a href="benefit">Benefit centre</a></li>
+    <!--    <li id="nav-admin"><a href="#">Admin</a></li> -->
+                <li id="nav-stats"><a href="#">Stats</a></li>
+              </ul>
+          </div>
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+
+        <p class="font-xsmall bread"><a href="login">Home</a>&nbsp;>&nbsp;<a href="job">Job centre</a>&nbsp;>&nbsp;View record</p> 
+
+         <h1 class="heading-large">&nbsp;&nbsp;Job centre - Claim #310 - John Smith</h1>
+         <!-- <h2 class="bold-medium">If you have not done so already, below is a list of things we would like you to do before your jobseeker interview to improve your chances of finding work quickly.</h2> -->
+
+       <ul class="tabs">
+                <li><a href="job">Start search</a></li>
+      <!--      <li><a href="job_advanced">Advanced search</a></li> -->
+            <li class="selected"><a href="job_record">View record</a></li>
+            <li><a href="job_edit">Edit record</a></li>
+            <li><a href="job_interview">Interview</a></li>
+            <li><a href="job_next">Next appointment</a></li>               
+            <li><a href="job_closure">Closure</a></li>         
+        </ul> 
+
+
+      <div class="column-half">   
+
+           <br>
+
+
+          <h3 class="heading-small">Contact details</h3>
+
+           <div>
+                <table>
+                    <tr>
+                        <td>NINO:</td>
+                        <td>JC 45 85 96 X</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile:</td>
+                        <td>04585 747 358</td>
+                    </tr>
+                    <tr>
+                        <td>Job Centre:</td>
+                        <td>Bambury</td>
+                    </tr>
+                    <tr>
+                        <td>Age group:</td>
+                        <td>18-25</td>
+                    </tr>
+                     <tr>
+                        <td>Initial date of claim:</td>
+                        <td>04/04/2015</td>
+                    </tr>
+                    <tr>
+                    <td>1st appointment date:</td>
+                        <td>14/04/2015</td>
+                    </tr>
+                     <tr>
+                        <td>1st appointment time:</td>
+                        <td>9.30 am</td>
+                    </tr>
+                </table>
+           </div> 
+
+               <div class="form-group" id="get-started">
+                <br>
+                  <a href="job_edit" value="Edit">Edit record</a>
+                  <a href="job_interview" class="button button-get-started" value="Next" style="float:right;">Interview</a>
+             </div>
+
+         
+      </div>
+      <!-- End col -->
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

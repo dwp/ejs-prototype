@@ -1,0 +1,248 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job" class="selected"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+  <nav class="back-nav" role="navigation">
+    <a id="backButton" href="job_new">Back</a>
+  </nav>
+
+    <h1 class="heading-large">&nbsp;&nbsp;Create claim</h1>
+
+    <div class="column-half">      
+
+             <div class="form-group"> 
+                <label class="form-label" for="title">Benefit type</label>
+                    <form>
+                      <fieldset>
+                        <legend class="visuallyhidden">Choose benefit type:</legend>
+                        <label class="block-label" for="radio-1" data-target="example-ni-number0">
+                          <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance" aria-controls="example-ni-number0">
+                          Jobseekers Allowance
+                        </label>
+                        <label class="block-label" data-target="example-ni-number" for="radio-2">
+                          <input id="radio-2" type="radio" name="radio-group" value="Employment Support Allowance" aria-controls="example-ni-number">
+                          Employment Support Allowance
+                        </label>
+                        <label class="block-label" for="radio-3" data-target="example-ni-number1">
+                          <input id="radio-3" type="radio" name="radio-group" value="Income Support" aria-controls="example-ni-number1">
+                          Income Support
+                        </label>
+                      </fieldset>
+                    </form>
+            </div> 
+
+              <div class="panel-indent js-hidden" id="example-ni-number0">    
+                  <div class="form-group">
+                    <label class="form-label" for="title">Day one evidence provided</label>
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Day one conditionality</legend>
+                                <label class="block-label" for="dis-1">
+                                  <input id="dis-1" type="checkbox" name="esa-group" value="Work Related Activity Group">
+                                    CV
+                                </label>
+                                   <label class="block-label" for="dis-2">
+                                  <input id="dis-2" type="checkbox" name="esa-group" value="Support Group">
+                                    Email address
+                                </label>
+                                   <label class="block-label" for="dis-3">
+                                  <input id="dis-3" type="checkbox" name="esa-group" value="Pre Assessment">
+                                    Universal Jobmatch profile
+                                </label>
+                              </fieldset>
+                            </form>
+                  </div>
+              </div>  
+
+             <div class="panel-indent js-hidden" id="example-ni-number">    
+                  <div class="form-group">
+                    <label class="form-label" for="title">Employment Support Allowance options</label>
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Employment Support Allowance options</legend>
+                                <label class="block-label" for="dis-1">
+                                  <input id="dis-1" type="radio" name="esa-group" value="Work Related Activity Group">
+                                    Work Related Activity Group
+                                </label>
+                                   <label class="block-label" for="dis-2">
+                                  <input id="dis-2" type="radio" name="esa-group" value="Support Group">
+                                    Support Group
+                                </label>
+                                   <label class="block-label" for="dis-3">
+                                  <input id="dis-3" type="radio" name="esa-group" value="Pre Assessment">
+                                    Pre Assessment
+                                </label>
+                              </fieldset>
+                            </form>
+                  </div>
+              </div>  
+
+              <div class="panel-indent js-hidden" id="example-ni-number1">    
+                  <div class="form-group">
+                   <label class="form-label" for="title">Income Support options</label>
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Income Support options</legend>
+                                <label class="block-label" for="dis-4" data-target="example-ni-number2">
+                                  <input id="dis-4" name="is-group" type="radio" value="Lone parent" aria-controls="example-ni-number2">
+                                  Lone parent
+                                </label>
+                                   <label class="block-label" for="dis-5">
+                                  <input id="dis-5" name="is-group" type="radio" value="Carer">
+                                  Carer
+                                </label>
+                                   <label class="block-label" for="dis-6">
+                                  <input id="dis-6" name="is-group" type="radio" value="Pregnant">
+                                  Pregnant
+                                </label>
+                                 </label>
+                                   <label class="block-label" for="dis-7">
+                                  <input id="dis-7" name="is-group" type="radio" value="Student">
+                                  Student
+                                </label>
+                              </fieldset>
+                            </form>
+                  </div>
+              </div>    
+
+              <div class="panel-indent js-hidden" id="example-ni-number2">    
+                  <div class="form-group">
+                   <label class="form-label" for="title">Youngest child's date of birth</label>       
+                      <fieldset>
+                        <div class="form-date">
+                          <p class="form-hint">For example, 03 1980</p>
+                          <div class="form-group form-group-month">
+                            <label for="dob-month">Month</label>
+                            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                          </div>
+                          <div class="form-group form-group-year">
+                            <label for="dob-year">Year</label>
+                            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                          </div>
+                        </div>
+                      </fieldset>
+                  </div>
+              </div>         
+
+
+
+
+    </div>
+      <!-- End col -->
+
+      <!-- Start col -->      
+      <div class="column-half">     
+
+               <div class="form-group">
+            <label class="form-label" for="jobcentre">Jobcentre</label>
+              <select class="select form-control">
+                  <option value="Select">Select</option>
+                  <option value="Bradford">Bradford</option>
+                  <option value="Derby">Derby</option>
+                  <option value="Liverpool">Liverpool</option>
+                  <option value="Manchester">Manchester</option>
+                  <option value="Portsmouth">Portsmouth</option>
+                  <option value="Southampton">Southampton</option>
+                  <option value="Wolverhampton">Wolverhampton</option>    
+                  <option value="Worcester">Worcester</option>                     
+              </select>     
+        </div> 
+
+        <div class="form-group">
+            <label class="form-label" for="title">Work coach</label>
+              <select class="select form-control">
+                  <option value="Select">Select</option>
+                  <option value="richard.kaine">richard.kaine</option>
+                  <option value="john.smith2">john.smith2</option>
+                  <option value="amanda.wright">amanda.wright</option>
+                  <option value="darren.moody">darren.moody</option>
+                  <option value="mark.jones1">mark.jones1</option>
+                  <option value="sam.steel">sam.steel</option>
+                  <option value="harry.brown2">harry.brown2</option>
+                  <option value="julia.granger">julia.granger</option>  
+                  <option value="paul.brookes1">paul.brookes1</option>  
+                  <option value="sarah.fielding">sarah.fielding</option>                
+              </select> 
+        </div>
+
+            <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label">
+                        Initial date of claim
+                      </span>
+                    </legend>
+                    <div class="form-date">
+
+                      <p class="form-hint">For example, 01 08 2015</p>
+
+                     <div class="form-group form-group-day">
+                        <label for="dob-day">Day</label>
+                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                      </div>
+
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                      </div>
+                    </div>
+
+                  </fieldset>
+              </div>
+
+
+       <!-- End column-->       
+       </div>
+
+          <div class="column">
+           <div class="form-group" id="get-started">
+                      <a href="job_record_confirm" class="button" value="Submit">Save</a>
+                  </div>
+                </div>
+
+  <!-- End three quarters column-->       
+   </div>  
+
+ 
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+<script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
+
+{{/content}}
+
+{{/layout}}
+
