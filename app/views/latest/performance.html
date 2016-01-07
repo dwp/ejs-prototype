@@ -129,15 +129,10 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="full-name">
-                          <option value="value1" selected="">All</option>
-                        <option value="value1">Paid</option> 
-                        <option value="value2">Full refund</option>
-                        <option value="value3">Partial refund</option>
-                        <option value="value4">Captured</option>
-                        <option value="value5">Auth refused</option>
-                        <option value="value6">Capture expired</option>
-                        <option value="value7">User cancelled</option>
-                        <option value="value8">System cancelled</option>
+                        <option value="All" selected="">All</option>
+                        <option value="18-24">18-24</option> 
+                        <option value="24-49">24-49</option>
+                        <option value="50+">50+</option>
                       </select>
                     </div>
                   </div>
@@ -151,32 +146,57 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="full-name">
-                          <option value="value1" selected="">All</option>
-                        <option value="value1">Paid</option> 
-                        <option value="value2">Full refund</option>
-                        <option value="value3">Partial refund</option>
-                        <option value="value4">Captured</option>
-                        <option value="value5">Auth refused</option>
-                        <option value="value6">Capture expired</option>
-                        <option value="value7">User cancelled</option>
-                        <option value="value8">System cancelled</option>
-                      </select>
+                            <option value="All" selected="">All</option>
+                            <option value="January">January</option> 
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>                            
+                        </select>
                     </div>
                   </div>
             </div>
 
              <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold">
+                    <label class="form-label-bold" for="sector">
                         Sector
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="full-name">
-                          <option value="value1" selected="">All</option>
-                        <option value="value1">Jobseekers Allowance</option> 
-                        <option value="value2"></option>
-                        <option value="value3">Partial refund</option>
+                        <select name="select" class="form-control dropdown-list" id="sector">
+                        <option value="All">All</option>
+                        <option value="Accounting/finance">Accounting/finance</option>
+                        <option value="Administrative/clerical">Administrative/clerical</option>
+                        <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+                        <option value="Business/strategic management">Business/strategic management</option>
+                        <option value="Creative/design">Creative/design</option>
+                        <option value="Customer support/client care">Customer support/client care</option>
+                        <option value="Editorial/writing">Editorial/writing</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Food services/hospitality">Food services/hospitality</option>
+                        <option value="Human resources">Human resources</option>
+                        <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
+                        <option value="IT/software development">IT/software development</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Logistics/transportation">Logistics/transportation</option>
+                        <option value="Marketing/product">Marketing/product</option>
+                        <option value="Medical/health">Medical/health</option>
+                        <option value="Other">Other</option>
+                        <option value="Production/operations">Production/operations</option>
+                        <option value="Project/program management">Project/program management</option>
+                        <option value="Quality assurance/safety">Quality assurance/safety</option>
+                        <option value="R&amp;D/science">R&amp;D/science</option>
+                        <option value="Sales/business development">Sales/business development</option>
+                        <option value="Security/protective services">Security/protective services</option>
+                        <option value="Training/instruction">Training/instruction</option>
                       </select>
                     </div>
                   </div>
@@ -258,19 +278,16 @@ $('#example').removeClass('class');
                         Live/dormant
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
-                      <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="full-name">
-                          <option value="value1" selected="">All</option>
-                        <option value="value1">Paid</option> 
-                        <option value="value2">Full refund</option>
-                        <option value="value3">Partial refund</option>
-                        <option value="value4">Captured</option>
-                        <option value="value5">Auth refused</option>
-                        <option value="value6">Capture expired</option>
-                        <option value="value7">User cancelled</option>
-                        <option value="value8">System cancelled</option>
-                      </select>
-                    </div>
+                <fieldset class="inline">
+                  <label for="male">
+                    <input id="live" name="live" type="radio" value="live">
+                    Live
+                  </label>
+                  <label for="dormant">
+                    <input id="dormant" name="dormant" type="radio" value="dormant">
+                    Dormant
+                  </label>
+              </fieldset>
                   </div>
             </div>
       
