@@ -1,0 +1,181 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Summary</h1>
+
+      <div class="column">   
+
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="Summary" href="job_record_confirm_dormant" class="menu-item selected">
+                      <strong>Summary</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="job_edit" class="menu-item">
+                      <strong>Claimant</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="#" class="menu-item disabled">
+                      <strong>Appointment</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="claim_dormant" href="job_claim_dormant" class="menu-item">
+                      <strong>Claim</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+     </div>   
+
+      <div class="column-half">   
+          <h2 class="heading-small">Claimant record</h2>
+           <div>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td>Mr&nbsp;&nbsp;J&nbsp;&nbsp;Smith</td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>National Insurance:</td>
+                        <td>JC628596A</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile number:</td>
+                        <td>07585 747358</td>
+                    </tr>   
+                     <tr>
+                        <td>Email address:</td>
+                        <td>james_smith@gmail.com</td>
+                    </tr>                      
+            <!--    <tr>
+                        <td>Postcode:</td>
+                        <td>WR14 4QT</td>
+                    </tr>   --> 
+                    <tr>
+                        <td>Language:</td>
+                        <td>Welsh</td>
+                    </tr> 
+                    <tr>
+                        <td>Industry sector:</td>
+                        <td>Logistics/transportation</td>
+                    </tr>                                      
+                    <tr>
+                        <td>Markers:</td>
+                        <td>Ex-offender, homeless, mis-user of drugs</td>
+                    </tr>   
+                    </tbody>
+                </table> 
+           </div> 
+              
+      </div>
+      <!-- End col -->
+
+
+
+      <!-- Start col -->      
+      <div class="column-half">  
+
+            <h2 class="heading-small">Latest claim</h2>
+                <table>
+                    <tr>
+                        <td>Benefit type:</td>
+                        <td>Jobseekers Allowance</td>
+                    </tr>
+                        <tr>
+                            <td>Day 1 conditionality:</td>
+                            <td>CV&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
+                            Universal Jobmatch&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
+                            Email&nbsp;<i class="fa fa-times red-cross"></i></td>                     
+                        </tr>                    
+                    <tr>
+                        <td>Initial date of claim:</td>
+                        <td>10/10/2015</td>
+                    </tr>
+                    <tr>
+                        <td>Last effective date:</td>
+                        <td>28/11/2015</td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>Dormant</td>
+                    </tr>                   
+                    <tr>
+                        <td>Jobcentre:</td>
+                        <td>Worcester</td>
+                    </tr>                    
+                    <tr>
+                        <td>Work coach:</td>
+                        <td>amanda.wright</td>  
+                    </tr>  
+                </table>
+
+            <h2 class="heading-small">Next appointment</h2>
+                <table>
+                    <tr>
+                        <td>None</td>
+                     </tr>
+                </table>
+
+
+       <!-- End column-->       
+       </div>
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
