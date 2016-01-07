@@ -44,9 +44,9 @@ $('#example').removeClass('class');
     <!-- Start three quarters container for main content columns -->
     <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Caseload - Office</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Caseload - Office - JSA</h1>
 
-      <div class="column"> 
+     <!--   <div class="column"> 
 
                   <div class="column-third">    
 
@@ -54,7 +54,6 @@ $('#example').removeClass('class');
                         <h2 class="heading-medium"><a href="#">Live load</a></h2>
                             <p class="stat">645 cases</p>
                             <span class="stat-up">-2.65%
-                              <!--  <span class="bold">&uarr;</span> -->
                             </span>
                             &nbsp;
                             <span class="stat-detail">Oct 2015</span>
@@ -63,16 +62,13 @@ $('#example').removeClass('class');
                         </div>    
 
                   </div>
-                  <!-- End col third -->
-
-                  <!-- Start col -->      
+     
                   <div class="column-third">    
                       
                       <div class="stat-over"> 
                         <h2 class="heading-medium"><a href="#">Claims near 13 weeks</a></h2>
                             <p class="stat">95%</p>
                             <span class="stat-down">+2.65%
-                              <!--  <span class="bold">&uarr;</span> -->
                             </span>
                             &nbsp;
                             <span class="stat-detail">Oct 2015</span>
@@ -80,10 +76,8 @@ $('#example').removeClass('class');
                             <br>
                        </div>     
 
-                   <!-- End col third-->       
                    </div>
 
-                          <!-- Start col -->      
                   <div class="column-third">    
                       
                      <div class="stat-over"> 
@@ -95,15 +89,19 @@ $('#example').removeClass('class');
                             <br>
                       </div>      
 
-                   <!-- End col third-->       
                    </div>
 
             </div>
-            <!-- End full column -->
+           
+            End full column -->
 
 
       <!-- Start 1st row of filters -->
 
+      <details>
+      <summary><span class="summary">Show/hide filters</span></summary>
+
+      <br>
       <div class="column new_filters">
 
            <div class="column-quarter filter-fields">
@@ -115,14 +113,9 @@ $('#example').removeClass('class');
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="full-name">
                           <option value="value1" selected="">All</option>
-                        <option value="value1">Paid</option> 
-                        <option value="value2">Full refund</option>
+                        <option value="value1">Jobseekers Allowance</option> 
+                        <option value="value2"></option>
                         <option value="value3">Partial refund</option>
-                        <option value="value4">Captured</option>
-                        <option value="value5">Auth refused</option>
-                        <option value="value6">Capture expired</option>
-                        <option value="value7">User cancelled</option>
-                        <option value="value8">System cancelled</option>
                       </select>
                     </div>
                   </div>
@@ -131,7 +124,7 @@ $('#example').removeClass('class');
           <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
-                        Status
+                        Age
                         <span class="form-hint">Select an option</span>
                       </label>
                       <div class="dropdown">
@@ -153,7 +146,98 @@ $('#example').removeClass('class');
          <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
-                        Status
+                        Cohort month
+                        <span class="form-hint">Select an option</span>
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                          <option value="value1" selected="">All</option>
+                        <option value="value1">Paid</option> 
+                        <option value="value2">Full refund</option>
+                        <option value="value3">Partial refund</option>
+                        <option value="value4">Captured</option>
+                        <option value="value5">Auth refused</option>
+                        <option value="value6">Capture expired</option>
+                        <option value="value7">User cancelled</option>
+                        <option value="value8">System cancelled</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+      
+               <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Barriers
+                        <span class="form-hint">Select an option</span>
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                          <option value="value1" selected="">All</option>
+                        <option value="value1">Paid</option> 
+                        <option value="value2">Full refund</option>
+                        <option value="value3">Partial refund</option>
+                        <option value="value4">Captured</option>
+                        <option value="value5">Auth refused</option>
+                        <option value="value6">Capture expired</option>
+                        <option value="value7">User cancelled</option>
+                        <option value="value8">System cancelled</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+
+        </div>  
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+      <div class="column new_filters">
+
+           <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold">
+                        Sector
+                        <span class="form-hint">Select an option</span>
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                          <option value="value1" selected="">All</option>
+                        <option value="value1">Jobseekers Allowance</option> 
+                        <option value="value2"></option>
+                        <option value="value3">Partial refund</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+
+          <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Postcode
+                        <span class="form-hint">Select an option</span>
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                          <option value="value1" selected="">All</option>
+                        <option value="value1">Paid</option> 
+                        <option value="value2">Full refund</option>
+                        <option value="value3">Partial refund</option>
+                        <option value="value4">Captured</option>
+                        <option value="value5">Auth refused</option>
+                        <option value="value6">Capture expired</option>
+                        <option value="value7">User cancelled</option>
+                        <option value="value8">System cancelled</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+
+         <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Live/dormant
                         <span class="form-hint">Select an option</span>
                       </label>
                       <div class="dropdown">
@@ -174,19 +258,19 @@ $('#example').removeClass('class');
       
                     <div class="column-quarter filter-fields">
                         <div class="form-group filter-button">
-                            <a href="staff-transaction-list-one"><button class="button">Filter</button></a>
+                            <a href="performance_jsa"><button class="button">Filter</button></a>
                             <a class="clear" href="staff-transaction-list">Clear filter</a>
                         </div>
                      </div>
 
         </div>  
 
-      <!-- End 1st row of filters -->
+      <!-- End 2nd row of filters -->
 
 
- 
+  </details>
 
-         <div class="column">   
+        <div class="column">   
 
               <div id="container">
 
@@ -320,7 +404,7 @@ $('#example').removeClass('class');
 
       </div> 
 
-  <!-- End three quarters column-->       
+ <!-- End three quarters column-->       
    </div>  
 
     <!-- End row-->       
