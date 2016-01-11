@@ -101,6 +101,8 @@ $('#example').removeClass('class');
       <summary><span class="summary">Show/hide filters</span></summary>
 
       <br>
+      <!-- Start 1st row of filters -->
+
       <div class="column new_filters">
 
            <div class="column-quarter filter-fields">
@@ -111,8 +113,8 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
-                        <option value="all">All</option>
-                        <option value="Jobseekers Allowance" selected>Jobseekers Allowance</option> 
+                        <option value="all" selected="">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
                         <option value="Income Support">Income Support</option>
                         <option value="Employment Support Allowance">Employment Support Allowance</option>
                       </select>
@@ -201,6 +203,11 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
              <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
@@ -245,6 +252,7 @@ $('#example').removeClass('class');
             </div>
 
           <div class="column-quarter filter-fields">
+
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Postcode
@@ -281,7 +289,6 @@ $('#example').removeClass('class');
               </fieldset>
                   </div>
             </div>
-      
     
              <div class="column-quarter filter-fields">
                   <div class="form-group">
@@ -304,6 +311,8 @@ $('#example').removeClass('class');
 
       <!-- Start 3rd row of filters -->
 
+              <div class="column new_filters">
+
                     <div class="column-quarter filter-fields">
                         <div class="form-group filter-button">
                             <a href="performance_jsa"><button class="button">Filter</button></a>
@@ -312,8 +321,10 @@ $('#example').removeClass('class');
                      </div>
 
                 </div>     
-
       <!-- End 3rd row of filters -->
+
+  <!-- End column -->
+  </div>
 
 
   </details>
