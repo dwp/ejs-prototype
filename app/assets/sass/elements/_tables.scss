@@ -325,7 +325,7 @@ table.dataTable thead td:active {
 .new_filters { 
 
     .column-quarter {
-        height:auto\9 !important; //Oh yeah - nasty ie9 hack. Needed for internal users on locked-down ie9 profiles. Feel the shame! 
+        height: auto\9 !important; //Oh yeah - nasty ie9 hack. Needed for internal users on locked-down ie9 profiles. Feel the shame! 
         float: left;
         width: 25%;
         background: #fff;
