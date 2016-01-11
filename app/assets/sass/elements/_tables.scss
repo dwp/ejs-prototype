@@ -336,6 +336,11 @@ table.dataTable thead td:active {
         padding-left: 0;
     }
 
+    .float {
+      float:left;
+      clear:both;
+    }
+
     .filter-button {
         margin-top: 10px;
     }
