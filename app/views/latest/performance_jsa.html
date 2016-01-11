@@ -156,7 +156,106 @@ $('#example').removeClass('class');
 
       <!-- End 1st row of filters -->
 
+      <!-- Start 2nd row of filters -->
 
+             <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Barriers
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                  <!--      <p>Select all that apply</p> -->
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+                             <!--   <label class="disabled" for="dis-8">
+                                  <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled>
+                                  Disabled person
+                                </label><br> -->
+                                <label for="dis-2">
+                                  <input id="dis-2" name="dis-2" type="checkbox" value="ESOL">
+                                  ESOL
+                                </label><br>
+                                   <label for="dis-3">
+                                  <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
+                                  Ex-offender
+                                </label><br>
+                                    <label for="dis-4">
+                                  <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
+                                  Homeless
+                                </label><br>
+                                <label for="dis-1">
+                                  <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
+                                  Literacy/numeracy
+                                </label><br>
+                          <!--      <label class="disabled" for="dis-6">
+                                  <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled>
+                                  Mis-user of drugs
+                                </label><br>
+                                <label class="disabled" for="dis-7">
+                                  <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled>
+                                  Mis-user of alcohol
+                                </label><br> -->
+                              </fieldset>
+                            </form>
+                  </div>
+            </div>
+
+          <div class="column-quarter filter-fields">
+
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Postcode
+                     <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
+                      </label>
+                      <div class="form-postcode">
+                        <div class="form-group form-group-area">
+                     <!--     <label for="area">Area code</label> -->
+                          <input class="form-control" id="area">
+                        </div>
+                        <div class="form-group form-group-local">
+                     <!--     <label for="local">Local code</label> -->
+                          <input class="form-control" id="local">
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+         <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Live/dormant
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                <fieldset class="inline">
+                  <label for="male">
+                    <input id="live" name="live" type="radio" value="live">
+                    Live
+                  </label>
+                  <label for="dormant">
+                    <input id="dormant" name="dormant" type="radio" value="dormant">
+                    Dormant
+                  </label>
+              </fieldset>
+                  </div>
+            </div>
+    
+             <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="sector">
+                        Work programme
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="sector">
+                        <option value="None">None</option>
+                        <option value="Work programme">Work programme</option>
+                        <option value="Pre work programme">Pre work programme</option>
+                        <option value="Work programme completer">Work programme completer</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
 
              <!-- End column -->
           </div>
