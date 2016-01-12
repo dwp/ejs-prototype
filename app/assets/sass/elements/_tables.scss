@@ -347,7 +347,17 @@ table.dataTable thead td:active {
     }
 
     .filter-button {
-        margin-top: 10px;
+        margin-top: 60px;
+    }
+
+    .filter-button .button {
+      margin-bottom: 7px;
+    }
+
+    .filter-button .clear {
+      margin:0 !important;
+      padding:0 !important;
+      vertical-align:bottom;
     }
 
     .form-control {
