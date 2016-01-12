@@ -63,13 +63,6 @@ table td.numeric {
 }
 
 
-table.dataTable thead th {
-  cursor: pointer;
-  *cursor: hand;
-  width:100px !important;
-}
-
-
 /*
  * Table wrapper
  */
@@ -243,30 +236,34 @@ table.dataTable thead th {
 }
 
 
-/*
- * Sorting
- */
+/* Sorting  */
+
 .sorting { 
   background: url('/public/images/sort_both_solid.png') no-repeat 90px 12px; 
-  width:100px !important;
   }
 
 .sorting_asc { 
   background: url('/public/images/sort_asc_solid.png') no-repeat 90px 12px; 
-  width:100px !important;
  }
 
 .sorting_desc { 
   background: url('/public/images/sort_desc_solid.png') no-repeat 90px 12px; 
-  width:100px !important;
  }
 
 .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
 .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
+
  
 table.dataTable thead th {
   vertical-align: text-top;
+  cursor: pointer;
+  *cursor: hand;
+  width:50px !important;
 } 
+
+table.dataTable thead th.appoint {
+    width:100px !important;
+  }
 
 table.dataTable thead th:active,
 table.dataTable thead td:active {
