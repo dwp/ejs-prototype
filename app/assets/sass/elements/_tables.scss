@@ -336,7 +336,11 @@ table.dataTable thead td:active {
 
 // New filters ala Payments dashboard --> http://pay-staff-tool.herokuapp.com/staff-transaction-list
 
-.new_filters { 
+ .search_string {
+      font-size: 0.8em;
+    }
+
+.new_filters {  
 
     .column-quarter {
         height: auto\9 !important; //Oh yeah - nasty ie9 hack. Needed for internal users on locked-down ie9 profiles. Feel the shame! 
@@ -371,6 +375,7 @@ table.dataTable thead td:active {
 
     .form-control {
     width: 70% !important;
+
 }
 
 }
