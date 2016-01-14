@@ -52,7 +52,7 @@ $('#example').removeClass('class');
 
       <br>
 
-      <!-- Start 1st row of filters -->
+       <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
@@ -64,33 +64,48 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
-                        <option value="all" selected="">All</option>
+                        <option value="all">All</option>
                         <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                        <option value="Income Support">Income Support</option>
-                        <option value="Employment Support Allowance">Employment Support Allowance</option>
-                      </select>
+                        <option value="Employment Support Allowance">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support">Income Support - lone parent</option>
+                        <option value="Income Support" selected>Income Support - carer</option>
+                        <option value="Income Support">Income Support - pregnant</option>
+                        <option value="Income Support">Income Support - student</option>
+                        </select>
                     </div>
                   </div>
             </div>
 
           <div class="column-quarter filter-fields">
-                  <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
-                        Age
-                     <!--   <span class="form-hint">Select an option</span> -->
-                      </label>
-                      <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="full-name">
-                        <option value="All" selected="">All</option>
-                        <option value="18-24">18-24</option> 
-                        <option value="24-49">24+</option>
-                        <option value="50+">50+</option>
-                      </select>
-                    </div>
-                  </div>
-            </div>
+               <div class="form-group">
+                        <label class="form-label-bold" for="full-name">
+                            Day 1 evidence missing
+                         <!--   <span class="form-hint">Select an option</span> -->
+                          </label>
+                      <!--      <p>Select all that apply</p> -->
+                                <form>
+                                  <fieldset>
+                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
+                                    <label for="cv">
+                                      <input id="cv" name="cv" type="checkbox" value="CV">
+                                      CV
+                                    </label><br>
+                                       <label for="uj">
+                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch">
+                                      Universal Jobmatch
+                                    </label><br>
+                                        <label for="email">
+                                      <input id="email" name="email" type="checkbox" value="Email address">
+                                      Email address
+                                    </label><br>
+                                  </fieldset>
+                                </form>
+                        </div>
+              </div>
 
-         <div class="column-quarter filter-fields">
+            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Cohort month
@@ -122,50 +137,7 @@ $('#example').removeClass('class');
             </div>
 
              <div class="column-quarter filter-fields">
-                  <div class="form-group">
-                    <label class="form-label-bold" for="sector">
-                        Sector
-                     <!--   <span class="form-hint">Select an option</span> -->
-                      </label>
-                      <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="sector">
-                        <option value="All">All</option>
-                        <option value="Accounting/finance">Accounting/finance</option>
-                        <option value="Administrative/clerical">Administrative/clerical</option>
-                        <option value="Building construction/skilled trades">Building construction/skilled trades</option>
-                        <option value="Business/strategic management">Business/strategic management</option>
-                        <option value="Creative/design">Creative/design</option>
-                        <option value="Customer support/client care">Customer support/client care</option>
-                        <option value="Editorial/writing">Editorial/writing</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Food services/hospitality">Food services/hospitality</option>
-                        <option value="Human resources">Human resources</option>
-                        <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
-                        <option value="IT/software development">IT/software development</option>
-                        <option value="Legal">Legal</option>
-                        <option value="Logistics/transportation">Logistics/transportation</option>
-                        <option value="Marketing/product">Marketing/product</option>
-                        <option value="Medical/health">Medical/health</option>
-                        <option value="Other">Other</option>
-                        <option value="Production/operations">Production/operations</option>
-                        <option value="Project/program management">Project/program management</option>
-                        <option value="Quality assurance/safety">Quality assurance/safety</option>
-                        <option value="R&amp;D/science">R&amp;D/science</option>
-                        <option value="Sales/business development">Sales/business development</option>
-                        <option value="Security/protective services">Security/protective services</option>
-                        <option value="Training/instruction">Training/instruction</option>
-                      </select>
-                    </div>
-                  </div>
-            </div>
-
-
-      <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-             <div class="column-quarter filter-fields">
-                  <div class="form-group">
+                 <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
                      <!--   <span class="form-hint">Select an option</span> -->
@@ -204,28 +176,68 @@ $('#example').removeClass('class');
                                 </label><br> -->
                               </fieldset>
                             </form>
-                  </div>
-            </div>
+                      </div>
+                  </div>   
 
-          <div class="column-quarter filter-fields">
 
-                  <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
-                        Postcode
-                     <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+             <div class="column-quarter filter-fields float">
+                <div class="form-group">
+                    <label class="form-label-bold" for="sector">
+                        Sector
+                     <!--   <span class="form-hint">Select an option</span> -->
                       </label>
-                      <div class="form-postcode">
-                        <div class="form-group form-group-area">
-                     <!--     <label for="area">Area code</label> -->
-                          <input class="form-control" id="area">
-                        </div>
-                        <div class="form-group form-group-local">
-                     <!--     <label for="local">Local code</label> -->
-                          <input class="form-control" id="local">
-                        </div>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="sector">
+                        <option value="All">All</option>
+                        <option value="Accounting/finance">Accounting/finance</option>
+                        <option value="Administrative/clerical">Administrative/clerical</option>
+                        <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+                        <option value="Business/strategic management">Business/strategic management</option>
+                        <option value="Creative/design">Creative/design</option>
+                        <option value="Customer support/client care">Customer support/client care</option>
+                        <option value="Editorial/writing">Editorial/writing</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Food services/hospitality">Food services/hospitality</option>
+                        <option value="Human resources">Human resources</option>
+                        <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
+                        <option value="IT/software development">IT/software development</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Logistics/transportation">Logistics/transportation</option>
+                        <option value="Marketing/product">Marketing/product</option>
+                        <option value="Medical/health">Medical/health</option>
+                        <option value="Other">Other</option>
+                        <option value="Production/operations">Production/operations</option>
+                        <option value="Project/program management">Project/program management</option>
+                        <option value="Quality assurance/safety">Quality assurance/safety</option>
+                        <option value="R&amp;D/science">R&amp;D/science</option>
+                        <option value="Sales/business development">Sales/business development</option>
+                        <option value="Security/protective services">Security/protective services</option>
+                        <option value="Training/instruction">Training/instruction</option>
+                      </select>
                     </div>
                   </div>
             </div>
+
+            <div class="column-quarter filter-fields">
+                <div class="form-group">
+                      <label class="form-label-bold" for="sector">
+                          Work programme
+                       <!--   <span class="form-hint">Select an option</span> -->
+                        </label>
+                        <div class="dropdown">
+                          <select name="select" class="form-control dropdown-list" id="sector">
+                          <option value="None">None</option>
+                          <option value="Work programme">Work programme</option>
+                          <option value="Pre work programme">Pre work programme</option>
+                          <option value="Work programme completer">Work programme completer</option>
+                        </select>
+                      </div>
+                  </div>
+              </div>
 
          <div class="column-quarter filter-fields">
                   <div class="form-group">
@@ -247,50 +259,42 @@ $('#example').removeClass('class');
             </div>
     
              <div class="column-quarter filter-fields">
-                  <div class="form-group">
-                    <label class="form-label-bold" for="sector">
-                        Work programme
-                     <!--   <span class="form-hint">Select an option</span> -->
+                 <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Postcode
+                     <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
                       </label>
-                      <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="sector">
-                        <option value="None">None</option>
-                        <option value="Work programme">Work programme</option>
-                        <option value="Pre work programme">Pre work programme</option>
-                        <option value="Work programme completer">Work programme completer</option>
-                      </select>
+                      <div class="form-postcode">
+                        <div class="form-group form-group-area">
+                     <!--     <label for="area">Area code</label> -->
+                          <input class="form-control" id="area">
+                        </div>
+                        <div class="form-group form-group-local">
+                     <!--     <label for="local">Local code</label> -->
+                          <input class="form-control" id="local">
+                        </div>
                     </div>
                   </div>
-            </div>
+              </div>
 
       <!-- End 2nd row of filters -->
 
       <!-- Start 3rd row of filters -->
 
                  <div class="column-quarter filter-fields float">
-                      <div class="form-group">
-                        <label class="form-label-bold" for="full-name">
-                            Day 1 evidence missing
-                         <!--   <span class="form-hint">Select an option</span> -->
-                          </label>
-                      <!--      <p>Select all that apply</p> -->
-                                <form>
-                                  <fieldset>
-                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
-                                    <label for="cv">
-                                      <input id="cv" name="cv" type="checkbox" value="CV">
-                                      CV
-                                    </label><br>
-                                       <label for="uj">
-                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch">
-                                      Universal Jobmatch
-                                    </label><br>
-                                        <label for="email">
-                                      <input id="email" name="email" type="checkbox" value="Email address">
-                                      Email address
-                                    </label><br>
-                                  </fieldset>
-                                </form>
+                        <div class="form-group">
+                          <label class="form-label-bold" for="full-name">
+                              Age
+                           <!--   <span class="form-hint">Select an option</span> -->
+                            </label>
+                            <div class="dropdown">
+                              <select name="select" class="form-control dropdown-list" id="full-name">
+                              <option value="All" selected="">All</option>
+                              <option value="18-24">18-24</option> 
+                              <option value="24-49">24+</option>
+                              <option value="50+">50+</option>
+                            </select>
+                          </div>
                         </div>
                     </div>
 
