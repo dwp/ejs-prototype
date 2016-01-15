@@ -195,14 +195,39 @@ code {
 // Performance dashboard text
 
 .stat-over {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+     h2 {
+      margin-top:15px;
+     }
+  min-height: 337px;
+  border-top: 3px solid #000;
+  // border-bottom: 1px solid #ccc;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.stat-over h2 {
-  margin-top:15px;
+
+.stat-over-first {
+    h2 {
+      margin-top:15px;
+    }
+  min-height: 337px;
+  margin-left: -15px;
+  border-top: 3px solid #000;
+  // border-bottom: 1px solid #ccc;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.stat-over-both {
+      h2 {
+      margin-top:15px;
+    }
+  min-height: 337px;
+  border-top: 3px solid #000;
+  border-bottom: 1px solid #ccc;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .stat {
