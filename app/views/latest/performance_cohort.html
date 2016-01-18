@@ -1,0 +1,229 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    {column_number : 3, filter_type: "range_number" }, 
+    {column_number : 4},
+    ]);
+});
+$('#example').removeClass('class');
+
+</script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf" class="selected"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload</h1>
+
+        <!-- Start 1st row of filters -->
+
+      <div class="column new_filters">
+        <br>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="benefit">
+                        District
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                        <option value="all">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                        <option value="Employment Support Allowance">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support">Income Support - lone parent</option>
+                        <option value="Income Support" selected>Income Support - carer</option>
+                        <option value="Income Support">Income Support - pregnant</option>
+                        <option value="Income Support">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="benefit">
+                        Site
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                        <option value="all">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                        <option value="Employment Support Allowance">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support">Income Support - lone parent</option>
+                        <option value="Income Support" selected>Income Support - carer</option>
+                        <option value="Income Support">Income Support - pregnant</option>
+                        <option value="Income Support">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Reporting month
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                        <!--    <option value="All" selected="">All</option>
+                            <option value="13 weeks">13 weeks</option> 
+                            <option value="26 weeks">26 weeks</option> 
+                            <option value="39 weeks">39 weeks</option> 
+                            <option value="52 weeks">52 weeks</option>    -->
+                            <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>
+                            <option value="February 2015">February 2015</option>
+                            <option value="January 2015">January 2015</option> 
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+           <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="benefit">
+                        Benefit type
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                        <option value="all">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                        <option value="Employment Support Allowance">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support">Income Support - lone parent</option>
+                        <option value="Income Support" selected>Income Support - carer</option>
+                        <option value="Income Support">Income Support - pregnant</option>
+                        <option value="Income Support">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+            <div class="column-quarter filter-fields float">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Cohort
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="full-name">
+                            <option value="All" selected="">All</option>
+                            <option value="13 weeks">13 weeks</option> 
+                            <option value="26 weeks">26 weeks</option> 
+                            <option value="39 weeks">39 weeks</option> 
+                            <option value="52 weeks">52 weeks</option>    
+                      <!--      <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>
+                            <option value="February 2015">February 2015</option>
+                            <option value="January 2015">January 2015</option> -->
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+                  <div class="column-quarter filter-fields">
+                        <div class="form-group">
+                          <label class="form-label-bold" for="full-name">
+                              Age
+                           <!--   <span class="form-hint">Select an option</span> -->
+                            </label>
+                            <div class="dropdown">
+                              <select name="select" class="form-control dropdown-list" id="full-name">
+                              <option value="All" selected="">All</option>
+                              <option value="18-24">18-24</option> 
+                              <option value="24-49">24+</option>
+                              <option value="50+">50+</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
+
+      <!-- End 2nd row of filters -->
+
+      <!-- Start 3rd row of filters -->
+
+                    <div class="column-quarter filter-fields float">
+                        <div class="form-group filter-button">
+                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a class="clear" href="#">Clear filter</a>
+                        </div>
+                     </div>
+
+              </div>     
+      <!-- End 3rd row of filters -->
+
+        <!-- End column -->
+        </div>
+
+
+    <!-- End row -->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
