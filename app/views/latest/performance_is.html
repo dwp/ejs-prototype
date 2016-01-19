@@ -45,17 +45,16 @@ $('#example').removeClass('class');
 
          <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload - IS (live)</h1>
 
-      <!-- Start 1st row of filters -->
-
       <details>
       <summary><span class="summary">Show/hide filters</span></summary>
 
       <br>
 
-      <!-- Start 1st row of filters -->
+         <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
+        <br>
            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="benefit">
@@ -66,13 +65,15 @@ $('#example').removeClass('class');
                         <select name="select" class="form-control dropdown-list" id="benefit">
                         <option value="all">All</option>
                         <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                        <option value="Employment Support Allowance">Employment Support Allowance - work group</option>
-                        <option value="Employment Support Allowance">Employment Support Allowance - support group</option>
-                        <option value="Employment Support Allowance">Employment Support Allowance - pre-assessment</option>
-                        <option value="Income Support">Income Support - lone parent</option>
-                        <option value="Income Support" selected>Income Support - carer</option>
-                        <option value="Income Support">Income Support - pregnant</option>
-                        <option value="Income Support">Income Support - student</option>
+                        <option value="Employment Support Allowance - all">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support - all">Income Support - all</option>
+                        <option value="Income Support - lone parent">Income Support - lone parent</option>
+                        <option value="Income Support - carer" selected>Income Support - carer</option>
+                        <option value="Income Support- pregnant">Income Support - pregnant</option>
+                        <option value="Income Support- student">Income Support - student</option>
                         </select>
                     </div>
                   </div>
@@ -107,17 +108,13 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
-                        Cohort month
+                    <label class="form-label-bold" for="months">
+                        Reporting month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="full-name">
-                            <option value="All" selected="">All</option>
-                            <option value="13 weeks">13 weeks</option> 
-                            <option value="26 weeks">26 weeks</option> 
-                            <option value="39 weeks">39 weeks</option> 
-                            <option value="52 weeks">52 weeks</option>    
+                        <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="All" selected="">All</option>   
                             <option value="January 2016">January 2016</option>                               
                             <option value="December 2015">December 2015</option>   
                             <option value="November 2015">November 2015</option>
@@ -136,7 +133,29 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-             <div class="column-quarter filter-fields">
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="cohorts">
+                        Cohort
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="cohorts">
+                            <option value="13 weeks">13 weeks</option> 
+                            <option value="26 weeks">26 weeks</option> 
+                            <option value="39 weeks">39 weeks</option> 
+                            <option value="52 weeks" selected>52 weeks</option> 
+                        </select>
+                    </div>
+                  </div>
+            </div>    
+
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+             <div class="column-quarter filter-fields float">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -179,12 +198,7 @@ $('#example').removeClass('class');
                       </div>
                   </div>   
 
-
-      <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-             <div class="column-quarter filter-fields float">
+             <div class="column-quarter filter-fields">
                 <div class="form-group">
                     <label class="form-label-bold" for="sector">
                         Sector
@@ -258,30 +272,32 @@ $('#example').removeClass('class');
                   </div>
             </div>
     
-             <div class="column-quarter filter-fields">
-                 <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
-                        Postcode
-                     <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
-                      </label>
-                      <div class="form-postcode">
-                        <div class="form-group form-group-area">
-                     <!--     <label for="area">Area code</label> -->
-                          <input class="form-control" id="area">
-                        </div>
-                        <div class="form-group form-group-local">
-                     <!--     <label for="local">Local code</label> -->
-                          <input class="form-control" id="local">
-                        </div>
-                    </div>
-                  </div>
-              </div>
+     
 
       <!-- End 2nd row of filters -->
 
       <!-- Start 3rd row of filters -->
 
-                 <div class="column-quarter filter-fields float">
+                <div class="column-quarter filter-fields float">
+                   <div class="form-group">
+                      <label class="form-label-bold" for="full-name">
+                          Postcode
+                       <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
+                        </label>
+                        <div class="form-postcode">
+                          <div class="form-group form-group-area">
+                       <!--     <label for="area">Area code</label> -->
+                            <input class="form-control" id="area">
+                          </div>
+                          <div class="form-group form-group-local">
+                       <!--     <label for="local">Local code</label> -->
+                            <input class="form-control" id="local">
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                 <div class="column-quarter filter-fields">
                         <div class="form-group">
                           <label class="form-label-bold" for="full-name">
                               Age
@@ -307,7 +323,6 @@ $('#example').removeClass('class');
 
               </div>     
       <!-- End 3rd row of filters -->
-
   </details>
 
         <div class="column">   
