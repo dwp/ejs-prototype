@@ -74,58 +74,73 @@
 
       <div class="column-half">   
 
-               <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Date
-                      </span>
-                    </legend>
-                    <div class="form-date">
+              <div class="form-group">
+                   <label class="block-label" for="no-appointment" data-target="example-ni-number0">
+                    <input id="no-appointment" name="no-appointment" type="checkbox" value="No appointment needed" aria-controls="example-ni-number0">
+                      No appointment needed
+                  </label>
+               </div>   
 
-                      <p class="form-hint">For example, 01 09 2015</p>
+                <div class="js-visible" id="example-ni-number0">    
+            
+                  <div class="form-group">
+                        <fieldset>
+                          <legend>
+                            <span class="form-label">
+                              Date
+                            </span>
+                          </legend>
+                          <div class="form-date">
 
-                     <div class="form-group form-group-day">
-                        <label for="dob-day">Day</label>
-                        <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-                      </div> 
+                            <p class="form-hint">For example, 01 09 2015</p>
 
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                      </div>
+                           <div class="form-group form-group-day">
+                              <label for="dob-day">Day</label>
+                              <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div> 
 
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                      </div>
-                    </div>
+                            <div class="form-group form-group-month">
+                              <label for="dob-month">Month</label>
+                              <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
 
-                  </fieldset>
-              </div>       
+                            <div class="form-group form-group-year">
+                              <label for="dob-year">Year</label>
+                              <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                            </div>
+                          </div>
 
-             <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Time
-                      </span>
-                    </legend>
-                    <div class="form-date">
+                        </fieldset>
+                    </div>       
 
-                      <p class="form-hint">For example, 13 30</p>
+                   <div class="form-group">
+                        <fieldset>
+                          <legend>
+                            <span class="form-label">
+                              Time
+                            </span>
+                          </legend>
+                          <div class="form-date">
 
-                     <div class="form-group form-group-day">
-                        <label for="hour">Hour</label>
-                        <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
-                      </div> 
+                            <p class="form-hint">For example, 13 30</p>
 
-                      <div class="form-group form-group-month">
-                        <label for="min">Min</label>
-                        <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
-                      </div>
-                  </fieldset>
-              </div>    
+                           <div class="form-group form-group-day">
+                              <label for="hour">Hour</label>
+                              <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
+                            </div> 
+
+                            <div class="form-group form-group-month">
+                              <label for="min">Min</label>
+                              <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
+                            </div>
+                        </fieldset>
+                    </div> 
+
+                  </div>    
+                
+
+
+   
        
             <div class="form-group" id="get-started">
                   <a href="job_record_confirm_1" class="button" value="Submit">Save</a>
@@ -140,6 +155,8 @@
 
 
 </main>
+<script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
+
 {{/content}}
 
 {{/layout}}
