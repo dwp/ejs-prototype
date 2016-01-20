@@ -48,15 +48,15 @@ $('#example').removeClass('class');
       <details>
       <summary><span class="summary">Show/hide filters</span></summary>
 
-      <br>
+        <!-- Start 1st row of filters -->
 
-   <div class="column new_filters">
+      <div class="column new_filters">
+        <br>
 
-            <div class="column-quarter filter-fields">
+      <!--    <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="district">
                         District
-                     <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="district">
@@ -97,7 +97,7 @@ $('#example').removeClass('class');
                         </select>
                     </div>
                   </div>
-            </div>
+            </div> -->
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
@@ -160,11 +160,7 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-      <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-            <div class="column-quarter filter-fields float">
+            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Cohort
@@ -195,7 +191,11 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-            <div class="column-quarter filter-fields">
+     <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+            <div class="column-quarter filter-fields float">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Reporting month
@@ -226,21 +226,15 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-              
-
-      <!-- End 2nd row of filters -->
-
-      <!-- Start 3rd row of filters -->
-
-                    <div class="column-quarter filter-fields float">
+                  <div class="column-quarter filter-fields">
                         <div class="form-group filter-button">
-                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a href="performance_cohort_report"><button class="button">Filter</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
-
+              
               </div>     
-      <!-- End 3rd row of filters -->
+      <!-- End 2nd row of filters -->
 
   </details>
 
@@ -259,7 +253,6 @@ $('#example').removeClass('class');
                             <th class="nino">Email</th>
                             <th class="daysto">Days to</th>
                             <th class="appoint">Appointment</th>
-                        <!--    <th class="nino no-sort">Closure reason</th> -->
                           </tr>
                         </thead>
                         <tbody>
