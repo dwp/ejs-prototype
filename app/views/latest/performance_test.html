@@ -1,0 +1,726 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    {column_number : 3, filter_type: "range_number" }, 
+    {column_number : 4},
+    ]);
+});
+$('#example').removeClass('class');
+
+</script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf" class="selected"><a href="performance">Caseload</a></li>
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload</h1>
+
+        <!-- Start 1st row of filters -->
+
+      <div class="column new_filters">
+
+        <br>
+           <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="benefit">
+                        Benefit type
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                        <option value="all">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                        <option value="Employment Support Allowance - all">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support - all">Income Support - all</option>
+                        <option value="Income Support - lone parent">Income Support - lone parent</option>
+                        <option value="Income Support - carer" selected>Income Support - carer</option>
+                        <option value="Income Support- pregnant">Income Support - pregnant</option>
+                        <option value="Income Support- student">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+          <!-- inline scrollable list from https://www.gov.uk/search?q=licence -->  
+
+          <div class="column-quarter filter-fields filter-form">
+               <div class="form-group">
+                               <label class="form-label-bold" for="benefit">
+                        Benefit type
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="filter checkbox-filter js-openable-filter" tabindex="0">
+                       
+                        <div class="checkbox-container" id="organisations-filter">
+                          <ul>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="home-office" id="home-office">
+                                <label for="home-office">Home Office (193)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-business-innovation-skills" id="department-for-business-innovation-skills">
+                                <label for="department-for-business-innovation-skills">Department for Business, Innovation &amp; Skills (160)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-environment-food-rural-affairs" id="department-for-environment-food-rural-affairs">
+                                <label for="department-for-environment-food-rural-affairs">Department for Environment, Food &amp; Rural Affairs (156)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="foreign-commonwealth-office" id="foreign-commonwealth-office">
+                                <label for="foreign-commonwealth-office">Foreign &amp; Commonwealth Office (135)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="environment-agency" id="environment-agency">
+                                <label for="environment-agency">Environment Agency (118)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="hm-revenue-customs" id="hm-revenue-customs">
+                                <label for="hm-revenue-customs">HM Revenue &amp; Customs (109)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-transport" id="department-for-transport">
+                                <label for="department-for-transport">Department for Transport (106)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-culture-media-sport" id="department-for-culture-media-sport">
+                                <label for="department-for-culture-media-sport">Department for Culture, Media &amp; Sport (92)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-energy-climate-change" id="department-of-energy-climate-change">
+                                <label for="department-of-energy-climate-change">Department of Energy &amp; Climate Change (81)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="natural-england" id="natural-england">
+                                <label for="natural-england">Natural England (79)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="driver-and-vehicle-licensing-agency" id="driver-and-vehicle-licensing-agency">
+                                <label for="driver-and-vehicle-licensing-agency">Driver and Vehicle Licensing Agency (66)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="export-control-organisation" id="export-control-organisation">
+                                <label for="export-control-organisation">Export Control Organisation (64)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="driver-and-vehicle-standards-agency" id="driver-and-vehicle-standards-agency">
+                                <label for="driver-and-vehicle-standards-agency">Driver and Vehicle Standards Agency (60)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="intellectual-property-office" id="intellectual-property-office">
+                                <label for="intellectual-property-office">Intellectual Property Office (60)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="marine-management-organisation" id="marine-management-organisation">
+                                <label for="marine-management-organisation">Marine Management Organisation (57)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-communities-and-local-government" id="department-for-communities-and-local-government">
+                                <label for="department-for-communities-and-local-government">Department for Communities and Local Government (52)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="traffic-commissioners" id="traffic-commissioners">
+                                <label for="traffic-commissioners">Traffic Commissioners for Great Britain (52)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="medicines-and-healthcare-products-regulatory-agency" id="medicines-and-healthcare-products-regulatory-agency">
+                                <label for="medicines-and-healthcare-products-regulatory-agency">Medicines and Healthcare products Regulatory Agency (42)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="uk-trade-investment" id="uk-trade-investment">
+                                <label for="uk-trade-investment">UK Trade &amp; Investment (42)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="vehicle-and-operator-services-agency" id="vehicle-and-operator-services-agency">
+                                <label for="vehicle-and-operator-services-agency">Closed organisation: Vehicle and Operator Services Agency (42)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="cabinet-office" id="cabinet-office">
+                                <label for="cabinet-office">Cabinet Office (35)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="monitor" id="monitor">
+                                <label for="monitor">Monitor (24)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="animal-and-plant-health-agency" id="animal-and-plant-health-agency">
+                                <label for="animal-and-plant-health-agency">Animal and Plant Health Agency (20)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="oil-and-gas-authority" id="oil-and-gas-authority">
+                                <label for="oil-and-gas-authority">Oil and Gas Authority (20)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="ministry-of-justice" id="ministry-of-justice">
+                                <label for="ministry-of-justice">Ministry of Justice (19)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="competition-and-markets-authority" id="competition-and-markets-authority">
+                                <label for="competition-and-markets-authority">Competition and Markets Authority (18)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="ministry-of-defence" id="ministry-of-defence">
+                                <label for="ministry-of-defence">Ministry of Defence (18)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-health" id="department-of-health">
+                                <label for="department-of-health">Department of Health (16)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="hm-treasury" id="hm-treasury">
+                                <label for="hm-treasury">HM Treasury (16)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="driving-standards-agency" id="driving-standards-agency">
+                                <label for="driving-standards-agency">Closed organisation: Driving Standards Agency (14)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="rural-payments-agency" id="rural-payments-agency">
+                                <label for="rural-payments-agency">Rural Payments Agency (14)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="uk-visas-and-immigration" id="uk-visas-and-immigration">
+                                <label for="uk-visas-and-immigration">UK Visas and Immigration (13)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="government-digital-service" id="government-digital-service">
+                                <label for="government-digital-service">Government Digital Service (11)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="land-registry" id="land-registry">
+                                <label for="land-registry">Land Registry (9)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="charity-commission" id="charity-commission">
+                                <label for="charity-commission">The Charity Commission (8)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="nuclear-decommissioning-authority" id="nuclear-decommissioning-authority">
+                                <label for="nuclear-decommissioning-authority">Nuclear Decommissioning Authority (8)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="the-coal-authority" id="the-coal-authority">
+                                <label for="the-coal-authority">Coal Authority (8)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-education" id="department-for-education">
+                                <label for="department-for-education">Department for Education (7)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="health-and-safety-executive" id="health-and-safety-executive">
+                                <label for="health-and-safety-executive">Health and Safety Executive (7)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="hm-courts-and-tribunals-service" id="hm-courts-and-tribunals-service">
+                                <label for="hm-courts-and-tribunals-service">HM Courts &amp; Tribunals Service (7)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="maritime-and-coastguard-agency" id="maritime-and-coastguard-agency">
+                                <label for="maritime-and-coastguard-agency">Maritime and Coastguard Agency (6)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="disclosure-and-barring-service" id="disclosure-and-barring-service">
+                                <label for="disclosure-and-barring-service">Disclosure and Barring Service (5)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="ofgem" id="ofgem">
+                                <label for="ofgem">Ofgem (5)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-international-development" id="department-for-international-development">
+                                <label for="department-for-international-development">Department for International Development (4)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-work-pensions" id="department-for-work-pensions">
+                                <label for="department-for-work-pensions">Department for Work and Pensions (4)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="northern-ireland-office" id="northern-ireland-office">
+                                <label for="northern-ireland-office">Northern Ireland Office (4)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="prime-ministers-office-10-downing-street" id="prime-ministers-office-10-downing-street">
+                                <label for="prime-ministers-office-10-downing-street">Prime Minister's Office, 10 Downing Street (4)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="security-industry-authority" id="security-industry-authority">
+                                <label for="security-industry-authority">Security Industry Authority (4)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="centre-for-environment-fisheries-and-aquaculture-science" id="centre-for-environment-fisheries-and-aquaculture-science">
+                                <label for="centre-for-environment-fisheries-and-aquaculture-science">Centre for Environment, Fisheries and Aquaculture Science (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="copyright-tribunal" id="copyright-tribunal">
+                                <label for="copyright-tribunal">Copyright Tribunal (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="defence-science-and-technology-laboratory" id="defence-science-and-technology-laboratory">
+                                <label for="defence-science-and-technology-laboratory">Defence Science and Technology Laboratory (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="food-standards-agency" id="food-standards-agency">
+                                <label for="food-standards-agency">Food Standards Agency (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="public-health-england" id="public-health-england">
+                                <label for="public-health-england">Public Health England (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="valuation-office-agency" id="valuation-office-agency">
+                                <label for="valuation-office-agency">Valuation Office Agency (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="wales-office" id="wales-office">
+                                <label for="wales-office">Wales Office (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="youth-justice-board-for-england-and-wales" id="youth-justice-board-for-england-and-wales">
+                                <label for="youth-justice-board-for-england-and-wales">Youth Justice Board for England and Wales (3)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="air-accidents-investigation-branch" id="air-accidents-investigation-branch">
+                                <label for="air-accidents-investigation-branch">Air Accidents Investigation Branch (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="arts-council-england" id="arts-council-england">
+                                <label for="arts-council-england">Arts Council England (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="better-regulation-delivery-office" id="better-regulation-delivery-office">
+                                <label for="better-regulation-delivery-office">Better Regulation Delivery Office (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="border-force" id="border-force">
+                                <label for="border-force">Border Force (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="civil-nuclear-constabulary" id="civil-nuclear-constabulary">
+                                <label for="civil-nuclear-constabulary">Civil Nuclear Constabulary (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="civil-nuclear-police-authority" id="civil-nuclear-police-authority">
+                                <label for="civil-nuclear-police-authority">Civil Nuclear Police Authority (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-finance-and-personnel-for-northern-ireland" id="department-of-finance-and-personnel-for-northern-ireland">
+                                <label for="department-of-finance-and-personnel-for-northern-ireland">Closed organisation: Department of Finance and Personnel for Northern Ireland (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-the-environment" id="department-of-the-environment">
+                                <label for="department-of-the-environment">Closed organisation: Department of the Environment (Northern Ireland) (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="financial-services-organisation" id="financial-services-organisation">
+                                <label for="financial-services-organisation">Financial Services Organisation (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="forestry-commission" id="forestry-commission">
+                                <label for="forestry-commission">Forestry Commission (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="gangmasters-licensing-appeals" id="gangmasters-licensing-appeals">
+                                <label for="gangmasters-licensing-appeals">Gangmasters Licensing Appeals (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="healthcare-uk" id="healthcare-uk">
+                                <label for="healthcare-uk">Healthcare UK (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="hm-passport-office" id="hm-passport-office">
+                                <label for="hm-passport-office">HM Passport Office (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="insolvency-service" id="insolvency-service">
+                                <label for="insolvency-service">The Insolvency Service (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="national-college-for-teaching-and-leadership" id="national-college-for-teaching-and-leadership">
+                                <label for="national-college-for-teaching-and-leadership">National College for Teaching and Leadership (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="national-measurement-and-regulation-office" id="national-measurement-and-regulation-office">
+                                <label for="national-measurement-and-regulation-office">National Measurement and Regulation Office (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="national-measurement-office" id="national-measurement-office">
+                                <label for="national-measurement-office">Closed organisation: National Measurement Office (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="office-of-the-advocate-general-for-scotland" id="office-of-the-advocate-general-for-scotland">
+                                <label for="office-of-the-advocate-general-for-scotland">Office of the Advocate General for Scotland (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="office-of-the-immigration-services-commissioner" id="office-of-the-immigration-services-commissioner">
+                                <label for="office-of-the-immigration-services-commissioner">Office of the Immigration Services Commissioner (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="ordnance-survey-of-northern-ireland" id="ordnance-survey-of-northern-ireland">
+                                <label for="ordnance-survey-of-northern-ireland">Closed organisation: Ordnance Survey of Northern Ireland (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="the-water-services-regulation-authority" id="the-water-services-regulation-authority">
+                                <label for="the-water-services-regulation-authority">The Water Services Regulation Authority  (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="uk-hydrographic-office" id="uk-hydrographic-office">
+                                <label for="uk-hydrographic-office">UK Hydrographic Office (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="vehicle-certification-agency" id="vehicle-certification-agency">
+                                <label for="vehicle-certification-agency">Vehicle Certification Agency (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="veterinary-medicines-directorate" id="veterinary-medicines-directorate">
+                                <label for="veterinary-medicines-directorate">Veterinary Medicines Directorate (2)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="animal-health-and-veterinary-laboratories-agency" id="animal-health-and-veterinary-laboratories-agency">
+                                <label for="animal-health-and-veterinary-laboratories-agency">Closed organisation: Animal Health and Veterinary Laboratories Agency (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="attorney-generals-office" id="attorney-generals-office">
+                                <label for="attorney-generals-office">Attorney General's Office (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="certification-officer" id="certification-officer">
+                                <label for="certification-officer">Certification Officer (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="civil-aviation-authority" id="civil-aviation-authority">
+                                <label for="civil-aviation-authority">Civil Aviation Authority (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="civil-service-government-legal-service" id="civil-service-government-legal-service">
+                                <label for="civil-service-government-legal-service">Government Legal Service (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="civil-service-reform" id="civil-service-reform">
+                                <label for="civil-service-reform">Civil Service Reform (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="commission-on-human-medicines" id="commission-on-human-medicines">
+                                <label for="commission-on-human-medicines">Commission on Human Medicines (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="companies-house" id="companies-house">
+                                <label for="companies-house">Companies House  (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="crown-commercial-service" id="crown-commercial-service">
+                                <label for="crown-commercial-service">Crown Commercial Service (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="defence-infrastructure-organisation" id="defence-infrastructure-organisation">
+                                <label for="defence-infrastructure-organisation">Defence Infrastructure Organisation (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-agriculture-and-rural-development" id="department-of-agriculture-and-rural-development">
+                                <label for="department-of-agriculture-and-rural-development">Closed organisation: Department of Agriculture and Rural Development (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="deputy-prime-ministers-office" id="deputy-prime-ministers-office">
+                                <label for="deputy-prime-ministers-office">Closed organisation: Deputy Prime Minister's Office (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="gangmasters-licensing-authority" id="gangmasters-licensing-authority">
+                                <label for="gangmasters-licensing-authority">Gangmasters Licensing Authority (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="homes-and-communities-agency" id="homes-and-communities-agency">
+                                <label for="homes-and-communities-agency">Homes and Communities Agency (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="human-fertilisation-and-embryology-authority" id="human-fertilisation-and-embryology-authority">
+                                <label for="human-fertilisation-and-embryology-authority">Human Fertilisation and Embryology Authority (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="information-commissioner-s-office" id="information-commissioner-s-office">
+                                <label for="information-commissioner-s-office">Information Commissioner's Office (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="national-counter-terrorism-security-office" id="national-counter-terrorism-security-office">
+                                <label for="national-counter-terrorism-security-office">National Counter Terrorism Security Office (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="national-crime-agency" id="national-crime-agency">
+                                <label for="national-crime-agency">National Crime Agency (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="natural-resources-wales" id="natural-resources-wales">
+                                <label for="natural-resources-wales">Natural Resources Wales (1)</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="office-of-rail-regulation" id="office-of-rail-regulation">
+                                <label for="office-of-rail-regulation">Closed organisation: Office of Rail Regulation (1)</label>
+                              </li>
+                          </ul>
+                        </div>
+                      </div>
+               </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="months">
+                        Reporting month
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="All" selected="">All</option>   
+                            <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>
+                            <option value="February 2015">February 2015</option>
+                            <option value="January 2015">January 2015</option> 
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="cohorts">
+                        Cohort
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="cohorts">
+                            <option value="13 weeks">13 weeks</option> 
+                            <option value="26 weeks">26 weeks</option> 
+                            <option value="39 weeks">39 weeks</option> 
+                            <option value="52 weeks">52 weeks</option> 
+                        </select>
+                    </div>
+                  </div>
+            </div>    
+
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+             <div class="column-quarter filter-fields float">
+                 <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Barriers
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                  <!--      <p>Select all that apply</p> -->
+                            <form>
+                              <fieldset>
+                                <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+                             <!--   <label class="disabled" for="dis-8">
+                                  <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled>
+                                  Disabled person
+                                </label><br> -->
+                                <label for="dis-2">
+                                  <input id="dis-2" name="dis-2" type="checkbox" value="ESOL">
+                                  ESOL
+                                </label><br>
+                                   <label for="dis-3">
+                                  <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
+                                  Ex-offender
+                                </label><br>
+                                    <label for="dis-4">
+                                  <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
+                                  Homeless
+                                </label><br>
+                                <label for="dis-1">
+                                  <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
+                                  Literacy/numeracy
+                                </label><br>
+                          <!--      <label class="disabled" for="dis-6">
+                                  <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled>
+                                  Mis-user of drugs
+                                </label><br>
+                                <label class="disabled" for="dis-7">
+                                  <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled>
+                                  Mis-user of alcohol
+                                </label><br> -->
+                              </fieldset>
+                            </form>
+                      </div>
+                  </div>   
+
+             <div class="column-quarter filter-fields">
+                <div class="form-group">
+                    <label class="form-label-bold" for="sector">
+                        Sector
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="sector">
+                        <option value="All">All</option>
+                        <option value="Accounting/finance">Accounting/finance</option>
+                        <option value="Administrative/clerical">Administrative/clerical</option>
+                        <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+                        <option value="Business/strategic management">Business/strategic management</option>
+                        <option value="Creative/design">Creative/design</option>
+                        <option value="Customer support/client care">Customer support/client care</option>
+                        <option value="Editorial/writing">Editorial/writing</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Food services/hospitality">Food services/hospitality</option>
+                        <option value="Human resources">Human resources</option>
+                        <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
+                        <option value="IT/software development">IT/software development</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Logistics/transportation">Logistics/transportation</option>
+                        <option value="Marketing/product">Marketing/product</option>
+                        <option value="Medical/health">Medical/health</option>
+                        <option value="Other">Other</option>
+                        <option value="Production/operations">Production/operations</option>
+                        <option value="Project/program management">Project/program management</option>
+                        <option value="Quality assurance/safety">Quality assurance/safety</option>
+                        <option value="R&amp;D/science">R&amp;D/science</option>
+                        <option value="Sales/business development">Sales/business development</option>
+                        <option value="Security/protective services">Security/protective services</option>
+                        <option value="Training/instruction">Training/instruction</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                <div class="form-group">
+                      <label class="form-label-bold" for="sector">
+                          Work programme
+                       <!--   <span class="form-hint">Select an option</span> -->
+                        </label>
+                        <div class="dropdown">
+                          <select name="select" class="form-control dropdown-list" id="sector">
+                          <option value="None">None</option>
+                          <option value="Work programme">Work programme</option>
+                          <option value="Pre work programme">Pre work programme</option>
+                          <option value="Work programme completer">Work programme completer</option>
+                        </select>
+                      </div>
+                  </div>
+              </div>
+
+         <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Live/dormant
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                        <fieldset class="inline">
+                          <label for="live">
+                            <input id="live" name="live" type="radio" value="Live">
+                            Live
+                          </label>
+                          <label for="dormant">
+                            <input id="dormant" name="dormant" type="radio" value="Dormant">
+                            Dormant
+                          </label>
+                      </fieldset>
+                  </div>
+            </div>
+    
+     
+
+      <!-- End 2nd row of filters -->
+
+      <!-- Start 3rd row of filters -->
+
+                <div class="column-quarter filter-fields float">
+                   <div class="form-group">
+                      <label class="form-label-bold" for="full-name">
+                          Postcode
+                       <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
+                        </label>
+                        <div class="form-postcode">
+                          <div class="form-group form-group-area">
+                       <!--     <label for="area">Area code</label> -->
+                            <input class="form-control" id="area">
+                          </div>
+                          <div class="form-group form-group-local">
+                       <!--     <label for="local">Local code</label> -->
+                            <input class="form-control" id="local">
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+                 <div class="column-quarter filter-fields">
+                        <div class="form-group">
+                          <label class="form-label-bold" for="full-name">
+                              Age
+                           <!--   <span class="form-hint">Select an option</span> -->
+                            </label>
+                            <div class="dropdown">
+                              <select name="select" class="form-control dropdown-list" id="full-name">
+                              <option value="All" selected="">All</option>
+                              <option value="18-24">18-24</option> 
+                              <option value="24-49">24+</option>
+                              <option value="50+">50+</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="column-quarter filter-fields">
+                        <div class="form-group filter-button">
+                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a class="clear" href="#">Clear filter</a>
+                        </div>
+                     </div>
+
+              </div>     
+      <!-- End 3rd row of filters -->
+
+        <!-- End column -->
+        </div>
+
+
+    <!-- End row -->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+

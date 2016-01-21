@@ -108,3 +108,89 @@ ol {
 }
 
 
+
+// *************************** inline scrolling selectable list for Performace pages ************************ 
+
+.filter-form .filter {
+    margin-bottom: 10px;
+    background-color: #dee0e2 !important;
+    padding: 5px;
+}
+
+.js-enabled .checkbox-filter .head {
+    cursor: pointer;
+}
+
+.checkbox-filter .head {
+    padding: 5px;
+    position: relative;
+}
+
+.filter-form .filter .legend {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+.js-enabled .checkbox-filter .head .controls {
+   // position: absolute;
+    right: 5px;
+    top: 5px;
+    display: inline;
+}
+
+.js-enabled .checkbox-filter .toggle {
+  //  background: url(https://assets.digital.cabinet-office.gov.uk/frontend/toggle-sprite-8d01b51475ab08bc021f813d789fce3b9aeb169ffc0466f42557545fa0ecd167.png) no-repeat;
+    height: 10px;
+    width: 12px;
+    background-position: -12px 0;
+    display: -moz-inline-stack;
+    display: inline-block;
+}
+
+.checkbox-filter .checkbox-container {
+    position: relative;
+    padding: 5px;
+    background-color: #fff;
+    height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.checkbox-filter .checkbox-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.checkbox-filter .checkbox-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.checkbox-filter .checkbox-container li input {
+    width: 12px;
+    border: none;
+    margin: 3px 10px 0 0;
+    vertical-align: top;
+    position: absolute;
+}
+
+.checkbox-filter .checkbox-container li label {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+
+
+
