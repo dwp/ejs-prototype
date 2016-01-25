@@ -112,9 +112,9 @@ ol {
 // *************************** inline scrolling selectable list for Performace pages ************************ 
 
 .filter-form .filter {
-    margin-bottom: 10px;
+    width: 70%;
     background-color: #dee0e2 !important;
-    padding: 5px;
+    padding: 2px;
 }
 
 .js-enabled .checkbox-filter .head {
@@ -162,13 +162,6 @@ ol {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
-.checkbox-filter .checkbox-container ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 
 .checkbox-filter .checkbox-container ul {
     margin: 0;
