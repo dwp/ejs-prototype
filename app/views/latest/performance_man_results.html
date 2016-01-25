@@ -48,12 +48,87 @@ $('#example').removeClass('class');
       <details>
       <summary><span class="summary">Show/hide filters</span></summary>
 
-            <!-- Start 1st row of filters -->
+        <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
         <br>
-           <div class="column-quarter filter-fields">
+
+        <div class="column-quarter filter-fields">
+            <div class="form-group">
+                <label class="form-label" for="jobcentre">Jobcentre</label>
+                  <select class="select form-control">
+                      <option value="Select">Select</option>
+                      <option value="Bradford">Bradford</option>
+                      <option value="Derby">Derby</option>
+                      <option value="Liverpool">Liverpool</option>
+                      <option value="Manchester">Manchester</option>
+                      <option value="Portsmouth">Portsmouth</option>
+                      <option value="Southampton">Southampton</option>
+                      <option value="Wolverhampton">Wolverhampton</option>    
+                      <option value="Worcester">Worcester</option>                     
+                  </select>     
+            </div>
+         </div>   
+
+          <!-- inline scrollable list from https://www.gov.uk/search?q=licence -->  
+
+          <div class="column-quarter filter-fields filter-form">
+               <div class="form-group">
+                    <label class="form-label-bold" for="Work coach">
+                        Work coach
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+                        <div class="checkbox-container" id="organisations-filter">
+                          <ul>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="home-office" id="home-office">
+                                <label for="home-office">richard.kaine</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-business-innovation-skills" id="department-for-business-innovation-skills">
+                                <label for="department-for-business-innovation-skills">john.smith2</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-environment-food-rural-affairs" id="department-for-environment-food-rural-affairs">
+                                <label for="department-for-environment-food-rural-affairs">amanda.wright</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="foreign-commonwealth-office" id="foreign-commonwealth-office">
+                                <label for="foreign-commonwealth-office">darren.moody</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="environment-agency" id="environment-agency">
+                                <label for="environment-agency">mark.jones1</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="hm-revenue-customs" id="hm-revenue-customs">
+                                <label for="hm-revenue-customs">sam.steel</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-transport" id="department-for-transport">
+                                <label for="department-for-transport">harry.brown2</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-for-culture-media-sport" id="department-for-culture-media-sport">
+                                <label for="department-for-culture-media-sport">julia.granger</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="department-of-energy-climate-change" id="department-of-energy-climate-change">
+                                <label for="department-of-energy-climate-change">paul.brookes1</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" name="filter_organisations[]" value="natural-england" id="natural-england">
+                                <label for="natural-england">sarah.fielding</label>
+                              </li>
+                          </ul>
+                        </div>
+                      </div>
+               </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="benefit">
                         Benefit type
@@ -61,53 +136,26 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
-                            <option value="all">All</option>
-                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                            <option value="Employment Support Allowance - all">Employment Support Allowance - All</option>
-                            <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-                            <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-                            <option value="Income Support - all">Income Support - all</option>
-                            <option value="Income Support - lone parent">Income Support - lone parent</option>
-                            <option value="Income Support - carer">Income Support - carer</option>
-                            <option value="Income Support- pregnant">Income Support - pregnant</option>
-                            <option value="Income Support- student">Income Support - student</option>
+                        <option value="all">All</option>
+                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                        <option value="Employment Support Allowance - all">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                        <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                        <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                        <option value="Income Support - all">Income Support - all</option>
+                        <option value="Income Support - lone parent">Income Support - lone parent</option>
+                        <option value="Income Support - carer" selected>Income Support - carer</option>
+                        <option value="Income Support- pregnant">Income Support - pregnant</option>
+                        <option value="Income Support- student">Income Support - student</option>
                         </select>
                     </div>
                   </div>
             </div>
 
-          <div class="column-quarter filter-fields">
-               <div class="form-group">
-                        <label class="form-label-bold" for="full-name">
-                            Day 1 evidence missing
-                         <!--   <span class="form-hint">Select an option</span> -->
-                          </label>
-                      <!--      <p>Select all that apply</p> -->
-                                <form>
-                                  <fieldset>
-                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
-                                    <label for="cv">
-                                      <input id="cv" name="cv" type="checkbox" value="CV">
-                                      CV
-                                    </label><br>
-                                       <label for="uj">
-                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch">
-                                      Universal Jobmatch
-                                    </label><br>
-                                        <label for="email">
-                                      <input id="email" name="email" type="checkbox" value="Email address">
-                                      Email address
-                                    </label><br>
-                                  </fieldset>
-                                </form>
-                        </div>
-            </div>
-
             <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="months">
-                        Cohort month
+                        Reporting month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
@@ -131,10 +179,15 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-            <div class="column-quarter filter-fields">
+
+      <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+            <div class="column-quarter filter-fields float">
                   <div class="form-group">
                     <label class="form-label-bold" for="cohorts">
-                        Target weeks
+                        Cohort
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
@@ -148,12 +201,7 @@ $('#example').removeClass('class');
                   </div>
             </div>    
 
-
-      <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-             <div class="column-quarter filter-fields float">
+             <div class="column-quarter filter-fields">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -250,8 +298,14 @@ $('#example').removeClass('class');
                       </div>
                   </div>
               </div>
+    
+     
 
-         <div class="column-quarter filter-fields">
+      <!-- End 2nd row of filters -->
+
+      <!-- Start 3rd row of filters -->
+
+              <div class="column-quarter filter-fields float">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Live/dormant
@@ -269,14 +323,8 @@ $('#example').removeClass('class');
                       </fieldset>
                   </div>
             </div>
-    
-     
 
-      <!-- End 2nd row of filters -->
-
-      <!-- Start 3rd row of filters -->
-
-                <div class="column-quarter filter-fields float">
+                <div class="column-quarter filter-fields">
                    <div class="form-group">
                       <label class="form-label-bold" for="full-name">
                           Postcode
@@ -314,13 +362,14 @@ $('#example').removeClass('class');
 
                     <div class="column-quarter filter-fields">
                         <div class="form-group filter-button">
-                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a href="performance_man_results"><button class="button">Filter</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
 
               </div>     
       <!-- End 3rd row of filters -->
+
 
   </details>
 
