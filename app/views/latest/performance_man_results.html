@@ -20,8 +20,7 @@
 <script>
 $(document).ready(function(){
   $('#example').dataTable().yadcf([
-    {column_number : 3, filter_type: "range_number" }, 
-    {column_number : 4},
+   
     ]);
 });
 $('#example').removeClass('class');
@@ -44,9 +43,12 @@ $('#example').removeClass('class');
     <!-- Start three quarters container for main content columns -->
     <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload - JSA (live)</h1>
 
-        <!-- Start 1st row of filters -->
+      <details>
+      <summary><span class="summary">Show/hide filters</span></summary>
+
+            <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
@@ -59,83 +61,53 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
-                        <option value="all">All</option>
-                        <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                        <option value="Employment Support Allowance - all">Employment Support Allowance - work group</option>
-                        <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-                        <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-                        <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-                        <option value="Income Support - all">Income Support - all</option>
-                        <option value="Income Support - lone parent">Income Support - lone parent</option>
-                        <option value="Income Support - carer" selected>Income Support - carer</option>
-                        <option value="Income Support- pregnant">Income Support - pregnant</option>
-                        <option value="Income Support- student">Income Support - student</option>
+                            <option value="all">All</option>
+                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                            <option value="Employment Support Allowance - all">Employment Support Allowance - All</option>
+                            <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                            <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                            <option value="Income Support - all">Income Support - all</option>
+                            <option value="Income Support - lone parent">Income Support - lone parent</option>
+                            <option value="Income Support - carer">Income Support - carer</option>
+                            <option value="Income Support- pregnant">Income Support - pregnant</option>
+                            <option value="Income Support- student">Income Support - student</option>
                         </select>
                     </div>
                   </div>
             </div>
 
-          <!-- inline scrollable list from https://www.gov.uk/search?q=licence -->  
-
-          <div class="column-quarter filter-fields filter-form">
+          <div class="column-quarter filter-fields">
                <div class="form-group">
-                    <label class="form-label-bold" for="Work coach">
-                        Work coach
-                     <!--   <span class="form-hint">Select an option</span> -->
-                      </label>
-                      <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
-                        <div class="checkbox-container" id="organisations-filter">
-                          <ul>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="home-office" id="home-office">
-                                <label for="home-office">richard.kaine</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="department-for-business-innovation-skills" id="department-for-business-innovation-skills">
-                                <label for="department-for-business-innovation-skills">john.smith2</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="department-for-environment-food-rural-affairs" id="department-for-environment-food-rural-affairs">
-                                <label for="department-for-environment-food-rural-affairs">amanda.wright</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="foreign-commonwealth-office" id="foreign-commonwealth-office">
-                                <label for="foreign-commonwealth-office">darren.moody</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="environment-agency" id="environment-agency">
-                                <label for="environment-agency">mark.jones1</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="hm-revenue-customs" id="hm-revenue-customs">
-                                <label for="hm-revenue-customs">sam.steel</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="department-for-transport" id="department-for-transport">
-                                <label for="department-for-transport">harry.brown2</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="department-for-culture-media-sport" id="department-for-culture-media-sport">
-                                <label for="department-for-culture-media-sport">julia.granger</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="department-of-energy-climate-change" id="department-of-energy-climate-change">
-                                <label for="department-of-energy-climate-change">paul.brookes1</label>
-                              </li>
-                              <li>
-                                <input type="checkbox" name="filter_organisations[]" value="natural-england" id="natural-england">
-                                <label for="natural-england">sarah.fielding</label>
-                              </li>
-                          </ul>
+                        <label class="form-label-bold" for="full-name">
+                            Day 1 evidence missing
+                         <!--   <span class="form-hint">Select an option</span> -->
+                          </label>
+                      <!--      <p>Select all that apply</p> -->
+                                <form>
+                                  <fieldset>
+                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
+                                    <label for="cv">
+                                      <input id="cv" name="cv" type="checkbox" value="CV">
+                                      CV
+                                    </label><br>
+                                       <label for="uj">
+                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch">
+                                      Universal Jobmatch
+                                    </label><br>
+                                        <label for="email">
+                                      <input id="email" name="email" type="checkbox" value="Email address">
+                                      Email address
+                                    </label><br>
+                                  </fieldset>
+                                </form>
                         </div>
-                      </div>
-               </div>
             </div>
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="months">
-                        Reporting month
+                        Cohort month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
@@ -162,7 +134,7 @@ $('#example').removeClass('class');
             <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="cohorts">
-                        Cohort
+                        Target weeks
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
@@ -342,7 +314,7 @@ $('#example').removeClass('class');
 
                     <div class="column-quarter filter-fields">
                         <div class="form-group filter-button">
-                            <a href="performance_man_results"><button class="button">Filter</button></a>
+                            <a href="performance_jsa"><button class="button">Filter</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
@@ -350,11 +322,125 @@ $('#example').removeClass('class');
               </div>     
       <!-- End 3rd row of filters -->
 
-        <!-- End column -->
-        </div>
+  </details>
 
+        <div class="column">   
 
-    <!-- End row -->       
+              <div id="container">
+
+                    <p class="search_string">You searched: JSA > 18-24 > April 2015 > Homeless > ESOL > Live > Pre-work programme > Logistics</p>
+
+                    <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+                        <thead>
+                          <tr>
+                            <th class="nino no-sort">NINO</th>
+                            <th class="nino no-sort">Surname</th>
+                            <th class="nino no-sort">Initial</th>
+                            <th class="nino">Email</th>
+                            <th class="daysto">Days to</th>
+                            <th class="appoint">Appointment</th>
+                        <!--    <th class="nino no-sort">Closure reason</th> -->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Williams</a></td>
+                            <td>R</td>
+                            <td><a href="mailto:r.william@gmail.com">r.william@gmail.com</a></td>
+                            <td>3 (13 weeks)</td>
+                            <td>18/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Jones</a></td>
+                            <td>J</td>
+                            <td><a href="mailto:john.jones@sky.com">john.jones@sky.com</a></td>
+                            <td>18 (26 weeks)</td>
+                            <td>22/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Smith</a></td>
+                            <td>F</td>
+                            <td><a href="mailto:fred.smith@hotmail.com">fred.smith@hotmail.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>01/02/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Brown</a></td>
+                            <td>S</td>
+                            <td><a href="mailto:scott.brown@core.com">scott.brown@core.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>28/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Docherty</a></td>
+                            <td>T</td>
+                            <td><a href="mailto:tom.docherty@red.co.uk">tom.docherty@red.co.uk</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>02/02/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Peters</a></td>
+                            <td>A</td>
+                            <td><a href="mailto:andy.peters@aol.com">andy.peters@aol.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>27/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxB</td>
+                            <td><a href="job_record_confirm">Shaw</a></td>
+                            <td>R</td>
+                            <td><a href="mailto:rob.shaw@hotmail.com">rob.shaw@hotmail.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>16/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxA</td>
+                            <td><a href="job_record_confirm">Peel</a></td>
+                            <td>J</td>
+                            <td><a href="mailto:john.peel@gmail.com">john.peel@gmail.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>25/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Gathercole</a></td>
+                            <td>T</td>
+                            <td><a href="mailto:john.peel@gmail.com">tom.gathercole@live.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>27/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Kane</a></td>
+                            <td>H</td>
+                            <td><a href="mailto:harold.kane@sky.com">harold.kane@sky.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>29/01/2016</td>
+                          </tr>
+                          <tr>
+                            <td>JCxxxxxxC</td>
+                            <td><a href="job_record_confirm">Watson</a></td>
+                            <td>P</td>
+                            <td><a href="mailto:paul.watson@hotmail.com">paul.watson@hotmail.com</a></td>
+                            <td>10 (39 weeks)</td>
+                            <td>30/01/2016</td>
+                          </tr>
+                         </tbody>
+                      </table>
+                </div>
+
+      </div> 
+
+ <!-- End three quarters column-->       
+   </div>  
+
+    <!-- End row-->       
       </div>
 
 
