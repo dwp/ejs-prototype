@@ -75,6 +75,30 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
+           <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="benefit">
+                        Benefit type
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                            <option value="all">All</option>
+                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                            <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+                            <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                            <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                            <option value="Income Support - all">Income Support - all</option>
+                            <option value="Income Support - lone parent">Income Support - lone parent</option>
+                            <option value="Income Support - carer">Income Support - carer</option>
+                            <option value="Income Support- pregnant">Income Support - pregnant</option>
+                            <option value="Income Support- student">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
                 <div class="column-quarter filter-fields">
                         <div class="form-group">
                           <label class="form-label-bold" for="full-name">
@@ -92,29 +116,38 @@ $('#example').removeClass('class');
                         </div>
                     </div>
 
-           <div class="column-quarter filter-fields">
-              <div class="form-group">
-                    <label class="form-label-bold" for="benefit">
-                        Benefit type
+              <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="months">
+                        Reporting month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
-                        <select name="select" class="form-control dropdown-list" id="benefit">
-                            <option value="all">All</option>
-                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                            <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
-                            <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-                            <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-                            <option value="Income Support - all">Income Support - all</option>
-                            <option value="Income Support - lone parent">Income Support - lone parent</option>
-                            <option value="Income Support - carer">Income Support - carer</option>
-                            <option value="Income Support- pregnant">Income Support - pregnant</option>
-                            <option value="Income Support- student">Income Support - student</option>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="All" selected="">All</option>   
+                            <option value="January 2016">January 2016</option>  
+                            <option value="February 2016">February 2016</option>
+                            <option value="March 2016">March 2016</option>
+                            <option value="April 2016">April 2016</option>
+                            <option value="May 2016">May 2016</option>
+                            <option value="June 2016">June 2016</option>
+                            <option value="July 2016">July 2016</option>
+                            <option value="August 2016">August 2016</option>
+                            <option value="September 2016">September 2016</option>
+                            <option value="October 2016">October 2016</option>
+                            <option value="November 2016">November 2016</option>
+                            <option value="December 2016">December 2016</option>   
+                            <option value="January 2017">January 2017</option> 
                         </select>
-                </div>
+                    </div>
+                  </div>
             </div>
 
-            <div class="column-quarter filter-fields">
+     <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+         <div class="column-quarter filter-fields float">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Target weeks
@@ -127,16 +160,25 @@ $('#example').removeClass('class');
                             <option value="26 weeks">26 weeks</option> 
                             <option value="39 weeks">39 weeks</option> 
                             <option value="52 weeks">52 weeks</option>    
+                      <!--      <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>
+                            <option value="February 2015">February 2015</option>
+                            <option value="January 2015">January 2015</option> -->
                         </select>
                     </div>
                   </div>
             </div>
 
-     <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-            <div class="column-quarter filter-fields float">
+            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Cohort month
@@ -149,6 +191,7 @@ $('#example').removeClass('class');
                             <option value="26 weeks">26 weeks</option> 
                             <option value="39 weeks">39 weeks</option> 
                             <option value="52 weeks">52 weeks</option>    -->
+                            <option value="All">All</option>                               
                             <option value="January 2016">January 2016</option>                               
                             <option value="December 2015">December 2015</option>   
                             <option value="November 2015">November 2015</option>
@@ -173,7 +216,7 @@ $('#example').removeClass('class');
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
-              
+                     
       <!-- End 2nd row of filters -->
 
 
