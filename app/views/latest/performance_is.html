@@ -156,12 +156,14 @@ $('#example').removeClass('class');
 
       <!-- Start 2nd row of filters -->
 
-             <div class="column-quarter filter-fields float">
+             <div class="column-quarter filter-fields filter-form float">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
+                         <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+                            <div class="checkbox-container" id="organisations-filter">
                   <!--      <p>Select all that apply</p> -->
                             <form>
                               <fieldset>
@@ -186,6 +188,10 @@ $('#example').removeClass('class');
                                   <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
                                   Literacy/numeracy
                                 </label><br>
+                                 <label for="dis-5">
+                                  <input id="dis-5" name="dis-5" type="checkbox" value="Extended period of sickness">
+                                  Extended period of sickness
+                                </label>
                           <!--      <label class="disabled" for="dis-6">
                                   <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled>
                                   Mis-user of drugs
@@ -196,8 +202,11 @@ $('#example').removeClass('class');
                                 </label><br> -->
                               </fieldset>
                             </form>
+                            </div>
+                          </div>
                       </div>
                   </div>   
+
 
              <div class="column-quarter filter-fields">
                 <div class="form-group">
@@ -301,7 +310,7 @@ $('#example').removeClass('class');
                  <div class="column-quarter filter-fields">
                         <div class="form-group">
                           <label class="form-label-bold" for="full-name">
-                              Age
+                              Age group
                            <!--   <span class="form-hint">Select an option</span> -->
                             </label>
                             <div class="dropdown">
