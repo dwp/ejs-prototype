@@ -262,6 +262,18 @@ table td.numeric {
   background: url('/public/images/sort_desc_solid.png') no-repeat 120px 12px; 
  }
 
+  table.dataTable thead th.to-target.sorting {
+  background: url('/public/images/sort_both_solid.png') no-repeat 40px 12px; 
+ }
+
+ table.dataTable thead th.to-target.sorting_asc { 
+  background: url('/public/images/sort_asc_solid.png') no-repeat 40px 12px; 
+ }
+
+ table.dataTable thead th.to-target.sorting_desc { 
+  background: url('/public/images/sort_desc_solid.png') no-repeat 40px 12px; 
+ }
+
 
 .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
 .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
@@ -280,6 +292,14 @@ table.dataTable thead th.appoint {
 
 table.dataTable thead th.daysto {
     width:100px !important;
+  }
+
+    table.dataTable thead th.target-title {
+    text-align:center !important;
+  }
+
+  table.dataTable thead th.to-target {
+    width:50px !important;
   }
 
 table.dataTable thead th:active,
