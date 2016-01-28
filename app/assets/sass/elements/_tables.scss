@@ -263,15 +263,15 @@ table td.numeric {
  }
 
   table.dataTable thead th.to-target.sorting {
-  background: url('/public/images/sort_both_solid.png') no-repeat 40px 12px; 
+  background: url('/public/images/sort_both_solid.png') no-repeat 80px 12px; 
  }
 
  table.dataTable thead th.to-target.sorting_asc { 
-  background: url('/public/images/sort_asc_solid.png') no-repeat 40px 12px; 
+  background: url('/public/images/sort_asc_solid.png') no-repeat 80px 12px; 
  }
 
  table.dataTable thead th.to-target.sorting_desc { 
-  background: url('/public/images/sort_desc_solid.png') no-repeat 40px 12px; 
+  background: url('/public/images/sort_desc_solid.png') no-repeat 80px 12px; 
  }
 
 
@@ -296,10 +296,12 @@ table.dataTable thead th.daysto {
 
     table.dataTable thead th.target-title {
     text-align:center !important;
+    background:#f2f2f2;
   }
 
   table.dataTable thead th.to-target {
     width:50px !important;
+    background-color:#f2f2f2 !important;
   }
 
 table.dataTable thead th:active,
