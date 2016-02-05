@@ -146,14 +146,13 @@ $('#example').removeClass('class');
 
               <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="months">
+                    <label class="form-label-bold disabled" for="months">
                         Reporting month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="months">
+                        <select name="select" class="form-control dropdown-list" id="months" disabled>
                             <option value="Select">Select</option>   
-                            <option value="All">All</option>   
                             <option value="January 2016">January 2016</option>  
                             <option value="February 2016">February 2016</option>
                             <option value="March 2016">March 2016</option>
@@ -208,11 +207,10 @@ $('#example').removeClass('class');
                             <option value="39 weeks">39 weeks</option> 
                             <option value="52 weeks">52 weeks</option>    -->
                             <option value="Select">Select</option>   
-                            <option value="All">All</option>                               
                             <option value="January 2016">January 2016</option>                               
                             <option value="December 2015">December 2015</option>   
                             <option value="November 2015">November 2015</option>
-                            <option value="October 2015">October 2015</option>
+                            <option value="October 2015" selected>October 2015</option>
                             <option value="September 2015">September 2015</option>
                             <option value="August 2015">August 2015</option>
                             <option value="July 2015">July 2015</option>
@@ -244,7 +242,7 @@ $('#example').removeClass('class');
 
               <div id="container">
 
-                    <p class="search_string">You searched: Coventry, Manchester, Worcester > 18-24+ > Jobseeker's Allowances > All cohorts > October 2015</p>
+                    <p class="search_string">You searched: Coventry, Manchester, Worcester > 18-24+ > Jobseeker's Allowance > All cohorts > October 2015</p>
 
                     <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
                         <thead>
