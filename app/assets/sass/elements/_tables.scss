@@ -284,6 +284,7 @@ table.dataTable thead th {
   cursor: pointer;
   *cursor: hand;
   width:50px !important;
+  padding-left:5px;
 } 
 
 table.dataTable thead th.appoint {
@@ -354,6 +355,10 @@ table.dataTable thead td:active {
   margin-right:2px;
   height: 16px;
 }
+
+table.dataTable td {
+  padding-left:5px;
+} 
 
 
 // New filters ala Payments dashboard --> http://pay-staff-tool.herokuapp.com/staff-transaction-list
