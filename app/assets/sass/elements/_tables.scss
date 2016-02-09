@@ -54,9 +54,15 @@ table td.numeric {
 // Datatables for performance dashboard
 
 #container {
+
+  .copy_email {
+    margin-top:10px;
+  }
+
   padding-top:20px;
   margin-bottom:40px;
 }
+
 
 .dataTables_filter {
   display:none;
