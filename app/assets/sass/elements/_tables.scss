@@ -268,6 +268,18 @@ table td.numeric {
   background: url('/public/images/sort_desc_solid.png') no-repeat 120px 12px; 
  }
 
+  table.dataTable thead th.coach.sorting {
+  background: url('/public/images/sort_both_solid.png') no-repeat 100px 12px; 
+ }
+
+ table.dataTable thead th.coach.sorting_asc { 
+  background: url('/public/images/sort_asc_solid.png') no-repeat 100px 12px; 
+ }
+
+ table.dataTable thead th.coach.sorting_desc { 
+  background: url('/public/images/sort_desc_solid.png') no-repeat 100px 12px; 
+ }
+
   table.dataTable thead th.to-target.sorting {
   background: url('/public/images/sort_both_solid.png') no-repeat 80px 12px; 
  }
