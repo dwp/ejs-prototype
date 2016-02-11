@@ -79,31 +79,23 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-          <div class="column-quarter filter-fields">
-               <div class="form-group">
-                        <label class="form-label-bold" for="full-name">
-                            Day 1 evidence missing
-                         <!--   <span class="form-hint">Select an option</span> -->
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label-bold" for="full-name">
+                        Live/dormant
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                        <fieldset class="inline">
+                          <label for="live">
+                            <input id="live" name="live" type="radio" value="Live">
+                            Live
                           </label>
-                      <!--      <p>Select all that apply</p> -->
-                                <form>
-                                  <fieldset>
-                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
-                                    <label class="disabled" for="cv">
-                                      <input id="cv" name="cv" type="checkbox" value="CV" disabled>
-                                      CV
-                                    </label><br>
-                                       <label class="disabled" for="uj">
-                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch" disabled>
-                                      Universal Jobmatch
-                                    </label><br>
-                                        <label class="disabled" for="email">
-                                      <input id="email" name="email" type="checkbox" value="Email address" disabled>
-                                      Email address
-                                    </label><br>
-                                  </fieldset>
-                                </form>
-                        </div>
+                          <label for="dormant">
+                            <input id="dormant" name="dormant" type="radio" value="Dormant">
+                            Dormant
+                          </label>
+                      </fieldset>
+                  </div>
             </div>
 
             <div class="column-quarter filter-fields">
@@ -266,26 +258,32 @@ $('#example').removeClass('class');
                   </div>
               </div>
 
-         <div class="column-quarter filter-fields">
-                  <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
-                        Live/dormant
-                     <!--   <span class="form-hint">Select an option</span> -->
-                      </label>
-                        <fieldset class="inline">
-                          <label for="live">
-                            <input id="live" name="live" type="radio" value="Live">
-                            Live
+          <div class="column-quarter filter-fields">
+               <div class="form-group">
+                        <label class="form-label-bold" for="full-name">
+                            Day 1 evidence missing
+                         <!--   <span class="form-hint">Select an option</span> -->
                           </label>
-                          <label for="dormant">
-                            <input id="dormant" name="dormant" type="radio" value="Dormant">
-                            Dormant
-                          </label>
-                      </fieldset>
-                  </div>
-            </div>
-    
-     
+                      <!--      <p>Select all that apply</p> -->
+                                <form>
+                                  <fieldset>
+                                    <legend class="visuallyhidden">Missing day one evidence to search by</legend>
+                                    <label class="disabled" for="cv">
+                                      <input id="cv" name="cv" type="checkbox" value="CV" disabled>
+                                      CV
+                                    </label><br>
+                                       <label class="disabled" for="uj">
+                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch" disabled>
+                                      Universal Jobmatch
+                                    </label><br>
+                                        <label class="disabled" for="email">
+                                      <input id="email" name="email" type="checkbox" value="Email address" disabled>
+                                      Email address
+                                    </label><br>
+                                  </fieldset>
+                                </form>
+                        </div>
+            </div>     
 
       <!-- End 2nd row of filters -->
 
