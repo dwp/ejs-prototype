@@ -178,10 +178,11 @@ ol {
     position: absolute;
 }
 
-.checkbox-filter .checkbox-container li label {
+.checkbox-filter .checkbox-container label {
     display: -moz-inline-stack;
     display: inline-block;
-    margin-left: 20px;
+    float:left;
+    clear:both;
 }
 
 
