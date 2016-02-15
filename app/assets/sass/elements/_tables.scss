@@ -332,6 +332,11 @@ table.dataTable thead td:active {
   background:none !important;
 }
 
+table.dataTable .target {
+  color:#cc3333;
+  font-weight: bold;
+}
+
 // prevent sort in table
 .no-sort::after { display: none!important; }
 .no-sort { pointer-events: none!important; cursor: default!important; }
