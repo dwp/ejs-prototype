@@ -20,8 +20,6 @@
 <script>
 $(document).ready(function(){
   $('#example').dataTable().yadcf([
-    {column_number : 3, filter_type: "range_number" }, 
-    {column_number : 4},
     ]);
 });
 $('#example').removeClass('class');
@@ -46,9 +44,12 @@ $('#example').removeClass('class');
     <!-- Start three quarters container for main content columns -->
     <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Management performance search</h1>
+         <h1 class="heading-large">&nbsp;&nbsp;Management performance results</h1>
 
-        <!-- Start 1st row of filters -->
+      <details>
+      <summary><span class="summary">Show/hide filters</span></summary>
+
+    <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
         <br>
@@ -244,11 +245,85 @@ $('#example').removeClass('class');
               </div>     
       <!-- End 2nd row of filters -->
 
-        <!-- End column -->
-        </div>
+
+  </details>
 
 
-    <!-- End row -->       
+        <div class="column">   
+
+              <div id="container">
+
+                    <p class="search_string">You searched: Coventry, Manchester, Worcester > 18-24+ > Jobseeker's Allowance > Reporting month October 2015</p>
+
+                    <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+                        <thead>
+                          <tr>
+                            <th>Site</th>
+                            <th>JSA 13</th>
+                            <th>JSA 26</th>
+                            <th>JSA 39</th>
+                            <th>JSA 39<br>(18-24)</th>
+                            <th>JSA 52</th>
+                            <th>JSA 52<br>(18-24)</th>
+                            <th>IS 52</th>
+                            <th>ESA 65</th>
+                          </tr>
+                          <tr>
+                            <th class="nino no-sort">&nbsp;</th>
+                            <th class="nino no-sort">Nov 2015</th>
+                            <th class="nino no-sort">Aug 2015</th>
+                            <th class="nino no-sort">May 2015</th>
+                            <th class="nino no-sort">May 2015</th>                            
+                            <th class="nino no-sort">Feb 2015</th>
+                            <th class="nino no-sort">Feb 2015</th>
+                            <th class="nino no-sort">Feb 2015</th>
+                            <th class="nino no-sort">Nov 2014</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Coventry</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>1</td>                            
+                            <td>4</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td>Manchester</td>
+                            <td>1</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>0</td>                            
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>Worcester</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>3</td>                            
+                            <td>1</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2</td>
+                          </tr>
+                         </tbody>
+                      </table>
+                </div>
+
+      </div> 
+
+ <!-- End three quarters column-->       
+   </div>  
+
+    <!-- End row-->       
       </div>
 
 
