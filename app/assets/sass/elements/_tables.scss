@@ -430,12 +430,23 @@ table.dataTable td {
 
 }
 
-table.single {
-  width:12%;
+.single {
+  width:5%;
 }
 
 tr.targets th {
   vertical-align: top;
+}
+
+label.smaller {
+  font-size:16px;
+}
+
+table.targets {
+  width:70%;
+  td, th {
+    border-bottom:0;
+  }
 }
 
 
