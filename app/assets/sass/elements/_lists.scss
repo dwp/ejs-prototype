@@ -183,6 +183,8 @@ ol {
     display: inline-block;
     float:left;
     clear:both;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
