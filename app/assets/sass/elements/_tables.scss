@@ -458,6 +458,19 @@ table.targets {
 
   // Paul Coupe's JS show/hide function for primary/secondary sets of filters on Performance pages
 
+  .perf_filters .filter-fields .tall {
+    padding:10px 0 0 10px;
+    margin-bottom:0px;
+    min-height:160px;
+    border:1px dashed #eae9e9;
+  }
+
+  .perf_filters .filter-fields .short {
+    padding:10px 0 0 10px;
+    min-height:80px;
+    border:1px dashed #eae9e9;
+  }
+
   .filterlink {
   text-decoration: none;
   }
