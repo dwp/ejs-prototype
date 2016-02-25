@@ -39,7 +39,6 @@ $('#example').removeClass('class');
                 <li id="nav-case" class="selected"><a href="performance">Caseload</a></li>
                 <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
                 <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
-                <li id="nav-set"><a href="targets">Targets</a></li>          
               </ul>
           </div> 
 
@@ -53,7 +52,7 @@ $('#example').removeClass('class');
 
       <div class="column new_filters">
 
-        <br>
+           <br>
            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="benefit">
@@ -63,7 +62,7 @@ $('#example').removeClass('class');
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
                             <option value="Select">Select</option>
-                            <option value="Jobseekers Allowance" selected>Jobseekers Allowance</option> 
+                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
                             <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
                             <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
                             <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
@@ -146,9 +145,23 @@ $('#example').removeClass('class');
 
       <!-- End 1st row of filters -->
 
+   <!-- <details>
+      <summary><span class="summary">Advanced search</span></summary>    
+      <br>  -->
+
+        <span class="linksummary">
+          <a class='filterlink filters-hidden' href='javascript:toggleFilters();' id='filterToggle'>
+          <u>Show/hide filters</u></a>
+        </span>
+        <br>
+        <br>
+
+        <!-- Start show/hide div -->
+        <div id="filters-holder" style="display: none;">
+
       <!-- Start 2nd row of filters -->
 
-             <div class="column-quarter filter-fields filter-form float">
+             <div class="column-quarter filter-fields filter-form">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -326,15 +339,20 @@ $('#example').removeClass('class');
                         </div>
                     </div>
 
-                    <div class="column-quarter filter-fields">
+               <!-- End 3rd row of filters -->
+
+              <!-- End show/hide div -->
+              </div>     
+
+                     <div class="column-quarter filter-fields float">
                         <div class="form-group filter-button">
-                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a href="performance_jsa"><button class="button">Search</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
 
-              </div>     
-      <!-- End 3rd row of filters -->
+    </div>
+
 
         <!-- End column -->
         </div>
