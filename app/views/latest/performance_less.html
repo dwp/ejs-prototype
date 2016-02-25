@@ -145,13 +145,20 @@ $('#example').removeClass('class');
 
       <!-- End 1st row of filters -->
 
-    <details>
+   <!-- <details>
       <summary><span class="summary">Advanced search</span></summary>    
-      <br> 
+      <br>  -->
+
+        <span class="linksummary">
+          <a class='filterlink filters-showing' href='javascript:toggleFilters();' id='filterToggle'>
+          <u>Show/hide filters</u></a>
+        </span>
+        <br>
+        <br>
 
       <!-- Start 2nd row of filters -->
 
-             <div class="column-quarter filter-fields filter-form">
+             <div class="column-quarter filter-fields filter-form filters-holder">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -344,6 +351,8 @@ $('#example').removeClass('class');
               </div>     
 
 
+    <!-- End show/hide div -->
+    </div>
 
 
         <!-- End column -->
