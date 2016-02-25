@@ -47,14 +47,12 @@ $('#example').removeClass('class');
 
          <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload - Jobseeker's Allowance</h1>
 
-      <details>
+    <details>
       <summary><span class="summary">Show/hide filters</span></summary>
-
-            <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
-        <br>
+           <br>
            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="benefit">
@@ -64,7 +62,7 @@ $('#example').removeClass('class');
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="benefit">
                             <option value="Select">Select</option>
-                            <option value="Jobseekers Allowance" selected>Jobseekers Allowance</option> 
+                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
                             <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
                             <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
                             <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
@@ -96,7 +94,7 @@ $('#example').removeClass('class');
                           </label>
                       </fieldset>
                   </div>
-            </div>
+             </div>
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
@@ -147,9 +145,23 @@ $('#example').removeClass('class');
 
       <!-- End 1st row of filters -->
 
+   <!-- <details>
+      <summary><span class="summary">Advanced search</span></summary>    
+      <br>  -->
+
+        <span class="linksummary">
+          <a class='filterlink filters-hidden' href='javascript:toggleFilters();' id='filterToggle'>
+          <u>Show more options</u></a>
+        </span>
+        <br>
+        <br>
+
+        <!-- Start show/hide div -->
+        <div id="filters-holder" style="display: none;">
+
       <!-- Start 2nd row of filters -->
 
-             <div class="column-quarter filter-fields filter-form float">
+             <div class="column-quarter filter-fields filter-form">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -199,7 +211,7 @@ $('#example').removeClass('class');
                           </div>
                       </div>
                   </div>   
- 
+
 
              <div class="column-quarter filter-fields">
                 <div class="form-group">
@@ -258,7 +270,7 @@ $('#example').removeClass('class');
                   </div>
               </div>
 
-          <div class="column-quarter filter-fields">
+            <div class="column-quarter filter-fields">
                <div class="form-group">
                         <label class="form-label-bold" for="full-name">
                             Day 1 evidence missing
@@ -284,6 +296,7 @@ $('#example').removeClass('class');
                                 </form>
                         </div>
             </div>
+    
      
 
       <!-- End 2nd row of filters -->
@@ -319,16 +332,21 @@ $('#example').removeClass('class');
                               <select name="select" class="form-control dropdown-list" id="full-name">
                               <option value="All" selected="">All</option>
                               <option value="18-24">18-24</option> 
-                              <option value="25+">25+</option>
+                              <option value="24-49">25+</option>
                               <option value="50+">50+</option>
                             </select>
                           </div>
                         </div>
                     </div>
 
-                    <div class="column-quarter filter-fields">
+               <!-- End 3rd row of filters -->
+
+              <!-- End show/hide div -->
+              </div>     
+
+                     <div class="column-quarter filter-fields float">
                         <div class="form-group filter-button">
-                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a href="performance_jsa"><button class="button">Search</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>

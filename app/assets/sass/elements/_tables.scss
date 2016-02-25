@@ -457,17 +457,18 @@ table.targets {
   
 
   // Paul Coupe's JS show/hide function for primary/secondary sets of filters on Performance pages
-  
+
   .filterlink {
   text-decoration: none;
   }
 
   .filters-showing::before { 
-  content: "\25BC ";
+  // content: "\25BC ";
+  content: "\002d ";
   }
 
   .filters-hidden::before { 
-  content: "\25BA ";
+  content: "\002b ";
   }
 
 
