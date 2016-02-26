@@ -343,6 +343,18 @@ table.dataTable .target {
  //   display: block;
 }
 
+table.dataTable .gone_cell {
+
+  //margin-right:10px;
+ background:#cfcfcf;
+ color:#fff;
+ font-weight: bold;
+ // -moz-box-shadow: 4px 0 4px 0 #222;
+ // -webkit-box-shadow: 4px 0 4px 0 #222;
+ // box-shadow: 4px 0 4px 0 #222;
+ //   display: block;
+}
+
 table.dataTable .gone {
   border-bottom:3px solid #cc3333;
   border-spacing: 2px;
