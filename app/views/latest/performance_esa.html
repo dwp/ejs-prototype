@@ -47,14 +47,12 @@ $('#example').removeClass('class');
 
          <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload - Employment Support Allowance</h1>
 
-      <details>
+    <details>
       <summary><span class="summary">Show/hide filters</span></summary>
-
-         <!-- Start 1st row of filters -->
 
       <div class="column new_filters">
 
-        <br>
+           <br>
            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="benefit">
@@ -65,9 +63,9 @@ $('#example').removeClass('class');
                         <select name="select" class="form-control dropdown-list" id="benefit">
                             <option value="Select">Select</option>
                             <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
-                            <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+                            <option value="Employment Support Allowance - all" selected>Employment Support Allowance - all</option>
                             <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-                            <option value="Employment Support Allowance - support group" selected>Employment Support Allowance - support group</option>
+                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
                             <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
                             <option value="Income Support - all">Income Support - all</option>
                             <option value="Income Support - lone parent">Income Support - lone parent</option>
@@ -79,7 +77,7 @@ $('#example').removeClass('class');
                   </div>
             </div>
 
-            <div class="column-quarter filter-fields">
+             <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Live/dormant
@@ -87,7 +85,7 @@ $('#example').removeClass('class');
                       </label>
                         <fieldset class="inline">
                           <label for="live">
-                            <input id="live" name="live" type="radio" value="Live">
+                            <input id="live" name="live" type="radio" value="Live" checked>
                             Live
                           </label>
                           <label for="dormant">
@@ -96,7 +94,7 @@ $('#example').removeClass('class');
                           </label>
                       </fieldset>
                   </div>
-            </div>
+             </div>
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
@@ -116,7 +114,7 @@ $('#example').removeClass('class');
                             <option value="July 2015">July 2015</option>
                             <option value="June 2015">June 2015</option>
                             <option value="May 2015">May 2015</option>
-                            <option value="April 2015">April 2015</option>
+                            <option value="April 2015" selected>April 2015</option>
                             <option value="March 2015">March 2015</option>
                             <option value="February 2015">February 2015</option>
                             <option value="January 2015">January 2015</option> 
@@ -128,17 +126,17 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="cohorts">
+                    <label class="form-label-bold disabled" for="cohorts">
                         Target weeks
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
                       <div class="dropdown">
-                        <select name="select" class="form-control dropdown-list" id="cohorts">
+                        <select name="select" class="form-control dropdown-list" id="cohorts" disabled>
+                            <option value="All">All</option> 
                             <option value="13 weeks">13 weeks</option> 
                             <option value="26 weeks">26 weeks</option> 
                             <option value="39 weeks">39 weeks</option> 
                             <option value="52 weeks">52 weeks</option> 
-                            <option value="65 weeks" selected>65 weeks</option> 
                         </select>
                     </div>
                   </div>
@@ -147,9 +145,23 @@ $('#example').removeClass('class');
 
       <!-- End 1st row of filters -->
 
+   <!-- <details>
+      <summary><span class="summary">Advanced search</span></summary>    
+      <br>  -->
+
+        <span class="linksummary">
+          <a class='filterlink filters-hidden' href='javascript:toggleFilters();' id='filterToggle'>
+          <u>Show more options</u></a>
+        </span>
+        <br>
+        <br>
+
+        <!-- Start show/hide div -->
+        <div id="filters-holder" style="display: none;">
+
       <!-- Start 2nd row of filters -->
 
-             <div class="column-quarter filter-fields filter-form float">
+             <div class="column-quarter filter-fields filter-form">
                  <div class="form-group">
                     <label class="form-label-bold" for="full-name">
                         Barriers
@@ -170,7 +182,7 @@ $('#example').removeClass('class');
                                       Ex-offender
                                     </label><br>
                                         <label for="dis-4">
-                                      <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
+                                      <input id="dis-4" name="dis-4" type="checkbox" value="Homeless" selected>
                                       Homeless
                                     </label><br>
                                     <label for="dis-1">
@@ -199,7 +211,7 @@ $('#example').removeClass('class');
                           </div>
                       </div>
                   </div>   
- 
+
 
              <div class="column-quarter filter-fields">
                 <div class="form-group">
@@ -212,7 +224,7 @@ $('#example').removeClass('class');
                         <option value="All">All</option>
                         <option value="Accounting/finance">Accounting/finance</option>
                         <option value="Administrative/clerical">Administrative/clerical</option>
-                        <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+                        <option value="Building construction/skilled trades" selected>Building construction/skilled trades</option>
                         <option value="Business/strategic management">Business/strategic management</option>
                         <option value="Creative/design">Creative/design</option>
                         <option value="Customer support/client care">Customer support/client care</option>
@@ -258,7 +270,7 @@ $('#example').removeClass('class');
                   </div>
               </div>
 
-          <div class="column-quarter filter-fields">
+            <div class="column-quarter filter-fields">
                <div class="form-group">
                         <label class="form-label-bold" for="full-name">
                             Day 1 evidence missing
@@ -268,22 +280,24 @@ $('#example').removeClass('class');
                                 <form>
                                   <fieldset>
                                     <legend class="visuallyhidden">Missing day one evidence to search by</legend>
-                                    <label class="disabled" for="cv">
-                                      <input id="cv" name="cv" type="checkbox" value="CV" disabled>
+                                    <label for="cv">
+                                      <input id="cv" name="cv" type="checkbox" value="CV">
                                       CV
                                     </label><br>
-                                       <label class="disabled" for="uj">
-                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch" disabled>
+                                       <label for="uj">
+                                      <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch">
                                       Universal Jobmatch
                                     </label><br>
-                                        <label class="disabled" for="email">
-                                      <input id="email" name="email" type="checkbox" value="Email address" disabled>
+                                        <label for="email">
+                                      <input id="email" name="email" type="checkbox" value="Email address">
                                       Email address
                                     </label><br>
                                   </fieldset>
                                 </form>
                         </div>
-            </div>     
+            </div>
+    
+     
 
       <!-- End 2nd row of filters -->
 
@@ -318,16 +332,21 @@ $('#example').removeClass('class');
                               <select name="select" class="form-control dropdown-list" id="full-name">
                               <option value="All" selected="">All</option>
                               <option value="18-24">18-24</option> 
-                              <option value="24-49">25+</option>
+                              <option value="25+">25+</option>
                               <option value="50+">50+</option>
                             </select>
                           </div>
                         </div>
                     </div>
 
-                    <div class="column-quarter filter-fields">
+               <!-- End 3rd row of filters -->
+
+              <!-- End show/hide div -->
+              </div>     
+
+                     <div class="column-quarter filter-fields float">
                         <div class="form-group filter-button">
-                            <a href="performance_jsa"><button class="button">Filter</button></a>
+                            <a href="performance_jsa"><button class="button">Search</button></a>
                             <a class="clear" href="#">Clear filter</a>
                         </div>
                      </div>
@@ -341,7 +360,7 @@ $('#example').removeClass('class');
 
               <div id="container">
 
-                    <p class="search_string">You searched: ESA > 25-49 > April 2015 > Homeless > Builder > Support group > Live</p>
+                    <p class="search_string">You searched: ESA > 25+ > April 2015 > Homeless > Building construction/skilled trades > Support group > Live</p>
 
                     <input class="button copy_email" value="Copy selected emails" disabled="disabled">
 
