@@ -62,7 +62,9 @@
   color: $error-colour;
 }
 
-
+  .column-third  .target_error {
+      margin-left:-15px;
+    }
 
 // validation stuff from PTS
 .error, .error-summary {
@@ -70,7 +72,8 @@
   padding-left: 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+   }
 
 .error {
   margin-right: 15px; }
