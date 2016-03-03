@@ -343,7 +343,7 @@ table.dataTable .target {
  //   display: block;
 }
 
-table.dataTable .gone_cell {
+.gone_cell {
 
   //margin-right:10px;
  background:#cfcfcf;
@@ -417,8 +417,17 @@ table.dataTable td {
 
 // New filters ala Payments dashboard --> http://pay-staff-tool.herokuapp.com/staff-transaction-list
 
- .search_string {
-      font-size: 0.8em;
+ .search_string, tr {
+        font-size: 0.8em;
+        i {
+          font-size:1em;
+        }
+        .passed {
+          color: #cc3333;
+        }
+        .current {
+          font-weight:bold;
+        }
     }
 
 .new_filters {  
