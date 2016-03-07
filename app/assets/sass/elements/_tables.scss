@@ -369,6 +369,20 @@ table.dataTable .gone {
  //   display: block;
 }
 
+table.dataTable .gone_figure {
+ //  border-bottom:3px solid #cc3333;
+  // border-spacing: 2px;
+    // border-collapse: separate;
+    color:#cc3333;
+  //margin-right:10px;
+ //  background:#f3f3f3;
+ // font-weight: bold;
+ // -moz-box-shadow: 4px 0 4px 0 #222;
+ // -webkit-box-shadow: 4px 0 4px 0 #222;
+ // box-shadow: 4px 0 4px 0 #222;
+ //   display: block;
+}
+
 // prevent sort in table
 .no-sort::after { display: none!important; }
 .no-sort { pointer-events: none!important; cursor: default!important; }
