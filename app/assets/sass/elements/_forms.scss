@@ -62,7 +62,8 @@ fieldset {
 
 // Changed default form lables to bold to save Valtech dev re-work
 .form-label {
-  @include bold-24;
+  // @include bold-24;
+  @include core-24;
   margin-bottom: 0;
   .form-hint {
     @include core-19;
