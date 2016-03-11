@@ -60,7 +60,7 @@ fieldset {
 //  margin-bottom: 5px;
 // }
 
-// Changed default form lables to bold to save Valtech dev re-work
+// Changed default form lables back from bold to standard font weight after GDS assessment
 .form-label {
   // @include bold-24;
   @include core-24;
