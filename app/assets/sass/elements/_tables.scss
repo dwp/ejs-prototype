@@ -313,8 +313,13 @@ table.dataTable thead th.daysto {
     width:100px !important;
   }
 
-    table.dataTable thead th.target-title {
+  table.dataTable thead th.target-title {
     text-align:center !important;
+    background:#f2f2f2 !important;
+  }
+
+  table.dataTable thead th.target-title_wc {
+    //text-align:center !important;
     background:#f2f2f2 !important;
   }
 
