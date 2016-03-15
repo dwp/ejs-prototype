@@ -1,0 +1,119 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<!-- <script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script> -->
+
+
+<!-- $(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    ]);
+});
+$('#example').removeClass('class');
+
+</script> -->
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-case"><a href="performance">Caseload</a></li>
+                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+                <li id="nav-perf" class="selected"><a href="performance_cohort">Performance</a></li>
+                <li id="nav-set"><a href="targets">Targets</a></li>
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Workcoach off-flow totals</h1>
+
+        <div class="column">   
+
+              <div id="container">
+
+                   <table>
+                        <thead>
+                      <!--    <tr>
+                            <th colspan="5" class="nino no-sort">&nbsp;</th>
+                            <th colspan="5" class="nino no-sort target-title">Claimants to target</th>
+                          </tr>  -->
+                          <tr>
+                            <th>&nbsp;</th>
+                            <th>On-flow</th>
+                            <th>Off-flow</th>
+                            <th>18-24</th>
+                            <th>&#37; achieved</th>
+                         <!--   <th class="nino no-sort target-title">JSA 13</th>
+                            <th class="nino no-sort target-title">JSA 26</th>
+                            <th class="nino no-sort target-title">JSA 39</th>
+                            <th class="nino no-sort target-title">JSA 52</th>  -->                        
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>April</td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>1</td>  
+                            <td>9</td>
+                          </tr>
+                          <tr>
+                            <td>May</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>0</td>  
+                            <td>11</td>
+                          </tr>
+                          <tr>
+                            <td>June</td>
+                            <td>7</td>
+                            <td>3</td>
+                            <td>1</td>  
+                            <td>8</td>
+                          </tr>
+                          <tr>
+                            <td class="year_date">Year to date</td>
+                            <td class="year_date">70</td>
+                            <td class="year_date">35</td>
+                            <td class="year_date">9</td>  
+                            <td class="year_date">10</td>
+                          </tr>
+                         </tbody>
+                      </table>
+
+
+                </div>
+
+      </div> 
+
+ <!-- End three quarters column-->       
+   </div>  
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
