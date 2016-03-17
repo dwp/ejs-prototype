@@ -462,6 +462,13 @@ table.dataTable td {
 
     .filter-fields {
         padding-left: 0;
+
+          .block-label {
+            background:none;
+            border:none;
+            padding: 18px 0px 15px 45px;
+            margin-left:-15px;
+          }
     }
 
     .float {
