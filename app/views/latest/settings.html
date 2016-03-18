@@ -1,0 +1,158 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
+                <li id="nav-set"><a href="targets">Targets</a></li>          
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Settings - location</h1>
+
+      <div class="column">   
+
+
+        <!-- 3rd level nav buttons -->
+            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="Summary" href="location" class="menu-item selected">
+                      <strong>Change location</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="edit_record" href="amend_user" class="menu-item">
+                      <strong>Amend user</strong>
+                    </a>
+                  </div>
+                </div>
+
+               <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="delete_user" class="menu-item">
+                      <strong>Delete user</strong>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="claim_active" href="delete_record" class="menu-item">
+                      <strong>Delete record</strong>
+                    </a>
+                  </div>
+                </div>
+
+                
+
+             </div> 
+
+     </div>   
+
+            <div class="column new_filters">
+        <br>
+
+            <div class="column-quarter filter-fields filter-form float">
+               <label class="form-label" for="jobcentre">Region</label>
+                   <select class="select form-control">
+                      <option value="North West England Districts &amp; Jobcentres" selected>North West England Districts &amp; Jobcentres</option>
+                      <option value="North East England Districts &amp; Jobcentres">North East England Districts &amp; Jobcentres</option>
+                      <option value="London &amp; Home Counties Districts &amp; Jobcentres">London &amp; Home Counties Districts &amp; Jobcentres</option>
+                      <option value="Scotland Districts &amp; Jobcentres">Scotland Districts &amp; Jobcentres</option>
+                      <option value="Southern Districts &amp; Jobcentres">Southern Districts &amp; Jobcentres</option>
+                      <option value="Wales Districts &amp; Jobcentres">Wales Districts &amp; Jobcentres</option>
+                    </select>  
+                  </div>   
+
+                <div class="column-quarter filter-fields filter-form">
+                  <label class="form-label" for="jobcentre">District</label>
+                     <select class="select form-control">
+                        <option value="Greater Manchester East &amp; West">Greater Manchester East &amp; West</option>
+                        <option value="Great Manchester Central &amp; Cheshire">Great Manchester Central &amp; Cheshire</option>
+                        <option value="Cumbria &amp; Lancashire" selected>Cumbria &amp; Lancashire</option>
+                        <option value="Merseyside">Merseyside</option>
+                      </select>  
+                  </div>   
+
+              <div class="column-quarter filter-fields filter-form">
+                  <label class="form-label" for="jobcentre">Jobcentre</label>
+                     <select class="select form-control">
+                        <option value="Accrington">Accrington</option>
+                        <option value="Barrow">Barrow</option>
+                        <option value="Blackburn">Blackburn</option>
+                        <option value="Blackpool North (Queen Street)">Blackpool North (Queen Street)</option>
+                        <option value="Blackpool South (Tyldesley Road)">Blackpool South (Tyldesley Road)</option>
+                        <option value="Burnley">Burnley</option>
+                        <option value="Carlisle">Carlisle</option>
+                        <option value="Chorley">Chorley</option>
+                        <option value="Colne">Colne</option>
+                        <option value="Darwin">Darwin</option>
+                        <option value="Fleetwood (Thornton Cleveleys)">Fleetwood (Thornton Cleveleys)</option>
+                        <option value="Kendall">Kendall</option>
+                        <option value="Lancaster">Lancaster</option>
+                        <option value="Leyland">Leyland</option>
+                        <option value="Morecambe">Morecambe</option>
+                        <option value="Nelson">Nelson</option>
+                        <option value="Ormskirk">Ormskirk</option>
+                        <option value="Penrith">Penrith</option>
+                        <option value="Preston">Preston</option>
+                        <option value="Rawtenstall">Rawtenstall</option>
+                        <option value="Skelmersdale">Skelmersdale</option>
+                        <option value="St Annes">St Annes</option>
+                        <option value="Whitehaven">Whitehaven</option>
+                        <option value="Workington">Workington</option>
+                      </select>  
+                  </div> 
+
+
+     <!-- End 1st row of filters -->
+
+      <!-- Start 2nd row of filters -->
+
+
+                  <div class="column-quarter filter-fields float">
+                        <div class="form-group filter-button">
+                            <br>
+                            <a href="job"><button class="button">Continue</button></a>
+                        </div>
+                     </div>
+              
+              </div>     
+      <!-- End 2nd row of filters -->
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
