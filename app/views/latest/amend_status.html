@@ -76,7 +76,7 @@
                       <form action="job_new" method="get" class="form">
                         <label class="form-hint" for="nino">Enter an email or unique identifier</label>
                         <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="richard_kaine@dwp.gsi.gov.uk">
-                        <a href="#"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
+                        <a href="job_new"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
                         <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
                       </form>  
                     </div>
@@ -102,10 +102,17 @@
                                   <td>Workcoach</td>
                                   <td><a href="amend_role">Change</a></td>
                               </tr>  
-                               <tr>
+                              <tr>
                                   <td>Status:</td>
-                                  <td>Employed</td>
-                                  <td><a href="amend_status">Change</a></td>
+                                  <td><select style="font-size:19px;">
+                                          <option>Employed</option>
+                                          <option>Dormant</option>
+                                          <option>Leaver</option>
+                                      </select>
+                                   </td>   
+                                   <td><a href="amend_status_done"><button class="button" style="margin-top:5px;">Save</button></a>
+                                        <a href="amend_user"><button class="button secondary-button" style="margin-top:5px; margin-left:0px;">Cancel</button></a>
+                                   </td>
                               </tr>  
                           </tbody>
                         </table> 
