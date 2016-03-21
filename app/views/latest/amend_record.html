@@ -51,7 +51,7 @@
                         </div>
                       </div>
 
-                 <!---   <div class="grid grid-1-5">
+                   <!---   <div class="grid grid-1-5">
                   <div class="inner-block left">
                     <a id="appointments" href="delete_user" class="menu-item">
                       <strong>Delete user</strong>
@@ -69,21 +69,20 @@
 
                    </div> 
             </div>
-            <br>
 
-            <div class="column">
-               <div class="column-half delete_record">   
+           <div class="column">
+               <div class="column-half delete_record">     
 
                     <div class="searchfield">
-                      <form action="amend_user" method="get" class="form">
+                      <form action="job_new" method="get" class="form">
                         <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
                         <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="JC628596A">
-                        <a href="amend_user"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
+                        <a href="job_new"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
                         <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
                       </form>  
                     </div>
 
-                     <br>
+                    <br>
                     <h2 class="heading-small">Claimant details</h2>
                         <table>
                           <tbody>
@@ -94,17 +93,23 @@
                               <tr>
                                   <td>National Insurance:</td>
                                   <td colspan="2">JC628596A</td>
-                              </tr>  
+                              </tr> 
                               <tr>
                                   <td>Status:</td>
-                                  <td>Dormant</td>
-                                  <td><a href="amend_record">Change</a></td>
-                              </tr>
+                                  <td><select style="font-size:19px;">
+                                          <option>Active</option>
+                                          <option>Dormant</option>
+                                          <option>Deleted</option>
+                                      </select>
+                                   </td>   
+                                   <td><a href="#"><button class="button" style="margin-top:5px;">Save</button></a>
+                                        <a href="delete_record_view"><button class="button secondary-button" style="margin-top:5px; margin-left:0px;">Cancel</button></a>
+                                   </td>
+                              </tr>  
                           </tbody>
                         </table> 
                         <br>
-
-                  </div>
+                </div>
               </div>     
       <!-- End column -->
 
