@@ -1,0 +1,128 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-perf"><a href="performance">Caseload</a></li>
+                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
+                <li id="nav-set"><a href="targets">Targets</a></li>          
+              </ul>
+          </div> 
+
+
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Settings - delete record</h1>
+
+            <div class="column"> 
+                  <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                    <div class="grid grid-1-5">
+                        <div class="inner-block left">
+                          <a id="Summary" href="settings" class="menu-item">
+                            <strong>Change location</strong>
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-1-5">
+                        <div class="inner-block left">
+                          <a id="edit_record" href="amend_user_search" class="menu-item">
+                            <strong>Amend user</strong>
+                          </a>
+                        </div>
+                      </div>
+
+                 <!---   <div class="grid grid-1-5">
+                  <div class="inner-block left">
+                    <a id="appointments" href="delete_user" class="menu-item">
+                      <strong>Delete user</strong>
+                    </a>
+                  </div>
+                </div> -->
+
+                      <div class="grid grid-1-5">
+                        <div class="inner-block left">
+                          <a id="claim_active" href="delete_record" class="menu-item selected">
+                            <strong>Delete record</strong>
+                          </a>
+                        </div>
+                      </div>
+
+                   </div> 
+            </div>
+            <br>
+
+            <div class="column">
+               <div class="column-half delete_record">   
+
+                    <div class="searchfield">
+                      <form action="amend_user" method="get" class="form">
+                        <label class="form-hint" for="nino">Enter an email or unique identifier</label>
+                        <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus">
+                        <a href="amend_user"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
+                        <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
+                      </form>  
+                    </div>
+
+                     <br>
+                    <h2 class="heading-small">Claimant details</h2>
+                        <table>
+                              <tbody><tr>
+                                  <td>Name:</td>
+                                  <td colspan="2">Richard Kaine</td>
+                              </tr>
+                              <tr>
+                                  <td>Email address:</td>
+                                  <td colspan="2">richard_kaine@dwp.gsi.gov.uk</td>
+                              </tr>  
+                              <tr>
+                                  <td>Site:</td>
+                                  <td>Liverpool</td>
+                                  <td><a href="amend_site">Change</a></td>
+                              </tr>
+                              <tr>
+                                  <td>Role:</td>
+                                  <td>Workcoach</td>
+                                  <td><a href="amend_role">Change</a></td>
+                              </tr>  
+                               <tr>
+                                  <td>Status:</td>
+                                  <td>Employed</td>
+                                  <td><a href="amend_status">Change</a></td>
+                              </tr>  
+                          </tbody>
+                        </table> 
+                        <br>
+
+                  </div>
+              </div>     
+      <!-- End column -->
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
