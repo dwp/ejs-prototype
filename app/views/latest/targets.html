@@ -22,7 +22,7 @@
                 <li id="nav-case"><a href="performance">Caseload</a></li>
                 <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
                 <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
-                <li id="nav-set" class="selected"><a href="targets">Standards</a></li>          
+          <!--      <li id="nav-set" class="selected"><a href="targets">Standards</a></li>    -->       
               </ul>
           </div> 
 
@@ -31,6 +31,47 @@
     <div class="column-three-quarters">
 
          <h1 class="heading-large">&nbsp;&nbsp;Performance standards</h1>
+
+               <div class="column">   
+
+                  <!-- 3rd level nav buttons -->
+                      <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+                          <div class="grid grid-1-5">
+                            <div class="inner-block left">
+                              <a id="Summary" href="#" class="menu-item">
+                                <strong>Change location</strong>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="grid grid-1-5">
+                            <div class="inner-block left">
+                              <a id="edit_record" href="amend_user_search" class="menu-item">
+                                <strong>Amend user</strong>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="grid grid-1-5">
+                            <div class="inner-block left">
+                              <a id="claim_active" href="delete_record" class="menu-item">
+                                <strong>Delete record</strong>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="grid grid-1-5">
+                            <div class="inner-block left">
+                              <a id="appointments" href="targets" class="menu-item selected">
+                                <strong>Standards</strong>
+                              </a>
+                            </div>
+                          </div>
+
+                       </div> 
+
+                  </div>   
 
               <!--      <div class="column new_filters">
                          <br>
@@ -85,24 +126,29 @@
                             </div>   
                 </div> -->
 
-              <div class="column-third">
-                    <div class="form-group">
-                        <label class="form-label" for="jobcentre">Jobcentre</label>
-                          <select class="select form-control">
-                              <option value="Select">Select</option>
-                              <option value="Bradford">Bradford</option>
-                              <option value="Derby">Derby</option>
-                              <option value="Liverpool">Liverpool</option>
-                              <option value="Manchester">Manchester</option>
-                              <option value="Portsmouth">Portsmouth</option>
-                              <option value="Southampton">Southampton</option>
-                              <option value="Wolverhampton">Wolverhampton</option>    
-                              <option value="Worcester">Worcester</option>                     
-                          </select>     
-                    </div>
-              </div>
+         
              
-              <div class="column">   
+              <div class="column delete_record">   
+
+                      <div class="form-group" style="width:50%;">
+                           <br>
+                          <label class="form-label" for="jobcentre">Jobcentre</label>
+                            <select class="select form-control">
+                                <option value="Select">Select</option>
+                                <option value="Bradford">Bradford</option>
+                                <option value="Derby">Derby</option>
+                                <option value="Liverpool">Liverpool</option>
+                                <option value="Manchester">Manchester</option>
+                                <option value="Portsmouth">Portsmouth</option>
+                                <option value="Southampton">Southampton</option>
+                                <option value="Wolverhampton">Wolverhampton</option>    
+                                <option value="Worcester">Worcester</option>                     
+                            </select>     
+                      </div>
+
+                </div>
+                
+                <div class="column">      
 
                 <h2 class="heading-medium">Jobseeker's Allowance</h2>
                     <table class="targets" id="targets" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
