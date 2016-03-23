@@ -55,6 +55,64 @@ $('#example').removeClass('class');
       <div class="column new_filters">
 
            <br>
+
+           <div class="column-quarter filter-fields filter-form">
+               <div class="form-group">
+                    <label class="form-label" for="Work coach">
+                        Work coach
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+                        <div class="checkbox-container" id="organisations-filter">
+                            <label for="All">
+                               <input id="All" name="All" type="checkbox" value="All">
+                               All
+                            </label>
+                            <label for="richard.kaine">
+                               <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                               richard.kaine
+                            </label>
+                            <label for="john.smith2">
+                               <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                               john.smith2
+                            </label>
+                            <label for="amanda.wright">
+                               <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                               amanda.wright
+                            </label>
+                            <label for="darren.moody">
+                               <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                               darren.moody
+                            </label>
+                            <label for="mark.jones1">
+                               <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                               mark.jones1
+                            </label>
+                            <label for="sam.steel">
+                               <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                               sam.steel
+                            </label>
+                            <label for="harry.brown2">
+                               <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                               harry.brown2
+                            </label>
+                            <label for="julia.granger">
+                               <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                               julia.granger
+                            </label>
+                            <label for="paul.brookes1">
+                               <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                               paul.brookes1
+                            </label>
+                            <label for="sarah.fielding">
+                               <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                               sarah.fielding
+                            </label>
+                        </div>
+                    </div>
+               </div>
+            </div>
+
            <div class="column-quarter filter-fields">
                   <div class="form-group">
                     <label class="form-label" for="benefit">
@@ -88,6 +146,7 @@ $('#example').removeClass('class');
                       </label>
                       <div class="dropdown">
                         <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="Select">Select</option>   
                             <option value="March 2016">March 2016</option>                   
                             <option value="February 2016">February 2016</option>                   
                             <option value="January 2016">January 2016</option>                               
@@ -114,10 +173,11 @@ $('#example').removeClass('class');
                             </label>
                             <div class="dropdown">
                               <select name="select" class="form-control dropdown-list" id="full-name">
-                              <option value="All" selected="">All</option>
-                              <option value="18-24">18-24</option> 
-                              <option value="24-49">25+</option>
-                              <option value="50+">50+</option>
+                                <option value="Select">Select</option>   
+                                <option value="All" selected="">All</option>
+                                <option value="18-24">18-24</option> 
+                                <option value="24-49">25+</option>
+                                <option value="50+">50+</option>
                             </select>
                           </div>
                         </div>
