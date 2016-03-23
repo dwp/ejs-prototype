@@ -1,0 +1,142 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-case"><a href="performance">Caseload</a></li>
+                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
+          <!--      <li id="nav-set" class="selected"><a href="targets">Standards</a></li>    -->       
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Performance standards confirmation</h1>
+
+<!--              <div class="column">   
+                    <table id="targets" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+                        <thead>
+                          <tr class="targets">
+                            <th>JSA 13 %</th>
+                            <th>JSA 26 %</th>
+                            <th>JSA 39 %</th>
+                            <th>JSA 39 %<br>(18-24)</th>
+                            <th>JSA 52 %</th>
+                            <th>JSA 52 %<br>(18-24)</th>
+                            <th>IS 52 %</th>
+                            <th>ESA 65 %</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>                            
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                            <td><input class="form-control" id="inital" type="text"></td>
+                          </tr>
+                         </tbody>
+                      </table>
+                </div> 
+
+                <br>
+                  <div class="column">
+                      <div class="form-group" id="save">
+                          <a href="#" class="button" value="Save">Save</a>
+                      </div>
+                   </div>   -->
+
+              <div class="column-half">
+                  <table>
+                    <thead>
+                      <tr>
+                          <th>Benefit type</th>
+                          <th>Target</th>
+                      </tr>
+                  <!--    <tr>  
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                      </tr> -->
+                    </thead>
+                    <tbody>
+                        <td>JSA 13 weeks</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>JSA 26 weeks</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>JSA 39 weeks</td>
+                        <td>76%</td>
+                    </tr>
+                     <tr>
+                        <td>JSA 39 weeks (18-24 years)</td>
+                        <td>85%</td>
+                    </tr>                      
+                    <tr>
+                        <td>JSA 52 weeks</td>
+                        <td>70%</td>
+                    </tr> 
+                    <tr>
+                        <td>JSA 52 weeks (18-24 years)</td>
+                        <td>85%</td>
+                    </tr> 
+                    <tr>
+                        <td>IS 52 weeks</td>
+                        <td>70%</td>
+                    </tr>                                      
+                    <tr>
+                        <td>ESA 65 weeks</td>
+                        <td>70%</td>
+                    </tr>   
+                </tbody>
+              </table>
+            </div>
+
+                  <br>
+                  <div class="column">
+                      <div class="form-group" id="save">
+                          <a href="targets" class="button secondary-button" value="Back">Back</a>
+                          <a href="performance_dash" class="button" value="Continue">Save and continue</a>
+                      </div>
+                   </div>   
+            
+
+ <!-- End three quarters column-->       
+   </div>  
+
+
+    <!-- End row-->       
+      </div>
+
+             
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
