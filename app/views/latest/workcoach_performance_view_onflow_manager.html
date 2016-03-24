@@ -1,0 +1,251 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<!-- <script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script> -->
+
+
+<!-- $(document).ready(function(){
+  $('#example').dataTable().yadcf([
+    ]);
+});
+$('#example').removeClass('class');
+
+</script> -->
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+
+        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+              <ul class="main-nav">
+                <li id="nav-home"><a href="job">Search</a></li>
+                <li id="nav-job"><a href="job_new">Create record</a></li>
+                <li id="nav-case"><a href="performance">Caseload</a></li>
+                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
+            <!--    <li id="nav-set"><a href="targets">Standards</a></li> -->
+                <li id="nav-off" class="selected"><a href="workcoach_performance_view_onflow">Off-flow</a></li>
+              </ul>
+          </div> 
+
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+         <h1 class="heading-large">&nbsp;&nbsp;Workcoach performance - JSA</h1>
+
+        <!-- Start 1st row of filters -->
+
+      <div class="column new_filters">
+
+           <br>
+
+           <div class="column-quarter filter-fields filter-form">
+               <div class="form-group">
+                    <label class="form-label" for="Work coach">
+                        Work coach
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+                        <div class="checkbox-container" id="organisations-filter">
+                            <label for="All">
+                               <input id="All" name="All" type="checkbox" value="All">
+                               All
+                            </label>
+                            <label for="richard.kaine">
+                               <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                               richard.kaine
+                            </label>
+                            <label for="john.smith2">
+                               <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                               john.smith2
+                            </label>
+                            <label for="amanda.wright">
+                               <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                               amanda.wright
+                            </label>
+                            <label for="darren.moody">
+                               <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                               darren.moody
+                            </label>
+                            <label for="mark.jones1">
+                               <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                               mark.jones1
+                            </label>
+                            <label for="sam.steel">
+                               <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                               sam.steel
+                            </label>
+                            <label for="harry.brown2">
+                               <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                               harry.brown2
+                            </label>
+                            <label for="julia.granger">
+                               <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                               julia.granger
+                            </label>
+                            <label for="paul.brookes1">
+                               <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                               paul.brookes1
+                            </label>
+                            <label for="sarah.fielding">
+                               <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                               sarah.fielding
+                            </label>
+                        </div>
+                    </div>
+               </div>
+            </div>
+
+           <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label" for="benefit">
+                        Benefit type
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="benefit">
+                            <option value="Select">Select</option>
+                            <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                            <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+                            <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                            <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                            <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                            <option value="Income Support - all">Income Support - all</option>
+                            <option value="Income Support - lone parent">Income Support - lone parent</option>
+                            <option value="Income Support - carer">Income Support - carer</option>
+                            <option value="Income Support- pregnant">Income Support - pregnant</option>
+                            <option value="Income Support- student">Income Support - student</option>
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+          
+          <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label" for="months">
+                        Cohort month
+                     <!--   <span class="form-hint">Select an option</span> -->
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="Select">Select</option>   
+                            <option value="March 2016">March 2016</option>                   
+                            <option value="February 2016">February 2016</option>                   
+                            <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>                   
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+             <div class="column-quarter filter-fields">
+                        <div class="form-group">
+                          <label class="form-label" for="full-name">
+                              Age group
+                           <!--   <span class="form-hint">Select an option</span> -->
+                            </label>
+                            <div class="dropdown">
+                              <select name="select" class="form-control dropdown-list" id="full-name">
+                                <option value="Select">Select</option>   
+                                <option value="All" selected="">All</option>
+                                <option value="18-24">18-24</option> 
+                                <option value="24-49">25+</option>
+                                <option value="50+">50+</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
+
+                <div class="column-quarter filter-fields float">
+                        <div class="form-group filter-button">
+                            <a href="workcoach_performance_view_onflow_results_manager"><button class="button">Search</button></a>
+                            <a class="clear" href="#">Clear filter</a>
+                        </div>
+                     </div>
+
+      <!--      <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label" for="months">
+                        Cohort month
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="months">
+                            <option value="All" selected="">All</option>   
+                            <option value="January 2016">January 2016</option>                               
+                            <option value="December 2015">December 2015</option>   
+                            <option value="November 2015">November 2015</option>
+                            <option value="October 2015">October 2015</option>
+                            <option value="September 2015">September 2015</option>
+                            <option value="August 2015">August 2015</option>
+                            <option value="July 2015">July 2015</option>
+                            <option value="June 2015">June 2015</option>
+                            <option value="May 2015">May 2015</option>
+                            <option value="April 2015">April 2015</option>
+                            <option value="March 2015">March 2015</option>
+                            <option value="February 2015">February 2015</option>
+                            <option value="January 2015">January 2015</option> 
+                            <option value="Out of cohort">Out of cohort</option>                      
+                        </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column-quarter filter-fields">
+                  <div class="form-group">
+                    <label class="form-label" for="cohorts">
+                        Target weeks
+                      </label>
+                      <div class="dropdown">
+                        <select name="select" class="form-control dropdown-list" id="cohorts">
+                            <option value="All">All</option> 
+                            <option value="13 weeks">13 weeks</option> 
+                            <option value="26 weeks">26 weeks</option> 
+                            <option value="39 weeks">39 weeks</option> 
+                            <option value="52 weeks">52 weeks</option> 
+                        </select>
+                    </div>
+                  </div>
+            </div>    -->
+
+          <!-- End 1st row of filters -->
+
+            </div>
+
+          </div> 
+
+     <!-- End three quarters column-->       
+       </div>  
+
+    <!-- End row-->       
+      </div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}
+
