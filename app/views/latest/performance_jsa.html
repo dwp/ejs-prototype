@@ -56,7 +56,7 @@ $('#example').removeClass('class');
            <br>
            <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="benefit">
+                    <label class="form-label" for="benefit">
                         Benefit type
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -80,7 +80,7 @@ $('#example').removeClass('class');
 
              <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
+                    <label class="form-label" for="full-name">
                         Live/dormant
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -99,7 +99,7 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="months">
+                    <label class="form-label" for="months">
                         Cohort month
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -127,7 +127,7 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                   <div class="form-group">
-                    <label class="form-label-bold" for="cohorts">
+                    <label class="form-label" for="cohorts">
                         Target weeks
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -164,7 +164,7 @@ $('#example').removeClass('class');
 
              <div class="column-quarter filter-fields filter-form">
                  <div class="form-group">
-                    <label class="form-label-bold" for="full-name">
+                    <label class="form-label" for="full-name">
                         Barriers
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -216,7 +216,7 @@ $('#example').removeClass('class');
 
              <div class="column-quarter filter-fields">
                 <div class="form-group">
-                    <label class="form-label-bold" for="sector">
+                    <label class="form-label" for="sector">
                         Sector
                      <!--   <span class="form-hint">Select an option</span> -->
                       </label>
@@ -256,7 +256,7 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                 <div class="form-group">
-                      <label class="form-label-bold" for="sector">
+                      <label class="form-label" for="sector">
                           Work programme
                        <!--   <span class="form-hint">Select an option</span> -->
                         </label>
@@ -273,7 +273,7 @@ $('#example').removeClass('class');
 
             <div class="column-quarter filter-fields">
                <div class="form-group">
-                        <label class="form-label-bold" for="full-name">
+                        <label class="form-label" for="full-name">
                             Day 1 evidence missing
                          <!--   <span class="form-hint">Select an option</span> -->
                           </label>
@@ -306,7 +306,7 @@ $('#example').removeClass('class');
 
                 <div class="column-quarter filter-fields float">
                    <div class="form-group">
-                      <label class="form-label-bold" for="full-name">
+                      <label class="form-label" for="full-name">
                           Postcode
                        <!--   <span class="form-hint">For example, WR1&nbsp;&nbsp;5</span> -->
                         </label>
@@ -325,7 +325,7 @@ $('#example').removeClass('class');
 
                  <div class="column-quarter filter-fields">
                         <div class="form-group">
-                          <label class="form-label-bold" for="full-name">
+                          <label class="form-label" for="full-name">
                               Age group
                            <!--   <span class="form-hint">Select an option</span> -->
                             </label>
@@ -335,6 +335,25 @@ $('#example').removeClass('class');
                               <option value="18-24">18-24</option> 
                               <option value="24-49">25+</option>
                               <option value="50+">50+</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="column-quarter filter-fields">
+                        <div class="form-group">
+                          <label class="form-label" for="full-name">
+                              Sort results by
+                           <!--   <span class="form-hint">Select an option</span> -->
+                            </label>
+                            <div class="dropdown">
+                              <select name="select" class="form-control dropdown-list" id="full-name">
+                              <option value="Select" selected="">Select</option>
+                              <option value="Appointment - ascending">Appointment - ascending</option> 
+                              <option value="Appointment - descending">Appointment - descending</option>
+                              <option value="-------">-------</option>
+                              <option value="Days to - ascending">Days to - ascending</option> 
+                              <option value="Days to - descending">Days to - descending</option>
                             </select>
                           </div>
                         </div>
@@ -373,7 +392,7 @@ $('#example').removeClass('class');
                             <th class="nino no-sort">Initial</th>
                             <th class="nino"><input type="checkbox">&nbsp;Email</th>
                             <th class="daysto nino no-sort">Days to</th>
-                            <th class="appoint">Appointment</th>
+                            <th class="appoint nino no-sort">Appointment</th>
                         <!--    <th class="nino no-sort">Closure reason</th> -->
                           </tr>
                         </thead>
