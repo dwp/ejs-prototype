@@ -1,44 +1,161 @@
 {{<layout}}
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+  GOV.UK prototyping kit
 {{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
 
 {{$content}}
 
+
 <main id="content" role="main">
 
-	<h1 class="heading-xlarge">Example pages</h1>
-	<ul class="list-bullet">
-		<li>
-			<a href="/examples/template-partial-areas">
-				Template partial areas
-			</a>
-		</li>
-		<li>
-			<a href="/examples/blank">
-				Blank page
-			</a>
-		</li>
-		<li>
-			<a href="/examples/elements/grid-layout">
-				Grid layout
-			</a>
-		</li>
-		<li>
-			<a href="/examples/elements/typography">
-				Typography
-			</a>
-		</li>
-		<li>
-			<a href="/examples/elements/forms">
-				Form example
-			</a>
-		</li>
-	</ul>
+ <div class="grid-row">        
+
+	<div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
+		<ul class="main-nav">
+			<li id="nav-home"><a href="job">Search</a></li>
+			<li id="nav-job"><a href="job_new">Create record</a></li>
+			<li id="nav-perf"><a href="performance">Caseload</a></li>
+			<li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
+			<li id="nav-perf"><a href="performance_cohort">Performance</a></li>
+			<li id="nav-off"><a href="workcoach_performance_view_onflow">Off-flow</a></li>
+		</ul>
+	</div> 
+
+
+	<!-- Start three quarters container for main content columns -->
+	<div class="column-three-quarters">
+
+		<h1 class="heading-large">&nbsp;&nbsp;Settings - amend user</h1>
+
+		<div class="column"> 
+			<div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="Summary" href="settings" class="menu-item">
+							<strong>Change location</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="edit_record" href="amend_user_search" class="menu-item selected">
+							<strong>Amend user</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="claim_active" href="delete_record" class="menu-item">
+							<strong>Delete record</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="appointments" href="targets" class="menu-item">
+							<strong>Standards</strong>
+						</a>
+					</div>
+				</div>
+
+			</div> 
+		</div>
+
+		<div class="column-half">   
+
+			<form action="amend_user" method="get" class="form">
+				<div class="form-group">
+					<fieldset class="inline">
+						<p class="form-label-bold">
+							What do you want to do?
+						</p>
+
+						<label for="radio-part-2" data-target="merge" class="block-label">
+							<input id="radio-part-2" type="radio" name="housing-act" value="Yes" aria-controls="format">
+							Merge
+						</label>
+
+						<label for="radio-part-3" data-target="workcoach-remove" class="block-label">
+							<input id="radio-part-3" type="radio" name="housing-act" value="No">
+							Remove from Workcoach List
+						</label>
+					</fieldset>
+				</div>
+
+				<div id="merge" class="js-hidden">
+					<div class="form-group">
+						<fieldset class="inline">
+							<div>
+								<p class="form-label-bold">
+									Merge from
+								</p>
+
+								<label for="radio-part-2">
+									<select>
+										<option>Melanie Redmond</option>
+									</select>
+								</label>
+							</div>
+
+
+							<p class="form-label-bold">
+								Merge to
+							</p>
+
+							<label for="radio-part-3">
+								<select>
+									<option>Melanie Boyle</option>
+								</select>
+							</label>
+						</fieldset>
+					</div>
+
+					<div class="form-group">
+			          <input type="submit" class="button" value="Continue">
+			        </div>
+				</div>
+
+				<div id="workcoach-remove" class="js-hidden">
+					<div class="form-group">
+						<fieldset class="inline">
+							<div>
+								<p class="form-label-bold">
+									Remove from Workcoach List
+								</p>
+
+								<label for="radio-part-2">
+									<select>
+										<option>Melanie Redmond</option>
+									</select>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+
+					<div class="form-group">
+			          <input type="submit" class="button" value="Continue">
+			        </div>
+				</div>
+
+			</form>  
+
+		</div>     
+	<!-- End column -->
+	</div>
+<!-- End row-->    
+</div>
 
 </main>
-
 {{/content}}
 
 {{/layout}}
+
