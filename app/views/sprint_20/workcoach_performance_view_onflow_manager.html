@@ -1,0 +1,208 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="grid-row">        
+
+    {{>includes/left_nav_settings}}
+
+    <div class="column-three-quarters">
+
+      <h1 class="heading-large">&nbsp;&nbsp;Workcoach performance - JSA</h1>
+
+      <div class="column new_filters">
+
+        <div class="column-quarter filter-fields filter-form">
+          <div class="form-group">
+            <label class="form-label" for="Work coach"> Work coach</label>
+
+            <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+              <div class="checkbox-container" id="organisations-filter">
+                <label for="All">
+                   <input id="All" name="All" type="checkbox" value="All">
+                   All
+                </label>
+                <label for="richard.kaine">
+                   <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                   richard.kaine
+                </label>
+                <label for="john.smith2">
+                   <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                   john.smith2
+                </label>
+                <label for="amanda.wright">
+                   <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                   amanda.wright
+                </label>
+                <label for="darren.moody">
+                   <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                   darren.moody
+                </label>
+                <label for="mark.jones1">
+                   <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                   mark.jones1
+                </label>
+                <label for="sam.steel">
+                   <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                   sam.steel
+                </label>
+                <label for="harry.brown2">
+                   <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                   harry.brown2
+                </label>
+                <label for="julia.granger">
+                   <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                   julia.granger
+                </label>
+                <label for="paul.brookes1">
+                   <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                   paul.brookes1
+                </label>
+                <label for="sarah.fielding">
+                   <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                   sarah.fielding
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-quarter filter-fields">
+          <div class="form-group">
+            <label class="form-label" for="benefit">Benefit type</label>
+            <div class="dropdown">
+              <select name="select" class="form-control dropdown-list" id="benefit">
+                <option value="Select">Select</option>
+                <option value="Jobseekers Allowance">Jobseekers Allowance</option> 
+                <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+                <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+                <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+                <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+                <option value="Income Support - all">Income Support - all</option>
+                <option value="Income Support - lone parent">Income Support - lone parent</option>
+                <option value="Income Support - carer">Income Support - carer</option>
+                <option value="Income Support- pregnant">Income Support - pregnant</option>
+                <option value="Income Support- student">Income Support - student</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column-quarter filter-fields" id="cohortMonthSingle">
+          <div class="form-group">
+            <label class="form-label" for="months">Cohort month</label>
+            <div class="dropdown">
+              <select name="select" class="form-control dropdown-list" id="months">
+                <option value="Select">Select</option>   
+                <option value="March 2016">March 2016</option>                   
+                <option value="February 2016">February 2016</option>                   
+                <option value="January 2016">January 2016</option>                               
+                <option value="December 2015">December 2015</option>   
+                <option value="November 2015">November 2015</option>
+                <option value="October 2015">October 2015</option>
+                <option value="September 2015">September 2015</option>
+                <option value="August 2015">August 2015</option>
+                <option value="July 2015">July 2015</option>
+                <option value="June 2015">June 2015</option>
+                <option value="May 2015">May 2015</option>
+                <option value="April 2015">April 2015</option>
+                <option value="March 2015">March 2015</option>                   
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-quarter filter-fields filter-form" id="cohortMonthMulti">
+          <div class="form-group">
+            <label class="form-label" for="months">Cohort month</label>
+            
+            <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+              <div class="checkbox-container">
+                <label for="All">
+                   <input id="All" name="All" type="checkbox" value="All">
+                   All
+                </label>
+                <label for="richard.kaine">
+                   <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                   March 2016
+                </label>
+                <label for="john.smith2">
+                   <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                   February 2016
+                </label>
+                <label for="amanda.wright">
+                   <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                   January 2016
+                </label>
+                <label for="darren.moody">
+                   <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                   December 2016
+                </label>
+                <label for="mark.jones1">
+                   <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                   November 2016
+                </label>
+                <label for="sam.steel">
+                   <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                   October 2016
+                </label>
+                <label for="harry.brown2">
+                   <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                   September 2016
+                </label>
+                <label for="julia.granger">
+                   <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                   August 2016
+                </label>
+                <label for="paul.brookes1">
+                   <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                   July 2016
+                </label>
+                <label for="sarah.fielding">
+                   <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                   June 2016
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-quarter filter-fields">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Age group</label>
+            <div class="dropdown">
+              <select name="select" class="form-control dropdown-list" id="full-name">
+                <option value="Select">Select</option>   
+                <option value="All" selected="">All</option>
+                <option value="18-24">18-24</option> 
+                <option value="24-49">25+</option>
+                <option value="50+">50+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-quarter filter-fields float">
+          <div class="form-group filter-button">
+            <a href="workcoach_performance_view_onflow_results_manager"><button class="button">Search</button></a>
+            <a class="clear" href="#">Clear filter</a>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>  
+</main>
+
+{{/content}}
+
+{{/layout}}
+
+{{$extraJs}}
+  <script src="/public/javascripts/workcoachPerformance.js"></script>
+{{/extraJs}}
