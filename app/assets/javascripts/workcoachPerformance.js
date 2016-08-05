@@ -2,8 +2,8 @@ function displayCorrectCohortInputType(){
 	var allSelected = $('#organisations-filter input:eq(0)').filter(':checked').length;
 	var numberOfWorkcoachesSelected = $('#organisations-filter input:gt(0)').filter(':checked').length;
 
-	var cohortMonthInputType = numberOfWorkcoachesSelected > 1 ? 'Multi' : 'Single';
-	cohortMonthInputType = allSelected ? 'Multi' : cohortMonthInputType;
+	var cohortMonthInputType = numberOfWorkcoachesSelected > 1 ? 'Single' : 'Multi';
+	cohortMonthInputType = allSelected ? 'Single' : cohortMonthInputType;
 
 	$('#cohortMonthMulti,#cohortMonthSingle').hide();
 	$('#cohortMonth' + cohortMonthInputType).show();
