@@ -53,6 +53,7 @@ var workcoachPerformance = (function(){
 		clearFilter: function(){
 			clearFilter();
 			displayCorrectCohortInputType();
+			toggleSearchButton();
 		}
 	}
 })();
