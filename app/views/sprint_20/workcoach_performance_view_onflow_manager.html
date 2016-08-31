@@ -98,6 +98,22 @@
           </div>
         </div>
         
+        <div class="column-quarter filter-fields">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Age group</label>
+            <div class="dropdown">
+              <select name="select" class="form-control dropdown-list" id="full-name">
+                <option value="Select">Select</option>   
+                <option value="All" selected="">All</option>
+                <option value="18-24">18-24</option> 
+                <option value="24-49">25+</option>
+                <option value="50+">50+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
         <div class="column-quarter filter-fields" id="cohortMonthSingleAll" 
           data-type="cohortInput" data-selection-type="single" data-number-of-cohorts="all">
           <div class="form-group">
@@ -341,25 +357,10 @@
           </div>
         </div>
 
-        <div class="column-quarter filter-fields">
-          <div class="form-group">
-            <label class="form-label" for="full-name">Age group</label>
-            <div class="dropdown">
-              <select name="select" class="form-control dropdown-list" id="full-name">
-                <option value="Select">Select</option>   
-                <option value="All" selected="">All</option>
-                <option value="18-24">18-24</option> 
-                <option value="24-49">25+</option>
-                <option value="50+">50+</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
         <div class="column-quarter filter-fields float">
           <div class="form-group filter-button">
-            <a href="workcoach_performance_view_onflow_results_manager"><button class="button">Search</button></a>
-            <a class="clear" href="#">Clear filter</a>
+            <a href="workcoach_performance_view_onflow_results_manager"><button id="searchButton" class="button">Search</button></a>
+            <a id="clearFilter" class="clear" href="#">Clear filter</a>
           </div>
         </div>
       </div>

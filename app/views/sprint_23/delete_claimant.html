@@ -1,0 +1,186 @@
+{{<layout}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+	
+    {{>includes/left_nav_settings}}
+
+	<!-- Start three quarters container for main content columns -->
+	<div class="column-three-quarters">
+
+		<h1 class="heading-large">&nbsp;&nbsp;Settings - Delete claimant</h1>
+
+		<div class="column"> 
+			<div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="Summary" href="settings" class="menu-item">
+							<strong>Change location</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="edit_record" href="amend_user_search" class="menu-item">
+							<strong>Amend user</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="claim_active" href="delete_claimant" class="menu-item selected">
+							<strong>Delete record</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a id="appointments" href="targets" class="menu-item">
+							<strong>Standards</strong>
+						</a>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+        <!-- Start Search form -->
+        <div class="column-two-thirds">
+            <form id="reference-search" action="/ejs-tracker/settings/maintain-record">
+                <div id="id-reference-search-form-group" class="form-group ">
+                    <label for="reference-search-text">Enter a National Insurance or 12-digit reference number</label>
+                    
+                    <div class="searchfield">
+                        <input id="reference-search-text" name="reference" value="HW091141B" autocomplete="off">
+                        <button id="search-submit" class="search-submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- End Search Form -->
+
+       
+		<!-- Start Search Results Split into Delete Claimant and Reopen Claim -->
+    	<div class="column-two-thirds">
+        	<h2 class="heading-small">Claimant Details</h2>
+   			<form id="deleteClaimant">
+        		<div id="content" role="main">
+            		<div class="grid-row">
+                    	<table style="table-layout: fixed;">
+                        	<colgroup>
+                        		<col style="width: 25%;">
+		                        <col style="width: 25%;">
+		                        <col style="width: 25%;">
+		                        <col style="width: 25%;">
+                        	</colgroup>
+                        	<tbody>
+	                        	<tr>
+		                            <td colspan="2">Name: </td>
+		                            <td colspan="2">Mr A Test-39678</td>
+	                        	</tr>
+		                        <tr>
+		                            <td colspan="2">National Insurance: </td>
+		                            <td colspan="2">HW091141B</td>
+		                        </tr>
+		                        <tr id="delete-button">
+		                            <td colspan="3">&nbsp;</td>
+		                            <td colspan="1">
+		                                <a class="button" href="javascript:toggleDelete()">Delete Claimant</a>
+		                            </td>
+		                        </tr>
+		                        <tr id="confirm-delete" style="display: none;">
+		                            <td colspan="3">
+		                                <div id="confirmDelete" class="form-error validation-message">
+		                                    Are you sure you wish to delete this claimant?
+		                                </div>
+		                            </td>
+		                            <td colspan="1">
+		                                <button id="delete-claimant" onclick="this.form.action='/ejs-tracker/settings/maintain-record/delete'" class="button">
+		                                    Yes
+		                                </button>
+		                                <a class="button" href="javascript:toggleDeleteNo()">No</a>
+		                            </td>
+		                        </tr>
+                    		</tbody>
+                		</table>
+           			 </div>
+        		</div>
+			</form>
+    	</div>
+
+    	<div class="column-two-thirds">
+        	<h2 class="heading-small">Last Closed Claim</h2>
+        		<form id="reopenClaim" action="/ejs-tracker/settings/maintain-record" method="post">
+            		<div id="content" role="main">
+		                <div class="grid-row">
+		                    <table style="table-layout: fixed;">
+		                        <colgroup>
+		                        	<col style="width: 25%;">
+		                        	<col style="width: 25%;">
+		                        	<col style="width: 25%;">
+		                        	<col style="width: 25%;">
+		                        </colgroup>
+		                        <tbody>
+			                        <tr>
+			                            <td colspan="2">Benefit Type: </td>
+			                            <td colspan="2">Jobseeker's Allowance</td>
+			                        </tr>
+			                        <tr>
+			                            <td colspan="2">Date of entitlement: </td>
+			                            <td colspan="2">16/05/2015</td>
+			                        </tr>
+			                        <tr>
+			                            <td colspan="2">Last Effective Date: </td>
+			                            <td colspan="2">12/10/2015</td>
+			                        </tr>
+			                        <tr id="reopen-button">
+			                            <td colspan="3">&nbsp;</td>
+			                            <td colspan="1">
+			                                <a class="button" href="javascript:toggleReopen()">Reopen Claim</a>
+			                            </td>
+			                        </tr>
+			                        <tr id="confirm-reopen" style="display: none;">
+				                        <td colspan="3">
+				                            <div id="confirmReopen" class="form-error validation-message">
+				                            Are you sure you wish to reopen this claim?
+				                            </div>
+				                        </td>
+				                        <td colspan="1">
+				                            <button id="reopen-claim" class="button">
+				                                Yes
+				                            </button>
+				                            <a class="button" href="javascript:toggleReopenNo()">No</a>
+				                        </td>
+			                        </tr>
+		                    	</tbody>
+		                    </table>
+		                </div>
+		            </div>
+				</form>
+		    </div>
+		</div>     
+	</div>  
+</div>
+
+</main>
+{{/content}}
+
+{{/layout}}
+
