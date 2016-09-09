@@ -1,21 +1,29 @@
-var fs = require('fs'),
-    argv = require('minimist')(process.argv.slice(2)),
-    pidFile = __dirname + '/.start.pid',
-    fileOptions = { encoding : 'utf-8' },
-    gruntfile;
+var path = require('path')
 
-// start grunt
-gruntfile = __dirname + '/Gruntfile.js';
-require(__dirname + '/node_modules/grunt/lib/grunt.js').cli({
-  'gruntfile' : gruntfile
-});
+// Check for `node_modules` folder and warn if missing
+var fs = require('fs')
 
-fs.writeFileSync(pidFile, process.pid, fileOptions);
+if (!fs.existsSync(path.join(__dirname, '/node_modules'))) {
+  console.error('ERROR: Node module folder missing. Try running `npm install`')
+  process.exit(0)
+}
 
-process.on('SIGINT', function() {
-  var pid = fs.readFileSync(pidFile, fileOptions);
+// remove .port.tmp if it exists
+try {
+  fs.unlinkSync(path.join(__dirname, '/.port.tmp'))
+} catch (e) {}
 
-  fs.unlink(pidFile);
-  process.kill(pid, 'SIGTERM');
-  process.exit();
-});
+var gruntfile = path.join(__dirname, '/Gruntfile.js')
+
+require('./node_modules/grunt/lib/grunt.js').cli({
+  'gruntfile': gruntfile
+})
+
+process.on('SIGINT', function () {
+  // remove .port.tmp if it exists
+  try {
+    fs.unlinkSync(path.join(__dirname, '/.port.tmp'))
+  } catch (e) {}
+
+  process.exit(0)
+})

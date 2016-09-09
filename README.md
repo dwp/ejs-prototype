@@ -1,66 +1,44 @@
-# Express prototyping tool
+# GOV.UK Prototype kit
 
-Prototyping tool built in [Express](http://expressjs.com/).
+## News
 
-It will give you a basic Express app, with templates, css and images from the [GOV.UK front-end toolkit](https://github.com/alphagov/govuk_frontend_toolkit).
+**Upgrading from version 1 to 2:** the latest version of the kit (2.0.0 and later) is not compatible with previous versions. If you update your old prototypes you'll need to [convert them as well](https://github.com/alphagov/govuk_prototype_kit/blob/master/docs/updating-the-kit.md).
 
+## About the prototype kit
 
-## Requirements
+The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
 
-#### [Node](http://nodejs.org/)
+Read the [project principles](docs/principles.md).
 
-You may already have it, try:
+## Security
 
-```
-node --version
-```
+If you publish your prototypes online, they **must** be protected by a [username and password](docs/guides/publishing-on-heroku.md). This is to prevent members of the public finding prototypes and thinking they are real services.
 
-Your version needs to be at least v0.10.0.
+You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
 
-If you don't have Node, download it here: [http://nodejs.org/](http://nodejs.org/).
+## Installation instructions
 
-## Getting started
+- [Installation guide for new users (non technical)](docs/install/introduction.md)
+- [Installation guide for developers (technical)](docs/developer-install-instructions.md)
 
-Install Node.js (see requirements)
+## Guides
 
-#### Clone this repo
+1. [Setting up git](docs/guides/setting-up-git.md)
+2. [Publishing on the web (Heroku)](docs/guides/publishing-on-heroku.md)
+3. [Using GOV.UK Verify](docs/guides/using-verify.md)
 
-```
-git clone git@github.com:tombye/express_prototype.git
-```
+## Other documentation
 
-#### Install dependencies
+- [Prototype kit principles](docs/principles.md)
+- [Making pages](docs/making-pages.md)
+- [Writing CSS](docs/writing-css.md)
+- [Updating the kit to the latest version](docs/updating-the-kit.md)
+- [Tips and tricks](docs/tips-and-tricks.md)
+- [Creating routes (server-side programming)](docs/creating-routes.md)
 
-```
-npm install
-```
+## Community
 
-This will install folders containing programs described by the package.json file to a folder called `node_modules`.
+We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
 
-#### Run the app
-
-```
-node start.js
-```
-
-Go to [localhost:3000](http://localhost:3000) in your browser.
-
-#### Hot reload
-
-Any code changes should update in the browser without you restarting the app.
-
-The app recompiles app/assets/stylesheets/application.scss everytime changes are observed.
-
-## Documentation
-
-Guides for getting set up and how to work with the prototyping application are available on this repo's [wiki](https://github.com/tombye/express_prototype/wiki).
-
-* [Getting started](https://github.com/tombye/express_prototype/wiki/Getting-started) (Read this first)
-* [Creating routes](https://github.com/tombye/express_prototype/wiki/Creating-routes)
-* [Making pages](https://github.com/tombye/express_prototype/wiki/Making-pages)
-* [Writing CSS](https://github.com/tombye/express_prototype/wiki/Writing-CSS)
-* [Deploying (getting your work online)](https://github.com/tombye/express_prototype/wiki/Deploying-(getting-your-work-online))
-* [Tips and Tricks](https://github.com/tombye/express_prototype/wiki/Tips-and-Tricks)
-
-This project is built on top of Express, the idea is that it is straightforward to create simple static pages out of the box. However, you're not limited to that - more dynamic sites can be built with more understanding of Express. Here's a good [Express tutorial.](http://code.tutsplus.com/tutorials/introduction-to-express--net-33367)
-
+* [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
+* [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
