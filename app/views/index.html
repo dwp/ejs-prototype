@@ -1,8 +1,10 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}Index page of all EJS prototype sprint work{{/pageTitle}}
 
-{{$content}}
+{% block page_title %}Index page of all EJS prototype sprint work{% endblock %}
+
+
+{% block content %}
 <main id="content" role="main">
 
 <h1 class="heading-large" style="margin-top:20px;">Enhanced Jobseeker Services - Alpha prototype</h1>
@@ -618,6 +620,4 @@
        
 </main>
 
-{{/content}}
-
-{{/layout}}
+{% endblock %}

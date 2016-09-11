@@ -1,9 +1,9 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}Admin screen{{/pageTitle}}
+{% block pageTitle %}Admin screen{% endblock %}
 
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
 
@@ -57,7 +57,7 @@
 
 
 </main>
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+
 

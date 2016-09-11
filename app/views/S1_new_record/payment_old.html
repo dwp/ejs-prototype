@@ -1,14 +1,14 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block pageTitle %}
   GOV.UK prototyping kit
-{{/pageTitle}}
+{% endblock %}
 
-{{$propositionHeader}}
+{% block propositionHeader %}
   {{>includes/propositional_navigation_sprint_6}}
-{{/propositionHeader}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 
 <main id="content" role="main">
@@ -321,7 +321,7 @@
 
 
 </main>
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+
 

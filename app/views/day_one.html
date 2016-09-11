@@ -1,8 +1,8 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}Department for Work and Pensions{{/pageTitle}}
+{% block pageTitle %}Department for Work and Pensions{% endblock %}
 
-{{$content}}
+{% block content %}
 <main id="content" role="main">
 
 	<div class="phase-banner">
@@ -65,7 +65,7 @@
   </div>
 
 </main>
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+
 

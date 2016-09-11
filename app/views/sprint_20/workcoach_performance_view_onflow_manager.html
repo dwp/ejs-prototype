@@ -1,10 +1,10 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block pageTitle %}
   GOV.UK prototyping kit
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 
 <script src="/public/javascripts/jquery.min.js"></script>
@@ -14,7 +14,7 @@
 
   <div class="grid-row">        
 
-    {{>includes/left_nav_settings}}
+    {% include "includes/left_nav_settings.html" %}
 
     <div class="column-three-quarters">
 
@@ -365,6 +365,5 @@
   </div>  
 </main>
 
-{{/content}}
+{% endblock %}
 
-{{/layout}}

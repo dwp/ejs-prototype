@@ -4,7 +4,7 @@
   {{>includes/elements_head}}
 {{/head}}
 
-{{$content}}
+{% block content %}
 <main id="content" role="main">
 
   <a href="/examples/" class="example-back-link">Back to the GOV.UK prototype kit examples</a>
@@ -57,6 +57,6 @@
   </div>
 
 </main><!-- / #page-container -->
-{{/content}}
+{% endblock %}
 
 {{/govuk_template}}

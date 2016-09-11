@@ -6,9 +6,9 @@
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
-{{$propositionHeader}}
+{% block propositionHeader %}
   <div class="area header-proposition">Propositional navigation area</div>
-{{/propositionHeader}}
+{% endblock %}
 
 {{$insideHeader}}
 <div class="area">Inside header area</div>
@@ -24,9 +24,9 @@
 
 {{$headerClass}}with-proposition{{/headerClass}}
 
-{{$content}}
+{% block content %}
 <main class="area">Content area</main>
-{{/content}}
+{% endblock %}
 
 {{$bodyEnd}}
 <div class="area">Body end area</div>

@@ -1,14 +1,14 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block pageTitle %}
   GOV.UK prototyping kit
-{{/pageTitle}}
+{% endblock %}
 
-{{$propositionHeader}}
-  {{>includes/propositional_navigation}}
-{{/propositionHeader}}
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 
 <script src="/public/javascripts/jquery.min.js"></script>
@@ -483,7 +483,7 @@ $('#example').removeClass('class');
 
 
 </main>
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+
 
