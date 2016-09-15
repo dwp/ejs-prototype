@@ -1,15 +1,36 @@
 var workcoachPerformance = (function(){
 
 	/*
-	* displayCorrectCohortInputType - determine the correct cohort to display.   
-	* Based on number of workcoaches selected and the benefit
+	* determineCohortInputType
+	*
 	*/
-	function displayCorrectCohortInputType(){
+	function determineCohortInputType(){
 		var allSelected = $('#organisations-filter input:eq(0)').filter(':checked').length;
 		var numberOfWorkcoachesSelected = $('#organisations-filter input:gt(0)').filter(':checked').length;
 
 		var cohortMonthInputType = numberOfWorkcoachesSelected > 1 ? 'Single' : 'Multi';
 		cohortMonthInputType = allSelected ? 'Single' : cohortMonthInputType;
+
+		return cohortMonthInputType;
+	}
+
+	/*
+	* determineResultsView - show either workcoach view of cohort view
+	*/
+	function resultsView(){
+		if(determineCohortInputType() === 'Single'){
+			return 'manager_view_by_workcoach';
+		} else {
+			return 'manager_view_by_cohort';
+		}
+	}
+
+	/*
+	* displayCorrectCohortInputType - determine the correct cohort to display.   
+	* Based on number of workcoaches selected and the benefit
+	*/
+	function displayCorrectCohortInputType(){
+		var cohortMonthInputType = determineCohortInputType();
 
 		var numberOfCohorts = $('#benefit option:selected').data('numberOfCohorts');
 
@@ -54,7 +75,8 @@ var workcoachPerformance = (function(){
 			clearFilter();
 			displayCorrectCohortInputType();
 			toggleSearchButton();
-		}
+		},
+		resultsView : resultsView
 	}
 })();
 
@@ -71,4 +93,10 @@ $(function(){
 
 	// Clear a filter
 	$('#clearFilter').on('click', workcoachPerformance.clearFilter)
+
+	$('#searchButton').on('click', function(e){
+		e.preventDefault();
+
+		window.location = workcoachPerformance.resultsView();
+	})
 });

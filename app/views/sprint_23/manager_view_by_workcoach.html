@@ -9,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/workcoachPerformance.js"></script>
+
   <main id="content" role="main">
 
     <div class="grid-row">        
@@ -19,6 +23,14 @@
       <div class="column-three-quarters">
 
         <h1 class="heading-large">Liverpool Aug 16 performance - JSA</h1>
+
+        <details>
+          <summary><span class="summary">Show/hide filters</span></summary>
+
+          <div>
+          {% include "sprint_23/manager_view_filter_partial.html" %}
+          </div>
+        </details>
 
         <div class="column">   
 
