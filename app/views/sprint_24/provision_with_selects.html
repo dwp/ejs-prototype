@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+	
+    {% include "includes/left_nav_settings.html" %}
+
+	<!-- Start three quarters container for main content columns -->
+	<div class="column-three-quarters">
+
+		<h1 class="heading-large">&nbsp;&nbsp;Settings - Provision</h1>
+
+		<div class="column"> 
+			<div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="settings" class="menu-item">
+							<strong>Change location</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="amend_user_search" class="menu-item">
+							<strong>Maintain user</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="delete_record" class="menu-item">
+							<strong>Maintain record</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="targets" class="menu-item">
+							<strong>Standards</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="targets" class="menu-item selected">
+							<strong>Provision</strong>
+						</a>
+					</div>
+				</div>
+
+			</div> 
+		</div>
+
+		<div class="column">   
+      <form action="#" method="#" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="form-label-bold">Provision type</legend>
+
+            <select class="select form-control" name="provision-type" id="provision-type">
+              <option value="">Please select</option>
+              <option value="work-experience">Work experience</option>
+              <option value="tbc">TBC</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="form-group form-date">
+          <legend class="form-label-bold">Start date</legend>
+
+          <p class="form-hint">DD MM YYYY</p>
+
+          <div class="form-group form-group-day">
+            <label for="dob-day">Day</label>
+            <input type="text" class="form-control" id="dob-day" name="dob-day">
+          </div>
+          <div class="form-group form-group-month">
+            <label for="dob-month">Month</label>
+            <input type="text" class="form-control" id="dob-month" name="dob-month">
+          </div>
+          <div class="form-group form-group-year">
+            <label for="dob-year">Year</label>
+            <input type="text" class="form-control" id="dob-year" name="dob-year">
+          </div>
+        </div>
+
+        <div class="form-group form-date">
+          <legend class="form-label-bold">End date</legend>
+
+          <p class="form-hint">DD MM YYYY</p>
+
+          <div class="form-group form-group-day">
+            <label for="dob-day">Day</label>
+            <input type="text" class="form-control" id="dob-day" name="dob-day">
+          </div>
+          <div class="form-group form-group-month">
+            <label for="dob-month">Month</label>
+            <input type="text" class="form-control" id="dob-month" name="dob-month">
+          </div>
+          <div class="form-group form-group-year">
+            <label for="dob-year">Year</label>
+            <input type="text" class="form-control" id="dob-year" name="dob-year">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="form-label-bold">Status on leaving</legend>
+
+            <select class="select form-control" name="status-on-leaving" id="status-on-leaving">
+              <option value="">Please select</option>
+              <option value="completed">Completed</option>
+              <option value="early-leaver">Early leaver</option>
+              <option value="dismissed">Dismissed</option>
+            </select>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+		</div>     
+	<!-- End column -->
+	</div>
+<!-- End row-->    
+</div>
+
+</main>
+{% endblock %}
