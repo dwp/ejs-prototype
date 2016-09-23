@@ -33,14 +33,12 @@
         <div class="form-group">
           <fieldset class="inline">
             <legend class="form-label-bold">Provision type</legend>
-            <label class="block-label selection-button-radio" for="work-experience">
-              <input id="work-experience" type="radio" name="provision-type" value="work-experience">
-              Work experience
-            </label>
-            <label class="block-label selection-button-radio" for="tbc">
-              <input id="tbc" type="radio" name="provision-type" value="tbc">
-              TBC
-            </label>
+
+            <select class="select form-control" name="provision-type" id="provision-type">
+              <option value="">Please select</option>
+              <option value="work-experience">Work experience</option>
+              <option value="tbc">TBC</option>
+            </select>
           </fieldset>
         </div>
 
