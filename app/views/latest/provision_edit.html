@@ -86,15 +86,29 @@
               <input id="completed" type="radio" name="status-on-leaving" value="completed">
               Completed
             </label>
-            <label class="block-label selection-button-radio" for="early-leaver">
+            <label class="block-label selection-button-radio" for="early-leaver" data-target="early-leaver-reason">
               <input id="early-leaver" type="radio" name="status-on-leaving" value="early-leaver">
               Early leaver
             </label>
-            <label class="block-label selection-button-radio" for="dismissed">
+            <label class="block-label selection-button-radio" for="dismissed" data-target="dismissed-reason">
               <input id="dismissed" type="radio" name="status-on-leaving" value="dismissed">
               Dismissed
             </label>
           </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden " id="early-leaver-reason" >
+          <div class="form-group">
+            <label class="form-label-bold" for="ref-no">Reason for leaving early</label>
+            <input type="text" class="form-control" id="ref-no">
+          </div>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden " id="dismissed-reason" >
+          <div class="form-group" >
+            <label class="form-label-bold" for="ref-no">Reason for dismissal</label>
+            <input type="text" class="form-control" id="ref-no">
+          </div>
         </div>
 
         <div class="form-group">
