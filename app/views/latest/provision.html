@@ -24,51 +24,8 @@
 
 		<h1 class="heading-large">&nbsp;&nbsp;Settings - Provision</h1>
 
-		<div class="column"> 
-			<div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-				<div class="grid grid-1-5">
-					<div class="inner-block left">
-						<a href="settings" class="menu-item">
-							<strong>Change location</strong>
-						</a>
-					</div>
-				</div>
-
-				<div class="grid grid-1-5">
-					<div class="inner-block left">
-						<a href="amend_user_search" class="menu-item">
-							<strong>Maintain user</strong>
-						</a>
-					</div>
-				</div>
-
-				<div class="grid grid-1-5">
-					<div class="inner-block left">
-						<a href="delete_record" class="menu-item">
-							<strong>Maintain record</strong>
-						</a>
-					</div>
-				</div>
-
-				<div class="grid grid-1-5">
-					<div class="inner-block left">
-						<a href="targets" class="menu-item">
-							<strong>Standards</strong>
-						</a>
-					</div>
-				</div>
-
-				<div class="grid grid-1-5">
-					<div class="inner-block left">
-						<a href="targets" class="menu-item selected">
-							<strong>Provision</strong>
-						</a>
-					</div>
-				</div>
-
-			</div> 
-		</div>
+    {% set currentSettingsPage = 'provision' %}
+    {% include "includes/settings_menu.html" %} 
 
 		<div class="column-half">   
       <form action="#" method="#" class="form">

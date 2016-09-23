@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<script src="/public/javascripts/jquery.min.js"></script>
+
+<main id="content" role="main">
+
+ <div class="grid-row">        
+    
+    {% include "includes/left_nav_settings.html" %}
+
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+
+      <h1 class="heading-large">&nbsp;&nbsp;Settings - amend user</h1>   
+
+      {% set currentSettingsPage = 'maintainUser' %}
+      {% include "includes/settings_menu.html" %} 
+
+        <div class="column-half">   
+
+            <form action="amend_user" method="get" class="form">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <p class="form-label-bold">Confirmation</p>
+
+                        <p>You are about to change a user from <span class="bold">Alice</span> to <span class="bold">Bob</span></p>
+
+                        <p class="bold">or</p>
+
+                        <p>You are about to remove <span class="bold">Alice</span> from the workcoach list</p>
+
+                        <p>Are you sure you want to do this?</p>
+
+                        <label for="radio-part-2" class="block-label">
+                            <input id="radio-part-2" type="radio" name="amendUserOption" value="nameChange" aria-controls="format">
+                            Yes
+                        </label>
+
+                        <label for="radio-part-3" class="block-label">
+                            <input id="radio-part-3" type="radio" name="amendUserOption" value="remove  ">
+                            No
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="button" value="Continue">
+                </div>
+            </form>  
+
+        </div>     
+    <!-- End column -->
+    </div>
+<!-- End row-->    
+</div>
+
+</main>
+{% endblock %}
+
+
+
