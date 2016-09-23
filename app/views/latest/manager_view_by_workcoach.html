@@ -17,6 +17,8 @@
 
     <div class="grid-row">        
 
+
+      {% set currentPage = 'mangerView' %}
       {% include "includes/left_nav_settings.html" %}
 
       <!-- Start three quarters container for main content columns -->
@@ -28,7 +30,7 @@
           <summary><span class="summary">Show/hide filters</span></summary>
 
           <div>
-          {% include "sprint_23/manager_view_filter_partial.html" %}
+          {% include "latest/manager_view_filter_partial.html" %}
           </div>
         </details>
 
