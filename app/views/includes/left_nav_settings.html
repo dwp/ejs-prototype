@@ -1,10 +1,10 @@
 <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
   <ul class="main-nav">
-    <li id="nav-home"><a href="#">Search</a></li>
-    <li id="nav-job"><a href="#">Create record</a></li>
-    <li id="nav-case"><a href="#">Caseload</a></li>
-    <li id="nav-dash"><a href="#">Dashboard</a></li>
-    <li id="nav-perf"><a href="#">Work coach view</a></li>
-    <li id="nav-off"><a href="manager_view_filter">Manager view</a></li>
+    <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="job">Search</a></li>
+    <li id="nav-job" {% if currentPage === "createRecord" %}class="selected"{% endif %}><a href="#">Create record</a></li>
+    <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
+    <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
+    <li id="nav-perf" {% if currentPage === "workcoachView" %}class="selected"{% endif %}><a href="performance_cohort">Work coach view</a></li>
+    <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_view_filter">Manager view</a></li>
   </ul>
 </div> 

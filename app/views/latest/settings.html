@@ -13,66 +13,18 @@
 
 <main id="content" role="main">
 
- <div class="grid-row">        
+  <div class="grid-row">        
 
-        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
-              <ul class="main-nav">
-                <li id="nav-home"><a href="job">Search</a></li>
-                <li id="nav-job"><a href="job_new">Create record</a></li>
-                <li id="nav-perf"><a href="performance">Caseload</a></li>
-                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
-                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
-                <li id="nav-off"><a href="workcoach_performance_view_onflow">Off-flow</a></li>
-              </ul>
-          </div> 
+    {% include "includes/left_nav_settings.html" %}
 
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Settings - set location</h1>
+      <h1 class="heading-large">&nbsp;&nbsp;Settings - set location</h1>
 
-      <div class="column">   
-
-
-        <!-- 3rd level nav buttons -->
-            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="Summary" href="#" class="menu-item selected">
-                      <strong>Change location</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="edit_record" href="amend_user_search" class="menu-item">
-                      <strong>Amend user</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="claim_active" href="delete_record" class="menu-item">
-                      <strong>Delete record</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="appointments" href="targets" class="menu-item">
-                      <strong>Standards</strong>
-                    </a>
-                  </div>
-                </div>
-
-             </div> 
-
-     </div>   
+        {% set currentSettingsPage = 'changeLocation' %}
+        {% include "includes/settings_menu.html" %} 
 
             <div class="column new_filters">
         <br>

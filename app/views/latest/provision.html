@@ -24,21 +24,66 @@
 
 		<h1 class="heading-large">&nbsp;&nbsp;Settings - Provision</h1>
 
-    {% set currentSettingsPage = 'provision' %}
-    {% include "includes/settings_menu.html" %}
+		<div class="column"> 
+			<div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
 
-		<div class="column">   
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="settings" class="menu-item">
+							<strong>Change location</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="amend_user_search" class="menu-item">
+							<strong>Maintain user</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="delete_record" class="menu-item">
+							<strong>Maintain record</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="targets" class="menu-item">
+							<strong>Standards</strong>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-1-5">
+					<div class="inner-block left">
+						<a href="targets" class="menu-item selected">
+							<strong>Provision</strong>
+						</a>
+					</div>
+				</div>
+
+			</div> 
+		</div>
+
+		<div class="column-half">   
       <form action="#" method="#" class="form">
 
         <div class="form-group">
           <fieldset class="inline">
             <legend class="form-label-bold">Provision type</legend>
-
-            <select class="select form-control" name="provision-type" id="provision-type">
-              <option value="">Please select</option>
-              <option value="work-experience">Work experience</option>
-              <option value="tbc">TBC</option>
-            </select>
+            <label class="block-label selection-button-radio" for="work-experience">
+              <input id="work-experience" type="radio" name="provision-type" value="work-experience">
+              Work experience
+            </label>
+            <label class="block-label selection-button-radio" for="tbc">
+              <input id="tbc" type="radio" name="provision-type" value="tbc">
+              TBC
+            </label>
           </fieldset>
         </div>
 
@@ -83,13 +128,18 @@
         <div class="form-group">
           <fieldset class="inline">
             <legend class="form-label-bold">Status on leaving</legend>
-
-            <select class="select form-control" name="status-on-leaving" id="status-on-leaving">
-              <option value="">Please select</option>
-              <option value="completed">Completed</option>
-              <option value="early-leaver">Early leaver</option>
-              <option value="dismissed">Dismissed</option>
-            </select>
+            <label class="block-label selection-button-radio" for="completed">
+              <input id="completed" type="radio" name="status-on-leaving" value="completed">
+              Completed
+            </label>
+            <label class="block-label selection-button-radio" for="early-leaver">
+              <input id="early-leaver" type="radio" name="status-on-leaving" value="early-leaver">
+              Early leaver
+            </label>
+            <label class="block-label selection-button-radio" for="dismissed">
+              <input id="dismissed" type="radio" name="status-on-leaving" value="dismissed">
+              Dismissed
+            </label>
           </fieldset>
         </div>
 
