@@ -17,69 +17,13 @@
 
     {% include "includes/left_nav_settings.html" %}
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
 
-         <h1 class="heading-large">&nbsp;&nbsp;Edit claimant record - Mr J Smith</h1>
+      <h1 class="heading-large">&nbsp;&nbsp;Edit claimant record - Mr J Smith</h1>
 
-      <div class="column">   
-
-
-        <!-- 3rd level nav buttons -->
-            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-              <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="Summary" href="job_record_confirm" class="menu-item">
-                      <strong>Summary</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item selected">
-                      <strong>Claimant</strong>
-                    </a>
-                  </div>
-                </div>
-
-               <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="appointments" href="job_next_new" class="menu-item">
-                      <strong>Appointment</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="claim_active" href="job_claim_active" class="menu-item">
-                      <strong>Claim</strong>
-                    </a>
-                  </div>
-                </div>
-
-             </div> 
-
-     </div>   
-
-       <!--  <div class="column">
-                <ul class="tabs" id="claimant_details">
-                    <li><a href="job_edit_confirm">Overview</a></li>
-                    <li class="selected"><a href="job_edit">Edit record</a></li>
-                    <li><a href="job_edit_details">Edit details</a></li>
-                    <li><a href="job_edit_disability">Disability</a></li>
-                    <li class="selected"><a href="job_sector">Sector</a></li>
-                    <li><a href="job_day_one">Day one</a></li> 
-                    <li><a href="job_prog">Programmes</a></li>
-                    <li><a href="job_exp">Experience</a></li>   
-                    <li><a href="job_vol">Voluntary</a></li> 
-                </ul>  
-            </div>   --> 
-
-
-
+      {% set currentClaimantPage = 'edit' %}
+      {% include "includes/claimant_menu.html" %}  
 
     <div class="column-half">    
 

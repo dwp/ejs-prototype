@@ -22,10 +22,10 @@
 	<!-- Start three quarters container for main content columns -->
 	<div class="column-three-quarters">
 
-		<h1 class="heading-large">&nbsp;&nbsp;Settings - Provision</h1>
+		<h1 class="heading-large">&nbsp;&nbsp;Provision - Mr J Smith</h1>
 
-    {% set currentSettingsPage = 'provision' %}
-    {% include "includes/settings_menu.html" %} 
+    {% set currentClaimantPage = 'provision' %}
+    {% include "includes/claimant_menu.html" %} 
 
 		<div class="column-half">   
       <form action="#" method="#" class="form">
@@ -35,7 +35,7 @@
             <legend class="form-label-bold">Provision type</legend>
 
             <select class="select form-control" name="provision-type" id="provision-type">
-              <option value="">Please select</option>
+              <option value="">Select</option>
               <option value="work-experience">Work experience</option>
               <option value="tbc">TBC</option>
             </select>

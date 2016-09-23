@@ -1,0 +1,47 @@
+<div class="column">   
+
+  <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
+
+    <div class="grid grid-1-5">
+      <div class="inner-block left">
+        <a id="Summary" href="job_record_confirm" class="menu-item {% if currentClaimantPage === "summary" %}selected{% endif %}">
+        <strong>Summary</strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-1-5">
+      <div class="inner-block left">
+        <a id="edit_record" href="job_edit" class="menu-item {% if currentClaimantPage === "edit" %}selected{% endif %}">
+        <strong>Claimant</strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-1-5">
+      <div class="inner-block left">
+        <a id="appointments" href="job_next_new" 
+         {% if appointmentsDisabled %}disabled{% endif %}
+         class="menu-item {% if currentClaimantPage === "appointments" %}selected{% endif %} {% if appointmentsDisabled %}disabled{% endif %}">
+        <strong>Appointment</strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-1-5">
+      <div class="inner-block left">
+        <a id="claim_active" href="job_claim_active" class="menu-item {% if currentClaimantPage === "claim" %}selected{% endif %}">
+        <strong>Claim</strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-1-5">
+      <div class="inner-block left">
+        <a id="provision" href="provision" class="menu-item {% if currentClaimantPage === "provision" %}selected{% endif %}">
+          <strong>Provision</strong>
+        </a>
+      </div>
+    </div>
+  </div> 
+</div>  

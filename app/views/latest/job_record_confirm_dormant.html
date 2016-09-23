@@ -23,49 +23,9 @@
 
          <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
 
-      <div class="column">   
-
-
-        <!-- 3rd level nav buttons -->
-            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="Summary" href="job_record_confirm_dormant" class="menu-item selected">
-                      <strong>Summary</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="edit_record" href="job_edit" class="menu-item">
-                      <strong>Claimant</strong>
-                    </a>
-                  </div>
-                </div>
-
-               <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="appointments" href="#" class="menu-item disabled">
-                      <strong>Appointment</strong>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="grid grid-1-5">
-                  <div class="inner-block left">
-                    <a id="claim_dormant" href="job_claim_dormant" class="menu-item">
-                      <strong>Claim</strong>
-                    </a>
-                  </div>
-                </div>
-
-                
-
-             </div> 
-
-     </div>   
+      {% set currentClaimantPage = 'summary' %}
+      {% set appointmentsDisabled = true %}
+      {% include "includes/claimant_menu.html" %} 
 
       <div class="column-half">   
           <h2 class="heading-small">Claimant details</h2>
