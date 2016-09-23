@@ -15,63 +15,15 @@
 
  <div class="grid-row">        
 
-        <div class="column-quarter grid-col" style="padding-bottom:90px; padding-top:30px; margin-left:-40px">
-              <ul class="main-nav">
-                <li id="nav-home"><a href="job">Search</a></li>
-                <li id="nav-job"><a href="job_new">Create record</a></li>
-                <li id="nav-perf"><a href="performance">Performance</a></li>
-                <li id="nav-dash"><a href="performance_dash">Dashboard</a></li>
-                <li id="nav-perf"><a href="performance_cohort">Performance</a></li>
-          <!--      <li id="nav-set" class="selected"><a href="targets">Standards</a></li>    -->       
-              </ul>
-          </div> 
+    {% include "includes/left_nav_settings.html" %}
 
   <!-- Start three quarters container for main content columns -->
   <div class="column-three-quarters">
 
          <h1 class="heading-large">&nbsp;&nbsp;Claim - Mr J Smith</h1>
 
-      <div class="column">   
-
-
-        <!-- 3rd level nav buttons -->
-            <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-
-                <div class="grid grid-1-5">
-                    <div class="inner-block left">
-                      <a id="Summary" href="job_record_confirm" class="menu-item">
-                        <strong>Summary</strong>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-1-5">
-                    <div class="inner-block left">
-                      <a id="edit_record" href="job_edit" class="menu-item">
-                        <strong>Claimant</strong>
-                      </a>
-                    </div>
-                  </div>
-
-                 <div class="grid grid-1-5">
-                    <div class="inner-block left">
-                      <a id="appointments" href="job_next_new" class="menu-item">
-                        <strong>Appointment</strong>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-1-5">
-                    <div class="inner-block left">
-                      <a id="claim_active" href="job_claim_active" class="menu-item selected">
-                        <strong>Claim</strong>
-                      </a>
-                    </div>
-                  </div>
-
-             </div> 
-
-     </div>   
+    {% set currentClaimantPage = 'summary' %}
+    {% include "includes/claimant_menu.html" %}   
 
 
 
