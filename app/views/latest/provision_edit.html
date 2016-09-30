@@ -11,6 +11,7 @@
 {% block content %}
 
 <script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/provision.js"></script>
 
 <main id="content" role="main">
 
@@ -41,26 +42,26 @@
           </fieldset>
         </div>
 
-        <div class="form-group form-date">
+        <div class="form-group form-date" id="start-date-group">
           <legend class="form-label-bold">Start date</legend>
 
           <p class="form-hint">DD MM YYYY</p>
 
           <div class="form-group form-group-day">
             <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="dob-day" name="dob-day">
+            <input type="text" class="form-control" id="start-day" name="dob-day">
           </div>
           <div class="form-group form-group-month">
             <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="dob-month" name="dob-month">
+            <input type="text" class="form-control" id="start-month" name="dob-month">
           </div>
           <div class="form-group form-group-year">
             <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="dob-year" name="dob-year">
+            <input type="text" class="form-control" id="start-year" name="dob-year">
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="start-status-group">
           <fieldset class="inline">
 
             <legend class="visually-hidden">Start status</legend>
@@ -76,26 +77,26 @@
           </fieldset>
         </div>
 
-        <div class="form-group form-date">
+        <div class="form-group form-date" id="end-date-group">
           <legend class="form-label-bold">End date</legend>
 
           <p class="form-hint">DD MM YYYY</p>
 
           <div class="form-group form-group-day">
             <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="dob-day" name="dob-day">
+            <input type="text" class="form-control" id="end-day" name="dob-day">
           </div>
           <div class="form-group form-group-month">
             <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="dob-month" name="dob-month">
+            <input type="text" class="form-control" id="end-month" name="dob-month">
           </div>
           <div class="form-group form-group-year">
             <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="dob-year" name="dob-year">
+            <input type="text" class="form-control" id="end-year" name="dob-year">
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" id="outcome-group">
           <fieldset class="inline">
             <legend class="form-label-bold">Outcome</legend>
             <label class="block-label selection-button-radio" for="completed">
