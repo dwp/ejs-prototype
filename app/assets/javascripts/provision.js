@@ -2,8 +2,8 @@ var provision = (function(){
 	var startDateInputs, 
 		endDateInputs,  
 		endDateLabels, 
-		statusStatusInputs, 
-		statusStatusLabels,
+		startStatusInputs, 
+		startStatusLabels,
 		didNotStartInput,
 		outcomeInputs,
 		outcomeLabels;
@@ -15,23 +15,25 @@ var provision = (function(){
 		startDateInputs = $('#start-date-group').find('input');
 		endDateInputs = $('#end-date-group').find('input');
 		endDateLabels = $('#end-date-group').find('label');
-		statusStatusInputs = $('#start-status-group').find('input');
-		statusStatusLabels = $('#start-status-group').find('label');
+		startStatusInputs = $('#start-status-group').find('input');
+		startStatusLabels = $('#start-status-group').find('label');
 		outcomeInputs = $('#outcome-group').find('input');
 		outcomeLabels = $('#outcome-group').find('label');
 
-		//setStartDateStatus();
+		setStartDateState();
+		setEndDateState();
+		setOutcomeStatusState();
 
-		startDateInputs.on('blur', setStartDateStatus);
-		//endDateInputs.on('blur', setStartDateStatus);
+		startDateInputs.on('blur', setStartDateState);
+		endDateInputs.on('blur', setOutcomeStatusState);
 
-		statusStatusInputs.on('click', setEndDateStatus)
+		startStatusInputs.on('click', setEndDateState)
 	}
 
 	/*
-	* setStartDateStatus - based on the current selection determine and set the status start date radio buttons
+	* setStartDateState - based on the current selection determine and set the status start date radio buttons
 	*/
-	function setStartDateStatus(){
+	function setStartDateState(){
 		var startDay = startDateInputs[0],
 			startMonth = startDateInputs[1],
 			startYear = startDateInputs[2],
@@ -41,33 +43,46 @@ var provision = (function(){
 
 		// if start date is invalid then set the start date status radio buttons to invalid
 		if(isValidDate(startDateInputs)){
-			statusStatusInputs.prop('disabled', false);
-			statusStatusLabels.removeClass('disabled');
+			startStatusInputs.prop('disabled', false);
+			startStatusLabels.removeClass('disabled');
 		} else {
-			statusStatusInputs.prop('disabled', true);
-			statusStatusLabels.addClass('disabled');
+			startStatusInputs.prop('disabled', true);
+			startStatusLabels.addClass('disabled');
 		}
 	}
 
 	/*
-	* setEndDateStatus - based on the current selection determine and set the status start date radio buttons
+	* setEndDateState - based on the current selection determine and set the status start date radio buttons
 	*/
-	function setEndDateStatus(){
+	function setEndDateState(){
 		var checkedValue = $('input[name=start-status]:checked').val();
 
-		if(checkedValue === 'did-not-start'){
+		if(checkedValue !== 'confirmed'){
 			//disable end date inputs and outcome options
+			endDateInputs.val('');
+			setOutcomeStatusState()
 			endDateInputs.prop('disabled', true);
 			endDateInputs.addClass('disabled');
 			endDateLabels.addClass('disabled');
-			outcomeInputs.prop('disabled', true);
-			outcomeLabels.addClass('disabled');
 		} else {
 			endDateInputs.prop('disabled', false);
 			endDateLabels.removeClass('disabled');
 			endDateInputs.removeClass('disabled');
+		}
+
+	}
+
+	/*
+	* setOutcomeStatusState 
+	*/
+	function setOutcomeStatusState(){
+		// If the end date is valid then enabel the outcome status inputs and labels
+		if(isValidDate(endDateInputs)){
 			outcomeInputs.prop('disabled', false);
 			outcomeLabels.removeClass('disabled');
+		} else{
+			outcomeInputs.prop('disabled', true);
+			outcomeLabels.addClass('disabled');
 		}
 	}
 
