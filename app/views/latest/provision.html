@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
+{% block page_title %}
   GOV.UK prototyping kit
 {% endblock %}
 
@@ -40,30 +40,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Work experience</td>
-              <td>1st August 2016</td>
-              <td>Confirmed</td>
-              <td>4th September 2016</td>
-              <td>Dismissed</td>
-              <td><a href="provision_edit">Update</a></td>
-            </tr>
-            <tr>
-              <td>Work experience</td>
-              <td>1st May 2016</td>
-              <td>Did not start</td>
-              <td></td>
-              <td></td>
-              <td><a href="provision_edit">Update</a></td>
-            </tr>
-            <tr>
-              <td>Work experience</td>
-              <td>1st January 2016</td>
-              <td>Confirmed</td>
-              <td>31 April 2016</td>
-              <td>Confirmed</td>
-              <td><a href="provision_edit">Update</a></td>
-            </tr>
+            {% set provisions = [
+              { type : 'Work exprience', startDate: '1 August 2016', status: 'Confirmed', endDate: '4 September 2016', outcome: 'Dismissed'},
+              { type : 'Work exprience', startDate: '1 May 2016', status: 'Did not start', endDate: '', outcome: ''},
+              { type : 'Work exprience', startDate: '1 January 2016', status: 'Confirmed', endDate: '31 April 2016', outcome: 'Confirmed'}
+            ] %}
+
+            {% for provision in provisions %}
+              <tr>
+                <td>{{provision.type}}</td>
+                <td>{{provision.startDate}}</td>
+                <td>{{provision.status}}</td>
+                <td>{{provision.endDate}}</td>
+                <td>{{provision.outcome}}</td>
+                <td><a href="provision_edit">Update</a></td>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
 
