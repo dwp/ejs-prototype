@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}Department for Work and Pensions{% endblock %}
+{% block page_title %}Department for Work and Pensions{% endblock %}
 
 {% block content %}
 <main id="content" role="main">
