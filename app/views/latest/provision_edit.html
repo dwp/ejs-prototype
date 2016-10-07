@@ -28,7 +28,9 @@
     {% include "includes/claimant_menu.html" %} 
 
 		<div class="column">
-      <form action="provision" method="#" class="form">
+      <form action="provision_edit" method="POST" class="form">
+
+        <input type="hidden" name="id" value="{{provision.id}}" />
 
         <div class="form-group">
           <fieldset class="inline">
@@ -36,7 +38,7 @@
 
             <select class="select form-control" name="provision-type" id="provision-type">
               <option value="">Select</option>
-              <option value="work-experience" {{ 'selected' if  provision.type === 'Work experience' else ''}}>Work experience</option>
+              <option value="Work experience" {{ 'selected' if  provision.type === 'Work experience' else ''}}>Work experience</option>
             </select>
           </fieldset>
         </div>
@@ -66,11 +68,11 @@
             <legend class="visually-hidden">Start status</legend>
 
             <label class="block-label selection-button-radio" for="confirmed">
-              <input id="confirmed" type="radio" name="start-status" value="confirmed" {{ 'checked' if  provision.status === 'Confirmed' else ''}}>
+              <input id="confirmed" type="radio" name="start-status" value="Confirmed" {{ 'checked' if  provision.status === 'Confirmed' else ''}}>
               Confirmed
             </label>
             <label class="block-label selection-button-radio" for="did-not-start" >
-              <input id="did-not-start" type="radio" name="start-status" value="did-not-start" {{ 'checked' if  provision.status === 'Did not start' else ''}}>
+              <input id="did-not-start" type="radio" name="start-status" value="Did not start" {{ 'checked' if  provision.status === 'Did not start' else ''}}>
               Did not start
             </label> 
           </fieldset>
@@ -99,32 +101,18 @@
           <fieldset class="inline">
             <legend class="form-label-bold">Outcome</legend>
             <label class="block-label selection-button-radio" for="completed">
-              <input id="completed" type="radio" name="status-on-leaving" value="completed"  {{ 'checked' if  provision.outcome === 'Completed' else ''}}>
+              <input id="completed" type="radio" name="outcome" value="Completed"  {{ 'checked' if  provision.outcome === 'Completed' else ''}}>
               Completed
             </label>
-            <label class="block-label selection-button-radio" for="early-leaver" data-target="early-leaver-reason">
-              <input id="early-leaver" type="radio" name="status-on-leaving" value="early-leaver"  {{ 'checked' if  provision.outcome === 'Early leaver' else ''}}>
+            <label class="block-label selection-button-radio" for="early-leaver">
+              <input id="early-leaver" type="radio" name="outcome" value="Early leaver"  {{ 'checked' if  provision.outcome === 'Early leaver' else ''}}>
               Early leaver
             </label>
-            <label class="block-label selection-button-radio" for="dismissed" data-target="dismissed-reason"  >
-              <input id="dismissed" type="radio" name="status-on-leaving" value="dismissed" {{ 'checked' if  provision.outcome === 'Dismissed' else ''}}>
+            <label class="block-label selection-button-radio" for="dismissed">
+              <input id="dismissed" type="radio" name="outcome" value="Dismissed" {{ 'checked' if  provision.outcome === 'Dismissed' else ''}}>
               Dismissed
             </label>
           </fieldset>
-        </div>
-
-        <div class="panel panel-border-narrow js-hidden " id="early-leaver-reason" >
-          <div class="form-group">
-            <label class="form-label-bold" for="ref-no">Reason for leaving early</label>
-            <input type="text" class="form-control" id="ref-no">
-          </div>
-        </div>
-
-        <div class="panel panel-border-narrow js-hidden " id="dismissed-reason" >
-          <div class="form-group" >
-            <label class="form-label-bold" for="ref-no">Reason for dismissal</label>
-            <input type="text" class="form-control" id="ref-no">
-          </div>
         </div>
 
         <div class="form-group">

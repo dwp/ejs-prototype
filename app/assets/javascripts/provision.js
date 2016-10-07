@@ -57,7 +57,7 @@ var provision = (function(){
 	function setEndDateState(){
 		var checkedValue = $('input[name=start-status]:checked').val();
 
-		if(checkedValue !== 'confirmed'){
+		if(checkedValue !== 'Confirmed'){
 			//disable end date inputs and outcome options
 			endDateInputs.val('');
 			setOutcomeStatusState()

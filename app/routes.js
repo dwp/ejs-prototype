@@ -24,6 +24,35 @@ router.get('/latest/provision_edit', function (req, res) {
   });
 });
 
+
+router.post('/latest/provision_edit', function (req, res) {
+
+  var provisions = req.session.provisions || getTestProvisions();
+
+  //add a new provision if we have an i
+  //otherwise update an old provision
+  if(!req.body.id){
+    provisions.push({ 
+      id: provisions.length, 
+      type: req.body['provision-type'], 
+      startDateValues: [req.body['start-day'], req.body['start-month'], req.body['start-year']], 
+      status: req.body['start-status'], 
+      endDateValues: [req.body['end-day'], req.body['end-month'], req.body['end-year']],
+      outcome: req.body['outcome']
+    })
+  } else {
+    var provision = provisions.find( function(d){ return d.id == req.body.id});
+
+    provision.type = req.body['provision-type'];
+    provision.startDateValues = [req.body['start-day'], req.body['start-month'], req.body['start-year']];
+    provision.status = req.body['start-status'];
+    provision.endDateValues = [req.body['end-day'], req.body['end-month'], req.body['end-year']];
+    provision.outcome = req.body['outcome'];
+  }
+
+  res.redirect('/latest/provision');
+});
+
 // add your routes here
 router.use(function(req, res, next){
   Object.assign(res.locals,{
@@ -39,9 +68,9 @@ router.use(function(req, res, next){
 
 function getTestProvisions(){
   return [ 
-    { id: 0, type : 'Work experience', startDateValues: [ '01', '01', '2016'], startDate: '1 January 2016', status: 'Confirmed', endDateValues: ['31', '04', '2016'], endDate: '31 April 2016', outcome: 'Completed'},
-    { id: 1, type : 'Work experience', startDateValues: [ '01', '05', '2016'], startDate: '1 May 2016', status: 'Did not start', endDateValues: ['', '', ''], endDate: '', outcome: ''},
-    { id: 2, type : 'Work experience', startDateValues: [ '01', '08', '2016'], startDate: '1 August 2016', status: 'Confirmed', endDateValues: ['04', '09', '2016'], endDate: '4 September 2016', outcome: 'Dismissed'}
+    { id: 0, type : 'Work experience', startDateValues: [ '01', '01', '2016'], status: 'Confirmed', endDateValues: ['31', '04', '2016'], outcome: 'Completed'},
+    { id: 1, type : 'Work experience', startDateValues: [ '01', '05', '2016'], status: 'Did not start', endDateValues: ['', '', ''], outcome: ''},
+    { id: 2, type : 'Work experience', startDateValues: [ '01', '08', '2016'], status: 'Confirmed', endDateValues: ['04', '09', '2016'], outcome: 'Dismissed'}
   ];
 }
 

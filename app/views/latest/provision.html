@@ -43,9 +43,10 @@
             {% for provision in provisions %}
               <tr>
                 <td>{{provision.type}}</td>
-                <td>{{provision.startDate}}</td>
+                <td>{{dateDisplay(provision.startDateValues)}}</td>
                 <td>{{provision.status}}</td>
-                <td>{{provision.endDate}}</td>
+                <td>{{dateDisplay(provision.endDateValues)
+                }}</td>
                 <td>{{provision.outcome}}</td>
                 <td>{{provisionUpdateLink(provision)}}</td>
               </tr>
@@ -64,13 +65,13 @@
 {% endblock %}
 
 {% macro provisionUpdateLink(provision) %}
-  {% set queryString = '?'  %}
-
-  {% for key, value in provision %}
-    {% set queryString = queryString + key + '=' + value  + '&' %}
-  {% endfor %}
-
+  {% set queryString = '?id=' + provision.id  %}
   <a href="provision_edit{{queryString}}">Update</a>
 {% endmacro %}
 
+{% macro dateDisplay(dateArray) %}
+  {% set monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
+
+  {{dateArray[0] | int}} {{monthNames[dateArray[1]-1]}} {{dateArray[2]}}
+{% endmacro %}
 
