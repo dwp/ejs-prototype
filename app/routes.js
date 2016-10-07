@@ -38,10 +38,10 @@ router.use(function(req, res, next){
 });
 
 function getTestProvisions(){
-  return [
-    { id: 0, type : 'Work experience', startDateValues: [ '01', '08', '2016'], startDate: '1 August 2016', status: 'Confirmed', endDateValues: ['04', '09', '2016'], endDate: '4 September 2016', outcome: 'Dismissed'},
-    { id: 1, type : 'Work experience', startDateValues: [ '01', '05', '2016'], startDate: '1 May 2016', status: 'Did not start', endDateValues: ['', '', ''], endDate: '', outcome: ''},
-    { id: 2, type : 'Work experience', startDateValues: [ '01', '01', '2016'], startDate: '1 January 2016', status: 'Confirmed', endDateValues: ['31', '04', '2016'], endDate: '31 April 2016', outcome: 'Completed'}
+  return [ 
+    { id: 0, type : 'Work experience', startDateValues: [ '01', '01', '2016'], startDate: '1 January 2016', status: 'Confirmed', endDateValues: ['31', '04', '2016'], endDate: '31 April 2016', outcome: 'Completed'},
+    { id: 2, type : 'Work experience', startDateValues: [ '01', '05', '2016'], startDate: '1 May 2016', status: 'Did not start', endDateValues: ['', '', ''], endDate: '', outcome: ''},
+    { id: 1, type : 'Work experience', startDateValues: [ '01', '08', '2016'], startDate: '1 August 2016', status: 'Confirmed', endDateValues: ['04', '09', '2016'], endDate: '4 September 2016', outcome: 'Dismissed'}
   ];
 }
 
