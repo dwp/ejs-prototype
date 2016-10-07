@@ -36,7 +36,7 @@
 
             <select class="select form-control" name="provision-type" id="provision-type">
               <option value="">Select</option>
-              <option value="work-experience">Work experience</option>
+              <option value="work-experience" {{ 'selected' if  provision.type === 'Work experience' else ''}}>Work experience</option>
             </select>
           </fieldset>
         </div>
@@ -48,15 +48,15 @@
 
           <div class="form-group form-group-day">
             <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="start-day" name="dob-day">
+            <input type="text" class="form-control" id="start-day" name="start-day" value="{{provision.startDateValues[0]}}">
           </div>
           <div class="form-group form-group-month">
             <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="start-month" name="dob-month">
+            <input type="text" class="form-control" id="start-month" name="start-month" value="{{provision.startDateValues[1]}}">
           </div>
           <div class="form-group form-group-year">
             <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="start-year" name="dob-year">
+            <input type="text" class="form-control" id="start-year" name="start-year" value="{{provision.startDateValues[2]}}">
           </div>
         </div>
 
@@ -66,11 +66,11 @@
             <legend class="visually-hidden">Start status</legend>
 
             <label class="block-label selection-button-radio" for="confirmed">
-              <input id="confirmed" type="radio" name="start-status" value="confirmed">
+              <input id="confirmed" type="radio" name="start-status" value="confirmed" {{ 'checked' if  provision.status === 'Confirmed' else ''}}>
               Confirmed
             </label>
             <label class="block-label selection-button-radio" for="did-not-start" >
-              <input id="did-not-start" type="radio" name="start-status" value="did-not-start">
+              <input id="did-not-start" type="radio" name="start-status" value="did-not-start" {{ 'checked' if  provision.status === 'Did not start' else ''}}>
               Did not start
             </label> 
           </fieldset>
@@ -83,15 +83,15 @@
 
           <div class="form-group form-group-day">
             <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="end-day" name="dob-day">
+            <input type="text" class="form-control" id="end-day" name="end-day" value="{{provision.endDateValues[0]}}">
           </div>
           <div class="form-group form-group-month">
             <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="end-month" name="dob-month">
+            <input type="text" class="form-control" id="end-month" name="end-month" value="{{provision.endDateValues[1]}}">
           </div>
           <div class="form-group form-group-year">
             <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="end-year" name="dob-year">
+            <input type="text" class="form-control" id="end-year" name="end-year" value="{{provision.endDateValues[2]}}">
           </div>
         </div>
 
@@ -99,15 +99,15 @@
           <fieldset class="inline">
             <legend class="form-label-bold">Outcome</legend>
             <label class="block-label selection-button-radio" for="completed">
-              <input id="completed" type="radio" name="status-on-leaving" value="completed">
+              <input id="completed" type="radio" name="status-on-leaving" value="completed"  {{ 'checked' if  provision.outcome === 'Completed' else ''}}>
               Completed
             </label>
             <label class="block-label selection-button-radio" for="early-leaver" data-target="early-leaver-reason">
-              <input id="early-leaver" type="radio" name="status-on-leaving" value="early-leaver">
+              <input id="early-leaver" type="radio" name="status-on-leaving" value="early-leaver"  {{ 'checked' if  provision.outcome === 'Early leaver' else ''}}>
               Early leaver
             </label>
-            <label class="block-label selection-button-radio" for="dismissed" data-target="dismissed-reason">
-              <input id="dismissed" type="radio" name="status-on-leaving" value="dismissed">
+            <label class="block-label selection-button-radio" for="dismissed" data-target="dismissed-reason"  >
+              <input id="dismissed" type="radio" name="status-on-leaving" value="dismissed" {{ 'checked' if  provision.outcome === 'Dismissed' else ''}}>
               Dismissed
             </label>
           </fieldset>

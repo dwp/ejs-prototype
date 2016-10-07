@@ -40,12 +40,6 @@
             </tr>
           </thead>
           <tbody>
-            {% set provisions = [
-              { type : 'Work exprience', startDate: '1 August 2016', status: 'Confirmed', endDate: '4 September 2016', outcome: 'Dismissed'},
-              { type : 'Work exprience', startDate: '1 May 2016', status: 'Did not start', endDate: '', outcome: ''},
-              { type : 'Work exprience', startDate: '1 January 2016', status: 'Confirmed', endDate: '31 April 2016', outcome: 'Confirmed'}
-            ] %}
-
             {% for provision in provisions %}
               <tr>
                 <td>{{provision.type}}</td>
@@ -53,7 +47,7 @@
                 <td>{{provision.status}}</td>
                 <td>{{provision.endDate}}</td>
                 <td>{{provision.outcome}}</td>
-                <td><a href="provision_edit">Update</a></td>
+                <td>{{provisionUpdateLink(provision)}}</td>
               </tr>
             {% endfor %}
           </tbody>
@@ -68,3 +62,15 @@
   </div>
 </main>
 {% endblock %}
+
+{% macro provisionUpdateLink(provision) %}
+  {% set queryString = '?'  %}
+
+  {% for key, value in provision %}
+    {% set queryString = queryString + key + '=' + value  + '&' %}
+  {% endfor %}
+
+  <a href="provision_edit{{queryString}}">Update</a>
+{% endmacro %}
+
+
