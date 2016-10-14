@@ -10,142 +10,21 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
-
   <div class="grid-row">        
 
     {% set currentPage = 'createRecord' %}
     {% include "includes/left_nav_settings.html" %}
 
-
-    <!-- Start three quarters container for main content columns -->
     <div class="column-three-quarters">
-
       <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
 
       {% set currentClaimantPage = 'summary' %}
       {% include "includes/claimant_menu.html" %}
 
-      <div class="column-half">   
-          <h2 class="heading-small">Claimant details</h2>
-              <table>
-                    <tr>
-                        <td>Name:</td>
-                        <td>Mr&nbsp;&nbsp;J&nbsp;&nbsp;Smith</td>
-                    </tr>
-                    <tr>
-                        <td>Age:</td>
-                        <td>34</td>
-                    </tr>
-                    <tr>
-                        <td>National Insurance:</td>
-                        <td>JC628596A</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile number:</td>
-                        <td>07585 747358</td>
-                    </tr>   
-                     <tr>
-                        <td>Email address:</td>
-                        <td>james_smith@gmail.com</td>
-                    </tr>                      
-      <!--          <tr>
-                        <td>Postcode:</td>
-                        <td>WR14 4QT</td>
-                    </tr>     -->
-                    <tr>
-                        <td>Language:</td>
-                        <td>Welsh</td>
-                    </tr> 
-                    <tr>
-                        <td>Industry sector:</td>
-                        <td>Logistics/transportation</td>
-                    </tr>                                      
-                    <tr>
-                        <td>Markers:</td>
-                        <td>Ex-offender, homeless</td>
-                    </tr>   
-                </table> 
-
-       <!--     <h2 class="heading-small">Day one conditionality</h2>
-                <table>
-                    <tbody>
-                      <tr>
-                        <td>1. CV&nbsp;<i class="fa fa-times red-cross"></i></td>
-                        <td>2. Universal Jobmatch profile&nbsp;<i class="fa fa-times red-cross"></i></td>
-                        <td>3. Email address&nbsp;<i class="fa fa-times red-cross"></i></td>                     
-                     </tr>   
-                </tbody>
-              </table> -->
-              
-      </div>
-      <!-- End col -->
-
-
-
-      <!-- Start col -->      
-      <div class="column-half">  
-
-          <h2 class="heading-small">Latest claim</h2>
-                <table>
-                    <tr>
-                        <td>Benefit type:</td>
-                        <td>Income Support</td>
-                    </tr>
-                    <tr>
-                        <td>Income Support option:</td>
-                        <td>Carer</td>
-                    </tr>
-                    <tr>
-                        <td>Date of entitlement:</td>
-                        <td>14/09/2015</td>
-                    </tr>
-                    <tr>
-                        <td>Status:</td>
-                        <td>Live</td>
-                    </tr>                   
-                    <tr>
-                        <td>Jobcentre:</td>
-                        <td>Worcester</td>
-                    </tr>                    
-                    <tr>
-                        <td>Work coach:</td>
-                        <td>amanda.wright</td>  
-                    </tr>  
-               <!--     <tr>
-                        <td>Day one:</td>
-                        <td>CV&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
-                        Universal Jobmatch&nbsp;<i class="fa fa-times red-cross"></i>&nbsp;&nbsp;
-                        Email&nbsp;<i class="fa fa-times red-cross"></i></td>                     
-                     </tr>   --> 
-                </table>
-
-       <!--     <h2 class="heading-small">Next appointment</h2> -->
-            <h2 class="heading-small red-cross"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;No appointment set!
-                <a class="normal" href="job_next_new">Create one</a></h2>
-                <table>
-                    <tr>
-                        <td>None</td>
-                     </tr>
-                     
-                    <!-- tr>
-                        <td>Date:</td>
-                        <td>30/10/2015</td>
-                     </tr>
-                     <tr>   
-                        <td>Time:</td>
-                        <td>11:30</td>
-                    </tr> -->
-                </table>
-
-       <!-- End column-->       
-       </div>
-
-    <!-- End row-->       
-      </div>
-
-
+      {% include "includes/summary_table.html" %}
+    </div>
+  </div>
 </main>
 {% endblock %}
 

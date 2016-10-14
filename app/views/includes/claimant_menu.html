@@ -28,9 +28,14 @@
       </div>
     </div>
 
+    {% if claimStatus === 'Dormant' %}
+      {% set claimHref = 'job_claim_dormant' %}
+    {% else %}
+      {% set claimHref = 'job_claim_active' %}
+    {% endif %}
     <div class="grid grid-1-5">
       <div class="inner-block left">
-        <a id="claim_active" href="job_claim_active" class="menu-item {% if currentClaimantPage === "claim" %}selected{% endif %}">
+        <a id="claim_active" href="{{claimHref}}" class="menu-item {% if currentClaimantPage === "claim" %}selected{% endif %}">
         <strong>Claim</strong>
         </a>
       </div>

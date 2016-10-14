@@ -16,116 +16,18 @@
   <div class="grid-row">        
 
     {% include "includes/left_nav_settings.html" %}
+  
+    <div class="column-three-quarters">
 
-
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
-
-         <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
+      <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
 
       {% set currentClaimantPage = 'summary' %}
       {% set appointmentsDisabled = true %}
-      {% include "includes/claimant_menu.html" %} 
+      {% set claimStatus = 'Dormant' %}
+      {% include "includes/claimant_menu.html" %}
 
-      <div class="column-half">   
-          <h2 class="heading-small">Claimant details</h2>
-           <div>
-                <table>
-                    <tr>
-                        <td>Name:</td>
-                        <td>Mr&nbsp;&nbsp;J&nbsp;&nbsp;Smith</td>
-                    </tr>
-                    <tr>
-                        <td>Age:</td>
-                        <td>34</td>
-                    </tr>
-                    <tr>
-                        <td>National Insurance:</td>
-                        <td>JC628596A</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile number:</td>
-                        <td>07585 747358</td>
-                    </tr>   
-                     <tr>
-                        <td>Email address:</td>
-                        <td>james_smith@gmail.com</td>
-                    </tr>                      
-      <!--          <tr>
-                        <td>Postcode:</td>
-                        <td>WR14 4QT</td>
-                    </tr>     -->
-                    <tr>
-                        <td>Language:</td>
-                        <td>Welsh</td>
-                    </tr> 
-                    <tr>
-                        <td>Industry sector:</td>
-                        <td>Logistics/transportation</td>
-                    </tr>                                      
-                    <tr>
-                        <td>Markers:</td>
-                        <td>Ex-offender, homeless</td>
-                    </tr>   
-                    </tbody>
-                </table> 
-           </div> 
-              
-      </div>
-      <!-- End col -->
-
-
-
-      <!-- Start col -->      
-      <div class="column-half">  
-
-            <h2 class="heading-small">Latest claim</h2>
-                <table>
-                    <tr>
-                        <td>Benefit type:</td>
-                        <td>Income Support</td>
-                    </tr>
-                    <tr>
-                        <td>Income Support option:</td>
-                        <td>Carer</td>
-                    </tr>                    
-                    <tr>
-                        <td>Date of entitlement:</td>
-                        <td>10/10/2015</td>
-                    </tr>
-                    <tr>
-                        <td>Last effective date:</td>
-                        <td>28/11/2015</td>
-                    </tr>
-                    <tr>
-                        <td>Status:</td>
-                        <td>Dormant</td>
-                    </tr>                   
-                    <tr>
-                        <td>Jobcentre:</td>
-                        <td>Worcester</td>
-                    </tr>                    
-                    <tr>
-                        <td>Work coach:</td>
-                        <td>amanda.wright</td>  
-                    </tr>  
-                </table>
-
-            <h2 class="heading-small">Next appointment</h2>
-                <table>
-                    <tr>
-                        <td>None</td>
-                     </tr>
-                </table>
-
-
-       <!-- End column-->       
-       </div>
-
-    <!-- End row-->       
-      </div>
-
-
+      {% include "includes/summary_table.html" %}       
+    </div>
 </main>
 {% endblock %}
 
