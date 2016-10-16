@@ -13,7 +13,17 @@
 <h1 class="heading-large" style="margin-top:20px;">Enhanced Jobseeker Services - Alpha prototype</h1>
 
 
-{% set daysToWorkLinks = [{ workTitle: 'Days to standard', links: [{ link : 'latest/job_record_confirm', title : 'Days to standard' }] }] %}
+{% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
+    links: [
+        { link : 'latest/job_record_confirm', title : 'Days to standard - Version 1' },
+        { link : 'latest/job_record_confirm?summary_version=2', title : 'Days to standard - Version 2' },
+        { link : 'latest/job_record_confirm?summary_version=3', title : 'Days to standard - Version 3' }
+    ] 
+},{ workTitle: 'JOM', 
+    links: [
+        { link : 'latest/job_new_step3', title : 'JOM - Create claim layout' }
+    ] 
+}] %}
 {{ sprintLinks( 'Sprint 25', daysToWorkLinks) }}
 
 
