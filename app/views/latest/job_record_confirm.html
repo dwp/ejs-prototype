@@ -22,7 +22,7 @@
       {% set currentClaimantPage = 'summary' %}
       {% include "includes/claimant_menu.html" %}
 
-      {% if getData.summary_version != 'undefined' %}
+      {% if getData.summary_version %}
         {% set summary_include = "includes/summary_table_v" + getData.summary_version+ ".html" %}
       {% else %}
         {% set summary_include = "includes/summary_table.html" %}
