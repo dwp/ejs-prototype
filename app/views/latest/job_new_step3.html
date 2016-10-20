@@ -27,12 +27,12 @@
 
       <h1 class="heading-large">&nbsp;&nbsp;Create claim</h1>
 
-      <div class="column">      
+      <div class="column-half">      
 
         <div class="form-group"> 
           <label class="form-label" for="title">Benefit type</label>
           <form>
-            <fieldset class="inline">
+            <fieldset>
               <legend class="visuallyhidden">Choose benefit type:</legend>
               <label class="block-label" for="radio-1" data-target="example-ni-number0">
                 <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance" aria-controls="example-ni-number0">
@@ -54,7 +54,7 @@
           <div class="form-group">
             <label class="form-label" for="title">Day one evidence provided</label>
             <form>
-              <fieldset  class="inline">
+              <fieldset>
                 <legend class="visuallyhidden">Day one conditionality</legend>
                 <label class="block-label" for="dis-1">
                   <input id="dis-1" type="checkbox" name="esa-group" value="Work Related Activity Group">
@@ -79,7 +79,7 @@
           <div class="form-group">
             <label class="form-label" for="title">Employment Support Allowance options</label>
             <form>
-              <fieldset  class="inline">
+              <fieldset>
                 <legend class="visuallyhidden">Employment Support Allowance options</legend>
                 <label class="block-label" for="esa-option-1">
                   <input id="esa-option-1" type="radio" name="esa-group" value="Work Related Activity Group">
@@ -104,12 +104,32 @@
           <div class="form-group">
             <label class="form-label" for="title">Income Support options</label>
             <form>
-            <fieldset  class="inline">
+            <fieldset>
               <legend class="visuallyhidden">Income Support options</legend>
               <label class="block-label" for="dis-4" data-target="example-ni-number2">
                 <input id="dis-4" name="is-group" type="radio" value="Lone parent" aria-controls="example-ni-number2">
                 Lone parent
               </label>
+              
+              <div class="panel-indent js-hidden" id="example-ni-number2">    
+                <div class="form-group">
+                  <label class="form-label" for="title">Youngest child's date of birth</label>       
+                  <fieldset>
+                    <div class="form-date">
+                      <p class="form-hint">For example, 03 1980</p>
+                      <div class="form-group form-group-month">
+                        <label for="dob-month">Month</label>
+                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+                      <div class="form-group form-group-year">
+                        <label for="dob-year">Year</label>
+                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>  
+
               <label class="block-label" for="dis-5">
               <input id="dis-5" name="is-group" type="radio" value="Carer">
               Carer
@@ -127,31 +147,12 @@
           </div>
 
           {{operating_model('IS')}}
-        </div>    
-
-        <div class="panel-indent js-hidden" id="example-ni-number2">    
-          <div class="form-group">
-            <label class="form-label" for="title">Youngest child's date of birth</label>       
-            <fieldset>
-              <div class="form-date">
-                <p class="form-hint">For example, 03 1980</p>
-                <div class="form-group form-group-month">
-                  <label for="dob-month">Month</label>
-                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                </div>
-                <div class="form-group form-group-year">
-                  <label for="dob-year">Year</label>
-                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                </div>
-              </div>
-            </fieldset>
-          </div>
-        </div>         
+        </div>           
       </div>
       <!-- End col -->
 
       <!-- Start col -->      
-      <div class="column">     
+      <div class="column-half">     
 
         <div class="form-group">
           <fieldset>
@@ -233,7 +234,7 @@
   <div class="form-group">
     <label class="form-label" for="title">Job centre operating model</label>
     <form>
-      <fieldset class="inline">
+      <fieldset>
         <legend class="visuallyhidden">Job centre operating model</legend>
         <label class="block-label" for="{{benefit_type}}-jom-option-1">
           <input id="{{benefit_type}}-jom-option-1" type="radio" name="{{benefit_type}}-jom-group" value="Self sufficient">
