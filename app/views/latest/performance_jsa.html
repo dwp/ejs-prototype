@@ -14,6 +14,7 @@
 <script src="/public/javascripts/jquery-ui.min.js"></script>
 <script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
 <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+<script src="/public/javascripts/caseload.js"></script>
 
 <script>
   $(document).ready(function(){
@@ -23,15 +24,12 @@
 </script>
 
 <main id="content" role="main">
-
   <div class="grid-row">
-
     {% set currentPage = 'caseload' %}
     {% include "includes/left_nav_settings.html" %}
 
     <!-- Start three quarters container for main content columns -->
     <div class="column-three-quarters">
-
       <h1 class="heading-large">&nbsp;&nbsp;Cohort month April 2015 - Jobseeker's Allowance</h1>
 
       <details>
@@ -43,10 +41,9 @@
       </details>
 
       <div class="column">   
-
         <div id="container">
 
-        <p class="search_string">You searched: JSA > 18-24 > April 2015 > Homeless > ESOL > Live > Pre-work programme > Logistics</p>
+        <p class="search_string">You searched: JSA > 18-24 > April 2015 > Homeless > ESOL > Live > Pre-work programme > Logistics{%if getData.provisionSelected %} > Work experience{%endif%}</p>
 
         <input class="button copy_email" value="Copy selected emails" disabled="disabled">
 
@@ -57,9 +54,13 @@
               <th class="nino no-sort">Surname</th>
               <th class="nino no-sort">Initial</th>
               <th class="nino"><input type="checkbox">&nbsp;Email</th>
-              <th class="daysto nino no-sort">Days to</th>
-              <th class="appoint nino no-sort">Appointment</th>
-              <th class="nino no-sort">Provision type</th>
+              {%if getData.provisionSelected %}
+                <th class="nino no-sort">Provision start date</th>
+                <th class="nino no-sort">Provision status</th>
+              {%else%}
+                <th class="daysto nino no-sort">Days to</th>
+                <th class="appoint nino no-sort">Appointment</th>
+              {%endif%}
             </tr>
           </thead>
           <tbody>
@@ -68,99 +69,143 @@
               <td>Williams</td>
               <td>R</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:r.william@gmail.com">r.william@gmail.com</a></td>
-              <td>3 (13 weeks)</td>
-              <td>18/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>01/01/2016</td>
+                <td></td>
+              {%else%}
+                <td>3 (13 weeks)</td>
+                <td>18/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxC</a></td>
               <td>Jones</td>
               <td>J</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:john.jones@sky.com">john.jones@sky.com</a></td>
-              <td>18 (26 weeks)</td>
-              <td>22/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>06/02/2016</td>
+                <td>Confirmed</td>
+              {%else%}
+                <td>18 (26 weeks)</td>
+                <td>22/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxB</a></td>
               <td>Smith</td>
               <td>F</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:fred.smith@hotmail.com">fred.smith@hotmail.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>01/02/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>03/04/2016</td>
+                <td>Confirmed</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>01/02/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxB</a></td>
               <td>Brown</td>
               <td>S</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:scott.brown@core.com">scott.brown@core.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>28/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>21/04/2016</td>
+                <td></td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>28/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxC</a></td>
               <td>Docherty</td>
               <td>T</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:tom.docherty@red.co.uk">tom.docherty@red.co.uk</a></td>
-              <td>10 (39 weeks)</td>
-              <td>02/02/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>30/04/2016</td>
+                <td>Early leaver</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>02/02/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxA</a></td>
               <td>Peters</td>
               <td>A</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:andy.peters@aol.com">andy.peters@aol.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>27/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>05/08/2016</td>
+                <td>Dismissed</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>27/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxB</a></td>
               <td>Shaw</td>
               <td>R</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:rob.shaw@hotmail.com">rob.shaw@hotmail.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>16/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>06/08/2016</td>
+                <td>Confirmed</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>16/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxA</a></td>
               <td>Peel</td>
               <td>J</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">john.peel@gmail.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>25/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>21/09/2016</td>
+                <td>Did not start</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>25/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxC</a></td>
               <td>Gathercole</td>
               <td>T</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">tom.gathercole@live.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>27/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>02/10/2016</td>
+                <td>Early leaver</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>27/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxC</a></td>
               <td>Kane</td>
               <td>H</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:harold.kane@sky.com">harold.kane@sky.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>29/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>09/10/2016</td>
+                <td>Dismissed</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>29/01/2016</td>
+              {%endif%}
             </tr>
             <tr>
               <td><a href="job_record_confirm">JCxxxxxxC</a></td>
               <td>Watson</td>
               <td>P</td>
               <td><input type="checkbox">&nbsp;<a href="mailto:paul.watson@hotmail.com">paul.watson@hotmail.com</a></td>
-              <td>10 (39 weeks)</td>
-              <td>30/01/2016</td>
-              <td>Work experience</td>
+              {%if getData.provisionSelected %}
+                <td>03/04/2016</td>
+                <td>Confirmed</td>
+              {%else%}
+                <td>10 (39 weeks)</td>
+                <td>30/01/2016</td>
+              {%endif%}
             </tr>
            </tbody>
           </table>
