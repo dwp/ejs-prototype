@@ -12,99 +12,101 @@
 
 
 <script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/amendUser.js"></script>
 
 <main id="content" role="main">
 
  <div class="grid-row">        
-	
+  
     {% include "includes/left_nav_settings.html" %}
 
-	<!-- Start three quarters container for main content columns -->
-	<div class="column-three-quarters">
+  <!-- Start three quarters container for main content columns -->
+  <div class="column-three-quarters">
 
-		<h1 class="heading-large">&nbsp;&nbsp;Settings - amend user</h1>
+    <h1 class="heading-large">&nbsp;&nbsp;Settings - amend user</h1>
 
-        {% set currentSettingsPage = 'maintainUser' %}
-        {% include "includes/settings_menu.html" %} 
+    {% set currentSettingsPage = 'maintainUser' %}
+    {% include "includes/settings_menu.html" %} 
 
-		<div class="column-half">   
+    <div class="column-half">   
 
-			<form action="amend_user_confirmation" method="get" class="form">
-				<div class="form-group">
-					<fieldset class="inline">
-						<legend class="form-label-bold">What do you want to do?</legend>
+      <form action="amend_user_confirmation" method="get" class="form">
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="form-label-bold">What do you want to do?</legend>
 
-						<label for="radio-part-2" data-target="merge" class="block-label">
-							<input id="radio-part-2" type="radio" name="amendUserOption" value="nameChange">
-							Name change
-						</label>
+            <label for="radio-part-2" data-target="merge" class="block-label">
+              <input id="radio-part-2" type="radio" name="amendUserOption" value="nameChange">
+              Name change
+            </label>
 
-						<label for="radio-part-3" data-target="workcoach-remove" class="block-label">
-							<input id="radio-part-3" type="radio" name="amendUserOption" value="remove	">
-							Remove workcoach from office
-						</label>
-					</fieldset>
-				</div>
+            <label for="radio-part-3" data-target="workcoach-remove" class="block-label">
+              <input id="radio-part-3" type="radio" name="amendUserOption" value="remove  ">
+              Remove workcoach from office
+            </label>
+          </fieldset>
+        </div>
 
-				<div id="merge" class="js-hidden">
-					<div class="form-group">
-						<fieldset class="inline">
-							<legend class="visuallyhidden">Name change from</legend>
+        <div id="merge" class="js-hidden">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Name change from</legend>
 
-							<label for="nameChangeFrom" class="form-label-bold">Name change from</label>
+              <label for="nameChangeFrom" class="form-label-bold">Name change from</label>
 
-							<select class="select form-control" name="nameChangeFrom" id="nameChangeFrom">
-								<option value="Alice">Alice</option>
-								<option value="Bob">Bob</option>
-								<option value="Claire">Claire</option>
-							</select>
-						</fieldset>
-					</div>
+              <select class="select form-control" name="nameChangeFrom" id="nameChangeFrom">
+                <option value="">Select</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Claire">Claire</option>
+              </select>
+            </fieldset>
+          </div>
 
-					<div class="form-group">
-						<fieldset class="inline">
-							<legend class="visuallyhidden">Name change to</legend>
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Name change to</legend>
 
-							<label for="nameChangeTo" class="form-label-bold">Name change to</label>
+              <label for="nameChangeTo" class="form-label-bold">Name change to</label>
 
-							<select class="select form-control" name="nameChangeTo" id="nameChangeTo">
-								<option value="Alice">Alice</option>
-								<option value="Bob">Bob</option>
-								<option value="Claire">Claire</option>
-							</select>
-						</fieldset>
-					</div>
+              <select class="select form-control" name="nameChangeTo" id="nameChangeTo">
+                <option value="">Select</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Claire">Claire</option>
+              </select>
+            </fieldset>
+          </div>
 
-					<div class="form-group">
-			          <input type="submit" class="button" value="Continue">
-			        </div>
-				</div>
+          <div class="form-group">
+                <input type="submit" class="button" value="Continue">
+              </div>
+        </div>
 
-				<div id="workcoach-remove" class="js-hidden">
-					<div class="form-group">
-						<fieldset class="inline">
-							<legend class="visuallyhidden">Remove from workcoach List</legend>
+        <div id="workcoach-remove" class="js-hidden">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Remove from workcoach List</legend>
 
-							<label for="userToRemove" class="form-label-bold">Remove from workcoach List</label>
+              <label for="userToRemove" class="form-label-bold">Remove from workcoach List</label>
 
-							<select class="select form-control" name="userToRemove" id="userToRemove">
-								<option value="Alice">Alice</option>
-								<option value="Bob">Bob</option>
-								<option value="Claire">Claire</option>
-							</select>
-						</fieldset>
-					</div>
+              <select class="select form-control" name="userToRemove" id="userToRemove">
+                <option value="">Select</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Claire">Claire</option>
+              </select>
+            </fieldset>
+          </div>
 
-					<div class="form-group">
-			          <input type="submit" class="button" value="Continue">
-			        </div>
-				</div>
-
-			</form>  
-
-		</div>     
-	<!-- End column -->
-	</div>
+          <div class="form-group">
+            <input type="submit" class="button" value="Continue">
+          </div>
+        </div>
+      </form>
+    </div>     
+  <!-- End column -->
+  </div>
 <!-- End row-->    
 </div>
 

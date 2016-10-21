@@ -34,11 +34,11 @@
                     <fieldset class="inline">
                         <p class="form-label-bold">Confirmation</p>
 
-                        <p>You are about to change a user from <span class="bold">Alice</span> to <span class="bold">Bob</span></p>
-
-                        <p class="bold">or</p>
-
-                        <p>You are about to remove <span class="bold">Alice</span> from the workcoach list</p>
+                        {%if getData.amendUserOption === 'nameChange' %}
+                            <p>You are about to change a user from <span class="bold">{{getData.nameChangeFrom}}</span> to <span class="bold">{{getData.nameChangeTo}}</span></p>
+                        {%else%}
+                            <p>You are about to remove <span class="bold">{{getData.userToRemove}}</span> from the workcoach list</p>
+                        {%endif%}
 
                         <p>Are you sure you want to do this?</p>
 
