@@ -1,0 +1,29 @@
+{% macro operating_model(benefit_type, checked_value) %}
+  <div class="form-group">
+    <label class="form-label" for="title">Caseload segmentation</label>
+    <form>
+      <fieldset>
+        <legend class="visuallyhidden">Caseload segmentation</legend>
+        <label class="block-label" for="{{benefit_type}}-jom-option-1">
+          <input id="{{benefit_type}}-jom-option-1" type="radio" name="{{benefit_type}}-jom-group" value="Self sufficient"
+          {% if checked_value === 'Self sufficient' %} checked {%endif%}>
+          Self sufficient
+        </label>
+        <label class="block-label" for="{{benefit_type}}-jom-option-2">
+          <input id="{{benefit_type}}-jom-option-2" type="radio" name="{{benefit_type}}-jom-group" value="Limited support">
+          Limited support
+        </label>
+        <label class="block-label" for="{{benefit_type}}-jom-option-3">
+          <input id="{{benefit_type}}-jom-option-3" type="radio" name="{{benefit_type}}-jom-group" value="Intensive support">
+          Intensive support
+        </label>
+        {% if (benefit_type === 'IS' or benefit_type === 'ESA') %}
+        <label class="block-label" for="{{benefit_type}}-jom-option-4">
+          <input id="{{benefit_type}}-jom-option-4" type="radio" name="{{benefit_type}}-jom-group" value="Light touch">
+          Light touch
+        </label>
+        {% endif %}
+      </fieldset>
+    </form>
+  </div>
+{% endmacro %}
