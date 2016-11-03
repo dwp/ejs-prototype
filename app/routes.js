@@ -1,6 +1,24 @@
 var express = require('express');
 var router = express.Router();
 
+router.use(function(req, res, next){
+  Object.assign(res.locals,{
+    postData: (req.body ? req.body : false)
+  });
+
+  Object.assign(res.locals,{
+    getData: (req.query ? req.query : false)
+  });
+
+  req.session.user = req.session.user || { name : 'Martha Vansant', role : 'manager' };
+  
+  Object.assign(res.locals,{
+    userData: (req.session.user ? req.session.user : false)
+  });
+
+  next();
+});
+
 router.get('/', function (req, res) {
   res.render('index');
 });
@@ -53,18 +71,15 @@ router.post('/latest/provision_edit', function (req, res) {
   res.redirect('/latest/provision');
 });
 
-// add your routes here
-router.use(function(req, res, next){
-  Object.assign(res.locals,{
-    postData: (req.body ? req.body : false)
-  });
+router.get('/latest/toggle_user_role', function(req, res, next){
+  if(req.session.user && req.session.user.role && req.session.user.role !== 'manager'){
+    req.session.user = { name : 'Martha Vansant', role : 'manager' }
+  } else {
+    req.session.user = { name : 'William Conroy', role : 'workcoach' }
+  }
 
-  Object.assign(res.locals,{
-    getData: (req.query ? req.query : false)
-  });
-
-  next();
-});
+  res.redirect('/')
+})
 
 function getTestProvisions(){
   return [ 

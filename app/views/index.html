@@ -12,6 +12,13 @@
 
 <h1 class="heading-large" style="margin-top:20px;">Enhanced Jobseeker Services - Alpha prototype</h1>
 
+{% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
+    links: [
+        { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + userData.role + ')'}
+    ] 
+}] %}
+{{ sprintLinks( 'Sprint 25', managerWorkCoachFlow) }}
+
 
 {% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
     links: [

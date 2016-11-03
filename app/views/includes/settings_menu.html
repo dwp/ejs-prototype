@@ -8,28 +8,30 @@
       </div>
     </div>
 
-    <div class="grid grid-1-5">
-      <div class="inner-block left">
-        <a href="amend_user" class="menu-item {% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
-          <strong>Maintain user</strong>
-        </a>
+    {% if userData.role === 'manager'%}
+      <div class="grid grid-1-5">
+        <div class="inner-block left">
+          <a href="amend_user" class="menu-item {% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
+            <strong>Maintain user</strong>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="grid grid-1-5">
-      <div class="inner-block left">
-        <a href="delete_record" class="menu-item {% if currentSettingsPage === "maintainRecord" %}selected{% endif %}">
-          <strong>Maintain record</strong>
-        </a>
+      <div class="grid grid-1-5">
+        <div class="inner-block left">
+          <a href="delete_record" class="menu-item {% if currentSettingsPage === "maintainRecord" %}selected{% endif %}">
+            <strong>Maintain record</strong>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="grid grid-1-5">
-      <div class="inner-block left">
-        <a href="targets" class="menu-item {% if currentSettingsPage === "standards" %}selected{% endif %}">
-          <strong>Standards</strong>
-        </a>
+      <div class="grid grid-1-5">
+        <div class="inner-block left">
+          <a href="targets" class="menu-item {% if currentSettingsPage === "standards" %}selected{% endif %}">
+            <strong>Standards</strong>
+          </a>
+        </div>
       </div>
-    </div>
+    {%endif%}
   </div> 
 </div>
