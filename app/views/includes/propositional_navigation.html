@@ -2,20 +2,15 @@
   <div class="content">
     <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
     <nav id="proposition-menu">
-          <a href="/index" id="logo" class="content">
-              <img src="/public/images/gov.uk_logotype_crown_invert_trans.png?0.12.0" alt=""> Jobseeker Services
-            </a>
-      <!--
-      <ul id="proposition-links">
-        <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
-        <li><a href="url-to-page-2">Navigation item #2</a></li>
-      </ul>
-      -->
+      <a href="/index" id="logo" class="content">
+        <img src="/public/images/gov.uk_logotype_crown_invert_trans.png?0.12.0" alt=""> Jobseeker Services
+      </a>
     </nav>
     <nav id="sign-out-menu">
-        <ul>
-          <li>{{userData.name}}: Worcester &nbsp;&nbsp;&nbsp;&nbsp;<a href="settings">Settings</a></li>
-        </ul>
-      </nav> 
+      <ul>
+        <!-- linking this to the toggle user role logic for a bit of a shortcut -->
+        <li><a href="/latest/toggle_user_role" style="font-weight:normal">{{userData.name}}: Worcester</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="settings">Settings</a></li>
+      </ul>
+    </nav>
   </div>
 </div>
