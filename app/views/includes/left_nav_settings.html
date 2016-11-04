@@ -8,7 +8,12 @@
     	<li id="nav-perf" {% if currentPage === "workcoachView" %}class="selected"{% endif %}><a href="performance_cohort">Office performance</a></li>
     {%endif%}
 
-    <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_view_filter">Work coach performance</a></li>
+    {% if userData.role === 'manager'%}   
+      <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_view_filter">Work coach performance</a></li>
+    {%else%} 
+      <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="workcoach_performance_view_onflow">Work coach performance</a></li>
+    {%endif%}
+
     <li class="plain-link first-plain-link"><a target="_blank" rel="external" href="http://intralink.link2.gpn.gov.uk/team-sites/business-transformation/enhancing-jobseekers/DWP_T850874.asp#TopOfPage">Updates</a></li>
     <li class="plain-link"><a target="_blank" rel="external" href="http://intralink.link2.gpn.gov.uk/team-sites/business-transformation/enhancing-jobseekers/DWP_T850864.asp#TopOfPage">FAQs</a></li>
   </ul>
