@@ -2,6 +2,9 @@
 // Take a look at elements.scss to see which files are imported.
 @import 'elements';
 
+// Styles for the banner
+@import 'banner';
+
 // Set up your main content area <main id="content">
 // This will give you a full width content block
 // See elements _layout.scss line 7.
@@ -54,12 +57,12 @@
 // Tabs
 
 .tabs-nav {
-	float:left;
-	position: relative;
+  float:left;
+  position: relative;
 }
 
 .tabs-nav li {
-	float:left;
+  float:left;
 }
 
  .tabs-nav li.active a {
@@ -262,7 +265,6 @@
   border: 1px solid #dee0e2;
   border-bottom: none;
 }
-
 
 .main-nav .plain-link a{
   color: #005ea5;

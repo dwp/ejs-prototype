@@ -1,0 +1,25 @@
+.banner-dcams {
+  float:left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.banner-settings {
+  float:right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.banner-user-details {
+  position:absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.banner-username {
+  font-size: 1.5em !important;
+  line-height: 1.2em !important;
+}
