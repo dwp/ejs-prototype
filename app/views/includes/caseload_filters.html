@@ -9,16 +9,16 @@
       <div class="dropdown">
         <select name="select" class="form-control dropdown-list" id="benefit">
           <option value="Select">Select</option>
-          <option value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
-          <option value="Employment Support Allowance - all">Employment Support Allowance - all</option>
-          <option value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-          <option value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-          <option value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-          <option value="Income Support - all">Income Support - all</option>
-          <option value="Income Support - lone parent">Income Support - lone parent</option>
-          <option value="Income Support - carer">Income Support - carer</option>
-          <option value="Income Support- pregnant">Income Support - pregnant</option>
-          <option value="Income Support- student">Income Support - student</option>
+          <option data-type="JSA" value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
+          <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+          <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+          <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+          <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+          <option data-type="IS" value="Income Support - all">Income Support - all</option>
+          <option data-type="IS" value="Income Support - lone parent">Income Support - lone parent</option>
+          <option data-type="IS" value="Income Support - carer">Income Support - carer</option>
+          <option data-type="IS" value="Income Support- pregnant">Income Support - pregnant</option>
+          <option data-type="IS" value="Income Support- student">Income Support - student</option>
         </select>
       </div>
     </div>
@@ -287,8 +287,8 @@
             <option value="Self sufficient">Self sufficient</option>
             <option value="Limited support">Limited support</option>
             <option value="Intensive support">Intensive support</option>
-            <option value="Light touch">Light touch</option>
-            <option value="Light touch">Not assessed</option>
+            <option value="Not assessed">Not assessed</option>
+            <option id="extraCaseloadSegmentationOption" value="Light touch">Light touch</option>
           </select>
         </div>
       </div>
