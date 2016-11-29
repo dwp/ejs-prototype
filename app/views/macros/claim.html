@@ -17,9 +17,13 @@
           <input id="{{benefit_type}}-jom-option-3" type="radio" name="{{benefit_type}}-jom-group" value="Intensive support">
           Intensive support
         </label>
-        {% if (benefit_type === 'IS' or benefit_type === 'ESA') %}
         <label class="block-label" for="{{benefit_type}}-jom-option-4">
-          <input id="{{benefit_type}}-jom-option-4" type="radio" name="{{benefit_type}}-jom-group" value="Light touch">
+          <input id="{{benefit_type}}-jom-option-4" type="radio" name="{{benefit_type}}-jom-group" value="Intensive support">
+          Not assessed
+        </label>
+        {% if (benefit_type === 'IS' or benefit_type === 'ESA') %}
+        <label class="block-label" for="{{benefit_type}}-jom-option-5">
+          <input id="{{benefit_type}}-jom-option-5" type="radio" name="{{benefit_type}}-jom-group" value="Light touch">
           Light touch
         </label>
         {% endif %}
