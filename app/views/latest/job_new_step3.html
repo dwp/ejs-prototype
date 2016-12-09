@@ -29,11 +29,12 @@
 
       <h1 class="heading-large">&nbsp;&nbsp;Create claim</h1>
 
-      <div class="column-half">      
+      <form>
 
-        <div class="form-group"> 
-          <label class="form-label" for="title">Benefit type</label>
-          <form>
+        <div class="column-half">      
+
+          <div class="form-group"> 
+            <label class="form-label" for="title">Benefit type</label>
             <fieldset>
               <legend class="visuallyhidden">Choose benefit type:</legend>
               <label class="block-label" for="radio-1" data-target="example-ni-number0">
@@ -49,13 +50,11 @@
                 Income Support
               </label>
             </fieldset>
-          </form>
-        </div> 
+          </div> 
 
-        <div class="panel-indent js-hidden" id="example-ni-number0">    
-          <div class="form-group">
-            <label class="form-label" for="title">Day one evidence provided</label>
-            <form>
+          <div class="panel-indent js-hidden" id="example-ni-number0">    
+            <div class="form-group">
+              <label class="form-label" for="title">Day one evidence provided</label>
               <fieldset>
                 <legend class="visuallyhidden">Day one conditionality</legend>
                 <label class="block-label" for="dis-1">
@@ -71,16 +70,14 @@
                   Universal Jobmatch profile
                 </label>
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          {{claim.operating_model('JSA')}}
-        </div>  
+            {{claim.operating_model('JSA')}}
+          </div>  
 
-        <div class="panel-indent js-hidden" id="example-ni-number">    
-          <div class="form-group">
-            <label class="form-label" for="title">Employment Support Allowance options</label>
-            <form>
+          <div class="panel-indent js-hidden" id="example-ni-number">    
+            <div class="form-group">
+              <label class="form-label" for="title">Employment Support Allowance options</label>
               <fieldset>
                 <legend class="visuallyhidden">Employment Support Allowance options</legend>
                 <label class="block-label" for="esa-option-1">
@@ -96,131 +93,144 @@
                   Pre Assessment
                 </label>
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          {{claim.operating_model('ESA')}}
-        </div>  
+            {{claim.operating_model('ESA')}}
+          </div>  
 
-        <div class="panel-indent js-hidden" id="example-ni-number1">    
-          <div class="form-group">
-            <label class="form-label" for="title">Income Support options</label>
-            <form>
-            <fieldset>
-              <legend class="visuallyhidden">Income Support options</legend>
-              <label class="block-label" for="dis-4" data-target="example-ni-number2">
-                <input id="dis-4" name="is-group" type="radio" value="Lone parent" aria-controls="example-ni-number2">
-                Lone parent
-              </label>
-              
-              <div class="panel-indent js-hidden" id="example-ni-number2">    
-                <div class="form-group">
-                  <label class="form-label" for="title">Youngest child's date of birth</label>       
-                  <fieldset>
-                    <div class="form-date">
-                      <p class="form-hint">For example, 03 1980</p>
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+          <div class="panel-indent js-hidden" id="example-ni-number1">    
+            <div class="form-group">
+              <label class="form-label" for="title">Income Support options</label>
+              <fieldset>
+                <legend class="visuallyhidden">Income Support options</legend>
+                <label class="block-label" for="dis-4" data-target="example-ni-number2">
+                  <input id="dis-4" name="is-group" type="radio" value="Lone parent" aria-controls="example-ni-number2">
+                  Lone parent
+                </label>
+                
+                <div class="panel-indent js-hidden" id="example-ni-number2">    
+                  <div class="form-group">
+                    <label class="form-label" for="title">Youngest child's date of birth</label>       
+                    <fieldset>
+                      <div class="form-date">
+                        <p class="form-hint">For example, 03 1980</p>
+                        <div class="form-group form-group-month">
+                          <label for="dob-month">Month</label>
+                          <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+                        <div class="form-group form-group-year">
+                          <label for="dob-year">Year</label>
+                          <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                        </div>
                       </div>
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-              </div>  
+                    </fieldset>
+                  </div>
+                </div>  
 
-              <label class="block-label" for="dis-5">
-              <input id="dis-5" name="is-group" type="radio" value="Carer">
-              Carer
-              </label>
-              <label class="block-label" for="dis-6">
-              <input id="dis-6" name="is-group" type="radio" value="Pregnant">
-              Pregnant
-              </label>
-              <label class="block-label" for="dis-7">
-                <input id="dis-7" name="is-group" type="radio" value="Student">
-                Student
-              </label>
-            </fieldset>
-            </form>
-          </div>
+                <label class="block-label" for="dis-5">
+                <input id="dis-5" name="is-group" type="radio" value="Carer">
+                Carer
+                </label>
+                <label class="block-label" for="dis-6">
+                <input id="dis-6" name="is-group" type="radio" value="Pregnant">
+                Pregnant
+                </label>
+                <label class="block-label" for="dis-7">
+                  <input id="dis-7" name="is-group" type="radio" value="Student">
+                  Student
+                </label>
+              </fieldset>
+            </div>
 
-          {{claim.operating_model('IS')}}
-        </div>           
-      </div>
+            {{claim.operating_model('IS')}}
+          </div>           
+        </div>
       <!-- End col -->
 
       <!-- Start col -->      
-      <div class="column-half">     
+        <div class="column-half">     
 
-        <div class="form-group">
-          <fieldset>
-            <legend><span class="form-label">Date of entitlement</span></legend>
-            <div class="form-date">
-              <p class="form-hint">For example, 01 08 2015</p>
+          <div class="form-group">
+            <fieldset>
+              <legend><span class="form-label">Date of entitlement</span></legend>
+              <div class="form-date">
+                <p class="form-hint">For example, 01 08 2015</p>
 
-              <div class="form-group form-group-day">
-                <label for="dob-day">Day</label>
-                <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label>
+                  <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                </div>
               </div>
+            </fieldset>
+          </div>
 
-              <div class="form-group form-group-month">
-                <label for="dob-month">Month</label>
-                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
+          <div class="form-group">
+            <label class="form-label" for="jobcentre">Jobcentre</label>
+            <select class="select form-control">
+              <option value="Select">Select</option>
+              <option value="Bradford">Bradford</option>
+              <option value="Derby">Derby</option>
+              <option value="Liverpool">Liverpool</option>
+              <option value="Manchester">Manchester</option>
+              <option value="Portsmouth">Portsmouth</option>
+              <option value="Southampton">Southampton</option>
+              <option value="Wolverhampton">Wolverhampton</option>    
+              <option value="Worcester">Worcester</option>                     
+            </select>     
+          </div> 
 
-              <div class="form-group form-group-year">
-                <label for="dob-year">Year</label>
-                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-              </div>
-            </div>
-          </fieldset>
+          <div class="form-group">
+            <label class="form-label" for="title">Work coach</label>
+            <select class="select form-control">
+              <option value="Select">Select</option>
+              <option value="richard.kaine">richard.kaine</option>
+              <option value="john.smith2">john.smith2</option>
+              <option value="amanda.wright">amanda.wright</option>
+              <option value="darren.moody">darren.moody</option>
+              <option value="mark.jones1">mark.jones1</option>
+              <option value="sam.steel">sam.steel</option>
+              <option value="harry.brown2">harry.brown2</option>
+              <option value="julia.granger">julia.granger</option>  
+              <option value="paul.brookes1">paul.brookes1</option>  
+              <option value="sarah.fielding">sarah.fielding</option>                
+            </select> 
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="disability-premium">Disability premium</label>
+            <fieldset class="inline">
+              <label class="block-label" for="disability-premium-yes">
+                <input id="disability-premium-yes" name="disability-premium" type="radio" value="yes">
+                Yes
+              </label>
+              <label class="block-label" for="disability-premium-no">
+                <input id="disability-premium-no" name="disability-premium" type="radio" value="no">
+                No
+              </label>
+            </fieldset>
+          </div>
+
+          <!-- Save button right-aligned for ZoomText users -->
+          <div class="form-group" id="save">
+            <br>
+            <a href="job_record_confirm" class="button" value="Save">Save</a>
+          </div>
+          <!-- End Save button -->
+
+        <!-- End column-->       
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="jobcentre">Jobcentre</label>
-          <select class="select form-control">
-            <option value="Select">Select</option>
-            <option value="Bradford">Bradford</option>
-            <option value="Derby">Derby</option>
-            <option value="Liverpool">Liverpool</option>
-            <option value="Manchester">Manchester</option>
-            <option value="Portsmouth">Portsmouth</option>
-            <option value="Southampton">Southampton</option>
-            <option value="Wolverhampton">Wolverhampton</option>    
-            <option value="Worcester">Worcester</option>                     
-          </select>     
-        </div> 
-
-        <div class="form-group">
-          <label class="form-label" for="title">Work coach</label>
-          <select class="select form-control">
-            <option value="Select">Select</option>
-            <option value="richard.kaine">richard.kaine</option>
-            <option value="john.smith2">john.smith2</option>
-            <option value="amanda.wright">amanda.wright</option>
-            <option value="darren.moody">darren.moody</option>
-            <option value="mark.jones1">mark.jones1</option>
-            <option value="sam.steel">sam.steel</option>
-            <option value="harry.brown2">harry.brown2</option>
-            <option value="julia.granger">julia.granger</option>  
-            <option value="paul.brookes1">paul.brookes1</option>  
-            <option value="sarah.fielding">sarah.fielding</option>                
-          </select> 
-        </div>
-
-        <!-- Save button right-aligned for ZoomText users -->
-        <div class="form-group" id="save">
-          <br>
-          <a href="job_record_confirm" class="button" value="Save">Save</a>
-        </div>
-        <!-- End Save button -->
-
-      <!-- End column-->       
-      </div>
+      </form>
 
     <!-- End three quarters column-->       
     </div>  
