@@ -143,6 +143,20 @@
             </div>
 
             {{claim.operating_model('IS')}}
+
+            <div class="form-group">
+              <label class="form-label" for="disability-premium">Disability premium</label>
+              <fieldset class="inline">
+                <label class="block-label" for="disability-premium-yes">
+                  <input id="disability-premium-yes" name="disability-premium" type="radio" value="yes">
+                  Yes
+                </label>
+                <label class="block-label" for="disability-premium-no">
+                  <input id="disability-premium-no" name="disability-premium" type="radio" value="no" checked="checked">
+                  No
+                </label>
+              </fieldset>
+            </div>
           </div>           
         </div>
       <!-- End col -->
@@ -204,20 +218,6 @@
               <option value="paul.brookes1">paul.brookes1</option>  
               <option value="sarah.fielding">sarah.fielding</option>                
             </select> 
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="disability-premium">Disability premium</label>
-            <fieldset class="inline">
-              <label class="block-label" for="disability-premium-yes">
-                <input id="disability-premium-yes" name="disability-premium" type="radio" value="yes">
-                Yes
-              </label>
-              <label class="block-label" for="disability-premium-no">
-                <input id="disability-premium-no" name="disability-premium" type="radio" value="no" checked="checked">
-                No
-              </label>
-            </fieldset>
           </div>
 
           <!-- Save button right-aligned for ZoomText users -->
