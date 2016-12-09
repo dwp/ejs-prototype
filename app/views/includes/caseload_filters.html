@@ -8,14 +8,14 @@
       </label>
       <div class="dropdown">
         <select name="select" class="form-control dropdown-list" id="benefit">
-          <option value="Select">Select</option>
-          <option data-type="JSA" value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
-          <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+          <option data-type="JSA" value="Select">Select</option>
+          <option data-type="JSA" value="Jobseekers Allowance" {% if jsaSelected %}selected{% endif %}>Jobseekers Allowance</option>
+          <option data-type="ESA" value="Employment Support Allowance - all" {% if esaSelected %}selected{% endif %}>Employment Support Allowance - all</option>
           <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
           <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
           <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-          <option data-type="IS" value="Income Support - all">Income Support - all</option>
-          <option data-type="IS" value="Income Support - lone parent">Income Support - lone parent</option>
+          <option data-type="IS" value="Income Support - all" {% if isSelected %}selected{% endif %}>Income Support - all</option>
+          <option data-type="IS" data-subtype="lone-parent" value="Income Support - lone parent" >Income Support - lone parent</option>
           <option data-type="IS" value="Income Support - carer">Income Support - carer</option>
           <option data-type="IS" value="Income Support- pregnant">Income Support - pregnant</option>
           <option data-type="IS" value="Income Support- student">Income Support - student</option>
@@ -188,7 +188,6 @@
       <div class="form-group">
         <label class="form-label" for="sector">
           Work programme
-          <!--   <span class="form-hint">Select an option</span> -->
         </label>
         <div class="dropdown">
           <select name="select" class="form-control dropdown-list" id="sector">
@@ -200,13 +199,26 @@
         </div>
       </div>
     </div>
+    <div class="column-quarter filter-fields" id="child-age-filter">
+      <div class="form-group">
+        <label class="form-label" for="sector">
+          Child age
+        </label>
+        <div class="dropdown">
+          <select name="child-age-select" class="form-control dropdown-list" id="child-age-select">
+            <option>Select</option>
+            <option value="1">0-1 years</option>
+            <option value="3">1-3 years</option>
+            <option value="5">4-5 years</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <div class="column-quarter filter-fields" id="day-one-evidence-filter">
       <div class="form-group">
         <label class="form-label" for="full-name">
           Day 1 evidence missing
-          <!--   <span class="form-hint">Select an option</span> -->
         </label>
-        <!--      <p>Select all that apply</p> -->
         <form>
           <fieldset>
             <legend class="visuallyhidden">Missing day one evidence to search by</legend>

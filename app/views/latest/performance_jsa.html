@@ -17,10 +17,9 @@
 <script src="/public/javascripts/caseload.js"></script>
 
 <script>
-  $(document).ready(function(){
+  $(function(){
     $('#example').dataTable().yadcf([]);
   });
-  $('#example').removeClass('class');
 </script>
 
 <main id="content" role="main">
@@ -36,7 +35,7 @@
         <summary><span class="summary">Show/hide filters</span></summary>   
         <!-- End 3rd row of filters -->
 
-        {% set jobseekerBenefitSelected = true %}
+        {% set jsaSelected = true %}
         {% include "includes/caseload_filters.html" %}
       </details>
 
@@ -215,6 +214,3 @@
   </div>
 </main>
 {% endblock %}
-
-
-
