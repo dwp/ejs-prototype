@@ -10,64 +10,56 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
 
- <div class="grid-row">        
+  <div class="grid-row">        
   
     {% include "includes/left_nav_settings.html" %}
 
+    <!-- Start three quarters container for main content columns -->
+    <div class="column-three-quarters">
+      <h1 class="heading-large">&nbsp;&nbsp;Settings - delete record</h1>
 
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
+      {% set currentSettingsPage = 'maintainRecord' %}
+      {% include "includes/settings_menu.html" %}
+      
+      <div class="column">
+        <div class="column-half delete_record">   
 
-         <h1 class="heading-large">&nbsp;&nbsp;Settings - delete record</h1>
+          <div class="searchfield">
+            <form action="amend_user" method="get" class="form">
+              <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
+              <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="JC628596A">
+              <a href="amend_user">
+                <button id="search-submit" input="" type="submit" class="search-submit">Search</button>
+              </a>
+            </form>  
+          </div>
 
-    {% set currentSettingsPage = 'maintainRecord' %}
-    {% include "includes/settings_menu.html" %}
-            <br>
-
-            <div class="column">
-               <div class="column-half delete_record">   
-
-                    <div class="searchfield">
-                      <form action="amend_user" method="get" class="form">
-                        <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
-                        <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="JC628596A">
-                        <a href="amend_user"><button id="search-submit" input="" type="submit" class="search-submit">Search</button></a>
-                        <p id="slowsearch" class="slow-search-msg" style="display:none">Please press ENTER to search</p>
-                      </form>  
-                    </div>
-
-                     <br>
-                    <h2 class="heading-small">Claimant details</h2>
-                        <table>
-                          <tbody>
-                              <tr>
-                                  <td>Name:</td>
-                                  <td colspan="2">Mr J Smith</td>
-                              </tr>
-                              <tr>
-                                  <td>National Insurance:</td>
-                                  <td colspan="2">JC628596A</td>
-                              </tr>  
-                              <tr>
-                                  <td>Status:</td>
-                                  <td>Dormant</td>
-                                  <td><a href="amend_record">Change</a></td>
-                              </tr>
-                          </tbody>
-                        </table> 
-                        <br>
-
-                  </div>
-              </div>     
-      <!-- End column -->
-
-    <!-- End row-->       
-      </div>
-
-
+          <br>
+          
+          <h2 class="heading-small">Claimant details</h2>
+          <table>
+            <tbody>
+              <tr>
+                  <td>Name:</td>
+                  <td colspan="2">Mr J Smith</td>
+              </tr>
+              <tr>
+                  <td>National Insurance:</td>
+                  <td colspan="2">JC628596A</td>
+              </tr>  
+              <tr>
+                  <td>Status:</td>
+                  <td>Dormant</td>
+                  <td><a href="amend_record">Change</a></td>
+              </tr>
+            </tbody>
+          </table> 
+        </div>
+      </div>     
+    </div>
+  </div>
 </main>
 {% endblock %}
 
