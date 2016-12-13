@@ -10,6 +10,10 @@
 
 {% block content %}
 
+<script src="/public/javascripts/jquery.min.js"></script>
+<script src="/public/javascripts/deleteRecordView.js"></script>
+
+
 <main id="content" role="main">
 
   <div class="grid-row">        
@@ -22,43 +26,120 @@
 
       {% set currentSettingsPage = 'maintainRecord' %}
       {% include "includes/settings_menu.html" %}
-      
-      <div class="column">
-        <div class="column-half delete_record">   
 
-          <div class="searchfield">
-            <form action="amend_user" method="get" class="form">
-              <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
-              <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="JC628596A">
-              <a href="amend_user">
-                <button id="search-submit" input="" type="submit" class="search-submit">Search</button>
-              </a>
-            </form>  
-          </div>
+      <div class="column-half delete_record">
+        <div class="searchfield">
+          <form action="amend_user" method="get" class="form">
+            <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
+            <input type="search" id="nino" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus" value="JC628596A">
+            <a href="amend_user">
+              <button id="search-submit" input="" type="submit" class="search-submit">Search</button>
+            </a>
+          </form>  
+        </div>
+      </div>
 
-          <br>
-          
-          <h2 class="heading-small">Claimant details</h2>
-          <table>
+      <div class="column-two-thirds">
+        <h2 class="heading-small">Claimant Details</h2>
+        <form id="reopenClaim" accept-charset="UTF-8">
+          <div id="content" role="main">
+          <table style="table-layout: fixed;" id="deleteClaimantTable">
+            <colgroup>
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+            </colgroup>
             <tbody>
               <tr>
-                  <td>Name:</td>
-                  <td colspan="2">Mr J Smith</td>
+                  <td colspan="2">Name: </td>
+                  <td colspan="2">Mrs A Test-24872</td>
               </tr>
               <tr>
-                  <td>National Insurance:</td>
-                  <td colspan="2">JC628596A</td>
-              </tr>  
-              <tr>
-                  <td>Status:</td>
-                  <td>Dormant</td>
-                  <td><a href="amend_record">Change</a></td>
+                  <td colspan="2">National Insurance: </td>
+                  <td colspan="2">RB036676C</td>
+                  <td><input id="claimantId" name="claimantId" value="2" type="hidden"></td>
+              </tr>
+              <tr id="delete-button" style="display: table-row;">
+                  <td colspan="2">&nbsp;</td>
+                  <td colspan="2">
+                    <a id="deleteClaimantButton" class="button">Delete Claimant</a>
+                  </td>
+              </tr>
+              <tr id="confirm-delete" style="display:none">
+                <td colspan="2">
+                  <div id="confirmDelete" class="form-error validation-message">
+                    Are you sure you wish to delete this claimant?
+                  </div>
+                </td>
+                <td colspan="2">
+                  <a class="button" href="/latest/delete_record?deleteSuccessful=true">
+                    Yes
+                  </button>
+                  <a class="button" id="cancelDeleteLink">No</a>
+                </td>
               </tr>
             </tbody>
-          </table> 
-        </div>
-      </div>     
-    </div>
+          </table>
+          </div>
+        </form>
+      </div>
+
+      <div class="column-two-thirds">
+        <h2 class="heading-small">Last Closed Claim</h2>
+        <form id="reopenClaim" accept-charset="UTF-8">
+          <div id="content" role="main">
+            <table style="table-layout: fixed;" id="reopenClaimantTable">
+              <colgroup>
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td colspan="2">Benefit Type: </td>
+                  <td colspan="2">Jobseeker's Allowance</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Date of entitlement: </td>
+                  <td colspan="2">25/08/2016</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Last Effective Date: </td>
+                  <td colspan="2">
+                    <div id="lastED">20/09/2016</div>
+                  </td>
+                  <td>
+                    <input id="claimId" name="claimId" value="897" type="hidden">
+                  </td>
+                </tr>
+                <tr id="reopen-button">
+                  <td colspan="2">&nbsp;</td>
+                  <td colspan="2">
+                    <a id="reopenClaimButton" class="button">Reopen Claim</a>
+                  </td>
+                </tr>
+                <tr id="confirm-reopen" style="display: none;">
+                  <td colspan="2">
+                    <div id="confirmReopen" class="form-error validation-message">
+                      Are you sure you wish to reopen this claim?
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <a class="button" href="/latest/delete_record?reopenSuccessful=true">
+                      Yes
+                    </button>
+                    <a class="button" href="">No</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+
+    </div>     
   </div>
 </main>
 {% endblock %}

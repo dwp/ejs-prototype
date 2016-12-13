@@ -22,7 +22,20 @@
       {% include "includes/settings_menu.html" %}  
 
       <div class="column">
-        <div class="column-half delete_record">   
+        <div class="column-half delete_record"> 
+
+          {% if getData.reopenSuccessful %}
+            <div class="form-error validation-message">
+                Claim successfully reopened
+            </div>
+          {% endif %}
+
+          {% if getData.deleteSuccessful %}
+            <div class="form-error validation-message">
+                Claimant successfully deleted
+            </div>
+          {% endif %}
+
           <div class="searchfield">
             <form action="delete_record_view" method="get" class="form">
               <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
