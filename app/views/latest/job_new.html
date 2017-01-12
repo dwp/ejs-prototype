@@ -13,11 +13,11 @@
 
 <main id="content" role="main">
     
-  {% set currentPage = 'createRecord' %}
+  {% set currentPage = 'createNew' %}
   {% include "includes/main_nav.html" %}
 
   <div class="main-content">
-    <h1 class="heading-large">Create claimant</h1>
+    <h1 class="heading-large">Create claimant - page 1 of 3</h1>
 
     <form>
       <div class="grid-row">
@@ -28,18 +28,6 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="title">Title</label>
-            <select class="form-control" id="title">
-              <option value="Select">Select</option>
-              <option value="Mr">Mr</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Miss">Miss</option>
-              <option value="Ms">Ms</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group initial">
             <label class="form-label" for="inital">Initial</label>
             <input class="form-control" id="inital" type="text">
           </div> 
@@ -97,8 +85,7 @@
 
           <div class="form-group">
             <fieldset>
-              <legend>
-                <span class="form-label">Postcode</span>
+              <legend><span class="form-label">Postcode</span>
               </legend>
               
               <div class="form-postcode">
@@ -126,11 +113,15 @@
               </label>
             </fieldset>
           </div>   
-              
+        </div>       
+      </div>
+
+      <div class="grid-row">
+        <div class="column-full">
           <div class="form-group" id="continue">
             <a href="job_new_step2" class="button" value="Continue">Continue</a>
           </div>
-        </div>       
+        </div>
       </div>
     </form>
   </div>
