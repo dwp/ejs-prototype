@@ -1,0 +1,12 @@
+@import 'admin/header';
+
+@import 'admin/main-nav';
+
+// set the content width
+#content {
+  max-width: 100%;
+}
+
+.main-content {
+  padding:0 em(40);
+}

@@ -1,0 +1,36 @@
+// global header
+#global-header {
+  .header-wrapper {
+    max-width: 100%;
+    padding: em(15) em(45)
+  }
+
+  // hide the crown logo
+  #logo {
+    background: black;
+  }
+
+  #sign-out-menu {
+    margin-top: 5px;
+    text-align: right;
+    color: white;
+    font-size: 16px;
+
+    ul {
+      padding-top: 4px;
+
+      li {
+        display: inline;
+
+        a.bold-nav-link{
+          font-weight: bold;
+        }
+      }
+    }
+
+    a, a:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// horizontal nav menu
+.nav-horizontal{
+  background-color: $grey-3;
+  overflow: hidden;
+  
+  .main-nav-wrapper{
+    width: 100%;
+    
+    ul {
+      padding-left: em(40);
+      float: left;
+      margin: 0;
+    }
+    
+    li{
+      float: left;
+
+      a {
+        display: inline-block;
+        padding: em(15);
+        text-decoration: none;
+        color: $black;
+        margin-right: none;
+        margin-left: 0;
+      }
+      &.selected a, &.selected a:hover {
+        background-color: $turquoise;
+        font-weight: bold;
+        color: $white;
+      }
+    }
+  }
+}
