@@ -10,206 +10,238 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
+  
+  {% set currentPage = 'createNew' %}
+  {% include "includes/main_nav.html" %}
 
- <div class="grid-row">        
+  <div class="main-content">        
 
-    {% include "includes/left_nav_settings.html" %}
+    <h1 class="heading-large">Edit claimant record - Mr J Smith</h1>
 
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-
-      <h1 class="heading-large">&nbsp;&nbsp;Edit claimant record - Mr J Smith</h1>
-
+    <div class="grid-row">
       {% set currentClaimantPage = 'edit' %}
-      {% include "includes/claimant_menu.html" %}  
+      {% include "includes/summary_nav.html" %}
 
-    <div class="column-half">    
+      <form method="post" class="group" id="form">
 
-        <form method="post" class="group" id="form" data-parsley-validate>
+        <div class="column-third">    
+          <div class="form-group">
+            <label class="form-label" for="nino">National Insurance number</label>
+            <input class="form-control" id="nino" type="text" value="JC628596A">
+          </div>
 
-            <div class="form-group">
-                <label class="form-label" for="nino">National Insurance number</label>
-                <input class="form-control" id="nino" type="text" value="JC628596A">
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="title">Title</label>
+            <select class="form-control" id="title">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Dr">Dr</option>
+            </select>
+          </div>
 
-            <div class="form-group title">
-              <label class="form-label" for="title">Title</label>
-              <select class="form-control" id="title">
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
-                  <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
+          <div class="form-group">
+            <label class="form-label" for="inital">Initial</label>
+            <input class="form-control" id="inital" type="text" value="J">
+          </div> 
 
-              </select>
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="Surname">Surname</label>
+            <input class="form-control" id="Surname" type="text" value="Smith">
+          </div>  
 
-            <div class="form-group initial">
-              <label class="form-label" for="inital">Initial</label>
-              <input class="form-control" id="inital" type="text" value="J">
-            </div> 
+          <div class="form-group"> 
+            <fieldset class="inline">
+              <legend class="form-label">Gender</legend>
+              <label class="block-label selection-button-radio" for="male">
+                <input id="male" name="male" type="radio" value="male" checked>
+                Male
+              </label>
+              <label class="block-label selection-button-radio" for="female">
+                <input id="female" name="female" type="radio" value="female">
+                Female
+              </label>
+            </fieldset>
+          </div> 
 
-            <div class="form-group">
-              <label class="form-label" for="Surname">Surname</label>
-              <input class="form-control" id="Surname" type="text" value="Smith">
-            </div>  
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label">Date of birth</span>
+              </legend>
+              <div class="form-date">
+                <p class="form-hint">For example, 03 1980</p>
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="08">
+                </div>
 
-             <div class="form-group"> 
-              <fieldset class="inline">
-                  <legend class="form-label">Gender</legend>
-                  <label class="block-label" for="male">
-                    <input id="male" name="male" type="radio" value="male" checked>
-                    Male
-                  </label>
-                  <label class="block-label" for="female">
-                    <input id="female" name="female" type="radio" value="female">
-                    Female
-                  </label>
-              </fieldset>
-            </div> 
-
-            <div class="form-group">
-                  <fieldset>
-                    <legend>
-                      <span class="form-label">
-                        Date of birth
-                      </span>
-                    </legend>
-                    <div class="form-date">
-                      <p class="form-hint">For example, 03 1980</p>
-                      <div class="form-group form-group-month">
-                        <label for="dob-month">Month</label>
-                        <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="08">
-                      </div>
-
-                      <div class="form-group form-group-year">
-                        <label for="dob-year">Year</label>
-                        <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="1981">
-                      </div>
-                    </div>
-                  </fieldset>
-              </div> 
-
-      </div>
-      <!-- End col -->
-
-      <!-- Start col -->      
-      <div class="column-half">    
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
-              <input class="form-control" id="email" type="text" value="john_smith@gmail.com"><br>
-                  <label class="block-label" for="contact">
-                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
-                  Do not contact
-                </label>  
-            </div>  
-
-          
-            <div class="form-group">
-              <label class="form-label" for="mobile">Mobile number</label>
-              <input class="form-control" id="mobile" type="text" value="07585747358"><br>
-                  <label class="block-label" for="contact">
-                  <input id="contact" name="contact" type="checkbox" value="Do not contact">
-                  Do not contact
-                </label>  
-            </div>  
-
-       <!--     <div class="form-group">
-              <label class="form-label" for="postcode">Postcode</label>
-              <input class="form-control" id="postcode" type="text">
-            </div>   -->
-
-            <div class="form-group">
-                  <fieldset>
-
-                    <legend>
-                      <span class="form-label">
-                        Postcode
-                      </span>
-                    </legend>
-                   
-                    <div class="form-postcode">
-                        <p class="form-hint">For example, WR1&nbsp;&nbsp;5</p>
-                          <div class="form-group form-group-area">
-                     <!--     <label for="area">Area code</label> -->
-                          <input class="form-control" id="area" value="WR2">
-                        </div>
-                        <div class="form-group form-group-local">
-                     <!--     <label for="local">Local code</label> -->
-                          <input class="form-control" id="local" value="3">
-                        </div>
-                    </div>
-                   </fieldset>
-
-               <!--     <details>
-                      <summary><span class="summary">Why are characters hidden?</span></summary>
-                      <div class="panel panel-border-narrow">
-                        <p>
-                          For security, the last 2 characters are hidden.
-                        </p>
-                      </div>
-                    </details> -->
-
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014" value="1981">
+                </div>
               </div>
+            </fieldset>
+          </div>
+        </div>
+           
+        <div class="column-third">    
+          <div class="form-group-related">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-control" id="email" type="text" value="john_smith@gmail.com">
+          </div>
+          <div class="form-group">
+            <label class="block-label selection-button-radio" for="contact">
+              <input id="contact" name="contact" type="checkbox" value="Do not contact">
+              Do not contact
+            </label>  
+          </div>  
 
-         <!--   <div class="form-group">  
-              <label class="form-label" for="mobile">Language</label>
-                <label class="block-label" for="contact1">
-                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
-                   Welsh speaker
-                  </label>
-             </div>   -->
+          <div class="form-group-related">
+            <label class="form-label" for="mobile">Mobile number</label>
+            <input class="form-control" id="mobile" type="text" value="07585747358">
+          </div>
+          <div class="form-group">
+            <label class="block-label selection-button-radio" for="contact">
+              <input id="contact" name="contact" type="checkbox" value="Do not contact">
+              Do not contact
+            </label>  
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label">Postcode</span>
+              </legend>
+              
+              <div class="form-postcode">
+                <p class="form-hint">For example, WR1&nbsp;&nbsp;5</p>
+                <div class="form-group form-group-area">
+                  <input class="form-control" id="area" value="WR2">
+                </div>
+                <div class="form-group form-group-local">
+                  <input class="form-control" id="local" value="3">
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
           <div class="form-group">  
-            <!--  <label class="form-label" for="mobile">Language (optional)</label> -->
-              <label class="form-label" for="mobile">Prefers communications in Welsh</label>
-                <fieldset class="inline">
-                    <label class="block-label" for="yes">
-                      <input id="yes" name="yes" type="radio" value="yes">
-                      Yes
-                    </label>
-                    <label class="block-label" for="no">
-                      <input id="no" name="no" type="radio" value="no" selected>
-                      No
-                    </label>
-                </fieldset>
-              <!--  <label class="block-label" for="contact1">
-                    <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
-                   Welsh speaker
-                  </label> -->
-             </div>  
+            <label class="form-label" for="mobile">Prefers communications in Welsh</label>
+            <fieldset class="inline">
+              <label class="block-label selection-button-radio" for="yes">
+                <input id="yes" name="yes" type="radio" value="yes">
+                Yes
+              </label>
+              <label class="block-label selection-button-radio" for="no">
+                <input id="no" name="no" type="radio" value="no" checked>
+                No
+              </label>
+            </fieldset>
+          </div>  
+        </div>
 
-                 <!-- Continue button right-aligned for ZoomText users -->
-                  <div class="form-group" id="continue">
-                     <br>
-                     <a href="claimant_details" class="button" value="Continue">Continue</a>
-                  </div>
-                 <!-- End Continue button --> 
-
-
-       <!-- End column-->       
-       </div>
-
-          <!-- <div class="column">
-                  <div class="form-group" id="save">
-                     <a href="claimant_details" class="button" value="Continue">Continue</a>
-                  </div>
-                </div> -->
-
-          </form>      
-
-  <!-- End three quarters column-->       
-   </div>  
-
- 
-
-    <!-- End row-->       
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label">Disadvantage markers</label>
+            <fieldset>
+              <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+              <label class="block-label selection-button-checkbox" for="dis-8">
+                <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person">
+                Disabled person
+              </label>
+              <label class="block-label selection-button-checkbox" for="dis-2">
+                <input id="dis-2" name="dis-2" type="checkbox" value="English for speakers of other languages">
+                English for speakers of other languages
+              </label>
+                  <label class="block-label selection-button-checkbox" for="dis-3">
+                <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender" checked>
+                Ex-offender
+              </label>
+                  <label class="block-label selection-button-checkbox" for="dis-4">
+                <input id="dis-4" name="dis-4" type="checkbox" value="Homeless" checked>
+                Homeless
+              </label>
+              <label class="block-label selection-button-checkbox" for="dis-1">
+                <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
+                Literacy/numeracy
+              </label>
+              <label class="block-label selection-button-checkbox" for="dis-6">
+                <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs">
+                Mis-user of drugs
+              </label>
+              <label class="block-label selection-button-checkbox" for="dis-7">
+                <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol">
+                Mis-user of alcohol
+              </label>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="jobcentre">Industry sector</label>
+            <select class="select form-control">
+              <option value="Select">Select</option>
+              <option value="All">All</option>
+              <option value="Accounting/finance">Accounting/finance</option>
+              <option value="Administrative/clerical">Administrative/clerical</option>
+              <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+              <option value="Business/strategic management">Business/strategic management</option>
+              <option value="Creative/design">Creative/design</option>
+              <option value="Customer support/client care">Customer support/client care</option>
+              <option value="Editorial/writing">Editorial/writing</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Food services/hospitality">Food services/hospitality</option>
+              <option value="Human resources">Human resources</option>
+              <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
+              <option value="IT/software development">IT/software development</option>
+              <option value="Legal">Legal</option>
+              <option value="Logistics/transportation">Logistics/transportation</option>
+              <option value="Marketing/product">Marketing/product</option>
+              <option value="Medical/health">Medical/health</option>
+              <option value="Other">Other</option>
+              <option value="Production/operations">Production/operations</option>
+              <option value="Project/program management">Project/program management</option>
+              <option value="Quality assurance/safety">Quality assurance/safety</option>
+              <option value="Retail">Retail</option>
+              <option value="R&amp;D/science">R&amp;D/science</option>
+              <option value="Sales/business development">Sales/business development</option>
+              <option value="Security/protective services">Security/protective services</option>
+              <option value="Training/instruction">Training/instruction</option>
+              <option value="Warehousing">Warehousing</option>  
+            </select>     
+          </div>
+              
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">Work programme</legend>
+              <div class="form-group form-group-compound">
+                <label class="block-label selection-button-radio selected" for="radio-indent-3">
+                  <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
+                    Pre-work programme
+                </label>
+                <label class="block-label selection-button-radio" for="radio-indent-2">
+                  <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    Work programme
+                </label>
+                <label class="block-label selection-button-radio" for="radio-indent-4">
+                  <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    Work programme completer
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>      
+    </div> 
+    <div class="grid-row">
+      <div class="column-full">
+        <div class="form-group" id="continue">
+          <a href="job_record_confirm" class="button" value="Continue">Continue</a>
+        </div>
       </div>
-
-
+    </div>     
+  </div>
 </main>
 {% endblock %}
 
