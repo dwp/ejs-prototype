@@ -12,43 +12,44 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
-  <div class="grid-row">
-    {% include "includes/left_nav_settings.html" %}
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-      <h1 class="heading-large">&nbsp;&nbsp;Claim - Mr J Smith</h1> 
-      {% set currentClaimantPage = 'claim' %} 
-      {% include "includes/claimant_menu.html" %}
-      <div class="column-half">
+
+  {% include "includes/main_nav.html" %}   
+
+  <div class="main-content">
+    <h1 class="heading-large">Claim - Mr J Smith</h1>
+
+    <div class="grid-row">
+      {% set currentClaimantPage = 'claim' %}
+      {% include "includes/summary_nav.html" %}  
+      <div class="column-third">
         <div class="form-group">
           <fieldset>
             <legend class="form-label">Benefit type</legend>
-            <label class="block-label disabled" for="JSA">
+            <label class="block-label disabled selection-button-radio" for="JSA">
               <input id="JSA" name="JSA" type="radio" value="JSA" disabled> Jobseekers Allowance
             </label>
             <br>
-            <label class="block-label disabled" for="ESA">
+            <label class="block-label disabled selection-button-radio" for="ESA">
               <input id="ESA" name="ESA" type="radio" value="ESA" disabled> Employment Support Allowance
             </label>
             <br>
-            <label class="block-label" for="IS">
+            <label class="block-label selection-button-radio" for="IS">
               <input id="IS" name="IS" type="radio" value="IS" checked> Income Support
             </label>
           </fieldset>
         </div>
-        <div class="panel-indent" id="example-ni-number1">
+        <div class="panel" id="example-ni-number1">
           <div class="form-group">
             <label class="form-label" for="title">Income Support options</label>
             <form>
               <fieldset>
                 <legend class="visuallyhidden">Income Support options</legend>
-                <label class="block-label" for="dis-4" data-target="example-ni-number2">
+                <label class="block-label selection-button-radio" for="dis-4" data-target="example-ni-number2">
                   <input id="dis-4" name="is-group" type="radio" value="Lone parent" aria-controls="example-ni-number2"> Lone parent
                 </label>
 
-                <div class="panel-indent js-hidden" id="example-ni-number2">
+                <div class="panel js-hidden" id="example-ni-number2">
                   <div class="form-group">
                     <label class="form-label" for="title">Date of youngest child's 5th birthday</label>
                     <fieldset>
@@ -66,14 +67,14 @@
                     </fieldset>
                   </div>
                 </div>
-                <label class="block-label" for="dis-5">
+                <label class="block-label selection-button-radio" for="dis-5">
                   <input id="dis-5" name="is-group" type="radio" value="Carer" checked> Carer
                 </label>
-                <label class="block-label" for="dis-6">
+                <label class="block-label selection-button-radio" for="dis-6">
                   <input id="dis-6" name="is-group" type="radio" value="Pregnant"> Pregnant
                 </label>
                 </label>
-                <label class="block-label" for="dis-7">
+                <label class="block-label selection-button-radio" for="dis-7">
                   <input id="dis-7" name="is-group" type="radio" value="Student"> Student
                 </label>
               </fieldset>
@@ -84,13 +85,11 @@
         </div>
       </div>
       <!-- End col -->
-      <div class="column-half">
+      <div class="column-third">
         <div class="form-group">
           <fieldset>
             <legend>
-              <span class="form-label">
-                        Date of entitlement
-                      </span>
+              <span class="form-label">Date of entitlement</span>
             </legend>
             <div class="form-date">
               <p class="form-hint">For example, 01 08 2015</p>
@@ -158,6 +157,8 @@
             <option value="sarah.fielding">sarah.fielding</option>
           </select>
         </div>
+      </div>
+      <div class="column-third">
         <div class="form-group">
           <fieldset>
             <legend>
@@ -197,15 +198,17 @@
             <option value="To Pension">To Pension</option>
           </select>
         </div>
-        <!-- Save button right-aligned for ZoomText users -->
+      </div>    
+    </div>
+    <div class="grid-row">
+      <div class="column-third">
         <div class="form-group" id="save">
           <br>
           <a href="job_record_confirm_dormant" class="button" value="Save">Save</a>
         </div>
-        <!-- End save button -->
       </div>
     </div>
-    <script src="/public/javascripts/jquery-1.11.0.min.js"></script>
+  </div>
 </main>
 
 {% endblock %}
