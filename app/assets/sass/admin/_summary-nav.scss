@@ -1,9 +1,9 @@
 .summary-nav-wrapper {
-  border-bottom: 1px solid $border-colour;
   margin-bottom: 20px;
 
   ul {
     display: block;
+    border-bottom: 1px solid $border-colour;
 
     li {
       background: $white;
