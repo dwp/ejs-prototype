@@ -1,0 +1,7 @@
+.filters-showing::before {
+  content: "\002d ";
+}
+
+.filters-hidden::before {
+  content: "\002b ";
+}
