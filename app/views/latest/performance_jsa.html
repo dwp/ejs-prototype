@@ -31,16 +31,16 @@
     <h1 class="heading-large">Cohort month April 2015 - Jobseeker's Allowance</h1>
 
     <div class="grid-row">
-      <details>
-        <summary><span class="summary">Show/hide filters</span></summary>   
-      
-        {% set jobseekerBenefitSelected = true %}
-        {% include "includes/caseload_filters.html" %}
-      </details>
+      <div class="column-full">
+        <details>
+          <summary><span class="summary">Show/hide filters</span></summary>   
+        
+          {% set jobseekerBenefitSelected = true %}
+          {% include "includes/caseload_filters.html" %}
+        </details>
+      </div>
 
-      <div class="column">   
-        <div id="container">
-
+      <div class="column-full">   
         <p class="search_string">You searched: JSA > 18-24 > April 2015 > Homeless > ESOL > Live > Pre-work programme > Logistics{%if getData.provisionSelected %} > Work experience{%endif%}</p>
 
         <input class="button copy_email" value="Copy selected emails" disabled="disabled">
@@ -205,14 +205,24 @@
                 <td>30/01/2016</td>
               {%endif%}
             </tr>
-           </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div> 
     </div>  
   </div>
 </main>
 {% endblock %}
 
+{% block page_scripts %}
+  <script src="/public/javascripts/jquery-ui.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
+  <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+  <script src="/public/javascripts/caseload.js"></script>
 
-
+  <script>
+    $(document).ready(function(){
+      $('#example').dataTable().yadcf([]);
+    });
+    $('#example').removeClass('class');
+  </script>
+{% endblock %}
