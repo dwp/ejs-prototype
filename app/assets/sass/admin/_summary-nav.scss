@@ -22,7 +22,11 @@
         border-bottom: none;
         position: relative;
         bottom: -1px;
-        padding: 1px 15px 6px 12px;
+        padding: 0px 15px 6px 12px;
+
+        a{
+          padding:10px 0;
+        }
       }
 
       a {
@@ -34,10 +38,6 @@
         &:visited{
           color: $govuk-blue;
         }
-      }
-
-      i{
-        color: $red;
       }
     }
   }
