@@ -1,305 +1,295 @@
-<div class="column new_filters">
-  <br>
-  <div class="column-quarter filter-fields">
-    <div class="form-group">
-      <label class="form-label" for="benefit">
-        Benefit type
-        <!--   <span class="form-hint">Select an option</span> -->
-      </label>
-      <div class="dropdown">
-        <select name="select" class="form-control dropdown-list" id="benefit">
-          <option value="Select">Select</option>
-          <option data-type="JSA" value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
-          <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - all</option>
-          <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-          <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-          <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-          <option data-type="IS" value="Income Support - all">Income Support - all</option>
-          <option data-type="IS" value="Income Support - lone parent">Income Support - lone parent</option>
-          <option data-type="IS" value="Income Support - carer">Income Support - carer</option>
-          <option data-type="IS" value="Income Support- pregnant">Income Support - pregnant</option>
-          <option data-type="IS" value="Income Support- student">Income Support - student</option>
-        </select>
+<div>
+  <div class="grid-row">
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="benefit">Benefit type</label>
+        <div class="dropdown">
+          <select name="select" class="form-control dropdown-list" id="benefit">
+            <option value="Select">Select</option>
+            <option data-type="JSA" value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
+            <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - all</option>
+            <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
+            <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
+            <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
+            <option data-type="IS" value="Income Support - all">Income Support - all</option>
+            <option data-type="IS" value="Income Support - lone parent">Income Support - lone parent</option>
+            <option data-type="IS" value="Income Support - carer">Income Support - carer</option>
+            <option data-type="IS" value="Income Support- pregnant">Income Support - pregnant</option>
+            <option data-type="IS" value="Income Support- student">Income Support - student</option>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="column-quarter filter-fields">
-    <div class="form-group">
-      <label class="form-label" for="full-name">
-        Live/dormant
-        <!--   <span class="form-hint">Select an option</span> -->
-      </label>
-      <fieldset class="inline">
-        <label for="live">
-          <input id="live" name="live" type="radio" value="Live"> Live
-        </label>
-        <label for="dormant">
-          <input id="dormant" name="dormant" type="radio" value="Dormant"> Dormant
-        </label>
-      </fieldset>
-    </div>
-  </div>
-  <div class="column-quarter filter-fields">
-    <div class="form-group">
-      <label class="form-label" for="months">
-        Cohort month
-        <!--   <span class="form-hint">Select an option</span> -->
-      </label>
-      <div class="dropdown">
-        <select name="select" class="form-control dropdown-list" id="months">
-          <option value="All" selected="">All</option>
-          <option value="January 2016">January 2016</option>
-          <option value="December 2015">December 2015</option>
-          <option value="November 2015">November 2015</option>
-          <option value="October 2015">October 2015</option>
-          <option value="September 2015">September 2015</option>
-          <option value="August 2015">August 2015</option>
-          <option value="July 2015">July 2015</option>
-          <option value="June 2015">June 2015</option>
-          <option value="May 2015">May 2015</option>
-          <option value="April 2015">April 2015</option>
-          <option value="March 2015">March 2015</option>
-          <option value="February 2015">February 2015</option>
-          <option value="January 2015">January 2015</option>
-          <option value="Out of cohort">Out of cohort</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <div class="column-quarter filter-fields">
-    <div class="form-group">
-      <label class="form-label" for="cohorts">
-        Target weeks
-        <!--   <span class="form-hint">Select an option</span> -->
-      </label>
-      <div class="dropdown">
-        <select name="select" class="form-control dropdown-list" id="cohorts">
-          <option value="All">All</option>
-          <option value="13 weeks">13 weeks</option>
-          <option value="26 weeks">26 weeks</option>
-          <option value="39 weeks">39 weeks</option>
-          <option value="52 weeks">52 weeks</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <!-- End 1st row of filters -->
-  <!-- <details>
-      <summary><span class="summary">Advanced search</span></summary>    
-      <br>  -->
-  <span class="linksummary">
-          <a class='filterlink filters-hidden' href='javascript:toggleFilters();' id='filterToggle'>
-          <u>Show/hide options</u></a>
-        </span>
-  <br>
-  <br>
-  <!-- Start show/hide div -->
-  <div id="filters-holder" style="display: none;">
-    <!-- Start 2nd row of filters -->
-    <div class="column-quarter filter-fields filter-form">
+    <div class="column-quarter">
       <div class="form-group">
         <label class="form-label" for="full-name">
-          Barriers
-          <!--   <span class="form-hint">Select an option</span> -->
+          Live/dormant
         </label>
-        <div class="filter checkbox-filter js-openable-filter" tabindex="0">
-          <div class="checkbox-container" id="organisations-filter">
-            <!--      <p>Select all that apply</p> -->
-            <form>
-              <fieldset>
-                <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
-                <label for="dis-2">
-                  <input id="dis-2" name="dis-2" type="checkbox" value="ESOL"> ESOL
-                </label>
-                <br>
-                <label for="dis-3">
-                  <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender"> Ex-offender
-                </label>
-                <br>
-                <label for="dis-4">
-                  <input id="dis-4" name="dis-4" type="checkbox" value="Homeless"> Homeless
-                </label>
-                <br>
-                <label for="dis-1">
-                  <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy"> Literacy/numeracy
-                </label>
-                <br>
-                <!--  <label for="dis-5">
-                                      <input id="dis-5" name="dis-5" type="checkbox" value="Extended period of sickness">
-                                      Extended period of sickness
-                                    </label> -->
-                <label class="disabled" for="dis-8">
-                  <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled> Disabled person
-                </label>
-                <br>
-                <label class="disabled" for="dis-6">
-                  <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled> Mis-user of drugs
-                </label>
-                <br>
-                <label class="disabled" for="dis-7">
-                  <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled> Mis-user of alcohol
-                </label>
-              </fieldset>
-            </form>
+        <fieldset class="inline">
+          <label for="live">
+            <input id="live" name="live" type="radio" value="Live"> Live
+          </label>
+          <label for="dormant">
+            <input id="dormant" name="dormant" type="radio" value="Dormant"> Dormant
+          </label>
+        </fieldset>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="months">
+          Cohort month
+        </label>
+        <div class="dropdown">
+          <select name="select" class="form-control dropdown-list" id="months">
+            <option value="All" selected="">All</option>
+            <option value="January 2016">January 2016</option>
+            <option value="December 2015">December 2015</option>
+            <option value="November 2015">November 2015</option>
+            <option value="October 2015">October 2015</option>
+            <option value="September 2015">September 2015</option>
+            <option value="August 2015">August 2015</option>
+            <option value="July 2015">July 2015</option>
+            <option value="June 2015">June 2015</option>
+            <option value="May 2015">May 2015</option>
+            <option value="April 2015">April 2015</option>
+            <option value="March 2015">March 2015</option>
+            <option value="February 2015">February 2015</option>
+            <option value="January 2015">January 2015</option>
+            <option value="Out of cohort">Out of cohort</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="column-quarter">
+      <div class="form-group">
+        <label class="form-label" for="cohorts">
+          Target weeks
+        </label>
+        <div class="dropdown">
+          <select name="select" class="form-control dropdown-list" id="cohorts">
+            <option value="All">All</option>
+            <option value="13 weeks">13 weeks</option>
+            <option value="26 weeks">26 weeks</option>
+            <option value="39 weeks">39 weeks</option>
+            <option value="52 weeks">52 weeks</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-quarter">
+      <span>
+        <a href='javascript:toggleFilters();' id='filterToggle'><u>Show/hide options</u></a>    
+      </span>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div id="filters-holder" style="display: none;">
+    <div class="grid-row" >
+      <div class="column-quarter filter-fields filter-form">
+        <div class="form-group">
+          <label class="form-label" for="full-name">
+            Barriers
+          </label>
+          <div class="filter checkbox-filter js-openable-filter" tabindex="0">
+            <div class="checkbox-container" id="organisations-filter">
+              <form>
+                <fieldset>
+                  <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+                  <label for="dis-2">
+                    <input id="dis-2" name="dis-2" type="checkbox" value="ESOL"> ESOL
+                  </label>
+                  <br>
+                  <label for="dis-3">
+                    <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender"> Ex-offender
+                  </label>
+                  <br>
+                  <label for="dis-4">
+                    <input id="dis-4" name="dis-4" type="checkbox" value="Homeless"> Homeless
+                  </label>
+                  <br>
+                  <label for="dis-1">
+                    <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy"> Literacy/numeracy
+                  </label>
+                  <br>
+                  <label class="disabled" for="dis-8">
+                    <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled> Disabled person
+                  </label>
+                  <br>
+                  <label class="disabled" for="dis-6">
+                    <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled> Mis-user of drugs
+                  </label>
+                  <br>
+                  <label class="disabled" for="dis-7">
+                    <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled> Mis-user of alcohol
+                  </label>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter filter-fields">
+        <div class="form-group">
+          <label class="form-label" for="sector">
+            Sector
+          </label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="sector">
+              <option value="All">All</option>
+              <option value="Accounting/finance">Accounting/finance</option>
+              <option value="Administrative/clerical">Administrative/clerical</option>
+              <option value="Building construction/skilled trades">Building construction/skilled trades</option>
+              <option value="Business/strategic management">Business/strategic management</option>
+              <option value="Creative/design">Creative/design</option>
+              <option value="Customer support/client care">Customer support/client care</option>
+              <option value="Editorial/writing">Editorial/writing</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Food services/hospitality">Food services/hospitality</option>
+              <option value="Human resources">Human resources</option>
+              <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
+              <option value="IT/software development">IT/software development</option>
+              <option value="Legal">Legal</option>
+              <option value="Logistics/transportation">Logistics/transportation</option>
+              <option value="Marketing/product">Marketing/product</option>
+              <option value="Medical/health">Medical/health</option>
+              <option value="Other">Other</option>
+              <option value="Production/operations">Production/operations</option>
+              <option value="Project/program management">Project/program management</option>
+              <option value="Quality assurance/safety">Quality assurance/safety</option>
+              <option value="Retail">Retail</option>
+              <option value="R&amp;D/science">R&amp;D/science</option>
+              <option value="Sales/business development">Sales/business development</option>
+              <option value="Security/protective services">Security/protective services</option>
+              <option value="Training/instruction">Training/instruction</option>
+              <option value="Warehousing">Warehousing</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter filter-fields">
+        <div class="form-group">
+          <label class="form-label" for="sector">
+            Work programme
+            <!--   <span class="form-hint">Select an option</span> -->
+          </label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="sector">
+              <option value="None">None</option>
+              <option value="Work programme">Work programme</option>
+              <option value="Pre work programme">Pre work programme</option>
+              <option value="Work programme completer">Work programme completer</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter filter-fields">
+        <div class="form-group">
+          <label class="form-label" for="full-name">
+            Day 1 evidence missing
+            <!--   <span class="form-hint">Select an option</span> -->
+          </label>
+          <!--      <p>Select all that apply</p> -->
+          <form>
+            <fieldset>
+              <legend class="visuallyhidden">Missing day one evidence to search by</legend>
+              <label for="cv">
+                <input id="cv" name="cv" type="checkbox" value="CV"> CV
+              </label>
+              <br>
+              <label for="uj">
+                <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch"> Universal Jobmatch
+              </label>
+              <br>
+              <label for="email">
+                <input id="email" name="email" type="checkbox" value="Email address"> Email address
+              </label>
+              <br>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="full-name">
+            Age group
+            <!--   <span class="form-hint">Select an option</span> -->
+          </label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="full-name">
+              <option value="All" selected="">All</option>
+              <option value="18-24">18-24</option>
+              <option value="24-49">25+</option>
+              <option value="50+">50+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="full-name">
+            Provision type
+            <!--   <span class="form-hint">Select an option</span> -->
+          </label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="provision-type">
+              <option value="">Select</option>
+              <option value="Work experience">Work experience</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="full-name">Signing day</label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="provision-type">
+              <option value="">Select</option>
+              <option value="Mon R">Mon R</option>
+              <option value="Tue R">Tue R</option>
+              <option value="Wed R">Wed R</option>
+              <option value="Thu R">Thu R</option>
+              <option value="Fri R">Fri R</option>
+              <option value="Mon P">Mon P</option>
+              <option value="Tue P">Tue P</option>
+              <option value="Wed P">Wed P</option>
+              <option value="Thu P">Thu P</option>
+              <option value="Fri P">Fri P</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="full-name">Caseload segmentation</label>
+          <div class="dropdown">
+            <select name="select" class="form-control dropdown-list" id="caseload-segementation-filter-option">
+              <option value="">Select</option>
+              <option value="Self sufficient">Self sufficient</option>
+              <option value="Limited support">Limited support</option>
+              <option value="Intensive support">Intensive support</option>
+              <option value="Not assessed">Not assessed</option>
+              <option id="extraCaseloadSegmentationOption" value="Light touch">Light touch</option>
+            </select>
           </div>
         </div>
       </div>
     </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="sector">
-          Sector
-          <!--   <span class="form-hint">Select an option</span> -->
-        </label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="sector">
-            <option value="All">All</option>
-            <option value="Accounting/finance">Accounting/finance</option>
-            <option value="Administrative/clerical">Administrative/clerical</option>
-            <option value="Building construction/skilled trades">Building construction/skilled trades</option>
-            <option value="Business/strategic management">Business/strategic management</option>
-            <option value="Creative/design">Creative/design</option>
-            <option value="Customer support/client care">Customer support/client care</option>
-            <option value="Editorial/writing">Editorial/writing</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Food services/hospitality">Food services/hospitality</option>
-            <option value="Human resources">Human resources</option>
-            <option value="Installation/maintenance/repair">Installation/maintenance/repair</option>
-            <option value="IT/software development">IT/software development</option>
-            <option value="Legal">Legal</option>
-            <option value="Logistics/transportation">Logistics/transportation</option>
-            <option value="Marketing/product">Marketing/product</option>
-            <option value="Medical/health">Medical/health</option>
-            <option value="Other">Other</option>
-            <option value="Production/operations">Production/operations</option>
-            <option value="Project/program management">Project/program management</option>
-            <option value="Quality assurance/safety">Quality assurance/safety</option>
-            <option value="Retail">Retail</option>
-            <option value="R&amp;D/science">R&amp;D/science</option>
-            <option value="Sales/business development">Sales/business development</option>
-            <option value="Security/protective services">Security/protective services</option>
-            <option value="Training/instruction">Training/instruction</option>
-            <option value="Warehousing">Warehousing</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="sector">
-          Work programme
-          <!--   <span class="form-hint">Select an option</span> -->
-        </label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="sector">
-            <option value="None">None</option>
-            <option value="Work programme">Work programme</option>
-            <option value="Pre work programme">Pre work programme</option>
-            <option value="Work programme completer">Work programme completer</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="full-name">
-          Day 1 evidence missing
-          <!--   <span class="form-hint">Select an option</span> -->
-        </label>
-        <!--      <p>Select all that apply</p> -->
-        <form>
-          <fieldset>
-            <legend class="visuallyhidden">Missing day one evidence to search by</legend>
-            <label for="cv">
-              <input id="cv" name="cv" type="checkbox" value="CV"> CV
-            </label>
-            <br>
-            <label for="uj">
-              <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch"> Universal Jobmatch
-            </label>
-            <br>
-            <label for="email">
-              <input id="email" name="email" type="checkbox" value="Email address"> Email address
-            </label>
-            <br>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-    <!-- End 2nd row of filters -->
-    <!-- Start 3rd row of filters -->
-    <div class="column-quarter filter-fields float">
-      <div class="form-group">
-        <label class="form-label" for="full-name">
-          Age group
-          <!--   <span class="form-hint">Select an option</span> -->
-        </label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="full-name">
-            <option value="All" selected="">All</option>
-            <option value="18-24">18-24</option>
-            <option value="24-49">25+</option>
-            <option value="50+">50+</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="full-name">
-          Provision type
-          <!--   <span class="form-hint">Select an option</span> -->
-        </label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="provision-type">
-            <option value="">Select</option>
-            <option value="Work experience">Work experience</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="full-name">Signing day</label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="provision-type">
-            <option value="">Select</option>
-            <option value="Mon R">Mon R</option>
-            <option value="Tue R">Tue R</option>
-            <option value="Wed R">Wed R</option>
-            <option value="Thu R">Thu R</option>
-            <option value="Fri R">Fri R</option>
-            <option value="Mon P">Mon P</option>
-            <option value="Tue P">Tue P</option>
-            <option value="Wed P">Wed P</option>
-            <option value="Thu P">Thu P</option>
-            <option value="Fri P">Fri P</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="column-quarter filter-fields">
-      <div class="form-group">
-        <label class="form-label" for="full-name">Caseload segmentation</label>
-        <div class="dropdown">
-          <select name="select" class="form-control dropdown-list" id="caseload-segementation-filter-option">
-            <option value="">Select</option>
-            <option value="Self sufficient">Self sufficient</option>
-            <option value="Limited support">Limited support</option>
-            <option value="Intensive support">Intensive support</option>
-            <option value="Not assessed">Not assessed</option>
-            <option id="extraCaseloadSegmentationOption" value="Light touch">Light touch</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <!-- End 3rd row of filters -->
-    <!-- End show/hide div -->
   </div>
-  <div class="column-quarter filter-fields float">
-    <div class="form-group filter-button">
-      <a id="search-caseload" href="#" class="button">Search</a>
-      <a class="clear" href="#">Clear filter</a>
+
+  <div class="grid-row">
+    <div class="column-quarter">
+      <br/>
+      <div class="form-group filter-button">
+        <a id="search-caseload" href="#" class="button">Search</a>
+        <a class="clear" href="#">Clear filter</a>
+      </div>
     </div>
   </div>
 </div>
