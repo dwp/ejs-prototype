@@ -13,21 +13,17 @@
 <script src="/public/javascripts/jquery.min.js"></script>
 
 <main id="content" role="main">
+  
+  {% include "includes/main_nav.html" %}
+  
+  <div class="main-content">
+    <h1 class="heading-large">Summary -  Mr J Smith</h1>     
 
-  <div class="grid-row">        
-    
-    {% include "includes/left_nav_settings.html" %}
-
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-
-      <h1 class="heading-large">&nbsp;&nbsp;Provision - Mr J Smith</h1>
-
+    <div class="grid-row">
       {% set currentClaimantPage = 'provision' %}
-      {% include "includes/claimant_menu.html" %} 
+      {% include "includes/summary_nav.html" %}
 
-      <div class="column">
-
+      <div class="column-full">
         <table>
           <thead>
             <tr>
@@ -53,13 +49,15 @@
             {% endfor %}
           </tbody>
         </table>
-
-        <br />
-
-        <a href="provision_edit" class="button">Add provision</a>
-
-      </div>     
+      </div>
     </div>
+
+    <div class="grid-row">
+      <div class="column-full">
+        <br/>
+        <a href="provision_edit" class="button">Add provision</a>
+      </div>
+    </div> 
   </div>
 </main>
 {% endblock %}
