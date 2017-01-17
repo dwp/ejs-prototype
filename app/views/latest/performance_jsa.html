@@ -10,19 +10,6 @@
 
 {% block content %}
 
-<script src="/public/javascripts/jquery.min.js"></script>
-<script src="/public/javascripts/jquery-ui.min.js"></script>
-<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
-<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
-<script src="/public/javascripts/caseload.js"></script>
-
-<script>
-  $(document).ready(function(){
-    $('#example').dataTable().yadcf([]);
-  });
-  $('#example').removeClass('class');
-</script>
-
 <main id="content" role="main">
   {% set currentPage = 'caseload' %}
   {% include "includes/main_nav.html" %}

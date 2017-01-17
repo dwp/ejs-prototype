@@ -12,12 +12,30 @@
 
 <h1 class="heading-large" style="margin-top:20px;">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
 
+{% set disabilityPremium = [{ workTitle: 'Disability premium', 
+    links: [
+        { link : 'latest/job_new_step3', title : 'Disability premium - Create claim option'},
+        { link : 'latest/job_claim_active', title : 'Disability premium - View claim option'}
+    ] 
+},{ workTitle: 'Caseload', 
+    links: [
+        { link : 'latest/performance', title : 'Child age filter for lone parent'},
+        { link : 'latest/performance_is?childAge=5', title : 'Months to X years header in results'}
+    ] 
+},{ workTitle: 'Maintain record', 
+    links: [
+        { link : 'latest/delete_record', title : 'Delete claimant'}
+    ] 
+}] %}
+{{ sprintLinks( 'Sprint 28', disabilityPremium) }}
+
+
 {% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
     links: [
         { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + userData.role + ')'}
     ] 
 }] %}
-{{ sprintLinks( 'Sprint 25', managerWorkCoachFlow) }}
+{{ sprintLinks( 'Sprint 26', managerWorkCoachFlow) }}
 
 
 {% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
