@@ -9,93 +9,93 @@
 <script src="/public/javascripts/jquery.min.js"></script>
 
 <main id="content" role="main">
+  <div class="main-content">
+    <h1 class="heading-large">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
 
-<h1 class="heading-large" style="margin-top:20px;">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
-
-{% set disabilityPremium = [{ workTitle: 'Disability premium', 
-    links: [
-        { link : 'latest/job_new_step3', title : 'Disability premium - Create claim option'},
-        { link : 'latest/job_claim_active', title : 'Disability premium - View claim option'}
-    ] 
-},{ workTitle: 'Caseload', 
-    links: [
-        { link : 'latest/performance', title : 'Child age filter for lone parent'},
-        { link : 'latest/performance_is?childAge=5', title : 'Months to X years header in results'}
-    ] 
-},{ workTitle: 'Maintain record', 
-    links: [
-        { link : 'latest/delete_record', title : 'Delete claimant'}
-    ] 
-}] %}
-{{ sprintLinks( 'Sprint 28', disabilityPremium) }}
-
-
-{% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
-    links: [
-        { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + userData.role + ')'}
-    ] 
-}] %}
-{{ sprintLinks( 'Sprint 26', managerWorkCoachFlow) }}
+    {% set disabilityPremium = [{ workTitle: 'Disability premium', 
+        links: [
+            { link : 'latest/job_new_step3', title : 'Disability premium - Create claim option'},
+            { link : 'latest/job_claim_active', title : 'Disability premium - View claim option'}
+        ] 
+    },{ workTitle: 'Caseload', 
+        links: [
+            { link : 'latest/performance', title : 'Child age filter for lone parent'},
+            { link : 'latest/performance_is?childAge=5', title : 'Months to X years header in results'}
+        ] 
+    },{ workTitle: 'Maintain record', 
+        links: [
+            { link : 'latest/delete_record', title : 'Delete claimant'}
+        ] 
+    }] %}
+    {{ sprintLinks( 'Sprint 28', disabilityPremium) }}
 
 
-{% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
-    links: [
-        { link : 'latest/job_record_confirm', title : 'Days to standard' }
-    ] 
-},{ workTitle: 'Caseload segmentation', 
-    links: [
-        { link : 'latest/job_new_step3', title : 'Caseload segmentation - Create claim layout' }
-    ] 
-},{ workTitle: 'Provision playback', 
-    links: [
-        { link : 'latest/performance', title : 'Provision and Signing day filter option' },
-        { link : 'latest/performance_jsa?provisionSelected=true', title : 'Provision columns added to caseload results' }
-    ] 
-},{ workTitle: 'Maintain user', 
-    links: [
-        { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
-    ] 
-}] %}
-{{ sprintLinks( 'Sprint 25', daysToWorkLinks) }}
+    {% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
+        links: [
+            { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + userData.role + ')'}
+        ] 
+    }] %}
+    {{ sprintLinks( 'Sprint 26', managerWorkCoachFlow) }}
 
 
-{% set provisionLinks = [{ workTitle: 'Provision page', links: [{ link : 'latest/provision', title : 'Provision page' }] }] %}
-{{ sprintLinks( 'Sprint 24', provisionLinks) }}
+    {% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
+        links: [
+            { link : 'latest/job_record_confirm', title : 'Days to standard' }
+        ] 
+    },{ workTitle: 'Caseload segmentation', 
+        links: [
+            { link : 'latest/job_new_step3', title : 'Caseload segmentation - Create claim layout' }
+        ] 
+    },{ workTitle: 'Provision playback', 
+        links: [
+            { link : 'latest/performance', title : 'Provision and Signing day filter option' },
+            { link : 'latest/performance_jsa?provisionSelected=true', title : 'Provision columns added to caseload results' }
+        ] 
+    },{ workTitle: 'Maintain user', 
+        links: [
+            { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
+        ] 
+    }] %}
+    {{ sprintLinks( 'Sprint 25', daysToWorkLinks) }}
 
 
-{% set managerViewLinks = [{ workTitle: 'Manager view - Work coach performance', 
-    links: [
-        { link : 'latest/manager_view_filter', title : 'Manager view - Work coach performance filter' },
-        { link : 'latest/manager_view_by_cohort', title : 'Manager view - Work coach performance results by cohort' },
-        { link : 'latest/manager_view_by_workcoach', title : 'Manager view - Work coach performance results by work coach' }
-    ] 
-}] %}
-{{ sprintLinks( 'Sprint 23', managerViewLinks) }}
+    {% set provisionLinks = [{ workTitle: 'Provision page', links: [{ link : 'latest/provision', title : 'Provision page' }] }] %}
+    {{ sprintLinks( 'Sprint 24', provisionLinks) }}
 
 
-{% set amendUserLinks = [{ workTitle: 'Amend User', 
-    links: [
-        { link : 'latest/job', title : 'Update links' },
-        { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
-    ] 
-}] %}
-{{ sprintLinks( 'Sprint 22', amendUserLinks) }}
+    {% set managerViewLinks = [{ workTitle: 'Manager view - Work coach performance', 
+        links: [
+            { link : 'latest/manager_view_filter', title : 'Manager view - Work coach performance filter' },
+            { link : 'latest/manager_view_by_cohort', title : 'Manager view - Work coach performance results by cohort' },
+            { link : 'latest/manager_view_by_workcoach', title : 'Manager view - Work coach performance results by work coach' }
+        ] 
+    }] %}
+    {{ sprintLinks( 'Sprint 23', managerViewLinks) }}
 
-<div class="grid-row">
-    <div class="column-third">
-        <h2 class="heading-medium"><em class="highlight">Sprint 20</em></h2>
 
-        <ul class="bullets">
-            <h3 class="heading-small">Manager on/off-flow results</h3>
-            <ul>
-                <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
+    {% set amendUserLinks = [{ workTitle: 'Amend User', 
+        links: [
+            { link : 'latest/job', title : 'Update links' },
+            { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
+        ] 
+    }] %}
+    {{ sprintLinks( 'Sprint 22', amendUserLinks) }}
+
+    <div class="grid-row">
+        <div class="column-third">
+            <h2 class="heading-medium"><em class="highlight">Sprint 20</em></h2>
+
+            <ul class="bullets">
+                <h3 class="heading-small">Manager on/off-flow results</h3>
+                <ul>
+                    <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
+                </ul>
             </ul>
-        </ul>
 
+        </div>
     </div>
-</div>
 
- <div class="grid-row">
+   <div class="grid-row">
 
         <div class="column-third">
            <h2 class="heading-medium"><em class="highlight">Sprint 11 - Content review &amp; caseload</em></h2>
@@ -663,13 +663,16 @@
     <!-- End row -->
     </div>  
        
+
+
+  </div>
 </main>
 
 {% endblock %}
 
 {% macro sprintLinks(sprintName, sprintWorkInfo) %}
     <div class="grid-row">
-        <div class="column">
+        <div class="column-full">
             <h2 class="heading-medium"><em class="highlight">{{sprintName}}</em></h2>
 
             {% for thisSprintWorkInfo in sprintWorkInfo %}
