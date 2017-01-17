@@ -4,3 +4,8 @@
 i.fa-exclamation-circle{
   color: $mellow-red;
 }
+
+// mark the passed indicator on the office performance page as red
+.search_string .passed, tr .passed {
+    color: $red;
+}

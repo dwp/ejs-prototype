@@ -1,24 +1,20 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
 {% block propositionHeader %}
   {% include "includes/propositional_navigation.html" %}
 {% endblock %}
 
 {% block content %}
-<main id="content" role="main">
-  {% set currentPage = 'caseload' %}
-  {% include "includes/main_nav.html" %}
+  <main id="content" role="main">
+    {% set currentPage = 'caseload' %}
+    {% include "includes/main_nav.html" %}
 
-  <div class="main-content">    
-    <h1 class="heading-large">Work coach caseload search</h1> 
+    <div class="main-content">    
+      <h1 class="heading-large">Work coach caseload search</h1> 
 
-    {% include "includes/caseload_filters.html" %}
-  </div>
-</main>
+      {% include "includes/caseload_filters.html" %}
+    </div>
+  </main>
 {% endblock %}
 
 
