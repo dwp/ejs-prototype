@@ -5,8 +5,137 @@
 {% endblock %}
 
 {% block content %}
-  <script src="/public/javascripts/jquery.min.js"></script>
-  <script src="/public/javascripts/jquery-ui.min.js"></script>
+  <main id="content" role="main">
+    {% set currentPage = 'caseload' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content"> 
+      <h1 class="heading-large">Cohort month April 2015 - Employment Support Allowance</h1>
+
+      <!-- Start three quarters container for main content columns -->
+      <div class="grid-row">
+        <div class="column-full">
+          <details>
+            <summary><span class="summary">Show/hide filters</span></summary>
+
+              {% set esaSelected = true %}
+              {% include "includes/caseload_filters.html" %}
+          </details>
+        </div>
+        <div class="column-full">   
+          <p class="search_string">You searched: ESA > 25+ > April 2015 > Homeless > Building construction/skilled trades > Support group > Live</p>
+
+          <input class="button copy_email" value="Copy selected emails" disabled="disabled">
+
+          <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+            <thead>
+              <tr>
+                <th class="nino no-sort">NINO</th>
+                <th class="nino no-sort">Surname</th>
+                <th class="nino no-sort">Initial</th>
+                <th class="nino no-sort"><input type="checkbox">&nbsp;Email</th>
+                <th class="daysto nino no-sort">Days to 65</th>
+                <th class="appoint nino no-sort">Appointment</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
+                <td>Williams</td>
+                <td>R</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:r.william@gmail.com">r.william@gmail.com</a></td>
+                <td>28 </td>
+                <td>18/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
+                <td>Jones</td>
+                <td>J</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:john.jones@sky.com">john.jones@sky.com</a></td>
+                <td>18</td>
+                <td>22/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
+                <td>Smith</td>
+                <td>F</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:fred.smith@hotmail.com">fred.smith@hotmail.com</a></td>
+                <td>10</td>
+                <td>01/02/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
+                <td>Brown</td>
+                <td>S</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:scott.brown@core.com">scott.brown@core.com</a></td>
+                <td>10</td>
+                <td>28/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
+                <td>Docherty</td>
+                <td>T</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:tom.docherty@red.co.uk">tom.docherty@red.co.uk</a></td>
+                <td>10</td>
+                <td>02/02/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
+                <td>Peters</td>
+                <td>A</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:andy.peters@aol.com">andy.peters@aol.com</a></td>
+                <td>15</td>
+                <td>27/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
+                <td>Shaw</td>
+                <td>R</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:rob.shaw@hotmail.com">rob.shaw@hotmail.com</a></td>
+                <td>22</td>
+                <td>16/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
+                <td>Peel</td>
+                <td>J</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">john.peel@gmail.com</a></td>
+                <td>14</td>
+                <td>25/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
+                <td>Gathercole</td>
+                <td>T</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">tom.gathercole@live.com</a></td>
+                <td>12</td>
+                <td>27/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
+                <td>Kane</td>
+                <td>H</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:harold.kane@sky.com">harold.kane@sky.com</a></td>
+                <td>31</td>
+                <td>29/01/2016</td>
+              </tr>
+              <tr>
+                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
+                <td>Watson</td>
+                <td>P</td>
+                <td><input type="checkbox">&nbsp;<a href="mailto:paul.watson@hotmail.com">paul.watson@hotmail.com</a></td>
+                <td>42</td>
+                <td>30/01/2016</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>   
+      </div>  
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
   <script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
   <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
   <script src="/public/javascripts/caseload.js"></script>
@@ -17,140 +146,4 @@
     });
     $('#example').removeClass('class');
   </script>
-
-  <main id="content" role="main">
-
-    <div class="grid-row">    
-      {% set currentPage = 'caseload' %}
-      {% include "includes/left_nav_settings.html" %}   
-
-      <!-- Start three quarters container for main content columns -->
-      <div class="column-three-quarters">
-
-        <h1 class="heading-large">&nbsp;&nbsp;Cohort month April 2015 - Employment Support Allowance</h1>
-
-        <details>
-          <summary><span class="summary">Show/hide filters</span></summary>
-
-            {% set esaSelected = true %}
-            {% include "includes/caseload_filters.html" %}
-        </details>
-
-        <div class="column">   
-          <div id="container">
-
-            <p class="search_string">You searched: ESA > 25+ > April 2015 > Homeless > Building construction/skilled trades > Support group > Live</p>
-
-            <input class="button copy_email" value="Copy selected emails" disabled="disabled">
-
-            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
-              <thead>
-                <tr>
-                  <th class="nino no-sort">NINO</th>
-                  <th class="nino no-sort">Surname</th>
-                  <th class="nino no-sort">Initial</th>
-                  <th class="nino no-sort"><input type="checkbox">&nbsp;Email</th>
-                  <th class="daysto nino no-sort">Days to 65</th>
-                  <th class="appoint nino no-sort">Appointment</th> 
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                  <td>Williams</td>
-                  <td>R</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:r.william@gmail.com">r.william@gmail.com</a></td>
-                  <td>28 </td>
-                  <td>18/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                  <td>Jones</td>
-                  <td>J</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:john.jones@sky.com">john.jones@sky.com</a></td>
-                  <td>18</td>
-                  <td>22/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                  <td>Smith</td>
-                  <td>F</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:fred.smith@hotmail.com">fred.smith@hotmail.com</a></td>
-                  <td>10</td>
-                  <td>01/02/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                  <td>Brown</td>
-                  <td>S</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:scott.brown@core.com">scott.brown@core.com</a></td>
-                  <td>10</td>
-                  <td>28/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                  <td>Docherty</td>
-                  <td>T</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:tom.docherty@red.co.uk">tom.docherty@red.co.uk</a></td>
-                  <td>10</td>
-                  <td>02/02/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                  <td>Peters</td>
-                  <td>A</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:andy.peters@aol.com">andy.peters@aol.com</a></td>
-                  <td>15</td>
-                  <td>27/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                  <td>Shaw</td>
-                  <td>R</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:rob.shaw@hotmail.com">rob.shaw@hotmail.com</a></td>
-                  <td>22</td>
-                  <td>16/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                  <td>Peel</td>
-                  <td>J</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">john.peel@gmail.com</a></td>
-                  <td>14</td>
-                  <td>25/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                  <td>Gathercole</td>
-                  <td>T</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:john.peel@gmail.com">tom.gathercole@live.com</a></td>
-                  <td>12</td>
-                  <td>27/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                  <td>Kane</td>
-                  <td>H</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:harold.kane@sky.com">harold.kane@sky.com</a></td>
-                  <td>31</td>
-                  <td>29/01/2016</td>
-                </tr>
-                <tr>
-                  <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                  <td>Watson</td>
-                  <td>P</td>
-                  <td><input type="checkbox">&nbsp;<a href="mailto:paul.watson@hotmail.com">paul.watson@hotmail.com</a></td>
-                  <td>42</td>
-                  <td>30/01/2016</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>   
-      </div>  
-    </div>
-  </main>
 {% endblock %}
-
-
-
