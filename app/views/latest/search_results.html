@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% set currentPage = 'job' %}
+  {% include "includes/main_nav.html" %}
+  
+  <div class="main-content">
+    <div class="grid-row">
+      <div class="column-full">
+        
+        <h1 class="heading-large">No results found</h1>
+
+        <p><span class="bold">'{{getData.nino}}'</span> doesn't exist</p>
+
+        <a class="button" href="/latest/job_new?nino={{getData.nino}}">Create claimant<a>
+        
+        <br />
+        <br />
+
+        <a href="/latest/job">Search again<a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
+
