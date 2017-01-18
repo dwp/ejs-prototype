@@ -6,16 +6,13 @@
 
 {% block content %}
   <main id="content" role="main">
-    {% set currentPage = 'caseload' %}
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">   
       <h1 class="heading-large">Settings - Change location</h1>    
 
-      <div class="grid-row">
-        {% set currentSettingsPage = 'changeLocation' %}
-        {% include "includes/settings_menu.html" %} 
-      </div>
+      {% set currentSettingsPage = 'changeLocation' %}
+      {% include "includes/settings_menu.html" %} 
 
       <div class="grid-row">
         <div class="column-quarter">

@@ -1,25 +1,27 @@
-<div class="column-full summary-nav-wrapper"> 
-  <ul id="id-claimant-actions">
-    <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
-      <a href="settings" class="menu-item">Change location</a>
-    </li>
-
-    {% if userData.role === 'manager'%}
-      <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
-        <a href="amend_user" class="menu-item">Maintain user</a>
+<div class="grid-row">
+  <div class="column-full summary-nav-wrapper"> 
+    <ul id="id-claimant-actions">
+      <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
+        <a href="settings" class="menu-item">Change location</a>
       </li>
 
-      <li class="{% if currentSettingsPage === "maintainRecord" %}selected{% endif %}"> 
-        <a href="delete_record" class="menu-item">
-          Maintain record
-        </a>
-      </li>
+      {% if userData.role === 'manager'%}
+        <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
+          <a href="amend_user" class="menu-item">Maintain user</a>
+        </li>
 
-      <li class="{% if currentSettingsPage === "standards" %}selected{% endif %}">
-        <a href="targets" class="menu-item ">
-          Standards
-        </a>
-      </li>
-    {%endif%}
-  </ul> 
+        <li class="{% if currentSettingsPage === "maintainRecord" %}selected{% endif %}"> 
+          <a href="delete_record" class="menu-item">
+            Maintain record
+          </a>
+        </li>
+
+        <li class="{% if currentSettingsPage === "standards" %}selected{% endif %}">
+          <a href="targets" class="menu-item ">
+            Standards
+          </a>
+        </li>
+      {%endif%}
+    </ul> 
+  </div>
 </div>
