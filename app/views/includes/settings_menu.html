@@ -1,37 +1,25 @@
-<div class="column"> 
-  <div id="id-claimant-actions" class="grid-wrapper gutter-half-top">
-    <div class="grid grid-1-5">
-      <div class="inner-block left"> 
-        <a href="settings" class="menu-item {% if currentSettingsPage === "changeLocation" %}selected{% endif %}">
-          <strong>Change location</strong>
-        </a>
-      </div>
-    </div>
+<div class="column-full summary-nav-wrapper"> 
+  <ul id="id-claimant-actions">
+    <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
+      <a href="settings" class="menu-item">Change location</a>
+    </li>
 
     {% if userData.role === 'manager'%}
-      <div class="grid grid-1-5">
-        <div class="inner-block left">
-          <a href="amend_user" class="menu-item {% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
-            <strong>Maintain user</strong>
-          </a>
-        </div>
-      </div>
+      <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
+        <a href="amend_user" class="menu-item">Maintain user</a>
+      </li>
 
-      <div class="grid grid-1-5">
-        <div class="inner-block left">
-          <a href="delete_record" class="menu-item {% if currentSettingsPage === "maintainRecord" %}selected{% endif %}">
-            <strong>Maintain record</strong>
-          </a>
-        </div>
-      </div>
+      <li class="{% if currentSettingsPage === "maintainRecord" %}selected{% endif %}"> 
+        <a href="delete_record" class="menu-item">
+          Maintain record
+        </a>
+      </li>
 
-      <div class="grid grid-1-5">
-        <div class="inner-block left">
-          <a href="targets" class="menu-item {% if currentSettingsPage === "standards" %}selected{% endif %}">
-            <strong>Standards</strong>
-          </a>
-        </div>
-      </div>
+      <li class="{% if currentSettingsPage === "standards" %}selected{% endif %}">
+        <a href="targets" class="menu-item ">
+          Standards
+        </a>
+      </li>
     {%endif%}
-  </div> 
+  </ul> 
 </div>
