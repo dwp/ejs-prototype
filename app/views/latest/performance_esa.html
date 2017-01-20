@@ -12,7 +12,6 @@
     <div class="main-content"> 
       <h1 class="heading-large">Cohort month April 2015 - Employment Support Allowance</h1>
 
-      <!-- Start three quarters container for main content columns -->
       <div class="grid-row">
         <div class="column-full">
           <details>
@@ -142,14 +141,5 @@
 {% endblock %}
 
 {% block page_scripts %}
-  <script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
-  <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
   <script src="/public/javascripts/caseload.js"></script>
-
-  <script>
-    $(function(){
-      $('#example').dataTable().yadcf([]);
-    });
-    $('#example').removeClass('class');
-  </script>
 {% endblock %}
