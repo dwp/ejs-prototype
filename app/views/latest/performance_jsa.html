@@ -27,15 +27,13 @@
 
           <input class="button copy_email" value="Copy selected emails" disabled="disabled">
 
-          <p class="results-per-page">Result per page: 10 <a href="/latest/performance_jsa">50</a> <a href="/latest/performance_jsa">250</a> <a href="/latest/performance_jsa">All</a</p>
-
           <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
             <thead>
               <tr>
                 <th class="nino no-sort">NINO</th>
                 <th class="nino no-sort">Surname</th>
                 <th class="nino no-sort">Initial</th>
-                <th class="nino"><input type="checkbox">&nbsp;Email</th>
+                <th class="nino no-sort"><input type="checkbox">&nbsp;Email</th>
                 {%if getData.provisionSelected %}
                   <th class="nino no-sort">Provision start date</th>
                   <th class="nino no-sort">Provision status</th>
@@ -176,37 +174,17 @@
                   <td>29/01/2016</td>
                 {%endif%}
               </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                <td>Watson</td>
-                <td>P</td>
-                <td><input type="checkbox">&nbsp;<a href="mailto:paul.watson@hotmail.com">paul.watson@hotmail.com</a></td>
-                {%if getData.provisionSelected %}
-                  <td>03/04/2016</td>
-                  <td>Confirmed</td>
-                {%else%}
-                  <td>10 (39 weeks)</td>
-                  <td>30/01/2016</td>
-                {%endif%}
-              </tr>
             </tbody>
-          </table>
+            </table>
+            <p class="results-per-page">Result per page: 10 <a href="/latest/performance_jsa">50</a> <a href="/latest/performance_jsa">250</a> <a href="/latest/performance_jsa">All</a></p>
+            <div class="dataTables_info" id="example_info">Showing 1 to 10 of 11 entries</div>
+            <div class="dataTables_paginate paging_two_button" id="example_paginate">
+              <a class="paginate_disabled_previous" tabindex="0" role="button" id="example_previous" aria-controls="example">Previous</a>
+              <a class="paginate_enabled_next" tabindex="0" role="button" id="example_next" aria-controls="example">Next</a>
+            </div>
         </div> 
+        
       </div>  
     </div>
   </main>
-{% endblock %}
-
-{% block page_scripts %}
-  <script src="/public/javascripts/jquery-ui.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
-  <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
-  <script src="/public/javascripts/caseload.js"></script>
-
-  <script>
-    $(document).ready(function(){
-      $('#example').dataTable().yadcf([]);
-    });
-    $('#example').removeClass('class');
-  </script>
 {% endblock %}
