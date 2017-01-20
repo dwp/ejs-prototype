@@ -57,11 +57,25 @@ utils.addNunjucksFilters(nunjucksAppEnv)
 // Set views engine
 app.set('view engine', 'html')
 
+// We want to redirect the 'latest/' pages to the new css
+app.get('/public/stylesheets/application.css', function(req, res, next){
+
+  // we have a look at the referer url
+  // if that contains 'latest/' then continue on as normal
+  // otherwise serve the old css
+  if(req.headers.referer && req.headers.referer.includes('/latest/')){
+    next();
+  } else {
+    res.redirect('/public/stylesheets/application_old.css');
+  }
+});
+
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use('/public', express.static(path.join(__dirname, '/govuk_modules/govuk_template/assets')))
 app.use('/public', express.static(path.join(__dirname, '/govuk_modules/govuk_frontend_toolkit')))
 app.use('/public/images/icons', express.static(path.join(__dirname, '/govuk_modules/govuk_frontend_toolkit/images')))
+//app.use('/public', function(a){ console.log(a)})
 
 // Elements refers to icon folder instead of images folder
 app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images', 'favicon.ico')))
