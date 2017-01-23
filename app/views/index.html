@@ -33,7 +33,7 @@
 
         {% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
             links: [
-                { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + userData.role + ')'}
+                { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + sessionData.user.role + ')'}
             ] 
         }] %}
         {{ sprintLinks( 'Sprint 26', managerWorkCoachFlow) }}

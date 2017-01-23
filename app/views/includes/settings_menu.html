@@ -5,7 +5,7 @@
         <a href="settings" class="menu-item">Change location</a>
       </li>
 
-      {% if userData.role === 'manager'%}
+      {% if sessionData.user.role === 'manager'%}
         <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
           <a href="amend_user" class="menu-item">Maintain user</a>
         </li>
