@@ -1,37 +1,24 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
 {% block propositionHeader %}
   {% include "includes/propositional_navigation.html" %}
 {% endblock %}
 
 {% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %} 
 
+    <div class="main-content">      
+      <h1 class="heading-large">Summary -  Mr J Smith</h1>  
 
-<main id="content" role="main">
+      <div class="grid-row">
+        {% set currentClaimantPage = 'summary' %}
+        {% include "includes/summary_nav.html" %}  
 
-  <div class="grid-row">        
-
-    {% include "includes/left_nav_settings.html" %}
-
-
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
-
-    <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
-      
-    {% set currentClaimantPage = 'summary' %}
-    {% set appointmentsDisabled = true %}
-    {% include "includes/claimant_menu.html" %}
-
-    {% set checkClaimantDetails = true%}
-    {% include "includes/summary_table.html" %} 
-
-    </div>
-</main>
+        {% set checkClaimantDetails = true%}
+        {% include "includes/summary_table.html" %} 
+      </div>
+  </main>
 {% endblock %}
 
 
