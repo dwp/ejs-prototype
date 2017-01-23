@@ -16,67 +16,103 @@
 
   <div class="main-content">        
     <h1 class="heading-large">New appointment - Mr J Smith</h1>
-
     <div class="grid-row">
       {% set currentClaimantPage = 'appointments' %}
       {% include "includes/summary_nav.html" %}  
 
-      <div class="column-half">      
-        <div class="form-group">
-          <fieldset>
-            <legend><span class="form-label">Date</span></legend>
-            <div class="form-date">
-              <p class="form-hint">For example, 01 09 2015</p>
+      <form action="/latest/job_next_new" method="POST">
+        {% if sessionData.hasAppointment %}
+          <div class="column-half">   
+            <div class="form-group">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>23/10/15</td>
+                    <td>11:45</td>
+                    <td>
+                      <select class="select form-control" name="appointmentUpdate">
+                        <option value="Select">Select</option>
+                        <option value="Failed to attend">Failed to attend</option>
+                        <option value="Attended">Attended</option>
+                        <option value="Immediate">Immediate</option>
+                        <option value="Rebook">Rebook</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>    
+ 
+            <div class="form-group">
+              <input type="submit" value="Save" class="button" />
+            </div> 
+          </div>
+        {% else %}
+          <div class="column-half">      
+            <div class="form-group">
+              <fieldset>
+                <legend><span class="form-label">Date</span></legend>
+                <div class="form-date">
+                  <p class="form-hint">For example, 01 09 2015</p>
 
-              <div class="form-group form-group-day">
-                <label for="dob-day">Day</label>
-                <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-              </div> 
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label>
+                    <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div> 
 
-              <div class="form-group form-group-month">
-                <label for="dob-month">Month</label>
-                <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
+                  <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label>
+                    <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
 
-              <div class="form-group form-group-year">
-                <label for="dob-year">Year</label>
-                <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-              </div>
-            </div>
-          </fieldset>
-        </div>       
+                  <div class="form-group form-group-year">
+                    <label for="dob-year">Year</label>
+                    <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                  </div>
+                </div>
+              </fieldset>
+            </div>       
 
-        <div class="form-group">
-          <fieldset>
-            <legend><span class="form-label">Time</span></legend>
-            <div class="form-date">
-              <p class="form-hint">For example, 13 30</p>
+            <div class="form-group">
+              <fieldset>
+                <legend><span class="form-label">Time</span></legend>
+                <div class="form-date">
+                  <p class="form-hint">For example, 13 30</p>
 
-              <div class="form-group form-group-day">
-                <label for="hour">Hour</label>
-                <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
-              </div> 
+                  <div class="form-group form-group-day">
+                    <label for="hour">Hour</label>
+                    <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
+                  </div> 
 
-              <div class="form-group form-group-month">
-                <label for="min">Min</label>
-                <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
-              </div>
-            </div>
-          </fieldset>
+                  <div class="form-group form-group-month">
+                    <label for="min">Min</label>
+                    <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
+                  </div>
+                </div>
+              </fieldset>
 
-          <hr />
-        </div> 
+              <hr />
+            </div> 
 
-        <div class="form-group">
-          <label class="block-label selection-button-checkbox" for="no-appointment">
-            <input id="no-appointment" name="no-appointment" type="checkbox" value="No appointment needed">
-              No appointment needed
-          </label>
-        </div>   
-        <div class="form-group" id="get-started">
-          <a href="job_record_confirm_1" class="button" value="Submit">Save</a>
-        </div> 
-      </div>      
+            <div class="form-group">
+              <label class="block-label selection-button-checkbox" for="no-appointment">
+                <input id="no-appointment" name="no-appointment" type="checkbox" value="No appointment needed">
+                  No appointment needed
+              </label>
+            </div>   
+            <div class="form-group">
+              <input type="submit" value="Save" class="button" />
+            </div> 
+          </div> 
+        {% endif %}
+      </form>     
     </div>
 </main>
 

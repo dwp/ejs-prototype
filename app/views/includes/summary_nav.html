@@ -12,7 +12,7 @@
       <a id="appointments" href="job_next_new" 
         {% if appointmentsDisabled %}disabled{% endif %}
         class="menu-item">
-        Appointment <i class="fa fa-exclamation-circle"></i>
+        Appointment {% if not sessionData.hasAppointment %}<i class="fa fa-exclamation-circle"></i>{% endif %}
       </a>
     </li>
 

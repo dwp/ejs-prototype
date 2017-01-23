@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var provisionRoutes = require('./routes/provision.js')
 
 router.use(function(req, res, next){
   Object.assign(res.locals,{
@@ -89,9 +88,14 @@ router.get('/latest/toggle_user_role', function(req, res, next){
 });
 
 router.post('/latest/job_next_new', function(req, res){
-  req.session.hasAppointment = true;
 
-  res.redirect('/latest/job_next_new');
+  if(req.body.appointmentUpdate){
+   req.session.hasAppointment = false;
+  } else {
+   req.session.hasAppointment = true;
+  }
+
+  res.render('latest/job_next_new');
 });
 
 function getTestProvisions(){
