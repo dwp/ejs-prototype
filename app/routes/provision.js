@@ -11,7 +11,6 @@ module.exports = function(router) {
   router.get('/latest/provision_edit', function (req, res) {
 
     var provision = req.session.provisions ? req.session.provisions[req.query.id] : getTestProvisions()[req.query.id];
-    //var provision = getTestProvisions()[req.query.id];
 
     res.render('latest/provision_edit', {
       provision: provision
