@@ -9,11 +9,13 @@
     </li>
 
     <li class="{% if currentClaimantPage === "appointments" %}selected{% endif %} {% if appointmentsDisabled %}disabled{% endif %}"> 
-      <a id="appointments" href="job_next_new" 
-        {% if appointmentsDisabled %}disabled{% endif %}
-        class="menu-item">
-        Appointment {% if not sessionData.hasAppointment %}<i class="fa fa-exclamation-circle"></i>{% endif %}
-      </a>
+      {% if appointmentsDisabled %}
+        <span>Appointment</span>
+      {% else %}
+        <a id="appointments" href="job_next_new" class="menu-item">
+          Appointment {% if not sessionData.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+        </a>
+      {% endif %}
     </li>
 
     {% if claimStatus === 'Dormant' %}

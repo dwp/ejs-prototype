@@ -29,7 +29,7 @@
         }
       }
 
-      a {
+      a, span {
         display: inline-block;
         padding: 10px 15px;
         text-decoration: none;
@@ -37,6 +37,15 @@
 
         &:visited{
           color: $govuk-blue;
+        }
+      }
+      
+
+      &.disabled {
+        cursor: none;
+        opacity: 0.5;
+        span {
+          color: $grey-1;
         }
       }
     }
