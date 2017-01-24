@@ -11,6 +11,15 @@
 <main id="content" role="main">
   <div class="main-content">
     <h1 class="heading-large">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
+    
+    <div class="grid-row">
+        {% set failureToAttend = [{ workTitle: 'Failure to attend', 
+            links: [
+                { link : 'latest/job_next_new', title : 'Create appointment - Then mark as FTA'}
+            ] 
+        }] %}
+        {{ sprintLinks( 'Sprint 30', failureToAttend) }}
+    </div>
 
     <div class="grid-row">
         {% set disabilityPremium = [{ workTitle: 'Disability premium', 

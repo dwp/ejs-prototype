@@ -3,9 +3,12 @@ module.exports = function(router){
 
     if(req.body.appointmentUpdate){
       req.session.hasAppointment = false;
+      req.session.appointmentUpdate = req.body.appointmentUpdate;
     } else {
       req.session.hasAppointment = true;
+      req.session.appointmentUpdate = false;
     }
+
 
     res.render('latest/job_next_new');
   });
