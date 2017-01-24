@@ -9,6 +9,10 @@ module.exports = function(router){
       req.session.appointmentUpdate = false;
     }
 
+    if( req.body.action === 'Create appointment'){
+      req.session.hasAppointment = false;
+      req.session.appointmentUpdate = false;
+    }
 
     res.render('latest/job_next_new');
   });
