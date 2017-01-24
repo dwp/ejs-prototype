@@ -30,3 +30,8 @@ input#initial  {
 .form-group-local{
   width: 25%;
 }
+
+// Make the new radio and checkboxes grey when disabled
+.block-label.disabled {
+  color: $grey-1;
+}
