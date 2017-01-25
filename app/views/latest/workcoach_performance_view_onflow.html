@@ -1,26 +1,15 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
-<main id="content" role="main">
-  <div class="grid-row">
+  <main id="content" role="main">
     {% set currentPage = 'mangerView' %}
-    {% include "includes/left_nav_settings.html" %}
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">Richard Kaine performance - JSA</h1>
 
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-      <h1 class="heading-large">&nbsp;&nbsp;Richard Kaine performance - JSA</h1>
-      <!-- Start 1st row of filters -->
-      <div class="column new_filters">
-        <br>
-        <div class="column-quarter filter-fields">
+      <div class="grid-row">
+        <div class="column-quarter">
           <div class="form-group">
             <label class="form-label" for="benefit">
               Benefit type
@@ -42,7 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="column-quarter filter-fields filter-form">
+        <div class="column-quarter">
           <div class="form-group">
             <label class="form-label" for="full-name">
               Cohort month(s)
@@ -113,7 +102,7 @@
             </div>
           </div>
         </div>
-        <div class="column-quarter filter-fields">
+        <div class="column-quarter">
           <div class="form-group">
             <label class="form-label" for="full-name">
               Age group
@@ -129,20 +118,17 @@
             </div>
           </div>
         </div>
-        <div class="column-quarter filter-fields float">
-          <div class="form-group filter-button">
-            <a href="workcoach_performance_view_onflow_results">
-              <button class="button">Search</button>
-            </a>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-quarter">
+          <div class="form-group">
+          <a class="button" href="workcoach_performance_view_onflow_results">Search</a>
             <a class="clear" href="#">Clear filter</a>
           </div>
         </div>
       </div>
     </div>
-    <!-- End three quarters column-->
-  </div>
-  <!-- End row-->
-  </div>
-</main>
-
+    </div>
+  </main>
 {% endblock %}
