@@ -29,7 +29,6 @@
   }
 
   .external-links-wrapper{
-
     float:right;
 
     ul {
@@ -39,11 +38,11 @@
 
     li {
       display: inline;
-      padding: 15px;
     }
   
     a {
       color: $govuk-blue;
+      font-size: 16px
     }
   }
 }
