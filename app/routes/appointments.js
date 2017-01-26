@@ -14,6 +14,6 @@ module.exports = function(router){
       req.session.appointmentUpdate = false;
     }
 
-    res.render('latest/job_next_new');
+    res.redirect('/latest/job_record_confirm');
   });
 }
