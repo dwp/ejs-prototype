@@ -12,8 +12,10 @@ module.exports = function(router){
     if( req.body.action === 'Create appointment'){
       req.session.hasAppointment = false;
       req.session.appointmentUpdate = false;
-    }
 
-    res.redirect('/latest/job_record_confirm');
+      res.render('latest/job_next_new')
+    } else {
+      res.redirect('/latest/job_record_confirm');
+    }
   });
 }
