@@ -2,7 +2,6 @@
   <div class="main-nav-wrapper">
     <ul class="main-nav">
       <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="job">Search</a></li>
-      <li id="nav-create" {% if currentPage === "createNew" %}class="selected"{% endif %}><a href="job_new">Create new</a></li>
       <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
       <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
 
@@ -15,7 +14,12 @@
       {%else%} 
           <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="workcoach_performance_view_onflow">Work coach performance</a></li>
       {%endif%}
-
-      </ul>
+    </ul>
+  </div>
+  <div class="external-links-wrapper">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="">Updates</a></li>
+      <li class="main-nav-link"><a href="">FAQs</a></li>
+    </ul>
   </div>
 </div>
