@@ -53,7 +53,9 @@ module.exports = function(router) {
 
   function getTestTeams(){
     return [ 
-      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,3)}
+      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,3)},
+      { id: 1, name : 'Yellow team', workcoaches: getWorkcoaches().slice(3,6)},
+      { id: 2, name : 'Red team', workcoaches: getWorkcoaches().slice(6,9)}
     ];
   }
 
