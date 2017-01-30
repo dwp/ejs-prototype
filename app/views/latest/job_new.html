@@ -16,7 +16,7 @@
   {% include "includes/main_nav.html" %}
 
   <div class="main-content">
-    <h1 class="heading-large">Create claimant - page 1 of 2</h1>
+    <h1 class="heading-large">Create claimant record- page 1 of 2</h1>
 
     <form>
       <div class="grid-row">
@@ -24,6 +24,18 @@
           <div class="form-group">
             <label class="form-label" for="nino">National Insurance number</label>
             <input class="form-control" id="nino" type="text" value="{{getData.nino}}" />
+          </div>
+
+          <div class="form-group title">
+            <label class="form-label" for="title">Title</label>
+            <select class="form-control" id="title">
+                <option value="Select">Select</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Other">Other</option>
+            </select>
           </div>
 
           <div class="form-group">
@@ -39,7 +51,7 @@
           <div class="form-group">
             <fieldset>
               <legend>
-                <span class="form-label">Date of birth</span>
+                <span class="form-label">Month and year of birth</span>
               </legend>
               <div class="form-date">
                 <p class="form-hint">For example, 03 1980</p>
@@ -116,7 +128,7 @@
 
         <div class="column-one-third">    
           <div class="form-group">
-            <label class="form-label">Disadvantage markers</label>
+            <label class="form-label">Does the claimant have any of the following extra needs?</label>
 
             <fieldset>
               <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
@@ -126,7 +138,7 @@
               </label>
               <label class="block-label selection-button-checkbox" for="dis-2">
                 <input id="dis-2" name="dis-2" type="checkbox" value="English for speakers of other languages">
-                English for speakers of other languages
+                Speaks english as a second language
               </label>
               <label class="block-label selection-button-checkbox" for="dis-3">
                 <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
@@ -138,22 +150,22 @@
               </label>
               <label class="block-label selection-button-checkbox" for="dis-1">
                 <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
-                Literacy/numeracy
+                Poor literacy/numeracy
               </label>
               <label class="block-label selection-button-checkbox" for="dis-6">
                 <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs">
-                Mis-user of drugs
+                Misuses drugs
               </label>
               <label class="block-label selection-button-checkbox" for="dis-7">
                 <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol">
-                Mis-user of alcohol
+                Misuses alcohol
               </label>
             </fieldset>
           </div>
           
           <div class="form-group">
             <div class="form-group">
-              <label class="form-label" for="jobcentre">Industry sector</label>
+              <label class="form-label" for="jobcentre">What type of job are they looking for?</label>
               <select class="select form-control">
                 <option value="Select">Select</option>
                 <option value="All">All</option>
@@ -188,19 +200,19 @@
               
             <div class="form-group">
               <fieldset>
-                <legend class="form-label">Work programme</legend>
+                <legend class="form-label">Are they on a work programme?</legend>
                 <div class="form-group form-group-compound">
                   <label class="block-label selection-button-radio" for="radio-indent-3">
                     <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
-                      Pre-work programme
+                      Yes
                   </label>
                   <label class="block-label selection-button-radio" for="radio-indent-2">
                     <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
-                      Work programme
+                      No - note required yet
                   </label>
                   <label class="block-label selection-button-radio" for="radio-indent-4">
                     <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
-                      Work programme completer
+                      No - completed
                   </label>
                 </div>
               </fieldset>

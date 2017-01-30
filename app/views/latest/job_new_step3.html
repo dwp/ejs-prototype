@@ -2,14 +2,6 @@
 
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main">
@@ -28,7 +20,7 @@
       <div class="grid-row">
         <div class="column-one-third">      
           <div class="form-group">
-            <label class="form-label" for="title">Benefit type</label>
+            <label class="form-label" for="title">Which benefit is the person claiming?</label>
             <fieldset>
               <legend class="visuallyhidden">Choose benefit type:</legend>
               <label class="block-label selection-button-radio" for="radio-1" data-target="example-ni-number0">
@@ -48,9 +40,9 @@
 
           <div class="panel js-hidden" id="example-ni-number0">    
             <div class="form-group">
-              <label class="form-label" for="title">Day one evidence provided</label>
+              <label class="form-label" for="title">Day 1 evidence provided</label>
               <fieldset>
-                <legend class="visuallyhidden">Day one conditionality</legend>
+                <legend class="visuallyhidden">Day 1 conditionality</legend>
                 <label class="block-label selection-button-checkbox" for="dis-1">
                   <input id="dis-1" type="checkbox" name="esa-group" value="Work Related Activity Group">
                   CV
@@ -130,13 +122,27 @@
                   Pregnant
                 </label>
                 <label class="block-label selection-button-radio" for="dis-7">
-                  <input id="dis-7" name="is-group" type="radio" value="Student">
-                  Student
+                  <input id="dis-7" name="is-group" type="radio" value="Other">
+                  Other
                 </label>
               </fieldset>
             </div>
 
             {{claim.operating_model('IS')}}
+
+            <div class="form-group">
+              <label class="form-label" for="disability-premium">Disability premium</label>
+              <fieldset class="inline">
+                <label class="block-label selection-button-radio" for="disability-premium-yes">
+                  <input id="disability-premium-yes" name="disability-premium" type="radio" value="yes">
+                  Yes
+                </label>
+                <label class="block-label selection-button-radio selected" for="disability-premium-no">
+                  <input id="disability-premium-no" name="disability-premium" type="radio" value="no" checked="checked">
+                  No
+                </label>
+              </fieldset>
+            </div>
           </div>           
         </div>
 
@@ -201,7 +207,7 @@
       <div class="grid-row">
         <div class="column-full">
           <div class="form-group" id="save">
-            <a href="job_record_confirm" class="button" value="Continue">Continue</a>
+            <a href="job_record_confirm" class="button" value="Continue">Save claimant record</a>
           </div>
         </div>
       </div>
