@@ -6,5 +6,6 @@ require('./routes/index')(router);
 require('./routes/provision')(router);
 require('./routes/toggle-user-role')(router);
 require('./routes/appointments')(router);
+require('./routes/teams')(router);
 
 module.exports = router;

@@ -11,27 +11,23 @@
       {% include "includes/settings_menu.html" %} 
 
       <div class="grid-row">
-        <div class="column-full">
+        <div class="column-half">
           <table>
             <thead>
               <tr>
                 <th>Team name</th>
                 <th>Workcoaches</th>
-                <th>Region</th>
-                <th>District</th>
-                <th>Jobcentre</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Team 1</td>
-                <td>Andy Riley, Neil Hannon, Luke Duke, Todd Unctious, Rebulah Conundrum, Cannabranna Lammer</td>
-                <td>Wales District &amp; Jobcentres</td>
-                <td>Cumbria &amp; Lancashire</td>
-                <td>Workington</td>
-                <td><a href="">Update</a></td>
-              </tr>
+              {% for team in sessionData.teams %}
+                <tr>
+                  <td>{{team.name}}</td>
+                  <td>{{team.workcoaches}}</td>
+                  <td><a href="/latest/team_create/{{team.id}}">Update</a></td>
+                </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">Settings - Teams</h1>    
+
+      {% set currentSettingsPage = 'teams' %}
+      {% include "includes/settings_menu.html" %} 
+
+      <div class="grid-row">
+        <div class="column-half">
+        <form action="" method="POST" class="form">
+
+          <div class="form-group">
+            <label class="form-label-bold" for="team-name">Full name</label>  
+            <input class="form-control" id="team-name" name="team-name" type="text" value="{{team.name}}">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="Work coach"> Work coach</label>
+
+            <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+              <div class="checkbox-container" id="organisations-filter">
+              
+                {% for workcoach in sessionData.workcoaches%}
+                <label for="{{workcoach}}">
+                    <input id="{{workcoach}}" name="{{workcoach}}" type="checkbox" value="{{workcoach}}"
+                      {% if team and team.workcoaches.indexOf(workcoach) != -1%}checked{% endif %}
+                    />
+                    {{workcoach}}
+                </label>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Create team">
+          </div>
+        </form>
+      </div>       
+    </div>
+  </main>
+{% endblock %}
+
+
+
