@@ -1,0 +1,16 @@
+<div class="grid-row">
+  <br/>
+  <div class="column-full summary-nav-wrapper">   
+    <ul>
+      <li class="{% if currentPerformancePage === "jobcentre" %}selected{% endif %}">
+        <a href="/latest/manager_performance" class="menu-item">Jobcentre</a>
+      </li>
+      <li class="{% if getData.performanceReportType === "team" %}selected{% endif %}">
+        <a href="/latest/manager_view_filter?performanceReportType=team" class="menu-item">Team</a>
+      </li>
+      <li class="{% if getData.performanceReportType === "workcoach" %}selected{% endif %}">
+        <a href="/latest/manager_view_filter?performanceReportType=workcoach" class="menu-item">Work coach</a>
+      </li>
+    </ul> 
+  </div>  
+</div>

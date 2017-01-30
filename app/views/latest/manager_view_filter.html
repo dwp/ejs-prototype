@@ -6,7 +6,9 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">  
-      <h1 class="heading-large">Work coach performance</h1>
+      {% include "latest/manager_performance_nav.html" %}
+
+      <h1 class="heading-large">{% if getData.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%} performance</h1>
 
       {% include "latest/manager_view_filter_partial.html" %}
     </div>  

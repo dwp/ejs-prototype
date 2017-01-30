@@ -5,8 +5,10 @@
     {% set currentPage = 'mangerView' %}
     {% include "includes/main_nav.html" %}
 
-    <div class="main-content">     
-      <h1 class="heading-large">Richard Kaine performance - JSA</h1>   
+    <div class="main-content">
+      {% include "latest/manager_performance_nav.html" %}  
+      
+      <h1 class="heading-large">{% if getData.performanceReportType === 'team' %}Yellow team{%else%}William Conroy{%endif%} performance - JSA</h1>   
 
       <details>
         <summary><span class="summary">Show/hide filters</span></summary>

@@ -6,6 +6,10 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">  
+
+      {% set currentPerformancePage = 'workcoach' %}
+      {% include "latest/manager_performance_nav.html" %}
+      
       <h1 class="heading-large">Liverpool Aug 16 performance - JSA</h1>      
 
       <details>
@@ -31,7 +35,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Gary Boyle</td>
+                <td>{% if getData.performanceReportType === 'team' %}Blue team{%else%}Gary Boyle{%endif%}</td>
                 <td>6</td>
                 <td>3</td>
                 <td>50</td>
@@ -39,7 +43,7 @@
                 <td><a href="/latest/performance_jsa">5 (13 weeks)</a></td>
               </tr>
               <tr>
-                <td>Steve Currie</td>
+                <td>{% if getData.performanceReportType === 'team' %}Red team{%else%}Steve Currie{%endif%}</td>
                 <td>5</td>
                 <td>2</td>
                 <td>40</td>
@@ -47,7 +51,7 @@
                 <td><a href="/latest/performance_jsa">4 (52 weeks)</a></td>
               </tr>
               <tr>
-                <td>Grant Allen</td>
+                <td>{% if getData.performanceReportType === 'team' %}Yellow team{%else%}Grant Allen{%endif%}</td>
                 <td>7</td>
                 <td>3</td>
                 <td>42.85</td>

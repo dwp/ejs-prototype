@@ -18,7 +18,7 @@
 
   <div class="column-quarter">
     <div class="form-group">
-      <label class="form-label" for="Work coach"> Work coach</label>
+      <label class="form-label" for="Work coach">{% if getData.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%}</label>
 
       <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
         <div class="checkbox-container" id="organisations-filter">
@@ -26,46 +26,21 @@
               <input id="All" name="All" type="checkbox" value="All">
               All
           </label>
-          <label for="richard.kaine">
-              <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
-              richard.kaine
-          </label>
-          <label for="john.smith2">
-              <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
-              john.smith2
-          </label>
-          <label for="amanda.wright">
-              <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
-              amanda.wright
-          </label>
-          <label for="darren.moody">
-              <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
-              darren.moody
-          </label>
-          <label for="mark.jones1">
-              <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
-              mark.jones1
-          </label>
-          <label for="sam.steel">
-              <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
-              sam.steel
-          </label>
-          <label for="harry.brown2">
-              <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
-              harry.brown2
-          </label>
-          <label for="julia.granger">
-              <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
-              julia.granger
-          </label>
-          <label for="paul.brookes1">
-              <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
-              paul.brookes1
-          </label>
-          <label for="sarah.fielding">
-              <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
-              sarah.fielding
-          </label>
+          {% if getData.performanceReportType === 'team' %}
+            {% for team in sessionData.teams%}
+              <label for="{{team.name}}">
+                <input id="{{team.name}}" name="{{team.name}}" type="checkbox" value="{{team.name}}"/>
+                {{team.name}}
+              </label>
+            {% endfor %}
+          {% else %}
+            {% for workcoach in sessionData.workcoaches%}
+              <label for="{{workcoach}}">
+                <input id="{{workcoach}}" name="{{workcoach}}" type="checkbox" value="{{workcoach}}"/>
+                {{workcoach}}
+              </label>
+            {% endfor %}
+          {% endif %}  
         </div>
       </div>
     </div>
@@ -359,3 +334,5 @@
     </div>
   </div>
 </div>
+
+<input type="hidden" id="performance-report-type" value="{{getData.performanceReportType}}" />
