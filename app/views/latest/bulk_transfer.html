@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">
+
+      <h1 class="heading-large">Settings - Bulk transfer</h1>
+
+      {% set currentSettingsPage = 'bulkTransfer' %}
+      {% include "includes/settings_menu.html" %}
+
+      {% if getData.confirmBulkTransfer === 'yes' %}
+        <div class="grid-row">
+          <div class="column-half">
+            <div class="panel panel-border-wide alert-success">
+              <p>Bulk transfer complete</p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="grid-row">
+        <div class="column-half">
+          <p>Start by choosing which work coaches you want to transfer cases between.</p>
+          <p>You'll be able to choose which claimants to transfer on the next screen.</p>
+          <form action="/latest/bulk_transfer_caseload_list">  
+            <input type="hidden" name="resultsNumber" value="20"/> 
+            <div class="form-group">
+              <label class="form-label-bold" for="jobcentre">Select a workcoach to transfer from</label>
+              <select class="select form-control">
+                <option value="Select">Select</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Colin">Colin</option>                    
+              </select>     
+            </div>
+
+            <div class="form-group">
+              <label class="form-label-bold" for="jobcentre">Select a workcoach to transfer to</label>
+              <select class="select form-control">
+                <option value="Select">Select</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Colin">Colin</option>                    
+              </select>     
+            </div>
+
+            <button class="button">Continue</button>
+          </form>
+        </div>  
+      </div>        
+    </div>
+  </main>
+{% endblock %}
+
+
+

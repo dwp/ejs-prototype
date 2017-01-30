@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">  
+      <h1 class="heading-large">Settings - Bulk transfer</h1>
+
+      {% set currentSettingsPage = 'bulkTransfer' %}
+      {% include "includes/settings_menu.html" %}
+
+      <div class="grid-row">
+        <div class="column-full">
+          <form action="/latest/bulk_transfer">             
+            <div class="form-group">
+              <fieldset class="inline">
+                <legend class="heading-medium">Confirm bulk transfer</legend>
+                <p>You are about to move the following caseload selection from <span class="bold">Alice</span> to <span class="bold">Bob</span></p>
+                <label for="confirm-yes" class="block-label selection-button-radio">
+                  <input id="confirm-yes" type="radio" name="confirmBulkTransfer" value="yes">
+                  Yes
+                </label>
+                <label for="confirm-no" class="block-label selection-button-radio">
+                  <input id="confirm-no" type="radio" name="confirmBulkTransfer" value="no">
+                  No
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="form-group">   
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nino</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Benefit</th>
+                    <th>Caseload Segmentation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in range(0, 6) %}
+                    <tr>
+                      <td>AB123456</td>
+                      <td>Gary Boyle</td>
+                      <td>Live</td>
+                      <td>JSA</td>
+                      <td>Light touch</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
+            <div class="form-group">
+              <button class="button">Continue</button>
+            </div>
+          </form>
+        </div>  
+      </div>        
+    </div>
+  </main>
+{% endblock %}
