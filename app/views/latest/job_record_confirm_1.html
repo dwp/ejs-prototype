@@ -10,17 +10,15 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
-  <div class="grid-row">  
+  {% include "includes/main_nav.html" %}
 
-    {% include "includes/left_nav_settings.html" %}
+  <div class="main-content">  
+    <h1 class="heading-large">Summary -  Mr J Smith</h1>
 
-    <div class="column-three-quarters">
-      <h1 class="heading-large">&nbsp;&nbsp;Summary -  Mr J Smith</h1>
-
+    <div class="grid-row">  
       {% set currentClaimantPage = 'summary' %}
-      {% include "includes/claimant_menu.html" %}   
+      {% include "includes/summary_nav.html" %}  
 
       {% set entitlementQuestion = true %}
       {% set appointmentSet = true %}

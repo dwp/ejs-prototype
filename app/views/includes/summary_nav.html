@@ -1,0 +1,37 @@
+<div class="column-full summary-nav-wrapper">   
+  <ul>
+    <li class="{% if currentClaimantPage === "summary" %}selected{% endif %}">
+      <a id="Summary" href="job_record_confirm" class="menu-item ">Summary</a>
+    </li>
+
+    <li class="{% if currentClaimantPage === "edit" %}selected{% endif %}">
+      <a id="edit_record" href="job_edit" class="menu-item ">Claimant</a>
+    </li>
+
+    <li class="{% if currentClaimantPage === "appointments" %}selected{% endif %} {% if appointmentsDisabled %}disabled{% endif %}"> 
+      {% if appointmentsDisabled %}
+        <span>Appointment</span>
+      {% else %}
+        <a id="appointments" href="job_next_new" class="menu-item">
+          Appointment {% if not sessionData.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+        </a>
+      {% endif %}
+    </li>
+
+    {% if claimStatus === 'Dormant' %}
+      {% set claimHref = 'job_claim_dormant' %}
+    {% else %}
+      {% set claimHref = 'job_claim_active' %}
+    {% endif %}
+    <li class="{% if currentClaimantPage === "claim" %}selected{% endif %}">
+      <a id="claim_active" href="{{claimHref}}" class="menu-item">
+        Claim
+      </a>
+    </li>
+    <li class="{% if currentClaimantPage === "provision" %}selected{% endif %}">
+       <a id="provision" href="provision" class="menu-item">
+         Provision
+       </a>
+     </li>
+  </ul> 
+</div>  

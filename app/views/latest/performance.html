@@ -1,47 +1,38 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
 {% block propositionHeader %}
   {% include "includes/propositional_navigation.html" %}
 {% endblock %}
 
 {% block content %}
-
-
-<script src="/public/javascripts/jquery.min.js"></script>
-<script src="/public/javascripts/jquery-ui.min.js"></script>
-<script type="text/javascript" charset="utf8" src="/public/javascripts/jquery.dataTables.min.js"></script>
-<script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
-<script src="/public/javascripts/caseload.js"></script>
-
-<script>
-$(document).ready(function(){
-  $('#example').dataTable().yadcf([
-    {column_number : 3, filter_type: "range_number" }, 
-    {column_number : 4},
-    ]);
-});
-$('#example').removeClass('class');
-
-</script>
-
-<main id="content" role="main">
-  <div class="grid-row">        
+  <main id="content" role="main">
     {% set currentPage = 'caseload' %}
-    {% include "includes/left_nav_settings.html" %}
+    {% include "includes/main_nav.html" %}
 
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-      <h1 class="heading-large">&nbsp;&nbsp;Work coach caseload search</h1>
+    <div class="main-content">    
+      <h1 class="heading-large">Work coach caseload search</h1> 
 
       {% include "includes/caseload_filters.html" %}
     </div>
-  </div>
-</main>
+  </main>
 {% endblock %}
 
+
+{% block page_scripts %}
+  <script src="/public/javascripts/jquery.min.js"></script>
+  <script src="/public/javascripts/jquery.dataTables.min.js"></script>
+  <script src="/public/javascripts/jquery.dataTables.yadcf.js"></script>
+  <script src="/public/javascripts/caseload.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#example').dataTable().yadcf([
+        {column_number : 3, filter_type: "range_number" }, 
+        {column_number : 4},
+        ]);
+    });
+    $('#example').removeClass('class');
+  </script>
+{% endblock %}
 
 

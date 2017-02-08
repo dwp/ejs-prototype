@@ -1,0 +1,18 @@
+.search-box-container{
+    #nino {
+        height: 34px;
+        width: 500px;
+        margin-top:1px;
+    }
+
+    #search-submit{
+        background: $black  url('/public/images/search-button.png') no-repeat 4px 50%;
+        height: 40px;
+        width: 40px;
+        border: 0;
+        margin-left: -4px;
+        text-indent: -5000px;
+        position: relative;
+        top: -1px;
+    }
+}

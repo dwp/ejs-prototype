@@ -1,92 +1,79 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
-
-<script src="/public/javascripts/jquery.min.js"></script>
-<script src="/public/javascripts/workcoachPerformance.js"></script>
-
   <main id="content" role="main">
+    {% set currentPage = 'mangerView' %}
+    {% include "includes/main_nav.html" %}
 
-    <div class="grid-row">        
+    <div class="main-content">  
 
+      {% set currentPerformancePage = 'workcoach' %}
+      {% include "latest/manager_performance_nav.html" %}
+      
+      <h1 class="heading-large">Liverpool Aug 16 performance - JSA</h1>      
 
-      {% set currentPage = 'mangerView' %}
-      {% include "includes/left_nav_settings.html" %}
+      <details>
+        <summary><span class="summary">Show/hide filters</span></summary>
 
-      <!-- Start three quarters container for main content columns -->
-      <div class="column-three-quarters">
-
-        <h1 class="heading-large">Liverpool Aug 16 performance - JSA</h1>
-
-        <details>
-          <summary><span class="summary">Show/hide filters</span></summary>
-
-          <div>
+        <div>
           {% include "latest/manager_view_filter_partial.html" %}
-          </div>
-        </details>
+        </div>
+      </details>
 
-        <div class="column">   
-
-          <div id="container">
-
-            <table class="dataTable">
-              <thead>
-                <tr>
-                  <th>&nbsp;</th>
-                  <th class="nino no-sort">On-flow</th>
-                  <th class="nino no-sort">Off-flow</th>
-                  <th class="nino no-sort">&#37; achieved</th>  
-                  <th class="nino no-sort">Into work &#37;</th>      
-                  <th class="nino no-sort">Claimants to standard</th>                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Gary Boyle</td>
-                  <td>6</td>
-                  <td>3</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td><a href="/latest/performance_jsa">5 (13 weeks)</a></td>
-                </tr>
-                <tr>
-                  <td>Steve Currie</td>
-                  <td>5</td>
-                  <td>2</td>
-                  <td>40</td>
-                  <td>40</td>
-                  <td><a href="/latest/performance_jsa">4 (52 weeks)</a></td>
-                </tr>
-                <tr>
-                  <td>Grant Allen</td>
-                  <td>7</td>
-                  <td>3</td>
-                  <td>42.85</td>
-                  <td>42.85</td>
-                  <td><a href="/latest/performance_jsa">3 (26 weeks)</a></td>
-                </tr>
-                <tr>
-                  <td class="year_date">Total</td>
-                  <td class="year_date">70</td>
-                  <td class="year_date">35</td>
-                  <td class="year_date">45</td>
-                  <td class="year_date">45</td>
-                  <td class="year_date">36</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div class="grid-row">
+        <div class="column-full">   
+          <table class="dataTable">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th class="nino no-sort">On-flow</th>
+                <th class="nino no-sort">Off-flow</th>
+                <th class="nino no-sort">&#37; achieved</th>  
+                <th class="nino no-sort">Into work &#37;</th>      
+                <th class="nino no-sort">Claimants to standard</th>                  
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{% if getData.performanceReportType === 'team' %}Blue team{%else%}Gary Boyle{%endif%}</td>
+                <td>6</td>
+                <td>3</td>
+                <td>50</td>
+                <td>50</td>
+                <td><a href="/latest/performance_jsa">5 (13 weeks)</a></td>
+              </tr>
+              <tr>
+                <td>{% if getData.performanceReportType === 'team' %}Red team{%else%}Steve Currie{%endif%}</td>
+                <td>5</td>
+                <td>2</td>
+                <td>40</td>
+                <td>40</td>
+                <td><a href="/latest/performance_jsa">4 (52 weeks)</a></td>
+              </tr>
+              <tr>
+                <td>{% if getData.performanceReportType === 'team' %}Yellow team{%else%}Grant Allen{%endif%}</td>
+                <td>7</td>
+                <td>3</td>
+                <td>42.85</td>
+                <td>42.85</td>
+                <td><a href="/latest/performance_jsa">3 (26 weeks)</a></td>
+              </tr>
+              <tr>
+                <td class="year_date">Total</td>
+                <td class="year_date">70</td>
+                <td class="year_date">35</td>
+                <td class="year_date">45</td>
+                <td class="year_date">45</td>
+                <td class="year_date">36</td>
+              </tr>
+            </tbody>
+          </table>
         </div> 
       </div>  
     </div>
   </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script src="/public/javascripts/workcoachPerformance.js"></script>
 {% endblock %}

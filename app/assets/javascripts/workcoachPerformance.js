@@ -18,10 +18,12 @@ var workcoachPerformance = (function(){
 	* determineResultsView - show either workcoach view of cohort view
 	*/
 	function resultsView(){
+		var performanceReportType = $('#performance-report-type').val();
+
 		if(determineCohortInputType() === 'Single'){
-			return 'manager_view_by_workcoach';
+			return 'manager_view_by_workcoach?performanceReportType=' + performanceReportType;
 		} else {
-			return 'manager_view_by_cohort';
+			return 'manager_view_by_cohort?performanceReportType=' + performanceReportType;
 		}
 	}
 

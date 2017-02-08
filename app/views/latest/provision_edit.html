@@ -14,118 +14,109 @@
 <script src="/public/javascripts/provision.js"></script>
 
 <main id="content" role="main">
+  
+  {% include "includes/main_nav.html" %}   
 
- <div class="grid-row">        
-	
-    {% include "includes/left_nav_settings.html" %}
+  <div class="main-content"> 
+		<h1 class="heading-large">Provision - Mr J Smith</h1>    
 
-	<!-- Start three quarters container for main content columns -->
-	<div class="column-three-quarters">
+  	<div class="grid-row">
+      {% set currentClaimantPage = 'provision' %}
+      {% include "includes/summary_nav.html" %}
 
-		<h1 class="heading-large">&nbsp;&nbsp;Provision - Mr J Smith</h1>
+  		<div class="column-half">
+        <form action="provision_edit" method="POST" class="form">
+          <input type="hidden" name="id" value="{{provision.id}}" />
 
-    {% set currentClaimantPage = 'provision' %}
-    {% include "includes/claimant_menu.html" %} 
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Provision type</legend>
 
-		<div class="column">
-      <form action="provision_edit" method="POST" class="form">
-
-        <input type="hidden" name="id" value="{{provision.id}}" />
-
-        <div class="form-group">
-          <fieldset class="inline">
-            <legend class="form-label-bold">Provision type</legend>
-
-            <select class="select form-control" name="provision-type" id="provision-type">
-              <option value="">Select</option>
-              <option value="Work experience" {{ 'selected' if  provision.type === 'Work experience' else ''}}>Work experience</option>
-            </select>
-          </fieldset>
-        </div>
-
-        <div class="form-group form-date" id="start-date-group">
-          <legend class="form-label-bold">Start date</legend>
-
-          <p class="form-hint">DD MM YYYY</p>
-
-          <div class="form-group form-group-day">
-            <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="start-day" name="start-day" value="{{provision.startDateValues[0]}}">
+              <select class="select form-control" name="provision-type" id="provision-type">
+                <option value="">Select</option>
+                <option value="Work experience" {{ 'selected' if  provision.type === 'Work experience' else ''}}>Work experience</option>
+              </select>
+            </fieldset>
           </div>
-          <div class="form-group form-group-month">
-            <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="start-month" name="start-month" value="{{provision.startDateValues[1]}}">
+
+          <div class="form-group form-date" id="start-date-group">
+            <legend class="form-label-bold">Start date</legend>
+
+            <p class="form-hint">DD MM YYYY</p>
+
+            <div class="form-group form-group-day">
+              <label for="dob-day">Day</label>
+              <input type="text" class="form-control" id="start-day" name="start-day" value="{{provision.startDateValues[0]}}">
+            </div>
+            <div class="form-group form-group-month">
+              <label for="dob-month">Month</label>
+              <input type="text" class="form-control" id="start-month" name="start-month" value="{{provision.startDateValues[1]}}">
+            </div>
+            <div class="form-group form-group-year">
+              <label for="dob-year">Year</label>
+              <input type="text" class="form-control" id="start-year" name="start-year" value="{{provision.startDateValues[2]}}">
+            </div>
           </div>
-          <div class="form-group form-group-year">
-            <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="start-year" name="start-year" value="{{provision.startDateValues[2]}}">
+
+          <div class="form-group" id="start-status-group">
+            <fieldset class="inline">
+
+              <legend class="visually-hidden">Start status</legend>
+
+              <label class="block-label selection-button-radio" for="confirmed">
+                <input id="confirmed" type="radio" name="start-status" value="Confirmed" {{ 'checked' if  provision.status === 'Confirmed' else ''}}>
+                Confirmed
+              </label>
+              <label class="block-label selection-button-radio" for="did-not-start" >
+                <input id="did-not-start" type="radio" name="start-status" value="Did not start" {{ 'checked' if  provision.status === 'Did not start' else ''}}>
+                Did not start
+              </label> 
+            </fieldset>
           </div>
-        </div>
 
-        <div class="form-group" id="start-status-group">
-          <fieldset class="inline">
+          <div class="form-group form-date" id="end-date-group">
+            <legend class="form-label-bold">End date</legend>
 
-            <legend class="visually-hidden">Start status</legend>
+            <p class="form-hint">DD MM YYYY</p>
 
-            <label class="block-label selection-button-radio" for="confirmed">
-              <input id="confirmed" type="radio" name="start-status" value="Confirmed" {{ 'checked' if  provision.status === 'Confirmed' else ''}}>
-              Confirmed
-            </label>
-            <label class="block-label selection-button-radio" for="did-not-start" >
-              <input id="did-not-start" type="radio" name="start-status" value="Did not start" {{ 'checked' if  provision.status === 'Did not start' else ''}}>
-              Did not start
-            </label> 
-          </fieldset>
-        </div>
-
-        <div class="form-group form-date" id="end-date-group">
-          <legend class="form-label-bold">End date</legend>
-
-          <p class="form-hint">DD MM YYYY</p>
-
-          <div class="form-group form-group-day">
-            <label for="dob-day">Day</label>
-            <input type="text" class="form-control" id="end-day" name="end-day" value="{{provision.endDateValues[0]}}">
+            <div class="form-group form-group-day">
+              <label for="dob-day">Day</label>
+              <input type="text" class="form-control" id="end-day" name="end-day" value="{{provision.endDateValues[0]}}">
+            </div>
+            <div class="form-group form-group-month">
+              <label for="dob-month">Month</label>
+              <input type="text" class="form-control" id="end-month" name="end-month" value="{{provision.endDateValues[1]}}">
+            </div>
+            <div class="form-group form-group-year">
+              <label for="dob-year">Year</label>
+              <input type="text" class="form-control" id="end-year" name="end-year" value="{{provision.endDateValues[2]}}">
+            </div>
           </div>
-          <div class="form-group form-group-month">
-            <label for="dob-month">Month</label>
-            <input type="text" class="form-control" id="end-month" name="end-month" value="{{provision.endDateValues[1]}}">
+
+          <div class="form-group" id="outcome-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Outcome</legend>
+              <label class="block-label selection-button-radio" for="completed">
+                <input id="completed" type="radio" name="outcome" value="Completed"  {{ 'checked' if  provision.outcome === 'Completed' else ''}}>
+                Completed
+              </label>
+              <label class="block-label selection-button-radio" for="early-leaver">
+                <input id="early-leaver" type="radio" name="outcome" value="Early leaver"  {{ 'checked' if  provision.outcome === 'Early leaver' else ''}}>
+                Early leaver
+              </label>
+              <label class="block-label selection-button-radio" for="dismissed">
+                <input id="dismissed" type="radio" name="outcome" value="Dismissed" {{ 'checked' if  provision.outcome === 'Dismissed' else ''}}>
+                Dismissed
+              </label>
+            </fieldset>
           </div>
-          <div class="form-group form-group-year">
-            <label for="dob-year">Year</label>
-            <input type="text" class="form-control" id="end-year" name="end-year" value="{{provision.endDateValues[2]}}">
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Save">
           </div>
-        </div>
-
-        <div class="form-group" id="outcome-group">
-          <fieldset class="inline">
-            <legend class="form-label-bold">Outcome</legend>
-            <label class="block-label selection-button-radio" for="completed">
-              <input id="completed" type="radio" name="outcome" value="Completed"  {{ 'checked' if  provision.outcome === 'Completed' else ''}}>
-              Completed
-            </label>
-            <label class="block-label selection-button-radio" for="early-leaver">
-              <input id="early-leaver" type="radio" name="outcome" value="Early leaver"  {{ 'checked' if  provision.outcome === 'Early leaver' else ''}}>
-              Early leaver
-            </label>
-            <label class="block-label selection-button-radio" for="dismissed">
-              <input id="dismissed" type="radio" name="outcome" value="Dismissed" {{ 'checked' if  provision.outcome === 'Dismissed' else ''}}>
-              Dismissed
-            </label>
-          </fieldset>
-        </div>
-
-        <div class="form-group">
-          <input type="submit" class="button" value="Save">
-        </div>
-
-      </form>
-
-		</div>     
-	<!-- End column -->
-	</div>
-<!-- End row-->    
-</div>
-
+        </form>
+      </div>     
+    </div>    
+  </div>
 </main>
 {% endblock %}

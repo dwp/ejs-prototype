@@ -1,115 +1,138 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
-
 
 <main id="content" role="main">
 
-  <div class="grid-row">        
+  {% include "includes/main_nav.html" %}   
 
-    {% include "includes/left_nav_settings.html" %}
-
-
-  <!-- Start three quarters container for main content columns -->
-  <div class="column-three-quarters">
-
-         <h1 class="heading-large">&nbsp;&nbsp;New appointment - Mr J Smith</h1>
-
+  <div class="main-content">
+    <h1 class="heading-large">New appointment - Mr J Smith</h1>
+    <div class="grid-row">
       {% set currentClaimantPage = 'appointments' %}
-      {% include "includes/claimant_menu.html" %}   
+      {% include "includes/summary_nav.html" %}  
 
-      <div class="column-half">   
+      <form action="/latest/job_next_new" method="POST">
 
-              <div class="form-group">
-                   <label class="block-label" for="no-appointment" data-target="example-ni-number0">
-                    <input id="no-appointment" name="no-appointment" type="checkbox" value="No appointment needed" aria-controls="example-ni-number0">
-                      No appointment needed
-                  </label>
-               </div>   
+        {% if sessionData.appointmentUpdate === 'Failed to attend' %}
+          <div class="column-half">   
+            <div class="form-group">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>23/10/15</td>
+                    <td>11:45</td>
+                    <td>FTA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>    
+ 
+            <div class="form-group">
+              <input type="submit" value="Create appointment" name="action" class="button" />
+            </div> 
+          </div>
+        {% elif sessionData.hasAppointment %}
+          <div class="column-half">   
+            <div class="form-group">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>23/10/15</td>
+                    <td>11:45</td>
+                    <td>
+                      <select class="select form-control" name="appointmentUpdate">
+                        <option value="Select">Select</option>
+                        <option value="Failed to attend">Failed to attend</option>
+                        <option value="Attended">Attended</option>
+                        <option value="Immediate">Immediate</option>
+                        <option value="Rebook">Rebook</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>    
+ 
+            <div class="form-group">
+              <input type="submit" value="Save" class="button" />
+            </div> 
+          </div>
+        {% else %}
+          <div class="column-half">      
+            <div class="form-group">
+              <fieldset>
+                <legend><span class="form-label">Date</span></legend>
+                <div class="form-date">
+                  <p class="form-hint">For example, 01 09 2015</p>
 
-                <div class="js-visible" id="example-ni-number0">    
-            
-                  <div class="form-group">
-                        <fieldset>
-                          <legend>
-                            <span class="form-label">
-                              Date
-                            </span>
-                          </legend>
-                          <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label>
+                    <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div> 
 
-                            <p class="form-hint">For example, 01 09 2015</p>
+                  <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label>
+                    <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
 
-                           <div class="form-group form-group-day">
-                              <label for="dob-day">Day</label>
-                              <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-                            </div> 
+                  <div class="form-group form-group-year">
+                    <label for="dob-year">Year</label>
+                    <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                  </div>
+                </div>
+              </fieldset>
+            </div>       
 
-                            <div class="form-group form-group-month">
-                              <label for="dob-month">Month</label>
-                              <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                            </div>
+            <div class="form-group">
+              <fieldset>
+                <legend><span class="form-label">Time</span></legend>
+                <div class="form-date">
+                  <p class="form-hint">For example, 13 30</p>
 
-                            <div class="form-group form-group-year">
-                              <label for="dob-year">Year</label>
-                              <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
-                            </div>
-                          </div>
+                  <div class="form-group form-group-day">
+                    <label for="hour">Hour</label>
+                    <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
+                  </div> 
 
-                        </fieldset>
-                    </div>       
+                  <div class="form-group form-group-month">
+                    <label for="min">Min</label>
+                    <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
+                  </div>
+                </div>
+              </fieldset>
 
-                   <div class="form-group">
-                        <fieldset>
-                          <legend>
-                            <span class="form-label">
-                              Time
-                            </span>
-                          </legend>
-                          <div class="form-date">
+              <hr />
+            </div> 
 
-                            <p class="form-hint">For example, 13 30</p>
-
-                           <div class="form-group form-group-day">
-                              <label for="hour">Hour</label>
-                              <input class="form-control" id="hour" type="number" pattern="[0-9]*" min="9" max="15">
-                            </div> 
-
-                            <div class="form-group form-group-month">
-                              <label for="min">Min</label>
-                              <input class="form-control" id="min" type="number" pattern="[0-9]*" min="0" max="60">
-                            </div>
-                        </fieldset>
-                    </div> 
-
-                  </div>    
-                
-
-
-   
-       
-            <div class="form-group" id="get-started">
-                  <a href="job_record_confirm_1" class="button" value="Submit">Save</a>
-             </div>
-         
-      </div>
-      <!-- End col -->
-
-
-    <!-- End row-->       
-      </div>
-
-
+            <div class="form-group">
+              <label class="block-label selection-button-checkbox" for="no-appointment">
+                <input id="no-appointment" name="no-appointment" type="checkbox" value="No appointment needed">
+                  No appointment needed
+              </label>
+            </div>   
+            <div class="form-group">
+              <input type="submit" value="Save" class="button" />
+            </div> 
+          </div> 
+        {% endif %}
+      </form>     
+    </div>
 </main>
-<script src="/public/javascripts/jquery-1.11.0.min.js"></script> 
 
 {% endblock %}
 

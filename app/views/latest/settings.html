@@ -1,107 +1,79 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
 
+    <div class="main-content">   
+      <h1 class="heading-large">Settings - Change location</h1>    
 
-<main id="content" role="main">
+      {% set currentSettingsPage = 'changeLocation' %}
+      {% include "includes/settings_menu.html" %} 
 
-  <div class="grid-row">        
+      <div class="grid-row">
+        <div class="column-quarter">
+          <label class="form-label" for="jobcentre">Region</label>
+          <select class="select form-control">
+            <option value="North West England Districts &amp; Jobcentres" selected>North West England Districts &amp; Jobcentres</option>
+            <option value="North East England Districts &amp; Jobcentres">North East England Districts &amp; Jobcentres</option>
+            <option value="London &amp; Home Counties Districts &amp; Jobcentres">London &amp; Home Counties Districts &amp; Jobcentres</option>
+            <option value="Scotland Districts &amp; Jobcentres">Scotland Districts &amp; Jobcentres</option>
+            <option value="Southern Districts &amp; Jobcentres">Southern Districts &amp; Jobcentres</option>
+            <option value="Wales Districts &amp; Jobcentres">Wales Districts &amp; Jobcentres</option>
+          </select>  
+        </div>   
 
-    {% include "includes/left_nav_settings.html" %}
+        <div class="column-quarter">
+          <label class="form-label" for="jobcentre">District</label>
+          <select class="select form-control">
+            <option value="Greater Manchester East &amp; West">Greater Manchester East &amp; West</option>
+            <option value="Great Manchester Central &amp; Cheshire">Great Manchester Central &amp; Cheshire</option>
+            <option value="Cumbria &amp; Lancashire" selected>Cumbria &amp; Lancashire</option>
+            <option value="Merseyside">Merseyside</option>
+          </select>  
+        </div>   
 
-
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-
-      <h1 class="heading-large">&nbsp;&nbsp;Settings - Change location</h1>
-
-        {% set currentSettingsPage = 'changeLocation' %}
-        {% include "includes/settings_menu.html" %} 
-
-            <div class="column new_filters">
-        <br>
-
-            <div class="column-quarter filter-fields filter-form float">
-               <label class="form-label" for="jobcentre">Region</label>
-                   <select class="select form-control">
-                      <option value="North West England Districts &amp; Jobcentres" selected>North West England Districts &amp; Jobcentres</option>
-                      <option value="North East England Districts &amp; Jobcentres">North East England Districts &amp; Jobcentres</option>
-                      <option value="London &amp; Home Counties Districts &amp; Jobcentres">London &amp; Home Counties Districts &amp; Jobcentres</option>
-                      <option value="Scotland Districts &amp; Jobcentres">Scotland Districts &amp; Jobcentres</option>
-                      <option value="Southern Districts &amp; Jobcentres">Southern Districts &amp; Jobcentres</option>
-                      <option value="Wales Districts &amp; Jobcentres">Wales Districts &amp; Jobcentres</option>
-                    </select>  
-                  </div>   
-
-                <div class="column-quarter filter-fields filter-form">
-                  <label class="form-label" for="jobcentre">District</label>
-                     <select class="select form-control">
-                        <option value="Greater Manchester East &amp; West">Greater Manchester East &amp; West</option>
-                        <option value="Great Manchester Central &amp; Cheshire">Great Manchester Central &amp; Cheshire</option>
-                        <option value="Cumbria &amp; Lancashire" selected>Cumbria &amp; Lancashire</option>
-                        <option value="Merseyside">Merseyside</option>
-                      </select>  
-                  </div>   
-
-              <div class="column-quarter filter-fields filter-form">
-                  <label class="form-label" for="jobcentre">Jobcentre</label>
-                     <select class="select form-control">
-                        <option value="Accrington">Accrington</option>
-                        <option value="Barrow">Barrow</option>
-                        <option value="Blackburn">Blackburn</option>
-                        <option value="Blackpool North (Queen Street)">Blackpool North (Queen Street)</option>
-                        <option value="Blackpool South (Tyldesley Road)">Blackpool South (Tyldesley Road)</option>
-                        <option value="Burnley">Burnley</option>
-                        <option value="Carlisle">Carlisle</option>
-                        <option value="Chorley">Chorley</option>
-                        <option value="Colne">Colne</option>
-                        <option value="Darwin">Darwin</option>
-                        <option value="Fleetwood (Thornton Cleveleys)">Fleetwood (Thornton Cleveleys)</option>
-                        <option value="Kendall">Kendall</option>
-                        <option value="Lancaster">Lancaster</option>
-                        <option value="Leyland">Leyland</option>
-                        <option value="Morecambe">Morecambe</option>
-                        <option value="Nelson">Nelson</option>
-                        <option value="Ormskirk">Ormskirk</option>
-                        <option value="Penrith">Penrith</option>
-                        <option value="Preston">Preston</option>
-                        <option value="Rawtenstall">Rawtenstall</option>
-                        <option value="Skelmersdale">Skelmersdale</option>
-                        <option value="St Annes">St Annes</option>
-                        <option value="Whitehaven">Whitehaven</option>
-                        <option value="Workington">Workington</option>
-                      </select>  
-                  </div> 
-
-
-     <!-- End 1st row of filters -->
-
-      <!-- Start 2nd row of filters -->
-
-
-                  <div class="column-quarter filter-fields float">
-                        <div class="form-group filter-button">
-                            <br>
-                            <a href="job"><button class="button">Continue</button></a>
-                        </div>
-                     </div>
-              
-              </div>     
-      <!-- End 2nd row of filters -->
-
-    <!-- End row-->       
+        <div class="column-quarter">
+          <label class="form-label" for="jobcentre">Jobcentre</label>
+          <select class="select form-control">
+            <option value="Accrington">Accrington</option>
+            <option value="Barrow">Barrow</option>
+            <option value="Blackburn">Blackburn</option>
+            <option value="Blackpool North (Queen Street)">Blackpool North (Queen Street)</option>
+            <option value="Blackpool South (Tyldesley Road)">Blackpool South (Tyldesley Road)</option>
+            <option value="Burnley">Burnley</option>
+            <option value="Carlisle">Carlisle</option>
+            <option value="Chorley">Chorley</option>
+            <option value="Colne">Colne</option>
+            <option value="Darwin">Darwin</option>
+            <option value="Fleetwood (Thornton Cleveleys)">Fleetwood (Thornton Cleveleys)</option>
+            <option value="Kendall">Kendall</option>
+            <option value="Lancaster">Lancaster</option>
+            <option value="Leyland">Leyland</option>
+            <option value="Morecambe">Morecambe</option>
+            <option value="Nelson">Nelson</option>
+            <option value="Ormskirk">Ormskirk</option>
+            <option value="Penrith">Penrith</option>
+            <option value="Preston">Preston</option>
+            <option value="Rawtenstall">Rawtenstall</option>
+            <option value="Skelmersdale">Skelmersdale</option>
+            <option value="St Annes">St Annes</option>
+            <option value="Whitehaven">Whitehaven</option>
+            <option value="Workington">Workington</option>
+          </select>  
+        </div> 
       </div>
 
-
-</main>
+      <div class="grid-row">
+        <div class="column-full">
+          <br />
+          <div class="form-group filter-button">
+            <a href="job"><button class="button">Continue</button></a>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </main>
 {% endblock %}
 
 

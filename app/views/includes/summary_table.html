@@ -10,7 +10,7 @@
   <table>
     <tr>
       <td>Name:</td>
-      <td>Mr&nbsp;&nbsp;J&nbsp;&nbsp;Smith</td>
+      <td>J Smith</td>
     </tr>
     <tr>
       <td>Age:</td>
@@ -92,8 +92,12 @@
       <td>Work coach:</td>
       <td>amanda.wright</td>  
     </tr>
-  </table>
+  </table>  
+</div>
 
+<div class="column-half">&nbsp;</div>
+
+<div class="column-half">
   {% if claimStatus === 'Dormant' %}
     <h2 class="heading-small">Next appointment</h2>
     <table>
@@ -101,10 +105,27 @@
        <td>None</td>
       </tr>
     </table>
-  {% elif appointmentSet %}
+  {% elif sessionData.hasAppointment %}
     <h2 class="heading-small">Next appointment</h2>
         
     <table>
+      <tr>
+        <td>Date:</td>
+        <td>30/10/2015</td>
+      </tr>
+      <tr>   
+        <td>Time:</td>
+        <td>11:30</td>
+      </tr>
+    </table>
+  {% elif not sessionData.hasAppointment and sessionData.appointmentUpdate  == 'Failed to attend'%}
+    <h2 class="heading-small">Last Appointment</h2>
+        
+    <table>
+      <tr>
+        <td>Status:</td>
+        <td>{{sessionData.appointmentUpdate}}</td>
+      </tr>
       <tr>
         <td>Date:</td>
         <td>30/10/2015</td>

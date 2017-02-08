@@ -1,0 +1,48 @@
+.nav-horizontal{
+  background-color: $grey-3;
+  overflow: hidden;
+  
+  .main-nav-wrapper{
+    width: 100%;
+    
+    ul {
+      padding-left: 40px;
+      float: left;
+      margin: 0;
+    }
+    
+    li{
+      float: left;
+
+      a {
+        display: inline-block;
+        padding: 15px;
+        text-decoration: none;
+        color: $black;
+      }
+      &.selected a, &.selected a:hover {
+        background-color: $turquoise;
+        font-weight: bold;
+        color: $white;
+      }
+    }  
+  }
+
+  .external-links-wrapper{
+    float:right;
+
+    ul {
+      list-style: none;
+      padding: 15px 40px 15px 0;
+    }
+
+    li {
+      display: inline;
+    
+      a {
+        color: $govuk-blue;
+        font-size: 16px
+      }
+    }
+  }
+}

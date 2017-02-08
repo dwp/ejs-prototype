@@ -1,30 +1,20 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
 {% block content %}
-
-
-<script src="/public/javascripts/jquery.min.js"></script>
-<script src="/public/javascripts/workcoachPerformance.js"></script>
-
-<main id="content" role="main">
-
-  <div class="grid-row">        
-
+  <main id="content" role="main">
     {% set currentPage = 'mangerView' %}
-    {% include "includes/left_nav_settings.html" %}
+    {% include "includes/main_nav.html" %}
 
-    <div class="column-three-quarters">
+    <div class="main-content">  
+      {% include "latest/manager_performance_nav.html" %}
 
-      <h1 class="heading-large">&nbsp;&nbsp;Work coach performance</h1>
+      <h1 class="heading-large">{% if getData.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%} performance</h1>
 
       {% include "latest/manager_view_filter_partial.html" %}
+    </div>  
+  </main>
+{% endblock %}
 
-    </div>    
-  </div>  
-</main>
-
+{% block page_scripts%}
+  <script src="/public/javascripts/workcoachPerformance.js"></script>
 {% endblock %}

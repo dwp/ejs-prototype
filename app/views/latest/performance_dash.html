@@ -1,380 +1,207 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
 {% block propositionHeader %}
   {% include "includes/propositional_navigation.html" %}
 {% endblock %}
 
 {% block content %}
-
-
-<main id="content" role="main">
-
-  <div class="grid-row">        
-
+  <main id="content" role="main">
     {% set currentPage = 'dashboard' %}
-    {% include "includes/left_nav_settings.html" %}
+    {% include "includes/main_nav.html" %}
 
+    <div class="main-content"> 
+      <h1 class="heading-large">Liverpool - March 2016 reporting month (29/04 - 26/05)</h1>  
 
-    <!-- Start three quarters container for main content columns -->
-    <div class="column-three-quarters">
-
-         <h1 class="heading-large">&nbsp;&nbsp;Liverpool - March 2016 reporting month (29/04 - 26/05)</h1>   
-
-              <!--   <div class="column-third filter-fields filter-form float">
-                           <div class="form-group">
-                              <label class="form-label-bold" for="full-name">
-                                  Office
-                                </label>
-                                   <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
-                                      <div class="checkbox-container" id="organisations-filter">
-                                      <form>
-                                          <fieldset>
-                                            <legend class="visuallyhidden">Choose which sites(s) to search by</legend>
-                                            <label for="dis-2">
-                                              <input id="dis-2" name="dis-2" type="radio" value="Bradford" checked>
-                                              Bradford
-                                            </label><br>
-                                               <label for="dis-3">
-                                              <input id="dis-3" name="dis-3" type="radio" value="Derby" disabled>
-                                              Derby
-                                            </label><br>
-                                                <label for="dis-4">
-                                              <input id="dis-4" name="dis-4" type="radio" value="Liverpool" disabled>
-                                              Liverpool
-                                            </label><br>
-                                            <label for="dis-1">
-                                              <input id="dis-1" name="dis-1" type="radio" value="Manchester" disabled>
-                                              Manchester
-                                            </label><br>
-                                             <label for="dis-5">
-                                              <input id="dis-5" name="dis-5" type="radio" value="Portsmouth" disabled>
-                                              Portsmouth
-                                            </label><br>
-                                            <label for="dis-6">
-                                              <input id="dis-6" name="dis-6" type="radio" value="Southampton" disabled>
-                                              Southampton
-                                            </label><br>                                   
-                                            <label for="dis-7">
-                                              <input id="dis-7" name="dis-7" type="radio" value="Wolverhampton" disabled>
-                                              Wolverhampton
-                                            </label><br>                                   
-                                            <label for="dis-8">
-                                              <input id="dis-8" name="dis-8" type="radio" value="Worcester" disabled>
-                                              Worcester
-                                            </label>
-                                          </fieldset>
-                                      </form>
-                                      </div>
-                                    </div>
-                                </div>
-                                <a href="performance_dash_report" class="button" value="Filter">Filter again</a>
-                            </div>  -->
-
-
-                  <div class="column-third dash">
-                        <div class="form-group">
-                            <label class="form-label" for="jobcentre">Jobcentre</label>
-                              <select class="select form-control">
-                                  <option value="Select">Select</option>
-                                  <option value="Bradford">Bradford</option>
-                                  <option value="Derby">Derby</option>
-                                  <option value="Liverpool" selected>Liverpool</option>
-                                  <option value="Manchester">Manchester</option>
-                                  <option value="Portsmouth">Portsmouth</option>
-                                  <option value="Southampton">Southampton</option>
-                                  <option value="Wolverhampton">Wolverhampton</option>    
-                                  <option value="Worcester">Worcester</option>                     
-                              </select>  
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="performance_dash_report" class="button" value="Filter">Filter</a>
-                        </div>
-                  </div> 
-          
-            <div class="column"> 
-                  
-                  <!-- End col third -->
-                  <div class="column-third">    
-                      <div class="stat-over-first"> 
-                        <h2 class="heading-medium">Jobseekers Allowance</h2>
-                           <!-- <p class="stat"><a href="performance_jsa">22 to target</a></p> -->
-                                <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Weeks</td>
-                                        <td class="bold">Off-flow</td>
-                                        <td class="bold">To target</td>
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                                    <tr>
-                                        <td>13</td>
-                                        <td>75%</td>
-                                        <td>8</td>
-                                     </tr>
-                                     <tr>
-                                        <td>26</td>
-                                        <td>83%</td>
-                                        <td>7</td>
-                                     </tr>
-                                     <tr>
-                                        <td>39</td>
-                                        <td>88%</td>
-                                        <td>2</td>
-                                     </tr>
-                                     <tr>
-                                        <td>52</td>
-                                        <td>90%</td>
-                                        <td>5</td>
-                                     </tr>
-                                   </tbody> 
-                                </table>  
-                                        
-                        <!-- <span class="stat-up">-2.65%
-                              <span class="bold">&uarr;</span>  
-                              </span>
-                              &nbsp;
-                              <span class="stat-detail">Oct 2015</span>
-                              <br>
-                              <br> -->
-                        </div>    
-                  </div>
-                  <!-- End col third -->
-
-                  <!-- End col third -->
-                  <div class="column-third">    
-                      <div class="stat-over-first"> 
-                        <h2 class="heading-medium">Employment Support Allowance</h2>
-                        <!-- <p class="stat"><a href="performance_jsa">22 to target</a></p> -->                                
-                                <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Weeks</td>
-                                        <td class="bold">Off-flow</td>
-                                        <td class="bold">To target</td>
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                                    <tr>
-                                        <td>65</td>
-                                        <td>75%</td>
-                                        <td>8</td>
-                                     </tr>
-                                  <!--  <tr>
-                                        <td>13</td>
-                                        <td>75%</td>
-                                        <td>8</td>
-                                     </tr>
-                                     <tr>
-                                        <td>26</td>
-                                        <td>83%</td>
-                                        <td>7</td>
-                                     </tr>
-                                     <tr>
-                                        <td>39</td>
-                                        <td>88%</td>
-                                        <td>2</td>
-                                     </tr>
-                                     <tr>
-                                        <td>52</td>
-                                        <td>90%</td>
-                                        <td>5</td>
-                                     </tr> -->
-                                   </tbody> 
-                                </table>  
-                                        
-                        <!-- <span class="stat-up">-2.65%
-                              <span class="bold">&uarr;</span>  
-                              </span>
-                              &nbsp;
-                              <span class="stat-detail">Oct 2015</span>
-                              <br>
-                              <br> -->
-                        </div>    
-                  </div>
-                  <!-- End col third -->
-
-                  <!-- End col third -->
-                  <div class="column-third">    
-                      <div class="stat-over-first"> 
-                        <h2 class="heading-medium">Income Support</h2>
-                            <!-- <p class="stat"><a href="performance_jsa">22 to target</a></p> -->
-                                <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Weeks</td>
-                                        <td class="bold">Off-flow</td>
-                                        <td class="bold">To target</td>
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                              <!--      <tr>
-                                        <td>13</td>
-                                        <td>75%</td>
-                                        <td>8</td>
-                                     </tr>
-                                     <tr>
-                                        <td>26</td>
-                                        <td>83%</td>
-                                        <td>7</td>
-                                     </tr>
-                                     <tr>
-                                        <td>39</td>
-                                        <td>88%</td>
-                                        <td>2</td>
-                                     </tr>
-                                     <tr> -->
-                                        <td>52</td>
-                                        <td>90%</td>
-                                        <td>5</td>
-                                     </tr>
-                                   </tbody> 
-                                </table>  
-                                        
-                        <!-- <span class="stat-up">-2.65%
-                              <span class="bold">&uarr;</span>  
-                              </span>
-                              &nbsp;
-                              <span class="stat-detail">Oct 2015</span>
-                              <br>
-                              <br> -->
-                        </div>    
-                  </div>
-                  <!-- End col third -->
-
-
-
-                   <!-- Start 2nd row dashboard -->
-
-                  <!-- Start col -->      
-                  <div class="column-third">    
-                    <div class="stat-over-first"> 
-                        <h2 class="heading-medium">Live load</h2>
-                            <p class="stat">2100 claimants</p>
-                           <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Benefit</td>
-                                        <td class="bold">&nbsp;</td>
-                                        <td class="bold">Claimants</td> 
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                                    <tr>
-                                        <td colspan="2">Jobseekers Allowance</td>
-                                        <td>1600</td>
-                                     </tr>
-                                     <tr>
-                                        <td colspan="2">Employment Support Allowance</td>
-                                        <td>300</td>
-                                     </tr>
-                                        <td colspan="2">Income support</td>
-                                        <td>200</td>
-                                     </tr>   
-                                   </tbody> 
-                                </table>   
-                                        
-                        <!--      <span class="stat-up">-2.65%
-                              <span class="bold">&uarr;</span>  
-                              </span>
-                              &nbsp;
-                              <span class="stat-detail">Oct 2015</span>
-                              <br>
-                              <br> -->
-                        </div>    
-                  </div>
-                  <!-- End col third -->
-
-                  <!-- Start col -->      
-                  <div class="column-third">    
-                      <div class="stat-over-first"> 
-                        <h2 class="heading-medium">Off-flow into work</h2>
-                            <p class="stat">46&#37; this year</p>
-                                <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Benefit</td>
-                                        <td class="bold">&nbsp;</td>
-                                        <td class="bold">Claimants &#37;</td> 
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                                    <tr>
-                                        <td colspan="2">Jobseekers Allowance</td>
-                                        <td>65&#37;</td>
-                                     </tr>
-                                     <tr>
-                                        <td colspan="2">Employment Support Allowance</td>
-                                        <td>56&#37;</td>
-                                     </tr>
-                                        <td colspan="2">Income support</td>
-                                        <td>36&#37;</td>
-                                     </tr>   
-                                   </tbody> 
-                                </table>      
-                       </div>     
-                   <!-- End col third-->       
-                   </div>
-
-                  
-                 <!-- Start col -->      
-                  <div class="column-third">    
-                      
-                     <div class="stat-over-first"> 
-                       <h2 class="heading-medium">Day 1 conditionality</h2>
-                            <p class="stat">30&#37; met on Day 1</p>
-                           <!-- <span class="stat-down">+15%&nbsp;&nbsp;</span>
-                            <span class="stat-detail">Oct 2015</span>
-                            <br>
-                            <br> -->
-                                <table>
-                                   <thead> 
-                                    <tr>
-                                        <td class="bold">Current evidence missing</td>
-                                        <td class="bold">&nbsp;</td>
-                                        <td class="bold">Claimants</td> 
-                                     </tr>
-                                   </thead>
-                                   <tbody>
-                                    <tr>
-                                        <td colspan="2">CV</td>
-                                        <td>19</td>
-                                     </tr>
-                                     <tr>
-                                        <td colspan="2">Email address</td>
-                                        <td>100</td>
-                                     </tr>
-                                        <td colspan="2">Universal Jobmatch</td>
-                                        <td>81</td>
-                                     </tr>   
-                                   </tbody> 
-                                </table>  
-                          </div>      
-
-                   <!-- End col third-->       
-                   </div>
-
-                   <!-- End 2nd row dashboard -->
-
-            </div>
-            <!-- End full column -->
-
-
-
-
-  <!-- End three quarters column-->       
-   </div>  
-
- 
-
-    <!-- End row-->       
+      <div class="grid-row">
+        <div class="column-third dash">
+          <div class="form-group">
+            <label class="form-label" for="jobcentre">Jobcentre</label>
+            <select class="select form-control">
+              <option value="Select">Select</option>
+              <option value="Bradford">Bradford</option>
+              <option value="Derby">Derby</option>
+              <option value="Liverpool" selected>Liverpool</option>
+              <option value="Manchester">Manchester</option>
+              <option value="Portsmouth">Portsmouth</option>
+              <option value="Southampton">Southampton</option>
+              <option value="Wolverhampton">Wolverhampton</option>    
+              <option value="Worcester">Worcester</option>                     
+            </select>  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="performance_dash" class="button" value="Filter">Filter</a>
+          </div>
+        </div>
       </div>
 
+      <div class="grid-row">
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Jobseekers Allowance</h2>
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Weeks</td>
+                  <td class="bold">Off-flow</td>
+                  <td class="bold">To target</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>13</td>
+                  <td>75%</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>83%</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>39</td>
+                  <td>88%</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>52</td>
+                  <td>90%</td>
+                  <td>5</td>
+                </tr>
+              </tbody> 
+            </table>  
+          </div>    
+        </div>
 
-</main>
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Employment Support Allowance</h2>                          
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Weeks</td>
+                  <td class="bold">Off-flow</td>
+                  <td class="bold">To target</td>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>65</td>
+                  <td>75%</td>
+                  <td>8</td>
+                </tr>
+              </tbody> 
+            </table>  
+          </div>    
+        </div>
+        
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Income Support</h2>
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Weeks</td>
+                  <td class="bold">Off-flow</td>
+                  <td class="bold">To target</td>
+                </tr>
+              </thead>
+              <tbody>
+                  <td>52</td>
+                  <td>90%</td>
+                  <td>5</td>
+                </tr>
+              </tbody> 
+            </table>  
+          </div>    
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Live load</h2>
+            <p class="stat">2100 claimants</p>
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Benefit</td>
+                  <td class="bold">&nbsp;</td>
+                  <td class="bold">Claimants</td> 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2">Jobseekers Allowance</td>
+                  <td>1600</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Employment Support Allowance</td>
+                  <td>300</td>
+                </tr>
+                  <td colspan="2">Income support</td>
+                  <td>200</td>
+                </tr>   
+              </tbody> 
+            </table>  
+          </div>    
+        </div>
+
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Off-flow into work</h2>
+            <p class="stat">46&#37; this year</p>
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Benefit</td>
+                  <td class="bold">&nbsp;</td>
+                  <td class="bold">Claimants &#37;</td> 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2">Jobseekers Allowance</td>
+                  <td>65&#37;</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Employment Support Allowance</td>
+                  <td>56&#37;</td>
+                </tr>
+                  <td colspan="2">Income support</td>
+                  <td>36&#37;</td>
+                </tr>   
+              </tbody> 
+            </table>      
+          </div>       
+        </div> 
+        
+        <div class="column-third">    
+          <div class="stat-over-first"> 
+            <h2 class="heading-medium">Day 1 conditionality</h2>
+            <p class="stat">30&#37; met on Day 1</p>
+            <table>
+              <thead> 
+                <tr>
+                  <td class="bold">Current evidence missing</td>
+                  <td class="bold">&nbsp;</td>
+                  <td class="bold">Claimants</td> 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2">CV</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Email address</td>
+                  <td>100</td>
+                </tr>
+                  <td colspan="2">Universal Jobmatch</td>
+                  <td>81</td>
+                </tr>   
+              </tbody> 
+            </table>  
+          </div>      
+        </div>
+      </div>
+    </div>  
+  </main>
 {% endblock %}
-
-
-
