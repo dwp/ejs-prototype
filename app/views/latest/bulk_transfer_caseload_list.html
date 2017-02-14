@@ -10,6 +10,8 @@
       {% set currentSettingsPage = 'bulkTransfer' %}
       {% include "includes/settings_menu.html" %}
 
+      <p>Please select the claimants from <span class="bold">Alice's</span> caseload to transfer to <span class="bold">Bob</span>.</p>
+
       <div class="grid-row">
         <div class="column-full">
           <form action="/latest/bulk_transfer_confirmation">      
@@ -17,7 +19,7 @@
               <table>
                 <thead>
                   <tr>
-                    <th></th>
+                    <th><input id="select-all" type="checkbox" name="select-all" value="true"/></th>
                     <th>NINo</th>
                     <th>Name</th>
                     <th>Benefit</th>
@@ -28,10 +30,10 @@
                   {% for i in range(0, getData.resultsNumber | default(15)) %}
                     <tr>
                       <td>
-                          <input type="checkbox" name="claimants" value=""/>
+                          <input type="checkbox" name="claimants_{{i}}" value=""/>
                       </td>
                       <td>AB123456</td>
-                      <td>Gary Boyle</td>
+                      <td>Boyle</td>
                       <td>JSA</td>
                       <td>Light touch</td>
                     </tr>
@@ -41,7 +43,8 @@
             </div>
 
             <div class="form-group">
-              <button class="button">Continue</button>
+              <button class="button" id="continue-button" class="disabled" disabled="disabled">Continue</button>
+              <a href="bulk_transfer" class="clear">Back</a>
             </div>
           </form>
         </div>  
@@ -51,4 +54,6 @@
 {% endblock %}
 
 
-
+{% block page_scripts%}
+  <script src="/public/javascripts/bulkTransfer.js"></script>
+{% endblock %}
