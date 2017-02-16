@@ -6,7 +6,7 @@
 
     <div class="main-content">
 
-      <h1 class="heading-large">Settings - Bulk transfer</h1>
+      <h1 class="heading-large">Settings - Caseload transfer</h1>
 
       {% set currentSettingsPage = 'bulkTransfer' %}
       {% include "includes/settings_menu.html" %}
@@ -15,7 +15,7 @@
         <div class="grid-row">
           <div class="column-half">
             <div class="panel panel-border-wide alert-success">
-              <p>Bulk transfer complete</p>
+              <p>Caseload transfer complete</p>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
       <div class="grid-row">
         <div class="column-half">
           <p>Start by choosing which work coaches you want to transfer cases between.</p>
-          <p>You'll be able to choose which claimants to transfer on the next screen.</p>
+          <p>You'll be able to choose which cases to transfer on the next screen.</p>
           <form action="/latest/bulk_transfer_caseload_list">  
             <input type="hidden" name="resultsNumber" value="20"/> 
             <div class="form-group">

@@ -5,7 +5,7 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">  
-      <h1 class="heading-large">Settings - Bulk transfer</h1>
+      <h1 class="heading-large">Settings - Caseload transfer</h1>
 
       {% set currentSettingsPage = 'bulkTransfer' %}
       {% include "includes/settings_menu.html" %}
@@ -15,8 +15,8 @@
           <form action="/latest/bulk_transfer">             
             <div class="form-group">
               <fieldset class="inline">
-                <legend class="heading-medium">Confirm bulk transfer</legend>
-                <p>You are about to move the following caseload selection from <span class="bold">Alice</span> to <span class="bold">Bob</span>.</p>
+                <legend class="heading-medium">Confirm caseload transfer</legend>
+                <p>You are about to move the following cases from <span class="bold">Alice</span> to <span class="bold">Bob</span>.</p>
                 <p>Are you sure you want to do this?</p>
                 <label for="confirm-yes" class="block-label selection-button-radio">
                   <input id="confirm-yes" type="radio" name="confirmBulkTransfer" value="yes">
