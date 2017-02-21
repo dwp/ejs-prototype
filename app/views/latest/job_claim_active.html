@@ -1,15 +1,8 @@
 {% import "macros/claim.html" as claim %}
 
 {% extends "layout.html" %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
-
 <main id="content" role="main">
-
   {% include "includes/main_nav.html" %}   
 
   <div class="main-content">
@@ -172,17 +165,18 @@
             </legend>
             <div class="form-date">
               <p class="form-hint">For example, 01 08 2015</p>
+              <p class="form-hint">Filling this in will send a text message to the claimant</p>
               <div class="form-group form-group-day">
                 <label for="dob-day">Day</label>
-                <input class="form-control" id="dob-day" type="number">
+                <input class="form-control" id="processed-day" type="number">
               </div>
               <div class="form-group form-group-month">
                 <label for="dob-month">Month</label>
-                <input class="form-control" id="dob-month" type="number">
+                <input class="form-control" id="processed-month" type="number">
               </div>
               <div class="form-group form-group-year">
                 <label for="dob-year">Year</label>
-                <input class="form-control" id="dob-year" type="number">
+                <input class="form-control" id="processed-year" type="number">
               </div>
             </fieldset>
         </div>
@@ -193,17 +187,18 @@
             </legend>
             <div class="form-date">
               <p class="form-hint">For example, 01 08 2015</p>
+              <p class="form-hint">Filling this in will send a text message to the claimant</p>
               <div class="form-group form-group-day">
                 <label for="dob-day">Day</label>
-                <input class="form-control" id="dob-day" type="number">
+                <input class="form-control" id="received-day" type="number">
               </div>
               <div class="form-group form-group-month">
                 <label for="dob-month">Month</label>
-                <input class="form-control" id="dob-month" type="number">
+                <input class="form-control" id="received-month" type="number">
               </div>
               <div class="form-group form-group-year">
                 <label for="dob-year">Year</label>
-                <input class="form-control" id="dob-year" type="number" >
+                <input class="form-control" id="received-year" type="number" >
               </div>
             </fieldset>
         </div>
@@ -254,12 +249,15 @@
         <div class="column-third">
           <div class="form-group" id="save">
             <br>
-            <a href="job_record_confirm_dormant" class="button" value="Save">Save</a>
+            <a id="save-claim-button" href="job_record_confirm_dormant" class="button" value="Save">Save</a>
           </div>
         </div>
       </div>
     </form>
   </div>
 </main>
+{% endblock %}
 
+{% block page_scripts %}
+  <script src="/public/javascripts/claim.js"></script>
 {% endblock %}

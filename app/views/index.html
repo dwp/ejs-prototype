@@ -11,6 +11,14 @@
     <h1 class="heading-large">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
     
     <div class="grid-row">
+        {% set benefitCentreEnhancements = [{ workTitle: 'Benefit centre enhancements', 
+            links: [
+                { link : 'latest/job_claim_active', title : 'Create claim - Date processed and date received added'},
+                { link : 'latest/job_record_confirm?dateProcessed=1', title : 'Summary page - Alert message for sent SMS'}
+            ] 
+        }] %}
+        {{ sprintLinks( 'Sprint 32', benefitCentreEnhancements) }}
+
         {% set failureToAttend = [{ workTitle: 'Failure to attend', 
             links: [
                 { link : 'latest/job_next_new', title : 'Create appointment - Then mark as FTA'}

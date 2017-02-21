@@ -1,13 +1,5 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  GOV.UK prototyping kit
-{% endblock %}
-
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main">
@@ -19,10 +11,11 @@
     <div class="grid-row">
       {% set currentClaimantPage = 'summary' %}
       {% set appointmentsDisabled = true %}
+
       {% set claimStatus = 'Dormant' %}
       {% set currentClaimantPage = 'summary' %}
       {% include "includes/summary_nav.html" %}
-
+      
       {% include "includes/summary_table.html" %}       
     </div>
   </div>
