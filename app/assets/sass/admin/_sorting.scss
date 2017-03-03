@@ -1,0 +1,20 @@
+table {
+  thead{
+    th {
+      &.sortable span{
+        color: $govuk-blue;
+        text-decoration: underline;
+        cursor: pointer;
+
+
+        &.sort-asc::before {
+          content: "\25B2  ";
+        }
+
+        &.sort-desc::before {
+          content: "\25BC  ";
+        }
+      }
+    }
+  }
+}

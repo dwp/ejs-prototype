@@ -21,25 +21,38 @@
             {% include "includes/caseload_filters.html" %}
           </details>
         </div>
+      </div>
 
+      <div class="grid-row">
         <div class="column-full">   
           <p class="search_string">You searched: JSA > 18-24 > April 2015 > Homeless > ESOL > Live > Pre-work programme > Logistics{%if getData.provisionSelected %} > Work experience{%endif%}</p>
+        </div>
+      </div>
 
+      <div class="grid-row">
+        <div class="column-half">   
           <input class="button copy_email" value="Copy selected emails" disabled="disabled">
+        </div>
+        <div class="column-half">   
+          <p style="float: right">Result per page: 10 <a href="/latest/performance_jsa">50</a> <a href="/latest/performance_jsa">250</a> <a href="/latest/performance_jsa">All</a></p>
+        </div>
+      </div>
 
+      <div class="grid-row">
+        <div class="column-full">   
           <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
             <thead>
               <tr>
-                <th class="nino no-sort">NINO</th>
-                <th class="nino no-sort">Surname</th>
-                <th class="nino no-sort">Initial</th>
-                <th class="nino no-sort"><input type="checkbox">&nbsp;Email</th>
+                <th><span>NINO</span></th>
+                <th class="sortable"><span>Surname</span></th>
+                <th>Initial</th>
+                <th><input type="checkbox">&nbsp;<span>Email</span></th>
                 {%if getData.provisionSelected %}
-                  <th class="nino no-sort">Provision start date</th>
-                  <th class="nino no-sort">Provision status</th>
+                  <th>Provision start date</th>
+                  <th>Provision status</th>
                 {%else%}
-                  <th class="daysto nino no-sort">Days to</th>
-                  <th class="appoint nino no-sort">Appointment</th>
+                  <th class="sortable"><span class="sort-asc">Days to</span></th>
+                  <th class="sortable"><span>Appointment</span></th>
                 {%endif%}
               </tr>
             </thead>

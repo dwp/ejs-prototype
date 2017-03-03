@@ -1,7 +1,8 @@
-$(function(){
+(function(){
   var $extraOption = $('#extraCaseloadSegmentationOption'),
     $dayOneEvidenceFilter = $('#day-one-evidence-filter'),
-    $childAgeFilter = $('#child-age-filter');
+    $childAgeFilter = $('#child-age-filter')
+    $sortableHeaders = $('th.sortable span');
 
   toggleCaseloadSegmentationOptions();
   toggleDayOneEvidenceFilter();
@@ -57,4 +58,19 @@ $(function(){
     toggleDayOneEvidenceFilter();
     toggleChildAgeFilter();
   });
-})
+
+  $sortableHeaders.on('click', function(){
+    var $this = $(this),
+      hasAscClass = $this.hasClass('sort-asc'),
+      hasDescClass = $this.hasClass('sort-desc');
+
+    if(hasAscClass){
+      $this.removeClass('sort-asc').addClass('sort-desc');
+    } else if (hasDescClass){
+      $this.removeClass('sort-desc').addClass('sort-asc');
+    } else {
+      $sortableHeaders.removeClass();
+      $this.addClass('sort-asc');
+    }
+  });
+})()
