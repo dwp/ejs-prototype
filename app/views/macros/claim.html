@@ -1,8 +1,8 @@
 {% macro operating_model(benefit_type, checked_value) %}
   <div class="form-group">
-    <label class="form-label" for="title">Caseload segmentation</label>
+    <label class="form-label" for="title">Level of work coach support needed</label>
       <fieldset>
-        <legend class="visuallyhidden">Caseload segmentation</legend>
+        <legend class="visuallyhidden">Level of work coach support needed</legend>
         <label class="block-label selection-button-radio" for="{{benefit_type}}-jom-option-1">
           <input id="{{benefit_type}}-jom-option-1" type="radio" name="{{benefit_type}}-jom-group" value="Self sufficient"
           {% if checked_value === 'Self sufficient' %} checked {%endif%}>
