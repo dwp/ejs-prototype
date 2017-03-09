@@ -8,15 +8,15 @@
             <select name="select" class="form-control dropdown-list" id="benefit">
               <option data-type="JSA" value="Select">Select</option>
               <option data-type="JSA" value="Jobseekers Allowance" {% if jobseekerBenefitSelected %}selected{% endif %}>Jobseekers Allowance</option>
-              <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - all</option>
-              <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - work group</option>
-              <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - support group</option>
-              <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - pre-assessment</option>
-              <option data-type="IS" value="Income Support - all">Income Support - all</option>
-              <option data-type="IS" value="Income Support - lone parent">Income Support - lone parent</option>
-              <option data-type="IS" value="Income Support - carer">Income Support - carer</option>
-              <option data-type="IS" value="Income Support- pregnant">Income Support - pregnant</option>
-              <option data-type="IS" value="Income Support- student">Income Support - student</option>
+              <option data-type="ESA" value="Employment Support Allowance - all">Employment Support Allowance - All</option>
+              <option data-type="ESA" value="Employment Support Allowance - work group">Employment Support Allowance - Work Related Activity Group</option>
+              <option data-type="ESA" value="Employment Support Allowance - support group">Employment Support Allowance - Support Group</option>
+              <option data-type="ESA" value="Employment Support Allowance - pre-assessment">Employment Support Allowance - Pre-assessment</option>
+              <option data-type="IS" value="Income Support - all">Income Support - All</option>
+              <option data-type="IS" value="Income Support - lone parent">Income Support - Lone parent</option>
+              <option data-type="IS" value="Income Support - carer">Income Support - Carer</option>
+              <option data-type="IS" value="Income Support- pregnant">Income Support - Pregnant</option>
+              <option data-type="IS" value="Income Support- student">Income Support - Student</option>
             </select>
           </div>
         </div>
@@ -24,7 +24,7 @@
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="full-name">
-            Live/dormant
+            Status
           </label>
           <fieldset class="inline">
             <label for="live" class="block-label selection-button-radio">
@@ -65,7 +65,7 @@
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="cohorts">
-            Milestone
+            Milestone week
           </label>
           <div class="dropdown">
             <select name="select" class="form-control dropdown-list" id="cohorts">
@@ -98,9 +98,9 @@
             <div class="filter checkbox-filter js-openable-filter" tabindex="0">
               <div class="checkbox-container" id="organisations-filter">
                 <fieldset>
-                  <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+                  <legend class="visuallyhidden">Which extra support applies to the claimant?</legend>
                   <label for="dis-2">
-                    <input id="dis-2" name="dis-2" type="checkbox" value="ESOL"> ESOL
+                    <input id="dis-2" name="dis-2" type="checkbox" value="ESOL"> Poor English
                   </label>
                   <br>
                   <label for="dis-3">
@@ -112,19 +112,22 @@
                   </label>
                   <br>
                   <label for="dis-1">
-                    <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy"> Literacy/numeracy
+                    <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy"> Poor literacy/numeracy
                   </label>
                   <br>
                   <label class="disabled" for="dis-8">
-                    <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled> Disabled person
+                    <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person" disabled> Disabled
                   </label>
                   <br>
                   <label class="disabled" for="dis-6">
-                    <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled> Mis-user of drugs
+                    <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs" disabled> Misuses drugs
                   </label>
                   <br>
                   <label class="disabled" for="dis-7">
-                    <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled> Mis-user of alcohol
+                    <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol" disabled> Misuses alcohol
+                  </label>
+                  <label class="disabled" for="dis-9">
+                    <input id="dis-9" name="dis-9" type="checkbox" value="Ex-Armed Forces" disabled> Ex-Armed Forces
                   </label>
                 </fieldset>
               </div>
@@ -157,7 +160,7 @@
                 <option value="Medical/health">Medical/health</option>
                 <option value="Other">Other</option>
                 <option value="Production/operations">Production/operations</option>
-                <option value="Project/program management">Project/program management</option>
+                <option value="Project/program management">Project/programme management</option>
                 <option value="Quality assurance/safety">Quality assurance/safety</option>
                 <option value="Retail">Retail</option>
                 <option value="R&amp;D/science">R&amp;D/science</option>
@@ -178,9 +181,9 @@
             <div class="dropdown">
               <select name="select" class="form-control dropdown-list" id="sector">
                 <option value="None">None</option>
+                <option value="Pre work programme">Pre-work programme</option>
                 <option value="Work programme">Work programme</option>
-                <option value="Pre work programme">Pre work programme</option>
-                <option value="Work programme completer">Work programme completer</option>
+                <option value="Work programme completer">Completed work programme</option>
               </select>
             </div>
           </div>
@@ -191,13 +194,13 @@
               Day 1 evidence missing
             </label>
             <fieldset>
-              <legend class="visuallyhidden">Missing day one evidence to search by</legend>
+              <legend class="visuallyhidden">Missing Day 1 evidence to search by</legend>
               <label for="cv">
                 <input id="cv" name="cv" type="checkbox" value="CV"> CV
               </label>
               <br>
               <label for="uj">
-                <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch"> Universal Jobmatch
+                <input id="uj" name="uj" type="checkbox" value="Universal Jobmatch"> Universal Jobmatch profile
               </label>
               <br>
               <label for="email">
@@ -242,7 +245,7 @@
         </div>
         <div class="column-quarter">
           <div class="form-group">
-            <label class="form-label" for="full-name">Signing day</label>
+            <label class="form-label" for="full-name">Signing cycle</label>
             <div class="dropdown">
               <select name="select" class="form-control dropdown-list" id="provision-type">
                 <option value="">Select</option>
