@@ -6,13 +6,22 @@ table {
         text-decoration: underline;
         cursor: pointer;
 
-
         &.sort-asc::before {
           content: "\25B2  ";
         }
 
         &.sort-desc::before {
           content: "\25BC  ";
+        }
+      }
+
+      &.alpha.sortable {
+        .sort-desc::after {
+          content: " (Z-A)";
+        }
+
+        .sort-asc::after {
+          content: " (A-Z)";
         }
       }
     }
