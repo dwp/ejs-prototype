@@ -1,0 +1,30 @@
+{
+  "title" : "Long term unemployed",
+  "nextQuestionSet" : "early-entry",
+  "questions": [
+    { "text" : "Does the individual have a basic skills need that can be met by the JCP",
+      "name" : "basic-skills-need", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is the individual doing any form of paid employment?",
+      "name" : "paid-employment", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the individual previously been on the Work and Health programme?",
+      "name" : "previous-whp", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the JSP officer already helped the individual with their core job search activity?",
+      "name" : "core-help", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider the individual will realistically find employment in the next 12 months with solely support of the JSP offer?",
+      "name" : "sole-support", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider that the individual will realistically find employment in the next 12 months?",
+      "name" : "find-employment", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "The individual has a realistic job goal?",
+      "name" : "real-goal", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is there any other provision which would be more suited for the individual's needs and help them to find work?",
+      "name" : "other-provision", 
+      "options" : [ "Yes","No" ]}
+  ]
+}

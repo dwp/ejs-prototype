@@ -1,0 +1,19 @@
+{
+  "title" : "Claimant group",
+  "nextQuestionSet" : "voluntary",
+  "questions" : [
+    { "text" : "Is the claimant:",
+      "name" : "claimant-group", 
+      "options" : [ 
+        { "label" : "Voluntary", "value" : "voluntary"}, 
+        { "label" : "Long term unemployed", "value" :"long-term-unemployed"}, 
+        { "label" : "Early entry group", "value" : "early-entry "} 
+    ]},
+    { "text" : "Has the claimant been referred by and External signposting organisation?",
+      "name" : "external-org", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is the claimant an ESA WRAG?",
+      "name" : "esa-wrag", 
+      "options" : [ "Yes","No" ]}
+  ]
+}

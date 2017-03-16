@@ -7,5 +7,6 @@ require('./routes/provision')(router);
 require('./routes/toggle-user-role')(router);
 require('./routes/appointments')(router);
 require('./routes/teams')(router);
+require('./routes/selection-tool')(router);
 
 module.exports = router;

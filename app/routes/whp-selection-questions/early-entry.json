@@ -1,0 +1,30 @@
+{
+  "title" : "Early entry",
+  "nextQuestionSet" : "ltu-knockout",
+  "questions": [
+    { "text" : "Does the individual have a basic skills need that can be met by JCP offer?",
+      "name" : "basic-offer", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is the individual doing any form of paid employment?",
+      "name" : "paid-employmnet", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the individual previously been on the Work and Health programme?",
+      "name" : "previous-whp", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the JCP offer already helped the individual with their core job search activity?",
+      "name" : "jcp-helped", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider that the individual will realistically find employmnet in the next twelve months with soley support of the JCP offer?",
+      "name" : "sole-jcp", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider that the individual will realistically find employment in the next twelve months?",
+      "name" : "next-twelve", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider the individual has a realistic job goal?",
+      "name" : "realistic-goal", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is there any other provision which would be more suited for the individual's needs and help them to find work?",
+      "name" : "other-provision", 
+      "options" : [ "Yes","No" ]}
+  ]
+}

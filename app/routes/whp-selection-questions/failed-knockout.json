@@ -1,0 +1,13 @@
+{
+  "title" : "Failed",
+  "explanation": "From the answers you provided, the claimant has failed the knockout questions and is not eligible for the Work Health Programme.",
+  "detail" : {
+    "message" : "The customer failed on the following questions",
+    "failedQuestions" : ["Has the individual previously been on the Work and Health Programme?"]
+  },
+  "questions": [
+    { "text" : "As you have indicated that the claimant is Long Term unemployed - would you like to send the claimant details to the gatekeeper?",
+      "name" : "scoring-questions", 
+      "options" : [ "Yes","No" ]}
+  ]
+}

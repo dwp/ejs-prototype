@@ -1,0 +1,30 @@
+{
+  "title" : "Voluntary",
+  "nextQuestionSet" : "long-term-unemployed",
+  "questions": [
+    { "text" : "Has the individual self-declared a current disability as defined in the Equality Act 2010",
+      "name" : "disability-declared", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is the individual doing any form of paid employment?",
+      "name" : "paid-employment", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the individual previously been on the Work and Health Programme?",
+      "name" : "previous-whp", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Does the individual have a basic skills need that can be met by the JCP offer?",
+      "name" : "basic-need", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Has the JCP offer already helped the individual with their core job search activity?",
+      "name" : "offer-helped", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider thhat the individual will realistically find employmet in the next twelve months with solely support of the JCP offer?",
+      "name" : "sole-support", 
+      "options" : [ "Yes","No" ]},
+    { "text" : "Do you consider that the individual will realistically find employment in the next twelve months?",
+      "name" : "find-work-in-12-months",
+      "options" : [ "Yes","No" ]},
+    { "text" : "Is there any other provision which would be more suited for the individual's needs and help them find work?",
+      "name" : "other-provision",
+      "options" : [ "Yes","No" ]}
+  ]
+}
