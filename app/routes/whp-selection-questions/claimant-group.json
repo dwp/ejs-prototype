@@ -11,9 +11,6 @@
     ]},
     { "text" : "Has the claimant been referred by and External signposting organisation?",
       "name" : "external-org", 
-      "options" : [ "Yes","No" ]},
-    { "text" : "Is the claimant an ESA WRAG?",
-      "name" : "esa-wrag", 
       "options" : [ "Yes","No" ]}
   ]
 }

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith - Confirmation</h1>     
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+        {% include "includes/summary_nav.html" %}
+      </div>
+
+      <div class="grid-row">
+        <div class="column-full">
+          <p>Based on your answers, Mr J Smith has been submitted to the Private Sector Provision.</p>
+          <form method="POST" action="">
+            <table class="form-group">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Provider</th>
+                  <th>Course</th>
+                  <th>Start date</th>
+                  <th>Length</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                      <input id="provision-1" type="radio" name="provision" value="1">
+                  </td>
+                  <td>Hull college</td>
+                  <td>Basic Literacy</td>
+                  <td>1 April</td>
+                  <td>4 weeks</td>
+                </tr>
+                <tr>
+                  <td>
+                      <input id="provision-2" type="radio" name="provision" value="1">
+                  </td>
+                  <td>Leeds college</td>
+                  <td>Brick laying</td>
+                  <td>30 April</td>
+                  <td>20 weeks</td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="button">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
