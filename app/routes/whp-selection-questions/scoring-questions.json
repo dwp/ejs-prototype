@@ -1,0 +1,29 @@
+{
+  "title" : "Scoring questions",
+  "questions": [{ 
+      "text" : "The individual's knowledge, skills and capabilities are appropriate to the type of work they are seeking.",
+      "name" : "knowledge", 
+      "type" : "scoring"
+    },{ 
+      "text" : "The individual knows the type of work they would like to undertake.",
+      "name" : "type-of-work-to-undertake", 
+      "type" : "scoring"
+    },{ 
+      "text" : "The individual is able to use digital technology (computers, apps, software with or without adaptations).",
+      "name" : "digital-technology-use", 
+      "type" : "scoring"
+    },{ 
+      "text" : "The individual can describe what they need to do, to seek and get a job.",
+      "name" : "can-describe", 
+      "type" : "scoring"
+    },{ 
+      "text" : "Based on the information gathered I consider that the individual is willing to apply him/herself to job search activity.",
+      "name" : "willing-to-apply", 
+      "type" : "scoring"
+    },{ 
+      "text" : "Based on the information gathered I consider that the individual is willing and can learn new tasks/sills to help them do a job.",
+      "name" : "learn-new-tasks", 
+      "type" : "scoring"
+    }
+  ]
+}

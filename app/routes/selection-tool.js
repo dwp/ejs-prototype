@@ -24,7 +24,11 @@ module.exports = function(router) {
   });
 
   router.post('/latest/selection_tool/*', function (req, res) {
-    res.redirect('/latest/selection_tool/non-ltu-knockout');
+    if(req.body['scoring-questions']){
+      res.redirect('/latest/selection_tool/scoring-questions');
+    } else {
+      res.redirect('/latest/selection_tool/non-ltu-knockout');
+    }
   });
 
   router.get('/latest/selection_tool/:questionSet', function (req, res) {
