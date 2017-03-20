@@ -59,7 +59,7 @@
       <legend class="heading-medium">{{question}}</legend>
       {% for i in range(1, 6) %}
         <label class="block-label selection-button-radio" for="{{name}}-{{i}}">
-          <input id="{{name}}-{{i}}" type="radio" name="{{name}}" value="Yes">
+          <input id="{{name}}-{{i}}" type="radio" name="{{name}}" value="{{i}}">
           {{i}}
         </label>
       {% endfor %}

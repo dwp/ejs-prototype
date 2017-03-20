@@ -23,6 +23,14 @@ module.exports = function(router) {
     res.redirect('/latest/selection_tool/' + claimantGroup);
   });
 
+  router.post('/latest/selection_tool/scoring-questions', function(req, res, next){
+    if(req.body['learn-new-tasks'] === '5'){
+      res.redirect('/latest/selection_tool_provision');
+    } else {
+      next();
+    }
+  });
+
   router.post('/latest/selection_tool/*', function (req, res) {
     if(req.body['scoring-questions']){
       res.redirect('/latest/selection_tool/scoring-questions');
