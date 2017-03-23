@@ -19,8 +19,13 @@ module.exports = function(router) {
   });
 
   router.post('/latest/selection_tool', function (req, res) {
-    var claimantGroup = req.body['claimant-group'] || 'voluntary';
-    res.redirect('/latest/selection_tool/' + claimantGroup);
+    var questionGroup = req.body['claimant-group'] || 'voluntary';
+
+    if(questionGroup=== 'long-term-unemployed'){
+      res.redirect('/latest/selection_tool_provision');
+    } else {
+      res.redirect('/latest/selection_tool/' + questionGroup);
+    }
   });
 
   router.post('/latest/selection_tool/scoring-questions', function(req, res, next){
