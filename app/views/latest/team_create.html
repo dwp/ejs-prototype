@@ -38,7 +38,11 @@
           </div>
 
           <div class="form-group">
-            <input type="submit" class="button" value="Create team">
+            {% if team %}
+              <input type="submit" class="button" value="Update team">
+            {% else %}
+              <input type="submit" class="button" value="Create team">
+            {% endif %}
           </div>
         </form>
       </div>       

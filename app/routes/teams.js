@@ -56,13 +56,15 @@ module.exports = function(router) {
 
   function getTestTeams(){
     return [ 
-      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,9)},
+      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,29)},
       { id: 1, name : 'Yellow team', workcoaches: getWorkcoaches().slice(3,6)},
       { id: 2, name : 'Red team', workcoaches: getWorkcoaches().slice(6,9)}
     ];
   }
 
   function getWorkcoaches(){
-    return ['richard.kaine', 'john.smith2', 'amanda.wright', 'darren.moody', 'mark.jones1', 'sam.steel', 'harry.brown2', 'julia.granger', 'paul.brookes1', 'sarah.fielding'];
+    return ['richard.kaine', 'john.smith2', 'amanda.wright', 'darren.moody', 'mark.jones1', 'sam.steel', 'harry.brown2', 'julia.granger', 'paul.brookes1', 'sarah.fielding',
+    'richard.kaine', 'john.smith2', 'amanda.wright', 'darren.moody', 'mark.jones1', 'sam.steel', 'harry.brown2', 'julia.granger', 'paul.brookes1', 'sarah.fielding',
+    'richard.kaine', 'john.smith2', 'amanda.wright', 'darren.moody', 'mark.jones1', 'sam.steel', 'harry.brown2', 'julia.granger', 'paul.brookes1', 'sarah.fielding'];
   }
 }
