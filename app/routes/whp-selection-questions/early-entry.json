@@ -12,6 +12,7 @@
       "name" : "previous-whp", 
       "options" : [ "Yes","No" ]},
     { "text" : "Has the JCP offer already helped the individual with their core job search activity?",
+      "hint" : "Core jobsearch activitiy includes basic job search skills, task such as CV writing, use of email and Universal Jobmatch.",
       "name" : "jcp-helped", 
       "options" : [ "Yes","No" ]},
     { "text" : "Do you consider that the individual will realistically find employmnet in the next twelve months with soley support of the JCP offer?",
