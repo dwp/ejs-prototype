@@ -5,9 +5,13 @@
     { "text" : "Is the claimant:",
       "name" : "claimant-group", 
       "options" : [ 
-        { "label" : "External referral", "value" : "voluntary"}, 
+        { "label" : "External referral", "value" : "voluntary",  "target" : "external-referral"}, 
         { "label" : "Long term unemployed", "value" :"long-term-unemployed"}, 
         { "label" : "Early entry group", "value" : "early-entry "} 
-    ]}
+      ],
+      "targets" :[
+        { "id" : "external-referral", "elementId" : "external-referral-input"}
+      ]
+    }
   ]
 }
