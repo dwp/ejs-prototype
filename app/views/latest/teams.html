@@ -10,6 +10,17 @@
       {% set currentSettingsPage = 'teams' %}
       {% include "includes/settings_menu.html" %} 
 
+
+      {% if getData.errorMessage %}
+      <div class="grid-row">
+        <div class="column-half">
+          <div class="panel panel-border-wide alert-success">
+            {{getData.errorMessage}}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
       <div class="grid-row">
         <div class="column-half">
           <table>
@@ -17,15 +28,16 @@
               <tr>
                 <th>Team name</th>
                 <th>Workcoaches</th>
-                <th></th>
+                <th colspan="2"></th>
               </tr>
             </thead>
             <tbody>
               {% for team in sessionData.teams %}
                 <tr>
                   <td>{{team.name}}</td>
-                  <td>{{team.workcoaches}}</td>
+                  <td>{{team.workcoaches.join(', ')}}</td>
                   <td><a href="/latest/team_create/{{team.id}}">Update</a></td>
+                  <td><a href="/latest/team_delete/{{team.id}}">Delete</a></td>
                 </tr>
               {% endfor %}
             </tbody>

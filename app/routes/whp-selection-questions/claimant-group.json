@@ -5,12 +5,9 @@
     { "text" : "Is the claimant:",
       "name" : "claimant-group", 
       "options" : [ 
-        { "label" : "Voluntary", "value" : "voluntary"}, 
+        { "label" : "External referral", "value" : "voluntary"}, 
         { "label" : "Long term unemployed", "value" :"long-term-unemployed"}, 
         { "label" : "Early entry group", "value" : "early-entry "} 
-    ]},
-    { "text" : "Has the claimant been referred by and External signposting organisation?",
-      "name" : "external-org", 
-      "options" : [ "Yes","No" ]}
+    ]}
   ]
 }

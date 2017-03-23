@@ -9,8 +9,16 @@
 <main id="content" role="main">
   <div class="main-content">
     <h1 class="heading-large">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
-    
+
     <div class="grid-row">
+        {% set teams = [{ workTitle: 'Teams', 
+            links: [
+                { link : 'latest/teams', title : 'List of current teams'},
+                { link : 'latest/teams?errorMessage=Team%20deleted', title : 'Successfully deleted message message'}
+            ] 
+        }] %}
+        {{ sprintLinks( 'Sprint 34', teams) }}
+
         {% set benefitCentreEnhancements = [{ workTitle: 'Benefit centre enhancements', 
             links: [
                 { link : 'latest/job_claim_active', title : 'Create claim - Date processed and date received added'},

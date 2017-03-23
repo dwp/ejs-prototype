@@ -33,10 +33,7 @@ module.exports = function(router) {
     res.redirect('/latest/teams');
   });
 
-
-
   router.post('/latest/team_create', function (req, res) {
-
     var workcoaches =  Object.keys(req.body);
 
     // remove team name from the array
@@ -51,9 +48,15 @@ module.exports = function(router) {
     res.redirect('/latest/teams');
   });
 
+  router.get('/latest/team_delete/:id', function (req, res) {
+    req.session.teams.splice( req.params.id, 1)
+
+    res.redirect('/latest/teams?errorMessage=Team deleted');
+  });
+
   function getTestTeams(){
     return [ 
-      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,3)},
+      { id: 0, name : 'Blue team', workcoaches: getWorkcoaches().slice(0,9)},
       { id: 1, name : 'Yellow team', workcoaches: getWorkcoaches().slice(3,6)},
       { id: 2, name : 'Red team', workcoaches: getWorkcoaches().slice(6,9)}
     ];
