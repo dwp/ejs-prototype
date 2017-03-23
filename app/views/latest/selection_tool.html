@@ -23,7 +23,7 @@
               {% if question.type == "scoring" %}
                 {{scoringQuestion(question.text, question.name)}}
               {% else %}
-                {{radioGroup(question.text, question.name, question.options, question.targets )}}
+                {{radioGroup(question.text, question.name, question.options, question.targets, question.hint )}}
               {% endif %}
             {% endfor %}
 
@@ -35,16 +35,21 @@
   </main>
 {% endblock %}
 
-{% macro radioGroup(question, name, options, targets) %}
+{% macro radioGroup(question, name, options, targets, hint) %}
   <div class="form-group">
     <fieldset class="inline">
       <legend class="heading-medium">{{question}}</legend>
+
+      {%if hint %}<p class="form-hint">{{hint}}</p>{% endif %}
 
       {% for option in options %}
         {% set label = option.label or option %}
         {% set value = option.value or option %}
 
+
         <label class="block-label selection-button-radio" for="{{name}}-{{loop.index}}" {%if option.target %}data-target="{{option.target}}"{% endif %}>
+          
+
           <input id="{{name}}-{{loop.index}}" type="radio" name="{{name}}" value="{{value}}">
           {{label}}
         </label>
