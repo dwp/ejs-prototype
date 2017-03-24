@@ -8,8 +8,21 @@
 
 <main id="content" role="main">
   <div class="main-content">
-    <h1 class="heading-large">Digital Claimant and Activity Messaging Service - Alpha prototype</h1>
-
+    <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
+    
+    <div class="grid-row">
+        {% set whpSelectionTool = [{ 
+            links: [
+                { link : 'latest/selection_tool', title : 'Landing page'},
+                { link : 'latest/selection_tool/voluntary', title : 'Voluntary questions'},
+                { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'},
+                { link : 'latest/selection_tool/non-ltu-knockout', title : 'Passed'},
+                { link : 'latest/selection_tool/scoring-questions', title : 'Scoring questions'}
+            ] 
+        }] %}
+        {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
+    </div>
+    
     <div class="grid-row">
         {% set teams = [{ workTitle: 'Teams', 
             links: [
