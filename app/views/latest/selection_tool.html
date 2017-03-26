@@ -12,21 +12,16 @@
         {% set currentClaimantPage = 'selectionTool' %}
         {% include "includes/summary_nav.html" %}
       </div>
-
+      
       <div class="grid-row">
         <div class="column-full">
           {% if explanation %}
             <p>{{explanation}}</p>
           {% endif %}
-          <form method="POST" action="">
+          <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
             {% for question in questions %}
-              {% if question.type == "scoring" %}
-                {{scoringQuestion(question.text, question.name)}}
-              {% else %}
-                {{radioGroup(question.text, question.name, question.options, question.targets, question.hint )}}
-              {% endif %}
+              {{radioGroup(question.text, question.name, question.options, question.targets, question.hint, question.description )}}
             {% endfor %}
-
             <button class="button" type="submit">Continue</button>
           </form>
         </div>
@@ -40,8 +35,8 @@
     <fieldset class="inline">
       <legend class="heading-medium">{{question}}</legend>
 
-      {%if hint %}<p class="form-hint">{{hint}}</p>{% endif %}
-
+      {%if hint %}<p>{{hint}}</p>{% endif %}
+      
       {% for option in options %}
         {% set label = option.label or option %}
         {% set value = option.value or option %}
@@ -57,20 +52,6 @@
         <label class="form-label" for="{{target.elementId}}">Provider</label>
         <input class="form-control form-control-1-4" name="{{target.elementId}}" type="text" id="{{target.elementId}}">
       </div>
-      {% endfor %}
-    </fieldset>
-  </div>
-{% endmacro %}
-
-{% macro scoringQuestion(question, name) %}
-  <div class="form-group">
-    <fieldset class="inline">
-      <legend class="heading-medium">{{question}}</legend>
-      {% for i in range(1, 6) %}
-        <label class="block-label selection-button-radio" for="{{name}}-{{i}}">
-          <input id="{{name}}-{{i}}" type="radio" name="{{name}}" value="{{i}}">
-          {{i}}
-        </label>
       {% endfor %}
     </fieldset>
   </div>

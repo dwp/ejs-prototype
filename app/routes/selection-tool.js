@@ -44,12 +44,21 @@ module.exports = function(router) {
     }
   });
 
-  router.get('/latest/selection_tool/:questionSet', function (req, res) {
-    res.locals.questions = questions[req.params.questionSet].questions;
-    res.locals.next = questions[req.params.questionSet].nextQuestionSet;
-    res.locals.questionTitle = questions[req.params.questionSet].title;
-    res.locals.explanation = questions[req.params.questionSet].explanation;
+  router.get('/latest/selection_tool_v2/:questionSet', function (req, res) {
+    var scoringQuestionsConfig = questions['scoring-questions-v2'];
     
+    res.locals.questions = [scoringQuestionsConfig.questions[req.params.questionSet]];
+    res.locals.next = scoringQuestionsConfig.nextQuestionSet;
+    res.locals.questionTitle = scoringQuestionsConfig.title;
+    
+    res.locals.formMethod = 'GET';
+
+    if(++req.params.questionSet === scoringQuestionsConfig.questions.length){
+      res.locals.formAction = `/latest/selection_tool_provision`;
+    } else {
+      res.locals.formAction = `/latest/selection_tool_v2/${++req.params.questionSet}`;
+    }
+  
     res.render('latest/selection_tool');
   });
 }

@@ -3,34 +3,42 @@
   "questions": [{ 
       "text" : "The individual's knowledge, skills and capabilities are appropriate to the type of work they are seeking.",
       "name" : "knowledge", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "The individual knows the type of work they would like to undertake.",
       "name" : "type-of-work-to-undertake", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "The individual is able to use digital technology (computers, apps, software with or without adaptations).",
       "name" : "digital-technology-use", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "The individual has researched what is out there in the Labour Market and what they could apply for.",
       "name" : "research", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "The individual can describe what they need to do, to seek and get a job.",
       "name" : "can-describe", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "Based on the information gathered I consider that the individual is willing to apply him/herself to job search activity.",
       "name" : "willing-to-apply", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "Based on the information gathered I consider that the individual is willing and can learn new tasks/sills to help them do a job.",
       "name" : "learn-new-tasks", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     },{ 
       "text" : "Is the jobseeker able to contact and have conversations and present favourably at interviews with prospective employers?",
       "name" : "converse", 
+      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
       "options" : [ "None","Basic","Moderate","Very good" ]
     }
   ]
