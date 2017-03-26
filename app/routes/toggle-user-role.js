@@ -11,10 +11,17 @@ module.exports = function(router, users){
       req.session.user = users[1];
     }
 
-    if(fromIndexPage){
-      res.redirect('/');
-    } else {
-      res.redirect('/latest/job');
-    }
+    res.redirect(getRedirectUrl(fromIndexPage, req.session.user.role));
   });
+
+  function getRedirectUrl(fromIndexPage, role){
+    var redirectUrl = '';
+
+    if(fromIndexPage){
+      redirectUrl = '/';
+    } else {
+      redirectUrl = role === 'gatekeeper' ? '/latest/whp-selection-report' : '/latest/job';
+    }
+    return redirectUrl;
+  }
 }
