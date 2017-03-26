@@ -1,14 +1,19 @@
 <div class="nav-horizontal">
   <div class="main-nav-wrapper">
     <ul class="main-nav">
-      <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="job">Search</a></li>
-      <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
-      <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
 
-      {% if sessionData.user.role === 'manager'%}
-        <li id="nav-perf" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_performance">Performance</a></li>
+      {% if sessionData.user.role !== 'gatekeeper'%}
+        <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="job">Search</a></li>
+        <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
+        <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
+
+        {% if sessionData.user.role === 'manager'%}
+          <li id="nav-perf" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_performance">Performance</a></li>
+        {%else%} 
+          <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="workcoach_performance_view_onflow">Performance</a></li>
+        {%endif%}
       {%else%} 
-        <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="workcoach_performance_view_onflow">Performance</a></li>
+        <li id="nav-whp-selection" {% if currentPage === "whpSelection" %}class="selected"{% endif %}><a href="whp-selection-report">WHP selection</a></li>
       {%endif%}
     </ul>
   </div>
