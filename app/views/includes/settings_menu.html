@@ -1,39 +1,49 @@
 <div class="grid-row">
   <div class="column-full summary-nav-wrapper"> 
     <ul id="id-claimant-actions">
-      <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
-        <a href="settings" class="menu-item">Change location</a>
-      </li>
 
-      {% if sessionData.user.role === 'manager'%}
-        <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
-          <a href="amend_user" class="menu-item">Maintain user</a>
+      {% if sessionData.user.role !== 'gatekeeper'%}
+        <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
+          <a href="settings" class="menu-item">Change location</a>
         </li>
 
-        <li class="{% if currentSettingsPage === "maintainRecord" %}selected{% endif %}"> 
-          <a href="delete_record" class="menu-item">
-            Maintain record
+
+        {% if sessionData.user.role === 'manager'%}
+          <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
+            <a href="amend_user" class="menu-item">Maintain user</a>
+          </li>
+
+          <li class="{% if currentSettingsPage === "maintainRecord" %}selected{% endif %}"> 
+            <a href="delete_record" class="menu-item">
+              Maintain record
+            </a>
+          </li>
+
+          <li class="{% if currentSettingsPage === "standards" %}selected{% endif %}">
+            <a href="targets" class="menu-item ">
+              Standards
+            </a>
+          </li>
+        {%endif%}
+
+        <li class="{% if currentSettingsPage === "bulkTransfer" %}selected{% endif %}">
+          <a href="bulk_transfer" class="menu-item ">
+            Caseload transfer
           </a>
         </li>
 
-        <li class="{% if currentSettingsPage === "standards" %}selected{% endif %}">
-          <a href="targets" class="menu-item ">
-            Standards
+        <li class="{% if currentSettingsPage === "teams" %}selected{% endif %}">
+          <a href="teams" class="menu-item ">
+            Teams
+          </a>
+        </li>
+      {%else%}
+        <li class="{% if currentSettingsPage === "whpAdmin" %}selected{% endif %}">
+          <a href="whp-admin" class="menu-item ">
+            WHP threshold
           </a>
         </li>
       {%endif%}
-
-      <li class="{% if currentSettingsPage === "bulkTransfer" %}selected{% endif %}">
-        <a href="bulk_transfer" class="menu-item ">
-          Caseload transfer
-        </a>
-      </li>
-
-      <li class="{% if currentSettingsPage === "teams" %}selected{% endif %}">
-        <a href="teams" class="menu-item ">
-          Teams
-        </a>
-      </li>
     </ul> 
   </div>
 </div>
