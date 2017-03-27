@@ -44,6 +44,15 @@ module.exports = function(router) {
     }
   });
 
+  router.get('/latest/selection_tool/:questionSet', function (req, res) {
+    res.locals.questions = questions[req.params.questionSet].questions;
+    res.locals.next = questions[req.params.questionSet].nextQuestionSet;
+    res.locals.questionTitle = questions[req.params.questionSet].title;
+    res.locals.explanation = questions[req.params.questionSet].explanation;
+  
+    res.render('latest/selection_tool');
+  });
+
   router.get('/latest/selection_tool_v2/:questionSet', function (req, res) {
     var scoringQuestionsConfig = questions['scoring-questions-v2'];
     
