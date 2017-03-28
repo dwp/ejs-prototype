@@ -22,18 +22,14 @@ module.exports = function(router) {
     var questionGroup = req.body['claimant-group'] || 'voluntary';
 
     if(questionGroup=== 'long-term-unemployed'){
-      res.redirect('/latest/selection_tool_provision');
+      res.redirect('/latest/selection_tool/ltu-knockout');
     } else {
       res.redirect('/latest/selection_tool/' + questionGroup);
     }
   });
 
   router.post('/latest/selection_tool/scoring-questions', function(req, res, next){
-    if(req.body['learn-new-tasks'] === '5'){
-      res.redirect('/latest/selection_tool_provision');
-    } else {
-      next();
-    }
+    res.redirect('/latest/whp-result');
   });
 
   router.post('/latest/selection_tool/*', function (req, res) {
@@ -62,12 +58,14 @@ module.exports = function(router) {
     
     res.locals.formMethod = 'GET';
 
-    if(++req.params.questionSet === scoringQuestionsConfig.questions.length){
-      res.locals.formAction = `/latest/selection_tool_provision`;
+    console.log(req.params.questionSet);
+    console.log(scoringQuestionsConfig.questions.length);
+
+    if(req.params.questionSet == scoringQuestionsConfig.questions.length){
+      res.redirect('/latest/whp-result');
     } else {
       res.locals.formAction = `/latest/selection_tool_v2/${++req.params.questionSet}`;
+      res.render('latest/selection_tool');
     }
-  
-    res.render('latest/selection_tool');
   });
 }
