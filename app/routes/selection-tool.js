@@ -22,7 +22,7 @@ module.exports = function(router) {
     var questionGroup = req.body['claimant-group'] || 'voluntary';
 
     if(questionGroup=== 'long-term-unemployed'){
-      res.redirect('/latest/selection_tool/ltu-knockout');
+      res.redirect('/latest/whp-result');
     } else {
       res.redirect('/latest/selection_tool/' + questionGroup);
     }
