@@ -48,10 +48,12 @@ module.exports = function(router) {
     res.redirect('/latest/teams');
   });
 
-  router.get('/latest/team_delete/:id', function (req, res) {
-    req.session.teams.splice( req.params.id, 1)
-
-    res.redirect('/latest/teams?errorMessage=Team deleted');
+  router.post('/latest/team_delete', function (req, res) {
+    if(req.body.errorMessage){
+      req.session.teams.splice( req.params.id, 1)
+    }
+  
+    res.redirect(`/latest/teams?errorMessage=${req.body.errorMessage}`);
   });
 
   function getTestTeams(){

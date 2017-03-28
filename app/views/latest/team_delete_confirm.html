@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">Settings - Change location</h1>    
+
+      {% set currentSettingsPage = 'teams' %}
+      {% include "includes/settings_menu.html" %} 
+
+
+      {% if getData.errorMessage %}
+      <div class="grid-row">
+        <div class="column-half">
+          <div class="panel panel-border-wide alert-success">
+            {{getData.errorMessage}}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <form action="team_delete" method="POST">
+        <input type="hidden" name="teamId" value="{{getData.teamId}}" />
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <p class="form-label-bold">Confirmation</p>
+
+            <p>You are about to delete the <span class="bold">Blue team</span>.</p>
+            
+            <p>Are you sure you want to do this?</p>
+
+            <label for="radio-part-2" class="block-label selection-button-radio">
+              <input id="radio-part-2" type="radio" name="errorMessage" value="Team deleted">
+              Yes
+            </label>
+
+            <label for="radio-part-3" class="block-label selection-button-radio">
+              <input id="radio-part-3" type="radio" name="errorMessage" value="">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" value="Confirm">
+        </div>
+      </form> 
+    </div> 
+  </main>
+{% endblock %}
+
+
+

@@ -27,7 +27,7 @@
             <thead>
               <tr>
                 <th>Team name</th>
-                <th>Workcoaches</th>
+                <th>Number of work coaches</th>
                 <th colspan="2"></th>
               </tr>
             </thead>
@@ -35,9 +35,9 @@
               {% for team in sessionData.teams %}
                 <tr>
                   <td>{{team.name}}</td>
-                  <td>{{team.workcoaches.join(', ')}}</td>
+                  <td>{{team.workcoaches | length }}</td>
                   <td><a href="/latest/team_create/{{team.id}}">Update</a></td>
-                  <td><a href="/latest/team_delete/{{team.id}}">Delete</a></td>
+                  <td><a href="/latest/team_delete_confirm?teamId={{team.id}}">Delete</a></td>
                 </tr>
               {% endfor %}
             </tbody>
