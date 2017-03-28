@@ -58,9 +58,6 @@ module.exports = function(router) {
     
     res.locals.formMethod = 'GET';
 
-    console.log(req.params.questionSet);
-    console.log(scoringQuestionsConfig.questions.length);
-
     if(req.params.questionSet == scoringQuestionsConfig.questions.length){
       res.redirect('/latest/whp-result');
     } else {
