@@ -1,6 +1,184 @@
 <div>
   <form>
     <div class="grid-row">
+      {%if sessionData.user.role === 'manager'%}
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="jobcentre">Jobcentre</label>
+          <select class="select form-control">
+            <option value="Select">Select</option>
+            <option value="Bradford">Bradford</option>
+            <option value="Derby">Derby</option>
+            <option value="Liverpool">Liverpool</option>
+            <option value="Manchester">Manchester</option>
+            <option value="Portsmouth">Portsmouth</option>
+            <option value="Southampton">Southampton</option>
+            <option value="Wolverhampton">Wolverhampton</option>    
+            <option value="Worcester">Worcester</option>                     
+          </select>     
+        </div>
+      </div>            
+
+      <div class="column-quarter">
+        <div class="form-group">
+          <label class="form-label" for="Work coach">Work coach</label>
+          <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
+            <div class="checkbox-container" id="organisations-filter">
+              <label for="All">
+                <input id="All" name="All" type="checkbox" value="All">
+                All
+              </label>
+              <label for="richard.kaine">
+                <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                richard.kaine 
+              </label>  
+              <label for="john.smith2">
+                <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                john.smith2 (currently in Leeds)
+              </label>
+              <label for="amanda.wright">
+                <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                amanda.wright
+              </label>
+              <label for="darren.moody">
+                <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                darren.moody
+              </label>
+              <label for="mark.jones1">
+                <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                mark.jones1
+              </label>
+              <label for="sam.steel">
+                <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                sam.steel
+              </label>
+              <label for="harry.brown2">
+                <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                harry.brown2
+              </label>
+            
+              <label for="julia.granger">
+                <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                julia.granger
+              </label>
+            
+              <label for="paul.brookes1">
+                <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                paul.brookes1
+              </label>
+            
+              <label for="sarah.fielding">
+                <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                sarah.fielding
+              </label>
+            
+              <label for="richard.kaine">
+                <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                richard.kaine
+              </label>
+            
+              <label for="john.smith2">
+                <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                john.smith2
+              </label>
+            
+              <label for="amanda.wright">
+                <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                amanda.wright
+              </label>
+            
+              <label for="darren.moody">
+                <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                darren.moody
+              </label>
+            
+              <label for="mark.jones1">
+                <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                mark.jones1
+              </label>
+            
+              <label for="sam.steel">
+                <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                sam.steel
+              </label>
+            
+              <label for="harry.brown2">
+                <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                harry.brown2
+              </label>
+            
+              <label for="julia.granger">
+                <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                julia.granger
+              </label>
+            
+              <label for="paul.brookes1">
+                <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                paul.brookes1
+              </label>
+            
+              <label for="sarah.fielding">
+                <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                sarah.fielding
+              </label>
+            
+              <label for="richard.kaine">
+                <input id="richard.kaine" name="richard.kaine" type="checkbox" value="richard.kaine">
+                richard.kaine
+              </label>
+            
+              <label for="john.smith2">
+                <input id="john.smith2" name="john.smith2" type="checkbox" value="john.smith2">
+                john.smith2
+              </label>
+            
+              <label for="amanda.wright">
+                <input id="amanda.wright" name="amanda.wright" type="checkbox" value="amanda.wright">
+                amanda.wright
+              </label>
+            
+              <label for="darren.moody">
+                <input id="darren.moody" name="darren.moody" type="checkbox" value="darren.moody">
+                darren.moody
+              </label>
+            
+              <label for="mark.jones1">
+                <input id="mark.jones1" name="mark.jones1" type="checkbox" value="mark.jones1">
+                mark.jones1
+              </label>
+            
+              <label for="sam.steel">
+                <input id="sam.steel" name="sam.steel" type="checkbox" value="sam.steel">
+                sam.steel
+              </label>
+            
+              <label for="harry.brown2">
+                <input id="harry.brown2" name="harry.brown2" type="checkbox" value="harry.brown2">
+                harry.brown2
+              </label>
+            
+              <label for="julia.granger">
+                <input id="julia.granger" name="julia.granger" type="checkbox" value="julia.granger">
+                julia.granger
+              </label>
+            
+              <label for="paul.brookes1">
+                <input id="paul.brookes1" name="paul.brookes1" type="checkbox" value="paul.brookes1">
+                paul.brookes1
+              </label>
+            
+              <label for="sarah.fielding">
+                <input id="sarah.fielding" name="sarah.fielding" type="checkbox" value="sarah.fielding">
+                sarah.fielding
+              </label>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endif%}
+
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="benefit">Benefit type</label>
@@ -21,6 +199,7 @@
           </div>
         </div>
       </div>
+
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="full-name">
@@ -36,6 +215,13 @@
           </fieldset>
         </div>
       </div>
+
+      {%if sessionData.user.role === 'manager'%}
+        </div>
+        <div class="grid-row">
+      {%endif%}
+
+
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="months">
