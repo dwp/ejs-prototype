@@ -1,8 +1,10 @@
 (function(){
   var $extraOption = $('#extraCaseloadSegmentationOption'),
     $dayOneEvidenceFilter = $('#day-one-evidence-filter'),
-    $childAgeFilter = $('#child-age-filter')
-    $sortableHeaders = $('th.sortable span');
+    $childAgeFilter = $('#child-age-filter'),
+    $workcoachLabels = $('#organisations-filter').find('label'),
+    $sortableHeaders = $('th.sortable span'),
+    $jobcentreSelect = $('#jobcentreSelect');
 
   toggleCaseloadSegmentationOptions();
   toggleDayOneEvidenceFilter();
@@ -53,11 +55,28 @@
     }
   }
 
+  function fixWorkcoachLabels(jobcentre){
+    $workcoachLabels.each(function(){
+      $(this).html($(this).html().replace(/\(([A-Z|a-z ])*\)/, ''));
+    })
+    
+    if(jobcentre){
+      $workcoachLabels.filter(':gt(0):lt(3)').each(function(){
+        $(this).html($(this).html() + ' (not in ' + jobcentre + ')')
+      });
+    }
+  }
+
   $('#benefit').on('change', function(){
     toggleCaseloadSegmentationOptions();
     toggleDayOneEvidenceFilter();
     toggleChildAgeFilter();
   });
+
+  $jobcentreSelect.on('change', function(){
+    fixWorkcoachLabels(this.value);
+
+  })
 
   $sortableHeaders.on('click', function(){
     var $this = $(this),
