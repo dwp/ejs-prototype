@@ -9,6 +9,18 @@
 <main id="content" role="main">
   <div class="main-content">
     <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
+
+    <div class="grid-row">
+        {% set whpSelectionTool = [{
+            links: [
+                { link : 'latest/performance', title : 'Caseload filters'},   
+                { link : 'latest/performance', title : 'JSA results'},
+                { link : 'latest/performance', title : 'IS results'},
+                { link : 'latest/performance', title : 'ESA results'} 
+            ] 
+        }] %}
+        {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
+    </div>
     
     <div class="grid-row">
         {% set whpSelectionTool = [{ 
@@ -26,6 +38,8 @@
         }] %}
         {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
     </div>
+
+
 
     <div class="grid-row">
         {% set teams = [{ workTitle: 'Teams', 
@@ -55,7 +69,8 @@
         }] %}
         {{ sprintLinks( 'Sprint 30', failureToAttend) }}
     </div>
-
+    <details>
+        <summary>Archive</summary>
     <div class="grid-row">
         {% set disabilityPremium = [{ workTitle: 'Disability premium', 
             links: [
@@ -634,7 +649,7 @@
     <!-- End row -->
     </div>  
        
-
+    </details>
 
   </div>
 </main>
