@@ -1,674 +1,594 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} 
+  {% block page_title %}Index page of all DCAMS prototype sprint work{% endblock %} 
+  
+  {% block content %}
 
+    <main id="content" role="main">
+      <div class="main-content">
+        <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
-{% block page_title %}Index page of all DCAMS prototype sprint work{% endblock %}
+        <div class="grid-row">
+          {% set whpSelectionTool = [{ links: [ { link : 'latest/performance', title : 'Caseload filters'}, { link : 'latest/performance',
+          title : 'JSA results'}, { link : 'latest/performance', title : 'IS results'}, { link : 'latest/performance', title
+          : 'ESA results'} ] }] %} {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
+        </div>
 
+        <div class="grid-row">
+          {% set whpSelectionTool = [{ links: [ { link : 'latest/selection_tool', title : 'Landing page'}, { link : 'latest/selection_tool/voluntary',
+          title : 'Voluntary questions'}, { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'}, { link
+          : 'latest/selection_tool/non-ltu-knockout', title : 'Claimant eligible'}, { link : 'latest/selection_tool/scoring-questions',
+          title : 'Scoring questions - Point scale'}, { link : 'latest/selection_tool/scoring-questions-v2', title : 'Scoring
+          questions - Label scale'}, { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per
+          page'}, { link : 'latest/whp-selection-report', title : 'Gatekeeper report'}, { link : 'latest/whp-admin', title :
+          'Set threshold' } ] }] %} {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
+        </div>
 
-{% block content %}
+        <div class="grid-row">
+          {% set teams = [{ workTitle: 'Teams', links: [ { link : 'latest/teams', title : 'List of current teams'}, { link : 'latest/teams?errorMessage=Team%20deleted',
+          title : 'Successfully deleted message message'} ] }] %} {{ sprintLinks( 'Sprint 34', teams) }} {% set benefitCentreEnhancements
+          = [{ workTitle: 'Benefit centre enhancements', links: [ { link : 'latest/job_claim_active', title : 'Create claim -
+          Date processed and date received added'}, { link : 'latest/job_record_confirm?dateProcessed=1', title : 'Summary page
+          - Alert message for sent SMS'} ] }] %} {{ sprintLinks( 'Sprint 32', benefitCentreEnhancements) }} {% set failureToAttend
+          = [{ workTitle: 'Failure to attend', links: [ { link : 'latest/job_next_new', title : 'Create appointment - Then mark
+          as FTA'} ] },{ workTitle: 'Caseload transfer', links: [ { link : 'latest/bulk_transfer', title : 'Caseload transfer'}
+          ] }] %} {{ sprintLinks( 'Sprint 30', failureToAttend) }}
+        </div>
 
-<main id="content" role="main">
-  <div class="main-content">
-    <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
+        <details>
+          <summary>Archive</summary>
 
-    <div class="grid-row">
-        {% set whpSelectionTool = [{
-            links: [
-                { link : 'latest/performance', title : 'Caseload filters'},   
-                { link : 'latest/performance', title : 'JSA results'},
-                { link : 'latest/performance', title : 'IS results'},
-                { link : 'latest/performance', title : 'ESA results'} 
-            ] 
-        }] %}
-        {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
-    </div>
-    
-    <div class="grid-row">
-        {% set whpSelectionTool = [{ 
-            links: [
-                { link : 'latest/selection_tool', title : 'Landing page'},
-                { link : 'latest/selection_tool/voluntary', title : 'Voluntary questions'},
-                { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'},
-                { link : 'latest/selection_tool/non-ltu-knockout', title : 'Claimant eligible'},
-                { link : 'latest/selection_tool/scoring-questions', title : 'Scoring questions - Point scale'},
-                { link : 'latest/selection_tool/scoring-questions-v2', title : 'Scoring questions - Label scale'},
-                { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per page'},
-                { link : 'latest/whp-selection-report', title : 'Gatekeeper report'},
-                { link : 'latest/whp-admin', title : 'Set threshold' }         
-            ] 
-        }] %}
-        {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
-    </div>
+          <div class="grid-row">
+            {% set disabilityPremium = [{ workTitle: 'Disability premium', links: [ { link : 'latest/job_new_step3', title : 'Disability
+            premium - Create claim option'}, { link : 'latest/job_claim_active', title : 'Disability premium - View claim option'}
+            ] },{ workTitle: 'Caseload', links: [ { link : 'latest/performance', title : 'Child age filter for lone parent'},
+            { link : 'latest/performance_is?childAge=5', title : 'Months to X years header in results'} ] },{ workTitle: 'Maintain
+            record', links: [ { link : 'latest/delete_record', title : 'Delete claimant'} ] }] %} {{ sprintLinks( 'Sprint 28',
+            disabilityPremium) }} {% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', links: [ { link : 'latest/toggle_user_role',
+            title : 'Toggle user role (currently ' + sessionData.user.role + ')'} ] }] %} {{ sprintLinks( 'Sprint 26', managerWorkCoachFlow)
+            }} {% set daysToWorkLinks = [{ workTitle: 'Days to standard', links: [ { link : 'latest/job_record_confirm', title
+            : 'Days to standard' } ] },{ workTitle: 'Level of work coach support needed', links: [ { link : 'latest/job_new_step3',
+            title : 'Level of work coach support needed - Create claim layout' } ] },{ workTitle: 'Provision playback', links:
+            [ { link : 'latest/performance', title : 'Provision and Signing day filter option' }, { link : 'latest/performance_jsa?provisionSelected=true',
+            title : 'Provision columns added to caseload results' } ] },{ workTitle: 'Maintain user', links: [ { link : 'latest/amend_user',
+            title : 'Merge user/Remove from workcoach list' } ] }] %} {{ sprintLinks( 'Sprint 25', daysToWorkLinks) }}
+          </div>
 
+          <div class="grid-row">
+            {% set provisionLinks = [{ workTitle: 'Provision page', links: [{ link : 'latest/provision', title : 'Provision page' }]
+            }] %} {{ sprintLinks( 'Sprint 24', provisionLinks) }} {% set managerViewLinks = [{ workTitle: 'Manager view - Work
+            coach performance', links: [ { link : 'latest/manager_view_filter', title : 'Manager view - Work coach performance
+            filter' }, { link : 'latest/manager_view_by_cohort', title : 'Manager view - Work coach performance results by cohort'
+            }, { link : 'latest/manager_view_by_workcoach', title : 'Manager view - Work coach performance results by work coach'
+            } ] }] %} {{ sprintLinks( 'Sprint 23', managerViewLinks) }} {% set amendUserLinks = [{ workTitle: 'Amend User', links:
+            [ { link : 'latest/job', title : 'Update links' }, { link : 'latest/amend_user', title : 'Merge user/Remove from
+            workcoach list' } ] }] %} {{ sprintLinks( 'Sprint 22', amendUserLinks) }}
+          </div>
 
+          <div class="grid-row">
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 20</h2>
 
-    <div class="grid-row">
-        {% set teams = [{ workTitle: 'Teams', 
-            links: [
-                { link : 'latest/teams', title : 'List of current teams'},
-                { link : 'latest/teams?errorMessage=Team%20deleted', title : 'Successfully deleted message message'}
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 34', teams) }}
-
-        {% set benefitCentreEnhancements = [{ workTitle: 'Benefit centre enhancements', 
-            links: [
-                { link : 'latest/job_claim_active', title : 'Create claim - Date processed and date received added'},
-                { link : 'latest/job_record_confirm?dateProcessed=1', title : 'Summary page - Alert message for sent SMS'}
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 32', benefitCentreEnhancements) }}
-
-        {% set failureToAttend = [{ workTitle: 'Failure to attend', 
-            links: [
-                { link : 'latest/job_next_new', title : 'Create appointment - Then mark as FTA'}
-            ] 
-        },{ workTitle: 'Caseload transfer', 
-            links: [
-                { link : 'latest/bulk_transfer', title : 'Caseload transfer'}
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 30', failureToAttend) }}
-    </div>
-    <details>
-        <summary>Archive</summary>
-    <div class="grid-row">
-        {% set disabilityPremium = [{ workTitle: 'Disability premium', 
-            links: [
-                { link : 'latest/job_new_step3', title : 'Disability premium - Create claim option'},
-                { link : 'latest/job_claim_active', title : 'Disability premium - View claim option'}
-            ] 
-        },{ workTitle: 'Caseload', 
-            links: [
-                { link : 'latest/performance', title : 'Child age filter for lone parent'},
-                { link : 'latest/performance_is?childAge=5', title : 'Months to X years header in results'}
-            ] 
-        },{ workTitle: 'Maintain record', 
-            links: [
-                { link : 'latest/delete_record', title : 'Delete claimant'}
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 28', disabilityPremium) }}
-
-
-        {% set managerWorkCoachFlow = [{ workTitle: 'Toggle user role', 
-            links: [
-                { link : 'latest/toggle_user_role', title : 'Toggle user role (currently ' + sessionData.user.role + ')'}
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 26', managerWorkCoachFlow) }}
-
-
-        {% set daysToWorkLinks = [{ workTitle: 'Days to standard', 
-            links: [
-                { link : 'latest/job_record_confirm', title : 'Days to standard' }
-            ] 
-        },{ workTitle: 'Level of work coach support needed', 
-            links: [
-                { link : 'latest/job_new_step3', title : 'Level of work coach support needed - Create claim layout' }
-            ] 
-        },{ workTitle: 'Provision playback', 
-            links: [
-                { link : 'latest/performance', title : 'Provision and Signing day filter option' },
-                { link : 'latest/performance_jsa?provisionSelected=true', title : 'Provision columns added to caseload results' }
-            ] 
-        },{ workTitle: 'Maintain user', 
-            links: [
-                { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 25', daysToWorkLinks) }}
-    </div>
-
-    <div class="grid-row">
-        {% set provisionLinks = [{ workTitle: 'Provision page', links: [{ link : 'latest/provision', title : 'Provision page' }] }] %}
-        {{ sprintLinks( 'Sprint 24', provisionLinks) }}
-
-
-        {% set managerViewLinks = [{ workTitle: 'Manager view - Work coach performance', 
-            links: [
-                { link : 'latest/manager_view_filter', title : 'Manager view - Work coach performance filter' },
-                { link : 'latest/manager_view_by_cohort', title : 'Manager view - Work coach performance results by cohort' },
-                { link : 'latest/manager_view_by_workcoach', title : 'Manager view - Work coach performance results by work coach' }
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 23', managerViewLinks) }}
-
-
-        {% set amendUserLinks = [{ workTitle: 'Amend User', 
-            links: [
-                { link : 'latest/job', title : 'Update links' },
-                { link : 'latest/amend_user', title : 'Merge user/Remove from workcoach list' }
-            ] 
-        }] %}
-        {{ sprintLinks( 'Sprint 22', amendUserLinks) }}
-    </div>
-
-    <div class="grid-row">
-        <div class="column-third">
-            <h2 class="heading-medium">Sprint 20</h2>
-
-            <ul class="bullets">
+              <ul class="bullets">
                 <h3 class="heading-small">Manager on/off-flow results</h3>
                 <ul>
-                    <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
+                  <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
                 </ul>
-            </ul>
+              </ul>
+            </div>
 
-        </div>
-
-        <div class="column-third">
-           <h2 class="heading-medium">Sprint 11 - Content review &amp; caseload</h2>
-            <ul class="bullets">
-                    <h3 class="heading-small">Sign in</h3>
-                    <ul>
-                        <li><a href="latest/login">Login</a></li> 
-                    </ul>  
-                    <h3 class="heading-small">Income Support</h3>
-                    <ul>
-                        <li><a href="latest/job">Start</a></li> 
-                    </ul>  
-                    <h3 class="heading-small">Employment Support Allowance</h3>
-                    <ul>
-                        <li><a href="latest_b/job">Start</a></li> 
-                    </ul>                  
-                    <h3 class="heading-small">Jobseeker's Allowance</h3>
-                    <ul>
-                        <li><a href="latest_c/job">Start</a></li>
-                    </ul>
-                   <h3 class="heading-small">Performance - workcoach view</h3>
-                    <ul>                   
-                        <li><a href="latest/performance">Filters</a></li>
-                        <li><a href="latest/performance_less">Filters - basic/advanced</a></li>
-                        <li><a href="latest/performance_jsa">JSA results (live)</a></li>
-                        <li><a href="latest/performance_jsa_selected">JSA results - email addresses selected</a></li>                        
-                        <li><a href="latest/performance_jsa_dormant">JSA results (dormant)</a></li>                        
-                        <li><a href="latest/performance_is">IS results</a></li>
-                        <li><a href="latest/performance_esa">ESA results</a></li>
-                    </ul>
-                    <h3 class="heading-small">Performance - manager view</h3>
-                     <ul>   
-                        <li><a href="latest/performance_manager">Manager view filters</a></li>   
-                        <li><a href="latest/performance_man_results">Manager view results</a></li>    
-                        <li><a href="latest/performance_man_results_is">Manager view results IS</a></li>                                           
-                    </ul>
-                    <h3 class="heading-small">Performance - on-flow/off-flow views</h3>
-                     <ul>   
-                        <li><a href="latest/workcoach_performance_view_onflow">Workcoach on/off-flow search</a></li>
-                        <li><a href="latest/workcoach_performance_view_onflow_results">Workcoach on/off-flow results</a></li>
-                        <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
-                        <li><a href="latest/workcoach_performance_view_onflow_results_manager">Manager on/off-flow results</a></li>
-                    </ul>
-                    <h3 class="heading-small">Performance - cohort reports</h3>
-                     <ul>
-                        <li><a href="latest/performance_cohort">Cohort search - Reporting or Cohort month</a></li>      
-                        <li><a href="latest/performance_cohort_report">Cohort results - Reporting month</a></li>     
-                <!--        <li><a href="latest/performance_cohort_month">Cohort search - Cohort month</a></li>  -->
-                        <li><a href="latest/performance_cohort_month_report">Cohort results - Cohort month</a></li>
-                        <li><a href="latest/performance_cohort_month_report_13_gone">Cohort results - Cohort month 13 weeks gone</a></li>
-                        <li><a href="latest/performance_cohort_month_report_esa">ESA cohort results - Cohort month</a></li>    
-                        <li><a href="latest/performance_cohort_month_report_is">IS cohort results - Cohort month</a></li>                          
-                     </ul>
-                     <h3 class="heading-small">Performance - dashboard</h3>
-                     <ul>                                         
-                        <li><a href="latest/performance_dash">Dashboard</a></li>
-                        <li><a href="latest/performance_dash_targets">Dashboard - no targets set</a></li>
-                     </ul>
-                      <h3 class="heading-small">Performance - target settings</h3>
-                     <ul>                                         
-                        <li><a href="latest/targets">Targets</a></li>
-                        <li><a href="latest/targets_confirm">Targets - confirm</a></li>                       
-                     </ul>
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 11 - Content review &amp; caseload</h2>
+              <ul class="bullets">
+                <h3 class="heading-small">Sign in</h3>
+                <ul>
+                  <li><a href="latest/login">Login</a></li>
+                </ul>
+                <h3 class="heading-small">Income Support</h3>
+                <ul>
+                  <li><a href="latest/job">Start</a></li>
+                </ul>
+                <h3 class="heading-small">Employment Support Allowance</h3>
+                <ul>
+                  <li><a href="latest_b/job">Start</a></li>
+                </ul>
+                <h3 class="heading-small">Jobseeker's Allowance</h3>
+                <ul>
+                  <li><a href="latest_c/job">Start</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - workcoach view</h3>
+                <ul>
+                  <li><a href="latest/performance">Filters</a></li>
+                  <li><a href="latest/performance_less">Filters - basic/advanced</a></li>
+                  <li><a href="latest/performance_jsa">JSA results (live)</a></li>
+                  <li><a href="latest/performance_jsa_selected">JSA results - email addresses selected</a></li>
+                  <li><a href="latest/performance_jsa_dormant">JSA results (dormant)</a></li>
+                  <li><a href="latest/performance_is">IS results</a></li>
+                  <li><a href="latest/performance_esa">ESA results</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - manager view</h3>
+                <ul>
+                  <li><a href="latest/performance_manager">Manager view filters</a></li>
+                  <li><a href="latest/performance_man_results">Manager view results</a></li>
+                  <li><a href="latest/performance_man_results_is">Manager view results IS</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - on-flow/off-flow views</h3>
+                <ul>
+                  <li><a href="latest/workcoach_performance_view_onflow">Workcoach on/off-flow search</a></li>
+                  <li><a href="latest/workcoach_performance_view_onflow_results">Workcoach on/off-flow results</a></li>
+                  <li><a href="latest/workcoach_performance_view_onflow_manager">Manager on/off-flow search</a></li>
+                  <li><a href="latest/workcoach_performance_view_onflow_results_manager">Manager on/off-flow results</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - cohort reports</h3>
+                <ul>
+                  <li><a href="latest/performance_cohort">Cohort search - Reporting or Cohort month</a></li>
+                  <li><a href="latest/performance_cohort_report">Cohort results - Reporting month</a></li>
+                  <!--        <li><a href="latest/performance_cohort_month">Cohort search - Cohort month</a></li>  -->
+                  <li><a href="latest/performance_cohort_month_report">Cohort results - Cohort month</a></li>
+                  <li><a href="latest/performance_cohort_month_report_13_gone">Cohort results - Cohort month 13 weeks gone</a></li>
+                  <li><a href="latest/performance_cohort_month_report_esa">ESA cohort results - Cohort month</a></li>
+                  <li><a href="latest/performance_cohort_month_report_is">IS cohort results - Cohort month</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - dashboard</h3>
+                <ul>
+                  <li><a href="latest/performance_dash">Dashboard</a></li>
+                  <li><a href="latest/performance_dash_targets">Dashboard - no targets set</a></li>
+                </ul>
+                <h3 class="heading-small">Performance - target settings</h3>
+                <ul>
+                  <li><a href="latest/targets">Targets</a></li>
+                  <li><a href="latest/targets_confirm">Targets - confirm</a></li>
+                </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-    </div> 
+          </div>
 
-    <div class="grid-row">
+          <div class="grid-row">
 
-          <div class="column-third">
-           <h2 class="heading-medium">Sprint 10 - 3-step create, 2-step edit</h2>
-            <ul class="bullets">
-                    <h3 class="heading-small">Income Support</h3>
-                    <ul>
-                        <li><a href="sprint_11/job">Start</a></li>
-                        <li><a href="sprint_11/job_new">Create record</a></li>
-                        <li><a href="sprint_11/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_11/job_edit">Edit claimant</a></li>
-                        <li><a href="sprint_11/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_11/job_claim_active">Claim (active)</a></li>                           
-                        <li><a href="sprint_11/job_claim_dormant">Claim (dormant)</a></li>   
-                    </ul>  
-                    <h3 class="heading-small">Employment Support Allowance</h3>
-                    <ul>
-                        <li><a href="sprint_11_b/job">Start</a></li>
-                        <li><a href="sprint_11_b/job_new">Create record</a></li>
-                        <li><a href="sprint_11_b/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_11_b/job_edit">Edit claimant</a></li>
-                        <li><a href="sprint_11_b/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_11_b/job_claim_active">Claim (active)</a></li>                           
-                        <li><a href="sprint_11_b/job_claim_dormant">Claim (dormant)</a></li>   
-                    </ul>                  
-                    <h3 class="heading-small">Jobseekers Allowance</h3>
-                    <ul>
-                        <li><a href="sprint_11_c/job">Start</a></li>
-                        <li><a href="sprint_11_c/job_new">Create record</a></li>
-                        <li><a href="sprint_11_c/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_11_c/job_edit">Edit claimant</a></li>
-                        <li><a href="sprint_11_c/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_11_c/job_claim_active">Claim (active)</a></li>    
-                        <li><a href="sprint_11_c/job_claim_dormant">Claim (dormant)</a></li>   
-                    </ul>
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 10 - 3-step create, 2-step edit</h2>
+              <ul class="bullets">
+                <h3 class="heading-small">Income Support</h3>
+                <ul>
+                  <li><a href="sprint_11/job">Start</a></li>
+                  <li><a href="sprint_11/job_new">Create record</a></li>
+                  <li><a href="sprint_11/job_record_confirm">View record</a></li>
+                  <li><a href="sprint_11/job_edit">Edit claimant</a></li>
+                  <li><a href="sprint_11/job_next_new">Appointment - new</a></li>
+                  <li><a href="sprint_11/job_claim_active">Claim (active)</a></li>
+                  <li><a href="sprint_11/job_claim_dormant">Claim (dormant)</a></li>
+                </ul>
+                <h3 class="heading-small">Employment Support Allowance</h3>
+                <ul>
+                  <li><a href="sprint_11_b/job">Start</a></li>
+                  <li><a href="sprint_11_b/job_new">Create record</a></li>
+                  <li><a href="sprint_11_b/job_record_confirm">View record</a></li>
+                  <li><a href="sprint_11_b/job_edit">Edit claimant</a></li>
+                  <li><a href="sprint_11_b/job_next_new">Appointment - new</a></li>
+                  <li><a href="sprint_11_b/job_claim_active">Claim (active)</a></li>
+                  <li><a href="sprint_11_b/job_claim_dormant">Claim (dormant)</a></li>
+                </ul>
+                <h3 class="heading-small">Jobseekers Allowance</h3>
+                <ul>
+                  <li><a href="sprint_11_c/job">Start</a></li>
+                  <li><a href="sprint_11_c/job_new">Create record</a></li>
+                  <li><a href="sprint_11_c/job_record_confirm">View record</a></li>
+                  <li><a href="sprint_11_c/job_edit">Edit claimant</a></li>
+                  <li><a href="sprint_11_c/job_next_new">Appointment - new</a></li>
+                  <li><a href="sprint_11_c/job_claim_active">Claim (active)</a></li>
+                  <li><a href="sprint_11_c/job_claim_dormant">Claim (dormant)</a></li>
+                </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-       <div class="column-third">
-           <h2 class="heading-medium">Sprint 9 - IS &amp; Claimant characteristics</h2>
-            <ul class="bullets">
-                    <h3 class="heading-small">Income Support - claimant characteristics</h3>
-                    <ul>
-                        <li><a href="sprint_10/job">Start</a></li>
-                        <li><a href="sprint_10/job_new">Create record</a></li>
-                        <li><a href="sprint_10/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_10/job_edit">Edit claimant</a></li>
-                        <li><a href="sprint_10/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_10/job_claim_active">Claim (active)</a></li>                           
-                        <li><a href="sprint_10/job_claim_dormant">Claim (dormant)</a></li>   
-                    </ul>
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 9 - IS &amp; Claimant characteristics</h2>
+              <ul class="bullets">
+                <h3 class="heading-small">Income Support - claimant characteristics</h3>
+                <ul>
+                  <li><a href="sprint_10/job">Start</a></li>
+                  <li><a href="sprint_10/job_new">Create record</a></li>
+                  <li><a href="sprint_10/job_record_confirm">View record</a></li>
+                  <li><a href="sprint_10/job_edit">Edit claimant</a></li>
+                  <li><a href="sprint_10/job_next_new">Appointment - new</a></li>
+                  <li><a href="sprint_10/job_claim_active">Claim (active)</a></li>
+                  <li><a href="sprint_10/job_claim_dormant">Claim (dormant)</a></li>
+                </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-        <div class="column-third">
-         <h2 class="heading-medium">Sprint 8 - Claimant &amp; Claim model</h2>
-            <ul class="bullets">
-                <li>  
-                    <h3 class="heading-small">Job Centre - Login</h3>
-                    <ul>
-                        <li><a href="sprint_9/login">Login</a></li>
-                        <li><a href="sprint_9/new_password">New user/forgotten password</a></li> 
-                        <li><a href="sprint_9/login_confirmation">Password confirmation</a></li>
-                    </ul>
-                    <h3 class="heading-small">Job Centre - Active record</h3>
-                    <ul>
-                        <li><a href="sprint_9/job">Start</a></li>
-                        <li><a href="sprint_9/job_new">Create record</a></li>
-                        <li><a href="sprint_9/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_9/job_edit">Edit claimant</a></li>
-                        <li><a href="sprint_9/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_9/job_claim_active">Claim (active)</a></li>   
-                        <li><a href="sprint_9/performance">Performance - office</a></li>   
-                        <li><a href="sprint_9/perf-coach">Performance - Workcoach</a></li>   
-                    </ul>
-                   <h3 class="heading-small">Performance</h3>
-                    <ul>
-                        <li><a href="sprint_9/performance">Office view</a></li>
-                        <li><a href="sprint_9/perf-work">Workcoach view</a></li>
-                    </ul>  
-                </li>
-            </ul>
-            <br>
-        </div>
-        
-    </div>
-    <!--End row-->
-
-     <div class="grid-row">
-
-       <div class="column-third">
-           <h2 class="heading-medium">Sprint 7</h2>
-            <ul class="bullets">
-                <li>  
-                    <h3 class="heading-small">Job Centre - Create record</h3>
-                    <ul>
-                        <li><a href="sprint_8/job">Start</a></li>
-                        <li><a href="sprint_8/job_new">Create record</a></li>
-                        <li><a href="sprint_8/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_8/job_edit">Edit record</a></li>
-                        <li><a href="sprint_8/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_8/job_closure">Closure</a></li>   
-                        <li><a href="sprint_8/performance">Performance - office</a></li>   
-                        <li><a href="sprint_8/perf-coach">Performance - Workcoach</a></li>   
-                    </ul>
-                    <h3 class="heading-small">Job Centre - Existing record</h3>
-                    <ul>
-                        <li><a href="sprint_8_b/job">Start</a></li>
-                        <li><a href="sprint_8_b/job_new">Create record</a></li>
-                        <li><a href="sprint_8_b/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_8_b/job_edit">Edit record</a></li>
-                        <li><a href="sprint_8_b/job_next">Appointment - update</a></li>
-                        <li><a href="sprint_8_b/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_8_b/job_closure">Closure</a></li>            
-                        <li><a href="sprint_8_b/performance">Performance - office</a></li>   
-                        <li><a href="sprint_8_b/perf-coach">Performance - Workcoach</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Job Centre - One column</h3>
-                    <ul>
-                        <li><a href="sprint_8_col/job">Start</a></li>
-                        <li><a href="sprint_8_col/job_new">Create record</a></li>
-                        <li><a href="sprint_8_col/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_8_col/job_edit">Edit record</a></li>
-                        <li><a href="sprint_8_col/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_8_col/job_closure">Closure</a></li>    
-                        <li><a href="sprint_8_col/performance">Performance - office</a></li>   
-                        <li><a href="sprint_8_col/perf-coach">Performance - Workcoach</a></li>                    
-                    </ul>
-                   <h3 class="heading-small">Performance</h3>
-                    <ul>
-                        <li><a href="sprint_8_col/performance">Office view</a></li>
-                        <li><a href="sprint_8_col/perf-work">Workcoach view</a></li>
-                    </ul>  
-                </li>
-            </ul>
-            <br>
-        </div>
-
-
-
-       <div class="column-third">
-           <h2 class="heading-medium">Sprint 6</h2>
-            <ul class="bullets">
-                <li>  
-                    <h3 class="heading-small">Job Centre - Create record</h3>
-                    <ul>
-                        <li><a href="sprint_6/job">Start</a></li>
-                        <li><a href="sprint_6/job_new">Create record</a></li>
-                        <li><a href="sprint_6/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_6/job_edit">Edit record</a></li>
-                        <li><a href="sprint_6/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_6/job_closure">Closure</a></li>   
-                        <li><a href="sprint_6/performance">Performance - office</a></li>   
-                        <li><a href="sprint_6/perf-coach">Performance - Workcoach</a></li>   
-                    </ul>
-                    <h3 class="heading-small">Job Centre - Existing record</h3>
-                    <ul>
-                        <li><a href="sprint_6_b/job">Start</a></li>
-                        <li><a href="sprint_6_b/job_new">Create record</a></li>
-                        <li><a href="sprint_6_b/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_6_b/job_edit">Edit record</a></li>
-                        <li><a href="sprint_6_b/job_next">Appointment - update</a></li>
-                        <li><a href="sprint_6_b/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_6_b/job_closure">Closure</a></li>            
-                        <li><a href="sprint_6_b/performance">Performance - office</a></li>   
-                        <li><a href="sprint_6_b/perf-coach">Performance - Workcoach</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Job Centre - One column</h3>
-                    <ul>
-                        <li><a href="sprint_6_col/job">Start</a></li>
-                        <li><a href="sprint_6_col/job_new">Create record</a></li>
-                        <li><a href="sprint_6_col/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_6_col/job_edit">Edit record</a></li>
-                        <li><a href="sprint_6_col/job_next">Appointment - update</a></li>
-                        <li><a href="sprint_6_col/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_6_col/job_closure">Closure</a></li>    
-                        <li><a href="sprint_6_col/performance">Performance - office</a></li>   
-                        <li><a href="sprint_6_col/perf-coach">Performance - Workcoach</a></li>                    
-                    </ul>
-                   <h3 class="heading-small">Performance</h3>
-                    <ul>
-                        <li><a href="sprint_6/performance">Office view</a></li>
-                        <li><a href="sprint_6/perf-work">Workcoach view</a></li>
-                    </ul>  
-                </li>
-            </ul>
-            <br>
-        </div>
-
-       <div class="column-third">
-           <h2 class="heading-medium">Sprint 5 - MVP</h2>
-            <ul class="bullets">
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 8 - Claimant &amp; Claim model</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">Job Centre - Create record</h3>
-                    <ul>
-                        <li><a href="sprint_5/job">Start search</a></li>
-                        <li><a href="sprint_5/job_new">Create record</a></li>
-                        <li><a href="sprint_5/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_5/job_edit">Edit record</a></li>
-                        <li><a href="sprint_5/job_next">Appointment - update</a></li>
-                        <li><a href="sprint_5/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_5/job_closure">Closure</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Job Centre - Existing record</h3>
-                    <ul>
-                        <li><a href="sprint_5_b/job">Start search</a></li>
-                        <li><a href="sprint_5_b/job_new">Create record</a></li>
-                        <li><a href="sprint_5_b/job_record_confirm">View record</a></li>
-                        <li><a href="sprint_5_b/job_edit">Edit record</a></li>
-                        <li><a href="sprint_5_b/job_next">Appointment - update</a></li>
-                        <li><a href="sprint_5_b/job_next_new">Appointment - new</a></li>
-                        <li><a href="sprint_5_b/job_closure">Closure</a></li>                    
-                    </ul>
-            <br>
-        </div>
-    </div>  
-
-
-      <div class="grid-row">
-
-       <div class="column-third">
-           <h2 class="heading-medium">Sprint 4</h2>
-            <ul class="bullets">
-                <li>
-                    <h3 class="heading-small">Job Centre</h3>
-                    <ul>
-                        <li><a href="sprint_4/job">Start search</a></li>
-                        <li><a href="sprint_4/job_advanced">Advanced search</a></li>
-                        <li><a href="sprint_4/job_edit">Edit record</a></li>
-                        <li><a href="sprint_4/job_new">New record</a></li>
-                        <li><a href="sprint_4/job_interview">Interview</a></li>
-                        <li><a href="sprint_4/job_next">Appointments</a></li>
-                        <li><a href="sprint_4/job_closure">Closure</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Benefit Centre</h3>
-                    <ul>
-                        <li><a href="sprint_4/benefit">Start search</a></li>
-                        <li><a href="sprint_4/benefit_advanced">Advanced search</a></li>
-                        <li><a href="sprint_4/benefit_edit">Edit record</a></li>
-                        <li><a href="sprint_4/benefit_new">New record</a></li>
-                        <li><a href="sprint_4/closure">Closure</a></li>
-                        <li><a href="sprint_4/payment">Payment</a></li>
-                        <li><a href="sprint_4/history">History</a></li>                       
-                        <li><a href="sprint_4/maintenance">Maintenance</a></li>
-                    </ul>
+                  <h3 class="heading-small">Job Centre - Login</h3>
+                  <ul>
+                    <li><a href="sprint_9/login">Login</a></li>
+                    <li><a href="sprint_9/new_password">New user/forgotten password</a></li>
+                    <li><a href="sprint_9/login_confirmation">Password confirmation</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - Active record</h3>
+                  <ul>
+                    <li><a href="sprint_9/job">Start</a></li>
+                    <li><a href="sprint_9/job_new">Create record</a></li>
+                    <li><a href="sprint_9/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_9/job_edit">Edit claimant</a></li>
+                    <li><a href="sprint_9/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_9/job_claim_active">Claim (active)</a></li>
+                    <li><a href="sprint_9/performance">Performance - office</a></li>
+                    <li><a href="sprint_9/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Performance</h3>
+                  <ul>
+                    <li><a href="sprint_9/performance">Office view</a></li>
+                    <li><a href="sprint_9/perf-work">Workcoach view</a></li>
+                  </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-        <div class="column-third">
-           <h2 class="heading-medium">Sprint 3</h2>
-            <ul class="bullets">
+          </div>
+          <!--End row-->
+
+          <div class="grid-row">
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 7</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">Job Centre</h3>
-                    <ul>
-                        <li><a href="sprint_3/job">Search</a></li>
-                        <li><a href="sprint_3/job_advanced">Advanced search</a></li>
-                        <li><a href="sprint_3/job_edit">Edit record</a></li>
-                        <li><a href="sprint_3/job_new">New record</a></li>
-                        <li><a href="sprint_3/job_interview">Interview</a></li>
-                        <li><a href="sprint_3/job_next">Appointments</a></li>
-                        <li><a href="sprint_3/job_closure">Closure</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Benefit Centre</h3>
-                    <ul>
-                        <li><a href="sprint_3/benefit">Search</a></li>
-                        <li><a href="sprint_3/benefit_advanced">Advanced search</a></li>
-                        <li><a href="sprint_3/benefit_edit">Edit record</a></li>
-                        <li><a href="sprint_3/benefit_new">New record</a></li>
-                        <li><a href="sprint_3/closure">Closure</a></li>
-                        <li><a href="sprint_3/payment">Payment</a></li>
-                        <li><a href="sprint_3/maintenance">Maintenance</a></li>
-                    </ul>
+                  <h3 class="heading-small">Job Centre - Create record</h3>
+                  <ul>
+                    <li><a href="sprint_8/job">Start</a></li>
+                    <li><a href="sprint_8/job_new">Create record</a></li>
+                    <li><a href="sprint_8/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_8/job_edit">Edit record</a></li>
+                    <li><a href="sprint_8/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_8/job_closure">Closure</a></li>
+                    <li><a href="sprint_8/performance">Performance - office</a></li>
+                    <li><a href="sprint_8/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - Existing record</h3>
+                  <ul>
+                    <li><a href="sprint_8_b/job">Start</a></li>
+                    <li><a href="sprint_8_b/job_new">Create record</a></li>
+                    <li><a href="sprint_8_b/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_8_b/job_edit">Edit record</a></li>
+                    <li><a href="sprint_8_b/job_next">Appointment - update</a></li>
+                    <li><a href="sprint_8_b/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_8_b/job_closure">Closure</a></li>
+                    <li><a href="sprint_8_b/performance">Performance - office</a></li>
+                    <li><a href="sprint_8_b/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - One column</h3>
+                  <ul>
+                    <li><a href="sprint_8_col/job">Start</a></li>
+                    <li><a href="sprint_8_col/job_new">Create record</a></li>
+                    <li><a href="sprint_8_col/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_8_col/job_edit">Edit record</a></li>
+                    <li><a href="sprint_8_col/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_8_col/job_closure">Closure</a></li>
+                    <li><a href="sprint_8_col/performance">Performance - office</a></li>
+                    <li><a href="sprint_8_col/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Performance</h3>
+                  <ul>
+                    <li><a href="sprint_8_col/performance">Office view</a></li>
+                    <li><a href="sprint_8_col/perf-work">Workcoach view</a></li>
+                  </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
 
-        <div class="column-third">
-             <h2 class="heading-medium">Sprint 3 - tests</h2>
-            <ul class="bullets">
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 6</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">Job Centre</h3>
-                    <ul>
-                        <li><a href="sprint_3_new_test/job">New record test</a></li>
-                        <li><a href="sprint_3_edit_test/job">Edit record test</a></li>                 
-                    </ul>
+                  <h3 class="heading-small">Job Centre - Create record</h3>
+                  <ul>
+                    <li><a href="sprint_6/job">Start</a></li>
+                    <li><a href="sprint_6/job_new">Create record</a></li>
+                    <li><a href="sprint_6/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_6/job_edit">Edit record</a></li>
+                    <li><a href="sprint_6/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_6/job_closure">Closure</a></li>
+                    <li><a href="sprint_6/performance">Performance - office</a></li>
+                    <li><a href="sprint_6/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - Existing record</h3>
+                  <ul>
+                    <li><a href="sprint_6_b/job">Start</a></li>
+                    <li><a href="sprint_6_b/job_new">Create record</a></li>
+                    <li><a href="sprint_6_b/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_6_b/job_edit">Edit record</a></li>
+                    <li><a href="sprint_6_b/job_next">Appointment - update</a></li>
+                    <li><a href="sprint_6_b/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_6_b/job_closure">Closure</a></li>
+                    <li><a href="sprint_6_b/performance">Performance - office</a></li>
+                    <li><a href="sprint_6_b/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - One column</h3>
+                  <ul>
+                    <li><a href="sprint_6_col/job">Start</a></li>
+                    <li><a href="sprint_6_col/job_new">Create record</a></li>
+                    <li><a href="sprint_6_col/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_6_col/job_edit">Edit record</a></li>
+                    <li><a href="sprint_6_col/job_next">Appointment - update</a></li>
+                    <li><a href="sprint_6_col/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_6_col/job_closure">Closure</a></li>
+                    <li><a href="sprint_6_col/performance">Performance - office</a></li>
+                    <li><a href="sprint_6_col/perf-coach">Performance - Workcoach</a></li>
+                  </ul>
+                  <h3 class="heading-small">Performance</h3>
+                  <ul>
+                    <li><a href="sprint_6/performance">Office view</a></li>
+                    <li><a href="sprint_6/perf-work">Workcoach view</a></li>
+                  </ul>
                 </li>
-            </ul>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-    <!-- End row -->
-    </div>  
-
-    <div class="grid-row">
-
-        <div class="column-third">
-           <h2 class="heading-medium">Sprint 1a</h2>
-            <ul class="bullets">
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 5 - MVP</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">Login screens</h3>
-                    <ul>
-                        <li><a href="sprint_1/login">Login</a></li>
-                        <li><a href="sprint_1/first_login">First login</a></li>
-                        <li><a href="sprint_1/reset">Reset</a></li>
-                        <li><a href="sprint_1/reset_confirm">Reset confirmation</a></li>
-                        <li><a href="sprint_1/logged_in">Logged in - options</a></li>
-                    </ul>
-                    <h3 class="heading-small">Service Centre</h3>
-                    <ul>
-                        <li><a href="sprint_1/service_search">Record search</a></li>
-                        <li><a href="sprint_1/service_centre_left">Record display</a></li>
-                        <li><a href="sprint_1/service_confirm">Confirmation</a></li>
-                    </ul>
-                    <h3 class="heading-small">Job Centre</h3>
-                    <ul>
-                        <li><a href="sprint_1/job">Record search</a></li>
-                        <li><a href="sprint_1/job_record">Record display</a></li>  
-                        <li><a href="sprint_1/job_edit">Record edit</a></li>
-                        <li><a href="sprint_1/job_interview">Interview</a></li>
-                    </ul>
-                    <h3 class="heading-small">Benefit Centre</h3>
-                    <ul>
-                        <li><a href="sprint_1/benefit">Record search</a></li>
-                        <li><a href="sprint_1/benefit_record">Record display</a></li>
-                        <li><a href="sprint_1/closure">Closure</a></li>
-                        <li><a href="sprint_1/payment">Payment</a></li>
-                        <li><a href="sprint_1/maintenance">Maintenance</a></li>
-                    </ul>
-                      <h3 class="heading-small">Admin</h3>
-                    <ul>
-                        <li><a href="/sprint-1/feedback">Link</a></li>
-                    </ul>
-                    <h3 class="heading-small">Management Info</h3>
-                    <ul>
-                        <li><a href="/sprint-1/feedback">Link</a></li>
-                    </ul>
-                     <h3 class="heading-small">SMS Template</h3>
-                    <ul>
-                        <li><a href="/sprint-1/">Link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <br>
-        </div>
+                  <h3 class="heading-small">Job Centre - Create record</h3>
+                  <ul>
+                    <li><a href="sprint_5/job">Start search</a></li>
+                    <li><a href="sprint_5/job_new">Create record</a></li>
+                    <li><a href="sprint_5/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_5/job_edit">Edit record</a></li>
+                    <li><a href="sprint_5/job_next">Appointment - update</a></li>
+                    <li><a href="sprint_5/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_5/job_closure">Closure</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre - Existing record</h3>
+                  <ul>
+                    <li><a href="sprint_5_b/job">Start search</a></li>
+                    <li><a href="sprint_5_b/job_new">Create record</a></li>
+                    <li><a href="sprint_5_b/job_record_confirm">View record</a></li>
+                    <li><a href="sprint_5_b/job_edit">Edit record</a></li>
+                    <li><a href="sprint_5_b/job_next">Appointment - update</a></li>
+                    <li><a href="sprint_5_b/job_next_new">Appointment - new</a></li>
+                    <li><a href="sprint_5_b/job_closure">Closure</a></li>
+                  </ul>
+                  <br>
+            </div>
+          </div>
 
 
-        <div class="column-third">
-           <h2 class="heading-medium">Sprint 1b</h2>
-            <ul class="bullets">
+          <div class="grid-row">
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 4</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">Login screens</h3>
-                    <ul>
-                        <li><a href="sprint_1b/login">Login</a></li>
-                        <li><a href="sprint_1b/first_login">First login</a></li>
-                        <li><a href="sprint_1b/reset">Reset</a></li>
-                        <li><a href="sprint_1b/reset_confirm">Reset confirmation</a></li>
-                        <li><a href="sprint_1b/logged_in">Logged in - options</a></li>
-                    </ul>
-                    <h3 class="heading-small">Job Centre</h3>
-                    <ul>
-                        <li><a href="sprint_1b/job">Basic search</a></li>
-                        <li><a href="sprint_1b/job_advanced">Advanced search</a></li>
-                        <li><a href="sprint_1b/job_edit">Edit record</a></li>
-                        <li><a href="sprint_1b/job_new">New record</a></li>
-                        <li><a href="sprint_1b/job_interview">Interview</a></li>
-                        <li><a href="sprint_1b/job_next">Next appointment</a></li>
-                        <li><a href="sprint_1b/job_closure">Closure</a></li>                    
-                    </ul>
-                    <h3 class="heading-small">Benefit Centre</h3>
-                    <ul>
-                        <li><a href="sprint_1b/benefit">Basic search</a></li>
-                        <li><a href="sprint_1b/benefit_advanced">Advanced search</a></li>
-                        <li><a href="sprint_1b/benefit_edit">Edit record</a></li>
-                        <li><a href="sprint_1b/closure">Closure</a></li>
-                        <li><a href="sprint_1b/payment">Payment</a></li>
-                        <li><a href="sprint_1b/maintenance">Maintenance</a></li>
-                    </ul>
-                      <h3 class="heading-small">Admin</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                    <h3 class="heading-small">Management Info</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                     <h3 class="heading-small">SMS Template</h3>
-                    <ul>
-                        <li><a href="#">Link</a></li>
-                    </ul>
+                  <h3 class="heading-small">Job Centre</h3>
+                  <ul>
+                    <li><a href="sprint_4/job">Start search</a></li>
+                    <li><a href="sprint_4/job_advanced">Advanced search</a></li>
+                    <li><a href="sprint_4/job_edit">Edit record</a></li>
+                    <li><a href="sprint_4/job_new">New record</a></li>
+                    <li><a href="sprint_4/job_interview">Interview</a></li>
+                    <li><a href="sprint_4/job_next">Appointments</a></li>
+                    <li><a href="sprint_4/job_closure">Closure</a></li>
+                  </ul>
+                  <h3 class="heading-small">Benefit Centre</h3>
+                  <ul>
+                    <li><a href="sprint_4/benefit">Start search</a></li>
+                    <li><a href="sprint_4/benefit_advanced">Advanced search</a></li>
+                    <li><a href="sprint_4/benefit_edit">Edit record</a></li>
+                    <li><a href="sprint_4/benefit_new">New record</a></li>
+                    <li><a href="sprint_4/closure">Closure</a></li>
+                    <li><a href="sprint_4/payment">Payment</a></li>
+                    <li><a href="sprint_4/history">History</a></li>
+                    <li><a href="sprint_4/maintenance">Maintenance</a></li>
+                  </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
-        <div class="column-third">
-           <h2 class="heading-medium">Sprint 2</h2>
-            <ul class="bullets">
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 3</h2>
+              <ul class="bullets">
                 <li>
-                    <h3 class="heading-small">User testing</h3>
-                    <ul>
-                        <li><a href="S1_new_record/job">Create new record</a></li>
-                        <li><a href="S2_advanced_search/job">Advanced search</a></li>
-                        <li><a href="S3_ad_hoc/job">Ad-hoc appointment</a></li>
-                    </ul>
-                   <h3 class="heading-small">New design</h3>
-                    <ul>
-                        <li><a href="sprint_1b/new_design">Record overview page</a></li>
-                    </ul>
+                  <h3 class="heading-small">Job Centre</h3>
+                  <ul>
+                    <li><a href="sprint_3/job">Search</a></li>
+                    <li><a href="sprint_3/job_advanced">Advanced search</a></li>
+                    <li><a href="sprint_3/job_edit">Edit record</a></li>
+                    <li><a href="sprint_3/job_new">New record</a></li>
+                    <li><a href="sprint_3/job_interview">Interview</a></li>
+                    <li><a href="sprint_3/job_next">Appointments</a></li>
+                    <li><a href="sprint_3/job_closure">Closure</a></li>
+                  </ul>
+                  <h3 class="heading-small">Benefit Centre</h3>
+                  <ul>
+                    <li><a href="sprint_3/benefit">Search</a></li>
+                    <li><a href="sprint_3/benefit_advanced">Advanced search</a></li>
+                    <li><a href="sprint_3/benefit_edit">Edit record</a></li>
+                    <li><a href="sprint_3/benefit_new">New record</a></li>
+                    <li><a href="sprint_3/closure">Closure</a></li>
+                    <li><a href="sprint_3/payment">Payment</a></li>
+                    <li><a href="sprint_3/maintenance">Maintenance</a></li>
+                  </ul>
                 </li>
-            </ul>
-            <br>
-        </div>
+              </ul>
+              <br>
+            </div>
 
 
-    <!-- End row -->
-    </div>  
-       
-    </details>
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 3 - tests</h2>
+              <ul class="bullets">
+                <li>
+                  <h3 class="heading-small">Job Centre</h3>
+                  <ul>
+                    <li><a href="sprint_3_new_test/job">New record test</a></li>
+                    <li><a href="sprint_3_edit_test/job">Edit record test</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
-  </div>
-</main>
+            <!-- End row -->
+          </div>
 
-{% endblock %}
+          <div class="grid-row">
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 1a</h2>
+              <ul class="bullets">
+                <li>
+                  <h3 class="heading-small">Login screens</h3>
+                  <ul>
+                    <li><a href="sprint_1/login">Login</a></li>
+                    <li><a href="sprint_1/first_login">First login</a></li>
+                    <li><a href="sprint_1/reset">Reset</a></li>
+                    <li><a href="sprint_1/reset_confirm">Reset confirmation</a></li>
+                    <li><a href="sprint_1/logged_in">Logged in - options</a></li>
+                  </ul>
+                  <h3 class="heading-small">Service Centre</h3>
+                  <ul>
+                    <li><a href="sprint_1/service_search">Record search</a></li>
+                    <li><a href="sprint_1/service_centre_left">Record display</a></li>
+                    <li><a href="sprint_1/service_confirm">Confirmation</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre</h3>
+                  <ul>
+                    <li><a href="sprint_1/job">Record search</a></li>
+                    <li><a href="sprint_1/job_record">Record display</a></li>
+                    <li><a href="sprint_1/job_edit">Record edit</a></li>
+                    <li><a href="sprint_1/job_interview">Interview</a></li>
+                  </ul>
+                  <h3 class="heading-small">Benefit Centre</h3>
+                  <ul>
+                    <li><a href="sprint_1/benefit">Record search</a></li>
+                    <li><a href="sprint_1/benefit_record">Record display</a></li>
+                    <li><a href="sprint_1/closure">Closure</a></li>
+                    <li><a href="sprint_1/payment">Payment</a></li>
+                    <li><a href="sprint_1/maintenance">Maintenance</a></li>
+                  </ul>
+                  <h3 class="heading-small">Admin</h3>
+                  <ul>
+                    <li><a href="/sprint-1/feedback">Link</a></li>
+                  </ul>
+                  <h3 class="heading-small">Management Info</h3>
+                  <ul>
+                    <li><a href="/sprint-1/feedback">Link</a></li>
+                  </ul>
+                  <h3 class="heading-small">SMS Template</h3>
+                  <ul>
+                    <li><a href="/sprint-1/">Link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <br>
+            </div>
+
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 1b</h2>
+              <ul class="bullets">
+                <li>
+                  <h3 class="heading-small">Login screens</h3>
+                  <ul>
+                    <li><a href="sprint_1b/login">Login</a></li>
+                    <li><a href="sprint_1b/first_login">First login</a></li>
+                    <li><a href="sprint_1b/reset">Reset</a></li>
+                    <li><a href="sprint_1b/reset_confirm">Reset confirmation</a></li>
+                    <li><a href="sprint_1b/logged_in">Logged in - options</a></li>
+                  </ul>
+                  <h3 class="heading-small">Job Centre</h3>
+                  <ul>
+                    <li><a href="sprint_1b/job">Basic search</a></li>
+                    <li><a href="sprint_1b/job_advanced">Advanced search</a></li>
+                    <li><a href="sprint_1b/job_edit">Edit record</a></li>
+                    <li><a href="sprint_1b/job_new">New record</a></li>
+                    <li><a href="sprint_1b/job_interview">Interview</a></li>
+                    <li><a href="sprint_1b/job_next">Next appointment</a></li>
+                    <li><a href="sprint_1b/job_closure">Closure</a></li>
+                  </ul>
+                  <h3 class="heading-small">Benefit Centre</h3>
+                  <ul>
+                    <li><a href="sprint_1b/benefit">Basic search</a></li>
+                    <li><a href="sprint_1b/benefit_advanced">Advanced search</a></li>
+                    <li><a href="sprint_1b/benefit_edit">Edit record</a></li>
+                    <li><a href="sprint_1b/closure">Closure</a></li>
+                    <li><a href="sprint_1b/payment">Payment</a></li>
+                    <li><a href="sprint_1b/maintenance">Maintenance</a></li>
+                  </ul>
+                  <h3 class="heading-small">Admin</h3>
+                  <ul>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                  <h3 class="heading-small">Management Info</h3>
+                  <ul>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                  <h3 class="heading-small">SMS Template</h3>
+                  <ul>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <br>
+            </div>
+
+            <div class="column-third">
+              <h2 class="heading-medium">Sprint 2</h2>
+              <ul class="bullets">
+                <li>
+                  <h3 class="heading-small">User testing</h3>
+                  <ul>
+                    <li><a href="S1_new_record/job">Create new record</a></li>
+                    <li><a href="S2_advanced_search/job">Advanced search</a></li>
+                    <li><a href="S3_ad_hoc/job">Ad-hoc appointment</a></li>
+                  </ul>
+                  <h3 class="heading-small">New design</h3>
+                  <ul>
+                    <li><a href="sprint_1b/new_design">Record overview page</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <br>
+            </div>
+
+
+            <!-- End row -->
+          </div>
+
+        </details>
+
+      </div>
+    </main>
+
+  {% endblock %} 
 
 {% macro sprintLinks(sprintName, sprintWorkInfo) %}
-    <div class="column-third">
-        <h2 class="heading-medium">{{sprintName}}</h2>
+<div class="column-third">
+  <h2 class="heading-medium">{{sprintName}}</h2>
 
-        {% for thisSprintWorkInfo in sprintWorkInfo %}
-            <ul class="bullets">
-                <h3 class="heading-small">{{thisSprintWorkInfo.workTitle}}</h3>
-                {% for link in thisSprintWorkInfo.links %}
-                    <ul>
-                        <li><a href="{{link.link}}">{{link.title}}</a></li>
-                    </ul>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    </div>
+  {% for thisSprintWorkInfo in sprintWorkInfo %}
+  <ul class="bullets">
+    <h3 class="heading-small">{{thisSprintWorkInfo.workTitle}}</h3>
+    {% for link in thisSprintWorkInfo.links %}
+    <ul>
+      <li><a href="{{link.link}}">{{link.title}}</a></li>
+    </ul>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
 {% endmacro %}
