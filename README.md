@@ -1,4 +1,4 @@
-# GOV.UK Prototype kit
+# DCAMS Prototype
 
 ## News
 
