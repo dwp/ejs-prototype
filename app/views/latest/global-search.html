@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        DCAMS
+    </title>
+
+    <!--[if gt IE 8]><!-->
+    <link href="/public/stylesheets/govuk-template.css?0.19.0" media="screen" rel="stylesheet" />
+    <!--<![endif]-->
+    <!--[if IE 6]><link href="/public/stylesheets/govuk-template-ie6.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="/public/stylesheets/govuk-template-ie7.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="/public/stylesheets/govuk-template-ie8.css?0.19.0" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="/public/stylesheets/govuk-template-print.css?0.19.0" media="print" rel="stylesheet" />
+
+    <!--[if IE 8]><link href="/public/stylesheets/fonts-ie8.css?0.19.0" media="all" rel="stylesheet" /><![endif]-->
+    <!--[if gte IE 9]><!-->
+    <link href="/public/stylesheets/fonts.css?0.19.0" media="all" rel="stylesheet" />
+    <!--<![endif]-->
+    <!--[if lt IE 9]><script src="/public/javascripts/ie.js?0.19.0"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/public/images/favicon.ico?0.19.0" type="image/x-icon" />
+    <link rel="mask-icon" href="/public/images/gov.uk_logotype_crown.svg?0.19.0" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/images/apple-touch-icon-152x152.png?0.19.0">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/images/apple-touch-icon-120x120.png?0.19.0">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/images/apple-touch-icon-76x76.png?0.19.0">
+    <link rel="apple-touch-icon-precomposed" href="/public/images/apple-touch-icon-60x60.png?0.19.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/public/images/opengraph-image.png?0.19.0">
+
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body class="">
+    <script id="__bs_script__">
+        //<![CDATA[
+        document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
+        //]]>
+    </script>
+
+    <script>
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
+
+
+
+    <div id="skiplink-container">
+        <div>
+            <a href="#content" class="skiplink">Skip to main content</a>
+        </div>
+    </div>
+
+    <header role="banner" id="global-header" class="">
+        <div class="header-wrapper">
+            <div class="header-global"></div>
+            <div class="header-proposition">
+                <div class="content">
+                    <nav id="proposition-menu">
+                        <a href="/index" id="logo" class="content">DCAMS</a>
+                    </nav>
+                    <div class="banner-user-details column-third">
+                        <div class="banner-username">
+                            <a class="bold-nav-link" href="/latest/toggle_user_role">William Conroy</a>
+                        </div>
+                        <div class="header-location-link"> Worcester </div>
+                    </div>
+                    <div class="search-box-container">
+                        <nav id="sign-out-menu">
+                            <form action="search_results" method="get" class="form" id="search-form">
+                                <input id="nino" type="search" autocomplete="off" name="nino" class="js-search-focus">
+                                <input id="search-button" type="submit" class="search-submit" value="Search" />
+                            </form>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="content" role="main">
+        <div class="nav-horizontal">
+            <div class="main-nav-wrapper">
+                <ul class="main-nav">
+                    <li id="nav-home" class="selected"><a href="job">Search</a>
+                    </li>
+                    <li id="nav-case"><a href="performance">Caseload</a>
+                    </li>
+                    <li id="nav-dash"><a href="performance_dash">Dashboard</a>
+                    </li>
+                    <li id="nav-off"><a href="workcoach_performance_view_onflow">Performance</a>
+                    </li>
+                    <!-- linking this to the toggle user role logic for a bit of a shortcut -->
+                    <li><a href="settings">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="external-links-wrapper">
+                <ul class="external-links">
+                    <li class="main-nav-link"><a href="">Updates</a>
+                    </li>
+                    <li class="main-nav-link"><a href="">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="grid-row">
+                <div class="column-full">
+                    <div class="search-box-container">
+                        <h1 class="heading-large">Search for claimant record</h1>
+                        <form action="search_results" method="get" class="form" id="search-form">
+                            <label class="form-hint" for="nino">Enter a National Insurance or 12-digit reference number</label>
+                            <input id="nino" type="search" autocomplete="off" name="nino" autofocus="autofocus" class="js-search-focus">
+                            <input id="search-submit" type="submit" class="search-submit" value="Search" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <div class="footer-meta">
+                <div class="footer-meta-inner">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="global-app-error" class="app-error hidden"></div>
+    
+    <script src="/public/javascripts/govuk-template.js?0.19.0"></script>
+    <!-- Jquery commented out for Jquery Datatables working on MI performance pages-->
+    <script src="/public/javascripts/jquery-1.11.0.min.js"></script>
+    <script src="/public/javascripts/application.js"></script>
+    <script src="/public/javascripts/selection-buttons.js"></script>
+    <script src="/public/javascripts/details.polyfill.js"></script>
+
+    <script>
+        if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');
+    </script>
+</body>
+
+</html>
