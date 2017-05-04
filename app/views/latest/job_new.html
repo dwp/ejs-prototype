@@ -76,10 +76,12 @@
             <input class="form-control" id="email" type="text"><br>
           </div>
           <div class="form-group">
-            <label class="block-label selection-button-checkbox" for="contact">
-              <input id="contact" name="contact" type="checkbox" value="Do not contact">
-              Do not contact
-            </label>            
+            <div class="multiple-choice">
+                <input id="contact" name="contact" type="checkbox" value="Do not contact">
+              <label class="block-label selection-button-checkbox" for="contact">
+                Do not contact
+              </label>
+            </div>            
           </div>  
 
           <div class="form-group-related">
@@ -87,10 +89,12 @@
             <input class="form-control" id="mobile" type="text"><br>
           </div>
           <div class="form-group">
-            <label class="block-label selection-button-checkbox" for="contact1">
+            <div class="multiple-choice">
               <input id="contact1" name="contact1" type="checkbox" value="Do not contact">
-              Do not contact
-            </label>               
+              <label class="block-label selection-button-checkbox" for="contact1">
+                Do not contact
+              </label>   
+            </div>            
           </div>   
 
           <div class="form-group">
@@ -113,14 +117,14 @@
           <div class="form-group">
             <label class="form-label" for="mobile">Prefers communications in Welsh?</label>
             <fieldset class="inline">
-              <label class="block-label selection-button-radio" for="yes">
+              <div class="multiple-choice">
                 <input id="yes" name="yes" type="radio" value="yes">
-                Yes
-              </label>
-              <label class="block-label selection-button-radio" for="no">
+                <label for="yes">Yes</label>
+              </div>
+              <div class="multiple-choice">
                 <input id="no" name="no" type="radio" value="no" checked>
-                No
-              </label>
+                <label for="no">No</label>
+              </div>
             </fieldset>
           </div>   
         </div>
@@ -131,39 +135,49 @@
 
             <fieldset>
               <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
-              <label class="block-label selection-button-checkbox" for="dis-8">
+              <div class="multiple-choice">
                 <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person">
-                Disabled
-              </label>
-              <label class="block-label selection-button-checkbox" for="dis-2">
+                <label for="dis-8">Disabled</label>
+              </div>
+              <div class="multiple-choice">
                 <input id="dis-2" name="dis-2" type="checkbox" value="English for speakers of other languages">
-                Poor English
-              </label>
-              <label class="block-label selection-button-checkbox" for="dis-3">
+                <label for="dis-2">Poor English</label>
+              </div>
+              <div class="multiple-choice">
                 <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
-                Ex-offender
-              </label>
-              <label class="block-label selection-button-checkbox" for="dis-4">
-                <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
-                Homeless
-              </label>
-              <label class="block-label selection-button-checkbox" for="dis-1">
+                <label for="dis-3">Ex-offender</label>
+              </div>
+              <div class="multiple-choice">
+                  <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
+                <label for="dis-4">
+                  Homeless
+                </label>
+              </div>
+              <div class="multiple-choice">
                 <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
+              <label for="dis-1">
                 Poor literacy/numeracy
               </label>
-              <label class="block-label selection-button-checkbox" for="dis-6">
+              </div>
+              <div class="multiple-choice">
                 <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs">
+              <label for="dis-6">
                 Misuses drugs
               </label>
-              <label class="block-label selection-button-checkbox" for="dis-7">
+              </div>
+              <div class="multiple-choice">
                 <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol">
+              <label for="dis-7">
                 Misuses alcohol
               </label>
+              </div>
+              <div class="multiple-choice">
               </label>
-              <label class="block-label selection-button-checkbox" for="dis-8">
                 <input id="dis-8" name="dis-8" type="checkbox" value="Ex-Armed Forces">
-                Ex-Armed Forces
-              </label>
+                <label for="dis-8">
+                  Ex-Armed Forces
+                </label>
+              </div>
             </fieldset>
           </div>
           
@@ -206,18 +220,26 @@
               <fieldset>
                 <legend class="form-label">Work programme</legend>
                 <div class="form-group form-group-compound">
-                  <label class="block-label selection-button-radio" for="radio-indent-3">
+                  <div class="multiple-choice">
                     <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
-                      Pre-work programme
-                  </label>
-                  <label class="block-label selection-button-radio" for="radio-indent-2">
-                    <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                      
+                    <label class="block-label selection-button-radio" for="radio-indent-3">
+                        Pre-work programme
+                    </label>
+                  </div>
+                  <div class="multiple-choice">
+                  <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    <label class="block-label selection-button-radio" for="radio-indent-2">
                       Work programme
-                  </label>
-                  <label class="block-label selection-button-radio" for="radio-indent-4">
-                    <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    </label>
+                  </div>
+                  <div class="multiple-choice">
+                  <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    
+                    <label class="block-label selection-button-radio" for="radio-indent-4">
                       Completed work programme
-                  </label>
+                    </label>
+                  </div>
                 </div>
               </fieldset>
             </div>
