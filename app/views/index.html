@@ -2,7 +2,6 @@
   {% block page_title %}Index page of all DCAMS prototype sprint work{% endblock %} 
   
   {% block content %}
-
     <main id="content" role="main">
       <div class="main-content">
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
@@ -15,10 +14,7 @@
 
         <div class="grid-row">
           {% set whpSelectionTool = [{ links: [ { link : 'latest/selection_tool', title : 'Landing page'}, { link : 'latest/selection_tool/voluntary',
-          title : 'Voluntary questions'}, { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'}, { link
-          : 'latest/selection_tool/non-ltu-knockout', title : 'Claimant eligible'}, { link : 'latest/selection_tool/scoring-questions',
-          title : 'Scoring questions - Point scale'}, { link : 'latest/selection_tool/scoring-questions-v2', title : 'Scoring
-          questions - Label scale'}, { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per
+          title : 'Voluntary questions'}, { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'}, { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per
           page'}, { link : 'latest/whp-selection-report', title : 'Gatekeeper report'}, { link : 'latest/whp-admin', title :
           'Set threshold' } ] }] %} {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
         </div>
@@ -573,7 +569,6 @@
 
       </div>
     </main>
-
   {% endblock %} 
 
 {% macro sprintLinks(sprintName, sprintWorkInfo) %}
