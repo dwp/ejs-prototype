@@ -13,29 +13,39 @@
         {% include "includes/summary_nav.html" %}
       </div>
       
-      <div class="grid-row">
-        <div class="column-full">
-          {% if explanation %}
-            <p>{{explanation}}</p>
+      <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
+        <div class="grid-row">
+          <div class="column-half">
+            {% if explanation %}
+              <p>{{explanation}}</p>
+            {% endif %}
+              {% for question in questions %}
+                {{radioGroup(question.text, question.name, question.options, question.targets, question.hint, question.description )}}
+              {% endfor %}
+            </form>
+          </div>
+          {%if questions[0].hint %}
+            <div class="column-one-third">
+              <p class="bold">Additional information</p>
+              {%if questions[0].hint %}<p>{{questions[0].hint}}</p>{% endif %}
+              <p>Question {{questionIndex}} of {{questionCount}}</p>
+            </div>
           {% endif %}
-          <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
-            {% for question in questions %}
-              {{radioGroup(question.text, question.name, question.options, question.targets, question.hint, question.description )}}
-            {% endfor %}
+
+         <div class="column-two-thirds">
             <button class="button" type="submit">Continue</button>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </main>
 {% endblock %}
 
 {% macro radioGroup(question, name, options, targets, hint) %}
   <div class="form-group">
-    <fieldset class="inline">
+    <fieldset>
       <legend class="heading-medium">{{question}}</legend>
 
-      {%if hint %}<p>{{hint}}</p>{% endif %}
       
       {% for option in options %}
         {% set label = option.label or option %}
