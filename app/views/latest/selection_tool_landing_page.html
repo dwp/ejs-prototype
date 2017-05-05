@@ -29,13 +29,35 @@
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
                   <label class="form-label" for="voluntary-options-radio-buttons">Voluntary options</label>
                     <div id="voluntary-options-radio-buttons">
-                      {{ forms.radio(name='voluntary', displayText='Health', optionValue='Health', id='voluntary-options-health') }}
-                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg') }}
-                      {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral') }}
+                      {{ forms.radio(name='voluntary', displayText='Health', optionValue='Health', id='voluntary-options-health', datatarget='wrac-question') }}
+                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg', datatarget='eeg-options') }}
+                      {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
                   </div>
                 </div>
 
+                <div class="panel panel-border-narrow js-hidden" id="wrac-question">
+                  <label class="form-label" for="esa-wrac">Is the claimant in receipt of ESA/WRAC ?</label>
+                    <div id="esa-wrac">
+                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
+                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
+                    </div>
+                </div>
               </fieldset>
+
+                <div class="panel panel-border-narrow js-hidden form-group" id="eeg-options">
+                  <p>Which Early entry groups apply to the claimant ?</p>
+                  <fieldset>
+                        {% for eegOption in eegOptions %}
+                          {{ forms.checkbox(name='eeg-options', id=eegOption.value, value=eegOption.label)}}
+                        {% endfor %}
+                  </fieldset>
+                </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="external-referral">
+                <label class="form-label" for="external-referral-input">Provider</label>
+                <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
+              </div>
+
             </div>
             <button class="button" type="submit">Continue</button>
           </form>
