@@ -13,10 +13,25 @@
         </div>
 
         <div class="grid-row">
-          {% set whpSelectionTool = [{ links: [ { link : 'latest/selection_tool', title : 'Landing page'}, { link : 'latest/selection_tool/voluntary',
-          title : 'Voluntary questions'}, { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'}, { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per
-          page'}, { link : 'latest/whp-selection-report', title : 'Gatekeeper report'}, { link : 'latest/whp-admin', title :
-          'Set threshold' } ] }] %} {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
+          {% set whpSelectionTool = [{ 
+            links: [{ 
+              link : 'latest/selection_tool', title : 'Landing page'
+             }, { 
+              link : 'latest/selection_tool/voluntary', title : 'Voluntary questions'
+             }, { 
+              link : 'latest/selection_tool/early-entry', title : 'Early entry questions'
+            }, { 
+              link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per page'
+            }, { 
+              link : 'latest/failed-eligibility', title : 'Failed eligibility'
+            }, { 
+              link : 'latest/whp-selection-report', title : 'Gatekeeper report'
+            }, { 
+              link : 'latest/whp-admin', title : 'Set threshold'
+            }]
+          }] %} 
+          
+          {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
         </div>
 
         <div class="grid-row">

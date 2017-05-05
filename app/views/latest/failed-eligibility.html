@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith - {{ questionTitle }}</h1>     
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+        {% include "includes/summary_nav.html" %}
+      </div>
+      
+      <div class="grid-row">
+        <div class="column-half">
+          <h2 class="heading-small">WHP referral outcome</h2>
+
+          <div class="panel panel-border-wide alert-warning">
+            <p>Mr J Smith is not eligible to take part in the Work and Health Programme</p>
+          </div>
+
+          <h2 class="heading-small">This is because:</h2>
+          <p>This customer has previously completed the Work and Health Programme</p>
+
+          <h2 class="heading-small">Next steps</h2>
+          <p>Please continue to provide work coach support</p>
+
+          <a href="/latest/job_record_confirm" class="button">Continue</a>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% macro radioGroup(question, name, options, targets, hint) %}
+  <div class="form-group">
+    <fieldset>
+      <legend class="heading-medium">{{question}}</legend>
+
+      
+      {% for option in options %}
+        {% set label = option.label or option %}
+        {% set value = option.value or option %}
+
+        <label class="block-label selection-button-radio" for="{{name}}-{{loop.index}}" {%if option.target %}data-target="{{option.target}}"{% endif %}>
+          <input id="{{name}}-{{loop.index}}" type="radio" name="{{name}}" value="{{value}}">
+          {{label}}
+        </label>
+      {% endfor %}
+
+      {% for target in targets %}
+      <div class="panel panel-border-narrow js-hidden" id="{{target.id}}">
+        <label class="form-label" for="{{target.elementId}}">Provider</label>
+        <input class="form-control form-control-1-4" name="{{target.elementId}}" type="text" id="{{target.elementId}}">
+      </div>
+      {% endfor %}
+    </fieldset>
+  </div>
+{% endmacro %}
