@@ -33,29 +33,3 @@
     </div>
   </main>
 {% endblock %}
-
-{% macro radioGroup(question, name, options, targets, hint) %}
-  <div class="form-group">
-    <fieldset>
-      <legend class="heading-medium">{{question}}</legend>
-
-      
-      {% for option in options %}
-        {% set label = option.label or option %}
-        {% set value = option.value or option %}
-
-        <label class="block-label selection-button-radio" for="{{name}}-{{loop.index}}" {%if option.target %}data-target="{{option.target}}"{% endif %}>
-          <input id="{{name}}-{{loop.index}}" type="radio" name="{{name}}" value="{{value}}">
-          {{label}}
-        </label>
-      {% endfor %}
-
-      {% for target in targets %}
-      <div class="panel panel-border-narrow js-hidden" id="{{target.id}}">
-        <label class="form-label" for="{{target.elementId}}">Provider</label>
-        <input class="form-control form-control-1-4" name="{{target.elementId}}" type="text" id="{{target.elementId}}">
-      </div>
-      {% endfor %}
-    </fieldset>
-  </div>
-{% endmacro %}
