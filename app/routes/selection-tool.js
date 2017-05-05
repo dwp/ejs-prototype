@@ -35,8 +35,6 @@ module.exports = function(router) {
   router.post('/latest/selection_tool/*', function (req, res) {
     if(req.body['scoring-questions']){
       res.redirect('/latest/selection_tool_v2/0');
-    } else {
-      res.redirect('/latest/selection_tool/non-ltu-knockout');
     }
   });
 
