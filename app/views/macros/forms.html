@@ -3,6 +3,7 @@
 {% macro radio(name='', optionValue='', id='', datatarget='', displayText='', currentValue='') %}
     <label
 
+        class="block-label selection-button-radio"
         {% if id %}   for="{{ id }}" {% endif %}
         {% if datatarget %} data-target="{{ datatarget }}"  {% endif %}
     >
@@ -17,4 +18,3 @@
         <span class="heading-medium">{{displayText if displayText else optionValue}}</span>
     </label>
 {% endmacro %}
-

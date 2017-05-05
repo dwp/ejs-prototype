@@ -20,8 +20,23 @@
             <p>{{explanation}}</p>
           {% endif %}
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
-             {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
-             {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
+            <div class="form-group">
+              <fieldset class="inline">
+                <legend class="heading-medium">Is the claimant:</legend>
+                  {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
+                  {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
+
+                <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
+                  <label class="form-label" for="voluntary-options-radio-buttons">Voluntary options</label>
+                    <div id="voluntary-options-radio-buttons">
+                      {{ forms.radio(name='voluntary', displayText='Health', optionValue='Health', id='voluntary-options-health') }}
+                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg') }}
+                      {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral') }}
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
             <button class="button" type="submit">Continue</button>
           </form>
         </div>
