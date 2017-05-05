@@ -51,7 +51,7 @@ module.exports = function(router) {
     res.locals.questions = [scoringQuestionsConfig.questions[req.params.questionSet]];
     res.locals.next = scoringQuestionsConfig.nextQuestionSet;
     res.locals.questionTitle = scoringQuestionsConfig.title;
-    res.locals.questionIndex = req.params.questionSet;
+    res.locals.questionIndex = +req.params.questionSet + 1;
     res.locals.questionCount = scoringQuestionsConfig.questions.length;
     
     res.locals.formMethod = 'GET';
