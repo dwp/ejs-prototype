@@ -6,11 +6,6 @@
       <div class="main-content">
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
-        <div class="grid-row">
-          {% set whpSelectionTool = [{ links: [ { link : 'latest/performance', title : 'Caseload filters'}, { link : 'latest/performance',
-          title : 'JSA results'}, { link : 'latest/performance', title : 'IS results'}, { link : 'latest/performance', title
-          : 'ESA results'} ] }] %} {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
-        </div>
 
         <div class="grid-row">
           {% set whpSelectionToolWorkcoachScreens = [{ 
@@ -40,6 +35,13 @@
           
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
+        
+        <div class="grid-row">
+          {% set whpSelectionTool = [{ links: [ { link : 'latest/performance', title : 'Caseload filters'}, { link : 'latest/performance',
+          title : 'JSA results'}, { link : 'latest/performance', title : 'IS results'}, { link : 'latest/performance', title
+          : 'ESA results'} ] }] %} {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
+        </div>
+
 
         <div class="grid-row">
           {% set teams = [{ workTitle: 'Teams', links: [ { link : 'latest/teams', title : 'List of current teams'}, { link : 'latest/teams?errorMessage=Team%20deleted',
