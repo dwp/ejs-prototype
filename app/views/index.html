@@ -13,7 +13,8 @@
         </div>
 
         <div class="grid-row">
-          {% set whpSelectionTool = [{ 
+          {% set whpSelectionToolWorkcoachScreens = [{ 
+            workTitle : 'Work coach screens',
             links: [{ 
               link : 'latest/selection_tool', title : 'Landing page'
              }, { 
@@ -24,14 +25,20 @@
               link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per page'
             }, { 
               link : 'latest/failed-eligibility', title : 'Failed eligibility'
-            }, { 
+            }]
+          }] %} 
+          
+          {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionToolWorkcoachScreens) }}
+          {% set whpSelectionToolWorkcoachScreens = [{ 
+            workTitle : 'Gatekeeper screens',
+            links: [{ 
               link : 'latest/whp-selection-report', title : 'Gatekeeper report'
             }, { 
               link : 'latest/whp-admin', title : 'Set threshold'
             }]
           }] %} 
           
-          {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
+          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
 
         <div class="grid-row">
@@ -588,7 +595,11 @@
 
 {% macro sprintLinks(sprintName, sprintWorkInfo) %}
 <div class="column-third">
-  <h2 class="heading-medium">{{sprintName}}</h2>
+    {% if sprintName %}
+      <h2 class="heading-medium">{{sprintName}}</h2>
+    {% else %}
+      <h2 class="heading-medium">&nbsp;</h2>
+    {% endif %}
 
   {% for thisSprintWorkInfo in sprintWorkInfo %}
   <ul class="bullets">
