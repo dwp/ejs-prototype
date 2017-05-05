@@ -28,10 +28,6 @@ module.exports = function(router) {
     }
   });
 
-  router.post('/latest/selection_tool/scoring-questions', function(req, res, next){
-    res.redirect('/latest/whp-result');
-  });
-
   router.post('/latest/selection_tool/*', function (req, res) {
     res.redirect('/latest/selection_tool_v2/0');
   });
