@@ -6,5 +6,8 @@ $path: "/public/images/";
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
 
+// Support for old radio and checkbox markup when updating the prototype kit on a prototype that includes a lot of old markup to re-write 😢
+@import '_old-selection-support';
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import 'admin';

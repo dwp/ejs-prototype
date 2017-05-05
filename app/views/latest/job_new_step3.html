@@ -23,18 +23,24 @@
             <label class="form-label" for="title">Benefit type</label>
             <fieldset>
               <legend class="visuallyhidden">Choose benefit type:</legend>
-              <label class="block-label selection-button-radio" for="radio-1" data-target="example-ni-number0">
+              <div class="multiple-choice" data-target="example-ni-number0">
                 <input id="radio-1" type="radio" name="radio-group" value="Jobseekers Allowance" aria-controls="example-ni-number0">
-                Jobseeker's Allowance
-              </label>
-              <label class="block-label selection-button-radio" data-target="example-ni-number" for="radio-2">
+                <label for="radio-1">
+                  Jobseeker's Allowance
+                </label>
+              </div>
+              <div class="multiple-choice" data-target="example-ni-number">
                 <input id="radio-2" type="radio" name="radio-group" value="Employment Support Allowance" aria-controls="example-ni-number">
-                Employment Support Allowance
-              </label>
-              <label class="block-label selection-button-radio" for="radio-3" data-target="example-ni-number1">
-                <input id="radio-3" type="radio" name="radio-group" value="Income Support" aria-controls="example-ni-number1">
-                Income Support
-              </label>
+                <label for="radio-2">
+                  Employment Support Allowance
+                </label>
+              </div>
+              <div class="multiple-choice" data-target="example-ni-number1">
+                  <input id="radio-3" type="radio" name="radio-group" value="Income Support" aria-controls="example-ni-number1">
+                <label for="radio-3" >
+                  Income Support
+                </label>
+              </div>
             </fieldset>
           </div> 
 
@@ -155,17 +161,17 @@
 
                 <div class="form-group form-group-day">
                   <label for="dob-day">Day</label>
-                  <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                  <input class="form-control" id="dob-day" type="number">
                 </div>
 
                 <div class="form-group form-group-month">
                   <label for="dob-month">Month</label>
-                  <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                  <input class="form-control" id="dob-month" type="number">
                 </div>
 
                 <div class="form-group form-group-year">
                   <label for="dob-year">Year</label>
-                  <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                  <input class="form-control" id="dob-year" type="number">
                 </div>
               </div>
             </fieldset>
