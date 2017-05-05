@@ -4,13 +4,29 @@
   "questions" : [
     { "text" : "Is the claimant:",
       "name" : "claimant-group", 
-      "options" : [ 
-        { "label" : "External referral", "value" : "voluntary",  "target" : "external-referral"}, 
-        { "label" : "Long term unemployed", "value" :"long-term-unemployed"}, 
-        { "label" : "Early entry group", "value" : "early-entry "} 
+      "options" : [
+        { "label" : "Voluntary", "value" : "voluntary", "target" : "voluntary-options"},
+        { "label" : "Long term unemployed", "value" :"long-term-unemployed"}
       ],
       "targets" :[
-        { "id" : "external-referral", "elementId" : "external-referral-input"}
+      { "id" : "external-referral", "elementId" : "external-referral-input"}
+      ],
+      "voluntaryOptions" : [
+        { "label" : "Health", "value" : "health", "target" : "health"},
+        { "label" : "Early entry group", "value" : "early-entry-group", "target" : "early-entry-group"},
+        { "label" : "External referral", "value" : "external_referral", "target" : "external_referral"}
+      ],
+      "earlyEntryGroupOptions" : [
+        {"label" : "an ex-offender, or offender", "value" : "ex-offender-or-offender"},
+        {"label" : "a carer", "value" : "carer"},
+        {"label" : "an ex-carer", "value" : "ex-carer"},
+        {"label" : "a homeless person", "value" : "homeless-person"},
+        {"label" : "a former member of Her Majesty's (HM) Armed Forces", "value" : "former_forces"},
+        {"label" : "a member of HM Armed Forces reserves", "value" : "forces_reserves"},
+        {"label" : "a partner of current or former Armed Forces personnel", "value" : "forces-partner"},
+        {"label" : "a person for whom drug/alcohol dependency (including a history of) presents a significant barrier to employment", "value" : "drug-alcohol-dependancy"},
+        {"label" : "a care leaver", "value" : "care-leaver"},
+        {"label" : "a refugee", "value" : "refugee"}
       ]
     }
   ]

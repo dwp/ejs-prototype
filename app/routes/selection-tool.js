@@ -15,7 +15,7 @@ module.exports = function(router) {
     res.locals.next = questions['claimant-group'].nextQuestionSet;
     res.locals.questionTitle = questions['claimant-group'].title;
 
-    res.render('latest/selection_tool');
+    res.render('latest/selection_tool_landing_page');
   });
 
   router.post('/latest/selection_tool', function (req, res) {

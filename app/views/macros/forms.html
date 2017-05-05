@@ -1,0 +1,20 @@
+
+{# Radio buttons #}
+{% macro radio(name='', optionValue='', id='', datatarget='', displayText='', currentValue='') %}
+    <label
+
+        {% if id %}   for="{{ id }}" {% endif %}
+        {% if datatarget %} data-target="{{ datatarget }}"  {% endif %}
+    >
+        <input
+           type="radio"
+            {% if name %} name="{{ name }}"  {% endif %}
+            {% if optionValue %}  value="{{ optionValue }}"  {% endif %}
+            {% if id %} id="{{ id }}"  {% endif %}
+            {% if currentValue==optionValue %} checked="checked" {% endif %}
+
+        />
+        <span class="heading-medium">{{displayText if displayText else optionValue}}</span>
+    </label>
+{% endmacro %}
+
