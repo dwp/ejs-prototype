@@ -20,7 +20,7 @@
               <p>{{explanation}}</p>
             {% endif %}
               {% for question in questions %}
-                {{radioGroup(question.text, question.name, question.options, question.targets, question.hint, question.description )}}
+                {{radioGroup(question.text, question.name, question.options, question.hint, question.description )}}
               {% endfor %}
             </form>
           </div>
@@ -41,11 +41,11 @@
   </main>
 {% endblock %}
 
-{% macro radioGroup(question, name, options, targets, hint) %}
+{% macro radioGroup(question, name, options, hint) %}
+  {% set inlineClass = 'inline' if options.length < 3  else '' %}
   <div class="form-group">
-    <fieldset>
+    <fieldset class="{{inlineClass}}">
       <legend class="heading-medium">{{question}}</legend>
-
       
       {% for option in options %}
         {% set label = option.label or option %}
@@ -55,13 +55,6 @@
           <input id="{{name}}-{{loop.index}}" type="radio" name="{{name}}" value="{{value}}">
           {{label}}
         </label>
-      {% endfor %}
-
-      {% for target in targets %}
-      <div class="panel panel-border-narrow js-hidden" id="{{target.id}}">
-        <label class="form-label" for="{{target.elementId}}">Provider</label>
-        <input class="form-control form-control-1-4" name="{{target.elementId}}" type="text" id="{{target.elementId}}">
-      </div>
       {% endfor %}
     </fieldset>
   </div>
