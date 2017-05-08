@@ -64,7 +64,7 @@
             {% if currentValue==optionValue %} checked="checked" {% endif %}
 
         />
-        <span class="heading-medium">{{displayText if displayText else optionValue}}</span>
+        {{displayText if displayText else optionValue}}
     </label>
 {% endmacro %}
 
