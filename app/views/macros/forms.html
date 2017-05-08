@@ -1,0 +1,108 @@
+{# Label  #}
+{% macro label(text='', for='', class='form-label', errortext='', formhint='') %}
+<label
+        {% if class %}  class="{{ class }}" {% endif %}
+        {% if for  %}   for="{{ for }}" {% endif %}
+>
+    {% if formhint %}
+    <span class="form-label bold">{{ text }}</span>
+    <span class="form-hint">{{ formhint }}</span>
+    {% else %}
+    {{ text }}
+    {% endif %}
+    {% if errortext %}<span class="gds-red bold  display-b" id="error-message-{{ for }}" aria-hidden="true">{{ errortext }}</span>{% endif %}
+</label>
+{% endmacro %}
+
+{# Input field #}
+{% macro input(name='', value='', type='text', id='', class='form-control', readonly='', maxlength='', autofocus='', validation='', autocomplete='', required='' ) %}
+
+<input
+        type="{{ type }}"
+        {% if name %} name="{{ name }}"  {% endif %}
+        {% if value %}  value="{{ value }}"  {% endif %}
+        {% if id %} id="{{ id }}"  {% endif %}
+        class="{{ class }}"
+        {% if maxlength %} maxlength="{{ maxlength }}"  {% endif %}
+        {% if readonly %} readonly="{{ readonly }}"  {% endif %}
+        {% if autofocus %} autofocus="{{ autofocus }}"  {% endif %}
+        {% if autocomplete %}  autocomplete="{{ autocomplete }}"  {% endif %}
+        {% if validation %}  data-parsley-required data-show-errors="false" data-parsley-trigger-after-failure="focusout"{% endif %}
+        {% if required %} required  {% endif %}
+/>
+{% endmacro %}
+
+{# Check boxes #}
+{% macro checkbox(name='', id='', value='', datatarget='') %}
+<div class="multiple-choice">
+    <input type="checkbox"
+           {% if id %}   id="{{ id }}" {% endif %}
+           {% if name %} name="{{ name }}"  {% endif %}
+           {% if value %}  value="{{ value }}"  {% endif %}
+    />
+    <label
+            {% if id %}   for="{{ id }}" {% endif %}
+            {% if datatarget %} data-target="{{ datatarget }}"  {% endif %}
+    >{{ displayText if displayText else value }}
+    </label>
+</div>
+{% endmacro %}
+
+{# Radio buttons #}
+{% macro radio(name='', optionValue='', id='', datatarget='', displayText='', currentValue='') %}
+    <label
+
+        class="block-label selection-button-radio"
+        {% if id %}   for="{{ id }}" {% endif %}
+        {% if datatarget %} data-target="{{ datatarget }}"  {% endif %}
+    >
+        <input
+           type="radio"
+            {% if name %} name="{{ name }}"  {% endif %}
+            {% if optionValue %}  value="{{ optionValue }}"  {% endif %}
+            {% if id %} id="{{ id }}"  {% endif %}
+            {% if currentValue==optionValue %} checked="checked" {% endif %}
+
+        />
+        {{displayText if displayText else optionValue}}
+    </label>
+{% endmacro %}
+
+
+{# Textarea #}
+{% macro textarea(value='', name='',  id='', class='form-control', readonly='', maxlength='', cols='30', rows='10', autofocus='', validation='', required=''  ) %}
+<textarea
+        {% if name %} name="{{ name }}"  {% endif %}
+        {% if id %} id="{{ id }}"  {% endif %}
+        class="{{ class }}"
+        cols="{{ cols }}"
+        rows="{{ rows }}"
+        {% if maxlength %} maxlength="{{ maxlength }}"  {% endif %}
+        {% if readonly %} readonly="{{ readonly }}"  {% endif %}
+        {% if autofocus %} autofocus="{{ autofocus }}"  {% endif %}
+        {% if validation %}  data-parsley-required data-show-errors="false" data-parsley-trigger-after-failure="focusout"{% endif %}
+        {% if required %} required  {% endif %}
+>{% if value %}{{ value }}{% endif %}</textarea>
+{% endmacro %}
+
+
+{# Select box #}
+{% macro select(name='',  id='', class='form-control', autofocus='', value='', options=[] )%}
+{# options must be an array of objects each with a 'optionValue' property and an optional 'optionText' property #}
+<select
+        {% if name %} name="{{ name }}"  {% endif %}
+        {% if id %} id="{{ id }}"  {% endif %}
+        class="{{ class }}"
+        {% if autofocus %} autofocus="{{ autofocus }}"  {% endif %}
+>
+    {% for option in options %}
+    <option value="{{option.optionValue}}"
+            {% if option.optionValue==value %}
+            selected="selected"
+            {% endif %}
+    >
+        {{option.optionText if option.optionText else option.optionValue}}
+    </option>
+    {% endfor %}
+</select>
+{% endmacro %}

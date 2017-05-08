@@ -14,8 +14,9 @@ module.exports = function(router) {
     res.locals.questions = questions['claimant-group'].questions;
     res.locals.next = questions['claimant-group'].nextQuestionSet;
     res.locals.questionTitle = questions['claimant-group'].title;
+    res.locals.eegOptions = questions['claimant-group'].earlyEntryGroupOptions;
 
-    res.render('latest/selection_tool');
+    res.render('latest/selection_tool_landing_page');
   });
 
   router.post('/latest/selection_tool', function (req, res) {
@@ -37,19 +38,19 @@ module.exports = function(router) {
     res.locals.next = questions[req.params.questionSet].nextQuestionSet;
     res.locals.questionTitle = questions[req.params.questionSet].title;
     res.locals.explanation = questions[req.params.questionSet].explanation;
-  
+
     res.render('latest/selection_tool');
   });
 
   router.get('/latest/selection_tool_v2/:questionSet', function (req, res) {
     var scoringQuestionsConfig = questions['scoring-questions-v2'];
-    
+
     res.locals.questions = [scoringQuestionsConfig.questions[req.params.questionSet]];
     res.locals.next = scoringQuestionsConfig.nextQuestionSet;
     res.locals.questionTitle = scoringQuestionsConfig.title;
     res.locals.questionIndex = +req.params.questionSet + 1;
     res.locals.questionCount = scoringQuestionsConfig.questions.length;
-    
+
     res.locals.formMethod = 'GET';
 
     if(req.params.questionSet == scoringQuestionsConfig.questions.length){
