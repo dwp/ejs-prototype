@@ -25,40 +25,49 @@
                 <legend class="heading-medium">Is the claimant:</legend>
                   {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
                   {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
+              </fieldset>
 
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
-                  <label class="form-label" for="voluntary-options-radio-buttons">Voluntary options</label>
+
                     <div id="voluntary-options-radio-buttons">
+                      <fieldset class="inline">
+                        <legend>Voluntary options</legend>
                       {{ forms.radio(name='voluntary', displayText='Disabled', optionValue='Disabled', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
                       {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg', datatarget='eeg-options') }}
                       {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
+                      </fieldset>
+                    </div>
+
+                  <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
+                    <fieldset>
+                      <legend>Priority Groups (optional)</legend>
+                        {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
+                        {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
+                    </fieldset>
                   </div>
-                </div>
-              </fieldset>
 
-                <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
-                  <p>Priority Groups (optional)</p>
-                    {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
-                    {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
-                </div>
+                  <div class="panel panel-border-narrow js-hidden" id="eeg-options">
 
-                <div class="panel panel-border-narrow js-hidden" id="eeg-options">
-                  <p>Which Early entry groups apply to the claimant ?</p>
-                  <fieldset>
+                    <fieldset>
+                      <legend>Which Early entry groups apply to the claimant ?</legend>
                         {% for eegOption in eegOptions %}
-                          {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
+                        {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
                         {% endfor %}
-                  </fieldset>
-                  <br>
-                  <p>Priority Groups (optional)<p>
-                      {{ forms.checkbox(name='eeg-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
-                      {{ forms.checkbox(name='eeg-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
-                </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                      <legend>Priority Groups (optional)<legend>
+                        {{ forms.checkbox(name='eeg-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
+                        {{ forms.checkbox(name='eeg-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
+                    </fieldset>
+                  </div>
 
-              <div class="panel panel-border-narrow js-hidden" id="external-referral">
-                <label class="form-label" for="external-referral-input">Provider</label>
-                <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
-              </div>
+                  <div class="panel panel-border-narrow js-hidden" id="external-referral">
+                    <label class="form-label" for="external-referral-input">Provider</label>
+                    <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
+                  </div>
+
+                </div>
 
             </div>
             <button class="button" type="submit">Continue</button>
