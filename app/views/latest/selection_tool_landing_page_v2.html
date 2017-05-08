@@ -24,6 +24,7 @@
                 <legend>Is the claimant:</legend>
                   {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
                   {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
+                  {{ forms.radio(name='initialOptions', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
               </fieldset>
 
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
@@ -40,24 +41,24 @@
                         {% endfor %}
                     </fieldset>
                     <br>
-                    <fieldset>
-                      <legend>Which of the following are applicable, if any ?</legend>
-                        {{ forms.checkbox(name='eeg-esa-wrac', id='eeg-esa-wrac', value='Claimant is in receipt of ESA/WRAC') }}
-                        {{ forms.checkbox(name='eeg-ben-cap', id='eeg-ben-cap', value='Claimant is subject to Benefit Cap') }}
+                    <fieldset class="inline">
+                        <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
+                        {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
+                        {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
                     </fieldset>
                     <br>
                     <fieldset class="inline">
-                      <legend>Is this an external referral ?</legend>
-                        {{ forms.radio(name='external-referral', displayText='Yes', optionValue='Yes', id='external-referral-yes', datatarget='external-organisation') }}
-                        {{ forms.radio(name='external-referral', displayText='No', optionValue='No', id='external-referral-no') }}
-                    <fieldset>
+                        <legend>Is the claimant subject to Benefit Cap ?</legend>
+                        {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
+                        {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                    </fieldset>
+                </div>
 
-                    <div class="panel panel-border-narrow js-hidden" id="external-organisation">
-                      <fieldset>
-                        <legend>Name of referring organisation</legend>
-                        <input class="form-control form-control-1-4" name="external-referral-input" type="text" id="external-referral-input">
-                      </fieldset>
-                    </div>
+                <div class="panel panel-border-narrow js-hidden" id="external-referral">
+                  <fieldset>
+                    <legend>Name of referring organisation</legend>
+                    <input class="form-control form-control-1-4" name="external-referral-input" type="text" id="external-referral-input">
+                  </fieldset>
                 </div>
             </div>
             <button class="button" type="submit">Continue</button>
