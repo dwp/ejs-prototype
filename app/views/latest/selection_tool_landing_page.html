@@ -29,28 +29,30 @@
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
                   <label class="form-label" for="voluntary-options-radio-buttons">Voluntary options</label>
                     <div id="voluntary-options-radio-buttons">
-                      {{ forms.radio(name='voluntary', displayText='Health', optionValue='Health', id='voluntary-options-health', datatarget='wrac-question') }}
+                      {{ forms.radio(name='voluntary', displayText='Disabled', optionValue='Disabled', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
                       {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg', datatarget='eeg-options') }}
                       {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
                   </div>
                 </div>
-
-                <div class="panel panel-border-narrow js-hidden" id="wrac-question">
-                  <label class="form-label" for="esa-wrac">Is the claimant in receipt of ESA/WRAC ?</label>
-                    <div id="esa-wrac">
-                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
-                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
-                    </div>
-                </div>
               </fieldset>
 
-                <div class="panel panel-border-narrow js-hidden form-group" id="eeg-options">
+                <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
+                  <p>Priority Groups (optional)</p>
+                    {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
+                    {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
+                </div>
+
+                <div class="panel panel-border-narrow js-hidden" id="eeg-options">
                   <p>Which Early entry groups apply to the claimant ?</p>
                   <fieldset>
                         {% for eegOption in eegOptions %}
-                          {{ forms.checkbox(name='eeg-options', id=eegOption.value, value=eegOption.label)}}
+                          {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
                         {% endfor %}
                   </fieldset>
+                  <br>
+                  <p>Priority Groups (optional)<p>
+                      {{ forms.checkbox(name='eeg-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
+                      {{ forms.checkbox(name='eeg-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
                 </div>
 
               <div class="panel panel-border-narrow js-hidden" id="external-referral">
