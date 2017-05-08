@@ -1,9 +1,0 @@
-{
-  "title" : "Claimant eligible",
-  "explanation": "From the answers you provided, the claimant is eligible to move onto the scoring",
-  "questions": [
-    { "text" : "Would you like to undertake the scoring questions for the claimant?",
-      "name" : "scoring-questions", 
-      "options" : [ "Yes","No" ]}
-  ]
-}

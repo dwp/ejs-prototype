@@ -2,26 +2,46 @@
   {% block page_title %}Index page of all DCAMS prototype sprint work{% endblock %} 
   
   {% block content %}
-
     <main id="content" role="main">
       <div class="main-content">
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
+
+        <div class="grid-row">
+          {% set whpSelectionToolWorkcoachScreens = [{ 
+            workTitle : 'Work coach',
+            links: [{ 
+              link : 'latest/selection_tool', title : 'Landing page'
+             }, { 
+              link : 'latest/selection_tool/voluntary', title : 'Voluntary questions'
+             }, { 
+              link : 'latest/selection_tool/early-entry', title : 'Early entry questions'
+            }, { 
+              link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per page'
+            }, { 
+              link : 'latest/failed-eligibility', title : 'Failed eligibility'
+            }]
+          }] %} 
+          
+          {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionToolWorkcoachScreens) }}
+          {% set whpSelectionToolWorkcoachScreens = [{ 
+            workTitle : 'Gatekeeper',
+            links: [{ 
+              link : 'latest/whp-selection-report', title : 'Gatekeeper report'
+            }, { 
+              link : 'latest/whp-admin', title : 'Set threshold'
+            }]
+          }] %} 
+          
+          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+        </div>
+        
         <div class="grid-row">
           {% set whpSelectionTool = [{ links: [ { link : 'latest/performance', title : 'Caseload filters'}, { link : 'latest/performance',
           title : 'JSA results'}, { link : 'latest/performance', title : 'IS results'}, { link : 'latest/performance', title
           : 'ESA results'} ] }] %} {{ sprintLinks( 'Orphaned claims', whpSelectionTool) }}
         </div>
 
-        <div class="grid-row">
-          {% set whpSelectionTool = [{ links: [ { link : 'latest/selection_tool', title : 'Landing page'}, { link : 'latest/selection_tool/voluntary',
-          title : 'Voluntary questions'}, { link : 'latest/selection_tool/early-entry', title : 'Early entry questions'}, { link
-          : 'latest/selection_tool/non-ltu-knockout', title : 'Claimant eligible'}, { link : 'latest/selection_tool/scoring-questions',
-          title : 'Scoring questions - Point scale'}, { link : 'latest/selection_tool/scoring-questions-v2', title : 'Scoring
-          questions - Label scale'}, { link : 'latest/selection_tool_v2/0', title : 'Scoring questions - Single question per
-          page'}, { link : 'latest/whp-selection-report', title : 'Gatekeeper report'}, { link : 'latest/whp-admin', title :
-          'Set threshold' } ] }] %} {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionTool) }}
-        </div>
 
         <div class="grid-row">
           {% set teams = [{ workTitle: 'Teams', links: [ { link : 'latest/teams', title : 'List of current teams'}, { link : 'latest/teams?errorMessage=Team%20deleted',
@@ -573,12 +593,15 @@
 
       </div>
     </main>
-
   {% endblock %} 
 
 {% macro sprintLinks(sprintName, sprintWorkInfo) %}
 <div class="column-third">
-  <h2 class="heading-medium">{{sprintName}}</h2>
+    {% if sprintName %}
+      <h2 class="heading-medium">{{sprintName}}</h2>
+    {% else %}
+      <h2 class="heading-medium">&nbsp;</h2>
+    {% endif %}
 
   {% for thisSprintWorkInfo in sprintWorkInfo %}
   <ul class="bullets">

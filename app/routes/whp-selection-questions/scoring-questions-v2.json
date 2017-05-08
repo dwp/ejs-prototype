@@ -1,45 +1,45 @@
 {
   "title" : "Scoring questions",
   "questions": [{ 
-      "text" : "The individual's knowledge, skills and capabilities are appropriate to the type of work they are seeking.",
+      "text" : "The claimant's knowledge, skills and capabilities are appropriate to the type of work they are seeking.",
       "name" : "knowledge", 
       "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "options" : [ "Not at all","Basic or restricted","Moderate - enough to work straight away with in-job development","Good evidence - strong application" ]
     },{ 
-      "text" : "The individual knows the type of work they would like to undertake.",
+      "text" : "The claimant knows the type of work they would like to undertake.",
       "name" : "type-of-work-to-undertake", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This aims to show if the individual is the driving force behind their jobsearch and their level of commitment to success. It will show that the individual has a level of occupational interest and the higher the score the higher the commitment they have to joining the labour market",
+      "options" : [ "Hasn’t thought about work they would like to do","Has only a basic or limited knowledge of their stated preferred work","Moderate knowledge and/or experience of their stated preferred work","Considerable knowledge and/or experience of their stated preferred work" ]
     },{ 
       "text" : "The individual is able to use digital technology (computers, apps, software with or without adaptations).",
       "name" : "digital-technology-use", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This aims to see if the individual could “hit the ground running” .i.e. has very basic IT Skills – Word etc and indicates their potential to undertake the majority of work opportunities. This would include any IT/software adaptations required. It will also show if the individual has the proficient skills for a job searching.",
+      "options" : [ "Has no knowledge/experience of working with digital technology","Has very basic or restricted knowledge/experience of working with digital technology e.g. might use email, but not apps","Moderate knowledge/experience of working with digital technology – whatever apps they don’t know they feel confident they can learn","Would describe themselves as very good with digital technology – with supporting experience of working across and multi-tasking across a range of software applications." ]
     },{ 
       "text" : "The individual has researched what is out there in the Labour Market and what they could apply for.",
       "name" : "research", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This statement aims to identify the individual’s rate of proactivity, understanding and approach to the labour market. It gives an indication of the understanding they have of any requirements or expectations of employers. They may be aware of when recruitments may take place i.e. seasonal work",
+      "options" : [ "No knowledge or research into the Labour market and what they could apply for","Able to identify one or two suitable job roles that are in the local labour market","Aware of quite a few suitable job roles and actively monitoring the labour market and employers’ expectations","Demonstrates good knowledge of suitable job roles in the local labour market and employers’ expectations" ]
     },{ 
       "text" : "The individual can describe what they need to do, to seek and get a job.",
       "name" : "can-describe", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This statements draws out the individuals capacity for producing the required results i.e. does the individual know what lies ahead? Do they know what they do they need to do to search for work etc.?  Things for the Work Coach to consider would be: If their score is low it suggests that the individual may not know how to go about job search or plan their next steps into work. Does the individual have a plan/goal? Having a plan and understanding the job search process – steps to take. Jobseeker could explain what they need to do to take job search forward. As Universal Credit requires an individual to be more independent in their job search, take more control and driving their steps forward, this statement will draw out their ability to do so.",
+      "options" : [ "The jobseeker does not know what to do to seek and get a job and is dependent on work coach guidance.","The jobseeker knows where to search for work and complete online applications but does not have a plan and is not managing this activity independently.","The jobseeker can demonstrate regular activity in jobsearch, making applications and attending interviews, has a plan and is able to progress with support from the work coach","The jobseeker does not require any support in jobsearch, making applications and attending interviews and is likely to obtain employment in the short term" ]
     },{ 
       "text" : "Based on the information gathered I consider that the individual is willing to apply him/herself to job search activity.",
       "name" : "willing-to-apply", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This statement refers to the individual’s motivation and looks for assurance that they genuinely want to join the programme and is not manipulating the system. It will show if the individual uses motivation to open up opportunities for themselves and identifies how critical motivation is to succeed in obtaining a job. This will demonstrate if the commitment comes from the individual.",
+      "options" : [ "The jobseeker is not applying to jobsearch activity at all and cites reasons for why s/he cannot do this","The jobseeker is only demonstrating a minimal amount of jobsearch activity and is not organising his/her time and routine to support it","The jobseeker wants to obtain work as soon as practical and is applying him/herself but could do more or be more organised","The jobseeker is highly motivated in his/her jobsearch activity and demonstrates a high level of organisation and application. (Hard to see what else s/he could do)" ]
     },{ 
       "text" : "Based on the information gathered I consider that the individual is willing and can learn new tasks/sills to help them do a job.",
       "name" : "learn-new-tasks", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "This statement refers to the individual’s ability to learn and the importance of that mind-set. It will aim to draw out if they have confidence about learning i.e. not in the mind-set of “I’m too old to learn” The individual’s specific health or disability will indicate the level of support they may require within the work place.  The Work Coach would be looking for indications such as: Responding positively to new learning and with confidence. Undertaking of voluntary work for experience.",
+      "options" : [ "The jobseeker is resistant or not interested in learning new skills or work in other suitable occupations","The jobseeker is not confident in his/her ability to learn new skills or work in other suitable occupations but is open to support to do this.","The jobseeker is willing to learn new tasks/skills to help them do a job","The jobseeker has proactively considered their learning needs to help them to obtain a job in their chosen or other suitable occupations and engaged or prepared to engage in activities to support his/her development e.g. voluntary work, training course." ]
     },{ 
       "text" : "Is the jobseeker able to contact and have conversations and present favourably at interviews with prospective employers?",
       "name" : "converse", 
-      "hint" : "The statement aims to identify a realistic view of the individual's expectations with regard to their own alignments to work.  They will have a reasonable prospect of finding work if their appraisal of their own situation is realistic .i.e. Can take forward job search irrespective of health condition?",
-      "options" : [ "None","Basic","Moderate","Very good" ]
+      "hint" : "Jobseekers need to conduct job search, but beyond this they also need to demonstrate the ability and confidence to contact and have conversations with prospective employers In order to obtain employment.  Jobseekers need to present favourably at interviews, to respond well to questions by presenting evidence of their skills, experience while directly answering the questions asked.",
+      "options" : [ "The jobseeker is not able to contact and converse with employers owing to restricted ability","The jobseeker is likely to struggle with contacting and conversing with prospective employers","The jobseeker will be able to contact and converse with prospective employers with the support of their work coach or other JCP staff","The jobseeker does not require any support in order to contact and converse with prospective employers" ]
     }
   ]
 }

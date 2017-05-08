@@ -29,16 +29,8 @@ module.exports = function(router) {
     }
   });
 
-  router.post('/latest/selection_tool/scoring-questions', function(req, res, next){
-    res.redirect('/latest/whp-result');
-  });
-
   router.post('/latest/selection_tool/*', function (req, res) {
-    if(req.body['scoring-questions']){
-      res.redirect('/latest/selection_tool_v2/0');
-    } else {
-      res.redirect('/latest/selection_tool/non-ltu-knockout');
-    }
+    res.redirect('/latest/selection_tool_v2/0');
   });
 
   router.get('/latest/selection_tool/:questionSet', function (req, res) {
@@ -56,6 +48,8 @@ module.exports = function(router) {
     res.locals.questions = [scoringQuestionsConfig.questions[req.params.questionSet]];
     res.locals.next = scoringQuestionsConfig.nextQuestionSet;
     res.locals.questionTitle = scoringQuestionsConfig.title;
+    res.locals.questionIndex = +req.params.questionSet + 1;
+    res.locals.questionCount = scoringQuestionsConfig.questions.length;
 
     res.locals.formMethod = 'GET';
 
