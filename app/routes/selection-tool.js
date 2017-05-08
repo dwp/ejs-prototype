@@ -19,6 +19,7 @@ module.exports = function(router) {
     res.render('latest/selection_tool_landing_page');
   });
 
+   // Alternative landing page route for GET
    router.get('/latest/selection_tool_landing_page_v2', function (req, res) {
     res.locals.questions = questions['claimant-group'].questions;
     res.locals.next = questions['claimant-group'].nextQuestionSet;
@@ -38,6 +39,7 @@ module.exports = function(router) {
     }
   });
 
+  // Alternative landing page route for POST
   router.post('/latest/selection_tool_landing_page_v2', function (req, res) {
       var questionGroup = req.body['claimant-group'] || 'voluntary';
 
