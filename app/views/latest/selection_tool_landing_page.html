@@ -39,9 +39,9 @@
 
                   <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
                     <fieldset>
-                      <legend>Priority Groups (optional)</legend>
-                        {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
-                        {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
+                      <legend>Tick if applicable</legend>
+                        {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Claimant is in receipt of ESA/WRAC') }}
+                        {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Claimant is subject to Benefit Cap') }}
                     </fieldset>
                   </div>
 
@@ -55,14 +55,14 @@
                     </fieldset>
                     <br>
                     <fieldset>
-                        <legend>Priority Groups (optional)</legend>
-                        {{ forms.checkbox(name='eeg-esa-wrac', id='disabled-esa-wrac', value='Is the claimant in receipt of ESA/WRAC ?') }}
-                        {{ forms.checkbox(name='eeg-ben-cap', id='disabled-ben-cap', value='Is the claimant subject to Benefit Cap ?') }}
+                      <legend>Tick if applicable </legend>
+                        {{ forms.checkbox(name='eeg-esa-wrac', id='eeg-esa-wrac', value='Claimant is in receipt of ESA/WRAC') }}
+                        {{ forms.checkbox(name='eeg-ben-cap', id='eeg-ben-cap', value='Claimant is subject to Benefit Cap') }}
                     </fieldset>
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="external-referral">
-                    <label class="form-label" for="external-referral-input">Provider</label>
+                    <label class="form-label" for="external-referral-input">Name of referring organisation</label>
                     <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
                   </div>
 
