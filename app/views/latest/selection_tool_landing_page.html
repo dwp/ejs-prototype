@@ -48,7 +48,7 @@
                   <div class="panel panel-border-narrow js-hidden" id="eeg-options">
 
                     <fieldset>
-                      <legend>Which Early entry groups apply to the claimant ?</legend>
+                      <legend>Which Early entry groups apply to the claimant ? (Tick all that apply)</legend>
                         {% for eegOption in eegOptions %}
                         {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
                         {% endfor %}
