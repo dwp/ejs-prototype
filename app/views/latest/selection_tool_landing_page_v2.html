@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% import "macros/forms.html" as forms %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith - {{ questionTitle }}</h1>     
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+        {% include "includes/summary_nav.html" %}
+      </div>
+      
+      <div class="grid-row">
+        <div class="column-full">
+          <p class="bold">WHP landing page</p>
+
+          <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
+            <div class="form-group">
+              <fieldset class="inline">
+                <legend>Is the claimant:</legend>
+                  {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
+                  {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
+                  {{ forms.radio(name='initialOptions', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
+              </fieldset>
+
+                <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
+                    <fieldset class="inline">
+                      <legend>Is the claimant disabled ?</legend>
+                        {{ forms.radio(name='disabled', displayText='Yes', optionValue='Yes', id='disabled-yes') }}
+                        {{ forms.radio(name='disabled', displayText='No', optionValue='No', id='disabled-no') }}
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                      <legend>Which Early entry groups apply to the claimant ? (Tick all that apply)</legend>
+                        {% for eegOption in eegOptions %}
+                            {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
+                        {% endfor %}
+                    </fieldset>
+                    <br>
+                    <fieldset class="inline">
+                        <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
+                        {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
+                        {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
+                    </fieldset>
+                    <br>
+                    <fieldset class="inline">
+                        <legend>Is the claimant subject to Benefit Cap ?</legend>
+                        {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
+                        {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                    </fieldset>
+                </div>
+
+                <div class="panel panel-border-narrow js-hidden" id="external-referral">
+                  <fieldset>
+                    <legend>Name of referring organisation</legend>
+                    <input class="form-control form-control-1-4" name="external-referral-input" type="text" id="external-referral-input">
+                  </fieldset>
+                </div>
+            </div>
+            <button class="button" type="submit">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
