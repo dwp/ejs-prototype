@@ -36,7 +36,7 @@
                     <fieldset>
                         <legend>Do any of the following apply to the claimant ? (Tick all that apply)</legend>
                         {% for earlyEntryOption in earlyEntryOptions %}
-                        {{ forms.checkbox(name='voluntary-early-entry-options', id="voluntary-" + earlyEntryOption.value, value="voluntary-" + earlyEntryOption.label)}}
+                        {{ forms.checkbox(name='voluntary-early-entry-options', id="voluntary-" + earlyEntryOption.value, value=earlyEntryOption.label)}}
                         {% endfor %}
                     </fieldset>
                     <br>
@@ -68,14 +68,14 @@
                     <fieldset>
                         <legend>Do any of the following apply to the applicant ? (Tick all that apply)</legend>
                         {% for earlyEntryOption in earlyEntryOptions %}
-                        {{ forms.checkbox(name='external-referral-early-entry-options', id="external-referral-e" + earlyEntryOption.value, value="external-referral-e" + earlyEntryOption.label)}}
+                        {{ forms.checkbox(name='external-referral-early-entry-options', id="external-referral-" + earlyEntryOption.value, value=earlyEntryOption.label)}}
                         {% endfor %}
                     </fieldset>
                     <br>
                     <fieldset class="inline">
                         <legend>Is the applicant subject to Benefit Cap ?</legend>
-                        {{ forms.radio(name='external-referral-eben-cap', displayText='Yes', optionValue='Yes', id='external-referral-eben-cap-yes') }}
-                        {{ forms.radio(name='external-referral-eben-cap', displayText='No', optionValue='No', id='external-referral-eben-cap-no') }}
+                        {{ forms.radio(name='external-referral-ben-cap', displayText='Yes', optionValue='Yes', id='external-referral-ben-cap-yes') }}
+                        {{ forms.radio(name='external-referral-ben-cap', displayText='No', optionValue='No', id='external-referral-ben-cap-no') }}
                     </fieldset>
                     <br>
                 </div>
