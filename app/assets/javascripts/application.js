@@ -170,42 +170,37 @@
   global.GOVUK = GOVUK
 })(window)
 
-
-$(document).ready(function() {
-
+$(document).ready(function () {
   // Turn off jQuery animation
-  jQuery.fx.off = true;
+  jQuery.fx.off = true
 
   // Use GOV.UK selection-buttons.js to set selected
   // and focused states for block labels
-  var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
-  new GOVUK.SelectionButtons($blockLabels);
+  var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']")
+  new GOVUK.SelectionButtons($blockLabels)
 
   // Details/summary polyfill
   // See /javascripts/vendor/details.polyfill.js
 
   // Where .block-label uses the data-target attribute
   // to toggle hidden content
-  var toggleContent = new GOVUK.ShowHideContent();
-  toggleContent.showHideRadioToggledContent();
-  toggleContent.showHideCheckboxToggledContent();
-
-});
+  var toggleContent = new GOVUK.ShowHideContent()
+  toggleContent.showHideRadioToggledContent()
+  toggleContent.showHideCheckboxToggledContent()
+})
 
 // functionality to show/hide filters
-function toggleFilters(){
-  var filters = $('#filters-holder');
-  var filterToggle = $('#filterToggle');
-  filters.toggle();
+function toggleFilters () {
+  var filters = $('#filters-holder')
+  var filterToggle = $('#filterToggle')
+  filters.toggle()
 
-  if (filters.is(':visible'))
-  {
-    filterToggle.removeClass('filters-hidden');
-    filterToggle.addClass('filters-showing');
+  if (filters.is(':visible')) {
+    filterToggle.removeClass('filters-hidden')
+    filterToggle.addClass('filters-showing')
   } else {
-    filterToggle.removeClass('filters-showing');
-    filterToggle.addClass('filters-hidden');
+    filterToggle.removeClass('filters-showing')
+    filterToggle.addClass('filters-hidden')
   }
-
 }
 

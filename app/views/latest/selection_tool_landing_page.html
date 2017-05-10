@@ -32,7 +32,7 @@
                       <fieldset class="inline">
                         <legend>Voluntary options</legend>
                       {{ forms.radio(name='voluntary', displayText='Disabled', optionValue='Disabled', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
-                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg', datatarget='eeg-options') }}
+                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='Early entry group', id='voluntary-options-eeg', datatarget='early-entry-options') }}
                       {{ forms.radio(name='voluntary', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
                       </fieldset>
                     </div>
@@ -40,35 +40,35 @@
                   <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
                     <fieldset class="inline">
                       <legend>Is the claimant subject to Benefit Cap ?</legend>
-                      {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
-                      {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                      {{ forms.radio(name='disabled-ben-cap', displayText='Yes', optionValue='Yes', id='disabled-ben-cap-yes') }}
+                      {{ forms.radio(name='disabled-ben-cap', displayText='No', optionValue='No', id='disabled-ben-cap-no') }}
                     </fieldset>
                     <br>
                     <fieldset class="inline">
                       <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
-                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
-                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
+                      {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
+                      {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
                     </fieldset>
                   </div>
 
-                  <div class="panel panel-border-narrow js-hidden" id="eeg-options">
+                  <div class="panel panel-border-narrow js-hidden" id="early-entry-options">
                     <fieldset>
-                      <legend>Which Early entry groups apply to the claimant ? (Tick all that apply)</legend>
-                        {% for eegOption in eegOptions %}
-                        {{ forms.checkbox(name='eeg-options', id=eegOption.value, value=eegOption.label)}}
-                        {% endfor %}
+                      <legend>Please select the primary barrier to finding work</legend>
+                      {% for earlyEntryOption in earlyEntryOptions %}
+                      {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
+                      {% endfor %}
                     </fieldset>
                     <br>
                     <fieldset class="inline">
                       <legend>Is the claimant subject to Benefit Cap ?</legend>
-                      {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
-                      {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                      {{ forms.radio(name='early-entry-ben-cap', displayText='Yes', optionValue='Yes', id='early-entry-ben-cap-yes') }}
+                      {{ forms.radio(name='early-entry-ben-cap', displayText='No', optionValue='No', id='early-entry-ben-cap-no') }}
                     </fieldset>
                     <br>
                     <fieldset class="inline">
                       <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
-                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
-                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
+                      {{ forms.radio(name='early-entry-esa-wrac', displayText='Yes', optionValue='Yes', id='early-entry-esa-wrac-yes') }}
+                      {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
                     </fieldset>
                   </div>
 
@@ -81,8 +81,8 @@
                     <div>
                       <fieldset class="inline">
                         <legend>Is the applicant subject to Benefit Cap ?</legend>
-                        {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
-                        {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                        {{ forms.radio(name='external-referral-ben-cap', displayText='Yes', optionValue='Yes', id='external-referral-ben-cap-yes') }}
+                        {{ forms.radio(name='external-referral-ben-cap', displayText='No', optionValue='No', id='external-referral-ben-cap-no') }}
                       </fieldset>
                     </div>
                   </div>
