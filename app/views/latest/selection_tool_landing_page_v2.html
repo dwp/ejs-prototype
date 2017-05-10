@@ -21,7 +21,7 @@
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
             <div class="form-group">
               <fieldset class="inline">
-                <legend>Referral type</legend>
+                <legend>Referral type :</legend>
                   {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
                   {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
                   {{ forms.radio(name='initialOptions', displayText='External referral', optionValue='External referral', id='voluntary-options-external-referral', datatarget='external-referral') }}
@@ -36,7 +36,7 @@
                     <fieldset>
                         <legend>Do any of the following apply to the claimant ? (Tick all that apply)</legend>
                         {% for eegOption in eegOptions %}
-                        {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
+                        {{ forms.checkbox(name='eeg-options', id=eegOption.value, value=eegOption.label)}}
                         {% endfor %}
                     </fieldset>
                     <br>

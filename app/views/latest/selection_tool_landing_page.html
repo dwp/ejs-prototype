@@ -7,7 +7,7 @@
     {% include "includes/main_nav.html" %}
     
     <div class="main-content">
-      <h1 class="heading-large">WHP Selection -  Mr J Smith - {{ questionTitle }}</h1>     
+      <h1 class="heading-large">WHP Selection -  Mr J Smith</h1>
 
       <div class="grid-row">
         {% set currentClaimantPage = 'selectionTool' %}
@@ -21,7 +21,7 @@
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
             <div class="form-group">
               <fieldset class="inline">
-                <legend>Is the claimant:</legend>
+                <legend>Referral type : </legend>
                   {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
                   {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu') }}
               </fieldset>
@@ -38,32 +38,53 @@
                     </div>
 
                   <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
-                    <fieldset>
-                      <legend>Tick if applicable</legend>
-                        {{ forms.checkbox(name='disabled-esa-wrac', id='disabled-esa-wrac', value='Claimant is in receipt of ESA/WRAC') }}
-                        {{ forms.checkbox(name='disabled-ben-cap', id='disabled-ben-cap', value='Claimant is subject to Benefit Cap') }}
+                    <fieldset class="inline">
+                      <legend>Is the claimant subject to Benefit Cap ?</legend>
+                      {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
+                      {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                    </fieldset>
+                    <br>
+                    <fieldset class="inline">
+                      <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
+                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
+                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
                     </fieldset>
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="eeg-options">
-
                     <fieldset>
                       <legend>Which Early entry groups apply to the claimant ? (Tick all that apply)</legend>
                         {% for eegOption in eegOptions %}
-                        {{ forms.checkbox(name='eeg-options', id=egeOption.value, value=eegOption.label)}}
+                        {{ forms.checkbox(name='eeg-options', id=eegOption.value, value=eegOption.label)}}
                         {% endfor %}
                     </fieldset>
                     <br>
-                    <fieldset>
-                      <legend>Tick if applicable </legend>
-                        {{ forms.checkbox(name='eeg-esa-wrac', id='eeg-esa-wrac', value='Claimant is in receipt of ESA/WRAC') }}
-                        {{ forms.checkbox(name='eeg-ben-cap', id='eeg-ben-cap', value='Claimant is subject to Benefit Cap') }}
+                    <fieldset class="inline">
+                      <legend>Is the claimant subject to Benefit Cap ?</legend>
+                      {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
+                      {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                    </fieldset>
+                    <br>
+                    <fieldset class="inline">
+                      <legend>Is the claimant in receipt of ESA/WRAC ?</legend>
+                      {{ forms.radio(name='esa-wrac', displayText='Yes', optionValue='Yes', id='esa-wrac-yes') }}
+                      {{ forms.radio(name='esa-wrac', displayText='No', optionValue='No', id='esa-wrac-no') }}
                     </fieldset>
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="external-referral">
-                    <label class="form-label" for="external-referral-input">Name of referring organisation</label>
-                    <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
+                    <div>
+                      <label class="form-label" for="external-referral-input">Name of referring organisation</label>
+                      <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
+                    </div>
+                    <br>
+                    <div>
+                      <fieldset class="inline">
+                        <legend>Is the applicant subject to Benefit Cap ?</legend>
+                        {{ forms.radio(name='ben-cap', displayText='Yes', optionValue='Yes', id='ben-cap-yes') }}
+                        {{ forms.radio(name='ben-cap', displayText='No', optionValue='No', id='ben-cap-no') }}
+                      </fieldset>
+                    </div>
                   </div>
                 </div>
             </div>
