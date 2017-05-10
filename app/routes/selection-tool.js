@@ -14,7 +14,7 @@ module.exports = function(router) {
     res.locals.questions = questions['claimant-group'].questions;
     res.locals.next = questions['claimant-group'].nextQuestionSet;
     res.locals.questionTitle = questions['claimant-group'].title;
-    res.locals.eegOptions = questions['claimant-group'].earlyEntryGroupOptions;
+    res.locals.earlyEntryOptions = questions['claimant-group'].earlyEntryOptions;
 
     res.render('latest/selection_tool_landing_page');
   });
@@ -24,7 +24,7 @@ module.exports = function(router) {
     res.locals.questions = questions['claimant-group'].questions;
     res.locals.next = questions['claimant-group'].nextQuestionSet;
     res.locals.questionTitle = questions['claimant-group'].title;
-    res.locals.eegOptions = questions['claimant-group'].earlyEntryGroupOptions;
+    res.locals.earlyEntryOptions = questions['claimant-group'].earlyEntryOptions;
 
     res.render('latest/selection_tool_landing_page_v2');
   });
