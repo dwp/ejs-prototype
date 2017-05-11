@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "earlyEntryGroupOptions" : [
+  "earlyEntryOptions" : [
     { "label" : "an ex-offender, or offender", "value" : "ex-offender-or-offender"},
     { "label" : "a carer", "value" : "carer"},
     { "label" : "an ex-carer", "value" : "ex-carer"},
