@@ -204,3 +204,16 @@ function toggleFilters () {
   }
 }
 
+(function(){
+  var $annotationToggle = $("#annotationToggle"),
+    $annotations = $('.annotation');
+
+  if($annotations.length){
+    $annotationToggle.show();
+  }
+
+  $("#annotationToggle").on('click', function(e){
+    e.preventDefault();
+    $annotations.toggle();
+  });
+})()
