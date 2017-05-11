@@ -1,6 +1,5 @@
 {
   "title" : "Early entry",
-  "nextQuestionSet" : "ltu-knockout",
   "questions": [
     { "text" : "Does the individual have a basic skills need that can be met by JCP offer?",
       "name" : "basic-offer", 

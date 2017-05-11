@@ -1,9 +1,0 @@
-{
-  "title" : "Successful knock out (LTU)",
-  "explanation": "From the answers you provided, the claimant is eligible to move onto the scoring",
-  "questions": [
-    { "text" : "As you have indicated that the claimant is Long Term unemployed - would you like to send the claimant details to the gatekeeper?",
-      "name" : "scoring-questions", 
-      "options" : [ "Yes","No" ]}
-  ]
-}

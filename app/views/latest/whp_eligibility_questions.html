@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith - {{ questionTitle }}</h1>     
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+        {% include "includes/summary_nav.html" %}
+      </div>
+      
+      <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
+        <div class="grid-row">
+          <div class="column-half">
+            
+            <p class="annotation" style="display:none">
+              If you answer No to any question you'll got to the Eligibility failed screen.  Otherwise you'll go to the scoring questions.
+            </p>
+
+            {% if explanation %}
+              <p>{{explanation}}</p>
+            {% endif %}
+              {% for question in questions %}
+                {{radioGroup(question.text, question.name, question.options, question.hint, question.description )}}
+              {% endfor %}
+            </form>
+          </div>
+          {%if questions[0].hint %}
+            <div class="column-one-third">
+              <p class="bold">Additional information</p>
+              {%if questions[0].hint %}<p>{{questions[0].hint}}</p>{% endif %}
+              <p>Question {{questionIndex}} of {{questionCount}}</p>
+            </div>
+          {% endif %}
+
+         <div class="column-two-thirds">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}
+
+{% macro radioGroup(question, name, options, hint) %}
+  {% set inlineClass = 'inline' if options.length < 3  else '' %}
+  <div class="form-group">
+    <fieldset class="{{inlineClass}}">
+      <legend class="heading-medium">{{question}}</legend>
+      
+      {% for option in options %}
+        {% set label = option.label or option %}
+        {% set value = option.value or option %}
+
+        <label class="block-label selection-button-radio" for="{{name}}-{{loop.index}}" {%if option.target %}data-target="{{option.target}}"{% endif %}>
+          <input id="{{name}}-{{loop.index}}" type="radio" name="{{name}}" value="{{value}}">
+          {{label}}
+        </label>
+      {% endfor %}
+    </fieldset>
+  </div>
+{% endmacro %}

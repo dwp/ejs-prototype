@@ -1,6 +1,5 @@
 {
   "title" : "Voluntary",
-  "nextQuestionSet" : "long-term-unemployed",
   "questions": [
     { "text" : "Has the individual self-declared a current disability as defined in the Equality Act 2010?",
       "name" : "disability-declared", 

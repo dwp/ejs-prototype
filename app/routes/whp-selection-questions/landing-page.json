@@ -1,6 +1,5 @@
 {
   "title" : "Claimant group",
-  "nextQuestionSet" : "voluntary",
   "questions" : [
     { "text" : "Is the claimant:",
       "name" : "claimant-group", 
