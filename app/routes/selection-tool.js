@@ -18,7 +18,7 @@ module.exports = function(router) {
     if(isLongTermUnemployed){
       res.redirect('/latest/whp-result');
     } else if (isExternalReferrer){
-      res.redirect('/latest/scoring_questions/0');
+      res.redirect('/latest/whp_eligibility_questions');
     } else {
       res.redirect('/latest/whp_eligibility_questions?voluntaryOption=' + req.body.voluntary);
     }
