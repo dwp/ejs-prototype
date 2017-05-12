@@ -17,8 +17,6 @@ module.exports = function(router) {
 
     if(isLongTermUnemployed){
       res.redirect('/latest/whp-result');
-    } else if (isExternalReferrer){
-      res.redirect('/latest/whp_eligibility_questions');
     } else {
       res.redirect('/latest/whp_eligibility_questions?voluntaryOption=' + req.body.voluntary);
     }
@@ -49,11 +47,9 @@ module.exports = function(router) {
 
   // Eligibility routes
   router.get('/latest/whp_eligibility_questions', function (req, res) {
-    var questionGroup = req.query.voluntaryOption === 'Disabled' ? 'disability' : 'early-entry';
-
-    res.locals.questions = content[questionGroup].questions;
-    res.locals.questionTitle = content[questionGroup].title;
-    res.locals.earlyEntryOptions = content[questionGroup].earlyEntryOptions;
+    res.locals.questions = content[req.query.voluntaryOption].questions;
+    res.locals.questionTitle = content[req.query.voluntaryOption].title;
+    res.locals.earlyEntryOptions = content[req.query.voluntaryOption].earlyEntryOptions;
 
     res.render('latest/whp_eligibility_questions');
   });
