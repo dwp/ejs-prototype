@@ -32,11 +32,15 @@
                         <p class="form-hint">Please select the primary barrier to finding work.</p>
                       {{ forms.radio(name='voluntary', displayText='Disabled', optionValue='disability', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
                       {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='early-entry', id='voluntary-options-eeg', datatarget='early-entry-options') }}
-                      {{ forms.radio(name='voluntary', displayText='External referral', optionValue='external-referrer', id='voluntary-options-external-referral', datatarget='external-referral') }}
                       </fieldset>
                     </div>
 
                   <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
+                    <div>
+                      <label class="form-label" for="disability-external-referral-input">If external referral, enter name of referring organisation</label>
+                      <input class="form-control form-control-1-4" name="disability-external-referral-input" type="text" id="disability-external-referral-input">
+                    </div>
+                    <br>
                     <fieldset class="inline">
                       <legend>Is the claimant subject to Benefit Cap?</legend>
                       {{ forms.radio(name='disabled-ben-cap', displayText='Yes', optionValue='Yes', id='disabled-ben-cap-yes') }}
@@ -51,8 +55,13 @@
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="early-entry-options">
+                    <div>
+                      <label class="form-label" for="eeg-external-referral-input">If external referral, enter name of referring organisation</label>
+                      <input class="form-control form-control-1-4" name="eeg-external-referrral-input" type="text" id="eeg-external-referral-input">
+                    </div>
+                    <br>
                     <fieldset>
-                      <legend class="visually-hidden">Early entry group</legend>
+                      <legend>Select early entry group</legend>
                       {% for earlyEntryOption in earlyEntryOptions %}
                       {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
                       {% endfor %}
@@ -69,21 +78,6 @@
                       {{ forms.radio(name='early-entry-esa-wrac', displayText='Yes', optionValue='Yes', id='early-entry-esa-wrac-yes') }}
                       {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
                     </fieldset>
-                  </div>
-
-                  <div class="panel panel-border-narrow js-hidden" id="external-referral">
-                    <div>
-                      <label class="form-label" for="external-referral-input">Name of referring organisation</label>
-                      <input class="form-control form-control-1-4" name="external-referrral-input" type="text" id="external-referral-input">
-                    </div>
-                    <br>
-                    <div>
-                      <fieldset class="inline">
-                        <legend>Is the applicant subject to Benefit Cap?</legend>
-                        {{ forms.radio(name='external-referral-ben-cap', displayText='Yes', optionValue='Yes', id='external-referral-ben-cap-yes') }}
-                        {{ forms.radio(name='external-referral-ben-cap', displayText='No', optionValue='No', id='external-referral-ben-cap-no') }}
-                      </fieldset>
-                    </div>
                   </div>
                 </div>
             </div>
