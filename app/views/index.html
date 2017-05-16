@@ -37,7 +37,22 @@
             }, { 
               link : 'latest/whp-admin', title : 'Set threshold'
             }]
-          }] %} 
+          }, {
+            workTitle : 'WHP Status',
+            links: [{
+              link : 'latest/job_record_confirm?whpStatus=Not referred', title : 'Not referred'
+            }, {
+              link : 'latest/job_record_confirm?whpStatus=Not eligible - 16 May 2017', title : 'Not eligible'
+            }, {
+              link : 'latest/job_record_confirm?whpStatus=Pending gatekeeper - 16 May 2017', title : 'Pending gatekeeper'
+            }, {
+              link : 'latest/job_record_confirm?whpStatus=Action - Refer to WHP', title : 'Action - Refer to WHP'
+            }, {
+              link : 'latest/job_record_confirm?whpStatus=Referred to WHP - 16 May 2017', title : 'Referred to WHP'
+            }, {
+              link : 'latest/job_record_confirm?whpStatus=Not selected - 16 May 2017', title : 'Not selected'
+            }]
+          }] %}
           
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
