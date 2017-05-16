@@ -37,13 +37,13 @@
       </li>
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool
+          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
     {% else %}
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool
+          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
     {% endif %}
