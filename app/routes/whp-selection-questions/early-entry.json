@@ -2,7 +2,7 @@
   "title" : "Eligibility questions",
   "questions": [
     { "text" : "Is the individual doing any form of paid employment?",
-      "name" : "paid-employmnet", 
+      "name" : "paid-employment", 
       "options" : [ "Yes","No" ]},
     { "text" : "Has the individual previously been on the Work and Health programme?",
       "name" : "previous-whp", 
@@ -14,7 +14,7 @@
       "name" : "previous-jcp-offer", 
       "options" : [ "Yes","No" ]},
     { "text" : "Do you consider that the individual will realistically find employment in the next twelve months with solely support of the JCP offer?",
-      "name" : "next-twelve", 
+      "name" : "next-twelve-with-support", 
       "options" : [ "Yes","No" ]},
     { "text" : "Do you consider that the individual will realistically find employment in the next twelve months?",
       "name" : "next-twelve", 

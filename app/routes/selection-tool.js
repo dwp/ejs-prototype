@@ -57,12 +57,8 @@ module.exports = function(router) {
   router.post('/latest/whp_eligibility_questions', function (req, res) {
     var isEligible = true;
 
-    // If any of the eligibility questions have been answered 'No' 
-    // then the applicant is no eligible
-    for(var param in req.body){
-      if(req.body[param] === 'No'){
-        isEligible = false;
-      }
+    if(req.body['paid-employment'] === 'Yes' || req.body['next-twelve'] === 'No' || req.body['next-twelve-with-support'] === 'Yes'){
+      isEligible = false;
     }
 
     if(isEligible){

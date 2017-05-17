@@ -5,7 +5,7 @@
       "name" : "disability-declared", 
       "options" : [ "Yes","No" ]},
     { "text" : "Is the individual doing any form of paid employment?",
-      "name" : "paid-employmnet", 
+      "name" : "paid-employment", 
       "options" : [ "Yes","No" ]},
     { "text" : "Has the individual previously been on the Work and Health programme?",
       "name" : "previous-whp", 
