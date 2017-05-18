@@ -6,10 +6,37 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-      <h1 class="heading-large">Work and health programme selection report</h1>
+      <h1 class="heading-large">Referrals for w/c 8/10/17</h1>
+
+      {% include "includes/whp_gatekeeper_nav.html" %}
 
       <div class="grid-row">
-        <div class="column-two-thirds">   
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="whp-profile">Profile for wc 8/10/17</label>
+            <input class="form-control form-control-1-8" type="text" id="whp-profile" value="30">
+          </div>
+        </div>
+
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="total-places">Referrals received for w/c 8/10/17</label>
+            <input class="form-control form-control-1-8" type="text" id="total-places" value="70">
+          </div>
+        </div>
+
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="total-places">Referrals selected below</label>
+            <input class="form-control form-control-1-8" type="text" id="total-places" value="70">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <p>Referrals outstanding</p>
           <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
             <thead>
               <tr>

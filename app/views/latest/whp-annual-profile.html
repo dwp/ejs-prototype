@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">Record WHP places available</h1>
+
+      {% set currentSettingsPage = 'whpAdmin' %}
+      {% include "includes/whp_gatekeeper_nav.html" %}
+
+      <div class="grid-row">
+        <div class="column-half dash">
+          <div class="form-group">
+            <label class="form-label" for="district">Select district</label>
+            <select class="select form-control" id="district">
+              <option value="Select">Select</option>
+              <option value="Bradford">Bradford</option>
+              <option value="Derby">Derby</option>
+              <option value="Liverpool" selected>Liverpool</option>
+              <option value="Manchester">Manchester</option>
+              <option value="Portsmouth">Portsmouth</option>
+              <option value="Southampton">Southampton</option>
+              <option value="Wolverhampton">Wolverhampton</option>
+              <option value="Worcester">Worcester</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="whp-profile">Work and Health Programme places</label>
+            <input class="form-control form-control-1-8" type="text" id="whp-profile" value="1300">
+          </div>  
+        </div>
+
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="total-places">Total provision places</label>
+            <input class="form-control form-control-1-8" type="text" id="total-places" value="1450">
+          </div>  
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="psc-profile">Public Sector Comparitor places</label>
+            <input class="form-control form-control-1-8" type="text" id="psc-profile" value="100">
+          </div>  
+        </div>
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="control-group">Control group allocation</label>
+            <input class="form-control form-control-1-8" type="text" id="control-group" value="145">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="add-places">Additional places</label>
+            <input class="form-control form-control-1-8" type="text" id="add-places" value="50">
+          </div>
+        </div>
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="total-places">Total places</label>
+            <input class="form-control form-control-1-8" type="text" id="total-places" value="1595">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="whp-start-date">WHP start date</label>
+            <input class="form-control form-control-1-4" type="text" id="whp-start-date" value="01/08/17">
+          </div>
+        </div>
+        <div class="column-third">
+          <div class="form-group">
+            <label class="form-label" for="whp-end-date">WHP end date</label>
+            <input class="form-control form-control-1-4" type="text" id="whp-end-date" value="01/08/17">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-full">
+          <div class="form-group">
+            <a href="/latest/whp-weekly-profile"><button class="button">Confirm and Continue</button></a>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </main>
+{% endblock %}
+
+
+

@@ -170,7 +170,7 @@ if (useAutoStoreData === 'true') {
   addCheckedFunction(documentationApp, nunjucksDocumentationEnv)
 }
 
-// Disallow search index idexing
+// Disallow search index indexing
 app.use(function (req, res, next) {
   // Setting headers stops pages being indexed even if indexed pages link to them.
   res.setHeader('X-Robots-Tag', 'noindex')

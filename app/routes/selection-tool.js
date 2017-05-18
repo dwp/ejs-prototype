@@ -58,7 +58,7 @@ module.exports = function(router) {
     var isEligible = true;
 
     // If any of the eligibility questions have been answered 'No' 
-    // then the applicant is no eligible
+    // then the applicant is not eligible
     for(var param in req.body){
       if(req.body[param] === 'No'){
         isEligible = false;
@@ -88,6 +88,16 @@ module.exports = function(router) {
     } else {
       res.locals.formAction = `/latest/scoring_questions/${++req.params.questionSet}`;
       res.render('latest/scoring_questions');
+    }
+  });
+  
+  // Gatekeeper routes
+  router.get('/latest/gatekeeper_menu', function (req, res) {
+    if (req.session.user.role !== 'gatekeeper') {
+      res.redirect('/latest/selection_tool');
+    } else {
+      res.locals.user = req.session.user;
+      res.render('latest/whp-annual-profile');
     }
   });
 

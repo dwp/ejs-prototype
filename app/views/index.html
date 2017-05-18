@@ -30,13 +30,18 @@
           }] %} 
           
           {{ sprintLinks( 'Work and Health Programme Selection Tool', whpSelectionToolWorkcoachScreens) }}
-          {% set whpSelectionToolWorkcoachScreens = [{ 
+
+          {% set whpSelectionToolWorkcoachScreens = [{
             workTitle : 'Gatekeeper',
             links: [{ 
-              link : 'latest/whp-selection-report', title : 'Gatekeeper report'
-            }, { 
-              link : 'latest/whp-admin', title : 'Set threshold'
-            }]
+              link : 'latest/whp-annual-profile', title : 'Record WHP places available'
+            }, {
+          link : 'latest/whp-weekly-profile', title : 'Profile WHP places across the year'
+          }, {
+          link : 'latest/whp-allocations-profile', title : 'Review allocations against profile'
+          }, {
+          link : 'latest/whp-selection-report', title : 'Referrals for w/c dd/mm/yy'
+          }]
           }, {
             workTitle : 'WHP Status',
             links: [{
