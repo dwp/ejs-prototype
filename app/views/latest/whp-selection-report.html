@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import "macros/forms.html" as forms %}
 
 {% block content %}
   <main id="content" role="main">
@@ -36,79 +37,82 @@
 
       <div class="grid-row">
         <div class="column-two-thirds">
-          <p>Referrals outstanding</p>
-          <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
-            <thead>
-              <tr>
-                <th><span>National Insurance <br>number</span></th>
-                <th><span>Surname</span></th>
-                <th>Initial</th>
-                <th>Score</th>
+          <form method="POST" action="">
+            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+              <thead>Referrals outstanding
+                <tr>
+                  <th><span class="bold">Ref</span></th>
+                  <th><span class="bold">Jobcentre</span></th>
+                  <th><span class="bold">Score</span></th>
+                  <th><span class="bold">Not in receipt WRAC</span></th>
+                  <th><span class="bold">Benefit Cap</span></th>
+                  <th><span class="bold">Put forward for random allocation</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Worcester</td>
+                  <td>17</td>
+                  <td>Y</td>
+                  <td></td>
+                  <td>
+                    {{ forms.checkbox(name='random-allocation-1', id="random-allocation-1")}}
+                  </td>
                 </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                <td>Williams</td>
-                <td>R</td>
-                <td>21</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                <td>Jones</td>
-                <td>J</td>
-                <td>23</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                <td>Smith</td>
-                <td>F</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                <td>Brown</td>
-                <td>S</td>
-                <td>30</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                <td>Docherty</td>
-                <td>T</td>
-                <td>17</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                <td>Peters</td>
-                <td>A</td>
-                <td>21</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxB</a></td>
-                <td>Shaw</td>
-                <td>R</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxA</a></td>
-                <td>Peel</td>
-                <td>J</td>
-                <td>29</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                <td>Gathercole</td>
-                <td>T</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td><a href="job_record_confirm">JCxxxxxxC</a></td>
-                <td>Kane</td>
-                <td>H</td>
-                <td>18</td>
-              </tr>
-            </tbody>
-          </table>
+                <tr>
+                  <td>2</td>
+                  <td>Coventry</td>
+                  <td>15</td>
+                  <td>Y</td>
+                  <td></td>
+                  <td>
+                      {{ forms.checkbox(name='random-allocation-2', id="random-allocation-2")}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Coventry</td>
+                  <td>19</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                      {{ forms.checkbox(name='random-allocation-3', id="random-allocation-3")}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Coventry</td>
+                  <td>18</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                      {{ forms.checkbox(name='random-allocation-4', id="random-allocation-4")}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>" "</td>
+                  <td>" "</td>
+                  <td>" "</td>
+                  <td>" "</td>
+                  <td>" "</td>
+                  <td>
+                      {{ forms.checkbox(name='random-allocation-0', id="random-allocation-0")}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                  <td>Kidderminster</td>
+                  <td>8</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                      {{ forms.checkbox(name='random-allocation-70', id="random-allocation-70")}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
         </div>        
       </div>  
     </div>
