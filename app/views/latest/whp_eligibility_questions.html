@@ -17,9 +17,14 @@
         <div class="grid-row">
           <div class="column-half">
             
-            <p class="annotation" style="display:none">
-              If you answer No to any question you'll got to the Eligibility failed screen.  Otherwise you'll go to the scoring questions.
-            </p>
+            <div class="annotation" style="display:none">
+              <p>Any of the following criteria will fail eligibility</p>
+              <ul class="list list-bullet">
+              <li>Answering Yes to the "paid employment" question </li>
+              <li>Answering Yes to the "realistic with job offer" question </li>
+              <li>Answering No to the "realistic with 12 months" question </li>
+              </ul>
+            </div>
 
             {% if explanation %}
               <p>{{explanation}}</p>
