@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% import "macros/forms.html" as forms %}
 
 {% block content %}
   <main id="content" role="main">
@@ -38,8 +37,9 @@
       <div class="grid-row">
         <div class="column-two-thirds">
           <form method="POST" action="">
+            <p>Referrals outstanding</p>
             <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
-              <thead>Referrals outstanding
+              <thead>
                 <tr>
                   <th><span class="bold">Ref</span></th>
                   <th><span class="bold">Jobcentre</span></th>
@@ -57,7 +57,7 @@
                   <td>Y</td>
                   <td></td>
                   <td>
-                    {{ forms.checkbox(name='random-allocation-1', id="random-allocation-1")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox", checked="checked")></input>
                   </td>
                 </tr>
                 <tr>
@@ -67,7 +67,7 @@
                   <td>Y</td>
                   <td></td>
                   <td>
-                      {{ forms.checkbox(name='random-allocation-2', id="random-allocation-2")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox")></input>
                   </td>
                 </tr>
                 <tr>
@@ -77,7 +77,7 @@
                   <td></td>
                   <td></td>
                   <td>
-                      {{ forms.checkbox(name='random-allocation-3', id="random-allocation-3")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox", checked="checked")></input>
                   </td>
                 </tr>
                 <tr>
@@ -87,7 +87,7 @@
                   <td></td>
                   <td></td>
                   <td>
-                      {{ forms.checkbox(name='random-allocation-4', id="random-allocation-4")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox", checked="checked")></input>
                   </td>
                 </tr>
                 <tr>
@@ -97,7 +97,7 @@
                   <td>" "</td>
                   <td>" "</td>
                   <td>
-                      {{ forms.checkbox(name='random-allocation-0', id="random-allocation-0")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox")></input>
                   </td>
                 </tr>
                 <tr>
@@ -107,7 +107,7 @@
                   <td></td>
                   <td></td>
                   <td>
-                      {{ forms.checkbox(name='random-allocation-70', id="random-allocation-70")}}
+                    <input name='random-allocation-1', id="random-allocation-1", type="checkbox")></input>
                   </td>
                 </tr>
               </tbody>

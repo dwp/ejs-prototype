@@ -88,7 +88,7 @@ module.exports = function(router) {
   });
   
   // Gatekeeper routes
-  router.get('/latest/gatekeeper_menu', function (req, res) {
+  router.get('/latest/gatekeeper', function (req, res) {
     if (req.session.user.role !== 'gatekeeper') {
       res.redirect('/latest/selection_tool');
     } else {
