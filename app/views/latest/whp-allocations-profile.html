@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">View allocations against profile</h1>
+
+      {% set currentSettingsPage = 'whpAdmin' %}
+      {% include "includes/whp_gatekeeper_nav.html" %}
+
+      <div class="grid-row">
+        <div>
+          <p>There are 1595 places available for Mercia district for 2017/2018.</p>
+          <p>You can accept or amend this profile in the table below</p>
+          <p>Allocations are <span class="bold">3 above </span>expected profile to date.</p>
+          <div class="stat-over-first">
+            <table>
+              <thead>
+                <tr>
+                  <td class="bold"></td>
+                  <td class="bold">Profile</td>
+                  <td class="bold">Allocations</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bold">Total 2017/18</td>
+                  <td class="bold">1595</td>
+                  <td class="bold">103</td>
+                </tr>
+                <tr>
+                  <td>1-Oct-2017</td>
+                  <td>20</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>8-Oct-2017</td>
+                  <td>20</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td>15-Oct-2017</td>
+                  <td>30</td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td>22-Oct-2017</td>
+                  <td>30</td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td>29-Oct-2017</td>
+                  <td>30</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>" "</td>
+                  <td>" "</td>
+                  <td>" "</td>
+                </tr>
+                <tr>
+                  <td>23-Sep-2018</td>
+                  <td>35</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="grid-row">
+        <div class="column-full">
+          <div class="form-group">
+            <a href="/latest/whp-weekly-profile"><button class="button">Return to WHP Profile</button></a>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </main>
+{% endblock %}
+
+
+

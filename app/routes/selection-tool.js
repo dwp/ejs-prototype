@@ -86,6 +86,16 @@ module.exports = function(router) {
       res.render('latest/scoring_questions');
     }
   });
+  
+  // Gatekeeper routes
+  router.get('/latest/gatekeeper', function (req, res) {
+    if (req.session.user.role !== 'gatekeeper') {
+      res.redirect('/latest/selection_tool');
+    } else {
+      res.locals.user = req.session.user;
+      res.render('latest/whp-annual-profile');
+    }
+  });
 
   function loadContent(){
     var content = {};

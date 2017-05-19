@@ -7,13 +7,13 @@
       <ul>
         <!-- linking this to the toggle user role logic for a bit of a shortcut -->
         {%if sessionData.user.role === 'gatekeeper' %}
-          {% set userAdmin = 'whp-admin' %}
+          {% set userAdmin = 'whp-annual-profile' %}
         {%else%}
           {% set userAdmin = 'settings' %}
         {%endif%}
 
         <li><a class="bold-nav-link" href="/latest/toggle_user_role">{{sessionData.user.name}} &nbsp; | &nbsp; Worcester</a> &nbsp; | &nbsp; </li>
-        <li><a href="{{userAdmin}}">Settings</a></li>
+        <li><a href="/latest/{{userAdmin}}">Settings</a></li>
       </ul>
     </nav>
   </div>

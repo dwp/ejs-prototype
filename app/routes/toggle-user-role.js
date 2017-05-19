@@ -20,7 +20,7 @@ module.exports = function(router, users){
     if(fromIndexPage){
       redirectUrl = '/';
     } else {
-      redirectUrl = role === 'gatekeeper' ? '/latest/whp-selection-report' : '/latest/job';
+      redirectUrl = role === 'gatekeeper' ? '/latest/whp-annual-profile' : '/latest/job';
     }
     return redirectUrl;
   }
