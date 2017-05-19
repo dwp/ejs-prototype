@@ -44,8 +44,8 @@
                   <th><span class="bold">Ref</span></th>
                   <th><span class="bold">Jobcentre</span></th>
                   <th><span class="bold">Score</span></th>
-                  <th><span class="bold">Not in receipt WRAC</span></th>
-                  <th><span class="bold">Benefit Cap</span></th>
+                  <th><span class="bold">In receipt of WRAC ?</span></th>
+                  <th><span class="bold">Benefit Cap ?</span></th>
                   <th><span class="bold">Put forward for random allocation</span></th>
                   </tr>
               </thead>
@@ -75,7 +75,7 @@
                   <td>Coventry</td>
                   <td>19</td>
                   <td></td>
-                  <td></td>
+                  <td>Y</td>
                   <td>
                     <input name='random-allocation-1', id="random-allocation-1", type="checkbox", checked="checked")></input>
                   </td>
@@ -113,8 +113,17 @@
               </tbody>
             </table>
           </form>
-        </div>        
-      </div>  
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="grid-row">
+        <div class="column-full">
+          <div class="form-group">
+            <a href="/latest/whp-allocations-profile"><button class="button">Confirm and Continue</button></a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 {% endblock %}
