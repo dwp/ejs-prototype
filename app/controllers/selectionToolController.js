@@ -1,6 +1,10 @@
 var fs = require('fs');
 var content = loadContent();
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Landing Page Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function landingPage(req, res) {
     res.locals.questions = content['landing-page'].questions;
     res.locals.questionTitle = content['landing-page'].title;
@@ -40,6 +44,10 @@ function alternativeLandingPageAction(req, res) {
   }
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Eligibility Questions Controllers
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function eligibilityQuestionsPage(req, res) {
   res.locals.questions = content[req.query.voluntaryOption].questions;
   res.locals.questionTitle = content[req.query.voluntaryOption].title;
@@ -62,6 +70,10 @@ function eligibilityQuestionsPageAction (req, res) {
   }
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Scoring Questions Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function scoringQuestionsPage(req, res) {
   var scoringQuestionsConfig = content['scoring-questions'];
 
@@ -80,6 +92,11 @@ function scoringQuestionsPage(req, res) {
   }
 }
 
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Gatekeeper Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function districtProfilePage(req, res) {
     if (req.session.user.role !== 'gatekeeper') {
       res.redirect('/latest/selection_tool');
@@ -89,6 +106,10 @@ function districtProfilePage(req, res) {
     }
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Utilities
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function loadContent(){
   var content = {};
 
@@ -103,6 +124,10 @@ function loadContent(){
   return content;
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Module Exports
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 module.exports.landingPage = landingPage;
 module.exports.landingPageAction = landingPageAction;
 module.exports.alternativeLandingPage = alternativeLandingPage;

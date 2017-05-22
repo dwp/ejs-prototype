@@ -10,7 +10,7 @@ module.exports = function(router) {
   router.get('/latest/selection_tool_landing_page_v2', selectionTool.alternativeLandingPage);
   router.post('/latest/selection_tool_landing_page_v2', selectionTool.alternativeLandingPageAction);
 
-  // Eligibility routes
+  // Eligibility question routes
   router.get('/latest/whp_eligibility_questions', selectionTool.eligibilityQuestionsPage);
   router.post('/latest/whp_eligibility_questions', selectionTool.eligibilityQuestionsPageAction);
 
