@@ -6,7 +6,7 @@ module.exports = function(router){
     res.render('index');
   });
 
-  router.get('/index', function (req, res,next) {
+  router.get('/index', function (req, res, next) {
 
     req.session.regenerate(err => {});
 
