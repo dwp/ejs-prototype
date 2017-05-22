@@ -17,6 +17,7 @@
       <div class="grid-row">
         <div class="column-full">
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
+            {% if not getData.whpOnly %}
             <div class="form-group">
               <fieldset class="inline">
                 <legend>Referral type</legend>
@@ -25,6 +26,7 @@
               </fieldset>
 
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
+            {% endif %}
 
                     <div id="voluntary-options-radio-buttons" class="form-group">
                       <fieldset class="inline">
@@ -46,12 +48,15 @@
                       {{ forms.radio(name='disabled-ben-cap', displayText='Yes', optionValue='Yes', id='disabled-ben-cap-yes') }}
                       {{ forms.radio(name='disabled-ben-cap', displayText='No', optionValue='No', id='disabled-ben-cap-no') }}
                     </fieldset>
-                    <br>
-                    <fieldset class="inline">
-                      <legend>Is the claimant in receipt of ESA/WRAC?</legend>
-                      {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
-                      {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
-                    </fieldset>
+
+                    {% if not getData.whpOnly %}
+                      <br>
+                      <fieldset class="inline">
+                        <legend>Is the claimant in receipt of ESA/WRAC?</legend>
+                        {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
+                        {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
+                      </fieldset>
+                    {% endif %}
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="early-entry-options">
@@ -72,15 +77,21 @@
                       {{ forms.radio(name='early-entry-ben-cap', displayText='Yes', optionValue='Yes', id='early-entry-ben-cap-yes') }}
                       {{ forms.radio(name='early-entry-ben-cap', displayText='No', optionValue='No', id='early-entry-ben-cap-no') }}
                     </fieldset>
-                    <br>
-                    <fieldset class="inline">
-                      <legend>Is the claimant in receipt of ESA/WRAC?</legend>
-                      {{ forms.radio(name='early-entry-esa-wrac', displayText='Yes', optionValue='Yes', id='early-entry-esa-wrac-yes') }}
-                      {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
-                    </fieldset>
+
+                    {% if not getData.whpOnly %}
+                      <br>
+                      <fieldset class="inline">
+                        <legend>Is the claimant in receipt of ESA/WRAC?</legend>
+                        {{ forms.radio(name='early-entry-esa-wrac', displayText='Yes', optionValue='Yes', id='early-entry-esa-wrac-yes') }}
+                        {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
+                      </fieldset>
+                    {% endif %}
                   </div>
+
+            {% if not getData.whpOnly %}
                 </div>
             </div>
+            {% endif %}
             <button class="button" type="submit">Continue</button>
           </form>
         </div>

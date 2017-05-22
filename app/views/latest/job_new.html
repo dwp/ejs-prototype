@@ -16,7 +16,12 @@
   {% include "includes/main_nav.html" %}
 
   <div class="main-content">
-    <h1 class="heading-large">Create claimant record - page 1 of 2</h1>
+
+    {% if getData.whpOnly%}  
+      <h1 class="heading-large">Create applicant record</h1>
+    {% else %}
+      <h1 class="heading-large">Create claimant record - page 1 of 2</h1>
+    {% endif %}
 
     <form>
       <div class="grid-row">
@@ -215,34 +220,36 @@
                 <option value="Warehousing">Warehousing</option>  
               </select>     
             </div>
-              
-            <div class="form-group">
-              <fieldset>
-                <legend class="form-label">Work programme</legend>
-                <div class="form-group form-group-compound">
-                  <div class="multiple-choice">
-                    <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
+
+            {% if not getData.whpOnly%}  
+              <div class="form-group">
+                <fieldset>
+                  <legend class="form-label">Work programme</legend>
+                  <div class="form-group form-group-compound">
+                    <div class="multiple-choice">
+                      <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
+                        
+                      <label for="radio-indent-3">
+                          Pre-work programme
+                      </label>
+                    </div>
+                    <div class="multiple-choice">
+                    <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                      <label for="radio-indent-2">
+                        Work programme
+                      </label>
+                    </div>
+                    <div class="multiple-choice">
+                    <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
                       
-                    <label for="radio-indent-3">
-                        Pre-work programme
-                    </label>
+                      <label for="radio-indent-4">
+                        Completed work programme
+                      </label>
+                    </div>
                   </div>
-                  <div class="multiple-choice">
-                  <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
-                    <label for="radio-indent-2">
-                      Work programme
-                    </label>
-                  </div>
-                  <div class="multiple-choice">
-                  <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
-                    
-                    <label for="radio-indent-4">
-                      Completed work programme
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+                </fieldset>
+              </div>
+            {% endif %}
           </div>       
         </div>       
       </div>
@@ -250,7 +257,12 @@
       <div class="grid-row">
         <div class="column-full">
           <div class="form-group" id="continue">
-            <a href="job_new_step3" class="button" value="Continue">Continue</a>
+
+            {% if not getData.whpOnly%}  
+              <a href="job_new_step3" class="button" value="Continue">Continue</a>
+            {% else %}
+              <a href="selection_tool?whpOnly=true" class="button" value="Continue">Continue</a>
+            {% endif %}
           </div>
         </div>
       </div>
