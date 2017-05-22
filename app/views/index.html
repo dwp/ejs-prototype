@@ -62,6 +62,17 @@
           }] %}
           
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+
+          {% set whpSelectionToolWorkcoachScreens = [{
+            workTitle : 'WHP only flow',
+            links: [{ 
+              link : 'latest/search_results?nino=AB123456B', title : 'No results found'
+              }, {
+              link : 'latest/job_new?nino=AB123456&whpOnly=true', title : 'Create record'
+              }]
+          }] %}
+          
+          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
         
         <div class="grid-row">
