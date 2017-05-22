@@ -35,3 +35,7 @@ input#initial  {
 .block-label.disabled {
   color: $grey-1;
 }
+
+.button-secondary{
+  @include button($grey-3);
+}
