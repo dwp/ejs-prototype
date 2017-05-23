@@ -78,24 +78,59 @@
         <div class="grid-row">
           <div class="column-third">
             <div class="form-group">
-              <label class="form-label" for="whp-start-date">WHP start date</label>
-              <input class="form-control form-control-1-4" type="text" id="whp-start-date" value="01/08/17">
+              <fieldset>
+                <label class="form-label">WHP start date</label>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="whp-start-day">Day</label>
+                    <input class="form-control" id="whp-start-day" name="whpStartDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{startDay}}">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="whp-start-month">Month</label>
+                    <input class="form-control" id="whp-start-month" name="whpStartMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{startMonth}}">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="whp-start-year">Year</label>
+                    <input class="form-control" id="whp-start-year" name="whpStartYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{startYear}}">
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </div>
+
           <div class="column-third">
             <div class="form-group">
-              <label class="form-label" for="whp-end-date">WHP end date</label>
-              <input class="form-control form-control-1-4" type="text" id="whp-end-date" value="01/08/18">
+              <fieldset>
+                <label class="form-label">WHP end date</label>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="whp-end-day">Day</label>
+                    <input class="form-control" id="whp-end-day" name="whpEndDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{endDay}}">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="whp-end-month">Month</label>
+                    <input class="form-control" id="whp-end-month" name="whpEndMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{endMonth}}">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="whp-end-year">Year</label>
+                    <input class="form-control" id="whp-end-year" name="whpEndYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{endYear}}">
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </div>
         </div>
 
         <div class="grid-row">
-          <div class="column-full">
+          <div class="column-third">
             <div class="form-group">
-              <a href="/latest/gatekeeper/profile"><button class="button">Confirm and Continue</button></a>
+              <a href="/latest/gatekeeper/profile"><button class="button">Submit and Confirm</button></a>
             </div>
           </div>
+          <div class="column-third"</div>
+            <div class="form-group">
+              <a href="/latest/gatekeeper/weeklyProfile"><button class="button">Continue to WHP Weekly Profile</button></a>
+            </div>
         </div>
       </form>
     </div>

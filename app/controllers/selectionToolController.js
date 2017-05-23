@@ -101,8 +101,12 @@ function districtProfilePage(req, res) {
 
   var districtList = ["Select", "Bradford", "Derby", "Mercia", "Manchester", "Portsmouth", "Southampton", "Wolverhampton", "Worcester"];
 
+  console.log("req.session.profileData looks like this before initialisation : ", req.session.profileData);
+
   req.session.profileData = req.session.profileData || {};
 
+  console.log("req.session.profileData looks like this after initialisation : ", req.session.profileData);
+  
   var profileData = {
     districtList : districtList,
     district       : req.session.profileData.district ? req.session.profileData.district : "Mercia",
@@ -112,8 +116,16 @@ function districtProfilePage(req, res) {
     addPlaces      : req.session.profileData.addPlaces ? req.session.profileData.addPlaces : 50,
     totalProvPlaces: req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1450,
     controlGpPlaces :req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 145,
-    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1595
+    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1595,
+    startDay : req.session.profileData.startDay ? req.session.profileData.startDay : 01,
+    startMonth: req.session.profileData.startMonth? req.session.profileData.startMonth : 08,
+    startYear : req.session.profileData.startYear ? req.session.profileData.startYear : 2017,
+    endDay : req.session.profileData.endDay ? req.session.profileData.endDay : 31,
+    endMonth : req.session.profileData.endMonth ? req.session.profileData.endMonth : 07,
+    endYear : req.session.profileData.endYear ? req.session.profileData.endYear: 2018
   };
+
+  console.log("profileData looks like this : ", profileData);
 
   if (req.session.user.role !== 'gatekeeper') {
     res.redirect('/latest/selection_tool');
@@ -124,6 +136,9 @@ function districtProfilePage(req, res) {
 }
 
 function districtProfileAction(req, res) {
+
+  console.log("req.body looks like this : ", req.body);
+
   var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile) + parseInt(req.body.addPlaces);
   var controlGpPlaces = totalProvPlaces / 10;
   var totalPlaces = totalProvPlaces + controlGpPlaces;
@@ -135,8 +150,17 @@ function districtProfileAction(req, res) {
     addPlaces : req.body.addPlaces,
     totalProvPlaces : totalProvPlaces,
     controlGpPlaces : controlGpPlaces,
-    totalPlaces : totalPlaces
+    totalPlaces : totalPlaces,
+    startDay : req.body.whpStartDay,
+    startMonth: req.body.whpStartMonth,
+    startYear : req.body.whpStartYear,
+    endDay : req.body.whpEndDay,
+    endMonth : req.body.whpEndMonth,
+    endYear : req.body.whpEndYear
   };
+
+  console.log("inputProfileData look like this : ", inputProfileData);
+
   req.session.profileData = inputProfileData;
   res.redirect('/latest/gatekeeper/profile');
 }
