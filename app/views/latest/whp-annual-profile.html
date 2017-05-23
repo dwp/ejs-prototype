@@ -10,98 +10,130 @@
       {% set currentSettingsPage = 'whpAdmin' %}
       {% include "includes/whp_gatekeeper_nav.html" %}
 
-      <div class="grid-row">
-        <div class="column-third dash">
-          <div class="form-group">
-            <label class="form-label" for="district">Select district</label>
-            <select class="select form-control" id="district">
-              <option value="Select">Select</option>
-              <option value="Bradford">Bradford</option>
-              <option value="Derby">Derby</option>
-              <option value="Liverpool" selected>Liverpool</option>
-              <option value="Manchester">Manchester</option>
-              <option value="Portsmouth">Portsmouth</option>
-              <option value="Southampton">Southampton</option>
-              <option value="Wolverhampton">Wolverhampton</option>
-              <option value="Worcester">Worcester</option>
-            </select>
+      <form class="form" method="post" action="../gatekeeper/profile">
+        <div class="grid-row">
+          <div class="column-third dash">
+            <div class="form-group">
+              <label class="form-label" for="district">Select district</label>
+              <select class="select form-control" name="district" id="district">
+                {% for districtItem in districtList %}
+                  <option value="{{districtItem}}" {% if districtItem === district %} selected="selected" {% endif %}>{{districtItem}}</option>
+                {% endfor %}
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group">
-          <span class="bold">Enter number of WHP places for &nbsp &nbsp<input class="form-control form-control-1-8 bold" type="text" id="profile-year" name="profile-year" value="2017">
-          </span>
-      </div>
-
-      <div class="grid-row">
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label" for="whp-profile">Work and Health Programme (WHP) places</label>
-            <input class="form-control form-control-1-8" type="text" id="whp-profile" value="1300">
-          </div>  
+        <div class="form-group">
+            <span class="bold">Enter number of WHP places for &nbsp &nbsp<input class="form-control form-control-1-8 bold" type="text" id="profile-year" name="profileYear" value="{{profileYear}}">
+            </span>
         </div>
 
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label">Total provision places (WHP + PSC + additional)</label>
-            <p>1450</p>
-          </div>  
-        </div>
-      </div>
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label" for="whp-profile">Work and Health Programme (WHP) places</label>
+              <input class="form-control form-control-1-8" type="text" name="whpProfile" id="whp-profile" value="{{whpProfile}}">
+            </div>
+          </div>
 
-      <div class="grid-row">
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label" for="psc-profile">Public Sector Comparitor (PSC) places</label>
-            <input class="form-control form-control-1-8" type="text" id="psc-profile" value="100">
-          </div>  
-        </div>
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label">Control group allocation (10% of Total provision)</label>
-            <p>145</p>
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label">Total provision places (WHP + PSC + additional)</label>
+              <p>{{totalProvPlaces}}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="grid-row">
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label" for="add-places">Additional places</label>
-            <input class="form-control form-control-1-8" type="text" id="add-places" value="50">
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label" for="psc-profile">Public Sector Comparitor (PSC) places</label>
+              <input class="form-control form-control-1-8" type="text" name="pscProfile" id="psc-profile" value="{{pscProfile}}">
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label">Control group allocation (10% of Total provision)</label>
+              <p>{{controlGpPlaces}}</p>
+            </div>
           </div>
         </div>
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label">Total places (Total provision + Control group allocation)</label>
-            <p>1595</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="grid-row">
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label" for="whp-start-date">WHP start date</label>
-            <input class="form-control form-control-1-4" type="text" id="whp-start-date" value="01/08/17">
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label" for="add-places">Additional places</label>
+              <input class="form-control form-control-1-8" type="text" name="addPlaces" id="add-places" value="{{addPlaces}}">
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label">Total places (Total provision + Control group allocation)</label>
+              <p>{{totalPlaces}}</p>
+            </div>
           </div>
         </div>
-        <div class="column-third">
-          <div class="form-group">
-            <label class="form-label" for="whp-end-date">WHP end date</label>
-            <input class="form-control form-control-1-4" type="text" id="whp-end-date" value="01/08/17">
-          </div>
-        </div>
-      </div>
 
-      <div class="grid-row">
-        <div class="column-full">
-          <div class="form-group">
-            <a href="/latest/whp-weekly-profile"><button class="button">Confirm and Continue</button></a>
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <fieldset>
+                <label class="form-label">WHP start date</label>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="whp-start-day">Day</label>
+                    <input class="form-control" id="whp-start-day" name="whpStartDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{startDay}}">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="whp-start-month">Month</label>
+                    <input class="form-control" id="whp-start-month" name="whpStartMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{startMonth}}">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="whp-start-year">Year</label>
+                    <input class="form-control" id="whp-start-year" name="whpStartYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{startYear}}">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="column-third">
+            <div class="form-group">
+              <fieldset>
+                <label class="form-label">WHP end date</label>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="whp-end-day">Day</label>
+                    <input class="form-control" id="whp-end-day" name="whpEndDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{endDay}}">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="whp-end-month">Month</label>
+                    <input class="form-control" id="whp-end-month" name="whpEndMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{endMonth}}">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="whp-end-year">Year</label>
+                    <input class="form-control" id="whp-end-year" name="whpEndYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{endYear}}">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
-      </div>            
+
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <button class="button">Submit</button>
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="form-group">
+              <a href="/latest/gatekeeper/weeklyProfile" class="button">Continue to WHP Weekly Profile</a>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </main>
 {% endblock %}
