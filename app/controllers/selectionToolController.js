@@ -98,14 +98,56 @@ function scoringQuestionsPage(req, res) {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
 function districtProfilePage(req, res) {
-    if (req.session.user.role !== 'gatekeeper') {
-      res.redirect('/latest/selection_tool');
-    } else {
-      res.locals.user = req.session.user;
-      res.render('latest/whp-annual-profile');
-    }
+
+  var districtList = ["Select", "Bradford", "Derby", "Mercia", "Manchester", "Portsmouth", "Southampton", "Wolverhampton", "Worcester"];
+
+  req.session.profileData = req.session.profileData || {};
+
+  var profileData = {
+    districtList : districtList,
+    district       : req.session.profileData.district ? req.session.profileData.district : "Mercia",
+    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017",
+    whpProfile     : req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
+    pscProfile     : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
+    addPlaces      : req.session.profileData.addPlaces ? req.session.profileData.addPlaces : 50,
+    totalProvPlaces: req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1450,
+    controlGpPlaces :req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 145,
+    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1595
+  };
+
+  if (req.session.user.role !== 'gatekeeper') {
+    res.redirect('/latest/selection_tool');
+  } else {
+    res.locals.user = req.session.user;
+    res.render('latest/whp-annual-profile', profileData);
+  }
 }
 
+function districtProfileAction(req, res) {
+  var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile) + parseInt(req.body.addPlaces);
+  var controlGpPlaces = totalProvPlaces / 10;
+  var totalPlaces = totalProvPlaces + controlGpPlaces;
+  var inputProfileData = {
+    district : req.body.district,
+    profileYear : req.body.profileYear,
+    whpProfile : req.body.whpProfile,
+    pscProfile : req.body.pscProfile,
+    addPlaces : req.body.addPlaces,
+    totalProvPlaces : totalProvPlaces,
+    controlGpPlaces : controlGpPlaces,
+    totalPlaces : totalPlaces
+  };
+  req.session.profileData = inputProfileData;
+  res.redirect('/latest/gatekeeper/profile');
+}
+
+function districtWeeklyProfilePage (req, res) {
+  res.render('latest/whp-weekly-profile');
+}
+
+function districtWeeklyProfileAction (req, res) {
+  res.redirect('/latest/gatekeeper/profile');
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /*                                        Utilities
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -136,6 +178,9 @@ module.exports.eligibilityQuestionsPage = eligibilityQuestionsPage;
 module.exports.eligibilityQuestionsPageAction = eligibilityQuestionsPageAction;
 module.exports.scoringQuestionsPage = scoringQuestionsPage;
 module.exports.districtProfilePage = districtProfilePage;
+module.exports.districtProfileAction = districtProfileAction;
+module.exports.districtWeeklyProfilePage= districtWeeklyProfilePage;
+module.exports.districtWeeklyProfileAction= districtWeeklyProfileAction;
 
 
 

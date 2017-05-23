@@ -19,8 +19,9 @@ module.exports = function(router) {
 
   // Gatekeeper routes
   router.get('/latest/gatekeeper/profile', selectionTool.districtProfilePage);
-  //router.get('/latest/gatekeeper/weeklyProfile', gateKeeper.districtWeekelyProfilePage);
-  //router.post('/latest/gatekeeper/profile', gateKeeper.districtProfileAction);
-  //router.post('/latest/gatekeeper/weeklyProfile', gateKeeper.districtWeekelyProfileAction);
+  router.post('/latest/gatekeeper/profile', selectionTool.districtProfileAction);
+
+  router.get('/latest/gatekeeper/weeklyProfile', selectionTool.districtWeeklyProfilePage);
+  router.post('/latest/gatekeeper/weeklyProfile', selectionTool.districtWeeklyProfileAction);
 
 }
