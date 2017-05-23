@@ -10,7 +10,7 @@
       {% set currentSettingsPage = 'whpAdmin' %}
       {% include "includes/whp_gatekeeper_nav.html" %}
 
-      <form class="form" method="POST" action="../gatekeeper/profile">
+      <form class="form" method="post" action="../gatekeeper/profile">
         <div class="grid-row">
           <div class="column-third dash">
             <div class="form-group">
@@ -124,13 +124,14 @@
         <div class="grid-row">
           <div class="column-third">
             <div class="form-group">
-              <a href="/latest/gatekeeper/profile"><button class="button">Submit and Confirm</button></a>
+              <button class="button">Submit</button>
             </div>
           </div>
-          <div class="column-third"</div>
+          <div class="column-third">
             <div class="form-group">
-              <a href="/latest/gatekeeper/weeklyProfile"><button class="button">Continue to WHP Weekly Profile</button></a>
+              <a href="/latest/gatekeeper/weeklyProfile" class="button">Continue to WHP Weekly Profile</a>
             </div>
+          </div>
         </div>
       </form>
     </div>
