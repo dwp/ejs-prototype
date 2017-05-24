@@ -1,4 +1,5 @@
-var selectionTool= require("../controllers/selectionToolController");
+var selectionTool = require("../controllers/whpSelectionController");
+var gatekeeper = require ("../controllers/whpGatekeeperController");
 
 module.exports = function(router) {
 
@@ -18,10 +19,10 @@ module.exports = function(router) {
   router.get('/latest/scoring_questions/:questionSet', selectionTool.scoringQuestionsPage);
 
   // Gatekeeper routes
-  router.get('/latest/gatekeeper/profile', selectionTool.districtProfilePage);
-  router.post('/latest/gatekeeper/profile', selectionTool.districtProfileAction);
+  router.get('/latest/gatekeeper/profile', gatekeeper.districtProfilePage);
+  router.post('/latest/gatekeeper/profile', gatekeeper.districtProfileAction);
 
-  router.get('/latest/gatekeeper/weeklyProfile', selectionTool.districtWeeklyProfilePage);
-  router.post('/latest/gatekeeper/weeklyProfile', selectionTool.districtWeeklyProfileAction);
+  router.get('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfilePage);
+  router.post('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfileAction);
 
 }
