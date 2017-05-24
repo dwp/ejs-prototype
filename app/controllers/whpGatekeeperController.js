@@ -210,6 +210,12 @@ function districtWeeklyProfileAction (req, res) {
   res.redirect('/latest/gatekeeper/weeklyProfile');
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Utilities
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
+
+
 function calcPercentAndFloor (num, perNum) {
   return Math.floor(num * perNum / 100);
 }
@@ -217,6 +223,11 @@ function calcPercentAndFloor (num, perNum) {
 function calcPercentAndRound (num, perNum) {
   return Math.round(num * perNum / 100);
 }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Module Exports
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 
 module.exports.districtProfilePage = districtProfilePage;
 module.exports.districtProfileAction = districtProfileAction;
