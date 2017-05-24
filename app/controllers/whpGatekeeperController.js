@@ -4,29 +4,19 @@
  */
 function districtProfilePage(req, res) {
 
-  var districtList = ["Select", "Bradford", "Derby", "Mercia", "Manchester", "Portsmouth", "Southampton", "Wolverhampton", "Worcester"];
+  var profileYearList = ["Select", "2017/2018", "2018/2019", "2019/2020"];
 
   req.session.profileData = req.session.profileData || {};
 
   var profileData = {
-    districtList : districtList,
-    district : req.session.profileData.district ? req.session.profileData.district : "Mercia",
-    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017",
+    profileYearList : profileYearList,
+    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017/2018",
     whpProfile : req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
     pscProfile : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
-    addPlaces : req.session.profileData.addPlaces ? req.session.profileData.addPlaces : 50,
-    totalProvPlaces : req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1450,
-    controlGpPlaces : req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 145,
-    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1595,
-    startDay : req.session.profileData.startDay ? req.session.profileData.startDay : 01,
-    startMonth : req.session.profileData.startMonth? req.session.profileData.startMonth : 08,
-    startYear : req.session.profileData.startYear ? req.session.profileData.startYear : 2017,
-    endDay : req.session.profileData.endDay ? req.session.profileData.endDay : 31,
-    endMonth : req.session.profileData.endMonth ? req.session.profileData.endMonth : 07,
-    endYear : req.session.profileData.endYear ? req.session.profileData.endYear: 2018
+    totalProvPlaces : req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1400,
+    controlGpPlaces : req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 140,
+    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540
   };
-
-  console.log("profileData looks like this : ", profileData);
 
   if (req.session.user.role !== 'gatekeeper') {
     res.redirect('/latest/selection_tool');
@@ -38,24 +28,17 @@ function districtProfilePage(req, res) {
 
 function districtProfileAction(req, res) {
 
-  var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile) + parseInt(req.body.addPlaces);
+  var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile);
   var controlGpPlaces = Math.round(totalProvPlaces / 10);
   var totalPlaces = Math.round(totalProvPlaces + controlGpPlaces);
   var inputProfileData = {
-    district : req.body.district,
     profileYear : req.body.profileYear,
     whpProfile : req.body.whpProfile,
     pscProfile : req.body.pscProfile,
     addPlaces : req.body.addPlaces,
     totalProvPlaces : totalProvPlaces,
     controlGpPlaces : controlGpPlaces,
-    totalPlaces : totalPlaces,
-    startDay : req.body.whpStartDay,
-    startMonth: req.body.whpStartMonth,
-    startYear : req.body.whpStartYear,
-    endDay : req.body.whpEndDay,
-    endMonth : req.body.whpEndMonth,
-    endYear : req.body.whpEndYear
+    totalPlaces : totalPlaces
   };
 
   req.session.profileData = inputProfileData;
@@ -71,118 +54,156 @@ function districtWeeklyProfilePage (req, res) {
   req.session.profileData = req.session.profileData || {};
   req.session.weeklyProfileData = req.session.weeklyProfileData || {};
 
-  var flatProfile = 0;
-  var week1DisabledProfile = 0,
-      week2DisabledProfile = 0,
-      week3DisabledProfile = 0,
-      week4DisabledProfile = 0,
-      week5DisabledProfile = 0,
-      week52DisabledProfile = 0;
-      week1EarlyEntryProfile = 0;
-      week2EarlyEntryProfile = 0;
-      week3EarlyEntryProfile = 0;
-      week4EarlyEntryProfile = 0;
-      week5EarlyEntryProfile = 0;
-      week52EarlyEntryProfile = 0;
-      week1LTUProfile = 0;
-      week2LTUProfile = 0;
-      week3LTUProfile = 0;
-      week4LTUProfile = 0;
-      week5LTUProfile = 0;
-      week52LTUProfile = 0;
+  var whpFlatProfile = 0;
+  var pscFlatprofile = 0;
+  var week1whpProfile= 0,
+      week2whpProfile = 0,
+      week3whpProfile = 0,
+      week4whpProfile = 0,
+      week5whpProfile = 0,
+      week52whpProfile = 0,
+      week1pscProfile = 0,
+      week2pscProfile = 0,
+      week3pscProfile = 0,
+      week4pscProfile = 0,
+      week5pscProfile = 0,
+      week52pscProfile = 0,
+      week1whpExtrasProfile = 0,
+      week2whpExtrasProfile = 0,
+      week3whpExtrasProfile = 0,
+      week4whpExtrasProfile = 0,
+      week5whpExtrasProfile = 0,
+      week52whpExtrasProfile = 0,
+      week1pscExtrasProfile = 0,
+      week2pscExtrasProfile = 0,
+      week3pscExtrasProfile = 0,
+      week4pscExtrasProfile = 0,
+      week5pscExtrasProfile = 0,
+      week52pscExtrasProfile = 0;
 
-  if (!req.session.profileData.totalPlaces && !req.session.weeklyProfileData.week1Places) {
-    flatProfile = 30;
+  if (!req.session.profileData.totalPlaces && !req.session.weeklyProfileData.week1whpProfile) {
+    whpFlatProfile = Math.round(1300 / 52);
+    pscFlatProfile = Math.round(100 / 52);
   } else {
-    flatProfile = Math.round(req.session.profileData.totalPlaces / 52);
+    whpFlatProfile = Math.round(req.session.profileData.whpProfile / 52);
+    pscFlatProfile = Math.round(req.session.profileData.pscProfile / 52)
   };
 
-  // Calculate % disabled of weekly places
-  if (!req.session.weeklyProfileData.week1Places) {
-    week1DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week2DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week3DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week4DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week5DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week52DisabledProfile = calcPercentAndRound(flatProfile, 75);
-    week1EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week2EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week3EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week4EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week5EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week52EarlyEntryProfile = calcPercentAndRound(flatProfile, 10);
-    week1LTUProfile = calcPercentAndRound(flatProfile, 15);
-    week2LTUProfile = calcPercentAndRound(flatProfile, 15);
-    week3LTUProfile = calcPercentAndRound(flatProfile, 15);
-    week4LTUProfile = calcPercentAndRound(flatProfile, 15);
-    week5LTUProfile = calcPercentAndRound(flatProfile, 15);
-    week52LTUProfile = calcPercentAndRound(flatProfile, 15);
+  // If nothing already saved in weeklyProfileData
+  if (!req.session.weeklyProfileData.week1whpProfile) {
+    week1whpProfile = whpFlatProfile;
+    week2whpProfile = whpFlatProfile;
+    week3whpProfile = whpFlatProfile;
+    week4whpProfile = whpFlatProfile;
+    week5whpProfile = whpFlatProfile;
+    week52whpProfile = whpFlatProfile;
+    week1pscProfile = pscFlatProfile;
+    week2pscProfile = pscFlatProfile;
+    week3pscProfile = pscFlatProfile;
+    week4pscProfile = pscFlatProfile;
+    week5pscProfile = pscFlatProfile;
+    week52pscProfile = pscFlatProfile;
+    week1whpExtrasProfile = 0;
+    week2whpExtrasProfile = 0;
+    week3whpExtrasProfile = 0;
+    week4whpExtrasProfile = 0;
+    week5whpExtrasProfile = 0;
+    week52whpExtrasProfile = 0;
+    week1pscExtrasProfile = 0;
+    week2pscExtrasProfile = 0;
+    week3pscExtrasProfile = 0;
+    week4pscExtrasProfile = 0;
+    week5pscExtrasProfile = 0;
+    week52pscExtrasProfile = 0;
   } else {
-    week1DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week1Places, 75);
-    week2DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week2Places, 75);
-    week3DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week3Places, 75);
-    week4DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week4Places, 75);
-    week5DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week5Places, 75);
-    week52DisabledProfile = calcPercentAndRound(req.session.weeklyProfileData.week52Places, 75);
-    week1EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week1Places, 10);
-    week2EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week2Places, 10);
-    week3EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week3Places, 10);
-    week4EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week4Places, 10);
-    week5EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week5Places, 10);
-    week52EarlyEntryProfile = calcPercentAndRound(req.session.weeklyProfileData.week52Places, 10);
-    week1LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week1Places, 15);
-    week2LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week2Places, 15);
-    week3LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week3Places, 15);
-    week4LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week4Places, 15);
-    week5LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week5Places, 15);
-    week52LTUProfile = calcPercentAndRound(req.session.weeklyProfileData.week52Places, 15);
+    week1whpProfile = req.session.weeklyProfileData.week1whpProfile;
+    week2whpProfile = req.session.weeklyProfileData.week2whpProfile;
+    week3whpProfile = req.session.weeklyProfileData.week3whpProfile;
+    week4whpProfile = req.session.weeklyProfileData.week4whpProfile;
+    week5whpProfile = req.session.weeklyProfileData.week5whpProfile;
+    week52whpProfile = req.session.weeklyProfileData.week52whpProfile;
+    week1pscProfile = req.session.weeklyProfileData.week1pscProfile;
+    week2pscProfile = req.session.weeklyProfileData.week2pscProfile;
+    week3pscProfile = req.session.weeklyProfileData.week3pscProfile;
+    week4pscProfile = req.session.weeklyProfileData.week4pscProfile;
+    week5pscProfile = req.session.weeklyProfileData.week5pscProfile;
+    week52pscProfile = req.session.weeklyProfileData.week52pscProfile;
+    week1whpExtrasProfile = req.session.weeklyProfileData.week1whpExtrasProfile;
+    week2whpExtrasProfile = req.session.weeklyProfileData.week2whpExtrasProfile;
+    week3whpExtrasProfile = req.session.weeklyProfileData.week3whpExtrasProfile;
+    week4whpExtrasProfile = req.session.weeklyProfileData.week4whpExtrasProfile;
+    week5whpExtrasProfile = req.session.weeklyProfileData.week5whpExtrasProfile;
+    week52whpExtrasProfile = req.session.weeklyProfileData.week52whpExtrasProfile;
+    week1pscExtrasProfile = req.session.weeklyProfileData.week1pscExtrasProfile;
+    week2pscExtrasProfile = req.session.weeklyProfileData.week2pscExtrasProfile;
+    week3pscExtrasProfile = req.session.weeklyProfileData.week3pscExtrasProfile;
+    week4pscExtrasProfile = req.session.weeklyProfileData.week4pscExtrasProfile;
+    week5pscExtrasProfile = req.session.weeklyProfileData.week5pscExtrasProfile;
+    week52pscExtrasProfile = req.session.weeklyProfileData.week52pscExtrasProfile;
   };
 
   var weeklyProfileData = {
-    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1595,
+    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540,
     district : req.session.profileData.district ? req.session.profileData.district : "Mercia",
-    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : 2017,
-    week1Places : req.session.weeklyProfileData.week1Places ? req.session.weeklyProfileData.week1Places : flatProfile,
-    week2Places : req.session.weeklyProfileData.week2Places ? req.session.weeklyProfileData.week2Places: flatProfile,
-    week3Places : req.session.weeklyProfileData.week3Places ? req.session.weeklyProfileData.week3Places : flatProfile,
-    week4Places : req.session.weeklyProfileData.week4Places ? req.session.weeklyProfileData.week4Places : flatProfile,
-    week5Places : req.session.weeklyProfileData.week5Places ? req.session.weeklyProfileData.week5Places : flatProfile,
-    week52Places : req.session.weeklyProfileData.week52Places ? req.session.weeklyProfileData.week52Places : flatProfile,
-    week1DisabledProfile : week1DisabledProfile,
-    week2DisabledProfile : week2DisabledProfile,
-    week3DisabledProfile : week3DisabledProfile,
-    week4DisabledProfile : week4DisabledProfile,
-    week5DisabledProfile : week5DisabledProfile,
-    week52DisabledProfile : week52DisabledProfile,
-    week1EarlyEntryProfile : week1EarlyEntryProfile,
-    week2EarlyEntryProfile : week2EarlyEntryProfile,
-    week3EarlyEntryProfile : week3EarlyEntryProfile,
-    week4EarlyEntryProfile : week4EarlyEntryProfile,
-    week5EarlyEntryProfile : week5EarlyEntryProfile,
-    week52EarlyEntryProfile : week52EarlyEntryProfile,
-    week1LTUProfile : week1LTUProfile,
-    week2LTUProfile : week2LTUProfile,
-    week3LTUProfile : week3LTUProfile,
-    week4LTUProfile : week4LTUProfile,
-    week5LTUProfile : week5LTUProfile,
-    week52LTUProfile : week52LTUProfile
+    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017/2018",
+    whpProfile : req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
+    pscProfile : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
+    week1whpProfile : week1whpProfile,
+    week2whpProfile : week2whpProfile,
+    week3whpProfile : week3whpProfile,
+    week4whpProfile : week4whpProfile,
+    week5whpProfile : week5whpProfile,
+    week52whpProfile : week52whpProfile,
+    week1pscProfile : week1pscProfile,
+    week2pscProfile : week2pscProfile,
+    week3pscProfile : week3pscProfile,
+    week4pscProfile : week4pscProfile,
+    week5pscProfile : week5pscProfile,
+    week52pscProfile : week52pscProfile,
+    week1whpExtrasProfile : week1whpExtrasProfile,
+    week2whpExtrasProfile : week2whpExtrasProfile,
+    week3whpExtrasProfile : week3whpExtrasProfile,
+    week4whpExtrasProfile : week4whpExtrasProfile,
+    week5whpExtrasProfile : week5whpExtrasProfile,
+    week52whpExtrasProfile : week52whpExtrasProfile,
+    week1pscExtrasProfile : week1pscExtrasProfile,
+    week2pscExtrasProfile : week2pscExtrasProfile,
+    week3pscExtrasProfile : week3pscExtrasProfile,
+    week4pscExtrasProfile : week4pscExtrasProfile,
+    week5pscExtrasProfile : week5pscExtrasProfile,
+    week52pscExtrasProfile : week52pscExtrasProfile
   };
 
   res.render('latest/whp-weekly-profile', weeklyProfileData);
 }
 
 function districtWeeklyProfileAction (req, res) {
-
-  var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile) + parseInt(req.body.addPlaces);
-  var controlGpPlaces = Math.round(totalProvPlaces / 10);
-  var totalPlaces = Math.round(totalProvPlaces + controlGpPlaces);
+  
   var inputWeeklyProfileData = {
-    week1Places : req.body.week1,
-    week2Places : req.body.week2,
-    week3Places : req.body.week3,
-    week4Places : req.body.week4,
-    week5Places : req.body.week5,
-    week52Places : req.body.week52,
+    week1whpProfile : req.body.week1whpProfile,
+    week2whpProfile : req.body.week2whpProfile,
+    week3whpProfile : req.body.week3whpProfile,
+    week4whpProfile : req.body.week4whpProfile,
+    week5whpProfile : req.body.week5whpProfile,
+    week52whpProfile : req.body.week52whpProfile,
+    week1pscProfile : req.body.week1pscProfile,
+    week2pscProfile : req.body.week2pscProfile,
+    week3pscProfile : req.body.week3pscProfile,
+    week4pscProfile : req.body.week4pscProfile,
+    week5pscProfile : req.body.week5pscProfile,
+    week52pscProfile : req.body.week52pscProfile,
+    week1whpExtrasProfile : req.body.week1whpExtras,
+    week2whpExtrasProfile : req.body.week2whpExtras,
+    week3whpExtrasProfile : req.body.week3whpExtras,
+    week4whpExtrasProfile : req.body.week4whpExtras,
+    week5whpExtrasProfile : req.body.week5whpExtras,
+    week52whpExtrasProfile : req.body.week52whpExtras,
+    week1pscExtrasProfile : req.body.week1pscExtras,
+    week2pscExtrasProfile : req.body.week2pscExtras,
+    week3pscExtrasProfile : req.body.week3pscExtras,
+    week4pscExtrasProfile : req.body.week4pscExtras,
+    week5pscExtrasProfile : req.body.week5pscExtras,
+    week52pscExtrasProfile : req.body.week52pscExtras
   };
 
   req.session.weeklyProfileData = inputWeeklyProfileData;

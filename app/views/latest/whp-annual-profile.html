@@ -5,7 +5,7 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">   
-      <h1 class="heading-large">Record WHP places available</h1>
+      <h1 class="heading-large">Record WHP places available for Mercia district</h1>
 
       {% set currentSettingsPage = 'whpAdmin' %}
       {% include "includes/whp_gatekeeper_nav.html" %}
@@ -14,19 +14,14 @@
         <div class="grid-row">
           <div class="column-third dash">
             <div class="form-group">
-              <label class="form-label" for="district">Select district</label>
-              <select class="select form-control" name="district" id="district">
-                {% for districtItem in districtList %}
-                  <option value="{{districtItem}}" {% if districtItem === district %} selected="selected" {% endif %}>{{districtItem}}</option>
+              <label class="form-label bold" for="profileYear">Enter number of WHP places for &nbsp &nbsp</label>
+              <select class="select form-control" name="profileYear" id="profileYear">
+                {% for profileYearItem in profileYearList %}
+                  <option value="{{profileYearItem}}" {% if profileYearItem === profileYear %} selected="selected" {% endif %}>{{profileYearItem}}</option>
                 {% endfor %}
               </select>
             </div>
           </div>
-        </div>
-
-        <div class="form-group">
-            <span class="bold">Enter number of WHP places for &nbsp &nbsp<input class="form-control form-control-1-8 bold" type="text" id="profile-year" name="profileYear" value="{{profileYear}}">
-            </span>
         </div>
 
         <div class="grid-row">
@@ -34,13 +29,6 @@
             <div class="form-group">
               <label class="form-label" for="whp-profile">Work and Health Programme (WHP) places</label>
               <input class="form-control form-control-1-8" type="text" name="whpProfile" id="whp-profile" value="{{whpProfile}}">
-            </div>
-          </div>
-
-          <div class="column-third">
-            <div class="form-group">
-              <label class="form-label">Total provision places (WHP + PSC + additional)</label>
-              <p>{{totalProvPlaces}}</p>
             </div>
           </div>
         </div>
@@ -52,73 +40,14 @@
               <input class="form-control form-control-1-8" type="text" name="pscProfile" id="psc-profile" value="{{pscProfile}}">
             </div>
           </div>
-          <div class="column-third">
-            <div class="form-group">
-              <label class="form-label">Control group allocation (10% of Total provision)</label>
-              <p>{{controlGpPlaces}}</p>
-            </div>
-          </div>
         </div>
 
-        <div class="grid-row">
-          <div class="column-third">
-            <div class="form-group">
-              <label class="form-label" for="add-places">Additional places</label>
-              <input class="form-control form-control-1-8" type="text" name="addPlaces" id="add-places" value="{{addPlaces}}">
-            </div>
-          </div>
-          <div class="column-third">
-            <div class="form-group">
-              <label class="form-label">Total places (Total provision + Control group allocation)</label>
-              <p>{{totalPlaces}}</p>
-            </div>
-          </div>
+        <div class="grid-row column-full form-group">
+          <p class="inline">Total provision (WHP + PSC) = <span class="inline bold">{{totalProvPlaces}}</span></p>
         </div>
 
-        <div class="grid-row">
-          <div class="column-third">
-            <div class="form-group">
-              <fieldset>
-                <label class="form-label">WHP start date</label>
-                <div class="form-date">
-                  <div class="form-group form-group-day">
-                    <label class="form-label" for="whp-start-day">Day</label>
-                    <input class="form-control" id="whp-start-day" name="whpStartDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{startDay}}">
-                  </div>
-                  <div class="form-group form-group-month">
-                    <label class="form-label" for="whp-start-month">Month</label>
-                    <input class="form-control" id="whp-start-month" name="whpStartMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{startMonth}}">
-                  </div>
-                  <div class="form-group form-group-year">
-                    <label class="form-label" for="whp-start-year">Year</label>
-                    <input class="form-control" id="whp-start-year" name="whpStartYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{startYear}}">
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-
-          <div class="column-third">
-            <div class="form-group">
-              <fieldset>
-                <label class="form-label">WHP end date</label>
-                <div class="form-date">
-                  <div class="form-group form-group-day">
-                    <label class="form-label" for="whp-end-day">Day</label>
-                    <input class="form-control" id="whp-end-day" name="whpEndDay" type="number" pattern="[0-9]*" min="0" max="31" value="{{endDay}}">
-                  </div>
-                  <div class="form-group form-group-month">
-                    <label class="form-label" for="whp-end-month">Month</label>
-                    <input class="form-control" id="whp-end-month" name="whpEndMonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{endMonth}}">
-                  </div>
-                  <div class="form-group form-group-year">
-                    <label class="form-label" for="whp-end-year">Year</label>
-                    <input class="form-control" id="whp-end-year" name="whpEndYear" type="number" pattern="[0-9]*" min="0" max="2018" value="{{endYear}}">
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-          </div>
+        <div class="grid-row column-full form-group">
+          <p class="inline">Total places (including a 10% control group allocation) = <span class="inline bold">{{totalPlaces}}</span></p>
         </div>
 
         <div class="grid-row">

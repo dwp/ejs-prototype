@@ -5,7 +5,7 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">   
-      <h1 class="heading-large">Profile WHP places across the year</h1>
+      <h1 class="heading-large">Profile WHP places across {{profileYear}} for {{district}} district</h1>
 
       {% set currentSettingsPage = 'whpAdmin' %}
       {% include "includes/whp_gatekeeper_nav.html" %}
@@ -13,73 +13,97 @@
       <form class="form" method="post" action="../gatekeeper/weeklyProfile">
         <div class="grid-row">
           <div>
-            <p class="inline">There are {{totalPlaces}} places for {{district}} for {{profileYear}}.</p>
-            <p>These are profiled below. You can accept or amend this profile in the table below.</p>
-            <p class="panel panel-border-narrow">There are nn places remaining. Please add these into future weeks before confirming and continuing.</p>
+            <p class="inline">Total profiled WHP places : <span class="inline bold">{{whpProfile}}</span></p>
+            <p class="inline">Total profiled PSC places : <span class="inline bold">{{pscProfile}}</span></p>
+            <p>You can accept or amend weekly profiles in the table below.</p>
 
               <div class="stat-over-first">
                 <table>
                   <thead>
                     <tr>
-                      <td class="bold">Week commencing</td>
-                      <td class="bold">Profile</td>
-                      <td class="bold"></td>
-                      <td class="bold"></td>
+                      <td class="bold">Date</td>
+                      <td class="bold">WHP Profile</td>
+                      <td class="bold">PSC Profile</td>
+                      <td class="bold">WHP Extras</td>
+                      <td class="bold">PSC Extras</td>
                       <td></td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="bold">Total {{profileYear}}</td>
-                      <td class="bold">{{totalYearPlaces}}</td>
-                      <td>Of which disabled (75%)</td>
-                      <td>Of which early entry (10%)</td>
-                      <td>Of which long term unemployed (15%)</td>
-                    </tr>
-                    <tr>
                       <td>1-Oct-2017</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week1" id="whp-profile-week-1" value="{{week1Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week1whpProfile" id="week1whpProfile" value="{{week1whpProfile}}">
                       </td>
-                      <td>{{week1DisabledProfile}}</td>
-                      <td>{{week1EarlyEntryProfile}}</td>
-                      <td>{{week1LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week1pscProfile" id="week1pscProfile" value="{{week1pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week1whpExtras" id="week1whpExtras" value="{{week1whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week1pscExtras" id="week1pscExtras" value="{{week1pscExtrasProfile}}">
+                      </td>
                     </tr>
                     <tr>
                       <td>8-Oct-2017</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week2" id="whp-profile-week-2" value="{{week2Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week2whpProfile" id="week2whpProfile" value="{{week2whpProfile}}">
                       </td>
-                      <td>{{week2DisabledProfile}}</td>
-                      <td>{{week2EarlyEntryProfile}}</td>
-                      <td>{{week2LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week2pscProfile" id="week2pscProfile" value="{{week2pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week2whpExtras" id="week2whpExtras" value="{{week2whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week2pscExtras" id="week2pscExtras" value="{{week1pscExtrasProfile}}">
+                      </td>
                     </tr>
                     <tr>
                       <td>15-Oct-2017</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week3" id="whp-profile-week-3" value="{{week3Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week3whpProfile" id="week3whpProfile" value="{{week3whpProfile}}">
                       </td>
-                      <td>{{week3DisabledProfile}}</td>
-                      <td>{{week3EarlyEntryProfile}}</td>
-                      <td>{{week3LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week3pscProfile" id="week3pscProfile" value="{{week3pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week3whpExtras" id="week3whpExtras" value="{{week3whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week3pscExtras" id="week3pscExtras" value="{{week3pscExtrasProfile}}">
+                      </td>
                     </tr>
                     <tr>
                       <td>22-Oct-2017</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week4" id="whp-profile-week-4" value="{{week4Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week4whpProfile" id="week4whpProfile" value="{{week4whpProfile}}">
                       </td>
-                      <td>{{week4DisabledProfile}}</td>
-                      <td>{{week4EarlyEntryProfile}}</td>
-                      <td>{{week4LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week4pscProfile" id="week4pscProfile" value="{{week4pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week4whpExtras" id="week4whpExtras" value="{{week4whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week4pscExtras" id="week4pscExtras" value="{{week4pscExtrasProfile}}">
+                      </td>
                     </tr>
                     <tr>
                       <td>29-Oct-2017</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week5" id="whp-profile-week-5" value="{{week5Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week5whpProfile" id="week5whpProfile" value="{{week5whpProfile}}">
                       </td>
-                      <td>{{week5DisabledProfile}}</td>
-                      <td>{{week5EarlyEntryProfile}}</td>
-                      <td>{{week5LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week5pscProfile" id="week5pscProfile" value="{{week5pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week5whpExtras" id="week5whpExtras" value="{{week5whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week5pscExtras" id="week5pscExtras" value="{{week5pscExtrasProfile}}">
+                      </td>
                     </tr>
                     <tr>
                       <td>" "</td>
@@ -91,11 +115,17 @@
                     <tr>
                       <td>23-Sep-2018</td>
                       <td>
-                        <input class="form-control form-control-1-8" type="text" name="week52" id="whp-profile-week-52" value="{{week52Places}}">
+                        <input class="form-control form-control-1-8" type="text" name="week52whpProfile" id="week52whpProfile" value="{{week52whpProfile}}">
                       </td>
-                      <td>{{week52DisabledProfile}}</td>
-                      <td>{{week52EarlyEntryProfile}}</td>
-                      <td>{{week52LTUProfile}}</td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week52pscProfile" id="week52pscProfile" value="{{week52pscProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week52whpExtras" id="week52whpExtras" value="{{week52whpExtrasProfile}}">
+                      </td>
+                      <td>
+                        <input class="form-control form-control-1-8" type="text" name="week52pscExtras" id="week52pscExtras" value="{{week52pscExtrasProfile}}">
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -109,7 +139,7 @@
           </div>
           <div class="column-third">
             <div class="form-group">
-              <a href="/latest/whp-allocations-profile" class="button">Continue to View allocations against profile</a>
+              <a href="/latest/whp-allocations-profile" class="button">Continue to View allocations</a>
             </div>
           </div>
         </div>
