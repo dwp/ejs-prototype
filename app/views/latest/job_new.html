@@ -18,7 +18,7 @@
   <div class="main-content">
 
     {% if getData.whpOnly%}  
-      <h1 class="heading-large">Create applicant record</h1>
+      <h1 class="heading-large">Create Work and Health Programme record</h1>
     {% else %}
       <h1 class="heading-large">Create claimant record - page 1 of 2</h1>
     {% endif %}
@@ -221,7 +221,7 @@
               </select>     
             </div>
 
-            {% if not getData.whpOnly%}  
+            {% if not getData.hideWorkProgrammeOptions%}
               <div class="form-group">
                 <fieldset>
                   <legend class="form-label">Work programme</legend>
