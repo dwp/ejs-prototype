@@ -46,9 +46,9 @@ function districtProfileAction(req, res) {
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- /*                                        District Weekly Profile Controllers
- /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- */
+/*                                        District Weekly Profile Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function districtWeeklyProfilePage (req, res) {
 
   req.session.profileData = req.session.profileData || {};
@@ -211,6 +211,17 @@ function districtWeeklyProfileAction (req, res) {
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ /*                                        View Allocation Controllers
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+
+function viewAllocationsPage (req,res) {
+
+  res.render('latest/whp-district-allocations');
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /*                                        Utilities
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
@@ -233,3 +244,4 @@ module.exports.districtProfilePage = districtProfilePage;
 module.exports.districtProfileAction = districtProfileAction;
 module.exports.districtWeeklyProfilePage= districtWeeklyProfilePage;
 module.exports.districtWeeklyProfileAction= districtWeeklyProfileAction;
+module.exports.viewAllocationsPage = viewAllocationsPage;

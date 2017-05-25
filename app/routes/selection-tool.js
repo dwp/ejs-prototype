@@ -25,4 +25,6 @@ module.exports = function(router) {
   router.get('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfilePage);
   router.post('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfileAction);
 
+  router.get('/latest/gatekeeper/allocations', gatekeeper.viewAllocationsPage);
+
 }
