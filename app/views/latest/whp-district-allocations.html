@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">View district allocations for Mercia for 2017/2018</h1>
+
+      {% set currentSettingsPage = 'whpAdmin' %}
+      {% include "includes/whp_gatekeeper_nav.html" %}
+
+
+      <div class="grid-row">
+        <div>
+          <!--<p class="inline">Places profiled for this district for this year is: &nbsp; &nbsp;  <span class="inline bold">1595</span></p>-->
+          <h1 class="bold font-medium">YTD Allocated</h1>
+
+          <div class="stat-over-first">
+            <table>
+              <thead>
+                <tr>
+                  <th class="bold">Jobcentre</th>
+                  <th class="bold">Total Allocated</th>
+                  <th class="bold" colspan="3" scope="colgroup">Eligibility Group</th>
+                  <th class="bold" colspan="3" scope="colgroup">Provision Type</th>
+                </tr>
+                <tr>
+                  <th class="bold"></th>
+                  <th class="bold"></th>
+                  <th class="bold">EEG</th>
+                  <th class="bold">Dis</th>
+                  <th class="bold">LTU</th>
+                  <th class="bold">WHP</th>
+                  <th class="bold">PSC</th>
+                  <th class="bold">RCT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Coventry</td>
+                  <td>17</td>
+                  <td>3</td>
+                  <td>13</td>
+                  <td>1</td>
+                  <td>14</td>
+                  <td>2</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>Dalston</td>
+                  <td>20</td>
+                  <td>4</td>
+                  <td>14</td>
+                  <td>2</td>
+                  <td>15</td>
+                  <td>4</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>Kidderminster</td>
+                  <td>25</td>
+                  <td>5</td>
+                  <td>17</td>
+                  <td>3</td>
+                  <td>18</td>
+                  <td>4</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Walsall</td>
+                  <td>17</td>
+                  <td>3</td>
+                  <td>13</td>
+                  <td>1</td>
+                  <td>14</td>
+                  <td>2</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>Warwick</td>
+                  <td>20</td>
+                  <td>4</td>
+                  <td>14</td>
+                  <td>2</td>
+                  <td>15</td>
+                  <td>4</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>" "</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="bold">" "</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td class="bold">Sub-Total</td>
+                  <td>99</td>
+                  <td>19</td>
+                  <td>71</td>
+                  <td>9</td>
+                  <td>76</td>
+                  <td>16</td>
+                  <td>7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="grid-row">
+        <div class="column-full">
+          <div class="form-group">
+            <a href="/latest/whp-selection-report"><button class="button">Continue</button></a>
+          </div>
+        </div>
+      </div>            
+    </h2>
+  </main>
+{% endblock %}
+
+
+
