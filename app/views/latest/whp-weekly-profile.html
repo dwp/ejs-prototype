@@ -1,136 +1,56 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <main id="content" role="main">
-    {% include "includes/main_nav.html" %}
+<main id="content" role="main">
+  {% include "includes/main_nav.html" %}
 
-    <div class="main-content">   
-      <h1 class="heading-large">Profile WHP places across {{profileYear}} for {{district}} district</h1>
+  <div class="main-content">
+    <h1 class="heading-large">Profile WHP places across {{profileYear}} for {{district}} district</h1>
 
-      {% set currentSettingsPage = 'whpAdmin' %}
-      {% include "includes/whp_gatekeeper_nav.html" %}
+    {% set currentSettingsPage = 'whpAdmin' %}
+    {% include "includes/whp_gatekeeper_nav.html" %}
 
-      <form class="form" method="post" action="../gatekeeper/weeklyProfile">
-        <div class="grid-row">
-          <div>
-            <p class="inline">Total profiled WHP places : <span class="inline bold">{{whpProfile}}</span></p>
-            <p class="inline">Total profiled PSC places : <span class="inline bold">{{pscProfile}}</span></p>
-            <p>You can accept or amend weekly profiles in the table below.</p>
+    <form class="form" method="post" action="../gatekeeper/weeklyProfile">
+      <div class="grid-row">
+        <div>
+          <p class="inline">Total profiled WHP places : <span class="inline bold">{{whpProfile}}</span></p>
+          <p class="inline">Total profiled PSC places : <span class="inline bold">{{pscProfile}}</span></p>
+          <p>You can accept or amend weekly profiles in the table below.</p>
 
-              <div class="stat-over-first">
-                <table>
-                  <thead>
-                    <tr>
-                      <td class="bold">Date</td>
-                      <td class="bold">WHP Profile</td>
-                      <td class="bold">PSC Profile</td>
-                      <td class="bold">WHP Extras</td>
-                      <td class="bold">PSC Extras</td>
-                      <td></td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1-Oct-2017</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week1whpProfile" id="week1whpProfile" value="{{week1whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week1pscProfile" id="week1pscProfile" value="{{week1pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week1whpExtras" id="week1whpExtras" value="{{week1whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week1pscExtras" id="week1pscExtras" value="{{week1pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>8-Oct-2017</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week2whpProfile" id="week2whpProfile" value="{{week2whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week2pscProfile" id="week2pscProfile" value="{{week2pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week2whpExtras" id="week2whpExtras" value="{{week2whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week2pscExtras" id="week2pscExtras" value="{{week1pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>15-Oct-2017</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week3whpProfile" id="week3whpProfile" value="{{week3whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week3pscProfile" id="week3pscProfile" value="{{week3pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week3whpExtras" id="week3whpExtras" value="{{week3whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week3pscExtras" id="week3pscExtras" value="{{week3pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>22-Oct-2017</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week4whpProfile" id="week4whpProfile" value="{{week4whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week4pscProfile" id="week4pscProfile" value="{{week4pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week4whpExtras" id="week4whpExtras" value="{{week4whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week4pscExtras" id="week4pscExtras" value="{{week4pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>29-Oct-2017</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week5whpProfile" id="week5whpProfile" value="{{week5whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week5pscProfile" id="week5pscProfile" value="{{week5pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week5whpExtras" id="week5whpExtras" value="{{week5whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week5pscExtras" id="week5pscExtras" value="{{week5pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>" "</td>
-                      <td>" "</td>
-                      <td>" "</td>
-                      <td>" "</td>
-                      <td>" "</td>
-                    </tr>
-                    <tr>
-                      <td>23-Sep-2018</td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week52whpProfile" id="week52whpProfile" value="{{week52whpProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week52pscProfile" id="week52pscProfile" value="{{week52pscProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week52whpExtras" id="week52whpExtras" value="{{week52whpExtrasProfile}}">
-                      </td>
-                      <td>
-                        <input class="form-control form-control-1-8" type="text" name="week52pscExtras" id="week52pscExtras" value="{{week52pscExtrasProfile}}">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          <div class="stat-over-first">
+            <table>
+              <thead>
+              <tr>
+                <td class="bold">Date</td>
+                <td class="bold">WHP Profile</td>
+                <td class="bold">PSC Profile</td>
+                <td class="bold">WHP Extras</td>
+                <td class="bold">PSC Extras</td>
+                <td></td>
+              </tr>
+              </thead>
+              <tbody>
+              {% for weekProfileDataItem in weeklyProfileData.fullYearProfileData %}
+                <tr>
+                  <td>Week {{weekProfileDataItem.weekNum}}</td>
+                  <td>
+                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
+                  </td>
+                  <td>
+                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscProfile" id="week{{weekProfileDataItem.weekNum}}pscProfile" value="{{weekProfileDataItem.weekpscProfile}}">
+                  </td>
+                  <td>
+                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpExtras" id="week{{weekProfileDataItem.weekNum}}whpExtras" value="{{weekProfileDataItem.weekwhpExtrasProfile}}">
+                  </td>
+                  <td>
+                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscExtras" id="week{{weekProfileDataItem.weekNum}}pscExtras" value="{{weekProfileDataItem.weekpscExtrasProfile}}">
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
           </div>
+        </div>
         <div class="grid-row">
           <div class="column-full">
             <div class="form-group">
@@ -138,10 +58,11 @@
             </div>
           </div>
         </div>
-      </form>
-    </div>
-  </main>
+    </form>
+  </div>
+</main>
 {% endblock %}
+
 
 
 
