@@ -12,7 +12,7 @@
 
     <form class="form" method="post" action="../gatekeeper/weeklyProfile">
       <div class="grid-row">
-        <div>
+        <div class="column-two-thirds">
           <p class="inline">Total profiled WHP places : <span class="inline bold">{{whpProfile}}</span></p>
           <p class="inline">Total profiled PSC places : <span class="inline bold">{{pscProfile}}</span></p>
           <p>You can accept or amend weekly profiles in the table below.</p>
@@ -34,16 +34,16 @@
                   <tr>
                     <td>Week {{weekProfileDataItem.weekNum}}</td>
                     <td>
-                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
+                      <input class="form-control form-control-1-4" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
                     </td>
                     <td>
-                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscProfile" id="week{{weekProfileDataItem.weekNum}}pscProfile" value="{{weekProfileDataItem.weekpscProfile}}">
+                      <input class="form-control form-control-1-4" type="text" name="week{{weekProfileDataItem.weekNum}}pscProfile" id="week{{weekProfileDataItem.weekNum}}pscProfile" value="{{weekProfileDataItem.weekpscProfile}}">
                     </td>
                     <td>
-                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpExtras" id="week{{weekProfileDataItem.weekNum}}whpExtras" value="{{weekProfileDataItem.weekwhpExtrasProfile}}">
+                      <input class="form-control form-control-1-4" type="text" name="week{{weekProfileDataItem.weekNum}}whpExtras" id="week{{weekProfileDataItem.weekNum}}whpExtras" value="{{weekProfileDataItem.weekwhpExtrasProfile}}">
                     </td>
                     <td>
-                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscExtras" id="week{{weekProfileDataItem.weekNum}}pscExtras" value="{{weekProfileDataItem.weekpscExtrasProfile}}">
+                      <input class="form-control form-control-1-4" type="text" name="week{{weekProfileDataItem.weekNum}}pscExtras" id="week{{weekProfileDataItem.weekNum}}pscExtras" value="{{weekProfileDataItem.weekpscExtrasProfile}}">
                     </td>
                   </tr>
                 {% endfor %}
