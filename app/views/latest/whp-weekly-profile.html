@@ -2,12 +2,13 @@
 
 {% block content %}
 <main id="content" role="main">
+  {% set currentPage = 'whpSelection' %}
   {% include "includes/main_nav.html" %}
 
   <div class="main-content">
     <h1 class="heading-large">Profile WHP places across {{profileYear}} for {{district}} district</h1>
 
-    {% set currentSettingsPage = 'whpAdmin' %}
+    {% set currentGatekeeperPage = 'weeklyProfile' %}
     {% include "includes/whp_gatekeeper_nav.html" %}
 
     <form class="form" method="post" action="../gatekeeper/weeklyProfile">
