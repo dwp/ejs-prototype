@@ -119,7 +119,7 @@ function viewAllocationsPage (req,res) {
 function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
-  for (i = 0; i = 52; i++) {
+  for (i = 0; i <= 52; i++) {
     let weekNum = i + 1;
     let weekProfileData = {
       weekNum : weekNum,
@@ -130,6 +130,7 @@ function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
     };
     fullYearProfileData.push(weekProfileData);
   }
+
   return fullYearProfileData;
 }
 
