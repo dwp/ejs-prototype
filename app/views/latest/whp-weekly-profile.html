@@ -20,33 +20,33 @@
           <div class="stat-over-first">
             <table>
               <thead>
-              <tr>
-                <td class="bold">Date</td>
-                <td class="bold">WHP Profile</td>
-                <td class="bold">PSC Profile</td>
-                <td class="bold">WHP Extras</td>
-                <td class="bold">PSC Extras</td>
-                <td></td>
-              </tr>
+                <tr>
+                  <td class="bold">Date</td>
+                  <td class="bold">WHP Profile</td>
+                  <td class="bold">PSC Profile</td>
+                  <td class="bold">WHP Extras</td>
+                  <td class="bold">PSC Extras</td>
+                  <td></td>
+                </tr>
               </thead>
               <tbody>
-              {% for weekProfileDataItem in weeklyProfileData.fullYearProfileData %}
-                <tr>
-                  <td>Week {{weekProfileDataItem.weekNum}}</td>
-                  <td>
-                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
-                  </td>
-                  <td>
-                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscProfile" id="week{{weekProfileDataItem.weekNum}}pscProfile" value="{{weekProfileDataItem.weekpscProfile}}">
-                  </td>
-                  <td>
-                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpExtras" id="week{{weekProfileDataItem.weekNum}}whpExtras" value="{{weekProfileDataItem.weekwhpExtrasProfile}}">
-                  </td>
-                  <td>
-                    <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscExtras" id="week{{weekProfileDataItem.weekNum}}pscExtras" value="{{weekProfileDataItem.weekpscExtrasProfile}}">
-                  </td>
-                </tr>
-              {% endfor %}
+                {% for weekProfileDataItem in fullYearProfileData %}
+                  <tr>
+                    <td>Week {{weekProfileDataItem.weekNum}}</td>
+                    <td>
+                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
+                    </td>
+                    <td>
+                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscProfile" id="week{{weekProfileDataItem.weekNum}}pscProfile" value="{{weekProfileDataItem.weekpscProfile}}">
+                    </td>
+                    <td>
+                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}whpExtras" id="week{{weekProfileDataItem.weekNum}}whpExtras" value="{{weekProfileDataItem.weekwhpExtrasProfile}}">
+                    </td>
+                    <td>
+                      <input class="form-control form-control-1-8" type="text" name="week{{weekProfileDataItem.weekNum}}pscExtras" id="week{{weekProfileDataItem.weekNum}}pscExtras" value="{{weekProfileDataItem.weekpscExtrasProfile}}">
+                    </td>
+                  </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
