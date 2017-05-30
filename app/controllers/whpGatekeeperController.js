@@ -4,7 +4,7 @@
  */
 function districtProfilePage(req, res) {
 
-  var profileYearList = ["Select", "2017/2018", "2018/2019", "2019/2020"];
+  const profileYearList = ["Select", "2017/2018", "2018/2019", "2019/2020"];
 
   req.session.profileData = req.session.profileData || {};
 
@@ -55,32 +55,27 @@ function districtWeeklyProfilePage (req, res) {
   req.session.weeklyProfileData = req.session.weeklyProfileData || {};
 
   var whpFlatProfile = 0;
-  var pscFlatprofile = 0;
-  var inputFullYearProfileData = [];
+  var pscFlatProfile = 0;
   var fullYearProfileData = [];
-  var weekProfileData = {
-    weekwhpProfile : 0,
-    weekpscProfile : 0,
-    weekwhpExtrasProfile : 0,
-    weekpscExtrasProfile : 0
-  };
+  var weeklyProfileDataToRender = {};
 
-  if (isFalsey(req.session.profileData) || isFalsey(req.session.weeklyProfileData)) {
-    whpFlatProfile = Math.round(req.session.profileData.whpProfile / 52);
-    pscFlatProfile = Math.round(req.session.profileData.pscProfile / 52);
-  } else {
+  if (isFalsey(req.session.profileData) || Object.keys(req.session.profileData).length === 0) {
     whpFlatProfile = Math.round(1300 / 52);
     pscFlatProfile = Math.round(100 / 52);
-  };
-
-  // Check if data already saved in fullYearProfileData. If not, initialise object, else use session object
-  if (isFalsey(req.session.weeklyProfileData)) {
-    fullYearProfileData = setUpFullYearProfileFromSessionData();
   } else {
-    fullYearProfileData = setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile);
+    whpFlatProfile = Math.round(req.session.profileData.whpProfile / 52);
+    pscFlatProfile = Math.round(req.session.profileData.pscProfile / 52);
+
   };
 
-  var weeklyProfileData = {
+  // Check if data already saved in fullYearProfileData. If so, use session.weeklyProfileData. If not, initialise session.weeklyProfileData.
+  if (isFalsey(req.session.weeklyProfileData) || Object.keys(req.session.weeklyProfileData).length === 0 ) {
+    fullYearProfileData = setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile);
+  } else {
+    fullYearProfileData = setUpFullYearProfileFromSessionData(req);
+  };
+
+  var weeklyProfileDataToRender = {
     totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540,
     district : req.session.profileData.district ? req.session.profileData.district : "Mercia",
     profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017/2018",
@@ -89,15 +84,17 @@ function districtWeeklyProfilePage (req, res) {
     fullYearProfileData : fullYearProfileData
   };
 
-  res.render('latest/whp-weekly-profile', weeklyProfileData);
+  res.render('latest/whp-weekly-profile', weeklyProfileDataToRender);
 }
 
 function districtWeeklyProfileAction (req, res) {
 
-  let inputFullYearProfileData = getFullYearProfileDataFromRequestBody();
+  let fullYearProfileData = getFullYearProfileDataFromRequestBody(req);
 
-  req.session.weeklyProfileData.fullYearProfileData = inputFullYearProfileData;
+  req.session.weeklyProfileData = fullYearProfileData;
+
   res.redirect('/latest/gatekeeper/weeklyProfile');
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -105,7 +102,7 @@ function districtWeeklyProfileAction (req, res) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function viewAllocationsPage (req,res) {
+function viewAllocationsPage (req, res) {
 
   res.render('latest/whp-district-allocations');
 
@@ -119,7 +116,7 @@ function viewAllocationsPage (req,res) {
 function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
-  for (i = 0; i <= 52; i++) {
+  for (i = 0; i <= 51; i++) {
     let weekNum = i + 1;
     let weekProfileData = {
       weekNum : weekNum,
@@ -134,33 +131,33 @@ function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
   return fullYearProfileData;
 }
 
-function setUpFullYearProfileFromSessionData() {
+function setUpFullYearProfileFromSessionData(req) {
   let j;
   let fullYearProfileData = [];
-  for (j = 0; j = 52; j++) {
+  for (j = 0; j <= 51; j++) {
     let weekProfileData = {
-      weekNum : req.session.weeklyProfileData.fullYearProfileData[j].weekNum,
-      weekwhpProfile : req.session.weeklyProfileData.fullYearProfileData[j].weekwhpProfile,
-      weekpscProfile : req.session.weeklyProfileData.fullYearProfileData[j].weekpscProfile,
-      weekwhpExtrasProfile : req.session.weeklyProfileData.fullYearProfileData[j].weekwhpExtrasProfile,
-      weekpscExtrasProfile : req.session.weeklyProfileData.fullYearProfileData[j].weekpscExtrasProfile
+      weekNum : req.session.weeklyProfileData[j].weekNum,
+      weekwhpProfile : req.session.weeklyProfileData[j].weekwhpProfile,
+      weekpscProfile : req.session.weeklyProfileData[j].weekpscProfile,
+      weekwhpExtrasProfile : req.session.weeklyProfileData[j].weekwhpExtrasProfile,
+      weekpscExtrasProfile : req.session.weeklyProfileData[j].weekpscExtrasProfile
     };
     fullYearProfileData.push(weekProfileData);
   }
   return fullYearProfileData;
 }
 
-function getFullYearProfileDataFromRequestBody() {
+function getFullYearProfileDataFromRequestBody(req) {
   let k;
   let fullYearProfileData = [];
-  for (k = 0; k = 52; k++) {
+  for (k = 0; k <= 51; k++) {
     let weekNum = k + 1;
     let weekProfileData = {
       weekNum : weekNum,
-      weekwhpProfile : req.body.weeklyProfileData.fullYearProfileData[k]['week' + weekNum + 'whpProfile'],
-      weekpscProfile : req.body.weeklyProfileData.fullYearProfileData[k]['week' + weekNum + 'pscProfile'],
-      weekwhpExtrasProfile : req.body.weeklyProfileData.fullYearProfileData[k]['week' + weekNum + 'whpExtrasProfile'],
-      weekpscExtrasProfile : req.body.weeklyProfileData.fullYearProfileData[k]['week' + weekNum + 'pscExtrasProfile']
+      weekwhpProfile : req.body['week' + weekNum + 'whpProfile'],
+      weekpscProfile : req.body['week' + weekNum + 'pscProfile'],
+      weekwhpExtrasProfile : req.body['week' + weekNum + 'whpExtrasProfile'],
+      weekpscExtrasProfile : req.body['week' + weekNum + 'pscExtrasProfile']
     }
     fullYearProfileData.push(weekProfileData);
   }
