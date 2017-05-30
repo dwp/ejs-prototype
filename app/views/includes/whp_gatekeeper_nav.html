@@ -1,24 +1,26 @@
-<div class="column-full summary-nav-wrapper">   
-  <ul>
-      <li>
+<div class="grid-row">
+  <div class="column-full summary-nav-wrapper">   
+    <ul>
+      <li class="{{ 'selected' if currentGatekeeperPage === 'annualProfile' else '' }}">
         <a id="annual-profile" href="/latest/gatekeeper/profile" class="menu-item">
           WHP profile
         </a>
       </li>
-      <li>
+      <li class="{{ 'selected' if currentGatekeeperPage === 'weeklyProfile' else '' }}">
         <a id="weekly-profile" href="/latest/gatekeeper/weeklyProfile" class="menu-item">
           WHP weekly profile
         </a>
       </li>
-      <li>
+      <li class="{{ 'selected' if currentGatekeeperPage === 'allocations' else '' }}">
         <a id="view-profile-and-assigned" href="/latest/gatekeeper/allocations" class="menu-item">
           WHP allocations
         </a>
       </li>
-      <li>
+      <li class="{{ 'selected' if currentGatekeeperPage === 'report' else '' }}">
         <a id="selection_tool" href="/latest/whp-selection-report" class="menu-item">
           WHP selection report
         </a>
       </li>
-  </ul> 
-</div>  
+    </ul> 
+  </div>  
+</div>
