@@ -70,7 +70,7 @@ function districtWeeklyProfilePage (req, res) {
 
   // Check if data already saved in fullYearProfileData. If so, use session.weeklyProfileData. If not, initialise session.weeklyProfileData.
   if (isFalsey(req.session.weeklyProfileData) || Object.keys(req.session.weeklyProfileData).length === 0 ) {
-    fullYearProfileData = setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile);
+    fullYearProfileData = setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile);
   } else {
     fullYearProfileData = setUpFullYearProfileFromSessionData(req);
   };
@@ -113,13 +113,32 @@ function viewAllocationsPage (req, res) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
+function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
+  var weekDate;
+  if (req.session.profileData.profileYear === "2017/2018") {
+    weekDate = new Date("2017-04-06");
+  } else if (req.session.profileData.profileYear === "2018/2019") {
+    weekDate = new Date("2018-04-06");
+  } else {
+    weekDate = new Date("2019-04-06");
+  }
+
+  var stringDate;
+  var newDate;
+
   for (i = 0; i <= 51; i++) {
     let weekNum = i + 1;
+    console.log("Weekdate is : ", weekDate);
+    if (weekNum > 1) {
+      newDate = weekDate.getDate() + 7;
+      weekDate.setDate(newDate);
+    }
+    stringDate = weekDate.toDateString();
     let weekProfileData = {
       weekNum : weekNum,
+      weekDate : stringDate,
       weekwhpProfile : whpFlatProfile,
       weekpscProfile : pscFlatProfile,
       weekwhpExtrasProfile : 0,
@@ -137,6 +156,7 @@ function setUpFullYearProfileFromSessionData(req) {
   for (j = 0; j <= 51; j++) {
     let weekProfileData = {
       weekNum : req.session.weeklyProfileData[j].weekNum,
+      weekDate : req.session.weeklyProfileData[j].weekDate,
       weekwhpProfile : req.session.weeklyProfileData[j].weekwhpProfile,
       weekpscProfile : req.session.weeklyProfileData[j].weekpscProfile,
       weekwhpExtrasProfile : req.session.weeklyProfileData[j].weekwhpExtrasProfile,
@@ -175,6 +195,7 @@ function calcPercentAndRound (num, perNum) {
 function isFalsey (testValue) {
   return (testValue === undefined || testValue == null || testValue.length <= 0) ? true : false;
 }
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                        Module Exports
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
