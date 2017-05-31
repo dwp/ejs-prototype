@@ -84,6 +84,8 @@ function districtWeeklyProfilePage (req, res) {
     fullYearProfileData : fullYearProfileData
   };
 
+  req.session.weeklyProfileData = fullYearProfileData;
+
   res.render('latest/whp-weekly-profile', weeklyProfileDataToRender);
 }
 
@@ -171,12 +173,16 @@ function setUpFullYearProfileFromSessionData(req) {
 }
 
 function getFullYearProfileDataFromRequestBody(req) {
+
+  req.session.weeklyProfileData = req.session.weeklyProfileData || {};
+
   let k;
   let fullYearProfileData = [];
   for (k = 0; k <= 51; k++) {
     let weekNum = k + 1;
     let weekProfileData = {
       weekNum : weekNum,
+      weekDate : req.session.weeklyProfileData[k].weekDate,
       weekwhpProfile : req.body['week' + weekNum + 'whpProfile'],
       weekpscProfile : req.body['week' + weekNum + 'pscProfile'],
       weekwhpExtrasProfile : req.body['week' + weekNum + 'whpExtrasProfile'],
