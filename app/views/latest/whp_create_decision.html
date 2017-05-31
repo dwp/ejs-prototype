@@ -1,9 +1,5 @@
 {% extends "layout.html" %}
 
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
 {% block content %}
 <main id="content" role="main">
 
@@ -33,10 +29,10 @@
         </div>
         <div class="column-full">
           <div class="form-group" id="exisitingCustomerRoute" aria-hidden="true">
-            <a class="button" href="/latest/job_new?nino={{getData.nino}}&hideWorkProgrammeOptions=true">Continue</a>
+            <a class="button" href="/latest/job_new?nino={{getData.nino}}&whpRecord=true">Continue</a>
           </div>
           <div class="form-group js-hidden" id="whpOnlyRouteCustomerRoute" aria-hidden="true">
-            <a class="button" href="/latest/job_new?nino={{getData.nino}}&whpOnly=true&hideWorkProgrammeOptions=true">Continue</a>
+            <a class="button" href="/latest/job_new?nino={{getData.nino}}&whpRecord=true&withoutClaim=true">Continue</a>
           </div>
         </div>
       </div>

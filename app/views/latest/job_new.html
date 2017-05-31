@@ -17,7 +17,7 @@
 
   <div class="main-content">
 
-    {% if getData.whpOnly%}  
+    {% if getData.withoutClaim%}  
       <h1 class="heading-large">Create Work and Health Programme record</h1>
     {% else %}
       <h1 class="heading-large">Create claimant record - page 1 of 2</h1>
@@ -134,59 +134,60 @@
           </div>   
         </div>
 
-        <div class="column-one-third">    
-          <div class="form-group">
-            <label class="form-label">Extra support needs</label>
+        <div class="column-one-third">  
 
-            <fieldset>
-              <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
-              <div class="multiple-choice">
-                <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person">
-                <label for="dis-8">Disabled</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="dis-2" name="dis-2" type="checkbox" value="English for speakers of other languages">
-                <label for="dis-2">Poor English</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
-                <label for="dis-3">Ex-offender</label>
-              </div>
-              <div class="multiple-choice">
-                  <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
-                <label for="dis-4">
-                  Homeless
+          {% if not getData.withoutClaim %}  
+            <div class="form-group">
+              <label class="form-label">Extra support needs</label>
+
+              <fieldset>
+                <legend class="visuallyhidden">Which disadvantage marker applies to the claimant?</legend>
+                <div class="multiple-choice">
+                  <input id="dis-8" name="dis-8" type="checkbox" value="Disabled person">
+                  <label for="dis-8">Disabled</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="dis-2" name="dis-2" type="checkbox" value="English for speakers of other languages">
+                  <label for="dis-2">Poor English</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="dis-3" name="dis-3" type="checkbox" value="Ex-offender">
+                  <label for="dis-3">Ex-offender</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="dis-4" name="dis-4" type="checkbox" value="Homeless">
+                  <label for="dis-4">
+                    Homeless
+                  </label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
+                <label for="dis-1">
+                  Poor literacy/numeracy
                 </label>
-              </div>
-              <div class="multiple-choice">
-                <input id="dis-1" name="dis-1" type="checkbox" value="Literacy/numeracy">
-              <label for="dis-1">
-                Poor literacy/numeracy
-              </label>
-              </div>
-              <div class="multiple-choice">
-                <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs">
-              <label for="dis-6">
-                Misuses drugs
-              </label>
-              </div>
-              <div class="multiple-choice">
-                <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol">
-              <label for="dis-7">
-                Misuses alcohol
-              </label>
-              </div>
-              <div class="multiple-choice">
-              </label>
-                <input id="dis-8" name="dis-8" type="checkbox" value="Ex-Armed Forces">
-                <label for="dis-8">
-                  Ex-Armed Forces
+                </div>
+                <div class="multiple-choice">
+                  <input id="dis-6" name="dis-6" type="checkbox" value="Mis-user of drugs">
+                <label for="dis-6">
+                  Misuses drugs
                 </label>
-              </div>
-            </fieldset>
-          </div>
+                </div>
+                <div class="multiple-choice">
+                  <input id="dis-7" name="dis-7" type="checkbox" value="Mis-user of alcohol">
+                <label for="dis-7">
+                  Misuses alcohol
+                </label>
+                </div>
+                <div class="multiple-choice">
+                </label>
+                  <input id="dis-8" name="dis-8" type="checkbox" value="Ex-Armed Forces">
+                  <label for="dis-8">
+                    Ex-Armed Forces
+                  </label>
+                </div>
+              </fieldset>
+            </div>
           
-          <div class="form-group">
             <div class="form-group">
               <label class="form-label" for="jobcentre">Industry sector</label>
               <select class="select form-control">
@@ -220,48 +221,48 @@
                 <option value="Warehousing">Warehousing</option>  
               </select>     
             </div>
+          {% endif %}
 
-            {% if not getData.hideWorkProgrammeOptions%}
-              <div class="form-group">
-                <fieldset>
-                  <legend class="form-label">Work programme</legend>
-                  <div class="form-group form-group-compound">
-                    <div class="multiple-choice">
-                      <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
-                        
-                      <label for="radio-indent-3">
-                          Pre-work programme
-                      </label>
-                    </div>
-                    <div class="multiple-choice">
-                    <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
-                      <label for="radio-indent-2">
-                        Work programme
-                      </label>
-                    </div>
-                    <div class="multiple-choice">
-                    <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+          {% if not getData.whpRecord %}
+            <div class="form-group">
+              <fieldset>
+                <legend class="form-label">Work programme</legend>
+                <div class="form-group form-group-compound">
+                  <div class="multiple-choice">
+                    <input id="radio-indent-3" type="radio" name="radio-indent-group" value="Pre-work programme" checked="" data-parsley-multiple="radio-indent-group" data-parsley-id="5" aria-expanded="false">
                       
-                      <label for="radio-indent-4">
-                        Completed work programme
-                      </label>
-                    </div>
+                    <label for="radio-indent-3">
+                        Pre-work programme
+                    </label>
                   </div>
-                </fieldset>
-              </div>
-            {% endif %}
-          </div>       
-        </div>       
+                  <div class="multiple-choice">
+                  <input id="radio-indent-2" type="radio" name="radio-indent-group" value="Work programme" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    <label for="radio-indent-2">
+                      Work programme
+                    </label>
+                  </div>
+                  <div class="multiple-choice">
+                  <input id="radio-indent-4" type="radio" name="radio-indent-group" value="Work programme completer" data-parsley-multiple="radio-indent-group" aria-expanded="false">
+                    
+                    <label for="radio-indent-4">
+                      Completed work programme
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>   
+          {% endif %}   
+        </div>        
       </div>
 
       <div class="grid-row">
         <div class="column-full">
           <div class="form-group" id="continue">
 
-            {% if not getData.whpOnly%}  
-              <a href="job_new_step3" class="button" value="Continue">Continue</a>
-            {% else %}
+            {% if getData.withoutClaim %}  
               <a href="selection_tool?whpOnly=true" class="button" value="Continue">Continue</a>
+            {% else %}
+              <a href="job_new_step3" class="button" value="Continue">Continue</a>
             {% endif %}
           </div>
         </div>
