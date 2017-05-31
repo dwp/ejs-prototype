@@ -33,7 +33,7 @@
               <tbody>
                 {% for weekProfileDataItem in fullYearProfileData %}
                   <tr>
-                    <td>Week {{weekProfileDataItem.weekNum}}</td>
+                    <td>{{weekProfileDataItem.weekDate}}</td>
                     <td>
                       <input class="form-control form-control-1-4" type="text" name="week{{weekProfileDataItem.weekNum}}whpProfile" id="week{{weekProfileDataItem.weekNum}}whpProfile" value="{{weekProfileDataItem.weekwhpProfile}}">
                     </td>

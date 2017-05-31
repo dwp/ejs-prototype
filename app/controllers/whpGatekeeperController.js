@@ -70,7 +70,7 @@ function districtWeeklyProfilePage (req, res) {
 
   // Check if data already saved in fullYearProfileData. If so, use session.weeklyProfileData. If not, initialise session.weeklyProfileData.
   if (isFalsey(req.session.weeklyProfileData) || Object.keys(req.session.weeklyProfileData).length === 0 ) {
-    fullYearProfileData = setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile);
+    fullYearProfileData = setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile);
   } else {
     fullYearProfileData = setUpFullYearProfileFromSessionData(req);
   };
@@ -83,6 +83,8 @@ function districtWeeklyProfilePage (req, res) {
     pscProfile : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
     fullYearProfileData : fullYearProfileData
   };
+
+  req.session.weeklyProfileData = fullYearProfileData;
 
   res.render('latest/whp-weekly-profile', weeklyProfileDataToRender);
 }
@@ -113,13 +115,35 @@ function viewAllocationsPage (req, res) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function setUpInitialFullYearProfile(whpFlatProfile, pscFlatProfile) {
+function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
+  var weekDate;
+  var stringDate;
+  var newDate;
+  var weekNum;
+
+  if (req.session.profileData.profileYear === "2019/2020") {
+    weekDate = new Date("2019-04-06");
+  } else if (req.session.profileData.profileYear === "2018/2019") {
+    weekDate = new Date("2018-04-06");
+  } else {
+    weekDate = new Date("2017-04-06");
+  }
+
   for (i = 0; i <= 51; i++) {
-    let weekNum = i + 1;
+    weekNum = i + 1;
+
+    if (weekNum > 1) {
+      newDate = weekDate.getDate() + 7;
+      weekDate.setDate(newDate);
+    }
+
+    stringDate = formatDateForDisplay(weekDate);
+
     let weekProfileData = {
       weekNum : weekNum,
+      weekDate : stringDate,
       weekwhpProfile : whpFlatProfile,
       weekpscProfile : pscFlatProfile,
       weekwhpExtrasProfile : 0,
@@ -137,6 +161,7 @@ function setUpFullYearProfileFromSessionData(req) {
   for (j = 0; j <= 51; j++) {
     let weekProfileData = {
       weekNum : req.session.weeklyProfileData[j].weekNum,
+      weekDate : req.session.weeklyProfileData[j].weekDate,
       weekwhpProfile : req.session.weeklyProfileData[j].weekwhpProfile,
       weekpscProfile : req.session.weeklyProfileData[j].weekpscProfile,
       weekwhpExtrasProfile : req.session.weeklyProfileData[j].weekwhpExtrasProfile,
@@ -148,12 +173,16 @@ function setUpFullYearProfileFromSessionData(req) {
 }
 
 function getFullYearProfileDataFromRequestBody(req) {
+
+  req.session.weeklyProfileData = req.session.weeklyProfileData || {};
+
   let k;
   let fullYearProfileData = [];
   for (k = 0; k <= 51; k++) {
     let weekNum = k + 1;
     let weekProfileData = {
       weekNum : weekNum,
+      weekDate : req.session.weeklyProfileData[k].weekDate,
       weekwhpProfile : req.body['week' + weekNum + 'whpProfile'],
       weekpscProfile : req.body['week' + weekNum + 'pscProfile'],
       weekwhpExtrasProfile : req.body['week' + weekNum + 'whpExtrasProfile'],
@@ -174,6 +203,34 @@ function calcPercentAndRound (num, perNum) {
 
 function isFalsey (testValue) {
   return (testValue === undefined || testValue == null || testValue.length <= 0) ? true : false;
+}
+
+function formatDateForDisplay (unformattedDate) {
+  var formattedDate;
+  var dateDay;
+  var dateMonth;
+  var dateYear;
+
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+
+  dateDay = unformattedDate.getDate();
+  dateMonth = month[unformattedDate.getMonth()];
+  dateYear = unformattedDate.getFullYear();
+
+  formattedDate = dateDay + ' ' + dateMonth + ' ' + dateYear;
+  return formattedDate;
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                        Module Exports
