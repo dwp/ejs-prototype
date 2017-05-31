@@ -117,25 +117,28 @@ function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
   var weekDate;
-  if (req.session.profileData.profileYear === "2017/2018") {
-    weekDate = new Date("2017-04-06");
+  var stringDate;
+  var newDate;
+  var weekNum;
+
+  if (req.session.profileData.profileYear === "2019/2020") {
+    weekDate = new Date("2019-04-06");
   } else if (req.session.profileData.profileYear === "2018/2019") {
     weekDate = new Date("2018-04-06");
   } else {
-    weekDate = new Date("2019-04-06");
+    weekDate = new Date("2017-04-06");
   }
 
-  var stringDate;
-  var newDate;
-
   for (i = 0; i <= 51; i++) {
-    let weekNum = i + 1;
-    console.log("Weekdate is : ", weekDate);
+    weekNum = i + 1;
+
     if (weekNum > 1) {
       newDate = weekDate.getDate() + 7;
       weekDate.setDate(newDate);
     }
-    stringDate = weekDate.toDateString();
+
+    stringDate = formatDateForDisplay(weekDate);
+
     let weekProfileData = {
       weekNum : weekNum,
       weekDate : stringDate,
@@ -196,6 +199,33 @@ function isFalsey (testValue) {
   return (testValue === undefined || testValue == null || testValue.length <= 0) ? true : false;
 }
 
+function formatDateForDisplay (unformattedDate) {
+  var formattedDate;
+  var dateDay;
+  var dateMonth;
+  var dateYear;
+
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+
+  dateDay = unformattedDate.getDate();
+  dateMonth = month[unformattedDate.getMonth()];
+  dateYear = unformattedDate.getFullYear();
+
+  formattedDate = dateDay + ' ' + dateMonth + ' ' + dateYear;
+  return formattedDate;
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                        Module Exports
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
