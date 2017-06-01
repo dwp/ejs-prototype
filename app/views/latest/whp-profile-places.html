@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h2 class="heading-large">Profile for Mercia district in this round of allocations</h2>
+
+      <div class="grid-row">
+        <div class="column-full">
+          <form class="form" method="POST" action="../gatekeeper/profilePlaces">
+            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+              <thead>
+              <tr>
+                <th><span class="bold"></span></th>
+                <th><Span class="bold">WHP</Span></th>
+                <th><span class="bold">PSC</span></th>
+                <th><span class="bold">RCT</span></th>
+                <th><span class="bold">TOTAL</span></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>LTU</td>
+                <td>
+                  <input name="ltuWHP", id="ltuWHP", type="text" value="{{ltuWHP}}")></input>
+                </td>
+                <td>
+                  <input name="ltuPSC", id="ltuPSC", type="text" value="{{ltuPSC}}")></input>
+                </td>
+                <td>{{ltuRCT}}</td>
+                <td>{{totalLTU}}</td>
+              </tr>
+              <tr>
+                <td>Voluntary</td>
+                <td>
+                  <input name="volWHP", id="volWHP", type="text" value="{{volWHP}}")></input>
+                </td>
+                <td>
+                  <input name="volPSC", id="volPSC", type="text" value="{{volPSC}}")></input>
+                </td>
+                <td>{{volRCT}}</td>
+                <td>{{totalVol}}</td>
+              </tr>
+              <tr>
+                <td>TOTAL</td>
+                <td>{{totalWHP}}</td>
+                <td>{{totalPSC}}</td>
+                <td>{{totalRCT}}</td>
+                <td>{{total}}</td>
+              </tr>
+              </tbody>
+            </table>
+            <br>
+            <br>
+           <div>
+            <div class="grid-row">
+              <div class="column-full">
+                <div class="form-group">
+                  <input class="button" type="submit" value="Confirm and continue"></input>
+                  <!--<a href="/latest/gatekeeper/profilePlaces"><button class="button">Confirm and Continue</button></a>-->
+                </div>
+              </div>
+            </div>
+           </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+
+

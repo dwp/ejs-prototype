@@ -1,7 +1,166 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- /*                                        District Yearly Profile Controllers
+ /*                                       District Places Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
+
+function districtPlacesPage(req, res) {
+
+  var sessionPlacesData = req.session.placesData || {};
+
+  var placesData = {
+    totalWHP : sessionPlacesData.totalWHP ? sessionPlacesData.totalWHP : 0,
+    totalPSC : sessionPlacesData.totalPSC ? sessionPlacesData.totalPSC : 0,
+  };
+
+  if (req.session.user.role !== 'gatekeeper') {
+    res.redirect('/latest/selection_tool');
+  } else {
+    res.locals.user = req.session.user;
+    res.render('latest/whp-places', placesData);
+  }
+}
+
+function districtPlacesAction(req, res) {
+
+  var placesData = {
+    totalWHP : parseInt(req.body.totalWHP),
+    totalPSC : parseInt(req.body.totalPSC),
+    previousCalcFlag : 0
+  };
+
+  req.session.placesData = placesData;
+  res.redirect('/latest/gatekeeper/profilePlaces');
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ /*                                        District ProfilePlaces Controllers
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+
+function districtProfilePlacesPage (req, res) {
+
+  var sessionPlacesData = req.session.placesData || {};
+
+  let totalWHP;
+  let totalPSC;
+  let totalRCT;
+  let total;
+  let totalLTU;
+  let totalVol;
+  let ltuRCT;
+  let volRCT;
+  let ltuPSC;
+  let volPSC;
+  let ltuWHP ;
+  let volWHP;
+  let previousCalcFlag;
+  let placesData = {};
+
+  if (sessionPlacesData.previousCalcFlag !== 1) {
+    totalWHP = sessionPlacesData.totalWHP;
+    totalPSC = sessionPlacesData.totalPSC;
+    totalRCT = Math.ceil((totalWHP + totalPSC) / 10);
+    total = totalPSC + totalRCT + totalWHP;
+    totalLTU = Math.floor((15 / 100) * total);
+    totalVol = totalWHP + totalPSC + totalRCT - totalLTU;
+    ltuRCT = Math.ceil((10 / 100) * totalLTU);
+    volRCT = totalRCT - ltuRCT;
+    ltuPSC = Math.floor((totalLTU - ltuRCT) * totalPSC / (totalPSC + totalWHP));
+    volPSC = totalPSC - ltuPSC;
+    ltuWHP = totalLTU - ltuRCT - ltuPSC;
+    volWHP = totalWHP - ltuWHP;
+  } else {
+    totalWHP = sessionPlacesData.totalWHP;
+    totalPSC = sessionPlacesData.totalPSC;
+    totalRCT = sessionPlacesData.totalRCT;
+    total = sessionPlacesData.total;
+    totalLTU = sessionPlacesData.totalLTU;
+    totalVol = sessionPlacesData.totalVol;
+    ltuRCT = sessionPlacesData.ltuRCT;
+    volRCT = sessionPlacesData.volRCT;
+    ltuPSC = sessionPlacesData.ltuPSC;
+    volPSC = sessionPlacesData.volPSC;
+    ltuWHP = sessionPlacesData.ltuWHP;
+    volWHP = sessionPlacesData.volWHP;
+  }
+
+  placesData = {
+    totalWHP: totalWHP,
+    totalPSC: totalPSC,
+    totalRCT: totalRCT,
+    totalLTU: totalLTU,
+    totalVol: totalVol,
+    total   : total,
+    ltuWHP  : ltuWHP,
+    ltuPSC  : ltuPSC,
+    ltuRCT  : ltuRCT,
+    volWHP  : volWHP,
+    volPSC  : volPSC,
+    volRCT  : volRCT,
+  };
+
+  res.render('latest/whp-profile-places', placesData);
+}
+
+function districtProfilePlacesAction (req, res) {
+
+  var sessionPlacesData = req.session.placesData;
+
+  let totalWHP;
+  let totalPSC;
+  let totalRCT;
+  let total;
+  let totalLTU;
+  let totalVol;
+  let ltuRCT;
+  let volRCT;
+  let ltuPSC;
+  let volPSC;
+  let ltuWHP ;
+  let volWHP;
+
+  ltuWHP = parseInt(req.body.ltuWHP);
+  ltuPSC = parseInt(req.body.ltuPSC);
+  volPSC = parseInt(req.body.volPSC);
+  volWHP = parseInt(req.body.volWHP);
+
+  console.log('What is in vars initialised from req.body ? -ltuWHP: ' + ltuWHP + ' -ltuPSC: ' + ltuPSC + ' -volWHP: ' + volWHP + ' -volPSC: ' + volPSC);
+  console.log('sessionPlacesData looks like : ', sessionPlacesData);
+
+  totalWHP = ltuWHP + volWHP;
+  totalPSC = ltuPSC + volPSC;
+  totalRCT = sessionPlacesData.totalRCT;
+  total = sessionPlacesData.total;
+  totalLTU = ltuWHP + ltuPSC + sessionPlacesData.ltuRCT;
+  totalVol = volWHP + volPSC + sessionPlacesData.volRCT;
+  ltuRCT = sessionPlacesData.ltuRCT;
+  volRCT = sessionPlacesData.volRCT;
+
+  placesData = {
+    totalWHP: totalWHP,
+    totalPSC: totalPSC,
+    totalRCT: totalRCT,
+    totalLTU: totalLTU,
+    totalVol: totalVol,
+    total   : total,
+    ltuWHP  : ltuWHP,
+    ltuPSC  : ltuPSC,
+    ltuRTC  : ltuRCT,
+    volWHP  : volWHP,
+    volPSC  : volPSC,
+    volRCT  : volRCT,
+    previousCalcFlag : 1
+  };
+
+  req.session.placesData = placesData;
+  res.redirect('/latest/gatekeeper/profilePlaces');
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        OLD - District Yearly Profile Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 function districtProfilePage(req, res) {
 
   const profileYearList = ["Select", "2017/2018", "2018/2019", "2019/2020"];
@@ -46,7 +205,7 @@ function districtProfileAction(req, res) {
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- /*                                        District Weekly Profile Controllers
+ /*                                        OLD - District Weekly Profile Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 function districtWeeklyProfilePage (req, res) {
@@ -237,8 +396,16 @@ function formatDateForDisplay (unformattedDate) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
+module.exports.districtPlacesPage = districtPlacesPage;
+module.exports.districtPlacesAction = districtPlacesAction;
+module.exports.districtProfilePlacesPage = districtProfilePlacesPage;
+module.exports.districtProfilePlacesAction = districtProfilePlacesAction;
+module.exports.viewAllocationsPage = viewAllocationsPage;
+
+// Old profile and weekly profile modules
+
 module.exports.districtProfilePage = districtProfilePage;
 module.exports.districtProfileAction = districtProfileAction;
 module.exports.districtWeeklyProfilePage= districtWeeklyProfilePage;
 module.exports.districtWeeklyProfileAction= districtWeeklyProfileAction;
-module.exports.viewAllocationsPage = viewAllocationsPage;
+

@@ -20,7 +20,7 @@ module.exports = function(router, users){
     if(fromIndexPage){
       redirectUrl = '/';
     } else {
-      redirectUrl = role === 'gatekeeper' ? '/latest/gatekeeper/profile' : '/latest/job';
+      redirectUrl = role === 'gatekeeper' ? '/latest/gatekeeper/places' : '/latest/job';
     }
     return redirectUrl;
   }
