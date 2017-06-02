@@ -57,18 +57,18 @@ function districtProfilePlacesPage (req, res) {
   let placesData = {};
 
   if (sessionPlacesData.previousCalcFlag !== 1) {
-    totalWHP = sessionPlacesData.totalWHP;
-    totalPSC = sessionPlacesData.totalPSC;
-    totalRCT = Math.ceil((totalWHP + totalPSC) / 10);
-    total = totalPSC + totalRCT + totalWHP;
-    totalLTU = Math.floor((15 / 100) * total);
-    totalVol = totalWHP + totalPSC + totalRCT - totalLTU;
-    ltuRCT = Math.ceil((10 / 100) * totalLTU);
-    volRCT = totalRCT - ltuRCT;
-    ltuPSC = Math.floor((totalLTU - ltuRCT) * totalPSC / (totalPSC + totalWHP));
-    volPSC = totalPSC - ltuPSC;
-    ltuWHP = totalLTU - ltuRCT - ltuPSC;
-    volWHP = totalWHP - ltuWHP;
+    totalWHP = sessionPlacesData.totalWHP || 20;
+    totalPSC = sessionPlacesData.totalPSC || 5;
+    totalRCT = Math.ceil((totalWHP + totalPSC) / 10) || 3;
+    total = (totalPSC + totalRCT + totalWHP) || 28;
+    totalLTU = Math.floor((15 / 100) * total) || 4;
+    totalVol = (totalWHP + totalPSC + totalRCT - totalLTU) || 24;
+    ltuRCT = Math.ceil((10 / 100) * totalLTU) || 1;
+    volRCT = totalRCT - ltuRCT || 2;
+    ltuPSC = Math.floor((totalLTU - ltuRCT) * totalPSC / (totalPSC + totalWHP)) || 0;
+    volPSC = totalPSC - ltuPSC || 5;
+    ltuWHP = totalLTU - ltuRCT - ltuPSC || 3;
+    volWHP = totalWHP - ltuWHP || 17;
   } else {
     totalWHP = sessionPlacesData.totalWHP;
     totalPSC = sessionPlacesData.totalPSC;
@@ -104,7 +104,7 @@ function districtProfilePlacesPage (req, res) {
 
 function districtProfilePlacesAction (req, res) {
 
-  var sessionPlacesData = req.session.placesData;
+  req.session.placesData = req.session.placesData || {};
 
   let totalWHP;
   let totalPSC;
@@ -123,18 +123,14 @@ function districtProfilePlacesAction (req, res) {
   ltuPSC = parseInt(req.body.ltuPSC);
   volPSC = parseInt(req.body.volPSC);
   volWHP = parseInt(req.body.volWHP);
-
-  console.log('What is in vars initialised from req.body ? -ltuWHP: ' + ltuWHP + ' -ltuPSC: ' + ltuPSC + ' -volWHP: ' + volWHP + ' -volPSC: ' + volPSC);
-  console.log('sessionPlacesData looks like : ', sessionPlacesData);
-
+  ltuRCT = parseInt(req.body.ltuRCT);
+  volRCT = parseInt(req.body.volRCT);
+  totalRCT = ltuRCT + volRCT;
   totalWHP = ltuWHP + volWHP;
   totalPSC = ltuPSC + volPSC;
-  totalRCT = sessionPlacesData.totalRCT;
-  total = sessionPlacesData.total;
-  totalLTU = ltuWHP + ltuPSC + sessionPlacesData.ltuRCT;
-  totalVol = volWHP + volPSC + sessionPlacesData.volRCT;
-  ltuRCT = sessionPlacesData.ltuRCT;
-  volRCT = sessionPlacesData.volRCT;
+  totalLTU = ltuWHP + ltuPSC + ltuRCT;
+  totalVol = volWHP + volPSC + volRCT;
+  total = totalWHP + totalPSC + totalRCT;
 
   placesData = {
     totalWHP: totalWHP,
@@ -145,7 +141,7 @@ function districtProfilePlacesAction (req, res) {
     total   : total,
     ltuWHP  : ltuWHP,
     ltuPSC  : ltuPSC,
-    ltuRTC  : ltuRCT,
+    ltuRCT  : ltuRCT,
     volWHP  : volWHP,
     volPSC  : volPSC,
     volRCT  : volRCT,
