@@ -20,21 +20,33 @@
             <div class="form-group">
               <fieldset class="inline">
                 <legend>Has the person been unemployed 24 months or longer?</legend>
-                  {{ forms.radio(name='unemployed', displayText='Yes', optionValue='Yes', id='initial_options_voluntary') }}
-                  {{ forms.radio(name='unemployed', displayText='No', optionValue='No', id='initial-options-ltu', datatarget='primary-barrier-panel') }}
+                {{ forms.radio(name='unemployed', displayText='Yes', optionValue='Yes', id='initial_options_voluntary') }}
+                {{ forms.radio(name='unemployed', displayText='No', optionValue='No', id='initial-options-ltu', datatarget='primary-barrier-panel') }}
               </fieldset>
 
               <div class="panel panel-border-narrow js-hidden" id="primary-barrier-panel">
                 <div id="voluntary-options-radio-buttons" class="form-group">
-                  <fieldset class="inline">
+                  <fieldset>
                     <legend>What is the person's primary barrier to work?</legend>
-                    {{ forms.radio(name='primaryBarrier', displayText='Disabled', optionValue='disability', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
-                    {{ forms.radio(name='primaryBarrier', displayText='Early entry group', optionValue='early-entry', id='voluntary-options-eeg', datatarget='early-entry-options') }}
+                    
+                    {{ forms.radio(name='early-entry-options', displayText='disabled', optionValue='disabled')}}
+                    
+                    {% for earlyEntryOption in earlyEntryOptions %}
+                      {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
+                    {% endfor %}
                   </fieldset>
                 </div>
-                
+
                 <div class="form-group">
-                  <label class="form-label" for="disability-external-referral-input">If external referral, enter name of referring organisation</label>
+                  <fieldset class="inline">
+                    <legend>Has the person been referred by an external organisation?</legend>
+                    {{ forms.radio(name='external', displayText='Yes', optionValue='Yes', datatarget='externalNamePanel') }}
+                    {{ forms.radio(name='external', displayText='No', optionValue='No') }}
+                  </fieldset>
+                </div>
+
+                <div class="form-group js-hidden" id="externalNamePanel">
+                  <label class="form-label" for="disability-external-referral-input">Name of external organisation</label>
                   <input class="form-control form-control-1-4" name="disability-external-referral-input" type="text" id="disability-external-referral-input">
                 </div>
 
@@ -48,7 +60,7 @@
 
                 <div class="form-group">                
                   <fieldset class="inline">
-                    <legend>Is the claimant in receipt of ESA/WRAC?</legend>
+                    <legend>Is the claimant getting ESA/WRAC?</legend>
                     {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
                     {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
                   </fieldset>
@@ -56,7 +68,7 @@
               </div>
             </div>
             
-            <button class="button" type="submit">Continue</button>
+            <a class="button" href="/latest/whp-result">Continue</a>
           </form>
         </div>
       </div>
