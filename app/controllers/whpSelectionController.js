@@ -44,6 +44,12 @@ function alternativeLandingPageAction(req, res) {
   }
 }
 
+function landingPageWithContentUpdates(req, res, next){
+    res.locals.earlyEntryOptions = content['landing-page'].earlyEntryOptions;
+
+    next()
+}
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /*                                        Eligibility Questions Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -123,6 +129,7 @@ module.exports.alternativeLandingPageAction = alternativeLandingPageAction;
 module.exports.eligibilityQuestionsPage = eligibilityQuestionsPage;
 module.exports.eligibilityQuestionsPageAction = eligibilityQuestionsPageAction;
 module.exports.scoringQuestionsPage = scoringQuestionsPage;
+module.exports.landingPageWithContentUpdates = landingPageWithContentUpdates;
 
 
 
