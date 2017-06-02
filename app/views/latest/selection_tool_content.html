@@ -25,11 +25,17 @@
               </fieldset>
 
               <div class="panel panel-border-narrow js-hidden" id="primary-barrier-panel">
-                <div id="voluntary-options-radio-buttons" class="form-group">
+                <div class="form-group">
+                  <fieldset class="inline">
+                    <legend>Does the person have a disability or health condition that affects their ability to work (according to the Equality Act 2010)?</legend>
+                    {{ forms.radio(name='disability', displayText='Yes', optionValue='Yes') }}
+                    {{ forms.radio(name='disability', displayText='No', optionValue='No', datatarget='earlyEntryGroupPanel') }}
+                  </fieldset>
+                </div>
+
+                <div id="earlyEntryGroupPanel" class="form-group js-hidden">               
                   <fieldset>
                     <legend>What is the person's primary barrier to work?</legend>
-                    
-                    {{ forms.radio(name='early-entry-options', displayText='disabled', optionValue='disabled')}}
                     
                     {% for earlyEntryOption in earlyEntryOptions %}
                       {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
