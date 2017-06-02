@@ -16,6 +16,11 @@
       
       <div class="grid-row">
         <div class="column-full">
+
+          <div class="annotation" style="display:none">
+            <p>The last question would only appear for people who have claims in DDA areas</p>
+          </div>
+          
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
             <div class="form-group">
               <fieldset class="inline">
@@ -69,6 +74,14 @@
                     <legend>Is the claimant getting ESA/WRAC?</legend>
                     {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
                     {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
+                  </fieldset>
+                </div>
+
+                <div class="form-group">                
+                  <fieldset class="inline">
+                    <legend>Does the person have an indentified priority need in your DDA?</legend>
+                    {{ forms.radio(name='dda-need', displayText='Yes', optionValue='Yes') }}
+                    {{ forms.radio(name='dda-need', displayText='No', optionValue='No') }}
                   </fieldset>
                 </div>
               </div>
