@@ -3,33 +3,31 @@
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function districtPlacesPage(req, res) {
-
-  var sessionPlacesData = req.session.placesData || {};
+function districtPlacesPage (req, res) {
+  var sessionPlacesData = req.session.placesData || {}
 
   var placesData = {
-    totalWHP : sessionPlacesData.totalWHP ? sessionPlacesData.totalWHP : 0,
-    totalPSC : sessionPlacesData.totalPSC ? sessionPlacesData.totalPSC : 0,
-  };
+    totalWHP: sessionPlacesData.totalWHP ? sessionPlacesData.totalWHP : 0,
+    totalPSC: sessionPlacesData.totalPSC ? sessionPlacesData.totalPSC : 0
+  }
 
   if (req.session.user.role !== 'gatekeeper') {
     res.redirect('/latest/selection_tool');
   } else {
     res.locals.user = req.session.user;
-    res.render('latest/whp-places', placesData);
+    res.render('latest/whp-places', placesData)
   }
 }
 
-function districtPlacesAction(req, res) {
-
+function districtPlacesAction (req, res) {
   var placesData = {
-    totalWHP : parseInt(req.body.totalWHP),
-    totalPSC : parseInt(req.body.totalPSC),
-    previousCalcFlag : 0
-  };
+    totalWHP: parseInt(req.body.totalWHP),
+    totalPSC: parseInt(req.body.totalPSC),
+    previousCalcFlag: 0
+  }
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/profilePlaces');
+  res.redirect('/latest/gatekeeper/profilePlaces')
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -38,8 +36,7 @@ function districtPlacesAction(req, res) {
  */
 
 function districtProfilePlacesPage (req, res) {
-
-  var sessionPlacesData = req.session.placesData || {};
+  var sessionPlacesData = req.session.placesData || {}
 
   let totalWHP;
   let totalPSC;
@@ -51,7 +48,7 @@ function districtProfilePlacesPage (req, res) {
   let volRCT;
   let ltuPSC;
   let volPSC;
-  let ltuWHP ;
+  let ltuWHP;
   let volWHP;
   let previousCalcFlag;
   let placesData = {};
@@ -90,21 +87,19 @@ function districtProfilePlacesPage (req, res) {
     totalRCT: totalRCT,
     totalLTU: totalLTU,
     totalVol: totalVol,
-    total   : total,
-    ltuWHP  : ltuWHP,
-    ltuPSC  : ltuPSC,
-    ltuRCT  : ltuRCT,
-    volWHP  : volWHP,
-    volPSC  : volPSC,
-    volRCT  : volRCT,
+    total: total,
+    ltuWHP: ltuWHP,
+    ltuPSC: ltuPSC,
+    ltuRCT: ltuRCT,
+    volWHP: volWHP,
+    volPSC: volPSC,
+    volRCT: volRCT
   };
 
   res.render('latest/whp-profile-places', placesData);
 }
 
 function districtProfilePlacesAction (req, res) {
-
-  req.session.placesData = req.session.placesData || {};
 
   let totalWHP;
   let totalPSC;
@@ -116,8 +111,9 @@ function districtProfilePlacesAction (req, res) {
   let volRCT;
   let ltuPSC;
   let volPSC;
-  let ltuWHP ;
+  let ltuWHP;
   let volWHP;
+  let placesData;
 
   ltuWHP = parseInt(req.body.ltuWHP);
   ltuPSC = parseInt(req.body.ltuPSC);
@@ -138,66 +134,86 @@ function districtProfilePlacesAction (req, res) {
     totalRCT: totalRCT,
     totalLTU: totalLTU,
     totalVol: totalVol,
-    total   : total,
-    ltuWHP  : ltuWHP,
-    ltuPSC  : ltuPSC,
-    ltuRCT  : ltuRCT,
-    volWHP  : volWHP,
-    volPSC  : volPSC,
-    volRCT  : volRCT,
-    previousCalcFlag : 1
+    total: total,
+    ltuWHP: ltuWHP,
+    ltuPSC: ltuPSC,
+    ltuRCT: ltuRCT,
+    volWHP: volWHP,
+    volPSC: volPSC,
+    volRCT: volRCT,
+    previousCalcFlag: 1
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/profilePlaces');
+  res.redirect('/latest/gatekeeper/selection');
+}
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ /*                                        District Selection Report Controllers
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+
+function districtSelectionPage (req, res) {
+  const placesData = req.session.placesData || {};
+  const referralsSelected = (placesData.totalVol - 3) || 27;
+
+  const selectionReport = {
+    newReferrals: 40,
+    placesToFill: placesData.totalVol ? placesData.totalVol : 30,
+    referralsSelected: referralsSelected
+  };
+
+  res.render('latest/whp-selection-report', selectionReport);
+}
+
+function districtSelectionAction (req, res) {
+
+  const confirmPlaces = {
+    newReferrals: req.body.newReferrals,
+    referralsSelected: req.body.referralsSelected,
+    placesToFill: req.body.placesToFill
+  };
+
+  res.render('latest/whp-confirm-selection', confirmPlaces);
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 /*                                        OLD - District Yearly Profile Controllers
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
-function districtProfilePage(req, res) {
-
-  const profileYearList = ["Select", "2017/2018", "2018/2019", "2019/2020"];
+function districtProfilePage (req, res) {
+  const profileYearList = ['Select', '2017/2018', '2018/2019', '2019/2020'];
 
   req.session.profileData = req.session.profileData || {};
 
   var profileData = {
-    profileYearList : profileYearList,
-    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017/2018",
-    whpProfile : req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
-    pscProfile : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
-    totalProvPlaces : req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1400,
-    controlGpPlaces : req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 140,
-    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540
+    profileYearList: profileYearList,
+    profileYear: req.session.profileData.profileYear ? req.session.profileData.profileYear : '2017/2018',
+    whpProfile: req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
+    pscProfile: req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
+    totalProvPlaces: req.session.profileData.totalProvPlaces ? req.session.profileData.totalProvPlaces : 1400,
+    controlGpPlaces: req.session.profileData.controlGpPlaces ? req.session.profileData.controlGpPlaces : 140,
+    totalPlaces: req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540
   };
-
-  if (req.session.user.role !== 'gatekeeper') {
-    res.redirect('/latest/selection_tool');
-  } else {
-    res.locals.user = req.session.user;
-    res.render('latest/whp-annual-profile', profileData);
-  }
+  res.render('latest/whp-annual-profile', profileData);
 }
 
-function districtProfileAction(req, res) {
-
+function districtProfileAction (req, res) {
   var totalProvPlaces = parseInt(req.body.whpProfile) + parseInt(req.body.pscProfile);
   var controlGpPlaces = Math.round(totalProvPlaces / 10);
   var totalPlaces = Math.round(totalProvPlaces + controlGpPlaces);
   var inputProfileData = {
-    profileYear : req.body.profileYear,
-    whpProfile : req.body.whpProfile,
-    pscProfile : req.body.pscProfile,
-    addPlaces : req.body.addPlaces,
-    totalProvPlaces : totalProvPlaces,
-    controlGpPlaces : controlGpPlaces,
-    totalPlaces : totalPlaces
+    profileYear: req.body.profileYear,
+    whpProfile: req.body.whpProfile,
+    pscProfile: req.body.pscProfile,
+    addPlaces: req.body.addPlaces,
+    totalProvPlaces: totalProvPlaces,
+    controlGpPlaces: controlGpPlaces,
+    totalPlaces: totalPlaces
   };
 
   req.session.profileData = inputProfileData;
-  res.redirect('/latest/gatekeeper/profile');
+  res.redirect('/latest/gatekeeper/weeklyProfile');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -205,7 +221,6 @@ function districtProfileAction(req, res) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 function districtWeeklyProfilePage (req, res) {
-
   req.session.profileData = req.session.profileData || {};
   req.session.weeklyProfileData = req.session.weeklyProfileData || {};
 
@@ -220,23 +235,22 @@ function districtWeeklyProfilePage (req, res) {
   } else {
     whpFlatProfile = Math.round(req.session.profileData.whpProfile / 52);
     pscFlatProfile = Math.round(req.session.profileData.pscProfile / 52);
-
-  };
+  }
 
   // Check if data already saved in fullYearProfileData. If so, use session.weeklyProfileData. If not, initialise session.weeklyProfileData.
-  if (isFalsey(req.session.weeklyProfileData) || Object.keys(req.session.weeklyProfileData).length === 0 ) {
+  if (isFalsey(req.session.weeklyProfileData) || Object.keys(req.session.weeklyProfileData).length === 0) {
     fullYearProfileData = setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile);
   } else {
     fullYearProfileData = setUpFullYearProfileFromSessionData(req);
-  };
+  }
 
   var weeklyProfileDataToRender = {
-    totalPlaces : req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540,
-    district : req.session.profileData.district ? req.session.profileData.district : "Mercia",
-    profileYear : req.session.profileData.profileYear ? req.session.profileData.profileYear : "2017/2018",
-    whpProfile : req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
-    pscProfile : req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
-    fullYearProfileData : fullYearProfileData
+    totalPlaces: req.session.profileData.totalPlaces ? req.session.profileData.totalPlaces : 1540,
+    district: req.session.profileData.district ? req.session.profileData.district : 'Mercia',
+    profileYear: req.session.profileData.profileYear ? req.session.profileData.profileYear : '2017/2018',
+    whpProfile: req.session.profileData.whpProfile ? req.session.profileData.whpProfile : 1300,
+    pscProfile: req.session.profileData.pscProfile ? req.session.profileData.pscProfile : 100,
+    fullYearProfileData: fullYearProfileData
   };
 
   req.session.weeklyProfileData = fullYearProfileData;
@@ -245,13 +259,11 @@ function districtWeeklyProfilePage (req, res) {
 }
 
 function districtWeeklyProfileAction (req, res) {
-
   let fullYearProfileData = getFullYearProfileDataFromRequestBody(req);
 
   req.session.weeklyProfileData = fullYearProfileData;
 
   res.redirect('/latest/gatekeeper/weeklyProfile');
-
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -260,9 +272,7 @@ function districtWeeklyProfileAction (req, res) {
  */
 
 function viewAllocationsPage (req, res) {
-
   res.render('latest/whp-district-allocations');
-
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -270,7 +280,7 @@ function viewAllocationsPage (req, res) {
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
+function setUpInitialFullYearProfile (req, whpFlatProfile, pscFlatProfile) {
   let i;
   let fullYearProfileData = [];
   var weekDate;
@@ -278,12 +288,12 @@ function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
   var newDate;
   var weekNum;
 
-  if (req.session.profileData.profileYear === "2019/2020") {
-    weekDate = new Date("2019-04-06");
-  } else if (req.session.profileData.profileYear === "2018/2019") {
-    weekDate = new Date("2018-04-06");
+  if (req.session.profileData.profileYear === '2019/2020') {
+    weekDate = new Date('2019-04-06');
+  } else if (req.session.profileData.profileYear === '2018/2019') {
+    weekDate = new Date('2018-04-06');
   } else {
-    weekDate = new Date("2017-04-06");
+    weekDate = new Date('2017-04-06');
   }
 
   for (i = 0; i <= 51; i++) {
@@ -297,12 +307,12 @@ function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
     stringDate = formatDateForDisplay(weekDate);
 
     let weekProfileData = {
-      weekNum : weekNum,
-      weekDate : stringDate,
-      weekwhpProfile : whpFlatProfile,
-      weekpscProfile : pscFlatProfile,
-      weekwhpExtrasProfile : 0,
-      weekpscExtrasProfile : 0
+      weekNum: weekNum,
+      weekDate: stringDate,
+      weekwhpProfile: whpFlatProfile,
+      weekpscProfile: pscFlatProfile,
+      weekwhpExtrasProfile: 0,
+      weekpscExtrasProfile: 0
     };
     fullYearProfileData.push(weekProfileData);
   }
@@ -310,25 +320,24 @@ function setUpInitialFullYearProfile(req, whpFlatProfile, pscFlatProfile) {
   return fullYearProfileData;
 }
 
-function setUpFullYearProfileFromSessionData(req) {
+function setUpFullYearProfileFromSessionData (req) {
   let j;
   let fullYearProfileData = [];
   for (j = 0; j <= 51; j++) {
     let weekProfileData = {
-      weekNum : req.session.weeklyProfileData[j].weekNum,
-      weekDate : req.session.weeklyProfileData[j].weekDate,
-      weekwhpProfile : req.session.weeklyProfileData[j].weekwhpProfile,
-      weekpscProfile : req.session.weeklyProfileData[j].weekpscProfile,
-      weekwhpExtrasProfile : req.session.weeklyProfileData[j].weekwhpExtrasProfile,
-      weekpscExtrasProfile : req.session.weeklyProfileData[j].weekpscExtrasProfile
+      weekNum: req.session.weeklyProfileData[j].weekNum,
+      weekDate: req.session.weeklyProfileData[j].weekDate,
+      weekwhpProfile: req.session.weeklyProfileData[j].weekwhpProfile,
+      weekpscProfile: req.session.weeklyProfileData[j].weekpscProfile,
+      weekwhpExtrasProfile: req.session.weeklyProfileData[j].weekwhpExtrasProfile,
+      weekpscExtrasProfile: req.session.weeklyProfileData[j].weekpscExtrasProfile
     };
     fullYearProfileData.push(weekProfileData);
   }
   return fullYearProfileData;
 }
 
-function getFullYearProfileDataFromRequestBody(req) {
-
+function getFullYearProfileDataFromRequestBody (req) {
   req.session.weeklyProfileData = req.session.weeklyProfileData || {};
 
   let k;
@@ -336,24 +345,16 @@ function getFullYearProfileDataFromRequestBody(req) {
   for (k = 0; k <= 51; k++) {
     let weekNum = k + 1;
     let weekProfileData = {
-      weekNum : weekNum,
-      weekDate : req.session.weeklyProfileData[k].weekDate,
-      weekwhpProfile : req.body['week' + weekNum + 'whpProfile'],
-      weekpscProfile : req.body['week' + weekNum + 'pscProfile'],
-      weekwhpExtrasProfile : req.body['week' + weekNum + 'whpExtrasProfile'],
-      weekpscExtrasProfile : req.body['week' + weekNum + 'pscExtrasProfile']
-    }
+      weekNum: weekNum,
+      weekDate: req.session.weeklyProfileData[k].weekDate,
+      weekwhpProfile: req.body['week' + weekNum + 'whpProfile'],
+      weekpscProfile: req.body['week' + weekNum + 'pscProfile'],
+      weekwhpExtrasProfile: req.body['week' + weekNum + 'whpExtrasProfile'],
+      weekpscExtrasProfile: req.body['week' + weekNum + 'pscExtrasProfile']
+    };
     fullYearProfileData.push(weekProfileData);
   }
   return fullYearProfileData;
-}
-
-function calcPercentAndFloor (num, perNum) {
-  return Math.floor(num * perNum / 100);
-}
-
-function calcPercentAndRound (num, perNum) {
-  return Math.round(num * perNum / 100);
 }
 
 function isFalsey (testValue) {
@@ -367,18 +368,18 @@ function formatDateForDisplay (unformattedDate) {
   var dateYear;
 
   var month = new Array();
-  month[0] = "January";
-  month[1] = "February";
-  month[2] = "March";
-  month[3] = "April";
-  month[4] = "May";
-  month[5] = "June";
-  month[6] = "July";
-  month[7] = "August";
-  month[8] = "September";
-  month[9] = "October";
-  month[10] = "November";
-  month[11] = "December";
+  month[0] = 'January';
+  month[1] = 'February';
+  month[2] = 'March';
+  month[3] = 'April';
+  month[4] = 'May';
+  month[5] = 'June';
+  month[6] = 'July';
+  month[7] = 'August';
+  month[8] = 'September';
+  month[9] = 'October';
+  month[10] = 'November';
+  month[11] = 'December';
 
   dateDay = unformattedDate.getDate();
   dateMonth = month[unformattedDate.getMonth()];
@@ -397,11 +398,13 @@ module.exports.districtPlacesAction = districtPlacesAction;
 module.exports.districtProfilePlacesPage = districtProfilePlacesPage;
 module.exports.districtProfilePlacesAction = districtProfilePlacesAction;
 module.exports.viewAllocationsPage = viewAllocationsPage;
+module.exports.districtSelectionPage = districtSelectionPage;
+module.exports.districtSelectionAction = districtSelectionAction;
 
 // Old profile and weekly profile modules
 
 module.exports.districtProfilePage = districtProfilePage;
 module.exports.districtProfileAction = districtProfileAction;
-module.exports.districtWeeklyProfilePage= districtWeeklyProfilePage;
-module.exports.districtWeeklyProfileAction= districtWeeklyProfileAction;
+module.exports.districtWeeklyProfilePage = districtWeeklyProfilePage;
+module.exports.districtWeeklyProfileAction = districtWeeklyProfileAction;
 

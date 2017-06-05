@@ -30,8 +30,8 @@ module.exports = function(router) {
 
   router.get('/latest/gatekeeper/allocations', gatekeeper.viewAllocationsPage);
 
-  //router.get('latest/gatekeeper/selection', gatekeeper.districtSelectionPage);
-  //router.post('latest/gatekeeper/selection', gatekeeper.districtSelectionAction);
+  router.get('/latest/gatekeeper/selection', gatekeeper.districtSelectionPage);
+  router.post('/latest/gatekeeper/selection', gatekeeper.districtSelectionAction);
 
   // Routers for old profiling pages
 
