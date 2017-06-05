@@ -158,7 +158,7 @@ function districtSelectionPage (req, res) {
   const referralsSelected = (placesData.totalVol - 3) || 27;
 
   const selectionReport = {
-    newReferrals: 40,
+    newReferrals: 70,
     placesToFill: placesData.totalVol ? placesData.totalVol : 30,
     referralsSelected: referralsSelected
   };
