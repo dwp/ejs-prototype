@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Confirm referrals</h1>
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+      </div>
+      
+      <div class="grid-row">
+        <div class="column-full">
+
+          <div>
+            <p>You are about to refer {{referralsSelected}} claimants for random allocation against {{placesToFill}} places profiled</p>
+            <br>
+            <p>To allocate additional claimants, use the button below to return to selections</p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="grid-row">
+        <div class="column-third">
+          <div class="form group">
+            <a href="/latest/gatekeeper/selection"><button class="button">Back to selections</button></a>
+          </div>
+        </div>
+        <div class="column-third">
+          <div class="form-group">
+            <a href="/latest/whp-district-allocations"><button class="button">Continue</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
