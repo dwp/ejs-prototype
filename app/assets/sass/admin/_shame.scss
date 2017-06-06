@@ -39,3 +39,7 @@ input#initial  {
 .button-secondary{
   @include button($grey-3);
 }
+
+caption {
+  text-align: left;
+}
