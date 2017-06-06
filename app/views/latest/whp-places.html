@@ -6,13 +6,16 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">   
-      <h2 class="heading-large">Record places available in Mercia district for this round of allocations</h2>
+      <h2 class="heading-large">Review Work Coach submissions - calculate places and referrals</h2>
 
       <form class="form" method="post">
+        <p>How many places are you looking to fill ?</p>
+        <p class="form-hint">Please specify the number of places you are looking to fill this time, and your start to referral ratios.<br>
+          This will calculate places for long-term / voluntary provision, and the control group, on the next page.</p>
         <div class="grid-row">
           <div class="column-third">
             <div class="form-group">
-              <label class="form-label" for="totalWHP">Enter Work and Health Programme (WHP) places</label>
+              <label class="form-label" for="totalWHP">How many private WHP places are you looking to fill?</label>
               <input class="form-control form-control-1-8" type="text" name="totalWHP" id="totalWHP" value="{{totalWHP}}">
             </div>
           </div>
@@ -21,11 +24,34 @@
         <div class="grid-row">
           <div class="column-third">
             <div class="form-group">
-              <label class="form-label" for="totalPSC">Enter Public Sector Comparator (PSC) places</label>
-              <input class="form-control form-control-1-8" type="text" name="totalPSC" id="totalPSC" value="{{totalPSC}}">
+              <label class="form-label" for="totalPSC">How many public PSC places are you looking to fill?</label>
+                <input class="form-control form-control-1-8" type="text" name="totalPSC" id="totalPSC" value="{{totalPSC}}">
             </div>
           </div>
         </div>
+        <br>
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label" for="mandRatio">What is your referral to start ratio for mandatory provision (LTU)?
+                <span class="visually-hidden">Enter number of referrals to one start</span>
+              </label>
+              <input class="form-control form-control-1-8 inline" type="text" name="mandRatio" id="mandRatio" value="{{mandRatio}}"> &nbsp to 1
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="form-group">
+              <label class="form-label" for="volRatio">What is your referral to start ratio for voluntary provision (Disabled/EEG)?
+                <span class="visually-hidden">Enter number of referrals to one start</span>
+              </label>
+              <input class="form-control form-control-1-8" type="text" name="volRatio" id="volRatio" value="{{volRatio}}"> &nbsp to 1
+            </div>
+          </div>
+        </div>
+
 
         <div class="grid-row">
           <div class="column-full">
