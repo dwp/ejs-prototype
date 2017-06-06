@@ -46,7 +46,6 @@ function districtProfilePlacesPage (req, res) {
   let totalWHP;
   let totalPSC;
   let totalRCT;
-  let total;
   let totalLTU;
   let totalVol;
   let ltuRCT;
@@ -105,7 +104,7 @@ function districtProfilePlacesPage (req, res) {
 
 function districtProfilePlacesAction (req, res) {
 
-  var profilePlacesData = req.session.profileData || {};
+  var profilePlacesData = req.session.placesData || {};
 
   let totalWHP;
   let totalPSC;
@@ -118,19 +117,21 @@ function districtProfilePlacesAction (req, res) {
   let volPSC;
   let ltuWHP;
   let volWHP;
+  let mandRatio = profilePlacesData.mandRatio;
+  let volRatio = profilePlacesData.volRatio;
   let placesData;
 
-  ltuWHP = profilePlacesData.ltuWHP;
-  ltuPSC = profilePlacesData.ltuPSC;
-  volPSC = profilePlacesData.volPSC;
-  volWHP = profilePlacesData.volWHP;
-  ltuRCT = profilePlacesData.ltuRCT;
-  volRCT = profilePlacesData.volRCT;
-  totalRCT = profilePlacesData.totalRCT;
   totalWHP = profilePlacesData.totalWHP;
   totalPSC = profilePlacesData.totalPSC;
-  totalLTU = profilePlacesData.totalLTU;
-  totalVol = profilePlacesData.totalVol;
+  totalRCT = Math.ceil((totalWHP + totalPSC) / 10);
+  volWHP = Math.ceil((85 / 100) * totalWHP);
+  ltuWHP = totalWHP - volWHP;
+  volPSC = Math.ceil((85 / 100) * totalPSC);
+  ltuPSC = totalPSC - volPSC;
+  volRCT = Math.ceil((85 / 100) * totalRCT);
+  ltuRCT = totalRCT - volRCT;
+  totalLTU = Math.floor((ltuWHP * mandRatio) + (ltuPSC * mandRatio) + ltuRCT);
+  totalVol = Math.floor((volWHP * volRatio) + (volPSC * volRatio) + volRCT);
 
   placesData = {
     totalWHP: totalWHP,
@@ -171,7 +172,8 @@ function districtSelectionAction (req, res) {
 
   const confirmPlaces = {
     newReferrals: req.body.newReferrals,
-    placesToFill: req.body.placesToFill
+    placesToFill: req.body.placesToFill,
+    referralsSelected: (req.body.placesToFill - 3)
   };
 
   res.render('latest/whp-confirm-selection', confirmPlaces);
