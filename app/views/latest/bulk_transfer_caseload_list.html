@@ -19,7 +19,9 @@
               <table>
                 <thead>
                   <tr>
-                    <th><input id="select-all" type="checkbox" name="select-all" value="true"/>All</th>
+                    <th>
+                        <label for="select-all" class="visually-hidden">Select all for caseload transfer</label>
+                        <input id="select-all" type="checkbox" name="select-all" value="true"/>All</th>
                     <th>NINo</th>
                     <th>Name</th>
                     <th>Benefit</th>
@@ -30,7 +32,8 @@
                   {% for i in range(0, getData.resultsNumber | default(15)) %}
                     <tr>
                       <td>
-                          <input type="checkbox" name="claimants_{{i}}" value=""/>
+                        <label for="claimants_{{i}}" class="visually-hidden">Select Gary Boyle for caseload transfer</label>
+                          <input type="checkbox" id="claimants_{{i}}" name="claimants_{{i}}" value=""/>
                       </td>
                       <td>AB123456</td>
                       <td>Boyle</td>
