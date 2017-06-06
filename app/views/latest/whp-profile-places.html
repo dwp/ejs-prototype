@@ -6,47 +6,52 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">   
-      <h2 class="heading-large">Profile for Mercia district in this round of allocations</h2>
+      <h2 class="heading-large">Review Work Coach submissions - calculate places and referrals</h2>
+      <p>Places by category, including control group</p>
 
       <div class="grid-row">
-        <div class="column-full">
+        <div class="column-two-thirds">
           <form class="form" method="POST" action="../gatekeeper/profilePlaces">
-            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+            <table>
               <thead>
-              <tr>
-                <th><span class="bold"></span></th>
-                <th><Span class="bold">WHP</Span></th>
-                <th><span class="bold">PSC</span></th>
-                <th><span class="bold">RCT</span></th>
-                <th><span class="bold">TOTAL</span></th>
-              </tr>
+                <tr>
+                  <th></th>
+                  <th class="bold numeric">Total</th>
+                  <th class="numeric">Voluntary (Disabled/EAG) (85%)</th>
+                  <th class="numeric">Mandatory (LTU) (15%)</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>LTU</td>
-                <td><input name="ltuWHP", id="ltuWHP", type="text" value="{{ltuWHP}}")></input></td>
-                <td><input name="ltuPSC", id="ltuPSC", type="text" value="{{ltuPSC}}")></input></td>
-                <td><input readonly name="ltuRCT", id="ltuRCT", type="text" value="{{ltuRCT}}")></input></td>
-                <td>{{totalLTU}}</td>
-              </tr>
-              <tr>
-                <td>Voluntary</td>
-                <td><input name="volWHP", id="volWHP", type="text" value="{{volWHP}}")></input></td>
-                <td><input name="volPSC", id="volPSC", type="text" value="{{volPSC}}")></input></td>
-                <td><input readonly name="volRCT", id="volRCT", type="text" value="{{volRCT}}")></input></td>
-                <td>{{totalVol}}</td>
-              <tr>
-                <td>TOTAL</td>
-                <td>{{totalWHP}}</td>
-                <td>{{totalPSC}}</td>
-                <td>{{totalRCT}}</td>
-                <td>{{total}}</td>
-              </tr>
+                <tr>
+                  <td>WHP places to fill</td>
+                  <td class="bold numeric">{{totalWHP}}</td>
+                  <td class="numeric">{{volWHP}}</td>
+                  <td class="numeric">{{ltuWHP}}</td>
+                </tr>
+                <tr>
+                  <td>PSC places to fill</td>
+                  <td class="bold numeric">{{totalPSC}}</td>
+                  <td class="numeric">{{volPSC}}</input></td>
+                  <td class="numeric">{{ltuPSC}}</td>
+                </tr>
+                <tr>
+                  <td>Control group</td>
+                  <td class="numeric">{{totalRCT}}</td>
+                  <td class="numeric">{{volRCT}}</input></td>
+                  <td class="numeric">{{ltuRCT}}</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Indicative referrals needed, based on referral to start ratio. <span class="form-hint">(Long term allocations will be made automatically)</span></td>
+                </tr>
+                <tr>
+                  <td>Referrals needed</td>
+                  <td></td>
+                  <td class="bold numeric">{{totalVol}}</td>
+                  <td class="bold numeric">{{totalLTU}}</td>
+                </tr>
               </tbody>
             </table>
             <br>
-            <br>
-           <div>
             <div class="grid-row">
               <div class="column-full">
                 <div class="form-group">
