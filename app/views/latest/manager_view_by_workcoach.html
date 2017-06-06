@@ -26,45 +26,45 @@
             <thead>
               <tr>
                 <th>&nbsp;</th>
-                <th class="nino no-sort">Claims opened</th>
-                <th class="nino no-sort">Claims closed</th>
-                <th class="nino no-sort">&#37; achieved</th>  
-                <th class="nino no-sort">&#37; into work</th>      
-                <th class="nino no-sort">Claim closures required to reach standard</th>                  
+                <th class="numeric">Claims opened</th>
+                <th class="numeric">Claims closed</th>
+                <th class="numeric">&#37; achieved</th>  
+                <th class="numeric">&#37; into work</th>      
+                <th class="numeric">Claim closures required to reach standard</th>                  
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>{% if getData.performanceReportType === 'team' %}Blue team{%else%}Gary Boyle{%endif%}</td>
-                <td>6</td>
-                <td>3</td>
-                <td>50</td>
-                <td>50</td>
-                <td><a href="/latest/performance_jsa">5 (13 weeks)</a></td>
+                <th>{% if getData.performanceReportType === 'team' %}Blue team{%else%}Gary Boyle{%endif%}</th>
+                <td class="numeric">6</td>
+                <td class="numeric">3</td>
+                <td class="numeric">50</td>
+                <td class="numeric">50</td>
+                <td class="numeric"><a href="/latest/performance_jsa">5 (13 weeks)</a></td>
               </tr>
               <tr>
-                <td>{% if getData.performanceReportType === 'team' %}Red team{%else%}Steve Currie{%endif%}</td>
-                <td>5</td>
-                <td>2</td>
-                <td>40</td>
-                <td>40</td>
-                <td><a href="/latest/performance_jsa">4 (52 weeks)</a></td>
+                <th>{% if getData.performanceReportType === 'team' %}Red team{%else%}Steve Currie{%endif%}</th>
+                <td class="numeric">5</td>
+                <td class="numeric">2</td>
+                <td class="numeric">40</td>
+                <td class="numeric">40</td>
+                <td class="numeric"><a href="/latest/performance_jsa">4 (52 weeks)</a></td>
               </tr>
               <tr>
-                <td>{% if getData.performanceReportType === 'team' %}Yellow team{%else%}Grant Allen{%endif%}</td>
-                <td>7</td>
-                <td>3</td>
-                <td>42.85</td>
-                <td>42.85</td>
-                <td><a href="/latest/performance_jsa">3 (26 weeks)</a></td>
+                <th>{% if getData.performanceReportType === 'team' %}Yellow team{%else%}Grant Allen{%endif%}</th>
+                <td class="numeric">7</td>
+                <td class="numeric">3</td>
+                <td class="numeric">42.85</td>
+                <td class="numeric">42.85</td>
+                <td class="numeric"><a href="/latest/performance_jsa">3 (26 weeks)</a></td>
               </tr>
               <tr>
-                <td class="year_date">Total</td>
-                <td class="year_date">70</td>
-                <td class="year_date">35</td>
-                <td class="year_date">45</td>
-                <td class="year_date">45</td>
-                <td class="year_date">36</td>
+                <th>Total</th>
+                <td class="numeric">70</td>
+                <td class="numeric">35</td>
+                <td class="numeric">45</td>
+                <td class="numeric">45</td>
+                <td class="numeric">36</td>
               </tr>
             </tbody>
           </table>
