@@ -36,32 +36,20 @@
           {% set whpSelectionToolWorkcoachScreens = [{
             workTitle : 'Gatekeeper',
             links: [{ 
-              link : 'latest/gatekeeper/places', title : 'Record WHP & PSC places for this round of allocations'
+              link : 'latest/gatekeeper/places', title : 'Review Work Coach submissions - calculate places & referrals (set places and ratios)'
               }, {
-              link : 'latest/gatekeeper/profilePlaces', title : 'Profile places for this round of allocations'
-              }, {
-              link : 'latest/gatekeeper/profile', title : 'ALTERNATIVE: Record WHP places available'
-              }, {
-              link : 'latest/gatekeeper/weeklyProfile', title : 'ALTERNATIVE: Profile WHP places across the year'
+              link : 'latest/gatekeeper/profilePlaces', title : 'Review Work Coach submissions - calculate places & referrals (calculate and display places to fill)'
               }, {
               link : 'latest/gatekeeper/allocations', title : 'View allocations'
               }, {
               link : 'latest/gatekeeper/selection', title : 'Referrals for w/c 8/10/2017'
               }]
             }, {
-            workTitle : 'WHP Status',
+            workTitle : 'Alternative Gatekeeper Pages',
             links: [{
-              link : 'latest/job_record_confirm?whpStatus=Not referred', title : 'Not referred'
-            }, {
-              link : 'latest/job_record_confirm?whpStatus=Not eligible (as at 16 May 2017)', title : 'Not eligible'
-            }, {
-              link : 'latest/job_record_confirm?whpStatus=Pending gatekeeper (as at 16 May 2017)', title : 'Pending gatekeeper'
-            }, {
-              link : 'latest/job_record_confirm?whpStatus=Action - refer to WHP (16 May 2017)', title : 'Action - Refer to WHP'
-            }, {
-              link : 'latest/job_record_confirm?whpStatus=Referred to WHP (on 16 May 2017)', title : 'Referred to WHP'
-            }, {
-              link : 'latest/job_record_confirm?whpStatus=Not selected (on 16 May 2017)', title : 'Not selected'
+              link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
+              }, {
+              link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
             }]
           }] %}
           
@@ -80,7 +68,22 @@
               }, {
               link : 'latest/whp_create_decision?nino=AB123456B&whpOnly=true', title : 'Decision page'
               }]
-          }] %}
+              }, {
+            workTitle : 'WHP Status',
+              links: [{
+              link : 'latest/job_record_confirm?whpStatus=Not referred', title : 'Not referred'
+              }, {
+              link : 'latest/job_record_confirm?whpStatus=Not eligible (as at 16 May 2017)', title : 'Not eligible'
+              }, {
+              link : 'latest/job_record_confirm?whpStatus=Pending gatekeeper (as at 16 May 2017)', title : 'Pending gatekeeper'
+              }, {
+              link : 'latest/job_record_confirm?whpStatus=Action - refer to WHP (16 May 2017)', title : 'Action - Refer to WHP'
+              }, {
+              link : 'latest/job_record_confirm?whpStatus=Referred to WHP (on 16 May 2017)', title : 'Referred to WHP'
+              }, {
+              link : 'latest/job_record_confirm?whpStatus=Not selected (on 16 May 2017)', title : 'Not selected'
+              }]
+            }] %}
           
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
