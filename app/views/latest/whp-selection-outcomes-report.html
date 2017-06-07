@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">
+      <h1 class="heading-large">Outcome of random allocation</h1>
+
+      {% set currentGatekeeperPage = 'report' %}
+
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="grid-row">
+              <div class="column-third">
+                <div class="form-group">
+                  <label class="form-label" for="whpPlacesSelected">WHP places sslected</label>
+                  <input readonly class="form-control form-control-1-4" type="text" name="whpPlacesSelected" id="whpPlacesSelected" value="45">
+                </div>
+              </div>
+              <div class="column-third">
+                <div class="form-group">
+                  <label class="form-label" for="pscPlacesSelected">PSC places selected</label>
+                  <input readonly class="form-control form-control-1-4" type="text" name="pscPlacesSelected" id="pscPlacesSelected" value="8">
+                </div>
+              </div>
+              <div class="column-third">
+                <div class="form-group">
+                  <label class="form-label" for="rctPlacesSelected">Control group places selected</label>
+                  <input readonly class="form-control form-control-1-4" type="text" name="rctPlacesSelected" id="rctPlacesSelected" value="6">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-row">
+          <div class="column-full">
+            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
+              <thead>
+                <tr>
+                  <th><span class="bold">Jobcentre</span></th>
+                  <th><Span class="bold">Referral type</Span></th>
+                  <th><span class="bold">Score</span></th>
+                  <th><span class="bold">Work Coach</span></th>
+                  <th><span class="bold">NINO</span></th>
+                  <th><span class="bold">Allocation</span></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Worcester</td>
+                <td>EEG - carer</td>
+                <td>22</td>
+                <td>Chris Sones</td>
+                <td>AB123468C</td>
+                <td>WHP</td>
+              </tr>
+              <tr>
+                <td>Coventry</td>
+                <td>Disabled</td>
+                <td>23</td>
+                <td>Gary Foyle</td>
+                <td>AB125668C</td>
+                <td>PSC</td>
+              </tr>
+              <tr>
+                <td>Coventry</td>
+                <td>EEG - homeless</td>
+                <td>12</td>
+                <td>Barry Manniquin</td>
+                <td>BC153468C</td>
+                <td>WHP</td>
+              </tr>
+              <tr>
+                <td>Coventry</td>
+                <td>Disabled</td>
+                <td>28</td>
+                <td>Theresa Maynot</td>
+                <td>AC123468D</td>
+                <td>Control Group</td>
+              </tr>
+              <tr>
+                <td>Stratford</td>
+                <td>Long term unemployed</td>
+                <td>n/a</td>
+                <td>Janet Anjohn</td>
+                <td>AB123468C</td>
+                <td>WHP</td>
+              </tr>
+              <tr>
+                <td>" "</td>
+                <td>" "</td>
+                <td>" "</td>
+                <td>" "</td>
+                <td>" "</td>
+                <td>" "</td>
+              </tr>
+              <tr>
+                <td>Kidderminster</td>
+                <td>Disabled</td>
+                <td>16</td>
+                <td>Chris Chross</td>
+                <td>AB123468C</td>
+                <td>WHP</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="form-group">
+              <!--<input type="submit" class="button" value="Confirm and Continue"></input>-->
+              <a href="/latest/whp-district-allocations"><button class="button">Confirm and Continue</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script src="/public/javascripts/caseload.js"></script>
+{% endblock %}
