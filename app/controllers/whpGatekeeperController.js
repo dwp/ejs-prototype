@@ -4,11 +4,11 @@
  */
 
 function districtPlacesPage (req, res) {
-  var sessionPlacesData = req.session.placesData || {}
+  var sessionPlacesData = req.session.placesData || {};
 
   var placesData = {
-    totalWHP: sessionPlacesData.totalWHP ? sessionPlacesData.totalWHP : 0,
-    totalPSC: sessionPlacesData.totalPSC ? sessionPlacesData.totalPSC : 0,
+    totalWHPPlaces: sessionPlacesData.totalWHPPlaces ? sessionPlacesData.totalWHPPlaces : 0,
+    totalPSCPlaces: sessionPlacesData.totalPSCPlaces ? sessionPlacesData.totalPSCPlaces : 0,
     mandRatio: sessionPlacesData.mandRatio ? sessionPlacesData.mandRatio : 1.1,
     volRatio: sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5
   };
@@ -17,22 +17,21 @@ function districtPlacesPage (req, res) {
     res.redirect('/latest/selection_tool');
   } else {
     res.locals.user = req.session.user;
-    res.render('latest/whp-places', placesData)
+    res.render('latest/whp-places', placesData);
   }
 }
 
 function districtPlacesAction (req, res) {
-
   var placesData = {
-    totalWHP: parseInt(req.body.totalWHP),
-    totalPSC: parseInt(req.body.totalPSC),
-    mandRatio : parseFloat(req.body.mandRatio).toFixed(2),
-    volRatio : parseFloat(req.body.volRatio).toFixed(2),
+    totalWHPPlaces: parseInt(req.body.totalWHPPlaces),
+    totalPSCPlaces: parseInt(req.body.totalPSCPlaces),
+    mandRatio: parseFloat(req.body.mandRatio).toFixed(2),
+    volRatio: parseFloat(req.body.volRatio).toFixed(2),
     previousCalcFlag: 0
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/profilePlaces')
+  res.redirect('/latest/gatekeeper/profilePlaces');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -41,110 +40,178 @@ function districtPlacesAction (req, res) {
  */
 
 function districtProfilePlacesPage (req, res) {
-  var sessionPlacesData = req.session.placesData || {}
+  var sessionPlacesData = req.session.placesData || {};
 
-  let totalWHP;
-  let totalPSC;
-  let totalRCT;
-  let totalLTU;
-  let totalVol;
-  let ltuRCT;
-  let volRCT;
-  let ltuPSC;
-  let volPSC;
-  let ltuWHP;
-  let volWHP;
-  let mandRatio = sessionPlacesData.mandRatio;
-  let volRatio = sessionPlacesData.volRatio;
-  let previousCalcFlag;
-  let placesData = {};
+  let totalWHPPlaces;
+  let disWHPPlaces;
+  let eagWHPPlaces;
+  let ltuWHPPlaces;
+  let totalPSCPlaces;
+  let disPSCPlaces;
+  let eagPSCPlaces;
+  let ltuPSCPlaces;
+  let disRefsNeeded;
+  let eagRefsNeeded;
+  let ltuRefsNeeded;
+  let totalRefsNeeded;
+  let disControlGroup;
+  let eagControlGroup;
+  let ltuControlGroup;
+  let totalControlGroup;
+  let totalDisRefs;
+  let totalEAGRefs;
+  let totalLTURefs;
+  let totalRefs;
+  let totalCustRefs;
+  const mandRatio = sessionPlacesData.mandRatio;
+  const volRatio = sessionPlacesData.volRatio;
+  let placesData;
 
   if (sessionPlacesData.previousCalcFlag !== 1) {
-    totalWHP = sessionPlacesData.totalWHP;
-    totalPSC = sessionPlacesData.totalPSC;
-    totalRCT = Math.ceil((totalWHP + totalPSC) / 10);
-    volWHP = Math.ceil((85 / 100) * totalWHP);
-    ltuWHP = totalWHP - volWHP;
-    volPSC = Math.ceil((85 / 100) * totalPSC);
-    ltuPSC = totalPSC - volPSC;
-    volRCT = Math.ceil((85 / 100) * totalRCT);
-    ltuRCT = totalRCT - volRCT;
-    totalLTU = Math.floor((ltuWHP * mandRatio) + (ltuPSC * mandRatio) + ltuRCT);
-    totalVol = Math.floor((volWHP * volRatio) + (volPSC * volRatio) + volRCT);
+    totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
+    disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
+    eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
+    ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
+    totalPSCPlaces = sessionPlacesData.totalPSCPlaces;
+    disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
+    eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
+    ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+    disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
+    eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
+    ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
+    totalRefsNeeded = disRefsNeeded + eagRefsNeeded + ltuRefsNeeded;
+    disControlGroup = Math.round(disRefsNeeded / 10);
+    eagControlGroup = Math.round(eagRefsNeeded / 10);
+    ltuControlGroup = Math.round(ltuRefsNeeded / 10);
+    totalControlGroup = disControlGroup + eagControlGroup + ltuControlGroup;
+    totalDisRefs = disRefsNeeded + disControlGroup;
+    totalEAGRefs = eagRefsNeeded + eagControlGroup;
+    totalLTURefs = ltuRefsNeeded + ltuControlGroup;
+    totalRefs = totalRefsNeeded + totalControlGroup;
+    totalCustRefs = totalDisRefs + totalEAGRefs;
   } else {
-    totalWHP = sessionPlacesData.totalWHP;
-    totalPSC = sessionPlacesData.totalPSC;
-    totalRCT = sessionPlacesData.totalRCT;
-    totalLTU = sessionPlacesData.totalLTU;
-    totalVol = sessionPlacesData.totalVol;
-    ltuRCT = sessionPlacesData.ltuRCT;
-    volRCT = sessionPlacesData.volRCT;
-    ltuPSC = sessionPlacesData.ltuPSC;
-    volPSC = sessionPlacesData.volPSC;
-    ltuWHP = sessionPlacesData.ltuWHP;
-    volWHP = sessionPlacesData.volWHP;
+    totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
+    disWHPPlaces = sessionPlacesData.disWHPPlaces;
+    eagWHPPlaces = sessionPlacesData.eagWHPPlaces;
+    ltuWHPPlaces = sessionPlacesData.ltuWHPPlaces;
+    totalPSCPlaces = sessionPlacesData.totalPSCPlaces;
+    disPSCPlaces = sessionPlacesData.disPSCPlaces;
+    eagPSCPlaces = sessionPlacesData.eagPSCPlaces;
+    ltuPSCPlaces = sessionPlacesData.ltuPSCPlaces;
+    disRefsNeeded = sessionPlacesData.disRefsNeeded;
+    eagRefsNeeded = sessionPlacesData.eagRefsNeeded;
+    ltuRefsNeeded = sessionPlacesData.ltuRefsNeeded;
+    totalRefsNeeded = sessionPlacesData.totalRefsNeeded;
+    disControlGroup = sessionPlacesData.disControlGroup;
+    eagControlGroup = sessionPlacesData.eagControlGroup;
+    ltuControlGroup = sessionPlacesData.ltuControlGroup;
+    totalControlGroup = sessionPlacesData.totalControlGroup;
+    totalDisRefs = sessionPlacesData.totalDisRefs;
+    totalEAGRefs = sessionPlacesData.totalEAGRefs;
+    totalLTURefs = sessionPlacesData.totalLTURefs;
+    totalRefs = sessionPlacesData.totalRefs;
+    totalCustRefs = sessionPlacesData.totalCustRefs;
   }
 
   placesData = {
-    totalWHP: totalWHP,
-    totalPSC: totalPSC,
-    totalRCT: totalRCT,
-    totalLTU: totalLTU,
-    totalVol: totalVol,
-    ltuWHP: ltuWHP,
-    ltuPSC: ltuPSC,
-    ltuRCT: ltuRCT,
-    volWHP: volWHP,
-    volPSC: volPSC,
-    volRCT: volRCT
+    totalWHPPlaces: totalWHPPlaces,
+    disWHPPlaces: disWHPPlaces,
+    eagWHPPlaces: eagWHPPlaces,
+    ltuWHPPlaces: ltuWHPPlaces,
+    totalPSCPlaces: totalPSCPlaces,
+    disPSCPlaces: disPSCPlaces,
+    eagPSCPlaces: eagPSCPlaces,
+    ltuPSCPlaces: ltuPSCPlaces,
+    disRefsNeeded: disRefsNeeded,
+    eagRefsNeeded: eagRefsNeeded,
+    ltuRefsNeeded: ltuRefsNeeded,
+    totalRefsNeeded: totalRefsNeeded,
+    disControlGroup: disControlGroup,
+    eagControlGroup: eagControlGroup,
+    ltuControlGroup: ltuControlGroup,
+    totalControlGroup: totalControlGroup,
+    totalDisRefs: totalDisRefs,
+    totalEAGRefs: totalEAGRefs,
+    totalLTURefs: totalLTURefs,
+    totalRefs: totalRefs,
+    totalCustRefs: totalCustRefs
   };
 
   res.render('latest/whp-profile-places', placesData);
 }
 
 function districtProfilePlacesAction (req, res) {
-
   var profilePlacesData = req.session.placesData || {};
 
-  let totalWHP;
-  let totalPSC;
-  let totalRCT;
-  let totalLTU;
-  let totalVol;
-  let ltuRCT;
-  let volRCT;
-  let ltuPSC;
-  let volPSC;
-  let ltuWHP;
-  let volWHP;
-  let mandRatio = profilePlacesData.mandRatio;
-  let volRatio = profilePlacesData.volRatio;
+  let totalWHPPlaces;
+  let disWHPPlaces;
+  let eagWHPPlaces;
+  let ltuWHPPlaces;
+  let totalPSCPlaces;
+  let disPSCPlaces;
+  let eagPSCPlaces;
+  let ltuPSCPlaces;
+  let disRefsNeeded;
+  let eagRefsNeeded;
+  let ltuRefsNeeded;
+  let totalRefsNeeded;
+  let disControlGroup;
+  let eagControlGroup;
+  let ltuControlGroup;
+  let totalControlGroup;
+  let totalDisRefs;
+  let totalEAGRefs;
+  let totalLTURefs;
+  let totalRefs;
+  let totalCustRefs;
+  const mandRatio = profilePlacesData.mandRatio;
+  const volRatio = profilePlacesData.volRatio;
   let placesData;
 
-  totalWHP = profilePlacesData.totalWHP;
-  totalPSC = profilePlacesData.totalPSC;
-  totalRCT = Math.ceil((totalWHP + totalPSC) / 10);
-  volWHP = Math.ceil((85 / 100) * totalWHP);
-  ltuWHP = totalWHP - volWHP;
-  volPSC = Math.ceil((85 / 100) * totalPSC);
-  ltuPSC = totalPSC - volPSC;
-  volRCT = Math.ceil((85 / 100) * totalRCT);
-  ltuRCT = totalRCT - volRCT;
-  totalLTU = Math.floor((ltuWHP * mandRatio) + (ltuPSC * mandRatio) + ltuRCT);
-  totalVol = Math.floor((volWHP * volRatio) + (volPSC * volRatio) + volRCT);
+  totalWHPPlaces = profilePlacesData.totalWHPPlaces;
+  disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
+  eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
+  ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
+  totalPSCPlaces = profilePlacesData.totalPSCPlaces;
+  disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
+  eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
+  ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+  disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
+  eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
+  ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
+  totalRefsNeeded = disRefsNeeded + eagRefsNeeded + ltuRefsNeeded;
+  disControlGroup = Math.round(disRefsNeeded / 10);
+  eagControlGroup = Math.round(eagRefsNeeded / 10);
+  ltuControlGroup = Math.round(ltuRefsNeeded / 10);
+  totalControlGroup = disControlGroup + eagControlGroup + ltuControlGroup;
+  totalDisRefs = disRefsNeeded + disControlGroup;
+  totalEAGRefs = eagRefsNeeded + eagControlGroup;
+  totalLTURefs = ltuRefsNeeded + ltuControlGroup;
+  totalRefs = totalRefsNeeded + totalControlGroup;
+  totalCustRefs = totalDisRefs + totalEAGRefs;
 
   placesData = {
-    totalWHP: totalWHP,
-    totalPSC: totalPSC,
-    totalRCT: totalRCT,
-    totalLTU: totalLTU,
-    totalVol: totalVol,
-    ltuWHP: ltuWHP,
-    ltuPSC: ltuPSC,
-    ltuRCT: ltuRCT,
-    volWHP: volWHP,
-    volPSC: volPSC,
-    volRCT: volRCT,
+    totalWHPPlaces: totalWHPPlaces,
+    disWHPPlaces: disWHPPlaces,
+    eagWHPPlaces: eagWHPPlaces,
+    ltuWHPPlaces: ltuWHPPlaces,
+    totalPSCPlaces: totalPSCPlaces,
+    disPSCPlaces: disPSCPlaces,
+    eagPSCPlaces: eagPSCPlaces,
+    ltuPSCPlaces: ltuPSCPlaces,
+    disRefsNeeded: disRefsNeeded,
+    eagRefsNeeded: eagRefsNeeded,
+    ltuRefsNeeded: ltuRefsNeeded,
+    totalRefsNeeded: totalRefsNeeded,
+    disControlGroup: disControlGroup,
+    eagControlGroup: eagControlGroup,
+    ltuControlGroup: ltuControlGroup,
+    totalControlGroup: totalControlGroup,
+    totalDisRefs: totalDisRefs,
+    totalEAGRefs: totalEAGRefs,
+    totalLTURefs: totalLTURefs,
+    totalRefs: totalRefs,
+    totalCustRefs: totalCustRefs,
     previousCalcFlag: 1
   };
 
@@ -161,15 +228,14 @@ function districtSelectionPage (req, res) {
   const placesData = req.session.placesData || {};
 
   const selectionReport = {
-    newReferrals: 70,
-    placesToFill: placesData.totalVol ? placesData.totalVol : 30
+    newReferrals: 100,
+    placesToFill: placesData.totalCustRefs ? placesData.totalCustRefs : 30
   };
 
   res.render('latest/whp-selection-report', selectionReport);
 }
 
 function districtSelectionAction (req, res) {
-
   const confirmPlaces = {
     newReferrals: req.body.newReferrals,
     placesToFill: req.body.placesToFill,
@@ -369,7 +435,7 @@ function formatDateForDisplay (unformattedDate) {
   var dateMonth;
   var dateYear;
 
-  var month = new Array();
+  var month = new Array()
   month[0] = 'January';
   month[1] = 'February';
   month[2] = 'March';

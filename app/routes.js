@@ -8,6 +8,6 @@ require('./routes/provision')(router);
 require('./routes/toggle-user-role')(router, users);
 require('./routes/appointments')(router);
 require('./routes/teams')(router);
-require('./routes/selection-tool')(router);
+require('./routes/whp-selection-tool')(router);
 
 module.exports = router;
