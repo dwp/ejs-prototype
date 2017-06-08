@@ -47,7 +47,20 @@ function alternativeLandingPageAction(req, res) {
 function landingPageWithContentUpdates(req, res, next){
     res.locals.earlyEntryOptions = content['landing-page'].earlyEntryOptions;
 
-    next()
+    next();
+}
+
+function landingPageWithContentUpdatesAction(req, res){
+  var isLongTermUnemployed = req.body['unemployed'] === 'Yes',
+    questionSet = req.body['disability'] === 'Yes' ? 'disability' : 'early-entry';
+
+  questionSet = req.body['external'] === 'Yes' ? 'external-referrer' : questionSet;
+
+  if(isLongTermUnemployed){
+    res.redirect('/latest/whp-result');
+  } else {
+    res.redirect('/latest/whp_eligibility_questions?voluntaryOption=' + questionSet);
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -130,6 +143,7 @@ module.exports.eligibilityQuestionsPage = eligibilityQuestionsPage;
 module.exports.eligibilityQuestionsPageAction = eligibilityQuestionsPageAction;
 module.exports.scoringQuestionsPage = scoringQuestionsPage;
 module.exports.landingPageWithContentUpdates = landingPageWithContentUpdates;
+module.exports.landingPageWithContentUpdatesAction = landingPageWithContentUpdatesAction;
 
 
 
