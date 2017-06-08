@@ -13,6 +13,7 @@ module.exports = function(router) {
 
   // Alternative landing page routes
   router.get('/latest/selection_tool_content', selectionTool.landingPageWithContentUpdates);
+  router.post('/latest/selection_tool_content', selectionTool.landingPageWithContentUpdatesAction);
 
   // Eligibility question routes
   router.get('/latest/whp_eligibility_questions', selectionTool.eligibilityQuestionsPage);
