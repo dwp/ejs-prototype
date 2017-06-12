@@ -171,9 +171,9 @@ function districtSelectionPage (req, res) {
 function districtSelectionAction (req, res) {
 
   const confirmPlaces = {
-    newReferrals: req.body.newReferrals,
-    placesToFill: req.body.placesToFill,
-    referralsSelected: (req.body.placesToFill - 3)
+    newReferrals: 10,
+    placesToFill: 20,
+    referralsSelected: 30
   };
 
   res.render('latest/whp-confirm-selection', confirmPlaces);

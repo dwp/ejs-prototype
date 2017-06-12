@@ -12,128 +12,142 @@
 
       <form method="POST" action="../gatekeeper/selection">
         <div class="grid-row">
-          <div class="column-full">
-            <div class="grid-row">
-              <div class="column-third">
-                <div class="form-group">
-                  <label class="form-label" for="newReferrals">Referrals received</label>
-                  <input readonly class="form-control form-control-1-4" type="text" name="newReferrals" id="newReferrals" value="{{newReferrals}}">
-                </div>
-              </div>
-
-              <div class="column-third">
-                <div class="form-group">
-                  <label class="form-label" for="placesToFill">Places to fill</label>
-                  <input readonly class="form-control form-control-1-4" type="text" name="placesToFill" id="placesToFill" value="{{placesToFill}}">
-                </div>
-              </div>
-            </div>
+          <div class="column-third">
+            <p><span id="selectionCount" class="bold">0</span> selections made</p>
+          </div>
+          <div class="column-third">
+            <p><span class="bold">{{newReferrals}}</span> referrals received</p>
+          </div>
+          <div class="column-third">
+            <p><span class="bold">{{placesToFill}}</span> spaces available</p>
           </div>
         </div>
 
-        <div class="grid-row">
-          <div class="column-full">
-            <table class="display" id="example" border="0" cellpadding="0" cellspacing="0" border-spacing="0">
-              <thead>
-                <tr>
-                  <th><span class="bold">Jobcentre</span></th>
-                  <th><Span class="bold">Disabled/EEG</Span></th>
-                  <th><span class="bold">Score</span></th>
-                  <th><span class="bold">ESA WRAG, not in receipt of WRAC</span></th>
-                  <th><span class="bold">Benefit Cap</span></th>
-                  <th><span class="bold">DDA Priority applies ?</span></th>
-                  <th><span class="bold">Put forward for random allocation</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Worcester</td>
-                  <td>EEG - carer</td>
-                  <td>22</td>
-                  <td></td>
-                  <td>Y</td>
-                  <td></td>
-                  <td>
-                    <input name="random-allocation-1" id="random-allocation-1" type="checkbox" checked="{{randomAllocation1}}")></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Coventry</td>
-                  <td>Disabled</td>
-                  <td>23</td>
-                  <td></td>
-                  <td>Y</td>
-                  <td>Y</td>
-                  <td>
-                    <input name="random-allocation-2" id="random-allocation-2" type="checkbox")></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Coventry</td>
-                  <td>EEG - homeless</td>
-                  <td>12</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <input name="random-allocation-3" id="random-allocation-3" type="checkbox" checked="{{randomAllocation3}}")></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Coventry</td>
-                  <td>Disabled</td>
-                  <td>8</td>
-                  <td>Y</td>
-                  <td>Y</td>
-                  <td></td>
-                  <td>
-                    <input name="random-allocation-4" id="random-allocation-4" type="checkbox", )></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Stratford</td>
-                  <td>Disabled</td>
-                  <td>15</td>
-                  <td>Y</td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <input name="random-allocation-5" id="random-allocation-5" type="checkbox", checked="{{randomAllocation5}}")></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>" "</td>
-                  <td>" "</td>
-                  <td>" "</td>
-                  <td>" "</td>
-                  <td>" "</td>
-                  <td>" "</td>
-                  <td>
-                    <input name="random-allocation-0" id="random-allocation-0" type="checkbox")></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Kidderminster</td>
-                  <td>Disabled</td>
-                  <td>16</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <input name="random-allocation-70", id="random-allocation-70", type="checkbox" checked="{{randomAllocation70}}")></input>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <br>
-        <br>
         <div class="grid-row">
           <div class="column-full">
             <div class="form-group">
-              <input type="submit" class="button" value="Confirm and Continue"></input>
-              <!--<a href="/latest/gatekeeper/selection"><button class="button">Confirm and Continue</button></a>-->
+              <table>
+                <thead>
+                  <tr>
+                    <th>Select</th>
+                    <th>Jobcentre</th>
+                    <th>Disabled/EAG</th>
+                    <th class="numeric">Score</th>
+                    <th>ESA WRAG, not in receipt of WRAC</th>
+                    <th>Benefit Cap</th>
+                    <th>DDA Priority applies?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in range(0, 10) %}
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-1" type="checkbox"/>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Worcester</td>
+                      <td>EAG - carer</td>
+                      <td class="numeric">22</td>
+                      <td></td>
+                      <td>Yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-2" type="checkbox"/>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Coventry</td>
+                      <td>Disabled</td>
+                      <td class="numeric">23</td>
+                      <td></td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-3" type="checkbox"/>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Coventry</td>
+                      <td>EAG - homeless</td>
+                      <td class="numeric">12</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-4" type="checkbox"/>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Coventry</td>
+                      <td>Disabled</td>
+                      <td class="numeric">8</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-5" type="checkbox" />
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Stratford</td>
+                      <td>Disabled</td>
+                      <td class="numeric">15</td>
+                      <td>Yes</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-0" type="checkbox"></input>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Leeds</td>
+                      <td>EAG</td>
+                      <td class="numeric">2</td>
+                      <td></td>
+                      <td></td>
+                      <td>Yes</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input name="random-allocation-70" type="checkbox"></input>
+                          <span class="visually-hidden">Put forward for allocation</span>
+                        </label>
+                      </td>
+                      <td>Kidderminster</td>
+                      <td>Disabled</td>
+                      <td class="numeric">16</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="column-full">
+            <div class="form-group">
+              <button class="button">Continue</button>
             </div>
           </div>
         </div>
@@ -143,5 +157,5 @@
 {% endblock %}
 
 {% block page_scripts %}
-  <script src="/public/javascripts/caseload.js"></script>
+  <script src="/public/javascripts/whpSelection.js"></script>
 {% endblock %}
