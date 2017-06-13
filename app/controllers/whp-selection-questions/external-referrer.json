@@ -14,6 +14,7 @@
       "name" : "basic-need", 
       "options" : [ "Yes","No" ]},
     { "text" : "Do you consider that the individual will realistically find employment in the next twelve months?",
+      "alternativeText" : "Do you think the person will find work in the next 12 months with jobcentre support alone and no extra provision?",
       "name" : "next-twelve", 
       "options" : [ "Yes","No" ]},
     { "text" : "Do you consider the individual has a realistic job goal?",

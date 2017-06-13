@@ -6,7 +6,7 @@
     {% include "includes/main_nav.html" %}
     
     <div class="main-content">
-      <h1 class="heading-large">WHP Confirm referrals</h1>
+      <h1 class="heading-large">WHP confirm referrals</h1>
 
       <div class="grid-row">
         {% set currentClaimantPage = 'selectionTool' %}
@@ -14,25 +14,18 @@
       
       <div class="grid-row">
         <div class="column-full">
-
-          <div>
-            <p>You are about to refer {{referralsSelected}} claimants for random allocation against {{placesToFill}} places profiled</p>
-            <br>
-            <p>To allocate additional claimants, use the button below to return to selections</p>
-          </div>
+          <p>You are about to refer {{referralsSelected}} claimants for random allocation against {{placesToFill}} places profiled</p>
+          <p>To allocate additional claimants, use the link below to return to selections</p>
         </div>
       </div>
-      <br>
-      <br>
+      
       <div class="grid-row">
         <div class="column-third">
-          <div class="form group">
-            <a href="/latest/gatekeeper/selection"><button class="button">Back to selections</button></a>
-          </div>
-        </div>
-        <div class="column-third">
           <div class="form-group">
-            <a href="/latest/whp-selection-outcomes-report"><button class="button">Continue</button></a>
+            <a href="/latest/whp-selection-outcomes-report" class="button">Continue</a>
+          </div>
+          <div class="form-group">
+            <a href="/latest/gatekeeper/selection">Back to selections</a>
           </div>
         </div>
       </div>

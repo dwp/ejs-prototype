@@ -30,7 +30,8 @@
               <p>{{explanation}}</p>
             {% endif %}
               {% for question in questions %}
-                {{radioGroup(question.text, question.name, question.options, question.hint, question.description )}}
+                {% set questionText = question.alternativeText if getData.alternativeQuestionText and question.alternativeText else question.text %}
+                {{radioGroup(questionText, question.name, question.options, question.hint, question.description )}}
               {% endfor %}
             </form>
           </div>
