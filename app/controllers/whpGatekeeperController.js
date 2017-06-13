@@ -144,13 +144,13 @@ function districtProfilePlacesAction (req, res) {
   var profilePlacesData = req.session.placesData || {};
 
   let totalWHPPlaces;
-  let disWHPPlaces;
-  let eagWHPPlaces;
-  let ltuWHPPlaces;
+  let disWHPPlaces = parseInt(req.body.disWHPPlaces);
+  let eagWHPPlaces = parseInt(req.body.eagWHPPlaces);
+  let ltuWHPPlaces = parseInt(req.body.ltuWHPPlaces);
   let totalPSCPlaces;
-  let disPSCPlaces;
-  let eagPSCPlaces;
-  let ltuPSCPlaces;
+  let disPSCPlaces = parseInt(req.body.disPSCPlaces);
+  let eagPSCPlaces = parseInt(req.body.eagPSCPlaces);
+  let ltuPSCPlaces = parseInt(req.body.ltuPSCPlaces);
   let disRefsNeeded;
   let eagRefsNeeded;
   let ltuRefsNeeded;
@@ -168,14 +168,8 @@ function districtProfilePlacesAction (req, res) {
   const volRatio = profilePlacesData.volRatio;
   let placesData;
 
-  totalWHPPlaces = profilePlacesData.totalWHPPlaces;
-  disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
-  eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
-  ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
-  totalPSCPlaces = profilePlacesData.totalPSCPlaces;
-  disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
-  eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
-  ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+  totalWHPPlaces = disWHPPlaces + eagWHPPlaces + ltuWHPPlaces;
+  totalPSCPlaces = disPSCPlaces + eagPSCPlaces + ltuPSCPlaces;
   disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
   eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
   ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
@@ -216,7 +210,7 @@ function districtProfilePlacesAction (req, res) {
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/selection');
+  res.redirect('/latest/gatekeeper/profilePlaces');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
