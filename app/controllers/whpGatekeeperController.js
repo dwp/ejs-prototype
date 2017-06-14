@@ -134,13 +134,16 @@ function districtProfilePlacesPage (req, res) {
     totalEAGRefs: totalEAGRefs,
     totalLTURefs: totalLTURefs,
     totalRefs: totalRefs,
-    totalCustRefs: totalCustRefs
+    totalCustRefs: totalCustRefs,
+    mandRatio : mandRatio,
+    volRation : volRatio
   };
 
   res.render('latest/whp-profile-places', placesData);
 }
 
 function districtProfilePlacesAction (req, res) {
+
   var profilePlacesData = req.session.placesData || {};
 
   let totalWHPPlaces;
@@ -185,32 +188,39 @@ function districtProfilePlacesAction (req, res) {
   totalCustRefs = totalDisRefs + totalEAGRefs;
 
   placesData = {
-    totalWHPPlaces: totalWHPPlaces,
-    disWHPPlaces: disWHPPlaces,
-    eagWHPPlaces: eagWHPPlaces,
-    ltuWHPPlaces: ltuWHPPlaces,
-    totalPSCPlaces: totalPSCPlaces,
-    disPSCPlaces: disPSCPlaces,
-    eagPSCPlaces: eagPSCPlaces,
-    ltuPSCPlaces: ltuPSCPlaces,
-    disRefsNeeded: disRefsNeeded,
-    eagRefsNeeded: eagRefsNeeded,
-    ltuRefsNeeded: ltuRefsNeeded,
-    totalRefsNeeded: totalRefsNeeded,
-    disControlGroup: disControlGroup,
-    eagControlGroup: eagControlGroup,
-    ltuControlGroup: ltuControlGroup,
+    totalWHPPlaces   : totalWHPPlaces,
+    disWHPPlaces     : disWHPPlaces,
+    eagWHPPlaces     : eagWHPPlaces,
+    ltuWHPPlaces     : ltuWHPPlaces,
+    totalPSCPlaces   : totalPSCPlaces,
+    disPSCPlaces     : disPSCPlaces,
+    eagPSCPlaces     : eagPSCPlaces,
+    ltuPSCPlaces     : ltuPSCPlaces,
+    disRefsNeeded    : disRefsNeeded,
+    eagRefsNeeded    : eagRefsNeeded,
+    ltuRefsNeeded    : ltuRefsNeeded,
+    totalRefsNeeded  : totalRefsNeeded,
+    disControlGroup  : disControlGroup,
+    eagControlGroup  : eagControlGroup,
+    ltuControlGroup  : ltuControlGroup,
     totalControlGroup: totalControlGroup,
-    totalDisRefs: totalDisRefs,
-    totalEAGRefs: totalEAGRefs,
-    totalLTURefs: totalLTURefs,
-    totalRefs: totalRefs,
-    totalCustRefs: totalCustRefs,
-    previousCalcFlag: 1
+    totalDisRefs     : totalDisRefs,
+    totalEAGRefs     : totalEAGRefs,
+    totalLTURefs     : totalLTURefs,
+    totalRefs        : totalRefs,
+    totalCustRefs    : totalCustRefs,
+    mandRatio        : mandRatio,
+    volRatio         : volRatio,
+    previousCalcFlag : 1
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/profilePlaces');
+
+  if (req.body.hasOwnProperty("recalc")) {
+    res.redirect('/latest/gatekeeper/profilePlaces');
+  } else {
+    res.redirect('/latest/gatekeeper/selection');
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
