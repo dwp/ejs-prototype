@@ -11,18 +11,25 @@
       {% set currentGatekeeperPage = 'report' %}
 
       <form method="POST" action="../gatekeeper/selection">
+
         <div class="grid-row">
-          <div class="column-third">
-            <p><span id="selectionCount" class="bold">0</span> selections made</p>
-            <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
-          </div>
           <div class="column-third">
             <p><span class="bold">{{newReferrals}}</span> referrals received</p>
             <input type="hidden" name="newReferrals" id="newReferrals" value="{{newReferrals}}">
           </div>
           <div class="column-third">
-            <p><span class="bold">{{placesToFill}}</span> spaces available</p>
-            <input type="hidden" name="placesToFill" id="placesToFill" value="{{placesToFill}}">
+            <p><span class="bold">{{totalDisRefs}}</span> disabled/health condition referrals to be selected</p>
+            <input type="hidden" name="totalDisRefs" id="totalDisRefs" value="{{totalDisRefs}}">
+          </div>
+          <div class="column-third">
+            <p><span class="bold">{{totalEagRefs}}</span> early access group referrals to be selected</p>
+            <input type="hidden" name="totalEagRefs" id="totalEagrefs" value="{{totalEagRefs}}">
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="column-half">
+            <p><span id="selectionCount" class="bold">0</span> selections made</p>
+            <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
           </div>
         </div>
 

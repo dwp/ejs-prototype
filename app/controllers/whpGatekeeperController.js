@@ -233,7 +233,8 @@ function districtSelectionPage (req, res) {
 
   const selectionReport = {
     newReferrals: 100,
-    placesToFill: placesData.totalCustRefs ? placesData.totalCustRefs : 30
+    totalDisRefs: placesData.totalDisRefs ? placesData.totalDisRefs : 30,
+    totalEagRefs: placesData.totalEagRefs ? placesData.totalEagRefs : 10
   };
 
   res.render('latest/whp-selection-report', selectionReport);
@@ -243,10 +244,14 @@ function districtSelectionAction (req, res) {
 
   let placesToFill = req.body.placesToFill;
   let referralsSelected = req.body.referralsSelected;
+  let totalDisRefs = req.body.totalDisRefs;
+  let totalEagRefs = req.body.totalEagRefs;
 
   const confirmPlaces = {
     placesToFill: placesToFill,
-    referralsSelected: referralsSelected
+    referralsSelected: referralsSelected,
+    totalDisRefs : totalDisRefs,
+    totalEagRefs: totalEagRefs
   };
 
   res.render('latest/whp-confirm-selection', confirmPlaces);
