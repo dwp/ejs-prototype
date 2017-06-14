@@ -229,6 +229,8 @@ function districtSelectionPage (req, res) {
 
   const selectionReport = {
     newReferrals: 100,
+    disabledPlacesToFill : placesData.disWHPPlaces,
+    eagPlacesToFill : placesData.eagWHPPlaces,
     placesToFill: placesData.totalCustRefs ? placesData.totalCustRefs : 30
   };
 
