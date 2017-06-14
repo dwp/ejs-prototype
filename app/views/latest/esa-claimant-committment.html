@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">
+        <h1 class="heading-large">ESA Claimant Committment for {{name}}</h1>
+
+        <form class="form" method="post" action="../gatekeeper/esa-claimant">
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <p>New page for ESA : Name : <span class="inline bold">{{name}}</span></p>
+                    <p>New page for ESA : NINO : <span class="inline bold">{{nino}}</span></p>
+
+                    <div class="stat-over-first">
+                        <form>
+
+                            <label class="form-label" for="nameField">Name</label>
+                            <input class="form-control form-control-1-4" type="text" name="nameField" id="nameField" value="{{name}}">
+
+                            <label class="form-label" for="ninoField">Nino</label>
+                            <input class="form-control form-control-1-4" type="text" name="ninoField" id="ninoField" value="{{nino}}">
+
+                            <label class="form-label" for="otherField">Other</label>
+                            <input class="form-control form-control-1-4" type="text" name="otherField" id="otherField" value="{{name}}">
+
+                        </form>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-full">
+                        <div class="form-group">
+                            <input type="submit" class="button" value="Confirm and Continue"></input>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+
+
+

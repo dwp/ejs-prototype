@@ -6,6 +6,21 @@
       <div class="main-content">
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
+        <div class="grid-row">
+          {% set esaClaimantCommittmentScreens = [{
+          workTitle : 'ESA',
+          links: [{
+          link : 'latest/esa-claimant', title : 'ESA Landing Page'
+          }, {
+          link : 'latest/esa-claimant', title : 'Next page'
+          }, {
+          link : 'latest/esa-claimant', title : 'And next page'
+          }]
+          }] %}
+
+          {{ sprintLinks( 'ESA Claimant Committment', esaClaimantCommittmentScreens) }}
+
+        </div>
 
         <div class="grid-row">
           {% set whpSelectionToolWorkcoachScreens = [{ 
