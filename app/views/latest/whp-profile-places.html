@@ -26,16 +26,28 @@
                 <tr>
                   <td>WHP private places to fill<span class="form-hint">Carried forward from previous page</span></td>
                   <td class="bold numeric">{{totalWHPPlaces}}</td>
-                  <td class="numeric">{{disWHPPlaces}}</td>
-                  <td class="numeric">{{eagWHPPlaces}}</td>
-                  <td class="numeric">{{ltuWHPPlaces}}</td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="disWHPPlaces" id="disWHPPlaces" value="{{disWHPPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="eagWHPPlaces" id="eagWHPPlaces" value="{{eagWHPPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="ltuWHPPlaces" id="ltuWHPPlaces" value="{{ltuWHPPlaces}}">
+                  </td>
                 </tr>
                 <tr>
                   <td>PSC public places to fill<span class="form-hint">Carried forward from previous page</span></td>
                   <td class="bold numeric">{{totalPSCPlaces}}</td>
-                  <td class="numeric">{{disPSCPlaces}}</td>
-                  <td class="numeric">{{eagPSCPlaces}}</td>
-                  <td class="numeric">{{ltuPSCPlaces}}</td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="disPSCPlaces" id="disPSCPlaces" value="{{disPSCPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="eagPSCPlaces" id="eagPSCPlaces" value="{{eagPSCPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="ltuPSCPlaces" id="ltuPSCPlaces" value="{{ltuPSCPlaces}}">
+                  </td>
                 </tr>
                 <tr>
                   <td>Referrals needed to fill places<span class="form-hint">Based on referral to start ratio</span></td>
@@ -66,10 +78,17 @@
             </table>
             <br>
             <div class="grid-row">
-              <div class="column-full">
+              <div class="column-half">
                 <div class="form-group">
-                  <input class="button" type="submit" value="Confirm and continue"></input>
-                  <!--<a href="/latest/gatekeeper/profilePlaces"><button class="button">Confirm and Continue</button></a>-->
+                  <input class="button" name="recalc" type="submit" value="Re-calculate"></input>
+                  <!--<a href="/latest/gatekeeper/profilePlaces"><button class="button">Re-calculate</button></a>-->
+                </div>
+              </div>
+
+              <div class="column-half">
+                <div class="form-group">
+                  <input class="button" name="conf" type="submit" value="Confirm and continue"></input>
+                  <!--<a href="/latest/gatekeeper/selection"><button class="button">Confirm and Continue</button></a>-->
                 </div>
               </div>
             </div>

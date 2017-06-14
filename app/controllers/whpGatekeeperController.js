@@ -134,23 +134,26 @@ function districtProfilePlacesPage (req, res) {
     totalEAGRefs: totalEAGRefs,
     totalLTURefs: totalLTURefs,
     totalRefs: totalRefs,
-    totalCustRefs: totalCustRefs
+    totalCustRefs: totalCustRefs,
+    mandRatio : mandRatio,
+    volRation : volRatio
   };
 
   res.render('latest/whp-profile-places', placesData);
 }
 
 function districtProfilePlacesAction (req, res) {
+
   var profilePlacesData = req.session.placesData || {};
 
   let totalWHPPlaces;
-  let disWHPPlaces;
-  let eagWHPPlaces;
-  let ltuWHPPlaces;
+  let disWHPPlaces = parseInt(req.body.disWHPPlaces);
+  let eagWHPPlaces = parseInt(req.body.eagWHPPlaces);
+  let ltuWHPPlaces = parseInt(req.body.ltuWHPPlaces);
   let totalPSCPlaces;
-  let disPSCPlaces;
-  let eagPSCPlaces;
-  let ltuPSCPlaces;
+  let disPSCPlaces = parseInt(req.body.disPSCPlaces);
+  let eagPSCPlaces = parseInt(req.body.eagPSCPlaces);
+  let ltuPSCPlaces = parseInt(req.body.ltuPSCPlaces);
   let disRefsNeeded;
   let eagRefsNeeded;
   let ltuRefsNeeded;
@@ -168,14 +171,8 @@ function districtProfilePlacesAction (req, res) {
   const volRatio = profilePlacesData.volRatio;
   let placesData;
 
-  totalWHPPlaces = profilePlacesData.totalWHPPlaces;
-  disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
-  eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
-  ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
-  totalPSCPlaces = profilePlacesData.totalPSCPlaces;
-  disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
-  eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
-  ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+  totalWHPPlaces = disWHPPlaces + eagWHPPlaces + ltuWHPPlaces;
+  totalPSCPlaces = disPSCPlaces + eagPSCPlaces + ltuPSCPlaces;
   disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
   eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
   ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
@@ -191,32 +188,39 @@ function districtProfilePlacesAction (req, res) {
   totalCustRefs = totalDisRefs + totalEAGRefs;
 
   placesData = {
-    totalWHPPlaces: totalWHPPlaces,
-    disWHPPlaces: disWHPPlaces,
-    eagWHPPlaces: eagWHPPlaces,
-    ltuWHPPlaces: ltuWHPPlaces,
-    totalPSCPlaces: totalPSCPlaces,
-    disPSCPlaces: disPSCPlaces,
-    eagPSCPlaces: eagPSCPlaces,
-    ltuPSCPlaces: ltuPSCPlaces,
-    disRefsNeeded: disRefsNeeded,
-    eagRefsNeeded: eagRefsNeeded,
-    ltuRefsNeeded: ltuRefsNeeded,
-    totalRefsNeeded: totalRefsNeeded,
-    disControlGroup: disControlGroup,
-    eagControlGroup: eagControlGroup,
-    ltuControlGroup: ltuControlGroup,
+    totalWHPPlaces   : totalWHPPlaces,
+    disWHPPlaces     : disWHPPlaces,
+    eagWHPPlaces     : eagWHPPlaces,
+    ltuWHPPlaces     : ltuWHPPlaces,
+    totalPSCPlaces   : totalPSCPlaces,
+    disPSCPlaces     : disPSCPlaces,
+    eagPSCPlaces     : eagPSCPlaces,
+    ltuPSCPlaces     : ltuPSCPlaces,
+    disRefsNeeded    : disRefsNeeded,
+    eagRefsNeeded    : eagRefsNeeded,
+    ltuRefsNeeded    : ltuRefsNeeded,
+    totalRefsNeeded  : totalRefsNeeded,
+    disControlGroup  : disControlGroup,
+    eagControlGroup  : eagControlGroup,
+    ltuControlGroup  : ltuControlGroup,
     totalControlGroup: totalControlGroup,
-    totalDisRefs: totalDisRefs,
-    totalEAGRefs: totalEAGRefs,
-    totalLTURefs: totalLTURefs,
-    totalRefs: totalRefs,
-    totalCustRefs: totalCustRefs,
-    previousCalcFlag: 1
+    totalDisRefs     : totalDisRefs,
+    totalEAGRefs     : totalEAGRefs,
+    totalLTURefs     : totalLTURefs,
+    totalRefs        : totalRefs,
+    totalCustRefs    : totalCustRefs,
+    mandRatio        : mandRatio,
+    volRatio         : volRatio,
+    previousCalcFlag : 1
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/selection');
+
+  if (req.body.hasOwnProperty("recalc")) {
+    res.redirect('/latest/gatekeeper/profilePlaces');
+  } else {
+    res.redirect('/latest/gatekeeper/selection');
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
