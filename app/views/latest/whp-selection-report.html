@@ -11,20 +11,22 @@
       {% set currentGatekeeperPage = 'report' %}
 
       <form method="POST" action="../gatekeeper/selection">
-        <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
-          
-        <div class="grid-row">
+        <div class="grid-row">          
           <div class="column-quarter">
-            <p><span class="bold">{{disabledPlacesToFill}}</span> disabled referrals</p>
-            <input type="hidden" name="disabledPlacesToFill" id="disabledPlacesToFill" value="{{disabledPlacesToFill}}">
+            <p><span id="selectionCount" class="bold">0</span> selections made</p>
+            <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
           </div>
           <div class="column-quarter">
-            <p><span class="bold">{{eagPlacesToFill}}</span> early access group referrals</p>
-            <input type="hidden" name="eagPlacesToFill" id="eagPlacesToFill" value="{{eagPlacesToFill}}">
+            <p><span class="bold">{{newReferrals}}</span> referrals received</p>
+            <input type="hidden" name="newReferrals" id="newReferrals" value="{{newReferrals}}">
           </div>
           <div class="column-quarter">
-            <p><span class="bold">{{placesToFill}}</span> spaces available</p>
-            <input type="hidden" name="placesToFill" id="placesToFill" value="{{placesToFill}}">
+            <p><span class="bold">{{totalDisRefs}}</span> disabled/health condition referrals to be selected</p>
+            <input type="hidden" name="totalDisRefs" id="totalDisRefs" value="{{totalDisRefs}}">
+          </div>
+          <div class="column-quarter">
+            <p><span class="bold">{{totalEagRefs}}</span> early access group referrals to be selected</p>
+            <input type="hidden" name="totalEagRefs" id="totalEagrefs" value="{{totalEagRefs}}">
           </div>
         </div>
 
@@ -36,7 +38,7 @@
                 <table>
                   <thead>
                     <tr>
-                      <th>Select (<span id="selectionCount" class="bold">0</span> selected)</th>
+                      <th>Select</th>
                       <th>Jobcentre</th>
                       <th>Primary barrier</th>
                       <th class="numeric">Score</th>

@@ -16,60 +16,75 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th class="bold numeric">Total</th>
-                  <th class="numeric">Disabled/health condition (75%)</th>
-                  <th class="numeric">Early Access (10%)</th>
-                  <th class="numeric">Long term unemployed (15%)</th>
+                  <th class="numeric">Total</th>
+                  <th class="numeric">Disabled/health condition</th>
+                  <th class="numeric">Early Access</th>
+                  <th class="numeric">Long term unemployed</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>WHP private places to fill<span class="form-hint">Carried forward from previous page</span></td>
-                  <td class="bold numeric">{{totalWHPPlaces}}</td>
-                  <td class="numeric">{{disWHPPlaces}}</td>
-                  <td class="numeric">{{eagWHPPlaces}}</td>
-                  <td class="numeric">{{ltuWHPPlaces}}</td>
+                  <td class="numeric">{{totalWHPPlaces}}</td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="disWHPPlaces" id="disWHPPlaces" value="{{disWHPPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="eagWHPPlaces" id="eagWHPPlaces" value="{{eagWHPPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="ltuWHPPlaces" id="ltuWHPPlaces" value="{{ltuWHPPlaces}}">
+                  </td>
                 </tr>
                 <tr>
                   <td>PSC public places to fill<span class="form-hint">Carried forward from previous page</span></td>
-                  <td class="bold numeric">{{totalPSCPlaces}}</td>
-                  <td class="numeric">{{disPSCPlaces}}</td>
-                  <td class="numeric">{{eagPSCPlaces}}</td>
-                  <td class="numeric">{{ltuPSCPlaces}}</td>
+                  <td class="numeric">{{totalPSCPlaces}}</td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="disPSCPlaces" id="disPSCPlaces" value="{{disPSCPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="eagPSCPlaces" id="eagPSCPlaces" value="{{eagPSCPlaces}}">
+                  </td>
+                  <td class="numeric">
+                    <input class="form-control form-control-1-4" type="text" name="ltuPSCPlaces" id="ltuPSCPlaces" value="{{ltuPSCPlaces}}">
+                  </td>
                 </tr>
                 <tr>
                   <td>Referrals needed to fill places<span class="form-hint">Based on referral to start ratio</span></td>
-                  <td class="bold numeric">{{totalRefsNeeded}}</td>
+                  <td class="numeric">{{totalRefsNeeded}}</td>
                   <td class="numeric">{{disRefsNeeded}}</td>
                   <td class="numeric">{{eagRefsNeeded}}</td>
                   <td class="numeric">{{ltuRefsNeeded}}</td>
                 </tr>
                 <tr>
-                  <td>Control group volumes<span class="form-hint">Automatically calculated</span></td>
+                  <td>Control group volumes<span class="form-hint">Automatically calculated based on referrals</span></td>
                   <td class="numeric">{{totalControlGroup}}</td>
                   <td class="numeric">{{disControlGroup}}</td>
                   <td class="numeric">{{eagControlGroup}}</td>
                   <td class="numeric">{{ltuControlGroup}}</td>
                 </tr>
                 <tr>
-                  <td>Total referrals needed</td>
-                  <td class="numeric">{{totalRefs}}</td>
-                  <td class="numeric">{{totalDisRefs}}</td>
-                  <td class="numeric">{{totalEAGRefs}}</td>
-                  <td class="numeric">{{totalLTURefs}}</td>
-                </tr>
-                <tr>
-                  <td colspan="2"><br><br>Total customers needed for random allocation<span class="form-hint">(Long term allocations will be made automatically)</span></td>
-                  <td class="numeric"><br><br>{{totalCustRefs}}</td>
+                  <td class="bold"><br><br>Total referrals needed</td>
+                  <td class="bold numeric"><br><br>{{totalRefs}}</td>
+                  <td class="bold numeric"><br><br>{{totalDisRefs}}</td>
+                  <td class="bold numeric"><br><br>{{totalEAGRefs}}</td>
+                  <td class="bold numeric"><br><br>{{totalLTURefs}}</td>
                 </tr>
               </tbody>
             </table>
             <br>
             <div class="grid-row">
-              <div class="column-full">
+              <div class="column-half">
                 <div class="form-group">
-                  <input class="button" type="submit" value="Confirm and continue"></input>
-                  <!--<a href="/latest/gatekeeper/profilePlaces"><button class="button">Confirm and Continue</button></a>-->
+                  <input class="button" name="recalc" type="submit" value="Re-calculate"></input>
+                  <!--<a href="/latest/gatekeeper/profilePlaces"><button class="button">Re-calculate</button></a>-->
+                </div>
+              </div>
+
+              <div class="column-half">
+                <div class="form-group">
+                  <input class="button" name="conf" type="submit" value="Confirm and continue"></input>
+                  <!--<a href="/latest/gatekeeper/selection"><button class="button">Confirm and Continue</button></a>-->
                 </div>
               </div>
             </div>
