@@ -11,25 +11,22 @@
       {% set currentGatekeeperPage = 'report' %}
 
       <form method="POST" action="../gatekeeper/selection">
-
-        <div class="grid-row">
-          <div class="column-third">
+        <div class="grid-row">          
+          <div class="column-quarter">
+            <p><span id="selectionCount" class="bold">0</span> selections made</p>
+            <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
+          </div>
+          <div class="column-quarter">
             <p><span class="bold">{{newReferrals}}</span> referrals received</p>
             <input type="hidden" name="newReferrals" id="newReferrals" value="{{newReferrals}}">
           </div>
-          <div class="column-third">
+          <div class="column-quarter">
             <p><span class="bold">{{totalDisRefs}}</span> disabled/health condition referrals to be selected</p>
             <input type="hidden" name="totalDisRefs" id="totalDisRefs" value="{{totalDisRefs}}">
           </div>
-          <div class="column-third">
+          <div class="column-quarter">
             <p><span class="bold">{{totalEAGRefs}}</span> early access group referrals to be selected</p>
             <input type="hidden" name="totalEAGRefs" id="totalEAGrefs" value="{{totalEAGRefs}}">
-          </div>
-        </div>
-        <div class="grid-row">
-          <div class="column-half">
-            <p><span id="selectionCount" class="bold">0</span> selections made</p>
-            <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
           </div>
         </div>
 
@@ -37,17 +34,17 @@
           <div class="column-full">
             <div class="form-group">
               <fieldset>
-                <legend class="visually-hidden">Select for allocation</legend>
+                <legend class="visually-hidden">Select for allocation </legend>
                 <table>
                   <thead>
                     <tr>
                       <th>Select</th>
                       <th>Jobcentre</th>
-                      <th>Disabled/EAG</th>
+                      <th>Primary barrier</th>
                       <th class="numeric">Score</th>
-                      <th>ESA WRAG, not in receipt of WRAC</th>
-                      <th>Benefit Cap</th>
-                      <th>DDA Priority applies?</th>
+                      <th>WRAC priority</th>
+                      <th>Benefit cap</th>
+                      <th>DDA Priority</th>
                     </tr>
                   </thead>
                   <tbody>
