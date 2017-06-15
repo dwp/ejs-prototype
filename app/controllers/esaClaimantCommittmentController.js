@@ -25,7 +25,7 @@ function committmentAction (req, res) {
   };
 
   req.session.sessionData = getEsaCommittmentData;
-  res.redirect('/latest/esa-claimant');
+  res.redirect('/latest/esa-claimant-committment');
 }
 
 module.exports.committmentPage = committmentPage;

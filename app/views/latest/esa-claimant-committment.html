@@ -8,33 +8,96 @@
     <div class="main-content">
         <h1 class="heading-large">ESA Claimant Committment for {{name}}</h1>
 
-        <form class="form" method="post" action="../latest/esa-claimant">
-            <div class="grid-row">
-                <div class="column-two-thirds">
-                    <p>New page for ESA : Name : <span class="inline bold">{{name}}</span></p>
-                    <p>New page for ESA : NINO : <span class="inline bold">{{nino}}</span></p>
+        {% set currentClaimantPage = 'committment' %}
+        {% include "includes/summary_nav.html" %}
 
-                    <div class="stat-over-first">
+        <form class="form" method="post" action="../latest/esa_claimant">
+            <form>
+                <div class="grid-row">
+                    <div class="form-group-compound list-item-wrapper">
+                        <h2 class="heading-medium">Committment 1</h2>
 
-                            <label class="form-label" for="nameField">Name</label>
-                            <input class="form-control form-control-1-4" type="text" name="nameField" id="nameField" value="{{name}}">
+                        <fieldset>
+                            <div class="column-full no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="field-1">
+                                        Action
+                                    </label>
+                                    <input type="text" class="form-control" id="field-1" name="field-1">
+                                </div>
+                            </div>
 
-                            <label class="form-label" for="ninoField">Nino</label>
-                            <input class="form-control form-control-1-4" type="text" name="ninoField" id="ninoField" value="{{nino}}">
+                            <div class="column-full no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="field-2">
+                                        How will I do this?
+                                    </label>
+                                    <input type="text" class="form-control" id="field-2" name="field-2">
+                                </div>
+                            </div>
 
-                            <label class="form-label" for="otherField">Other</label>
-                            <input class="form-control form-control-1-4" type="text" name="otherField" id="otherField" value="{{name}}">
+                            <div class="column-full no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="field-1">
+                                        By when will I do this?
+                                    </label>
+                                    <input type="date" class="form-control" id="field-1" name="field-1">
+                                </div>
+                            </div>
 
+                            <div class="column-full no-padding">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        Is this committment voluntary or mandatory?
+                                    </label>
+                                    <div class="multiple-choice">
+                                        <input id="radio-1" type="radio" name="radio-group" value="Voluntary committment">
+                                        <label for="radio-1">Voluntary committment</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="radio-2" type="radio" name="radio-group" value="Mandatory committment">
+                                        <label for="radio-2">Mandatory committment</label>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                    <input type="text" class="form-control" id="field-1" name="field-1">
+                                </div>
+                            </div>
+
+                            <div class="column-one-third no-padding">
+                                <div class="list-item">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <hr />
                     </div>
                 </div>
+
                 <div class="grid-row">
-                    <div class="column-full">
+                    <div class="column-two-thirds">
                         <div class="form-group">
-                            <input type="submit" class="button" value="Confirm and Continue"></input>
+                            <button id="add-button" class="button button-add-another">Add another</button>
                         </div>
                     </div>
                 </div>
-        </form>
+
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        <div class="form-group">
+                            <a href="latest/esa_claimant"><button class="button">Confirm and continue</button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
     </div>
 </main>
 {% endblock %}
