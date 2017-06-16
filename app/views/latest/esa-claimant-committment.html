@@ -11,93 +11,121 @@
         {% set currentClaimantPage = 'committment' %}
         {% include "includes/summary_nav.html" %}
 
-        <form class="form" method="post" action="../latest/esa_claimant">
-            <form>
+        <form class="form" method="post" action="/latest/esa_claimant/actions">
+            <div class="form-group">
+                <label class="form-label">
+                    <span class="heading-medium bold">
+                     Have you had a work capability assessment (WCA)?
+                    </span>
+                </label>
+                <div class="multiple-choice">
+                    <input id="pre-wca" type="radio" name="wca-group" value="No">
+                    <label for="pre-wca">No - I have not yet had a WCA</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="post-wca" type="radio" name="wca-group" value="Yes">
+                    <label for="post-wca">Yes - I have had a WCA</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    <span class="heading-medium bold">
+                     What actions can you commit to?
+                    </span>
+                </label>
+            </div>
+
+            {% set actionNum = 0 %}
+            {% for actionNum in range(1, 11) -%}
+
                 <div class="grid-row">
                     <div class="form-group-compound list-item-wrapper">
-                        <h2 class="heading-medium">Committment 1</h2>
+                        <h2 class="heading-small">Committment {{actionNum}}</h2>
 
                         <fieldset>
                             <div class="column-full no-padding">
                                 <div class="form-group list-item">
-                                    <label class="form-label" for="field-1">
+                                    <label class="form-label" for="action-{{actionNum}}">
                                         Action
                                     </label>
-                                    <input type="text" class="form-control" id="field-1" name="field-1">
+                                    <input type="text" class="form-control" id="action-{{actionNum}}" name="action-{{actionNum}}">
                                 </div>
                             </div>
 
                             <div class="column-full no-padding">
                                 <div class="form-group list-item">
-                                    <label class="form-label" for="field-2">
+                                    <label class="form-label" for="how-{{actionNum}}">
                                         How will I do this?
                                     </label>
-                                    <input type="text" class="form-control" id="field-2" name="field-2">
+                                    <input type="text" class="form-control" id="how-{{actionNum}}" name="how-{{actionNum}}">
                                 </div>
                             </div>
 
-                            <div class="column-full no-padding">
-                                <div class="form-group list-item">
-                                    <label class="form-label" for="field-1">
+                            <!--<div class="no-padding">-->
+                                <!--<div class="form-group list-item">-->
+                                    <!--<label class="form-label" for="when-{{actionNum}}">-->
+                                        <!--By when will I do this?-->
+                                    <!--</label>-->
+                                    <!--<input type="date" class="form-control" id="when-{{actionNum}}" name="when-{{actionNum}}">-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <div class="form-group list-item no-padding">
+                                <fieldset>
+                                        <span class="form-label">
                                         By when will I do this?
-                                    </label>
-                                    <input type="date" class="form-control" id="field-1" name="field-1">
-                                </div>
+                                        </span>
+                                        <span class="form-hint">
+                                            e.g. by what date will you complete this action
+                                        </span>
+                                        <div class="form-date" id="when-{{actionNum}}">
+                                            <div class="form-group form-group-day">
+                                                <label class="form-label" for="dob-day-{{actionNum}}">Day</label>
+                                                <input class="form-control" id="dob-day-{{actionNum}}" name="dob-day-{{actionNum}}" pattern="[0-9]*" min="0" max="31" type="number">
+                                            </div>
+                                            <div class="form-group form-group-month">
+                                                <label class="form-label" for="dob-month-{{actionNum}}">Month</label>
+                                                <input class="form-control" id="dob-month-{{actionNum}}" name="dob-month-{{actionNum}}" pattern="[0-9]*" min="0" max="12" type="number">
+                                            </div>
+                                            <div class="form-group form-group-year">
+                                                <label class="form-label" for="dob-year-{{actionNum}}">Year</label>
+                                                <input class="form-control" id="dob-year-{{actionNum}}" name="dob-year-{{actionNum}}" pattern="[0-9]*" min="0" max="2025" type="number">
+                                            </div>
+                                        </div>
+                                </fieldset>
                             </div>
 
                             <div class="column-full no-padding">
                                 <div class="form-group">
-                                    <label class="form-label">
-                                        Is this committment voluntary or mandatory?
+                                    <label class="form-label"><span><br></span>
+                                        Is this action voluntary or mandatory?
                                     </label>
                                     <div class="multiple-choice">
-                                        <input id="radio-1" type="radio" name="radio-group" value="Voluntary committment">
-                                        <label for="radio-1">Voluntary committment</label>
+                                        <input id="radio-vol-{{actionNum}}" type="radio" name="radio-group" value="Voluntary committment">
+                                        <label for="radio-vol-{{actionNum}}">I might do this (voluntary)</label>
                                     </div>
                                     <div class="multiple-choice">
-                                        <input id="radio-2" type="radio" name="radio-group" value="Mandatory committment">
-                                        <label for="radio-2">Mandatory committment</label>
+                                        <input id="radio-mand-{{actionNum}}" type="radio" name="radio-group" value="Mandatory committment">
+                                        <label for="radio-mand-{{actionNum}}">I must do this (mandatory)</label>
                                     </div>
-
-
-
-
-
-
-
-
-
-                                    <input type="text" class="form-control" id="field-1" name="field-1">
-                                </div>
-                            </div>
-
-                            <div class="column-one-third no-padding">
-                                <div class="list-item">
                                 </div>
                             </div>
                         </fieldset>
-
-                        <hr />
                     </div>
                 </div>
 
-                <div class="grid-row">
-                    <div class="column-two-thirds">
-                        <div class="form-group">
-                            <button id="add-button" class="button button-add-another">Add another</button>
-                        </div>
+            {%- endfor %}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="form-group">
+                        <button id="add-button" class="button">Confirm and continue</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="grid-row">
-                    <div class="column-two-thirds">
-                        <div class="form-group">
-                            <a href="latest/esa_claimant"><button class="button">Confirm and continue</button></a>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
+        </form>
     </div>
 </main>
 {% endblock %}

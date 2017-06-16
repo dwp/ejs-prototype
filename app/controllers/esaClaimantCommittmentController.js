@@ -3,7 +3,7 @@
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function committmentPage (req, res) {
+function committmentActionsPage (req, res) {
   var sessionData = req.session.committmentData || {};
 
   var newName = sessionData.name || "Jiminy Cricket";
@@ -17,7 +17,7 @@ function committmentPage (req, res) {
   res.render('latest/esa-claimant-committment', newData);
 }
 
-function committmentAction (req, res) {
+function committmentActionsAction (req, res) {
 
   var getEsaCommittmentData = {
     name  : "Jane Gleadall",
@@ -25,8 +25,8 @@ function committmentAction (req, res) {
   };
 
   req.session.sessionData = getEsaCommittmentData;
-  res.redirect('/latest/esa-claimant-committment');
+  res.redirect('/latest/esa_claimant/actions');
 }
 
-module.exports.committmentPage = committmentPage;
-module.exports.committmentAction = committmentAction;
+module.exports.committmentActionsPage = committmentActionsPage;
+module.exports.committmentActionsAction = committmentActionsAction;
