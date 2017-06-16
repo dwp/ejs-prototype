@@ -39,7 +39,7 @@
             {% set actionNum = 0 %}
             {% for actionNum in range(1, 11) -%}
 
-                <div class="grid-row">
+                <div class="grid-row {{ '' if actionNum == 1 else 'js-hidden' }}">
                     <div class="form-group-compound list-item-wrapper">
                         <h2 class="heading-small">Committment {{actionNum}}</h2>
 
@@ -61,15 +61,6 @@
                                     <input type="text" class="form-control" id="how-{{actionNum}}" name="how-{{actionNum}}">
                                 </div>
                             </div>
-
-                            <!--<div class="no-padding">-->
-                                <!--<div class="form-group list-item">-->
-                                    <!--<label class="form-label" for="when-{{actionNum}}">-->
-                                        <!--By when will I do this?-->
-                                    <!--</label>-->
-                                    <!--<input type="date" class="form-control" id="when-{{actionNum}}" name="when-{{actionNum}}">-->
-                                <!--</div>-->
-                            <!--</div>-->
 
                             <div class="form-group list-item no-padding">
                                 <fieldset>
@@ -120,15 +111,25 @@
             <div class="grid-row">
                 <div class="column-two-thirds">
                     <div class="form-group">
-                        <button id="add-button" class="button">Confirm and continue</button>
+                        <button id="add-button" class="button button-add-another">Add another committment</button>
                     </div>
                 </div>
             </div>
 
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <a href="/latest/esa_claimant/actions"><button class="button">Confirm and continue</button></a>
+                </div>
+            </div>
         </form>
     </div>
 </main>
 {% endblock %}
+
+{% block page_scripts %}
+<script src="/public/javascripts/esa-claimant.js"></script>
+{% endblock %}
+
 
 
 
