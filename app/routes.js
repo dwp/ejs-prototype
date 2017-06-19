@@ -9,5 +9,6 @@ require('./routes/toggle-user-role')(router, users);
 require('./routes/appointments')(router);
 require('./routes/teams')(router);
 require('./routes/whp-selection-tool')(router);
+require('./routes/esa-claimant-committment')(router);
 
 module.exports = router;
