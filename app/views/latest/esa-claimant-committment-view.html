@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% import "macros/forms.html" as forms %}
+
+{% block content %}
+<main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">
+        <h1 class="heading-large">Display ESA Claimant Committment - {{name}}</h1>
+
+        {% set currentClaimantPage = 'committment' %}
+        {% include "includes/summary_nav.html" %}
+
+        <div>
+            <span class="font-medium">
+                Work capability assessment status : &nbsp; &nbsp; {% if wca=='No' %} Pre-WCA {% else %} Post-WCA {% endif %}
+            </span>
+        </div>
+        <br>
+        <div>
+            <span class="font-medium">
+                What actions did I commit to?
+            </span>
+        </div>
+        <br>
+
+        {% for action in actionData %}
+
+        <div>
+            <div class="font-medium">Committment {{ action.actionNum }}</div>
+            <br>
+            <div>
+               <span class="font-small">
+                Action : {{ action.action }}
+               </span>
+            </div>
+            <div>
+                <span class="font-small">
+                How will I do this? : {{ action.how }}
+                </span>
+            </div>
+            <div>
+                <span class="font-small">
+                By when will I do this : {{ action.byWhen.whenDay }} {{action.byWhen.whenMonth}} {{action.byWhen.whenYear}}
+                </span>
+            </div>
+            <div>
+                <span class="font-small">
+                Is this a voluntary or a mandatory action ? : {{ action.volOrMand }}
+                </span>
+            </div>
+        </div>
+        <br>
+
+        {% endfor %}
+
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="/latest/esa_claimant/addCommittment"><button class="button">Confirm and continue</button></a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+<!--{% block page_scripts %}-->
+<!--<script src="/public/javascripts/esa-claimant.js"></script>-->
+<!--{% endblock %}-->
+
+
+
+
+
