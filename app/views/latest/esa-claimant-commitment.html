@@ -88,18 +88,18 @@
                                 </fieldset>
                             </div>
 
-                            <div class="column-full no-padding">
+                            <div class="column-full no-padding" id="volOrMandOptions-{{actionNum}}">
                                 <div class="form-group">
                                     <label class="form-label"><span><br></span>
                                         Is this action voluntary or mandatory?
                                     </label>
                                     <div class="multiple-choice">
-                                        <input id="radio-vol-{{actionNum}}" type="radio" name="radio-group" value="Voluntary committment">
-                                        <label for="radio-vol-{{actionNum}}">I might do this (voluntary)</label>
+                                        <input id="vol-{{actionNum}}" type="radio" name="volOrMand-{{actionNum}}" value="Voluntary">
+                                        <label for="vol-{{actionNum}}">I might do this (voluntary)</label>
                                     </div>
                                     <div class="multiple-choice">
-                                        <input id="radio-mand-{{actionNum}}" type="radio" name="radio-group" value="Mandatory committment">
-                                        <label for="radio-mand-{{actionNum}}">I must do this (mandatory)</label>
+                                        <input id="mand-{{actionNum}}" type="radio" name="volOrMand-{{actionNum}}" value="Mandatory">
+                                        <label for="mand-{{actionNum}}">I must do this (mandatory)</label>
                                     </div>
                                 </div>
                             </div>

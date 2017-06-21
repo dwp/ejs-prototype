@@ -83,7 +83,8 @@ function addClaimantCommitmentAction (req, res) {
           whenDay : parseInt(actionDay),
           whenMonth : getMonth(parseInt(actionMonth)),
           whenYear : parseInt(actionYear)
-        }
+        },
+        volOrMand : req.body['volOrMand-' + (i + 1)]
       };
       claimantCommitmentData.push(action);
     }
