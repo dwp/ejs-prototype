@@ -71,6 +71,39 @@ function viewCommitment (req, res) {
   res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
 }
 
+function viewCommitmentsSummary (req, res) {
+
+  var commitmentsList = [];
+  var commitment;
+  var commitmentsListDisplayObject;
+
+  commitment = {
+    commitmentDate : "08 August 2018",
+    wca : "No"
+  };
+  commitmentsList.push(commitment);
+
+  commitment = {
+    commitmentDate : "03 July 2016",
+    wca : "Yes"
+  };
+  commitmentsList.push(commitment);
+
+  commitment = {
+    commitmentDate : "01 February 2016",
+    wca : "Yes"
+  };
+  commitmentsList.push(commitment);
+
+  commitmentsListDisplayObject = {
+    name : "Justin Bimbolake",
+    commitmentsList : commitmentsList
+  };
+
+  res.render('latest/esa-claimant-commitments-summary', commitmentsListDisplayObject);
+
+}
+
 function addClaimantCommitmentPage (req, res) {
 
   var newData = {
@@ -172,5 +205,6 @@ function formatDateForDisplay (unformattedDate) {
 }
 
 module.exports.viewCommitment = viewCommitment;
+module.exports.viewCommitmentsSummary = viewCommitmentsSummary;
 module.exports.addClaimantCommitmentPage = addClaimantCommitmentPage;
 module.exports.addClaimantCommitmentAction = addClaimantCommitmentAction;

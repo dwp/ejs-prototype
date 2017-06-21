@@ -7,4 +7,6 @@ module.exports = function(router) {
 
   router.get('/latest/esa_claimant/viewCommitment', esaClaimant.viewCommitment);
 
+  router.get('/latest/esa_claimant/viewCommitmentsSummary', esaClaimant.viewCommitmentsSummary);
+
 }
