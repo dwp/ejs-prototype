@@ -6,7 +6,13 @@
 function viewCommitment (req, res) {
   var newData = {};
   var commitmentDisplayObject = {};
+  var wca;
 
+  if (!req.session.wca) {
+    wca = "Yes"
+  } else {
+    wca = req.session.wca;
+  }
   if (!req.session.sessionData) {
     var actionData = [
       {
@@ -50,7 +56,7 @@ function viewCommitment (req, res) {
   commitmentDisplayObject = {
     name : "Justin Bimbolake",
     nino : "AB123456C",
-    wca : "Yes",
+    wca : wca,
     actionData : newData
   }
   res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
@@ -69,12 +75,21 @@ function addClaimantCommitmentPage (req, res) {
 function addClaimantCommitmentAction (req, res) {
 
   var claimantCommitmentData = [];
+  var wca = req.body.wca;
+
+  console.log('wca in req.body is ', req.body.wca);
 
   for (var i = 0; i < 9; i++) {
     if (req.body['action-' + (i + 1)] !== '') {
       var actionDay = req.body['whenDay-' + (i + 1)];
       var actionMonth = req.body['whenMonth-' + (i + 1)];
       var actionYear = req.body['whenYear-' + (i + 1)];
+      var volOrMand;
+      if (wca === "No") {
+        volOrMand = "Voluntary";
+      } else {
+        volOrMand = req.body['volOrMand-' + (i + 1)];
+      }
       var action = {
         actionNum : (i + 1),
         action : req.body['action-' + (i + 1)],
@@ -84,12 +99,13 @@ function addClaimantCommitmentAction (req, res) {
           whenMonth : getMonth(parseInt(actionMonth)),
           whenYear : parseInt(actionYear)
         },
-        volOrMand : req.body['volOrMand-' + (i + 1)]
+        volOrMand : volOrMand
       };
       claimantCommitmentData.push(action);
     }
   }
 
+  req.session.wca = wca;
   req.session.sessionData = claimantCommitmentData;
   res.redirect('/latest/esa_claimant/viewCommitment');
 }
