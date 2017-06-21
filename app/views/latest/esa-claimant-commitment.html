@@ -7,12 +7,12 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Create ESA Claimant Committment - {{name}}</h1>
+        <h1 class="heading-large">Create ESA Claimant Commitment - {{name}}</h1>
 
-        {% set currentClaimantPage = 'committment' %}
+        {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
 
-        <form class="form" method="post" action="/latest/esa_claimant/addCommittment">
+        <form class="form" method="post" action="/latest/esa_claimant/addCommitment">
             <div class="form-group">
                 <label class="form-label">
                     <span class="heading-medium bold">
@@ -42,7 +42,7 @@
 
                 <div class="grid-row {{ '' if actionNum == 1 else 'js-hidden' }}">
                     <div class="form-group-compound list-item-wrapper">
-                        <h2 class="heading-small">Committment {{actionNum}}</h2>
+                        <h2 class="heading-small">Commitment {{actionNum}}</h2>
 
                         <fieldset>
                             <div class="column-full no-padding">
@@ -112,14 +112,14 @@
             <div class="grid-row">
                 <div class="column-two-thirds">
                     <div class="form-group">
-                        <button id="add-button" class="button button-add-another">Add another committment</button>
+                        <button id="add-button" class="button button-add-another">Add another commitment</button>
                     </div>
                 </div>
             </div>
 
             <div class="grid-row">
                 <div class="column-two-thirds">
-                    <a href="/latest/esa_claimant/addCommittment"><button class="button">Confirm and continue</button></a>
+                    <a href="/latest/esa_claimant/addCommitment"><button class="button">Confirm and continue</button></a>
                 </div>
             </div>
         </form>

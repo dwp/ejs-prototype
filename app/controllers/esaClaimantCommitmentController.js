@@ -3,9 +3,9 @@
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function viewCommittment (req, res) {
+function viewCommitment (req, res) {
   var newData = {};
-  var committmentDisplayObject = {};
+  var commitmentDisplayObject = {};
 
   if (!req.session.sessionData) {
     var actionData = [
@@ -47,28 +47,28 @@ function viewCommittment (req, res) {
   } else {
     newData = req.session.sessionData;
   }
-  committmentDisplayObject = {
+  commitmentDisplayObject = {
     name : "Justin Bimbolake",
     nino : "AB123456C",
     wca : "Yes",
     actionData : newData
   }
-  res.render('latest/esa-claimant-committment-view', committmentDisplayObject);
+  res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
 }
 
-function addClaimantCommittmentPage (req, res) {
+function addClaimantCommitmentPage (req, res) {
 
   newData = {
     name : "James Cricket Esq.",
     nino : "XY987654Z"
   }
 
-  res.render('latest/esa-claimant-committment', newData);
+  res.render('latest/esa-claimant-commitment', newData);
 }
 
-function addClaimantCommittmentAction (req, res) {
+function addClaimantCommitmentAction (req, res) {
 
-  var claimantCommittmentData = [];
+  var claimantCommitmentData = [];
 
   for (var i = 0; i < 9; i++) {
     if (req.body['action-' + (i + 1)] !== '') {
@@ -85,12 +85,12 @@ function addClaimantCommittmentAction (req, res) {
           whenYear : parseInt(actionYear)
         }
       };
-      claimantCommittmentData.push(action);
+      claimantCommitmentData.push(action);
     }
   }
 
-  req.session.sessionData = claimantCommittmentData;
-  res.redirect('/latest/esa_claimant/viewCommittment');
+  req.session.sessionData = claimantCommitmentData;
+  res.redirect('/latest/esa_claimant/viewCommitment');
 }
 
 function getMonth(monthNumber) {
@@ -114,6 +114,6 @@ function getMonth(monthNumber) {
   return textMonth;
 }
 
-module.exports.viewCommittment = viewCommittment;
-module.exports.addClaimantCommittmentPage = addClaimantCommittmentPage;
-module.exports.addClaimantCommittmentAction = addClaimantCommittmentAction;
+module.exports.viewCommitment = viewCommitment;
+module.exports.addClaimantCommitmentPage = addClaimantCommitmentPage;
+module.exports.addClaimantCommitmentAction = addClaimantCommitmentAction;
