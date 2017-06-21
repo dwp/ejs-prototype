@@ -4,15 +4,23 @@
  */
 
 function viewCommitment (req, res) {
-  var newData = {};
-  var commitmentDisplayObject = {};
+  var newData;
+  var commitmentDisplayObject;
   var wca;
+  var commitmentDate;
 
   if (!req.session.wca) {
     wca = "Yes"
   } else {
     wca = req.session.wca;
   }
+
+  if (!req.session.commitmentDate) {
+    commitmentDate = "01 January 2017";
+  } else {
+    commitmentDate = req.session.commitmentDate;
+  }
+
   if (!req.session.sessionData) {
     var actionData = [
       {
@@ -57,6 +65,7 @@ function viewCommitment (req, res) {
     name : "Justin Bimbolake",
     nino : "AB123456C",
     wca : wca,
+    commitmentDate : commitmentDate,
     actionData : newData
   }
   res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
@@ -64,7 +73,7 @@ function viewCommitment (req, res) {
 
 function addClaimantCommitmentPage (req, res) {
 
-  newData = {
+  var newData = {
     name : "James Cricket Esq.",
     nino : "XY987654Z"
   }
@@ -76,8 +85,8 @@ function addClaimantCommitmentAction (req, res) {
 
   var claimantCommitmentData = [];
   var wca = req.body.wca;
-
-  console.log('wca in req.body is ', req.body.wca);
+  var todaysDate = new Date();
+  var commitmentDate;
 
   for (var i = 0; i < 9; i++) {
     if (req.body['action-' + (i + 1)] !== '') {
@@ -105,6 +114,9 @@ function addClaimantCommitmentAction (req, res) {
     }
   }
 
+  commitmentDate = formatDateForDisplay(todaysDate);
+
+  req.session.commitmentDate = commitmentDate;
   req.session.wca = wca;
   req.session.sessionData = claimantCommitmentData;
   res.redirect('/latest/esa_claimant/viewCommitment');
@@ -113,7 +125,7 @@ function addClaimantCommitmentAction (req, res) {
 function getMonth(monthNumber) {
 
   var textMonth;
-  var month = new Array()
+  var month = [];
   month[0] = 'January';
   month[1] = 'February';
   month[2] = 'March';
@@ -129,6 +141,34 @@ function getMonth(monthNumber) {
 
   textMonth = month[monthNumber - 1];
   return textMonth;
+}
+
+function formatDateForDisplay (unformattedDate) {
+  var formattedDate;
+  var dateDay;
+  var dateMonth;
+  var dateYear;
+
+  var month = new Array()
+  month[0] = 'January';
+  month[1] = 'February';
+  month[2] = 'March';
+  month[3] = 'April';
+  month[4] = 'May';
+  month[5] = 'June';
+  month[6] = 'July';
+  month[7] = 'August';
+  month[8] = 'September';
+  month[9] = 'October';
+  month[10] = 'November';
+  month[11] = 'December';
+
+  dateDay = unformattedDate.getDate();
+  dateMonth = month[unformattedDate.getMonth()];
+  dateYear = unformattedDate.getFullYear();
+
+  formattedDate = dateDay + ' ' + dateMonth + ' ' + dateYear;
+  return formattedDate;
 }
 
 module.exports.viewCommitment = viewCommitment;
