@@ -7,9 +7,9 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Display ESA Claimant Committment - {{name}}</h1>
+        <h1 class="heading-large">Display ESA Claimant Commitment - {{name}}</h1>
 
-        {% set currentClaimantPage = 'committment' %}
+        {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
 
         <div>
@@ -28,7 +28,7 @@
         {% for action in actionData %}
 
         <div>
-            <div class="font-medium">Committment {{ action.actionNum }}</div>
+            <div class="font-medium">Commitment {{ action.actionNum }}</div>
             <br>
             <div>
                <span class="font-small">
@@ -58,7 +58,7 @@
 
         <div class="grid-row">
             <div class="column-two-thirds">
-                <a href="/latest/esa_claimant/addCommittment"><button class="button">Confirm and continue</button></a>
+                <a href="/latest/esa_claimant/addCommitment"><button class="button">Confirm and continue</button></a>
             </div>
         </div>
     </div>

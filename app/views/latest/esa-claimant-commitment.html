@@ -7,12 +7,12 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Create ESA Claimant Committment - {{name}}</h1>
+        <h1 class="heading-large">Create ESA Claimant Commitment - {{name}}</h1>
 
-        {% set currentClaimantPage = 'committment' %}
+        {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
 
-        <form class="form" method="post" action="/latest/esa_claimant/addCommittment">
+        <form class="form" method="post" action="/latest/esa_claimant/addCommitment">
             <div class="form-group">
                 <label class="form-label">
                     <span class="heading-medium bold">
@@ -20,11 +20,11 @@
                     </span>
                 </label>
                 <div class="multiple-choice">
-                    <input id="pre-wca" type="radio" name="wca-group" value="No">
+                    <input id="pre-wca" type="radio" name="wca" value="No">
                     <label for="pre-wca">No - I have not yet had a WCA</label>
                 </div>
                 <div class="multiple-choice">
-                    <input id="post-wca" type="radio" name="wca-group" value="Yes">
+                    <input id="post-wca" type="radio" name="wca" value="Yes">
                     <label for="post-wca">Yes - I have had a WCA</label>
                 </div>
             </div>
@@ -42,7 +42,7 @@
 
                 <div class="grid-row {{ '' if actionNum == 1 else 'js-hidden' }}">
                     <div class="form-group-compound list-item-wrapper">
-                        <h2 class="heading-small">Committment {{actionNum}}</h2>
+                        <h2 class="heading-small">Commitment {{actionNum}}</h2>
 
                         <fieldset>
                             <div class="column-full no-padding">
@@ -88,18 +88,18 @@
                                 </fieldset>
                             </div>
 
-                            <div class="column-full no-padding">
+                            <div class="column-full no-padding" id="volOrMandOptions-{{actionNum}}">
                                 <div class="form-group">
                                     <label class="form-label"><span><br></span>
                                         Is this action voluntary or mandatory?
                                     </label>
                                     <div class="multiple-choice">
-                                        <input id="radio-vol-{{actionNum}}" type="radio" name="radio-group" value="Voluntary committment">
-                                        <label for="radio-vol-{{actionNum}}">I might do this (voluntary)</label>
+                                        <input id="vol-{{actionNum}}" type="radio" name="volOrMand-{{actionNum}}" value="Voluntary">
+                                        <label for="vol-{{actionNum}}">I might do this (voluntary)</label>
                                     </div>
                                     <div class="multiple-choice">
-                                        <input id="radio-mand-{{actionNum}}" type="radio" name="radio-group" value="Mandatory committment">
-                                        <label for="radio-mand-{{actionNum}}">I must do this (mandatory)</label>
+                                        <input id="mand-{{actionNum}}" type="radio" name="volOrMand-{{actionNum}}" value="Mandatory">
+                                        <label for="mand-{{actionNum}}">I must do this (mandatory)</label>
                                     </div>
                                 </div>
                             </div>
@@ -112,14 +112,14 @@
             <div class="grid-row">
                 <div class="column-two-thirds">
                     <div class="form-group">
-                        <button id="add-button" class="button button-add-another">Add another committment</button>
+                        <button id="add-button" class="button button-add-another">Add another commitment</button>
                     </div>
                 </div>
             </div>
 
             <div class="grid-row">
                 <div class="column-two-thirds">
-                    <a href="/latest/esa_claimant/addCommittment"><button class="button">Confirm and continue</button></a>
+                    <a href="/latest/esa_claimant/addCommitment"><button class="button">Confirm and continue</button></a>
                 </div>
             </div>
         </form>
