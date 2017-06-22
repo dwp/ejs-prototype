@@ -10,7 +10,7 @@ function viewCommitment (req, res) {
   var commitmentDate;
 
   if (!req.session.wca) {
-    wca = "Yes"
+    wca = "No"
   } else {
     wca = req.session.wca;
   }
@@ -68,7 +68,93 @@ function viewCommitment (req, res) {
     commitmentDate : commitmentDate,
     actionData : newData
   }
+
   res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
+}
+
+function printCommitment (req, res) {
+
+  console.log("req.query.wca looks like : ", req.query.wca);
+
+  var actionData = [
+    {
+      actionNum : 1,
+      action : "I will find two jobs per month that I could apply for",
+      how : "By searching job internet sites",
+      byWhen : "30 September 2017",
+      volOrMand : "Voluntary"
+    },
+    {
+      actionNum : 2,
+      action : "I will write a CV",
+      how : "By attending a local support group",
+      byWhen : "31 December 2017",
+      volOrMand : "Voluntary"
+    },
+    {
+      actionNum : 3,
+      action : "I will improve my word processing skills",
+      how : "By attending a Microsoft Word Basics course",
+      byWhen : "31 March 2018",
+      volOrMand : "Voluntary"
+    }
+  ];
+
+  var commitmentName = "Janet Anjohn";
+  var commitmentNino = "XY192837Z";
+  var commitmentWCA = req.query.wca;
+  var commitmentDate = "01 February 2017";
+  var commitmentActionData = req.session.sessionData ? req.session.sessionData : actionData;
+
+  var commitmentForPrintPage = {
+    printName : commitmentName,
+    printNino : commitmentNino,
+    printWCA : commitmentWCA,
+    printCommitmentDate : commitmentDate,
+    printActionData : commitmentActionData
+  };
+
+  console.log("commitmentWCA is ", commitmentWCA);
+
+  if ( commitmentWCA === 'No') {
+    res.render('latest/esa-claimant-commitment-pre-wca', commitmentForPrintPage);
+  } else {
+    commitmentForPrintPage.printActionData[2].volOrMand = "Mandatory";
+    res.render('latest/esa-claimant-commitment-post-wca', commitmentForPrintPage);
+  }
+}
+
+function viewCommitmentsSummary (req, res) {
+
+  var commitmentsList = [];
+  var commitment;
+  var commitmentsListDisplayObject;
+
+  commitment = {
+    commitmentDate : "08 August 2018",
+    wca : "Yes"
+  };
+  commitmentsList.push(commitment);
+
+  commitment = {
+    commitmentDate : "03 July 2016",
+    wca : "No"
+  };
+  commitmentsList.push(commitment);
+
+  commitment = {
+    commitmentDate : "01 February 2016",
+    wca : "No"
+  };
+  commitmentsList.push(commitment);
+
+  commitmentsListDisplayObject = {
+    name : "Justin Bimbolake",
+    commitmentsList : commitmentsList
+  };
+
+  res.render('latest/esa-claimant-commitments-summary', commitmentsListDisplayObject);
+
 }
 
 function addClaimantCommitmentPage (req, res) {
@@ -172,5 +258,7 @@ function formatDateForDisplay (unformattedDate) {
 }
 
 module.exports.viewCommitment = viewCommitment;
+module.exports.printCommitment = printCommitment;
+module.exports.viewCommitmentsSummary = viewCommitmentsSummary;
 module.exports.addClaimantCommitmentPage = addClaimantCommitmentPage;
 module.exports.addClaimantCommitmentAction = addClaimantCommitmentAction;
