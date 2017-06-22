@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">Summary of places</h1>
+
+      <div class="grid-row">
+        <div class="column-full">
+          <form class="form" method="POST" action="../gatekeeper/profilePlaces">
+            <div class="form-group">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th class="numeric" scope="col">WHP provider places</th>
+                    <th class="numeric" scope="col">Public sector comparator places</th>
+                    <th class="numeric" scope="col">Ratio</th>
+                    <th class="numeric" scope="col">Referrals needed to fill places<span class="form-hint">Based on the ratio</span></th>
+                    <th class="numeric" scope="col">Control group volumes<span class="form-hint">Automatically calculated based on referrals</span></th>
+                    <th class="numeric" scope="col">Total referrals needed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="2">Voluntary</th>
+                    <th scope="row">Disabled/health condition</th>
+                    <td class="numeric">75</td>
+                    <td class="numeric">8</td>
+                    <td class="numeric">1.5</td>
+                    <td class="numeric">125</td>
+                    
+                    <td class="numeric" rowspan="2">15</td>
+                    <td class="numeric" rowspan="2">157</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Early access</th>
+                    <td class="numeric">10</td>
+                    <td class="numeric">1</td>
+                    <td class="numeric">1.5</td>
+                    <td class="numeric">17</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mandatory</th>
+                    <th scope="row">Long term unemployed</th>
+                    <td class="numeric">15</td>
+                    <td class="numeric">2</td>
+                    <td class="numeric">1.1</td>
+                    <td class="numeric">19</td>
+                    <td class="numeric">2</td>
+                    <td class="numeric">21</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid-row">
+              <div class="column-half">
+                <div class="form-group">
+                  <button class="button">Confirm and continue</button>
+                </div>
+              </div>
+            </div>
+           </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+
+
