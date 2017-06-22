@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h2 class="heading-large">Breakdown of places</h2>
+
+      <form class="form" method="POST" action="../gatekeeper/profilePlaces">
+        <div class="grid-row">
+          <div class="column-one-third">
+            <fieldset>
+              <legend class="heading-medium">WHP provider places</legend>
+              <div class="form-group">
+                <label class="form-label" for="disabledPrivate">Number of disabled places</label>
+                <input class="form-control form-control-1-4" id="disabledPrivate" type="text" name="disabledPrivate" value="75" >
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eagPrivate">Number of early access places</label>
+                <input class="form-control form-control-1-4" id="eagPrivate" type="text" name="eagPrivate" value="10">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ltuPrivate">Number of long term unemployed places</label>
+                <input class="form-control form-control-1-4" id="ltuPrivate" type="text" name="ltuPrivate" value="15">
+              </div>
+            </fieldset>
+          </div>
+          <div class="column-one-third">
+            <fieldset>
+              <legend class="heading-medium">Public sector comparator places</legend>
+              <div class="form-group">
+                <label class="form-label" for="disabledPublic">Number of disabled places</label>
+                <input class="form-control form-control-1-4" id="disabledPublic" type="text" name="disabledPublic" value="8">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="eagPublic">Number of early access places</label>
+                <input class="form-control form-control-1-4" id="eagPublic" type="text" name="eagPublic" value="1">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ltuPublic">Number of long term unemployed places</label>
+                <input class="form-control form-control-1-4" id="ltuPublic" type="text" name="ltuPublic" value="2">
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <a href="/latest/whp-profile-places-table" class="button">Confirm and continue</a>
+        </div>      
+      </form>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script src="/public/javascripts/profilePlaces.js"></script>
+{% endblock %}

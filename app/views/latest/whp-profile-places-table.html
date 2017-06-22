@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">   
+      <h1 class="heading-large">Summary of places</h1>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <form class="form" method="POST" action="../gatekeeper/profilePlaces">
+            <div class="form-group">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="numeric" scope="col">Disabled/health condition</th>
+                    <th class="numeric" scope="col">Early access</th>
+                    <th class="numeric" scope="col">Long term unemployed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">WHP provider places</th>
+                    <td class="numeric">75</td>
+                    <td class="numeric">10</td>
+                    <td class="numeric">15</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Public sector comparator places</th>
+                    <td class="numeric">8</td>
+                    <td class="numeric">1</td>
+                    <td class="numeric">2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ratio</th>
+                    <td class="numeric">1.5</td>
+                    <td class="numeric">1.5</td>
+                    <td class="numeric">1.1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Referrals needed to fill places<span class="form-hint">Based on the ratio</span></th>
+                    <td class="numeric">125</td>
+                    <td class="numeric">17</td>
+                    <td class="numeric">19</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Control group volumes<span class="form-hint">Automatically calculated based on referrals</span></th>
+                    <td class="numeric">13</td>
+                    <td class="numeric">2</td>
+                    <td class="numeric">2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Total referrals needed</th>
+                    <td class="numeric">138</td>
+                    <td class="numeric">19</td>
+                    <td class="numeric">21</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid-row">
+              <div class="column-half">
+                <div class="form-group">
+                  <button class="button">Confirm and continue</button>
+                </div>
+              </div>
+            </div>
+           </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+
+
