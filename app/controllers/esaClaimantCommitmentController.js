@@ -74,8 +74,6 @@ function viewCommitment (req, res) {
 
 function printCommitment (req, res) {
 
-  console.log("req.query.wca looks like : ", req.query.wca);
-
   var actionData = [
     {
       actionNum : 1,
@@ -113,8 +111,6 @@ function printCommitment (req, res) {
     printCommitmentDate : commitmentDate,
     printActionData : commitmentActionData
   };
-
-  console.log("commitmentWCA is ", commitmentWCA);
 
   if ( commitmentWCA === 'No') {
     res.render('latest/esa-claimant-commitment-pre-wca', commitmentForPrintPage);
