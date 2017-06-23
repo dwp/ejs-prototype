@@ -13,20 +13,20 @@
 
         <div>
             <span class="font-medium">
-                Name : &nbsp; &nbsp; {{ printName }}
+                Name : &nbsp; &nbsp; {{ sessionData.commitment.clientName }}
             </span>
         </div>
         <br>
 
         <div>
             <span class="font-medium">
-                National Insurance Number : &nbsp; &nbsp; {{ printNino }}
+                National Insurance Number : &nbsp; &nbsp; {{ sessionData.commitment.clientNino }}
             </span>
         </div>
         <br>
         <div>
             <span class="font-medium">
-                Date of commitment : &nbsp; &nbsp; {{ printCommitmentDate }}
+                Date of commitment : &nbsp; &nbsp; {{ sessionData.commitment.commitmentDate }}
             </span>
         </div>
         <br>
@@ -82,7 +82,7 @@
                 </thead>
                 <tbody>
 
-                {% for action in printActionData %}
+                {% for action in sessionData.commitment.actionData %}
                     <tr>
                         <td class="column-one-quarter">{{ action.action }}</td>
                         <td class="column-one-quarter">{{ action.how }}</td>
