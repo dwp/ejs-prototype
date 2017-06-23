@@ -7,14 +7,14 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">View ESA Claimant Commitment - {{name}}</h1>
+        <h1 class="heading-large">View ESA Claimant Commitment - {{ sessionData.commitment.clientName }}</h1>
 
         {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
 
         <div>
             <span class="font-medium">
-                Date of commitment : &nbsp; &nbsp; {{ commitmentDate }}
+                Date of commitment : &nbsp; &nbsp; {{ sessionData.commitment.commitmentDate }}
             </span>
         </div>
         <br>
@@ -32,7 +32,7 @@
         </div>
         <br>
 
-        {% for action in actionData %}
+        {% for action in sessionData.commitment.actionData %}
 
         <div>
             <div class="font-medium">Commitment {{ action.actionNum }}</div>

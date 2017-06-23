@@ -7,7 +7,7 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Create ESA Claimant Commitment - {{name}}</h1>
+        <h1 class="heading-large">Create ESA Claimant Commitment - {{ sessionData.commitment.clientName}}</h1>
 
         {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
@@ -119,7 +119,7 @@
 
             <div class="grid-row">
                 <div class="column-two-thirds">
-                    <a href="/latest/esa_claimant/addCommitment"><button class="button">Confirm and continue</button></a>
+                    <button class="button">Confirm and continue</button></a>
                 </div>
             </div>
         </form>

@@ -1,113 +1,49 @@
+const Commitment = require('../model/commitment');
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                       ESA Claimant Committmemt Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
 function viewCommitment (req, res) {
-  var newData;
-  var commitmentDisplayObject;
-  var wca;
-  var commitmentDate;
 
-  if (!req.session.wca) {
-    wca = "No"
-  } else {
-    wca = req.session.wca;
+  if (!req.session.commitment) {
+    var commitmentToDisplay = new Commitment('Jade Gladioli', 'PQ102938R', 'Yes');
+    commitmentToDisplay.setCommitmentDate(new Date());
+    const defaultViewByWhen1 = new Date('2017-12-31');
+    const defaultViewByWhen2 = new Date('2018-01-31');
+    const defaultViewByWhen3 = new Date('2018-03-31');
+    commitmentToDisplay.addActionToActionData(1, 'Default action one werwe', 'Default how one', defaultViewByWhen1, 'Voluntary');
+    commitmentToDisplay.addActionToActionData(2, 'Default action twoeee', 'Default how two', defaultViewByWhen2, 'Mandatory');
+    commitmentToDisplay.addActionToActionData(3, 'Default action three', 'Default how three', defaultViewByWhen3, 'Voluntary');
+    req.session.commitment = commitmentToDisplay;
   }
-
-  if (!req.session.commitmentDate) {
-    commitmentDate = "01 January 2017";
-  } else {
-    commitmentDate = req.session.commitmentDate;
-  }
-
-  if (!req.session.sessionData) {
-    let actionDate = new Date('2017-12-31');
-    var byWhen = formatDateForDisplay(actionDate);
-    var actionData = [
-      {
-        actionNum : 1,
-        action : "Default action 1",
-        how : "Deafult how 1",
-        byWhen : byWhen,
-        volOrMand : "Voluntary"
-      },
-      {
-        actionNum : 2,
-        action : "Default action 2",
-        how : "Default how 2",
-        byWhen : byWhen,
-        volOrMand : "Mandatory"
-      },
-      {
-        actionNum : 3,
-        action : "Default action 3",
-        how : "Default how 3",
-        byWhen : byWhen,
-        volOrMand : "Mandatory"
-      }
-    ];
-    newData = actionData;
-  } else {
-    newData = req.session.sessionData;
-  }
-  commitmentDisplayObject = {
-    name : "Justin Bimbolake",
-    nino : "AB123456C",
-    wca : wca,
-    commitmentDate : commitmentDate,
-    actionData : newData
-  }
-
-  res.render('latest/esa-claimant-commitment-view', commitmentDisplayObject);
+  res.render('latest/esa-claimant-commitment-view');
 }
 
 function printCommitment (req, res) {
 
-  var actionData = [
-    {
-      actionNum : 1,
-      action : "I will find two jobs per month that I could apply for",
-      how : "By searching job internet sites",
-      byWhen : "30 September 2017",
-      volOrMand : "Voluntary"
-    },
-    {
-      actionNum : 2,
-      action : "I will write a CV",
-      how : "By attending a local support group",
-      byWhen : "31 December 2017",
-      volOrMand : "Voluntary"
-    },
-    {
-      actionNum : 3,
-      action : "I will improve my word processing skills",
-      how : "By attending a Microsoft Word Basics course",
-      byWhen : "31 March 2018",
-      volOrMand : "Voluntary"
+  if(!req.session.commitment) {
+    var commitmentToPrint = new Commitment('Jackson Pollock', 'RS463728T', 'Yes');
+    commitmentToPrint.setCommitmentDate('2018-10-06');
+    const defaultPrintByWhen1 = new Date('2017-09-30');
+    const defaultPrintByWhen2 = new Date('2017-12-31');
+    const defaultPrintByWhen3 = new Date('2018-03-31');
+    commitmentToPrint.addActionToActionData(1, 'I will find two jobs per month that I could apply for', 'By searching job internet sites', defaultPrintByWhen1, 'Voluntary');
+    commitmentToPrint.addActionToActionData(2, 'I will write a CV', 'By attending a local support group', defaultPrintByWhen2, 'Voluntary');
+    if (req.query.wca === 'No') {
+      commitmentToPrint.addActionToActionData(3, 'I will improve my word processing skills', 'By attending a Microsoft Word Basics course', defaultPrintByWhen3, 'Voluntary');
+    } else {
+      commitmentToPrint.addActionToActionData(3, 'I will improve my word processing skills', 'By attending a Microsoft Word Basics course', defaultPrintByWhen3, 'Mandatory');
     }
-  ];
-
-  var commitmentName = "Janet Anjohn";
-  var commitmentNino = "XY192837Z";
-  var commitmentWCA = req.query.wca;
-  var commitmentDate = "01 February 2017";
-  var commitmentActionData = req.session.sessionData ? req.session.sessionData : actionData;
-
-  var commitmentForPrintPage = {
-    printName : commitmentName,
-    printNino : commitmentNino,
-    printWCA : commitmentWCA,
-    printCommitmentDate : commitmentDate,
-    printActionData : commitmentActionData
-  };
-
-  if ( commitmentWCA === 'No') {
-    res.render('latest/esa-claimant-commitment-pre-wca', commitmentForPrintPage);
-  } else {
-    commitmentForPrintPage.printActionData[2].volOrMand = "Mandatory";
-    res.render('latest/esa-claimant-commitment-post-wca', commitmentForPrintPage);
+    req.session.commitment = commitmentToPrint;
   }
+
+  if ( req.query.wca === 'No') {
+    res.render('latest/esa-claimant-commitment-pre-wca');
+  } else {
+    res.render('latest/esa-claimant-commitment-post-wca');
+  }
+
 }
 
 function viewCommitmentsSummary (req, res) {
@@ -145,80 +81,41 @@ function viewCommitmentsSummary (req, res) {
 
 function addClaimantCommitmentPage (req, res) {
 
-  var newData = {
-    name : "James Cricket Esq.",
-    nino : "XY987654Z"
-  }
+  var newCommitment = new Commitment('Justin Bimbolake', 'AB123456C', 'No');
+  var todaysDate = new Date();
+  newCommitment.setCommitmentDate(todaysDate);
+  req.session.commitment = newCommitment;
+  res.render('latest/esa-claimant-commitment');
 
-  res.render('latest/esa-claimant-commitment', newData);
 }
 
 function addClaimantCommitmentAction (req, res) {
 
-  var claimantCommitmentData = [];
-  var wca = req.body.wca;
-  var todaysDate = new Date();
-  var commitmentDate;
+  var updatedNewCommitment = new Commitment(req.session.commitment.clientName, req.session.commitment.clientNino, req.body.wca);
+
+  updatedNewCommitment.commitmentDate = req.session.commitment.commitmentDate;
 
   for (var i = 0; i < 9; i++) {
     if (req.body['action-' + (i + 1)] !== '') {
-      var actionDay = parseInt(req.body['whenDay-' + (i + 1)]);
-      var actionMonth = parseInt(req.body['whenMonth-' + (i + 1)]);
-      var actionYear = parseInt(req.body['whenYear-' + (i + 1)]);
-      var actionDate = new Date(actionYear + '-' + actionMonth + '-' + actionDay);
-      var byWhen = formatDateForDisplay(actionDate);
-      var volOrMand;
-      if (wca === "No") {
-        volOrMand = "Voluntary";
-      } else {
-        volOrMand = req.body['volOrMand-' + (i + 1)];
-      }
-      var action = {
-        actionNum : (i + 1),
-        action : req.body['action-' + (i + 1)],
-        how : req.body['how-' + (i + 1)],
-        byWhen : byWhen,
-        volOrMand : volOrMand
-      };
+      let newActionNum = (i+1);
+      let newAction = req.body['action-' + (i + 1)];
+      let newHow = req.body['how-' + (i + 1)];
+      let actionDay = parseInt(req.body['whenDay-' + (i + 1)]);
+      let actionMonth = parseInt(req.body['whenMonth-' + (i + 1)]);
+      let actionYear = parseInt(req.body['whenYear-' + (i + 1)]);
+      let newByWhen = new Date(actionYear + '-' + actionMonth + '-' + actionDay);
+      let newVolOrMand;
 
-      claimantCommitmentData.push(action);
+      if (updatedNewCommitment.wca === "No") {
+        newVolOrMand = "Voluntary";
+      } else {
+        newVolOrMand = req.body['volOrMand-' + (i + 1)];
+      }
+      updatedNewCommitment.addActionToActionData(newActionNum, newAction, newHow, newByWhen, newVolOrMand);
     }
   }
-
-  commitmentDate = formatDateForDisplay(todaysDate);
-
-  req.session.commitmentDate = commitmentDate;
-  req.session.wca = wca;
-  req.session.sessionData = claimantCommitmentData;
+  req.session.commitment = updatedNewCommitment;
   res.redirect('/latest/esa_claimant/viewCommitment');
-}
-
-function formatDateForDisplay (unformattedDate) {
-  var formattedDate;
-  var dateDay;
-  var dateMonth;
-  var dateYear;
-
-  var month = new Array()
-  month[0] = 'January';
-  month[1] = 'February';
-  month[2] = 'March';
-  month[3] = 'April';
-  month[4] = 'May';
-  month[5] = 'June';
-  month[6] = 'July';
-  month[7] = 'August';
-  month[8] = 'September';
-  month[9] = 'October';
-  month[10] = 'November';
-  month[11] = 'December';
-
-  dateDay = unformattedDate.getDate();
-  dateMonth = month[unformattedDate.getMonth()];
-  dateYear = unformattedDate.getFullYear();
-
-  formattedDate = dateDay + ' ' + dateMonth + ' ' + dateYear;
-  return formattedDate;
 }
 
 module.exports.viewCommitment = viewCommitment;
