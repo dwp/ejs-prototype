@@ -24,6 +24,15 @@
 
           {{ sprintLinks( 'ESA Claimant Commitment', esaClaimantCommitmentScreens) }}
 
+          {% set autocomplete = [{
+            workTitle : 'Accessible autocomplete',
+            links: [{
+              link : 'latest/settings-with-autocomplete', title : 'Change location with autocomplese'
+            }] 
+          }]%}
+
+          {{ sprintLinks( 'Accessible autocomplete', autocomplete) }}
+
         </div>
 
         <div class="grid-row">
