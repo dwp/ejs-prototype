@@ -22,38 +22,28 @@ function viewCommitment (req, res) {
   }
 
   if (!req.session.sessionData) {
+    let actionDate = new Date('2017-12-31');
+    var byWhen = formatDateForDisplay(actionDate);
     var actionData = [
       {
         actionNum : 1,
         action : "Default action 1",
         how : "Deafult how 1",
-        byWhen : {
-          whenDay : "31",
-          whenMonth : getMonth(12),
-          whenYear : "2017"
-        },
+        byWhen : byWhen,
         volOrMand : "Voluntary"
       },
       {
         actionNum : 2,
         action : "Default action 2",
         how : "Default how 2",
-        byWhen : {
-          whenDay : "31",
-          whenMonth : getMonth(12),
-          whenYear : "2017"
-        },
+        byWhen : byWhen,
         volOrMand : "Mandatory"
       },
       {
         actionNum : 3,
         action : "Default action 3",
         how : "Default how 3",
-        byWhen : {
-          whenDay : "31",
-          whenMonth : getMonth(12),
-          whenYear : "2017"
-        },
+        byWhen : byWhen,
         volOrMand : "Mandatory"
       }
     ];
@@ -172,9 +162,11 @@ function addClaimantCommitmentAction (req, res) {
 
   for (var i = 0; i < 9; i++) {
     if (req.body['action-' + (i + 1)] !== '') {
-      var actionDay = req.body['whenDay-' + (i + 1)];
-      var actionMonth = req.body['whenMonth-' + (i + 1)];
-      var actionYear = req.body['whenYear-' + (i + 1)];
+      var actionDay = parseInt(req.body['whenDay-' + (i + 1)]);
+      var actionMonth = parseInt(req.body['whenMonth-' + (i + 1)]);
+      var actionYear = parseInt(req.body['whenYear-' + (i + 1)]);
+      var actionDate = new Date(actionYear + '-' + actionMonth + '-' + actionDay);
+      var byWhen = formatDateForDisplay(actionDate);
       var volOrMand;
       if (wca === "No") {
         volOrMand = "Voluntary";
@@ -185,13 +177,10 @@ function addClaimantCommitmentAction (req, res) {
         actionNum : (i + 1),
         action : req.body['action-' + (i + 1)],
         how : req.body['how-' + (i + 1)],
-        byWhen : {
-          whenDay : parseInt(actionDay),
-          whenMonth : getMonth(parseInt(actionMonth)),
-          whenYear : parseInt(actionYear)
-        },
+        byWhen : byWhen,
         volOrMand : volOrMand
       };
+
       claimantCommitmentData.push(action);
     }
   }
@@ -202,27 +191,6 @@ function addClaimantCommitmentAction (req, res) {
   req.session.wca = wca;
   req.session.sessionData = claimantCommitmentData;
   res.redirect('/latest/esa_claimant/viewCommitment');
-}
-
-function getMonth(monthNumber) {
-
-  var textMonth;
-  var month = [];
-  month[0] = 'January';
-  month[1] = 'February';
-  month[2] = 'March';
-  month[3] = 'April';
-  month[4] = 'May';
-  month[5] = 'June';
-  month[6] = 'July';
-  month[7] = 'August';
-  month[8] = 'September';
-  month[9] = 'October';
-  month[10] = 'November';
-  month[11] = 'December';
-
-  textMonth = month[monthNumber - 1];
-  return textMonth;
 }
 
 function formatDateForDisplay (unformattedDate) {

@@ -7,7 +7,7 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Display ESA Claimant Commitment - {{name}}</h1>
+        <h1 class="heading-large">View ESA Claimant Commitment - {{name}}</h1>
 
         {% set currentClaimantPage = 'commitment' %}
         {% include "includes/summary_nav.html" %}
@@ -49,7 +49,7 @@
             </div>
             <div>
                 <span class="font-small">
-                By when will I do this : {{ action.byWhen.whenDay }} {{action.byWhen.whenMonth}} {{action.byWhen.whenYear}}
+                By when will I do this : {{ action.byWhen }}
                 </span>
             </div>
             <div>
