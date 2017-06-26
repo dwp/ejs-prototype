@@ -11,5 +11,6 @@ require('./routes/teams')(router);
 require('./routes/whp-selection-tool')(router);
 require('./routes/whp-gatekeeper')(router);
 require('./routes/esa-claimant-commitment')(router);
+require('./routes/job-profile')(router);
 
 module.exports = router;
