@@ -1,4 +1,4 @@
-const Commitment = require('../model/commitment');
+const Commitment = require('../models/commitment');
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                       ESA Claimant Committmemt Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
