@@ -69,25 +69,30 @@ function districtProfilePlacesPage (req, res) {
 
   if (sessionPlacesData.previousCalcFlag !== 1) {
     totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
-    disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
     eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
     ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
+    disWHPPlaces = totalWHPPlaces - (eagWHPPlaces + ltuWHPPlaces);
+
     totalPSCPlaces = sessionPlacesData.totalPSCPlaces;
-    disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
     eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
     ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+    disPSCPlaces = totalPSCPlaces - (eagPSCPlaces + ltuPSCPlaces);
+
     disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
     eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
     ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
     totalRefsNeeded = disRefsNeeded + eagRefsNeeded + ltuRefsNeeded;
+
     disControlGroup = Math.round(disRefsNeeded / 10);
     eagControlGroup = Math.round(eagRefsNeeded / 10);
     ltuControlGroup = Math.round(ltuRefsNeeded / 10);
     totalControlGroup = disControlGroup + eagControlGroup + ltuControlGroup;
+
     totalDisRefs = disRefsNeeded + disControlGroup;
     totalEAGRefs = eagRefsNeeded + eagControlGroup;
     totalLTURefs = ltuRefsNeeded + ltuControlGroup;
     totalRefs = totalRefsNeeded + totalControlGroup;
+
     totalCustRefs = totalDisRefs + totalEAGRefs;
   } else {
     totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
