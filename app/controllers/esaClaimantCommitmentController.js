@@ -1,4 +1,4 @@
-const Commitment = require('../model/commitment');
+const Commitment = require('../models/commitment');
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                       ESA Claimant Committmemt Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -117,6 +117,7 @@ function addClaimantCommitmentAction (req, res) {
   req.session.commitment = updatedNewCommitment;
   res.redirect('/latest/esa_claimant/viewCommitment');
 }
+
 
 module.exports.viewCommitment = viewCommitment;
 module.exports.printCommitment = printCommitment;

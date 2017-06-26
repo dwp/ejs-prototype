@@ -24,6 +24,17 @@
 
           {{ sprintLinks( 'ESA Claimant Commitment', esaClaimantCommitmentScreens) }}
 
+          {% set jobProfileScreens = [{
+          workTitle : 'Job Profile',
+          links: [{
+          link : 'latest/job_profile', title : 'View job profile'
+          }, {
+          link : 'latest/job_profile/editJobProfile', title : 'Edit job profile'
+          }]
+          }] %}
+
+          {{ sprintLinks( 'Job Profile', jobProfileScreens) }}
+
           {% set autocomplete = [{
             workTitle : 'Accessible autocomplete',
             links: [{
