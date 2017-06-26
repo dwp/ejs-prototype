@@ -118,8 +118,18 @@ function addClaimantCommitmentAction (req, res) {
   res.redirect('/latest/esa_claimant/viewCommitment');
 }
 
+function addJobProfilePage (req, res) {
+  res.render('latest/esa-claimant-commitment-job-profile');
+}
+
+function addJobProfileAction (req, res) {
+
+}
+
 module.exports.viewCommitment = viewCommitment;
 module.exports.printCommitment = printCommitment;
 module.exports.viewCommitmentsSummary = viewCommitmentsSummary;
 module.exports.addClaimantCommitmentPage = addClaimantCommitmentPage;
 module.exports.addClaimantCommitmentAction = addClaimantCommitmentAction;
+module.exports.addJobProfilePage = addJobProfilePage;
+module.exports.addJobProfileAction = addJobProfileAction;

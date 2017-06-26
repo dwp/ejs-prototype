@@ -11,4 +11,7 @@ module.exports = function(router) {
 
   router.get('/latest/esa_claimant/printCommitment', esaClaimant.printCommitment);
 
+  router.get('/latest/esa_claimant/jobProfile', esaClaimant.addJobProfilePage);
+  router.post('latest/esa_claimant/jobProfile', esaClaimant.addJobProfileAction);
+
 }
