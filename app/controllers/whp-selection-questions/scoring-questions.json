@@ -40,6 +40,11 @@
       "name" : "converse", 
       "hint" : "Jobseekers need to conduct job search, but beyond this they also need to demonstrate the ability and confidence to contact and have conversations with prospective employers In order to obtain employment.  Jobseekers need to present favourably at interviews, to respond well to questions by presenting evidence of their skills, experience while directly answering the questions asked.",
       "options" : [ "The jobseeker is not able to contact and converse with employers owing to restricted ability","The jobseeker is likely to struggle with contacting and conversing with prospective employers","The jobseeker will be able to contact and converse with prospective employers with the support of their work coach or other JCP staff","The jobseeker does not require any support in order to contact and converse with prospective employers" ]
+    },{
+      "text" : "Please use this question to rate the overall suitability and commitment of the claimant including their motivation in job serach and engagement with you to date.",
+      "name" : "overall",
+      "hint" : "This question will enable the Gatekeeper to ensure that the most suitable candidates are selected to go to Random Allocation in cases where there is tie in scores. It is an opportunity for you to provide an additional overarching view of the claimant to help steer selection.",
+      "options" : [ "Highly Suitable - Claimant is highly engaged with me, is motivated in his/her job search activity, is extremely interested in and commited to the WHP and presents as a highly suitable candidate","Strong Suitability - Claimant is very well engaged with me and their motivation is strong, they have a strong desire to join the programme to help them in their job search","Good suitability - Claimant displays the behaviours and commitment I would expect from a good candidate and should be a good contender for a place on the programme","Moderate Suitability - Claimant engages and is motivated in his/her job search and is interested in the WHP", "Suitable - is a suitable candidate  but wholeheartedly engaged and commited to the opportunity of a place on the programme"]
     }
   ]
 }
