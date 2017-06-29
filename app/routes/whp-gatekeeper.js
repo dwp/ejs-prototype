@@ -6,8 +6,10 @@ module.exports = function(router) {
   router.get('/latest/gatekeeper/places', gatekeeper.districtPlacesPage);
   router.post('/latest/gatekeeper/places', gatekeeper.districtPlacesAction);
 
-  router.get('/latest/gatekeeper/profilePlaces', gatekeeper.districtProfilePlacesPage);
-  router.post('/latest/gatekeeper/profilePlaces', gatekeeper.districtProfilePlacesAction);
+  router.get('/latest/gatekeeper/placesBreakdown', gatekeeper.districtPlacesBreakdownPage);
+  router.post('/latest/gatekeeper/placesBreakdown', gatekeeper.districtPlacesBreakdownAction);
+
+  router.get('/latest/gatekeeper/placesSummary', gatekeeper.districtPlacesSummaryPage);
 
 //router.get('/latest/gatekeeper/allocations', gatekeeper.viewAllocationsPage);
 
@@ -21,4 +23,5 @@ module.exports = function(router) {
 
   router.get('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfilePage);
   router.post('/latest/gatekeeper/weeklyProfile', gatekeeper.districtWeeklyProfileAction);
+
 }
