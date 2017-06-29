@@ -8,22 +8,22 @@
     <div class="main-content">   
       <h2 class="heading-large">Breakdown of places</h2>
 
-      <form class="form" method="POST" action="../gatekeeper/profilePlaces">
+      <form class="form" method="POST" action="../gatekeeper/placesBreakdown">
         <div class="grid-row">
           <div class="column-one-third">
             <fieldset>
               <legend class="heading-medium">WHP provider places</legend>
               <div class="form-group">
-                <label class="form-label" for="disabledPrivate">Number of disabled places</label>
-                <input class="form-control form-control-1-4" id="disabledPrivate" type="text" name="disabledPrivate" value="75" >
+                <label class="form-label" for="disWHPPlaces">Number of disabled places</label>
+                <input class="form-control form-control-1-4" id="disWHPPlaces" type="text" name="disWHPPlaces" value="{{ sessionData.placesData.disWHPPlaces }}">
               </div>
               <div class="form-group">
-                <label class="form-label" for="eagPrivate">Number of early access places</label>
-                <input class="form-control form-control-1-4" id="eagPrivate" type="text" name="eagPrivate" value="10">
+                <label class="form-label" for="eagWHPPlaces">Number of early access places</label>
+                <input class="form-control form-control-1-4" id="eagWHPPlaces" type="text" name="eagWHPPlaces" value="{{ sessionData.placesData.eagWHPPlaces }}">
               </div>
               <div class="form-group">
-                <label class="form-label" for="ltuPrivate">Number of long term unemployed places</label>
-                <input class="form-control form-control-1-4" id="ltuPrivate" type="text" name="ltuPrivate" value="15">
+                <label class="form-label" for="ltuWHPPlaces">Number of long term unemployed places</label>
+                <input class="form-control form-control-1-4" id="ltuWHPPlaces" type="text" name="ltuWHPPlaces" value="{{ sessionData.placesData.ltuWHPPlaces }}">
               </div>
             </fieldset>
           </div>
@@ -31,23 +31,23 @@
             <fieldset>
               <legend class="heading-medium">Public sector comparator places</legend>
               <div class="form-group">
-                <label class="form-label" for="disabledPublic">Number of disabled places</label>
-                <input class="form-control form-control-1-4" id="disabledPublic" type="text" name="disabledPublic" value="7">
+                <label class="form-label" for="disPSCPlaces">Number of disabled places</label>
+                <input class="form-control form-control-1-4" id="disPSCPlaces" type="text" name="disPSCPlaces" value="{{ sessionData.placesData.disPSCPlaces }}">
               </div>
               <div class="form-group">
-                <label class="form-label" for="eagPublic">Number of early access places</label>
-                <input class="form-control form-control-1-4" id="eagPublic" type="text" name="eagPublic" value="1">
+                <label class="form-label" for="eagPSCPlaces">Number of early access places</label>
+                <input class="form-control form-control-1-4" id="eagPSCPlaces" type="text" name="eagPSCPlaces" value="{{ sessionData.placesData.eagPSCPlaces }}">
               </div>
               <div class="form-group">
-                <label class="form-label" for="ltuPublic">Number of long term unemployed places</label>
-                <input class="form-control form-control-1-4" id="ltuPublic" type="text" name="ltuPublic" value="2">
+                <label class="form-label" for="ltuPSCPlaces">Number of long term unemployed places</label>
+                <input class="form-control form-control-1-4" id="ltuPSCPlaces" type="text" name="ltuPSCPlaces" value="{{ sessionData.placesData.ltuPSCPlaces }}">
               </div>
             </fieldset>
           </div>
         </div>
 
         <div class="form-group">
-          <a href="/latest/whp-profile-places-table-v2" class="button">Confirm and continue</a>
+          <input class="button" type="submit" value="Confirm and Continue">
         </div>      
       </form>
     </div>
