@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% set currentPage = 'whpSelection' %}
+    {% include "includes/main_nav.html" %}
+
+    <div class="main-content">
+      <h1 class="heading-large">100 referrals for Mercia for 31 May 2017</h1>
+
+      {% set currentGatekeeperPage = 'report' %}
+
+      <form method="POST" action="../gatekeeper/selection">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <div class="form-group">
+              <fieldset>
+                <legend class="visually-hidden">Select for allocation </legend>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Select</th>
+                      <th>Jobcentre</th>
+                      <th>Primary barrier</th>
+                      <th class="numeric">Score</th>
+                      <th>WRAC priority</th>
+                      <th>Benefit cap</th>
+                      <th>DDA Priority</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in range(0, 10) %}
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-1" type="checkbox" data-selection-type="eag"/>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Worcester</td>
+                        <td>EAG - carer</td>
+                        <td class="numeric">22</td>
+                        <td></td>
+                        <td>Yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-2" type="checkbox" data-selection-type="healthCondition"/>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Coventry</td>
+                        <td>Disabled</td>
+                        <td class="numeric">23</td>
+                        <td></td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-3" type="checkbox" data-selection-type="eag"/>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Coventry</td>
+                        <td>EAG - homeless</td>
+                        <td class="numeric">12</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-4" type="checkbox" data-selection-type="healthCondition"/>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Coventry</td>
+                        <td>Disabled</td>
+                        <td class="numeric">8</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-5" type="checkbox" data-selection-type="healthCondition"/>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Stratford</td>
+                        <td>Disabled</td>
+                        <td class="numeric">15</td>
+                        <td>Yes</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-0" type="checkbox" data-selection-type="eag"></input>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Leeds</td>
+                        <td>EAG</td>
+                        <td class="numeric">2</td>
+                        <td></td>
+                        <td></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label>
+                            <input name="random-allocation-70" type="checkbox" data-selection-type="healthCondition"></input>
+                            <span class="visually-hidden">Put forward for allocation</span>
+                          </label>
+                        </td>
+                        <td>Kidderminster</td>
+                        <td>Disabled</td>
+                        <td class="numeric">16</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </fieldset>
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="js-stick-at-top-when-scrolling">
+              <input type="hidden" name="newReferrals" id="newReferrals" value="30">
+              <p><span class="bold">30</span> disabled/health condition referrals to be selected</p>
+              <input type="hidden" name="totalDisRefs" id="totalDisRefs" value="10">
+              <p><span class="bold">10</span> early access group referrals to be selected</p>
+              <hr />
+              <input type="hidden" name="totalEAGRefs" id="totalEAGrefs" value="{{totalEAGRefs}}">
+              <p><span id="healthConditionSelectionCount" class="bold">0</span> disabilility/health condition selections made</p>
+              <p><span id="eagSelectionCount" class="bold">0</span> early access group selections made</p>
+              <p><span id="selectionCount" class="bold">0</span> total selections made</p>
+              <input type="hidden" name="referralsSelected" id="referralsSelected" value="0">
+
+            <div class="form-group">
+              <button class="button">Refer selected to random allocation tool</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script src="/public/javascripts/whpSelection.js"></script>
+  <script src="/public/javascripts/govuk/stick-at-top-when-scrolling.js"></script>
+{% endblock %}
