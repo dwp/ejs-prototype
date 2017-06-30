@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith - Scoring questions</h1>
+
+      <div class="grid-row">
+        {% include "includes/summary_nav.html" %}
+      </div>
+      
+      <form method="get">
+        <div class="grid-row">
+          <div class="column-half">
+            <p class="bold">Please rate the overall suitability and commitment of the claimant including their motivation in job search and engagement with you to date</p>
+            <p class="font-small">Consider things such as :
+            <li> regular attendance at interviews; </li>
+            <li>their understanding of the labour market in their locality; </li>
+            <li>their engagement with job search activities;</li>
+            <li>their level of proavtivity in job search activity;</li>
+            <li>their understanding of their own skills base;</li>
+            <li>their previous commitment and completion of provision you have referred them to</li>
+            <br>
+            <p>Please insert a score in the box below using a scale of 1 to 5 with 1 being the lowest suitability and 5 being the highest suitability</p>
+
+            <div>
+              <label class="form-label" for="alt-q-nine">Score</label>
+              <input class="form-control form-control-1-8" type="text" name="alt-q-nine" id="alt-q-nine">
+            </div>
+            <br>
+            <br>
+             <div class="grid-row column-two-thirds">
+               <button class="button" type="submit">Continue</button>
+             </div>
+           </div>
+
+          <div class="column-half">
+            <p class="bold">Additional information</p>
+            <p>This question will enable the Gatekeeper to ensure that the most suitable candidates are selected to go to Random Allocation in cases where there is a tie in scores.
+            It is an opportunity for you to provide an additional overarching view of the claimant to help steer selection</p>
+            <p>Question 9 of 9</p>
+          </div>
+
+      </form>
+    </div>
+  </main>
+{% endblock %}
+
