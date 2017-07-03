@@ -25,8 +25,8 @@ function districtPlacesAction (req, res) {
   var placesData = {
     totalWHPPlaces: parseInt(req.body.totalWHPPlaces),
     totalPSCPlaces: parseInt(req.body.totalPSCPlaces),
-    mandRatio: parseFloat(req.body.mandRatio).toFixed(2),
-    volRatio: parseFloat(req.body.volRatio).toFixed(2),
+    mandRatio: parseFloat(req.body.mandRatio).toFixed(1),
+    volRatio: parseFloat(req.body.volRatio).toFixed(1),
     previousCalcFlag: 0
   };
 
@@ -51,8 +51,8 @@ function districtPlacesBreakdownPage (req, res) {
   let disPSCPlaces;
   let eagPSCPlaces;
   let ltuPSCPlaces;
-  const mandRatio = parseInt(sessionPlacesData.mandRatio ? sessionPlacesData.mandRatio : 1.1);
-  const volRatio = parseInt(sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5);
+  const mandRatio = parseFloat(sessionPlacesData.mandRatio ? sessionPlacesData.mandRatio : 1.1).toFixed(1);
+  const volRatio = parseFloat(sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5).toFixed(1);
   let placesData;
 
   eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
