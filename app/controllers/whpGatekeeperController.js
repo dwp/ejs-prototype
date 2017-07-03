@@ -157,15 +157,20 @@ function districtPlacesSummaryPage (req, res) {
  */
 
 function districtSelectionPage (req, res) {
-  const placesData = req.session.placesData || {};
+
+  const placesData = req.session.displayPlacesData || {};
+  const totalDisRefs = (placesData.disRefsNeeded + placesData.disControlGroup);
+  const totalEAGRefs = (placesData.eagRefsNeeded + placesData.eagControlGroup);
 
   const selectionReport = {
     newReferrals: 100,
-    totalDisRefs: placesData.totalDisRefs ? placesData.totalDisRefs : 30,
-    totalEAGRefs: placesData.totalEAGRefs ? placesData.totalEAGRefs : 10
+    totalDisRefs: totalDisRefs ? totalDisRefs : 30,
+    totalEAGRefs: totalEAGRefs ? totalEAGRefs : 10
   };
 
-  res.render('latest/whp-selection-report', selectionReport);
+  req.session.displayPlacesData = selectionReport;
+
+  res.render('latest/whp-selection-report');
 }
 
 function districtSelectionAction (req, res) {
