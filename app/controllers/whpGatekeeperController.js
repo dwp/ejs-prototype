@@ -110,10 +110,10 @@ function districtPlacesBreakdownAction (req, res) {
   disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
   eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
   ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
-  disControlGroup = Math.round(disRefsNeeded / 10);
-  eagControlGroup = Math.round(eagRefsNeeded / 10);
+  disControlGroup = Math.round((disWHPPlaces + disPSCPlaces) / 10);
+  eagControlGroup = Math.round((eagWHPPlaces + eagPSCPlaces) / 10);
   volControlGroup = disControlGroup + eagControlGroup;
-  mandControlGroup = Math.round(ltuRefsNeeded / 10);
+  mandControlGroup = Math.round((ltuWHPPlaces + ltuPSCPlaces) / 10);
   totalVolRefs = disRefsNeeded + eagRefsNeeded + volControlGroup;
   totalMandRefs = ltuRefsNeeded + mandControlGroup;
 
