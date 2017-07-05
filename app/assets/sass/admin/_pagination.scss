@@ -5,11 +5,6 @@
 }
 
 table {
-  .fixedHeader-floating {
-    position: fixed;
-    background-color: #fff;
-  }
-
   &.dataTable {
     word-break: break-word;
     
@@ -39,5 +34,26 @@ table {
         color: $govuk-blue;
       }
     }
+  }
+
+  &.fixedHeader-floating {
+    position: fixed !important;
+    background-color: white;
+
+    &.no-footer {
+      border-bottom-width: 0;
+    }
+  }
+
+  &.fixedHeader-locked {
+    position: absolute !important;
+    background-color: white;
+  }
+
+}
+
+@media print {
+  table.fixedHeader-floating {
+    display: none;
   }
 }
