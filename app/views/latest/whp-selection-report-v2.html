@@ -20,13 +20,13 @@
                   <thead>
                     <tr>
                       <th>Select</th>
-                      <th>Jobcentre</th>
-                      <th>Referral type</th>
-                      <th class="numeric">Score</th>
-                      <th class="numeric">Workcoach overall rating</th>
-                      <th>WRAC priority</th>
-                      <th>Benefit cap</th>
-                      <th>Local priority</th>
+                      <th><span class="underlineHeader">Jobcentre</span></th>
+                      <th><span class="underlineHeader">Referral type</span></th>
+                      <th class="numeric"><span class="underlineHeader">Score</span></th>
+                      <th class="numeric"><span class="underlineHeader">Workcoach overall rating</span></th>
+                      <th><span class="underlineHeader">WRAC priority</span></th>
+                      <th><span class="underlineHeader">Local priority</span></th>
+                      <th><span class="underlineHeader">Benefit cap</span></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -142,7 +142,7 @@
               </fieldset>
             </div>
           </div>
-          <div class="column-third">
+          <div class="column-one-third">
             <div class="js-stick-at-top-when-scrolling">
               <input type="hidden" name="newReferrals" id="newReferrals" value="30">
               <p><span class="bold">30</span> disabled/health condition referrals to be selected</p>
@@ -169,4 +169,17 @@
 {% block page_scripts %}
   <script src="/public/javascripts/whpSelection.js"></script>
   <script src="/public/javascripts/govuk/stick-at-top-when-scrolling.js"></script>
+  <script src="/public/javascripts/vendor/dataTables.min.js"></script>
+  <script>
+    $('table').DataTable({
+      paging:false,
+      info:false,
+      filter: false,
+      fixedHeader: true,
+      order: [[ 3, "desc" ]],
+      columnDefs: [
+        { targets: 0, orderable: false}
+      ]
+    })
+  </script>
 {% endblock %}
