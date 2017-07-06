@@ -38,7 +38,7 @@
           {% set autocomplete = [{
             workTitle : 'Accessible autocomplete',
             links: [{
-              link : 'latest/settings-with-autocomplete', title : 'Change location with autocomplese'
+              link : 'latest/settings-with-autocomplete', title : 'Change location with autocomplete'
             }] 
           }]%}
 
@@ -71,7 +71,9 @@
               link : 'latest/failed-eligibility', title : 'Failed eligibility'
             }, { 
               link : 'latest/scoring_questions/0', title : 'Scoring questions'
-            }, { 
+            }, {
+              link : 'latest/scoring_question_9_alt', title : 'Alternative Scoring question 9'
+            }, {
               link : 'latest/whp-result', title : 'Successfully scored'
             }]
           }] %} 
@@ -83,26 +85,28 @@
             links: [{ 
               link : 'latest/gatekeeper/places', title : 'Review Work Coach submissions - calculate places & referrals (set places and ratios)'
               }, {
-              link : 'latest/gatekeeper/profilePlaces', title : 'Review Work Coach submissions - calculate places & referrals (calculate and display places to fill)'
+              link : 'latest/gatekeeper/placesBreakdown', title : 'Breakdown of places'
               }, {
-              link : 'latest/whp-profile-places-breakdown', title : 'Breakdown of places'
-              }, {
-              link : 'latest/whp-profile-places-table', title : 'Summary of places'
-              }, {
-              link : 'latest/whp-profile-places-table-v2', title : 'Summary of places pivoted'
+              link : 'latest/gatekeeper/placesSummary', title : 'Summary of places'
               }, {
               link : 'latest/gatekeeper/selection', title : 'Referrals for Mercia for 31 May 2017'
+              }, {
+              link : 'latest/whp-selection-report-v2', title : 'Alternative referrals for Mercia for 31 May 2017'
               }, {
               link : 'latest/whp-selection-outcomes-report', title : 'Outcome of random allocation'
               }, {
               link : 'latest/gatekeeper/allocations', title : 'View district allocations for Mercia 2017/2018'
-            }]
-            }, {
-            workTitle : 'Alternative Gatekeeper Pages',
-            links: [{
-              link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
               }, {
-              link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
+              link : 'latest/whp-profile-places', title : '[Old] - Calculate and display places and referrals (no longer calculates - just a page display)'
+              }, {
+              link : 'latest/whp-profile-places-table', title : '[Old] - Summary of places'
+              }]
+              }, {
+            workTitle : 'Alternative Gatekeeper Pages',
+              links: [{
+                link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
+                }, {
+                link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
             }]
           }] %}
           

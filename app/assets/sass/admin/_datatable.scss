@@ -1,0 +1,59 @@
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    zoom: 1;
+}
+
+table {
+  &.dataTable {
+    word-break: break-word;
+    
+    thead {
+      th, td {
+        padding: 10px 18px 10px 0;
+        border-bottom: 1px solid #111;
+        font-weight: normal;
+      }
+
+      .underlineHeader{
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      .sorting_desc::before {
+        content: '\25BC';
+      }
+
+      .sorting_asc::before {
+        content: '\25B2';
+      }
+
+      .sorting, .sorting_asc, .sorting_desc, 
+      .sorting_asc_disabled, .sorting_desc_disabled {
+        cursor: pointer;
+        color: $govuk-blue;
+      }
+    }
+  }
+
+  &.fixedHeader-floating {
+    position: fixed !important;
+    background-color: white;
+
+    &.no-footer {
+      border-bottom-width: 0;
+    }
+  }
+
+  &.fixedHeader-locked {
+    position: absolute !important;
+    background-color: white;
+  }
+
+}
+
+@media print {
+  table.fixedHeader-floating {
+    display: none;
+  }
+}

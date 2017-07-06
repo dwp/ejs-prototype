@@ -57,6 +57,12 @@
                         {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
                       </fieldset>
                     {% endif %}
+                    <br>
+                    <fieldset class="inline">
+                      <legend>Does the person have an identified priority need in your DDA?</legend>
+                      {{ forms.radio(name='disabled-dda-priority', displayText='Yes', optionValue='Yes', id='disabled-dda-priority-yes') }}
+                      {{ forms.radio(name='disabled-dda-priority', displayText='No', optionValue='No', id='disabled-dda-priority-no') }}
+                    </fieldset>
                   </div>
 
                   <div class="panel panel-border-narrow js-hidden" id="early-entry-options">
@@ -86,6 +92,12 @@
                         {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
                       </fieldset>
                     {% endif %}
+                    <br>
+                    <fieldset class="inline">
+                      <legend>Does the person have an identified priority need in your DDA?</legend>
+                      {{ forms.radio(name='disabled-dda-priority', displayText='Yes', optionValue='Yes', id='disabled-dda-priority-yes') }}
+                      {{ forms.radio(name='disabled-dda-priority', displayText='No', optionValue='No', id='disabled-dda-priority-no') }}
+                    </fieldset>
                   </div>
 
             {% if not getData.whpOnly %}

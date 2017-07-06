@@ -25,93 +25,42 @@ function districtPlacesAction (req, res) {
   var placesData = {
     totalWHPPlaces: parseInt(req.body.totalWHPPlaces),
     totalPSCPlaces: parseInt(req.body.totalPSCPlaces),
-    mandRatio: parseFloat(req.body.mandRatio).toFixed(2),
-    volRatio: parseFloat(req.body.volRatio).toFixed(2),
+    mandRatio: parseFloat(req.body.mandRatio).toFixed(1),
+    volRatio: parseFloat(req.body.volRatio).toFixed(1),
     previousCalcFlag: 0
   };
 
   req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/profilePlaces');
+  res.redirect('/latest/gatekeeper/placesBreakdown');
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- /*                                        District ProfilePlaces Controllers
+ /*                                        District Profile Places Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-function districtProfilePlacesPage (req, res) {
+function districtPlacesBreakdownPage (req, res) {
+
   var sessionPlacesData = req.session.placesData || {};
 
-  let totalWHPPlaces;
+  let totalWHPPlaces = sessionPlacesData.totalWHPPlaces ? sessionPlacesData.totalWHPPlaces : 45;
   let disWHPPlaces;
   let eagWHPPlaces;
   let ltuWHPPlaces;
-  let totalPSCPlaces;
+  let totalPSCPlaces = parseInt(sessionPlacesData.totalPSCPlaces ? sessionPlacesData.totalPSCPlaces : 17);
   let disPSCPlaces;
   let eagPSCPlaces;
   let ltuPSCPlaces;
-  let disRefsNeeded;
-  let eagRefsNeeded;
-  let ltuRefsNeeded;
-  let totalRefsNeeded;
-  let disControlGroup;
-  let eagControlGroup;
-  let ltuControlGroup;
-  let totalControlGroup;
-  let totalDisRefs;
-  let totalEAGRefs;
-  let totalLTURefs;
-  let totalRefs;
-  let totalCustRefs;
-  const mandRatio = sessionPlacesData.mandRatio;
-  const volRatio = sessionPlacesData.volRatio;
+  const mandRatio = parseFloat(sessionPlacesData.mandRatio ? sessionPlacesData.mandRatio : 1.1).toFixed(1);
+  const volRatio = parseFloat(sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5).toFixed(1);
   let placesData;
 
-  if (sessionPlacesData.previousCalcFlag !== 1) {
-    totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
-    disWHPPlaces = Math.round((75 / 100) * totalWHPPlaces);
-    eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
-    ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
-    totalPSCPlaces = sessionPlacesData.totalPSCPlaces;
-    disPSCPlaces = Math.round((75 / 100) * totalPSCPlaces);
-    eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
-    ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
-    disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
-    eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
-    ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
-    totalRefsNeeded = disRefsNeeded + eagRefsNeeded + ltuRefsNeeded;
-    disControlGroup = Math.round(disRefsNeeded / 10);
-    eagControlGroup = Math.round(eagRefsNeeded / 10);
-    ltuControlGroup = Math.round(ltuRefsNeeded / 10);
-    totalControlGroup = disControlGroup + eagControlGroup + ltuControlGroup;
-    totalDisRefs = disRefsNeeded + disControlGroup;
-    totalEAGRefs = eagRefsNeeded + eagControlGroup;
-    totalLTURefs = ltuRefsNeeded + ltuControlGroup;
-    totalRefs = totalRefsNeeded + totalControlGroup;
-    totalCustRefs = totalDisRefs + totalEAGRefs;
-  } else {
-    totalWHPPlaces = sessionPlacesData.totalWHPPlaces;
-    disWHPPlaces = sessionPlacesData.disWHPPlaces;
-    eagWHPPlaces = sessionPlacesData.eagWHPPlaces;
-    ltuWHPPlaces = sessionPlacesData.ltuWHPPlaces;
-    totalPSCPlaces = sessionPlacesData.totalPSCPlaces;
-    disPSCPlaces = sessionPlacesData.disPSCPlaces;
-    eagPSCPlaces = sessionPlacesData.eagPSCPlaces;
-    ltuPSCPlaces = sessionPlacesData.ltuPSCPlaces;
-    disRefsNeeded = sessionPlacesData.disRefsNeeded;
-    eagRefsNeeded = sessionPlacesData.eagRefsNeeded;
-    ltuRefsNeeded = sessionPlacesData.ltuRefsNeeded;
-    totalRefsNeeded = sessionPlacesData.totalRefsNeeded;
-    disControlGroup = sessionPlacesData.disControlGroup;
-    eagControlGroup = sessionPlacesData.eagControlGroup;
-    ltuControlGroup = sessionPlacesData.ltuControlGroup;
-    totalControlGroup = sessionPlacesData.totalControlGroup;
-    totalDisRefs = sessionPlacesData.totalDisRefs;
-    totalEAGRefs = sessionPlacesData.totalEAGRefs;
-    totalLTURefs = sessionPlacesData.totalLTURefs;
-    totalRefs = sessionPlacesData.totalRefs;
-    totalCustRefs = sessionPlacesData.totalCustRefs;
-  }
+  eagWHPPlaces = Math.round((10 / 100) * totalWHPPlaces);
+  ltuWHPPlaces = Math.round((15 / 100) * totalWHPPlaces);
+  disWHPPlaces = totalWHPPlaces - (eagWHPPlaces + ltuWHPPlaces);
+  eagPSCPlaces = Math.round((10 / 100) * totalPSCPlaces);
+  ltuPSCPlaces = Math.round((15 / 100) * totalPSCPlaces);
+  disPSCPlaces = totalPSCPlaces - (eagPSCPlaces + ltuPSCPlaces);
 
   placesData = {
     totalWHPPlaces: totalWHPPlaces,
@@ -122,29 +71,18 @@ function districtProfilePlacesPage (req, res) {
     disPSCPlaces: disPSCPlaces,
     eagPSCPlaces: eagPSCPlaces,
     ltuPSCPlaces: ltuPSCPlaces,
-    disRefsNeeded: disRefsNeeded,
-    eagRefsNeeded: eagRefsNeeded,
-    ltuRefsNeeded: ltuRefsNeeded,
-    totalRefsNeeded: totalRefsNeeded,
-    disControlGroup: disControlGroup,
-    eagControlGroup: eagControlGroup,
-    ltuControlGroup: ltuControlGroup,
-    totalControlGroup: totalControlGroup,
-    totalDisRefs: totalDisRefs,
-    totalEAGRefs: totalEAGRefs,
-    totalLTURefs: totalLTURefs,
-    totalRefs: totalRefs,
-    totalCustRefs: totalCustRefs,
     mandRatio : mandRatio,
-    volRation : volRatio
+    volRatio : volRatio
   };
 
-  res.render('latest/whp-profile-places', placesData);
+  req.session.placesData = placesData;
+
+  res.render('latest/whp-profile-places-breakdown');
 }
 
-function districtProfilePlacesAction (req, res) {
+function districtPlacesBreakdownAction (req, res) {
 
-  var profilePlacesData = req.session.placesData || {};
+  var sessionPlacesData = req.session.placesData || {};
 
   let totalWHPPlaces;
   let disWHPPlaces = parseInt(req.body.disWHPPlaces);
@@ -157,18 +95,14 @@ function districtProfilePlacesAction (req, res) {
   let disRefsNeeded;
   let eagRefsNeeded;
   let ltuRefsNeeded;
-  let totalRefsNeeded;
   let disControlGroup;
   let eagControlGroup;
-  let ltuControlGroup;
-  let totalControlGroup;
-  let totalDisRefs;
-  let totalEAGRefs;
-  let totalLTURefs;
-  let totalRefs;
-  let totalCustRefs;
-  const mandRatio = profilePlacesData.mandRatio;
-  const volRatio = profilePlacesData.volRatio;
+  let volControlGroup;
+  let mandControlGroup;
+  let totalVolRefs;
+  let totalMandRefs;
+  const mandRatio = sessionPlacesData.mandRatio;
+  const volRatio = sessionPlacesData.volRatio;
   let placesData;
 
   totalWHPPlaces = disWHPPlaces + eagWHPPlaces + ltuWHPPlaces;
@@ -176,16 +110,12 @@ function districtProfilePlacesAction (req, res) {
   disRefsNeeded = Math.round((disWHPPlaces + disPSCPlaces) * volRatio);
   eagRefsNeeded = Math.round((eagWHPPlaces + eagPSCPlaces) * volRatio);
   ltuRefsNeeded = Math.round((ltuWHPPlaces + ltuPSCPlaces) * mandRatio);
-  totalRefsNeeded = disRefsNeeded + eagRefsNeeded + ltuRefsNeeded;
-  disControlGroup = Math.round(disRefsNeeded / 10);
-  eagControlGroup = Math.round(eagRefsNeeded / 10);
-  ltuControlGroup = Math.round(ltuRefsNeeded / 10);
-  totalControlGroup = disControlGroup + eagControlGroup + ltuControlGroup;
-  totalDisRefs = disRefsNeeded + disControlGroup;
-  totalEAGRefs = eagRefsNeeded + eagControlGroup;
-  totalLTURefs = ltuRefsNeeded + ltuControlGroup;
-  totalRefs = totalRefsNeeded + totalControlGroup;
-  totalCustRefs = totalDisRefs + totalEAGRefs;
+  disControlGroup = Math.round((disWHPPlaces + disPSCPlaces) / 10);
+  eagControlGroup = Math.round((eagWHPPlaces + eagPSCPlaces) / 10);
+  volControlGroup = disControlGroup + eagControlGroup;
+  mandControlGroup = Math.round((ltuWHPPlaces + ltuPSCPlaces) / 10);
+  totalVolRefs = disRefsNeeded + eagRefsNeeded + volControlGroup;
+  totalMandRefs = ltuRefsNeeded + mandControlGroup;
 
   placesData = {
     totalWHPPlaces   : totalWHPPlaces,
@@ -199,28 +129,26 @@ function districtProfilePlacesAction (req, res) {
     disRefsNeeded    : disRefsNeeded,
     eagRefsNeeded    : eagRefsNeeded,
     ltuRefsNeeded    : ltuRefsNeeded,
-    totalRefsNeeded  : totalRefsNeeded,
     disControlGroup  : disControlGroup,
     eagControlGroup  : eagControlGroup,
-    ltuControlGroup  : ltuControlGroup,
-    totalControlGroup: totalControlGroup,
-    totalDisRefs     : totalDisRefs,
-    totalEAGRefs     : totalEAGRefs,
-    totalLTURefs     : totalLTURefs,
-    totalRefs        : totalRefs,
-    totalCustRefs    : totalCustRefs,
+    volControlGroup  : volControlGroup,
+    mandControlGroup : mandControlGroup,
+    totalVolRefs     : totalVolRefs,
+    totalMandRefs    : totalMandRefs,
     mandRatio        : mandRatio,
     volRatio         : volRatio,
-    previousCalcFlag : 1
   };
 
-  req.session.placesData = placesData;
+  req.session.displayPlacesData = placesData;
 
-  if (req.body.hasOwnProperty("recalc")) {
-    res.redirect('/latest/gatekeeper/profilePlaces');
-  } else {
-    res.redirect('/latest/gatekeeper/selection');
-  }
+  res.redirect('/latest/gatekeeper/placesSummary');
+
+}
+
+function districtPlacesSummaryPage (req, res) {
+
+  res.render('latest/whp-profile-places-summary');
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -229,15 +157,20 @@ function districtProfilePlacesAction (req, res) {
  */
 
 function districtSelectionPage (req, res) {
-  const placesData = req.session.placesData || {};
+
+  const placesData = req.session.displayPlacesData || {};
+  const totalDisRefs = (placesData.disRefsNeeded + placesData.disControlGroup);
+  const totalEAGRefs = (placesData.eagRefsNeeded + placesData.eagControlGroup);
 
   const selectionReport = {
     newReferrals: 100,
-    totalDisRefs: placesData.totalDisRefs ? placesData.totalDisRefs : 30,
-    totalEAGRefs: placesData.totalEAGRefs ? placesData.totalEAGRefs : 10
+    totalDisRefs: totalDisRefs ? totalDisRefs : 30,
+    totalEAGRefs: totalEAGRefs ? totalEAGRefs : 10
   };
 
-  res.render('latest/whp-selection-report', selectionReport);
+  req.session.displayPlacesData = selectionReport;
+
+  res.render('latest/whp-selection-report');
 }
 
 function districtSelectionAction (req, res) {
@@ -475,8 +408,9 @@ function formatDateForDisplay (unformattedDate) {
 
 module.exports.districtPlacesPage = districtPlacesPage;
 module.exports.districtPlacesAction = districtPlacesAction;
-module.exports.districtProfilePlacesPage = districtProfilePlacesPage;
-module.exports.districtProfilePlacesAction = districtProfilePlacesAction;
+module.exports.districtPlacesBreakdownPage = districtPlacesBreakdownPage;
+module.exports.districtPlacesBreakdownAction = districtPlacesBreakdownAction;
+module.exports.districtPlacesSummaryPage = districtPlacesSummaryPage;
 module.exports.viewAllocationsPage = viewAllocationsPage;
 module.exports.districtSelectionPage = districtSelectionPage;
 module.exports.districtSelectionAction = districtSelectionAction;

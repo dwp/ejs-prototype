@@ -1,15 +1,22 @@
 (function(){
   var $selectCheckboxes = $('table input'),
-    $selectionCount = $('#selectionCount');
+    $selectionCount = $('#selectionCount'),
+    $eagSelectionCount = $('#eagSelectionCount'),
+    $healthConditionSelectionCount = $('#healthConditionSelectionCount'),
     $referralsSelected = $('#referralsSelected');
 
-  $selectCheckboxes.on('click', updateSelectionCount);
+  $selectCheckboxes.on('click', updateSelectionCounts);
 
-  function updateSelectionCount(){
-    var selectionCount = $selectCheckboxes.filter(':checked').length;
-    $selectionCount.text(selectionCount);
-    $referralsSelected.val(selectionCount);
+  function updateSelectionCounts(){
+    var $allChecked = $selectCheckboxes.filter(':checked'),
+      totalSelectionCount = $allChecked.length,
+      healthConditionSelectionCount = $allChecked.filter('[data-selection-type="healthCondition"]').length
+      eagSelectionCount = $allChecked.filter('[data-selection-type="eag"]').length;
+    $selectionCount.text(totalSelectionCount);
+    $referralsSelected.val(totalSelectionCount);
+    $healthConditionSelectionCount.text(healthConditionSelectionCount);
+    $eagSelectionCount.text(eagSelectionCount);
   }
 
-  updateSelectionCount();
+  updateSelectionCounts();
 })();
