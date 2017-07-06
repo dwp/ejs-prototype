@@ -12,8 +12,8 @@ function viewCommitment (req, res) {
     const defaultViewByWhen1 = new Date('2017-12-31');
     const defaultViewByWhen2 = new Date('2018-01-31');
     const defaultViewByWhen3 = new Date('2018-03-31');
-    commitmentToDisplay.addActionToActionData(1, 'Default action one werwe', 'Default how one', defaultViewByWhen1, 'Voluntary');
-    commitmentToDisplay.addActionToActionData(2, 'Default action twoeee', 'Default how two', defaultViewByWhen2, 'Mandatory');
+    commitmentToDisplay.addActionToActionData(1, 'Default action one', 'Default how one', defaultViewByWhen1, 'Voluntary');
+    commitmentToDisplay.addActionToActionData(2, 'Default action two', 'Default how two', defaultViewByWhen2, 'Mandatory');
     commitmentToDisplay.addActionToActionData(3, 'Default action three', 'Default how three', defaultViewByWhen3, 'Voluntary');
     req.session.commitment = commitmentToDisplay;
   }
