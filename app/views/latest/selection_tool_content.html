@@ -28,7 +28,7 @@
               {% if not isExternallyReffered %}
                 <fieldset class="inline">
                   <legend>Has the person been unemployed 24 months or longer?</legend>
-                  {{ forms.radio(name='unemployed', displayText='Yes', optionValue='Yes', id='initial_options_voluntary') }}
+                  {{ forms.radio(name='unemployed', displayText='Yes', optionValue='Yes', id='initial_options_voluntary', datatarget='ltu-panel') }}
                   {{ forms.radio(name='unemployed', displayText='No', optionValue='No', id='initial-options-ltu', datatarget='primary-barrier-panel') }}
                 </fieldset>
 
@@ -103,6 +103,19 @@
               {% if not isExternallyReffered %}
                 </div>
               {% endif %}
+
+
+              <div class="panel panel-border-narrow js-hidden" id="ltu-panel">
+                <div class="panel panel-border-wide alert-default">
+                  Before submitting Mr J Smith please ensure the following criteria have been met
+                </div>
+                <ul class="list list-bullet">
+                  <li>The person has not previously taken part in the WHP within the last 2 years</li>
+                  <li>The person is receiving the full entitlement to a qualifying benefit (UC/JSA) and has not been in continuous receipt of a qualifying benefit (US/JSA) for at least 24 months.</li>
+                  <li>The person is not currently undetaking any type of paid work</li>
+                  <li>WHP exemptions or deferral conditions do not apply</li>
+                </ul>
+              </div>
             </div>
             
             <button value="Continue" class="button">Continue</button>
