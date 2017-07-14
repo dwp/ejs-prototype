@@ -11,27 +11,29 @@ table {
     thead {
       th, td {
         padding: 10px 18px 10px 0;
-        border-bottom: 1px solid #111;
-        font-weight: normal;
+        border-bottom: 1px solid $black;
       }
 
-      .underlineHeader{
-        text-decoration: underline;
-        font-weight: bold;
+      .sorting span,
+      .sorting_asc span,
+      .sorting_desc span,{
+        background-repeat: no-repeat;
+        background-position: center right;
+        padding-right: 20px;
       }
-
-      .sorting_desc::before {
-        content: '\25BC';
+      .sorting span {
+        background-image: url("/public/images/sort_both.png");
       }
-
-      .sorting_asc::before {
-        content: '\25B2';
+      .sorting_asc span {
+        background-image: url("/public/images/sort_asc.png");
+      }
+      .sorting_desc span{
+        background-image: url("/public/images/sort_desc.png");
       }
 
       .sorting, .sorting_asc, .sorting_desc, 
       .sorting_asc_disabled, .sorting_desc_disabled {
         cursor: pointer;
-        color: $govuk-blue;
       }
     }
   }

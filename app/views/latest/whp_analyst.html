@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% set currentPage = 'job' %}
+  {% include "includes/main_nav.html" %}
+  
+  <div class="main-content">
+    <form>
+      <div class="grid-row">
+        <div class="column-full">
+          
+          <h1 class="heading-large">Analyst page</h1>
+
+          <p>For a full set of WHP management information, please input a date range and click continue</p>
+
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  From date
+                </span>
+                <span class="form-hint">For example, 31 3 1980</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="from-day">Day</label>
+                  <input class="form-control" id="from-day" name="from-day" type="number">
+                </div>
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="from-month">Month</label>
+                  <input class="form-control" id="from-month" name="from-month" type="number">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="from-year">Year</label>
+                  <input class="form-control" id="from-year" name="from-year" type="number">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  To date
+                </span>
+                <span class="form-hint">For example, 31 3 1980</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="to-day">Day</label>
+                  <input class="form-control" id="to-day" name="to-day" type="number">
+                </div>
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="to-month">Month</label>
+                  <input class="form-control" id="to-month" name="to-month" type="number">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="to-year">Year</label>
+                  <input class="form-control" id="to-year" name="to-year" type="number">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <a class="button" href="/public/data/dcams.csv">Download</a>
+          </div>
+        </div>
+      </div>
+    <form>
+  </div>
+</main>
+{% endblock %}

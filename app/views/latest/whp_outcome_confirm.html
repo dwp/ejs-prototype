@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% import "macros/forms.html" as forms %}
+
+{% set isExternallyReffered = true if getData.externallyReffered === 'true' else false %}
+
+{% block content %}
+  <main id="content" role="main">
+    
+    {% include "includes/main_nav.html" %}
+    
+    <div class="main-content">
+      <h1 class="heading-large">WHP Selection -  Mr J Smith</h1>
+
+      <div class="grid-row">
+        {% set currentClaimantPage = 'selectionTool' %}
+        {% include "includes/summary_nav.html" %}
+      </div>
+      
+      <div class="grid-row">
+        <div class="column-half">
+        
+          <form>
+            <div class="form-group">
+              <fieldset class="inline">
+
+                <legend>
+                  <h1 class="heading-medium">Are you sure you want to withdraw Mr J Smith from the WHP?
+                  </h1>
+                </legend>
+
+                <div class="multiple-choice">
+                  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                  <label for="radio-inline-1">Yes</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                  <label for="radio-inline-2">No</label>
+                </div>
+
+              </fieldset>
+            </div>
+          </form>
+          
+          <div class="form-group">
+            <a href="/latest/job_record_confirm?whpStatus=Withdrawn from WHP (on 16 May 2017)" class="button">Confirm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
