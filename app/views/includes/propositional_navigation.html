@@ -3,18 +3,21 @@
     <nav id="proposition-menu">
       <a href="/index" id="logo" class="content">DCAMS</a>
     </nav>
-    <nav id="sign-out-menu">
-      <ul>
-        <!-- linking this to the toggle user role logic for a bit of a shortcut -->
-        {%if sessionData.user.role === 'gatekeeper' %}
-          {% set userAdmin = 'whp-annual-profile' %}
-        {%else%}
-          {% set userAdmin = 'settings' %}
-        {%endif%}
 
-        <li><a class="bold-nav-link" href="/latest/toggle_user_role">{{sessionData.user.name}} &nbsp; | &nbsp; Worcester</a> &nbsp; | &nbsp; </li>
-        <li><a href="/latest/{{userAdmin}}">Settings</a></li>
-      </ul>
-    </nav>
+    {%if showSignOutMenu | default(true) %}
+      <nav id="sign-out-menu">
+        <ul>
+          <!-- linking this to the toggle user role logic for a bit of a shortcut -->
+          {%if sessionData.user.role === 'gatekeeper' %}
+            {% set userAdmin = 'whp-annual-profile' %}
+          {%else%}
+            {% set userAdmin = 'settings' %}
+          {%endif%}
+
+          <li><a class="bold-nav-link" href="/latest/toggle_user_role">{{sessionData.user.name}} &nbsp; | &nbsp; Worcester</a> &nbsp; | &nbsp; </li>
+          <li><a href="/latest/{{userAdmin}}">Settings</a></li>
+        </ul>
+      </nav>
+    {%endif%}
   </div>
 </div>
