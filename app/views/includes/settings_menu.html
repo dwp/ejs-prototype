@@ -2,13 +2,13 @@
   <div class="column-full summary-nav-wrapper"> 
     <ul id="id-claimant-actions">
 
-      {% if sessionData.user.role !== 'gatekeeper'%}
+      {% if data.user.role !== 'gatekeeper'%}
         <li class="{% if currentSettingsPage === "changeLocation" %}selected{% endif %}"> 
           <a href="settings" class="menu-item">Change location</a>
         </li>
 
 
-        {% if sessionData.user.role === 'manager'%}
+        {% if data.user.role === 'manager'%}
           <li class="{% if currentSettingsPage === "maintainUser" %}selected{% endif %}">
             <a href="amend_user" class="menu-item">Maintain user</a>
           </li>

@@ -25,7 +25,7 @@
             <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
               <div class="checkbox-container" id="organisations-filter">
               
-                {% for workcoach in sessionData.workcoaches%}
+                {% for workcoach in data.workcoaches%}
                 <label for="{{workcoach}}">
                     <input id="{{workcoach}}" name="{{workcoach}}" type="checkbox" value="{{workcoach}}"
                       {% if team and team.workcoaches.indexOf(workcoach) != -1%}checked{% endif %}

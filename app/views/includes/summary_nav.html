@@ -5,7 +5,7 @@
     </li>
 
     
-    {% if sessionData.user.role !== 'gatekeeper'%}
+    {% if data.user.role !== 'gatekeeper'%}
       <li class="{% if currentClaimantPage === "edit" %}selected{% endif %}">
         <a id="edit_record" href="/latest/job_edit" class="menu-item ">Claimant</a>
       </li>
@@ -15,7 +15,7 @@
           <span>Appointment</span>
         {% else %}
           <a id="appointments" href="/latest/job_next_new" class="menu-item">
-            Appointment {% if not sessionData.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+            Appointment {% if not data.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
           </a>
         {% endif %}
       </li>
@@ -37,7 +37,7 @@
       </li>
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
       <li class="{% if currentClaimantPage === "commitment" %}selected{% endif %}">
@@ -53,7 +53,7 @@
     {% else %}
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
     {% endif %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% import "macros/forms.html" as forms %}
 
-{% set isExternallyReffered = true if getData.externallyReffered === 'true' else false %}
+{% set isExternallyReffered = true if data.externallyReffered === 'true' else false %}
 
 {% block content %}
   <main id="content" role="main">

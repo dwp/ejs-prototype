@@ -14,7 +14,7 @@
 
       <form action="/latest/job_next_new" method="POST">
 
-        {% if sessionData.appointmentUpdate === 'Failed to attend' %}
+        {% if data.appointmentUpdate === 'Failed to attend' %}
           <div class="column-half">   
             <div class="form-group">
               <table>
@@ -39,7 +39,7 @@
               <input type="submit" value="Create appointment" name="action" class="button" />
             </div> 
           </div>
-        {% elif sessionData.hasAppointment %}
+        {% elif data.hasAppointment %}
           <div class="column-half">   
             <div class="form-group">
               <table>

@@ -17,7 +17,7 @@
 
   <div class="main-content">
 
-    {% if getData.withoutClaim%}  
+    {% if data.withoutClaim%}
       <h1 class="heading-large">Create Work and Health Programme record</h1>
     {% else %}
       <h1 class="heading-large">Create claimant record - page 1 of 2</h1>
@@ -28,7 +28,7 @@
         <div class="column-one-third">
           <div class="form-group">
             <label class="form-label" for="nino">National Insurance number</label>
-            <input class="form-control" id="nino" type="text" value="{{getData.nino}}" />
+            <input class="form-control" id="nino" type="text" value="{{data.nino}}" />
           </div>
 
           <div class="form-group title">
@@ -136,7 +136,7 @@
 
         <div class="column-one-third">  
 
-          {% if not getData.withoutClaim %}  
+          {% if not data.withoutClaim %}
             <div class="form-group">
               <label class="form-label">Extra support needs</label>
 
@@ -223,7 +223,7 @@
             </div>
           {% endif %}
 
-          {% if not getData.whpRecord %}
+          {% if not data.whpRecord %}
             <div class="form-group">
               <fieldset>
                 <legend class="form-label">Work programme</legend>
@@ -259,7 +259,7 @@
         <div class="column-full">
           <div class="form-group" id="continue">
 
-            {% if getData.withoutClaim %}  
+            {% if data.withoutClaim %}
               <a href="selection_tool?whpOnly=true" class="button" value="Continue">Continue</a>
             {% else %}
               <a href="job_new_step3" class="button" value="Continue">Continue</a>

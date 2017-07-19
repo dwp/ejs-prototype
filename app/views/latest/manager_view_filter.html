@@ -8,7 +8,7 @@
     <div class="main-content">  
       {% include "latest/manager_performance_nav.html" %}
 
-      <h1 class="heading-large">{% if getData.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%} performance</h1>
+      <h1 class="heading-large">{% if data.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%} performance</h1>
 
       {% include "latest/manager_view_filter_partial.html" %}
     </div>  

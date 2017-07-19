@@ -4,11 +4,11 @@
     <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
     <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
     
-    {% if sessionData.user.role === 'manager'%}
+    {% if data.user.role === 'manager'%}
     	<li id="nav-perf" {% if currentPage === "workcoachView" %}class="selected"{% endif %}><a href="performance_cohort">Office performance</a></li>
     {%endif%}
 
-    {% if sessionData.user.role === 'manager'%}   
+    {% if data.user.role === 'manager'%}
       <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="manager_view_filter">Work coach performance</a></li>
     {%else%} 
       <li id="nav-off" {% if currentPage === "mangerView" %}class="selected"{% endif %}><a href="workcoach_performance_view_onflow">Work coach performance</a></li>

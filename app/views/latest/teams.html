@@ -11,11 +11,11 @@
       {% include "includes/settings_menu.html" %} 
 
 
-      {% if getData.errorMessage %}
+      {% if data.errorMessage %}
       <div class="grid-row">
         <div class="column-half">
           <div class="panel panel-border-wide alert-success">
-            {{getData.errorMessage}}
+            {{data.errorMessage}}
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for team in sessionData.teams %}
+              {% for team in data.teams %}
                 <tr>
                   <td>{{team.name}}</td>
                   <td>{{team.workcoaches | length }}</td>

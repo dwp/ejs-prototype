@@ -6,36 +6,36 @@
     {% include "includes/main_nav.html" %}
 
     <div class="main-content">
-        <h1 class="heading-large">Current Job Profile for {{ sessionData.jobProfile.clientName }}</h1>
+        <h1 class="heading-large">Current Job Profile for {{ data.jobProfile.clientName }}</h1>
 
         {% set currentClaimantPage = 'jobprofile' %}
         {% include "includes/summary_nav.html" %}
 
         <form class="form" method="post" action="/latest/job_profile/editJobProfile">
-            <h2 class="heading-medium">National Insurance Number : &nbsp; &nbsp; {{ sessionData.jobProfile.clientNino }}</h2>
+            <h2 class="heading-medium">National Insurance Number : &nbsp; &nbsp; {{ data.jobProfile.clientNino }}</h2>
 
             <div class="form-group">
                 <h2 class="heading-small">The types of work I am likely to get :</h2>
-                <textarea class="form-control" id="jobProfile-workTypes" name="jobProfile-workTypes" maxlength="2000">{{ sessionData.jobProfile.workTypes }}</textarea>
+                <textarea class="form-control" id="jobProfile-workTypes" name="jobProfile-workTypes" maxlength="2000">{{ data.jobProfile.workTypes }}</textarea>
             </div>
 
             <div class="form-group">
                 <h2 class="heading-small">My qualifications are :</h2>
-                <textarea class="form-control" id="jobProfile-qualifications" name="jobProfile-qualifications" maxlength="2000">{{ sessionData.jobProfile.qualifications }}</textarea>
+                <textarea class="form-control" id="jobProfile-qualifications" name="jobProfile-qualifications" maxlength="2000">{{ data.jobProfile.qualifications }}</textarea>
             </div>
 
             <div class="form-group">
                 <h2 class="heading-small">My employment strengths and weaknesses are :</h2>
-                <textarea class="form-control" id="jobProfile-strengths" name="jobProfile-strengths" maxlength="2000">{{ sessionData.jobProfile.strengths }}</textarea>
+                <textarea class="form-control" id="jobProfile-strengths" name="jobProfile-strengths" maxlength="2000">{{ data.jobProfile.strengths }}</textarea>
             </div>
 
             <div class="form-group">
                 <h2 class="heading-small">My experience is :</h2>
-                <textarea class="form-control" id="jobProfile-experience" name="jobProfile-experience" maxlength="2000">{{ sessionData.jobProfile.experience }}</textarea>
+                <textarea class="form-control" id="jobProfile-experience" name="jobProfile-experience" maxlength="2000">{{ data.jobProfile.experience }}</textarea>
             </div>
             <div class="form-group">
                 <h2 class="heading-small">My circumstances :</h2>
-                <textarea class="form-control" id="jobProfile-circumstances" name="jobProfile-circumstances" maxlength="2000">{{ sessionData.jobProfile.circumstances }}</textarea>
+                <textarea class="form-control" id="jobProfile-circumstances" name="jobProfile-circumstances" maxlength="2000">{{ data.jobProfile.circumstances }}</textarea>
             </div>
 
             <div class="grid-row">

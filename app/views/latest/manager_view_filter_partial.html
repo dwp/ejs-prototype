@@ -18,7 +18,7 @@
 
   <div class="column-quarter">
     <div class="form-group">
-      <label class="form-label" for="Work coach">{% if getData.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%}</label>
+      <label class="form-label" for="Work coach">{% if data.performanceReportType === 'team' %}Team{%else%}Work coach{%endif%}</label>
 
       <div class="filter checkbox-filter js-openable-filter" tabindex="0">                       
         <div class="checkbox-container" id="organisations-filter">
@@ -26,15 +26,15 @@
               <input id="All" name="All" type="checkbox" value="All">
               All
           </label>
-          {% if getData.performanceReportType === 'team' %}
-            {% for team in sessionData.teams%}
+          {% if data.performanceReportType === 'team' %}
+            {% for team in data.teams%}
               <label for="{{team.name}}">
                 <input id="{{team.name}}" name="{{team.name}}" type="checkbox" value="{{team.name}}"/>
                 {{team.name}}
               </label>
             {% endfor %}
           {% else %}
-            {% for workcoach in sessionData.workcoaches%}
+            {% for workcoach in data.workcoaches%}
               <label for="{{workcoach}}">
                 <input id="{{workcoach}}" name="{{workcoach}}" type="checkbox" value="{{workcoach}}"/>
                 {{workcoach}}
@@ -337,4 +337,4 @@
   </div>
 </div>
 
-<input type="hidden" id="performance-report-type" value="{{getData.performanceReportType}}" />
+<input type="hidden" id="performance-report-type" value="{{data.performanceReportType}}" />
