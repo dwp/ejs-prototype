@@ -49,7 +49,7 @@
                       {{ forms.radio(name='disabled-ben-cap', displayText='No', optionValue='No', id='disabled-ben-cap-no') }}
                     </fieldset>
 
-                    {% if not getData.whpOnly %}
+                    {% if not data.whpOnly %}
                       <br>
                       <fieldset class="inline">
                         <legend>Is the claimant in receipt of ESA/WRAC?</legend>
@@ -100,7 +100,7 @@
                     </fieldset>
                   </div>
 
-            {% if not getData.whpOnly %}
+            {% if not data.whpOnly %}
                 </div>
             </div>
             {% endif %}
