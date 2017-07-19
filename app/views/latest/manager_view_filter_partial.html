@@ -27,14 +27,14 @@
               All
           </label>
           {% if data.performanceReportType === 'team' %}
-            {% for team in sessionData.teams%}
+            {% for team in data.teams%}
               <label for="{{team.name}}">
                 <input id="{{team.name}}" name="{{team.name}}" type="checkbox" value="{{team.name}}"/>
                 {{team.name}}
               </label>
             {% endfor %}
           {% else %}
-            {% for workcoach in sessionData.workcoaches%}
+            {% for workcoach in data.workcoaches%}
               <label for="{{workcoach}}">
                 <input id="{{workcoach}}" name="{{workcoach}}" type="checkbox" value="{{workcoach}}"/>
                 {{workcoach}}

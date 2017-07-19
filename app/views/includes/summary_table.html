@@ -119,7 +119,7 @@
         <td>None</td>
       </tr>
     </table>
-  {% elif sessionData.hasAppointment %}
+  {% elif data.hasAppointment %}
     <table>
       <caption class="heading-small">Next appointment</caption>
       <tr>
@@ -131,12 +131,12 @@
         <td>11:30</td>
       </tr>
     </table>
-  {% elif not sessionData.hasAppointment and sessionData.appointmentUpdate  == 'Failed to attend'%}
+  {% elif not data.hasAppointment and data.appointmentUpdate  == 'Failed to attend'%}
     <table>
       <caption class="heading-small">Last Appointment</caption>
       <tr>
         <td>Status:</td>
-        <td>{{sessionData.appointmentUpdate}}</td>
+        <td>{{data.appointmentUpdate}}</td>
       </tr>
       <tr>
         <td>Date:</td>

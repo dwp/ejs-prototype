@@ -1,7 +1,7 @@
 <div>
   <form>
     <div class="grid-row">
-      {%if sessionData.user.role === 'manager'%}
+      {%if data.user.role === 'manager'%}
       <div class="column-quarter">
         <div class="form-group">
           <label class="form-label" for="jobcentre">Jobcentre</label>
@@ -216,7 +216,7 @@
         </div>
       </div>
 
-      {%if sessionData.user.role === 'manager'%}
+      {%if data.user.role === 'manager'%}
         </div>
         <div class="grid-row">
       {%endif%}

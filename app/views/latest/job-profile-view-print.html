@@ -5,35 +5,35 @@
 <main id="content" role="main">
 
     <div class="main-content">
-        <h1 class="heading-large">Current Job Profile for {{ sessionData.jobProfile.clientName }}</h1>
+        <h1 class="heading-large">Current Job Profile for {{ data.jobProfile.clientName }}</h1>
 
         {% set currentClaimantPage = 'jobprofile' %}
 
-        <h2 class="heading-medium">National Insurance Number : &nbsp; &nbsp; {{ sessionData.jobProfile.clientNino }}</h2>
+        <h2 class="heading-medium">National Insurance Number : &nbsp; &nbsp; {{ data.jobProfile.clientNino }}</h2>
 
         <div class="form-group">
             <h2 class="heading-small">The types of work I am likely to get :</h2>
-            <p id="jobProfile-workTypes">{{ sessionData.jobProfile.workTypes }}</p>
+            <p id="jobProfile-workTypes">{{ data.jobProfile.workTypes }}</p>
         </div>
 
         <div class="form-group">
             <h2 class="heading-small">My qualifications are :</h2>
-            <p id="jobProfile-qualifications">{{ sessionData.jobProfile.qualifications }}</p>
+            <p id="jobProfile-qualifications">{{ data.jobProfile.qualifications }}</p>
         </div>
 
         <div class="form-group">
             <h2 class="heading-small">My employment strengths and weaknesses are :</h2>
-            <p id="jobProfile-strengths">{{ sessionData.jobProfile.strengths }}</p>
+            <p id="jobProfile-strengths">{{ data.jobProfile.strengths }}</p>
         </div>
 
         <div class="form-group">
             <h2 class="heading-small">My experience is :</h2>
-            <p id="jobProfile-experience">{{ sessionData.jobProfile.experience }}</p>
+            <p id="jobProfile-experience">{{ data.jobProfile.experience }}</p>
         </div>
 
         <div class="form-group">
             <h2 class="heading-small">My circumstances :</h2>
-            <p id="jobProfile-circumstances">{{ sessionData.jobProfile.circumstances }}</p>
+            <p id="jobProfile-circumstances">{{ data.jobProfile.circumstances }}</p>
         </div>
 
         <div class="grid-row">
