@@ -37,7 +37,7 @@
       </li>
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
       <li class="{% if currentClaimantPage === "commitment" %}selected{% endif %}">
@@ -53,7 +53,7 @@
     {% else %}
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
-          WHP selection tool {% if getData.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
         </a>
       </li>
     {% endif %}

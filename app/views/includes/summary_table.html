@@ -1,4 +1,4 @@
-{% if getData.dateProcessed or getData.dateReceived %}
+{% if data.dateProcessed or data.dateReceived %}
   <div class="column-full">
     <div class="panel panel-border-wide alert-success">
       <p>A text message has been sent</p>
@@ -48,7 +48,7 @@
     </tr>
     <tr>
       <td>WHP referral:</td>
-      <td>{{getData.whpStatus | default('Not referred')}}</td>
+      <td>{{data.whpStatus | default('Not referred')}}</td>
     </tr>
   </table> 
 </div>

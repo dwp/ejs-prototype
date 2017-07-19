@@ -11,17 +11,17 @@
       {% include "includes/settings_menu.html" %} 
 
 
-      {% if getData.errorMessage %}
+      {% if data.errorMessage %}
       <div class="grid-row">
         <div class="column-half">
           <div class="panel panel-border-wide alert-success">
-            {{getData.errorMessage}}
+            {{data.errorMessage}}
           </div>
         </div>
       </div>
       {% endif %}
       <form action="team_delete" method="POST">
-        <input type="hidden" name="teamId" value="{{getData.teamId}}" />
+        <input type="hidden" name="teamId" value="{{data.teamId}}" />
 
         <div class="form-group">
           <fieldset class="inline">

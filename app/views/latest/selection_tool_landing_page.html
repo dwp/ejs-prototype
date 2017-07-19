@@ -17,7 +17,7 @@
       <div class="grid-row">
         <div class="column-full">
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
-            {% if not getData.whpOnly %}
+            {% if not data.whpOnly %}
             <div class="form-group">
               <fieldset class="inline">
                 <legend>Referral type</legend>
@@ -84,7 +84,7 @@
                       {{ forms.radio(name='early-entry-ben-cap', displayText='No', optionValue='No', id='early-entry-ben-cap-no') }}
                     </fieldset>
 
-                    {% if not getData.whpOnly %}
+                    {% if not data.whpOnly %}
                       <br>
                       <fieldset class="inline">
                         <legend>Is the claimant in receipt of ESA/WRAC?</legend>
