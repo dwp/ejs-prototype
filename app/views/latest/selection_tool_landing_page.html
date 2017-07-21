@@ -18,103 +18,92 @@
         <div class="column-full">
           <form method="{{ formMethod or 'POST'}}" action="{{ formAction or ''}}">
             {% if not data.whpOnly %}
-            <div class="form-group">
-              <fieldset class="inline">
-                <legend>Referral type</legend>
-                  {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
-                  {{ forms.radio(name='initialOptions', displayText='Long term unemployed', optionValue='Long term unemployed', id='initial-options-ltu', datatarget='ltu-panel') }}
-              </fieldset>
+              <div class="form-group">
+                <fieldset class="inline">
+                  <legend>Referral type</legend>
+                    {{ forms.radio(name='initialOptions', displayText='Voluntary', optionValue='Voluntary', id='initial_options_voluntary', datatarget='voluntary-options') }}
+                    {{ forms.radio(name='initialOptions', displayText='Mandatory (unemployed over 24 months)', optionValue='Long term unemployed', id='initial-options-ltu', datatarget='ltu-panel') }}
+                </fieldset>
 
                 <div class="panel panel-border-narrow js-hidden" id="voluntary-options">
             {% endif %}
 
-                    <div id="voluntary-options-radio-buttons" class="form-group">
-                      <fieldset class="inline">
-                        <legend>Voluntary options</legend>
-                        <p class="form-hint">Please select the primary barrier to finding work.</p>
-                      {{ forms.radio(name='voluntary', displayText='Disabled', optionValue='disability', id='voluntary-options-health', datatarget='disabled-priority-groups') }}
-                      {{ forms.radio(name='voluntary', displayText='Early entry group', optionValue='early-entry', id='voluntary-options-eeg', datatarget='early-entry-options') }}
-                      </fieldset>
-                    </div>
+            <div id="voluntary-options-radio-buttons">
+              <div class="form-group">
+                <fieldset class="inline">
+                  <legend>Does the customer have a long-term disability or health condition that affects their ability to work (according to the Equality Act 2010)?</legend>
+                  {{ forms.radio(name='voluntary', displayText='Yes', optionValue='disability', id='voluntary-options-health') }}
+                  {{ forms.radio(name='voluntary', displayText='No', optionValue='early-entry', id='voluntary-options-eeg', datatarget='early-entry-options') }}
+                </fieldset>
+              </div>
 
-                  <div  class="panel panel-border-narrow js-hidden" id="disabled-priority-groups">
-                    <div>
-                      <label class="form-label" for="disability-external-referral-input">If external referral, enter name of referring organisation</label>
-                      <input class="form-control form-control-1-4" name="disability-external-referral-input" type="text" id="disability-external-referral-input">
-                    </div>
-                    <br>
-                    <fieldset class="inline">
-                      <legend>Is the claimant subject to Benefit Cap?</legend>
-                      {{ forms.radio(name='disabled-ben-cap', displayText='Yes', optionValue='Yes', id='disabled-ben-cap-yes') }}
-                      {{ forms.radio(name='disabled-ben-cap', displayText='No', optionValue='No', id='disabled-ben-cap-no') }}
-                    </fieldset>
+              <div class="form-group">
+                <div class="panel panel-border-narrow">
+                  <label class="form-label" for="disability-external-referral-input">If external referral, enter name of referring organisation</label>
+                  <input class="form-control form-control-1-4" name="disability-external-referral-input" type="text" id="disability-external-referral-input">
+                </div>
+              </div>
 
-                    {% if not data.whpOnly %}
-                      <br>
-                      <fieldset class="inline">
-                        <legend>Is the claimant in receipt of ESA/WRAC?</legend>
-                        {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
-                        {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
-                      </fieldset>
-                    {% endif %}
-                    <br>
+              <div class="form-group js-hidden" id="early-entry-options">
+                <div class="panel panel-border-narrow" >
+                  <fieldset>
+                    <legend>Select early entry group</legend>
+                    {% for earlyEntryOption in earlyEntryOptions %}
+                    {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
+                    {% endfor %}
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="panel panel-border-narrow">
+                  <fieldset class="inline">
+                    <legend>Is the claimant subject to Benefit Cap?</legend>
+                    {{ forms.radio(name='disabled-ben-cap', displayText='Yes', optionValue='Yes', id='disabled-ben-cap-yes') }}
+                    {{ forms.radio(name='disabled-ben-cap', displayText='No', optionValue='No', id='disabled-ben-cap-no') }}
+                  </fieldset>
+                </div>
+              </div>
+
+              {% if not data.whpOnly %}
+                <div class="form-group">
+                  <div class="panel panel-border-narrow">
                     <fieldset class="inline">
-                      <legend>Does the person have an identified priority need in your DDA?</legend>
-                      {{ forms.radio(name='disabled-dda-priority', displayText='Yes', optionValue='Yes', id='disabled-dda-priority-yes') }}
-                      {{ forms.radio(name='disabled-dda-priority', displayText='No', optionValue='No', id='disabled-dda-priority-no') }}
+                      <legend>Is the claimant in receipt of ESA/WRAC?</legend>
+                      {{ forms.radio(name='disabled-esa-wrac', displayText='Yes', optionValue='Yes', id='disabled-esa-wrac-yes') }}
+                      {{ forms.radio(name='disabled-esa-wrac', displayText='No', optionValue='No', id='disabled-esa-wrac-no') }}
                     </fieldset>
                   </div>
+                </div>
+              {% endif %}
 
-                  <div class="panel panel-border-narrow js-hidden" id="early-entry-options">
-                    <div>
-                      <label class="form-label" for="eeg-external-referral-input">If external referral, enter name of referring organisation</label>
-                      <input class="form-control form-control-1-4" name="eeg-external-referrral-input" type="text" id="eeg-external-referral-input">
-                    </div>
-                    <br>
-                    <fieldset>
-                      <legend>Select early entry group</legend>
-                      {% for earlyEntryOption in earlyEntryOptions %}
-                      {{ forms.radio(name='early-entry-options', displayText=earlyEntryOption.label, optionValue=earlyEntryOption.label, id=earlyEntryOption.value)}}
-                      {% endfor %}
-                    </fieldset>
-                    <br>
-                    <fieldset class="inline">
-                      <legend>Is the claimant subject to Benefit Cap?</legend>
-                      {{ forms.radio(name='early-entry-ben-cap', displayText='Yes', optionValue='Yes', id='early-entry-ben-cap-yes') }}
-                      {{ forms.radio(name='early-entry-ben-cap', displayText='No', optionValue='No', id='early-entry-ben-cap-no') }}
-                    </fieldset>
-
-                    {% if not data.whpOnly %}
-                      <br>
-                      <fieldset class="inline">
-                        <legend>Is the claimant in receipt of ESA/WRAC?</legend>
-                        {{ forms.radio(name='early-entry-esa-wrac', displayText='Yes', optionValue='Yes', id='early-entry-esa-wrac-yes') }}
-                        {{ forms.radio(name='early-entry-esa-wrac', displayText='No', optionValue='No', id='early-entry-esa-wrac-no') }}
-                      </fieldset>
-                    {% endif %}
-                    <br>
-                    <fieldset class="inline">
-                      <legend>Does the person have an identified priority need in your DDA?</legend>
-                      {{ forms.radio(name='disabled-dda-priority', displayText='Yes', optionValue='Yes', id='disabled-dda-priority-yes') }}
-                      {{ forms.radio(name='disabled-dda-priority', displayText='No', optionValue='No', id='disabled-dda-priority-no') }}
-                    </fieldset>
-                  </div>
+              <div class="form-group">
+                <div class="panel panel-border-narrow">
+                  <fieldset class="inline">
+                    <legend>Is the claimant part of a local priority initiative?</legend>
+                    {{ forms.radio(name='disabled-dda-priority', displayText='Yes', optionValue='Yes', id='disabled-dda-priority-yes') }}
+                    {{ forms.radio(name='disabled-dda-priority', displayText='No', optionValue='No', id='disabled-dda-priority-no') }}
+                  </fieldset>
+                </div>
+              </div>
+            </div>
 
             {% if not data.whpOnly %}
                 </div>
-            </div>
-            {% endif %}
-                          <div class="panel panel-border-narrow js-hidden" id="ltu-panel">
-                <div class="panel panel-border-wide alert-default">
-                  Before submitting Mr J Smith please ensure the following criteria have been met
-                </div>
-                <ul class="list list-bullet">
-                  <li>The person has not previously taken part in the WHP within the last 2 years</li>
-                  <li>The person is receiving the full entitlement to a qualifying benefit (UC/JSA) and has not been in continuous receipt of a qualifying benefit (US/JSA) for at least 24 months.</li>
-                  <li>The person is not currently undetaking any type of paid work</li>
-                  <li>WHP exemptions or deferral conditions do not apply</li>
-                </ul>
               </div>
+            {% endif %}
+
+            <div class="panel panel-border-narrow js-hidden" id="ltu-panel">
+              <div class="panel panel-border-wide alert-default">
+                Before submitting Mr J Smith please ensure the following criteria have been met
+              </div>
+              <ul class="list list-bullet">
+                <li>The person has not previously taken part in the WHP within the last 2 years</li>
+                <li>The person is receiving the full entitlement to a qualifying benefit (UC/JSA) and has not been in continuous receipt of a qualifying benefit (US/JSA) for at least 24 months.</li>
+                <li>The person is not currently undetaking any type of paid work</li>
+                <li>WHP exemptions or deferral conditions do not apply</li>
+              </ul>
+            </div>
             <button class="button" type="submit">Continue</button>
           </form>
         </div>
