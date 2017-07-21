@@ -30,24 +30,9 @@
           Claim
         </a>
       </li>
-      <li class="{% if currentClaimantPage === "provision" %}selected{% endif %}">
-        <a id="provision" href="/latest/provision" class="menu-item">
-          Provision
-        </a>
-      </li>
       <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
         <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
           WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
-        </a>
-      </li>
-      <li class="{% if currentClaimantPage === "commitment" %}selected{% endif %}">
-        <a id="commitment" href="/latest/esa_claimant/addCommitment" class="menu-item">
-          ESA Commitment
-        </a>
-      </li>
-      <li class="{% if currentClaimantPage === "jobprofile" %}selected{% endif %}">
-        <a id="job_profile" href="/latest/job_Profile/editJobProfile" class="menu-item">
-          Job Profile
         </a>
       </li>
     {% else %}
