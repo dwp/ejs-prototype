@@ -56,7 +56,12 @@
   {% set inlineClass = 'inline' if options.length < 3  else '' %}
   <div class="form-group">
     <fieldset class="{{inlineClass}}">
-      <legend class="heading-medium">{{question}}</legend>
+      <legend class="heading-medium">{{question}}
+        {% if hint %}
+          <p>{{hint}}</p>
+        {% endif %}
+      </legend>
+
       
       {% for option in options %}
         {% set label = option.label or option %}

@@ -76,6 +76,8 @@
 
         <div class="column-one-third">    
 
+
+          {% if not data.withoutClaim %}
           <div class="form-group-related">
             <label class="form-label" for="email">Email address</label>
             <input class="form-control" id="email" type="text"><br>
@@ -100,7 +102,8 @@
                 Do not contact
               </label>   
             </div>            
-          </div>   
+          </div>  
+          {% endif %}    
 
           <div class="form-group">
             <fieldset>
@@ -118,7 +121,9 @@
               </div>
             </fieldset>
           </div>
+          
 
+          {% if not data.withoutClaim %}
           <div class="form-group">
             <label class="form-label" for="mobile">Prefers communications in Welsh?</label>
             <fieldset class="inline">
@@ -131,7 +136,9 @@
                 <label for="no">No</label>
               </div>
             </fieldset>
-          </div>   
+          </div>
+          {% endif %}   
+
         </div>
 
         <div class="column-one-third">  
