@@ -46,19 +46,15 @@
 
           {{ sprintLinks( 'Accessible autocomplete', autocomplete) }}
 
-        </div>
-
+        </div> 
+        
         <div class="grid-row">
           {% set whpSelectionToolWorkcoachScreens = [{ 
             workTitle : 'Work coach',
             links: [{ 
               link : 'latest/selection_tool', title : 'Landing page'
-            }, {
-              link : 'latest/selection_tool_content', title : 'Landing page with content update for ESA/IS/JSA and UC route'
-            }, {   
+            }, {  
               link : 'latest/selection_tool_content?externallyReffered=true', title : 'Landing page with content update for external referrer route'
-              }, {
-              link : 'latest/selection_tool_landing_page_v2', title : 'Alternative landing page'
             }, {
               link : 'latest/whp_eligibility_questions?voluntaryOption=disability', title : 'Eligibility questions for disability'
             }, { 
@@ -66,12 +62,6 @@
             }, { 
               link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer', title : 'Eligibility questions for externally referred'
             }, {
-              link : 'latest/whp_eligibility_questions?voluntaryOption=disability&alternativeQuestionText=true', title : 'Alternative eligibility questions for disability'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry&alternativeQuestionText=true', title : 'Alternative eligibility questions for early entry'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer&alternativeQuestionText=true', title : 'Alternative eligibility questions for externally referred'
-            }, { 
               link : 'latest/failed-eligibility', title : 'Failed eligibility'
             }, { 
               link : 'latest/scoring_questions/0', title : 'Scoring questions'
@@ -100,26 +90,13 @@
               }, {
               link : 'latest/gatekeeper/placesSummary', title : 'Summary of places'
               }, {
-              link : 'latest/gatekeeper/selection', title : 'Referrals for Mercia for 31 May 2017'
-              }, {
-              link : 'latest/whp-selection-report-v2', title : 'Alternative referrals for Mercia for 31 May 2017'
+              link : 'latest/whp-selection-report-v2', title : 'Selection page'
               }, {
               link : 'latest/whp-selection-outcomes-report', title : 'Outcome of random allocation'
               }, {
-              link : 'latest/gatekeeper/allocations', title : 'View district allocations for Mercia 2017/2018'
-              }, {
-              link : 'latest/whp-profile-places', title : '[Old] - Calculate and display places and referrals (no longer calculates - just a page display)'
-              }, {
-              link : 'latest/whp-profile-places-table', title : '[Old] - Summary of places'
+              link : 'latest/whp-district-allocations', title : 'View district allocations for Mercia 2017/2018'
               }]
-              }, {
-            workTitle : 'Alternative Gatekeeper Pages',
-              links: [{
-                link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
-                }, {
-                link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
-            }]
-          }] %}
+              }] %}
           
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
 
@@ -153,6 +130,64 @@
               }]
             }] %}
           
+          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+        </div>
+
+        <div class="grid-row">
+          {% set whpSelectionToolWorkcoachScreens = [{ 
+            workTitle : 'Work coach',
+            links: [{ 
+              link : 'latest/selection_tool_landing_page_v2', title : 'Alternative landing page'
+            }, {
+              link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old', title : 'Eligibility questions for disability'
+            }, { 
+              link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old', title : 'Eligibility questions for early entry'
+            }, { 
+              link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old', title : 'Eligibility questions for externally referred'
+            }, {
+              link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for disability'
+            }, { 
+              link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for early entry'
+            }, { 
+              link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for externally referred'
+            }]
+          }] %} 
+          
+          {{ sprintLinks( 'Archived WHP Selection Tool', whpSelectionToolWorkcoachScreens) }}
+
+          {% set whpSelectionToolWorkcoachScreens = [{
+            workTitle : 'Gatekeeper',
+            links: [{ 
+              link : 'latest/gatekeeper/places', title : 'Review Work Coach submissions - calculate places & referrals (set places and ratios)'
+              }, {
+              link : 'latest/gatekeeper/placesBreakdown', title : 'Breakdown of places'
+              }, {
+              link : 'latest/gatekeeper/placesSummary', title : 'Summary of places'
+              }, {
+              link : 'latest/gatekeeper/selection', title : 'Referrals for Mercia for 31 May 2017'
+              }, {
+              link : 'latest/whp-selection-report-v2', title : 'Alternative referrals for Mercia for 31 May 2017'
+              }, {
+              link : 'latest/whp-selection-outcomes-report', title : 'Outcome of random allocation'
+              }, {
+              link : 'latest/gatekeeper/allocations', title : 'View district allocations for Mercia 2017/2018'
+              }, {
+              link : 'latest/whp-profile-places', title : '[Old] - Calculate and display places and referrals (no longer calculates - just a page display)'
+              }, {
+              link : 'latest/whp-profile-places-table', title : '[Old] - Summary of places'
+              }]
+              }] %}
+          
+          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+
+          {% set whpSelectionToolWorkcoachScreens = [ {
+            workTitle : 'Alternative Gatekeeper Pages',
+              links: [{
+                link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
+                }, {
+                link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
+            }]
+          }] %}
           {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
         </div>
         
