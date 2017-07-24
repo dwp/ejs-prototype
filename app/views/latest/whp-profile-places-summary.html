@@ -18,7 +18,9 @@
                     <th></th>
                     <th></th>
                     <th class="numeric" scope="col">WHP provider places</th>
-                    <th class="numeric" scope="col">Public sector comparator places</th>
+                    {%if not data.withoutPsc %}
+                      <th class="numeric" scope="col">Public sector comparator places</th>
+                    {%endif%}
                     <th class="numeric" scope="col">Ratio</th>
                     <th class="numeric" scope="col">Referrals needed to fill places<span class="form-hint">Based on the ratio</span></th>
                     <th class="numeric" scope="col">Control group volumes<span class="form-hint">Automatically calculated based on referrals</span></th>
@@ -30,7 +32,9 @@
                     <th scope="row" rowspan="2">Voluntary</th>
                     <th scope="row">Disabled/health condition</th>
                     <td class="numeric">{{ data.displayPlacesData.disWHPPlaces }}</td>
+                    {%if not data.withoutPsc %}
                     <td class="numeric">{{ data.displayPlacesData.disPSCPlaces }}</td>
+                    {%endif%}
                     <td class="numeric">{{ data.displayPlacesData.volRatio }}</td>
                     <td class="numeric">{{ data.displayPlacesData.disRefsNeeded }}</td>
                     <td class="numeric" rowspan="2">{{ data.displayPlacesData.volControlGroup }}</td>
@@ -39,7 +43,9 @@
                   <tr>
                     <th scope="row">Early access</th>
                     <td class="numeric">{{ data.displayPlacesData.eagWHPPlaces }}</td>
+                    {%if not data.withoutPsc %}
                     <td class="numeric">{{ data.displayPlacesData.eagPSCPlaces }}</td>
+                    {%endif%}
                     <td class="numeric">{{ data.displayPlacesData.volRatio }}</td>
                     <td class="numeric">{{ data.displayPlacesData.eagRefsNeeded }}</td>
                   </tr>
@@ -47,7 +53,9 @@
                     <th scope="row">Mandatory</th>
                     <th scope="row">Long term unemployed</th>
                     <td class="numeric">{{ data.displayPlacesData.ltuWHPPlaces }}</td>
+                    {%if not data.withoutPsc %}
                     <td class="numeric">{{ data.displayPlacesData.ltuPSCPlaces }}</td>
+                    {%endif%}
                     <td class="numeric">{{ data.displayPlacesData.mandRatio }}</td>
                     <td class="numeric">{{ data.displayPlacesData.ltuRefsNeeded }}</td>
                     <td class="numeric">{{ data.displayPlacesData.mandControlGroup }}</td>
