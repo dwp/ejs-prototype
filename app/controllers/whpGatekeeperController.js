@@ -11,13 +11,13 @@ function districtPlacesPage (req, res) {
     totalPSCPlaces: sessionPlacesData.totalPSCPlaces ? sessionPlacesData.totalPSCPlaces : 0,
     mandRatio: sessionPlacesData.mandRatio ? sessionPlacesData.mandRatio : 1.1,
     volRatio: sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5
-  };
+  }
 
   if (req.session.user.role !== 'gatekeeper') {
-    res.redirect('/latest/selection_tool');
+    res.redirect('/latest/selection_tool')
   } else {
-    res.locals.user = req.session.user;
-    res.render('latest/whp-places', placesData);
+    res.locals.user = req.session.user
+    res.render('latest/whp-places', placesData)
   }
 }
 
@@ -28,10 +28,10 @@ function districtPlacesAction (req, res) {
     mandRatio: parseFloat(req.body.mandRatio).toFixed(1),
     volRatio: parseFloat(req.body.volRatio).toFixed(1),
     previousCalcFlag: 0
-  };
+  }
 
-  req.session.placesData = placesData;
-  res.redirect('/latest/gatekeeper/placesBreakdown');
+  req.session.placesData = placesData
+  res.redirect('/latest/gatekeeper/placesBreakdown')
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -76,7 +76,7 @@ function districtPlacesBreakdownPage (req, res) {
   };
 
   req.session.placesData = placesData;
-
+  res.locals.data.placesData = placesData
   res.render('latest/whp-profile-places-breakdown');
 }
 
@@ -139,13 +139,17 @@ function districtPlacesBreakdownAction (req, res) {
     volRatio         : volRatio,
   };
 
-  req.session.displayPlacesData = placesData;
+  req.session.displayPlacesData = placesData
+  res.locals.data.displayPlacesData = placesData
+
+  console.log(res.locals.data)
 
   res.redirect('/latest/gatekeeper/placesSummary');
 
 }
 
 function districtPlacesSummaryPage (req, res) {
+  res.locals.data.displayPlacesData = req.session.displayPlacesData
 
   res.render('latest/whp-profile-places-summary');
 
@@ -170,7 +174,7 @@ function districtSelectionPage (req, res) {
 
   req.session.displayPlacesData = selectionReport;
 
-  res.render('latest/whp-selection-report');
+  res.render('latest/whp-selection-report-v2');
 }
 
 function districtSelectionAction (req, res) {
