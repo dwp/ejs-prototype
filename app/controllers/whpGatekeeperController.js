@@ -142,17 +142,13 @@ function districtPlacesBreakdownAction (req, res) {
   req.session.displayPlacesData = placesData
   res.locals.data.displayPlacesData = placesData
 
-  console.log(res.locals.data)
-
-  res.redirect('/latest/gatekeeper/placesSummary');
-
+  res.redirect('/latest/gatekeeper/placesSummary')
 }
 
 function districtPlacesSummaryPage (req, res) {
   res.locals.data.displayPlacesData = req.session.displayPlacesData
 
-  res.render('latest/whp-profile-places-summary');
-
+  res.render('latest/whp-profile-places-summary')
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
