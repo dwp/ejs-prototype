@@ -3,6 +3,8 @@
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
+var users = require('../users')();
+
 function districtPlacesPage (req, res) {
   var sessionPlacesData = req.session.placesData || {};
 
@@ -13,12 +15,11 @@ function districtPlacesPage (req, res) {
     volRatio: sessionPlacesData.volRatio ? sessionPlacesData.volRatio : 1.5
   }
 
-  if (req.session.user.role !== 'gatekeeper') {
-    res.redirect('/latest/selection_tool')
-  } else {
-    res.locals.user = req.session.user
-    res.render('latest/whp-places', placesData)
-  }
+  req.session.user = users.find((d) => d.role === 'gatekeeper')
+  res.locals.data.user = req.session.user
+
+  res.render('latest/whp-places', placesData)
+
 }
 
 function districtPlacesAction (req, res) {
