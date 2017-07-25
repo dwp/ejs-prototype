@@ -19,7 +19,6 @@ function districtPlacesPage (req, res) {
   res.locals.data.user = req.session.user
 
   res.render('latest/whp-places', placesData)
-
 }
 
 function districtPlacesAction (req, res) {
