@@ -43,3 +43,8 @@ input#initial  {
 caption {
   text-align: left;
 }
+
+
+.column-three-quarters {
+  @include grid-column( 3/4 );
+}
