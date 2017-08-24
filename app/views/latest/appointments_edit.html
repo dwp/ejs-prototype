@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<script src="/public/javascripts/vendor/jquery.min.js"></script>
+<script src="/public/javascripts/provision.js"></script>
+
+<main id="content" role="main">
+  
+  {% include "includes/main_nav.html" %}   
+
+  <div class="main-content"> 
+		<h1 class="heading-large">Appointment - Mr J Smith</h1>
+
+  	<div class="grid-row">
+      {% set currentClaimantPage = 'appointment' %}
+      {% include "includes/summary_nav.html" %}
+
+  		<div class="column-half">
+        <form action="appointment_edit" method="POST" class="form">
+          <input type="hidden" name="id" value="{{provision.id}}" />
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Provision type</legend>
+
+              <select class="select form-control" name="appointment-type" id="appointment-type">
+                <option value="">Select</option>
+                <option value="Work experience" {{ 'selected' if  appointment.type === 'Appointment type 1' else ''}}>Appointment type 1</option>
+              </select>
+            </fieldset>
+          </div>
+
+          <div class="form-group form-date" id="appt-date-group">
+            <legend class="form-label-bold">Date</legend>
+
+            <p class="form-hint">DD MM YYYY</p>
+
+            <div class="form-group form-group-day">
+              <label for="appt-day">Day</label>
+              <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{appointment.startDateValues[0]}}">
+            </div>
+            <div class="form-group form-group-month">
+              <label for="appt-month">Month</label>
+              <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{appointment.startDateValues[1]}}">
+            </div>
+            <div class="form-group form-group-year">
+              <label for="appt-year">Year</label>
+              <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{appointment.startDateValues[2]}}">
+            </div>
+          </div>
+
+          <div class="form-group form-date" id="appt-time-group">
+            <legend class="form-label-bold">Time</legend>
+
+            <p class="form-hint">hh:mm</p>
+
+            <div class="form-group form-group-day">
+              <input type="text" class="form-control" id="appt-time" name="appt-time" value="{{appointment.time}">
+            </div>
+          </div>
+
+          <div class="form-group" id="appt-status-group">
+            <fieldset class="inline">
+
+              <legend class="visually-hidden">Start status</legend>
+
+              <label class="block-label selection-button-radio" for="confirmed">
+                <input id="confirmed" type="radio" name="start-status" value="Confirmed" {{ 'checked' if  appointment.status === 'Confirmed' else ''}}>
+                Confirmed
+              </label>
+              <label class="block-label selection-button-radio" for="did-not-start" >
+                <input id="did-not-start" type="radio" name="start-status" value="Did not start" {{ 'checked' if  appointment.status === 'Did not start' else ''}}>
+                Did not start
+              </label> 
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Save">
+          </div>
+        </form>
+      </div>     
+    </div>    
+  </div>
+</main>
+{% endblock %}
