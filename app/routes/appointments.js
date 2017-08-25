@@ -9,6 +9,7 @@ var appointment = require("../controllers/appointmentController");
 module.exports = function(router) {
 
   // Appointments page routes
-  router.get('/latest/appointments', appointment.appointmentPage);
-  router.post('/latest/appointments', appointment.appointmentPageAction);
+  router.get('/latest/appointments', appointment.appointmentsPage);
+  router.get('/latest/appointment-edit', appointment.appointmentEditPage);
+  router.post('/latest/appointment-edit', appointment.appointmentEditPageAction);
 }

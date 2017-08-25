@@ -11,7 +11,6 @@
 {% block content %}
 
 <script src="/public/javascripts/vendor/jquery.min.js"></script>
-<script src="/public/javascripts/provision.js"></script>
 
 <main id="content" role="main">
   
@@ -25,16 +24,19 @@
       {% include "includes/summary_nav.html" %}
 
   		<div class="column-half">
-        <form action="appointment_edit" method="POST" class="form">
-          <input type="hidden" name="id" value="{{provision.id}}" />
+        <form action="/latest/appointment-edit" method="POST" class="form">
+          <input type="hidden" name="id" value="{{data.appointmentForUpdate.id}}" />
 
           <div class="form-group">
             <fieldset class="inline">
-              <legend class="form-label-bold">Provision type</legend>
+              <legend class="form-label-bold">Appointment type</legend>
 
-              <select class="select form-control" name="appointment-type" id="appointment-type">
+              <select class="select form-control" name="appt-type" id="appt-type">
                 <option value="">Select</option>
-                <option value="Work experience" {{ 'selected' if  appointment.type === 'Appointment type 1' else ''}}>Appointment type 1</option>
+                <option value="Appointment type 1" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 1' else ''}}>Appointment type 1</option>
+                <option value="Appointment type 2" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 2' else ''}}>Appointment type 2</option>
+                <option value="Appointment type 3" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 3' else ''}}>Appointment type 3</option>
+                <option value="Appointment type 4" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 4' else ''}}>Appointment type 4</option>
               </select>
             </fieldset>
           </div>
@@ -42,45 +44,59 @@
           <div class="form-group form-date" id="appt-date-group">
             <legend class="form-label-bold">Date</legend>
 
-            <p class="form-hint">DD MM YYYY</p>
-
             <div class="form-group form-group-day">
               <label for="appt-day">Day</label>
-              <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{appointment.startDateValues[0]}}">
+              <p class="form-hint">dd</p>
+              <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}">
             </div>
             <div class="form-group form-group-month">
               <label for="appt-month">Month</label>
-              <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{appointment.startDateValues[1]}}">
+              <p class="form-hint">mm</p>
+              <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}">
             </div>
             <div class="form-group form-group-year">
               <label for="appt-year">Year</label>
-              <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{appointment.startDateValues[2]}}">
+              <p class="form-hint">yyyy</p>
+              <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}">
             </div>
           </div>
 
           <div class="form-group form-date" id="appt-time-group">
             <legend class="form-label-bold">Time</legend>
 
-            <p class="form-hint">hh:mm</p>
-
             <div class="form-group form-group-day">
-              <input type="text" class="form-control" id="appt-time" name="appt-time" value="{{appointment.time}">
+              <label for="appt-time-hrs"></label>
+              <p class="form-hint">hh</p>
+              <input type="text" class="form-control" id="appt-time-hrs" name="appt-time-hrs" value="{{data.appointmentForUpdate.apptTimeHrs}}">
+            </div>
+            <div class="form-group form-group-day">
+              <label for="appt-time-mins"></label>
+              <p class="form-hint">mm</p>
+              <input type="text" class="form-control" id="appt-time-mins" name="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}">
             </div>
           </div>
 
           <div class="form-group" id="appt-status-group">
             <fieldset class="inline">
 
-              <legend class="visually-hidden">Start status</legend>
+              <legend class="form-label-bold">Status</legend>
 
+              <label class="block-label selection-button-radio" for="fta">
+                <input id="fta" type="radio" name="appt-status" value="Failed to attend" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Failed to attend' else ''}}>
+                Failed to attend
+              </label>
+              <label class="block-label selection-button-radio" for="rebooked" >
+                <input id="rebooked" type="radio" name="appt-status" value="Re-booked" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Re-booked' else ''}}>
+                Re-booked
+              </label>
               <label class="block-label selection-button-radio" for="confirmed">
-                <input id="confirmed" type="radio" name="start-status" value="Confirmed" {{ 'checked' if  appointment.status === 'Confirmed' else ''}}>
+                <input id="confirmed" type="radio" name="appt-status" value="Confirmed" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Confirmed' else ''}}>
                 Confirmed
               </label>
-              <label class="block-label selection-button-radio" for="did-not-start" >
-                <input id="did-not-start" type="radio" name="start-status" value="Did not start" {{ 'checked' if  appointment.status === 'Did not start' else ''}}>
-                Did not start
-              </label> 
+              <label class="block-label selection-button-radio" for="attended" >
+                <input id="attended" type="radio" name="appt-status" value="Attended" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Attended' else ''}}>
+                Attended
+              </label>
             </fieldset>
           </div>
 

@@ -17,7 +17,7 @@
   {% include "includes/main_nav.html" %}
   
   <div class="main-content">
-    <h1 class="heading-large">Summary -  Mr J Smith</h1>     
+    <h1 class="heading-large">Appointments -  Mr J Smith</h1>
 
     <div class="grid-row">
       {% set currentClaimantPage = 'appointment' %}
@@ -35,12 +35,12 @@
             </tr>
           </thead>
           <tbody>
-            {% for appointment in provisions %}
+            {% for appointment in data.appointments %}
               <tr>
-                <td>{{appointment.type}}</td>
+                <td>{{appointment.apptType}}</td>
                 <td>{{dateDisplay(appointment.apptDateValues)}}</td>
-                <td>{{appointment.apptTime}}</td>
-                <td>{{appointment.apptStatus}</td>
+                <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+                <td>{{appointment.apptStatus}}</td>
                 <td>{{appointmentUpdateLink(appointment)}}</td>
               </tr>
             {% endfor %}
@@ -52,7 +52,7 @@
     <div class="grid-row">
       <div class="column-full">
         <br/>
-        <a href="appointments_edit" class="button">Create appointment</a>
+        <a href="/latest/appointment-edit" class="button">Create appointment</a>
       </div>
     </div> 
   </div>
@@ -61,7 +61,7 @@
 
 {% macro appointmentUpdateLink(appointment) %}
   {% set queryString = '?id=' + appointment.id  %}
-  <a href="appointments_edit{{queryString}}">Update</a>
+  <a href="/latest/appointment-edit{{queryString}}">Update</a>
 {% endmacro %}
 
 {% macro dateDisplay(dateArray) %}
