@@ -5,7 +5,7 @@
 
 function appointmentsPage(req, res) {
 
-  var appointments = setInitialAppointments();
+  var appointments = setInitialAppointmentsList();
   req.session.appointments = req.session.appointments || appointments;
   res.locals.data.appointments = req.session.appointments;
   res.render('latest/appointments');
@@ -13,17 +13,16 @@ function appointmentsPage(req, res) {
 
 function appointmentEditPage(req, res) {
 
-  var appointments = {};
-  appointments = req.session.appointments;
+  var appointments = req.session.appointments || {};
 
   if (req.query.id) {
-    res.locals.data.appointmentForUpdate = appointments[req.query.id];
+    var index = findPositionOfAppointmentInArray(req.query.id, appointments);
+    res.locals.data.appointmentForUpdate = appointments[index];
   } else {
     res.locals.data.newAppt = 1;
     res.locals.data.appointmentForUpdate = {}
   }
 
-  req.session.appointments = appointments;
   res.render('latest/appointments_edit');
 
 }
@@ -31,7 +30,6 @@ function appointmentEditPage(req, res) {
 function appointmentEditPageAction(req, res) {
 
   var appointments = req.session.appointments;
-  var index;
   var appointment = {
       apptType: req.body['appt-type'],
       apptDateValues: [req.body['appt-day'],req.body['appt-month'], req.body['appt-year']],
@@ -40,28 +38,45 @@ function appointmentEditPageAction(req, res) {
       apptStatus: req.body['appt-status']
   };
 
-  if (req.query.id) {
-    index = appointments.indexOf(req.body.id);
+  if ((req.body.id !== null) && (req.body.id !== undefined) && (req.body.id > 0)) {
+    var index = findPositionOfAppointmentInArray(req.body.id, appointments);
     appointment.id = req.body.id;
     appointment.apptStatus = req.body['appt-status'];
     appointments[index] = appointment;
   } else {
+    appointment.id = appointments.length + 1;
     appointment.apptStatus = 'Booked';
     appointments.unshift(appointment);
   }
 
   req.session.appointments = appointments;
+
   res.redirect('/latest/appointments');
 
 }
 
-function setInitialAppointments(){
+function setInitialAppointmentsList(){
   return [
-    { id: 1, apptType: 'Appointment type 4', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Confirmed', apptTimeHrs: '10', apptTimeMins: '15'},
-    { id: 2, apptType: 'Appointment type 3', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
-    { id: 3, apptType: 'Appointment type 1', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Re-booked', apptTimeHrs: '11', apptTimeMins: '05'},
-    { id: 4, apptType: 'Appointment type 1', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Attended', apptTimeHrs: '14', apptTimeMins: '45'}
+    { id: 4, apptType: 'Appointment type 4', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Confirmed', apptTimeHrs: '10', apptTimeMins: '15'},
+    { id: 3, apptType: 'Appointment type 3', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
+    { id: 2, apptType: 'Appointment type 1', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Re-booked', apptTimeHrs: '11', apptTimeMins: '05'},
+    { id: 1, apptType: 'Appointment type 1', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Attended', apptTimeHrs: '14', apptTimeMins: '45'}
   ];
+}
+
+function findPositionOfAppointmentInArray(inputQueryId, appointments) {
+  var positionOfApptInArray;
+  var appointmentsArray = appointments;
+  var arrLength = appointmentsArray.length;
+  var queryId = parseInt(inputQueryId);
+
+  for (var i = 0; i < arrLength; i++) {
+
+    if (appointmentsArray[i].id === queryId) {
+      positionOfApptInArray = i;
+    }
+  }
+  return positionOfApptInArray;
 }
 
 module.exports.appointmentsPage = appointmentsPage;
