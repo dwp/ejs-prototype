@@ -14,14 +14,15 @@
 
 <main id="content" role="main">
   
-  {% include "includes/main_nav.html" %}   
+  {% include "includes/main_nav.html" %}
+  {% include "includes/summary_nav.html" %}
 
   <div class="main-content"> 
-		<h1 class="heading-large">Appointment - Mr J Smith</h1>
+		<h1 class="heading-large">Appointment - Mr J. Smith</h1>
+        <h2 class="heading-medium">Current status is:  {{data.appointmentForUpdate.apptStatus}}</h2>
 
   	<div class="grid-row">
       {% set currentClaimantPage = 'appointment' %}
-      {% include "includes/summary_nav.html" %}
 
   		<div class="column-half">
         <form action="/latest/appointment-edit" method="POST" class="form">
@@ -80,20 +81,25 @@
           <div class="form-group" id="appt-status-group">
             <fieldset class="inline">
 
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
               <legend class="form-label-bold">Status</legend>
+              {% endif %}
 
-              <label class="block-label selection-button-radio" for="booked">
-                <input id="booked" type="radio" name="appt-status" value="Booked" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Booked' else ''}}>
-                Booked
-              </label>
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' %}
               <label class="block-label selection-button-radio" for="confirmed">
                 <input id="confirmed" type="radio" name="appt-status" value="Confirmed" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Confirmed' else ''}}>
                 Confirmed
               </label>
+              {% endif %}
+
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
               <label class="block-label selection-button-radio" for="rebooked" >
                 <input id="rebooked" type="radio" name="appt-status" value="Re-booked" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Re-booked' else ''}}>
                 Re-booked
               </label>
+              {% endif %}
+
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
               <label class="block-label selection-button-radio" for="attended" >
                 <input id="attended" type="radio" name="appt-status" value="Attended" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Attended' else ''}}>
                 Attended
@@ -102,6 +108,8 @@
                 <input id="fta" type="radio" name="appt-status" value="Failed to attend" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Failed to attend' else ''}}>
                 Failed to attend
               </label>
+              {% endif %}
+
             </fieldset>
           </div>
           {% endif %}
