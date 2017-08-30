@@ -77,11 +77,32 @@ function appointmentEditPageAction(req, res) {
 }
 
 function setInitialAppointmentsList(){
+  var apptsList = [];
+  var appt1 = {id: 8, apptType: 'Provision sanction', apptDate: '2017-12-31', apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: ''
+
+
+
+
+
+
+
+
+    new Appointment((id: 8, apptType: 'Provision sanction', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: '')
+
+
+
+
+
+}
   return [
-    { id: 4, apptType: 'Appointment type 4', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Confirmed', apptTimeHrs: '10', apptTimeMins: '15'},
-    { id: 3, apptType: 'Appointment type 3', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
-    { id: 2, apptType: 'Appointment type 1', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Re-booked', apptTimeHrs: '11', apptTimeMins: '05'},
-    { id: 1, apptType: 'Appointment type 1', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Attended', apptTimeHrs: '14', apptTimeMins: '45'}
+    { id: 8, apptType: 'Provision sanction', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: ''},
+    { id: 7, apptType: 'Advisory discretion fund (ADF)', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
+    { id: 6, apptType: 'Group information session', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Attended', apptTimeHrs: '11', apptTimeMins: '05'},
+    { id: 5, apptType: 'Provision referral', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Booked, apptTimeHrs: '14', apptTimeMins: '45'}
+    { id: 4, apptType: 'Provision discussion', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15'},
+    { id: 3, apptType: 'Provision referral', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
+    { id: 2, apptType: 'Work focused interview', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Re-booked', apptTimeHrs: '11', apptTimeMins: '05'},
+    { id: 1, apptType: 'Provision referral', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '45'}
   ];
 }
 
