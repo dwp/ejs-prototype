@@ -14,14 +14,33 @@ function appointmentsPage(req, res) {
 function appointmentEditPage(req, res) {
 
   var appointments = req.session.appointments || {};
+  var defaultAppointmentForUpdate = {
+    id: 500,
+    apptType: 'Appointment type 4',
+    apptDateValues: [ '01', '01', '2018'],
+    apptStatus: 'Booked',
+    apptTimeHrs: '09',
+    apptTimeMins: '00'
+  };
 
-  if (req.query.id) {
-    var index = findPositionOfAppointmentInArray(req.query.id, appointments);
-    res.locals.data.appointmentForUpdate = appointments[index];
-  } else {
+  console.log('req.query.id is:  ', req.query.id);
+
+
+  if (!req.query.id) {
     res.locals.data.newAppt = 1;
     res.locals.data.appointmentForUpdate = {}
+  } else if (req.query.id === '500') {
+    req.session.appointments = setInitialAppointmentsList();
+    req.session.appointments.unshift(defaultAppointmentForUpdate);
+    res.locals.data.appointmentForUpdate = defaultAppointmentForUpdate;
+  } else {
+    var index = findPositionOfAppointmentInArray(req.query.id, appointments);
+    res.locals.data.appointmentForUpdate = appointments[index];
   }
+
+  console.log('res.locals.data.appointmentForUpdate is: ', res.locals.data.appointmentForUpdate);
+  console.log('res.locals.data.newAppt is: ', res.locals.data.newAppt );
+
   res.render('latest/appointments_edit');
 
 }
