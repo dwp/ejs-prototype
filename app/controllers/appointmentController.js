@@ -22,7 +22,6 @@ function appointmentEditPage(req, res) {
     res.locals.data.newAppt = 1;
     res.locals.data.appointmentForUpdate = {}
   }
-
   res.render('latest/appointments_edit');
 
 }
@@ -37,10 +36,12 @@ function appointmentEditPageAction(req, res) {
       apptTimeMins: req.body['appt-time-mins'],
       apptStatus: req.body['appt-status']
   };
+  var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
-  if ((req.body.id !== null) && (req.body.id !== undefined) && (req.body.id > 0)) {
-    var index = findPositionOfAppointmentInArray(req.body.id, appointments);
-    appointment.id = req.body.id;
+  if ((numericApptId !== null) && (numericApptId !== undefined) && (numericApptId > 0)) {
+
+    var index = findPositionOfAppointmentInArray(numericApptId, appointments);
+    appointment.id = numericApptId;
     appointment.apptStatus = req.body['appt-status'];
     appointments[index] = appointment;
   } else {
