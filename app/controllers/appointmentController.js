@@ -34,7 +34,6 @@ function appointmentEditPageAction(req, res) {
       apptDateValues: [req.body['appt-day'],req.body['appt-month'], req.body['appt-year']],
       apptTimeHrs: req.body['appt-time-hrs'],
       apptTimeMins: req.body['appt-time-mins'],
-      apptStatus: req.body['appt-status']
   };
   var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
@@ -42,13 +41,15 @@ function appointmentEditPageAction(req, res) {
 
     var index = findPositionOfAppointmentInArray(numericApptId, appointments);
     appointment.id = numericApptId;
-    appointment.apptStatus = req.body['appt-status'];
+    appointment.apptStatus = req.body['appt-status'] ? req.body['appt-status'] : appointments[index].apptStatus;
     appointments[index] = appointment;
   } else {
     appointment.id = appointments.length + 1;
     appointment.apptStatus = 'Booked';
     appointments.unshift(appointment);
   }
+
+  console.log('Amended appointment looks like : ', appointment);
 
   req.session.appointments = appointments;
 

@@ -15,12 +15,15 @@
 <main id="content" role="main">
   
   {% include "includes/main_nav.html" %}
+  <br>
   {% include "includes/summary_nav.html" %}
 
   <div class="main-content"> 
-		<h1 class="heading-large">Appointment - Mr J. Smith</h1>
-        <h2 class="heading-medium">Current status is:  {{data.appointmentForUpdate.apptStatus}}</h2>
-
+    <h1 class="heading-large">Appointment - Mr J. Smith</h1>
+    {% if not data.newAppt %}
+      <h2 class="heading-medium">Current status is:  {{data.appointmentForUpdate.apptStatus}}</h2>
+    {% endif %}
+    <br>
   	<div class="grid-row">
       {% set currentClaimantPage = 'appointment' %}
 
@@ -32,38 +35,67 @@
             <fieldset class="inline">
               <legend class="form-label-bold">Appointment type</legend>
 
-              <select class="select form-control" name="appt-type" id="appt-type">
-                <option value="">Select</option>
-                <option value="Appointment type 1" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 1' else ''}}>Appointment type 1</option>
-                <option value="Appointment type 2" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 2' else ''}}>Appointment type 2</option>
-                <option value="Appointment type 3" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 3' else ''}}>Appointment type 3</option>
-                <option value="Appointment type 4" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 4' else ''}}>Appointment type 4</option>
-              </select>
+              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+                <div>
+                  <p>{{data.appointmentForUpdate.apptType}}</p>
+                  <input class=hidden name="appt-type" id="appt-type" value="{{data.appointmentForUpdate.apptType}}"></input>
+                </div>
+              {% else %}
+                <select class="select form-control" name="appt-type" id="appt-type">
+                  <option value="">Select</option>
+                  <option value="Appointment type 1" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 1' else ''}}>Appointment type 1</option>
+                  <option value="Appointment type 2" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 2' else ''}}>Appointment type 2</option>
+                  <option value="Appointment type 3" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 3' else ''}}>Appointment type 3</option>
+                  <option value="Appointment type 4" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 4' else ''}}>Appointment type 4</option>
+                </select>
+              {% endif %}
+
             </fieldset>
           </div>
 
           <div class="form-group form-date" id="appt-date-group">
             <legend class="form-label-bold">Date</legend>
 
-            <div class="form-group form-group-day">
-              <label for="appt-day">Day</label>
-              <p class="form-hint">dd</p>
-              <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}">
-            </div>
-            <div class="form-group form-group-month">
-              <label for="appt-month">Month</label>
-              <p class="form-hint">mm</p>
-              <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}">
-            </div>
-            <div class="form-group form-group-year">
-              <label for="appt-year">Year</label>
-              <p class="form-hint">yyyy</p>
-              <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}">
-            </div>
+            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+              <div>
+                <p>{{dateDisplay(data.appointmentForUpdate.apptDateValues)}}</p>
+                <input class="visually-hidden" name="appt-day" id="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}"></input>
+                <input class="visually-hidden" name="appt-month" id="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}"></input>
+                <input class="visually-hidden" name="appt-year" id="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}"></input>
+              </div>
+            {% else %}
+              <div class="form-group form-group-day">
+                <label for="appt-day">Day</label>
+                <p class="form-hint">dd</p>
+                <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}">
+              </div>
+              <div class="form-group form-group-month">
+                <label for="appt-month">Month</label>
+                <p class="form-hint">mm</p>
+                <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}">
+              </div>
+              <div class="form-group form-group-year">
+                <label for="appt-year">Year</label>
+                <p class="form-hint">yyyy</p>
+                <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}">
+              </div>
+            {% endif %}
+
           </div>
 
           <div class="form-group form-date" id="appt-time-group">
             <legend class="form-label-bold">Time</legend>
+
+
+            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+
+            <div>
+              <p>{{data.appointmentForUpdate.apptTimeHrs}}:{{data.appointmentForUpdate.apptTimeMins}}</p>
+              <input class="visually-hidden" name="appt-time-hrs" id="appt-time-hrs" value="{{data.appointmentForUpdate.apptTimeHrs}}"></input>
+              <input class="visually-hidden" name="appt-time-mins" id="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}"></input>
+            </div>
+
+            {% else %}
 
             <div class="form-group form-group-day">
               <label for="appt-time-hrs"></label>
@@ -75,11 +107,20 @@
               <p class="form-hint">mm</p>
               <input type="text" class="form-control" id="appt-time-mins" name="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}">
             </div>
+
+            {% endif %}
+
           </div>
 
           {% if not data.newAppt %}
           <div class="form-group" id="appt-status-group">
             <fieldset class="inline">
+
+              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+              <div>
+                <input class=hidden name="appt-status" id="appt-status" value="{{data.appointmentForUpdate.apptStatus}}"></input>
+              </div>
+              {% endif %}
 
               {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
               <legend class="form-label-bold">Status</legend>
@@ -115,7 +156,11 @@
           {% endif %}
 
           <div class="form-group">
-            <input type="submit" class="button" value="Save">
+            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+              <input type="submit" class="button" value="Back to Appointments Summary">
+            {% else %}
+              <input type="submit" class="button" value="Save">
+            {%endif %}
           </div>
         </form>
       </div>     
@@ -123,3 +168,9 @@
   </div>
 </main>
 {% endblock %}
+
+{% macro dateDisplay(dateArray) %}
+{% set monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
+
+{{dateArray[0] | int}} {{monthNames[dateArray[1]-1]}} {{dateArray[2]}}
+{% endmacro %}
