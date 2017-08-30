@@ -9,46 +9,6 @@
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
         <div class="grid-row">
-          {% set esaClaimantCommitmentScreens = [{
-          workTitle : 'ESA',
-          links: [{
-          link : 'latest/esa_claimant/addCommitment', title : 'Create new commitment'
-          }, {
-          link : 'latest/esa_claimant/viewCommitment', title : 'View existing commitment'
-          }, {
-          link : 'latest/esa_claimant/printCommitment?wca=No', title : 'Print commitment - pre-WCA'
-          }, {
-          link : 'latest/esa_claimant/printCommitment?wca=Yes', title : 'Print commitment - post-WCA'
-          }, {
-          link : 'latest/esa_claimant/viewCommitmentsSummary', title : 'View all commitments'
-          }]
-          }] %}
-
-          {{ sprintLinks( 'ESA Claimant Commitment', esaClaimantCommitmentScreens) }}
-
-          {% set jobProfileScreens = [{
-          workTitle : 'Job Profile',
-          links: [{
-          link : 'latest/job_profile', title : 'View job profile'
-          }, {
-          link : 'latest/job_profile/editJobProfile', title : 'Edit job profile'
-          }]
-          }] %}
-
-          {{ sprintLinks( 'Job Profile', jobProfileScreens) }}
-
-          {% set autocomplete = [{
-            workTitle : 'Accessible autocomplete',
-            links: [{
-              link : 'latest/settings-with-autocomplete', title : 'Change location with autocomplete'
-            }] 
-          }]%}
-
-          {{ sprintLinks( 'Accessible autocomplete', autocomplete) }}
-
-        </div> 
-        
-        <div class="grid-row">
           {% set whpSelectionToolWorkcoachScreens = [{ 
             workTitle : 'Work coach',
             links: [{ 
@@ -142,44 +102,18 @@
         </div>
 
         <div class="grid-row">
-          {% set whpSelectionToolWorkcoachScreens = [{ 
-            workTitle : 'Work coach',
-            links: [{ 
-              link : 'latest/selection_tool_landing_page_v2', title : 'Alternative landing page'
-            }, {
-              link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old', title : 'Eligibility questions for disability'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old', title : 'Eligibility questions for early entry'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old', title : 'Eligibility questions for externally referred'
-            }, {
-              link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for disability'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for early entry'
-            }, { 
-              link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for externally referred'
-            }]
-          }] %} 
-          
-          {{ sprintLinks( 'Archived WHP Selection Tool', whpSelectionToolWorkcoachScreens) }}
+          {% set autocomplete = [{
+          workTitle : 'Accessible autocomplete',
+          links: [{
+          link : 'latest/settings-with-autocomplete', title : 'Change location with autocomplete'
+          }]
+          }]%}
 
-          {% set whpSelectionToolWorkcoachScreens = [{
-            workTitle : 'Gatekeeper',
-            links: [{ 
-              link : 'latest/gatekeeper/selection', title : 'Referrals for Mercia for 31 May 2017'
-              }, {
-              link : 'latest/whp-profile-places', title : '[Old] - Calculate and display places and referrals (no longer calculates - just a page display)'
-              }, {
-              link : 'latest/whp-profile-places-table', title : '[Old] - Summary of places'
-              }, {
-              link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
-              }, {
-              link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
-              }]
-          }] %}
-          
-          {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+          {{ sprintLinks( 'Accessible autocomplete', autocomplete) }}
+
         </div>
+
+
         
         <div class="grid-row">
           {% set whpSelectionTool = [{ links: [ { link : 'latest/performance', title : 'Caseload filters'}, { link : 'latest/performance',
@@ -201,6 +135,77 @@
 
         <details>
           <summary>Archive</summary>
+
+          <div class="grid-row">
+            {% set whpSelectionToolWorkcoachScreens = [{
+            workTitle : 'Work coach',
+            links: [{
+            link : 'latest/selection_tool_landing_page_v2', title : 'Alternative landing page'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old', title : 'Eligibility questions for disability'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old', title : 'Eligibility questions for early entry'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old', title : 'Eligibility questions for externally referred'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=disability-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for disability'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=early-entry-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for early entry'
+            }, {
+            link : 'latest/whp_eligibility_questions?voluntaryOption=external-referrer-old&alternativeQuestionText=true', title : 'Alternative eligibility questions for externally referred'
+            }]
+            }] %}
+
+            {{ sprintLinks( 'Archived WHP Selection Tool', whpSelectionToolWorkcoachScreens) }}
+
+            {% set whpSelectionToolWorkcoachScreens = [{
+            workTitle : 'Gatekeeper',
+            links: [{
+            link : 'latest/gatekeeper/selection', title : 'Referrals for Mercia for 31 May 2017'
+            }, {
+            link : 'latest/whp-profile-places', title : '[Old] - Calculate and display places and referrals (no longer calculates - just a page display)'
+            }, {
+            link : 'latest/whp-profile-places-table', title : '[Old] - Summary of places'
+            }, {
+            link : 'latest/gatekeeper/profile', title : 'Record WHP places available'
+            }, {
+            link : 'latest/gatekeeper/weeklyProfile', title : 'Profile WHP places across the year'
+            }]
+            }] %}
+
+            {{ sprintLinks( '', whpSelectionToolWorkcoachScreens) }}
+          </div>
+
+          <div class="grid-row">
+            {% set esaClaimantCommitmentScreens = [{
+            workTitle : 'ESA',
+            links: [{
+            link : 'latest/esa_claimant/addCommitment', title : 'Create new commitment'
+            }, {
+            link : 'latest/esa_claimant/viewCommitment', title : 'View existing commitment'
+            }, {
+            link : 'latest/esa_claimant/printCommitment?wca=No', title : 'Print commitment - pre-WCA'
+            }, {
+            link : 'latest/esa_claimant/printCommitment?wca=Yes', title : 'Print commitment - post-WCA'
+            }, {
+            link : 'latest/esa_claimant/viewCommitmentsSummary', title : 'View all commitments'
+            }]
+            }] %}
+
+            {{ sprintLinks( 'ESA Claimant Commitment', esaClaimantCommitmentScreens) }}
+
+            {% set jobProfileScreens = [{
+            workTitle : 'Job Profile',
+            links: [{
+            link : 'latest/job_profile', title : 'View job profile'
+            }, {
+            link : 'latest/job_profile/editJobProfile', title : 'Edit job profile'
+            }]
+            }] %}
+
+            {{ sprintLinks( 'Job Profile', jobProfileScreens) }}
+
+          </div>
 
           <div class="grid-row">
             {% set disabilityPremium = [{ workTitle: 'Disability premium', links: [ { link : 'latest/job_new_step3', title : 'Disability
