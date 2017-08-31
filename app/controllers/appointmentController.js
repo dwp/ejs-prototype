@@ -12,7 +12,7 @@ function appointmentsPage(req, res) {
   res.render('latest/appointments');
 }
 
-// If new appointment, set new appointment marker and empty object to give to page
+
 // If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
 function appointmentEditPage(req, res) {
 
@@ -21,13 +21,16 @@ function appointmentEditPage(req, res) {
 
   console.log('req.query.id is:  ', req.query.id);
 
+// If new appointment, set new appointment marker and set up empty object to give to page
   if (!req.query.id) {
     res.locals.data.newAppt = 1;
     res.locals.data.appointmentForUpdate = {}
+// If not new appointment, but is an update request direct from the index page (i.e. test appointment array has not yet been set up), give page dummy appointment
   } else if (req.query.id === '500') {
     req.session.appointments = setInitialAppointmentsList();
     req.session.appointments.unshift(dummyAppointmentForUpdate);
     res.locals.data.appointmentForUpdate = dummyAppointmentForUpdate;
+// If not new appointment, find the appointment in the existing array using the id provided in the query, and give that appointment to the page
   } else {
     var index = findPositionOfAppointmentInArray(req.query.id, appointments);
     res.locals.data.appointmentForUpdate = appointments[index];
@@ -46,11 +49,15 @@ function appointmentEditPageAction(req, res) {
   var appointment = new Appointment(0, req.body['appt-type'], (req.body['appt-year'] + '-' + req.body['appt-month'] + '-' + req.body['appt-day']), req.body['appt-time-hrs'], req.body['appt-time-mins'], 'Booked' , 0, 'Default for now');
   var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
+// If appointment update, change id provided in query to numeric value, find which array position the appointment is in, set status to new status,
+// or keep existing status if status not changed on screen, add updated appointment back into array at same position
   if ((numericApptId !== null) && (numericApptId !== undefined) && (numericApptId > 0)) {
     var index = findPositionOfAppointmentInArray(numericApptId, appointments);
     appointment.id = numericApptId;
     appointment.apptStatus = req.body['appt-status'] ? req.body['appt-status'] : appointments[index].apptStatus;
     appointments[index] = appointment;
+// If new appointment, add one to existing array length to get id for new appointment, then add the appointment as first object in array
+// (so don't have to sort array at moment - may change)
   } else {
     appointment.id = appointments.length + 1;
     appointments.unshift(appointment);
