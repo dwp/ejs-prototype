@@ -1,3 +1,4 @@
+const Appointment = require('../models/appointment');
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  /*                                        Appointment Page Controllers
  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -11,28 +12,22 @@ function appointmentsPage(req, res) {
   res.render('latest/appointments');
 }
 
+// If new appointment, set new appointment marker and empty object to give to page
+// If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
 function appointmentEditPage(req, res) {
 
   var appointments = req.session.appointments || {};
-  var defaultAppointmentForUpdate = {
-    id: 500,
-    apptType: 'Appointment type 4',
-    apptDateValues: [ '01', '01', '2018'],
-    apptStatus: 'Booked',
-    apptTimeHrs: '09',
-    apptTimeMins: '00'
-  };
+  var dummyAppointmentForUpdate = new Appointment(500, 'Provision discussion', '2018-01-01', '09', '00', 'Booked', 0, 'Claimant would like to discuss possible work experience opportunities')
 
   console.log('req.query.id is:  ', req.query.id);
-
 
   if (!req.query.id) {
     res.locals.data.newAppt = 1;
     res.locals.data.appointmentForUpdate = {}
   } else if (req.query.id === '500') {
     req.session.appointments = setInitialAppointmentsList();
-    req.session.appointments.unshift(defaultAppointmentForUpdate);
-    res.locals.data.appointmentForUpdate = defaultAppointmentForUpdate;
+    req.session.appointments.unshift(dummyAppointmentForUpdate);
+    res.locals.data.appointmentForUpdate = dummyAppointmentForUpdate;
   } else {
     var index = findPositionOfAppointmentInArray(req.query.id, appointments);
     res.locals.data.appointmentForUpdate = appointments[index];
@@ -48,27 +43,18 @@ function appointmentEditPage(req, res) {
 function appointmentEditPageAction(req, res) {
 
   var appointments = req.session.appointments;
-  var appointment = {
-      apptType: req.body['appt-type'],
-      apptDateValues: [req.body['appt-day'],req.body['appt-month'], req.body['appt-year']],
-      apptTimeHrs: req.body['appt-time-hrs'],
-      apptTimeMins: req.body['appt-time-mins'],
-  };
+  var appointment = new Appointment(0, req.body['appt-type'], (req.body['appt-year'] + '-' + req.body['appt-month'] + '-' + req.body['appt-day']), req.body['appt-time-hrs'], req.body['appt-time-mins'], 'Booked' , 0, 'Default for now');
   var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
   if ((numericApptId !== null) && (numericApptId !== undefined) && (numericApptId > 0)) {
-
     var index = findPositionOfAppointmentInArray(numericApptId, appointments);
     appointment.id = numericApptId;
     appointment.apptStatus = req.body['appt-status'] ? req.body['appt-status'] : appointments[index].apptStatus;
     appointments[index] = appointment;
   } else {
     appointment.id = appointments.length + 1;
-    appointment.apptStatus = 'Booked';
     appointments.unshift(appointment);
   }
-
-  console.log('Amended appointment looks like : ', appointment);
 
   req.session.appointments = appointments;
 
@@ -78,32 +64,26 @@ function appointmentEditPageAction(req, res) {
 
 function setInitialAppointmentsList(){
   var apptsList = [];
-  var appt1 = {id: 8, apptType: 'Provision sanction', apptDate: '2017-12-31', apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: ''
+  var appointment;
+  appointment = new Appointment(8, 'Provision sanction', '2017-10-01', '10', '15', 'Booked', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(7,'Advisory discretion fund (ADF)', '2017-07-09', '14', '10', 'Failed to attend', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(6,'Group information session', '2017-06-01', '11', '05', 'Attended', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(5,'Provision referral', '2017-04-14', '14', '45', 'Booked', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(4,'Provision discussion', '2017-10-03', '10', '15', 'Booked', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(3,'Provision referral', '2017-07-06', '09', '20', 'Failed to attend', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(2,'Work focused interview', '2017-06-01', '15', '20', 'Re-booked', 0, '');
+  apptsList.push(appointment);
+  appointment = new Appointment(1,'Provision referral', '2017-04-22', '11', '30', 'Failed to attend', 0, '');
+  apptsList.push(appointment);
 
+  return apptsList;
 
-
-
-
-
-
-
-    new Appointment((id: 8, apptType: 'Provision sanction', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: '')
-
-
-
-
-
-}
-  return [
-    { id: 8, apptType: 'Provision sanction', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15', apptNotes: ''},
-    { id: 7, apptType: 'Advisory discretion fund (ADF)', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
-    { id: 6, apptType: 'Group information session', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Attended', apptTimeHrs: '11', apptTimeMins: '05'},
-    { id: 5, apptType: 'Provision referral', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Booked, apptTimeHrs: '14', apptTimeMins: '45'}
-    { id: 4, apptType: 'Provision discussion', apptDateValues: [ '01', '10', '2017'], apptStatus: 'Booked', apptTimeHrs: '10', apptTimeMins: '15'},
-    { id: 3, apptType: 'Provision referral', apptDateValues: [ '01', '07', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '10'},
-    { id: 2, apptType: 'Work focused interview', apptDateValues: [ '01', '06', '2017'], apptStatus: 'Re-booked', apptTimeHrs: '11', apptTimeMins: '05'},
-    { id: 1, apptType: 'Provision referral', apptDateValues: [ '01', '04', '2017'], apptStatus: 'Failed to attend', apptTimeHrs: '14', apptTimeMins: '45'}
-  ];
 }
 
 function findPositionOfAppointmentInArray(inputQueryId, appointments) {
@@ -118,6 +98,8 @@ function findPositionOfAppointmentInArray(inputQueryId, appointments) {
       positionOfApptInArray = i;
     }
   }
+
+  console.log('Position in array is: ', positionOfApptInArray);
   return positionOfApptInArray;
 }
 

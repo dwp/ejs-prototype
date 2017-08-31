@@ -43,10 +43,12 @@
               {% else %}
                 <select class="select form-control" name="appt-type" id="appt-type">
                   <option value="">Select</option>
-                  <option value="Appointment type 1" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 1' else ''}}>Appointment type 1</option>
-                  <option value="Appointment type 2" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 2' else ''}}>Appointment type 2</option>
-                  <option value="Appointment type 3" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 3' else ''}}>Appointment type 3</option>
-                  <option value="Appointment type 4" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Appointment type 4' else ''}}>Appointment type 4</option>
+                  <option value="Provision referral" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision referral' else ''}}>Provision referral</option>
+                  <option value="Provision discussion" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision discussion' else ''}}>Provision discussion</option>
+                  <option value="Provision sanction" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision sanction' else ''}}>Provision sanction</option>
+                  <option value="Work focussed interview" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Work focussed interview' else ''}}>Work focussed interview</option>
+                  <option value="Advisor discretionary fund (ADF)" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Advisor discretionary fund (ADF)' else ''}}>Advisor discretionary fund (ADF)</option>
+                  <option value="Group information discussion" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Group information discussion' else ''}}>Group information discussion</option>
                 </select>
               {% endif %}
 
@@ -58,26 +60,26 @@
 
             {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
               <div>
-                <p>{{dateDisplay(data.appointmentForUpdate.apptDateValues)}}</p>
-                <input class="visually-hidden" name="appt-day" id="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}"></input>
-                <input class="visually-hidden" name="appt-month" id="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}"></input>
-                <input class="visually-hidden" name="appt-year" id="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}"></input>
+                <p>{{data.appointmentForUpdate.apptDateForDisplay}}</p>
+                <input class="visually-hidden" name="appt-day" id="appt-day" value="{{data.appointmentForUpdate.apptDateDay}}"></input>
+                <input class="visually-hidden" name="appt-month" id="appt-month" value="{{data.appointmentForUpdate.apptDateMonth}}"></input>
+                <input class="visually-hidden" name="appt-year" id="appt-year" value="{{data.appointmentForUpdate.apptDateYear}}"></input>
               </div>
             {% else %}
               <div class="form-group form-group-day">
                 <label for="appt-day">Day</label>
                 <p class="form-hint">dd</p>
-                <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateValues[0]}}">
+                <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateDay}}">
               </div>
               <div class="form-group form-group-month">
                 <label for="appt-month">Month</label>
                 <p class="form-hint">mm</p>
-                <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateValues[1]}}">
+                <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateMonth}}">
               </div>
               <div class="form-group form-group-year">
                 <label for="appt-year">Year</label>
                 <p class="form-hint">yyyy</p>
-                <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateValues[2]}}">
+                <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateYear}}">
               </div>
             {% endif %}
 
@@ -122,25 +124,18 @@
               </div>
               {% endif %}
 
-              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' %}
               <legend class="form-label-bold">Status</legend>
               {% endif %}
 
-              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' %}
-              <label class="block-label selection-button-radio" for="confirmed">
-                <input id="confirmed" type="radio" name="appt-status" value="Confirmed" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Confirmed' else ''}}>
-                Confirmed
-              </label>
-              {% endif %}
-
-              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' %}
               <label class="block-label selection-button-radio" for="rebooked" >
                 <input id="rebooked" type="radio" name="appt-status" value="Re-booked" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Re-booked' else ''}}>
                 Re-booked
               </label>
               {% endif %}
 
-              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' or data.appointmentForUpdate.apptStatus === 'Confirmed' %}
+              {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' %}
               <label class="block-label selection-button-radio" for="attended" >
                 <input id="attended" type="radio" name="appt-status" value="Attended" {{ 'checked' if  data.appointmentForUpdate.apptStatus === 'Attended' else ''}}>
                 Attended
@@ -168,9 +163,3 @@
   </div>
 </main>
 {% endblock %}
-
-{% macro dateDisplay(dateArray) %}
-{% set monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
-
-{{dateArray[0] | int}} {{monthNames[dateArray[1]-1]}} {{dateArray[2]}}
-{% endmacro %}

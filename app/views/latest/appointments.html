@@ -38,7 +38,7 @@
             {% for appointment in data.appointments %}
               <tr>
                 <td>{{appointment.apptType}}</td>
-                <td>{{dateDisplay(appointment.apptDateValues)}}</td>
+                <td>{{appointment.apptDateForDisplay}}</td>
                 <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
                 <td>{{appointment.apptStatus}}</td>
                 <td>{{appointmentUpdateLink(appointment)}}</td>
@@ -62,11 +62,5 @@
 {% macro appointmentUpdateLink(appointment) %}
   {% set queryString = '?id=' + appointment.id  %}
   <a href="/latest/appointment-edit{{queryString}}">View/Update</a>
-{% endmacro %}
-
-{% macro dateDisplay(dateArray) %}
-  {% set monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
-
-  {{dateArray[0] | int}} {{monthNames[dateArray[1]-1]}} {{dateArray[2]}}
 {% endmacro %}
 
