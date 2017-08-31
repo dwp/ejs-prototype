@@ -42,7 +42,7 @@ function appointmentEditPage(req, res) {
 
 function appointmentEditPageAction(req, res) {
 
-  var appointments = req.session.appointments;
+  var appointments = req.session.appointments ? req.session.appointments : setInitialAppointmentsList();
   var appointment = new Appointment(0, req.body['appt-type'], (req.body['appt-year'] + '-' + req.body['appt-month'] + '-' + req.body['appt-day']), req.body['appt-time-hrs'], req.body['appt-time-mins'], 'Booked' , 0, 'Default for now');
   var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
