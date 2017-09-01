@@ -57,6 +57,7 @@
 
           <div class="form-group form-date" id="appt-date-group">
             <legend class="form-label-bold">Date</legend>
+            <p class="form-hint">For example, 01 09 2017</p>
 
             {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
               <div>
@@ -68,17 +69,14 @@
             {% else %}
               <div class="form-group form-group-day">
                 <label for="appt-day">Day</label>
-                <p class="form-hint">dd</p>
                 <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateDay}}">
               </div>
               <div class="form-group form-group-month">
                 <label for="appt-month">Month</label>
-                <p class="form-hint">mm</p>
                 <input type="text" class="form-control" id="appt-month" name="appt-month" value="{{data.appointmentForUpdate.apptDateMonth}}">
               </div>
               <div class="form-group form-group-year">
                 <label for="appt-year">Year</label>
-                <p class="form-hint">yyyy</p>
                 <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateYear}}">
               </div>
             {% endif %}
@@ -87,6 +85,7 @@
 
           <div class="form-group form-date" id="appt-time-group">
             <legend class="form-label-bold">Time</legend>
+            <p class="form-hint">For example, 10 45</p>
 
 
             {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
@@ -101,12 +100,10 @@
 
             <div class="form-group form-group-day">
               <label for="appt-time-hrs"></label>
-              <p class="form-hint">hh</p>
               <input type="text" class="form-control" id="appt-time-hrs" name="appt-time-hrs" value="{{data.appointmentForUpdate.apptTimeHrs}}">
             </div>
             <div class="form-group form-group-day">
               <label for="appt-time-mins"></label>
-              <p class="form-hint">mm</p>
               <input type="text" class="form-control" id="appt-time-mins" name="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}">
             </div>
 
