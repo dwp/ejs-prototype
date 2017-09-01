@@ -9,7 +9,7 @@ function appointmentsPage(req, res) {
   var appointments = setInitialAppointmentsList();
   req.session.appointments = req.session.appointments || appointments;
   res.locals.data.appointments = req.session.appointments;
-  res.render('latest/appointments');
+  res.render('appointments/appointments');
 }
 
 
@@ -17,7 +17,7 @@ function appointmentsPage(req, res) {
 function appointmentEditPage(req, res) {
 
   var appointments = req.session.appointments || {};
-  var dummyAppointmentForUpdate = new Appointment(500, 'Provision discussion', '2018-01-01', '09', '00', 'Booked', 0, 'Claimant would like to discuss possible work experience opportunities')
+  var dummyAppointmentForUpdate = new Appointment(500, 'Telephone', '2018-01-01', '09', '00', 'Provision discussion', 'Booked', 'No', 'Claimant would like to discuss possible work experience opportunities')
 
   console.log('req.query.id is:  ', req.query.id);
 
@@ -39,17 +39,17 @@ function appointmentEditPage(req, res) {
   console.log('res.locals.data.appointmentForUpdate is: ', res.locals.data.appointmentForUpdate);
   console.log('res.locals.data.newAppt is: ', res.locals.data.newAppt );
 
-  res.render('latest/appointments_edit');
+  res.render('appointments/appointment_edit');
 
 }
 
 function appointmentEditPageAction(req, res) {
 
   var appointments = req.session.appointments ? req.session.appointments : setInitialAppointmentsList();
-  var appointment = new Appointment(0, req.body['appt-type'], (req.body['appt-year'] + '-' + req.body['appt-month'] + '-' + req.body['appt-day']), req.body['appt-time-hrs'], req.body['appt-time-mins'], 'Booked' , 0, 'Default for now');
+  var appointment = new Appointment(0, req.body['appt-type'], (req.body['appt-year'] + '-' + req.body['appt-month'] + '-' + req.body['appt-day']), req.body['appt-time-hrs'], req.body['appt-time-mins'], req.body['appt-description'], 'Booked', req.body['appt-immediate'], 'Default for now');
   var numericApptId = req.body.id ? parseInt(req.body.id) : {};
 
-// If appointment update, change id provided in query to numeric value, find which array position the appointment is in, set status to new status,
+// If appointment update, find which array position the appointment is in, set status to new status,
 // or keep existing status if status not changed on screen, add updated appointment back into array at same position
   if ((numericApptId !== null) && (numericApptId !== undefined) && (numericApptId > 0)) {
     var index = findPositionOfAppointmentInArray(numericApptId, appointments);
@@ -65,28 +65,28 @@ function appointmentEditPageAction(req, res) {
 
   req.session.appointments = appointments;
 
-  res.redirect('/latest/appointments');
+  res.redirect('/appointments/summary');
 
 }
 
 function setInitialAppointmentsList(){
   var apptsList = [];
   var appointment;
-  appointment = new Appointment(8, 'Provision sanction', '2017-10-01', '10', '15', 'Booked', 0, '');
+  appointment = new Appointment(8,'Face-to-face', '2017-10-01', '10', '15', 'Provision sanction', 'Booked', 'No', '');
   apptsList.push(appointment);
-  appointment = new Appointment(7,'Advisory discretion fund (ADF)', '2017-07-09', '14', '10', 'Failed to attend', 0, '');
+  appointment = new Appointment(7,'Telephone', '2017-07-09', '14', '10', 'Advisory discretion fund (ADF)', 'Failed to attend', 'No', '');
   apptsList.push(appointment);
-  appointment = new Appointment(6,'Group information session', '2017-06-01', '11', '05', 'Attended', 0, '');
+  appointment = new Appointment(6,'Face-to-face', '2017-06-01', '11', '05', 'Group information session', 'Attended', 'Yes', '');
   apptsList.push(appointment);
-  appointment = new Appointment(5,'Provision referral', '2017-04-14', '14', '45', 'Booked', 0, '');
+  appointment = new Appointment(5,'Face-to-face', '2017-04-14', '14', '45', 'Provision referral', 'Booked', 'No', '');
   apptsList.push(appointment);
-  appointment = new Appointment(4,'Provision discussion', '2017-10-03', '10', '15', 'Booked', 0, '');
+  appointment = new Appointment(4,'Face-to-face', '2017-10-03', '10', '15', 'Provision discussion', 'Booked', 'Yes', '');
   apptsList.push(appointment);
-  appointment = new Appointment(3,'Provision referral', '2017-07-06', '09', '20', 'Failed to attend', 0, '');
+  appointment = new Appointment(3,'Digital', '2017-07-06', '09', '20', 'Provision referral', 'Failed to attend', 'No', '');
   apptsList.push(appointment);
-  appointment = new Appointment(2,'Work focused interview', '2017-06-01', '15', '20', 'Re-booked', 0, '');
+  appointment = new Appointment(2,'Face-to-face', '2017-06-01', '15', '20', 'Work focused interview', 'Re-booked', 'No', '');
   apptsList.push(appointment);
-  appointment = new Appointment(1,'Provision referral', '2017-04-22', '11', '30', 'Failed to attend', 0, '');
+  appointment = new Appointment(1,'Digital', '2017-04-22', '11', '30', 'Provision referral', 'Failed to attend', 'No', '');
   apptsList.push(appointment);
 
   return apptsList;

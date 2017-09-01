@@ -27,9 +27,10 @@
         <table>
           <thead>
             <tr>
-              <th scope="col">Type</th>
+              <th scope="col">Description</th>
               <th scope="col">Date</th>
               <th scope="col">Time</th>
+              <th scope="col">Type</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>
@@ -37,9 +38,10 @@
           <tbody>
             {% for appointment in data.appointments %}
               <tr>
-                <td>{{appointment.apptType}}</td>
+                <td>{{appointment.apptDescription}}</td>
                 <td>{{appointment.apptDateForDisplay}}</td>
                 <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+                <td>{{appointment.apptType}}</td>
                 <td>{{appointment.apptStatus}}</td>
                 <td>{{appointmentUpdateLink(appointment)}}</td>
               </tr>
@@ -52,7 +54,7 @@
     <div class="grid-row">
       <div class="column-full">
         <br/>
-        <a href="/latest/appointment-edit" class="button">Create appointment</a>
+        <a href="/appointments/edit" class="button">Create appointment</a>
       </div>
     </div> 
   </div>
@@ -61,6 +63,6 @@
 
 {% macro appointmentUpdateLink(appointment) %}
   {% set queryString = '?id=' + appointment.id  %}
-  <a href="/latest/appointment-edit{{queryString}}">View/Update</a>
+  <a href="/appointments/edit{{queryString}}">View/Update</a>
 {% endmacro %}
 

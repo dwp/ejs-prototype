@@ -28,7 +28,7 @@
       {% set currentClaimantPage = 'appointment' %}
 
   		<div class="column-half">
-        <form action="/latest/appointment-edit" method="POST" class="form">
+        <form action="/appointments/edit" method="POST" class="form">
           <input type="hidden" name="id" value="{{data.appointmentForUpdate.id}}" />
 
           <div class="form-group">
@@ -43,12 +43,9 @@
               {% else %}
                 <select class="select form-control" name="appt-type" id="appt-type">
                   <option value="">Select</option>
-                  <option value="Provision referral" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision referral' else ''}}>Provision referral</option>
-                  <option value="Provision discussion" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision discussion' else ''}}>Provision discussion</option>
-                  <option value="Provision sanction" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Provision sanction' else ''}}>Provision sanction</option>
-                  <option value="Work focussed interview" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Work focussed interview' else ''}}>Work focussed interview</option>
-                  <option value="Advisor discretionary fund (ADF)" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Advisor discretionary fund (ADF)' else ''}}>Advisor discretionary fund (ADF)</option>
-                  <option value="Group information discussion" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Group information discussion' else ''}}>Group information discussion</option>
+                  <option value="Face-to-face" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Face-to-face' else ''}}>Face-to-face</option>
+                  <option value="Telephone" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Telephone' else ''}}>Telephone</option>
+                  <option value="Digital" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Digital' else ''}}>Digital</option>
                 </select>
               {% endif %}
 
@@ -109,6 +106,48 @@
 
             {% endif %}
 
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Appointment description</legend>
+
+              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+              <div>
+                <p>{{data.appointmentForUpdate.apptDescription}}</p>
+                <input class=hidden name="appt-description" id="appt-description" value="{{data.appointmentForUpdate.apptDescription}}"></input>
+              </div>
+              {% else %}
+              <select class="select form-control" name="appt-description" id="appt-description">
+                <option value="">Select</option>
+                <option value="Provision referral" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Provision referral' else ''}}>Provision referral</option>
+                <option value="Provision discussion" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Provision discussion' else ''}}>Provision discussion</option>
+                <option value="Provision sanction" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Provision sanction' else ''}}>Provision sanction</option>
+                <option value="Work focussed interview" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Work focussed interview' else ''}}>Work focussed interview</option>
+                <option value="Advisor discretionary fund (ADF)" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Advisor discretionary fund (ADF)' else ''}}>Advisor discretionary fund (ADF)</option>
+                <option value="Group information discussion" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Group information discussion' else ''}}>Group information discussion</option>
+              </select>
+              {% endif %}
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Immediate ?</legend>
+
+              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
+              <div>
+                <p>{{data.appointmentForUpdate.apptImmediateMarker}}</p>
+                <input class=hidden name="appt-immediate" id="appt-immediate" value="{{data.appointmentForUpdate.apptImmediateMarker}}"></input>
+              </div>
+              {% else %}
+              <select class="select form-control" name="appt-immediate" id="appt-immediate">
+                <option value="">Select</option>
+                <option value="Yes" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker=== 'Yes' else ''}}>Yes</option>
+                <option value="No" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker === 'No' else ''}}>No</option>
+              </select>
+              {% endif %}
+            </fieldset>
           </div>
 
           {% if not data.newAppt %}

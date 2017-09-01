@@ -2,7 +2,7 @@
  * Created by janegleadall on 30/08/2017.
  */
 class Appointment {
-  constructor(id, type, date, hrs, mins, status, immediateMarker, notes) {
+  constructor(id, type, date, hrs, mins, description, status, immediateMarker, notes) {
     this.id = id;
     this.apptType = type;
     this.apptDate = date;
@@ -12,27 +12,9 @@ class Appointment {
     this.apptDateForDisplay = this.getApptDateForDisplay();
     this.apptTimeHrs = hrs;
     this.apptTimeMins = mins;
+    this.apptDescription= description;
     this.apptStatus = status;
     this.apptImmediateMarker = immediateMarker;
-    this.apptNotes = notes;
-  }
-
-  setId(id) {
-    this.id = id;
-  }
-  setApptDate(date) {
-    this.date = date;
-  }
-  setAppointmentType(type) {
-    this.apptType = type;
-  }
-  setApptStatus(status) {
-    this.apptStatus = status;
-  }
-  setImmediateMarker() {
-    this.apptImmediateMarker = 1;
-  }
-  setApptNotes(notes) {
     this.apptNotes = notes;
   }
 
