@@ -143,8 +143,8 @@
               {% else %}
               <select class="select form-control" name="appt-immediate" id="appt-immediate">
                 <option value="">Select</option>
-                <option value="Yes" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker=== 'Yes' else ''}}>Yes</option>
                 <option value="No" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker === 'No' else ''}}>No</option>
+                <option value="Yes" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker=== 'Yes' else ''}}>Yes</option>
               </select>
               {% endif %}
             </fieldset>
