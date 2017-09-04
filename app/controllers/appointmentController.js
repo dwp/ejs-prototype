@@ -15,9 +15,17 @@ function appointmentsPage(req, res) {
 function appointmentViewPage(req, res) {
 
   var appointments = req.session.appointments || {};
-  var index = findPositionOfAppointmentInArray(req.query.id, appointments);
-  res.locals.data.appointmentForUpdate = appointments[index];
+  var dummyAppointmentForView = new Appointment(500, 'Telephone', '2018-01-01', '09', '00', 'Provision discussion', 'Booked', 'No', 'Claimant would like to discuss possible work experience opportunities')
+
+  if (req.query.id === '500') {
+    res.locals.data.appointmentForView = dummyAppointmentForView;
+  } else {
+    var index = findPositionOfAppointmentInArray(req.query.id, appointments);
+    res.locals.data.appointmentForView = appointments[index];
+  }
+
   res.render('appointments/appointment_view');
+
 }
 
 // If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details

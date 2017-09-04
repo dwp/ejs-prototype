@@ -20,7 +20,7 @@ GOV.UK prototyping kit
 
     <div class="main-content">
         <h1 class="heading-large">Appointment - Mr J. Smith</h1>
-        <h2 class="heading-medium">Current status is:  {{data.appointmentForUpdate.apptStatus}}</h2>
+        <h2 class="heading-medium">Current status is:  {{data.appointmentForView.apptStatus}}</h2>
         <br>
         <div class="grid-row">
             {% set currentClaimantPage = 'appointment' %}
@@ -30,21 +30,21 @@ GOV.UK prototyping kit
                 <div class="form-group">
                     <legend class="form-label-bold">Appointment type</legend>
                     <div>
-                        <p>{{data.appointmentForUpdate.apptType}}</p>
+                        <p>{{data.appointmentForViewapptType}}</p>
                     </div>
                 </div>
 
                 <div class="form-group form-date" id="appt-date-group">
                     <legend class="form-label-bold">Date</legend>
                     <div>
-                        <p>{{data.appointmentForUpdate.apptDateForDisplay}}</p>
+                        <p>{{data.appointmentForView.apptDateForDisplay}}</p>
                     </div>
                 </div>
 
                 <div class="form-group form-date" id="appt-time-group">
                     <legend class="form-label-bold">Time</legend>
                     <div>
-                        <p>{{data.appointmentForUpdate.apptTimeHrs}}:{{data.appointmentForUpdate.apptTimeMins}}</p>
+                        <p>{{data.appointmentForView.apptTimeHrs}}:{{data.appointmentForView.apptTimeMins}}</p>
                     </div>
 
                 </div>
@@ -52,14 +52,14 @@ GOV.UK prototyping kit
                 <div class="form-group">
                     <legend class="form-label-bold">Appointment description</legend>
                     <div>
-                        <p>{{data.appointmentForUpdate.apptDescription}}</p>
+                        <p>{{data.appointmentForView.apptDescription}}</p>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <legend class="form-label-bold">Immediate ?</legend>
                     <div>
-                        <p>{{data.appointmentForUpdate.apptImmediateMarker}}</p>
+                        <p>{{data.appointmentForView.apptImmediateMarker}}</p>
                     </div>
                 </div>
                 <div class="grid-row">
