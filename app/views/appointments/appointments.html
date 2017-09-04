@@ -43,7 +43,11 @@
                 <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
                 <td>{{appointment.apptType}}</td>
                 <td>{{appointment.apptStatus}}</td>
-                <td>{{appointmentUpdateLink(appointment)}}</td>
+                {% if appointment.apptStatus === 'Attended' or appointment.apptStatus === 'Failed to attend' %}
+                  <td>{{appointmentViewLink(appointment)}}</td>
+                {% else %}
+                  <td>{{appointmentUpdateLink(appointment)}}</td>
+                {% endif %}
               </tr>
             {% endfor %}
           </tbody>
@@ -66,3 +70,7 @@
   <a href="/appointments/edit{{queryString}}">View/Update</a>
 {% endmacro %}
 
+{% macro appointmentViewLink(appointment) %}
+{% set queryString = '?id=' + appointment.id  %}
+<a href="/appointments/view{{queryString}}">View</a>
+{% endmacro %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+{% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<script src="/public/javascripts/vendor/jquery.min.js"></script>
+
+<main id="content" role="main">
+
+    {% include "includes/main_nav.html" %}
+    <br>
+    {% include "includes/summary_nav.html" %}
+
+    <div class="main-content">
+        <h1 class="heading-large">Appointment - Mr J. Smith</h1>
+        <h2 class="heading-medium">Current status is:  {{data.appointmentForUpdate.apptStatus}}</h2>
+        <br>
+        <div class="grid-row">
+            {% set currentClaimantPage = 'appointment' %}
+
+            <div class="column-half">
+
+                <div class="form-group">
+                    <legend class="form-label-bold">Appointment type</legend>
+                    <div>
+                        <p>{{data.appointmentForUpdate.apptType}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group form-date" id="appt-date-group">
+                    <legend class="form-label-bold">Date</legend>
+                    <div>
+                        <p>{{data.appointmentForUpdate.apptDateForDisplay}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group form-date" id="appt-time-group">
+                    <legend class="form-label-bold">Time</legend>
+                    <div>
+                        <p>{{data.appointmentForUpdate.apptTimeHrs}}:{{data.appointmentForUpdate.apptTimeMins}}</p>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <legend class="form-label-bold">Appointment description</legend>
+                    <div>
+                        <p>{{data.appointmentForUpdate.apptDescription}}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <legend class="form-label-bold">Immediate ?</legend>
+                    <div>
+                        <p>{{data.appointmentForUpdate.apptImmediateMarker}}</p>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-full">
+                        <a href="/appointments/summary">Back to Appointments Summary</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

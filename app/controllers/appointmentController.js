@@ -12,6 +12,13 @@ function appointmentsPage(req, res) {
   res.render('appointments/appointments');
 }
 
+function appointmentViewPage(req, res) {
+
+  var appointments = req.session.appointments || {};
+  var index = findPositionOfAppointmentInArray(req.query.id, appointments);
+  res.locals.data.appointmentForUpdate = appointments[index];
+  res.render('appointments/appointment_view');
+}
 
 // If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
 function appointmentEditPage(req, res) {
@@ -111,5 +118,6 @@ function findPositionOfAppointmentInArray(inputQueryId, appointments) {
 }
 
 module.exports.appointmentsPage = appointmentsPage;
+module.exports.appointmentViewPage = appointmentViewPage;
 module.exports.appointmentEditPage = appointmentEditPage;
 module.exports.appointmentEditPageAction = appointmentEditPageAction;

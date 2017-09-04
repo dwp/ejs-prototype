@@ -10,6 +10,8 @@ module.exports = function(router) {
 
   // Appointments page routes
   router.get('/appointments/summary', appointment.appointmentsPage);
+  router.get('/appointments/view', appointment.appointmentViewPage);
   router.get('/appointments/edit', appointment.appointmentEditPage);
   router.post('/appointments/edit', appointment.appointmentEditPageAction);
+
 }

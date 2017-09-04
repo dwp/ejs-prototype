@@ -35,19 +35,12 @@
             <fieldset class="inline">
               <legend class="form-label-bold">Appointment type</legend>
 
-              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-                <div>
-                  <p>{{data.appointmentForUpdate.apptType}}</p>
-                  <input class=hidden name="appt-type" id="appt-type" value="{{data.appointmentForUpdate.apptType}}"></input>
-                </div>
-              {% else %}
                 <select class="select form-control" name="appt-type" id="appt-type">
                   <option value="">Select</option>
                   <option value="Face-to-face" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Face-to-face' else ''}}>Face-to-face</option>
                   <option value="Telephone" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Telephone' else ''}}>Telephone</option>
                   <option value="Digital" {{ 'selected' if  data.appointmentForUpdate.apptType === 'Digital' else ''}}>Digital</option>
                 </select>
-              {% endif %}
 
             </fieldset>
           </div>
@@ -56,14 +49,6 @@
             <legend class="form-label-bold">Date</legend>
             <p class="form-hint">For example, 01 09 2017</p>
 
-            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-              <div>
-                <p>{{data.appointmentForUpdate.apptDateForDisplay}}</p>
-                <input class="visually-hidden" name="appt-day" id="appt-day" value="{{data.appointmentForUpdate.apptDateDay}}"></input>
-                <input class="visually-hidden" name="appt-month" id="appt-month" value="{{data.appointmentForUpdate.apptDateMonth}}"></input>
-                <input class="visually-hidden" name="appt-year" id="appt-year" value="{{data.appointmentForUpdate.apptDateYear}}"></input>
-              </div>
-            {% else %}
               <div class="form-group form-group-day">
                 <label for="appt-day">Day</label>
                 <input type="text" class="form-control" id="appt-day" name="appt-day" value="{{data.appointmentForUpdate.apptDateDay}}">
@@ -76,24 +61,12 @@
                 <label for="appt-year">Year</label>
                 <input type="text" class="form-control" id="appt-year" name="appt-year" value="{{data.appointmentForUpdate.apptDateYear}}">
               </div>
-            {% endif %}
 
           </div>
 
           <div class="form-group form-date" id="appt-time-group">
             <legend class="form-label-bold">Time</legend>
             <p class="form-hint">For example, 10 45</p>
-
-
-            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-
-            <div>
-              <p>{{data.appointmentForUpdate.apptTimeHrs}}:{{data.appointmentForUpdate.apptTimeMins}}</p>
-              <input class="visually-hidden" name="appt-time-hrs" id="appt-time-hrs" value="{{data.appointmentForUpdate.apptTimeHrs}}"></input>
-              <input class="visually-hidden" name="appt-time-mins" id="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}"></input>
-            </div>
-
-            {% else %}
 
             <div class="form-group form-group-day">
               <label for="appt-time-hrs"></label>
@@ -104,20 +77,12 @@
               <input type="text" class="form-control" id="appt-time-mins" name="appt-time-mins" value="{{data.appointmentForUpdate.apptTimeMins}}">
             </div>
 
-            {% endif %}
-
           </div>
 
           <div class="form-group">
             <fieldset class="inline">
               <legend class="form-label-bold">Appointment description</legend>
 
-              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-              <div>
-                <p>{{data.appointmentForUpdate.apptDescription}}</p>
-                <input class=hidden name="appt-description" id="appt-description" value="{{data.appointmentForUpdate.apptDescription}}"></input>
-              </div>
-              {% else %}
               <select class="select form-control" name="appt-description" id="appt-description">
                 <option value="">Select</option>
                 <option value="Provision referral" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Provision referral' else ''}}>Provision referral</option>
@@ -127,7 +92,6 @@
                 <option value="Advisor discretionary fund (ADF)" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Advisor discretionary fund (ADF)' else ''}}>Advisor discretionary fund (ADF)</option>
                 <option value="Group information discussion" {{ 'selected' if  data.appointmentForUpdate.apptDescription === 'Group information discussion' else ''}}>Group information discussion</option>
               </select>
-              {% endif %}
             </fieldset>
           </div>
 
@@ -135,30 +99,16 @@
             <fieldset class="inline">
               <legend class="form-label-bold">Immediate ?</legend>
 
-              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-              <div>
-                <p>{{data.appointmentForUpdate.apptImmediateMarker}}</p>
-                <input class=hidden name="appt-immediate" id="appt-immediate" value="{{data.appointmentForUpdate.apptImmediateMarker}}"></input>
-              </div>
-              {% else %}
               <select class="select form-control" name="appt-immediate" id="appt-immediate">
                 <option value="">Select</option>
                 <option value="No" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker === 'No' else ''}}>No</option>
                 <option value="Yes" {{ 'selected' if  data.appointmentForUpdate.apptImmediateMarker=== 'Yes' else ''}}>Yes</option>
               </select>
-              {% endif %}
             </fieldset>
           </div>
 
-          {% if not data.newAppt %}
           <div class="form-group" id="appt-status-group">
             <fieldset class="inline">
-
-              {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-              <div>
-                <input class=hidden name="appt-status" id="appt-status" value="{{data.appointmentForUpdate.apptStatus}}"></input>
-              </div>
-              {% endif %}
 
               {% if data.appointmentForUpdate.apptStatus === 'Booked' or data.appointmentForUpdate.apptStatus === 'Re-booked' %}
               <legend class="form-label-bold">Status</legend>
@@ -184,14 +134,9 @@
 
             </fieldset>
           </div>
-          {% endif %}
 
           <div class="form-group">
-            {% if data.appointmentForUpdate.apptStatus === 'Attended' or data.appointmentForUpdate.apptStatus === 'Failed to attend' %}
-              <input type="submit" class="button" value="Back to Appointments Summary">
-            {% else %}
               <input type="submit" class="button" value="Save">
-            {%endif %}
           </div>
         </form>
       </div>     
