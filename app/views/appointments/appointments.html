@@ -19,7 +19,6 @@
   <div class="main-content">
     <h1 class="heading-large">Appointments summary -  Mr J Smith</h1>
 
-
       {% set currentClaimantPage = 'appointments' %}
       {% include "includes/summary_nav.html" %}
 
@@ -29,10 +28,10 @@
         <table>
           <thead>
             <tr>
+              <th scope="col">Type</th>
               <th scope="col">Description</th>
               <th scope="col">Date</th>
               <th scope="col">Time</th>
-              <th scope="col">Type</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>
@@ -40,10 +39,10 @@
           <tbody>
             {% for appointment in data.appointments.futureAppts %}
               <tr>
+                <td>{{appointment.apptType}}</td>
                 <td>{{appointment.apptDescription}}</td>
                 <td>{{appointment.apptDateForDisplay}}</td>
                 <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
-                <td>{{appointment.apptType}}</td>
                 <td>{{appointment.apptStatus}}</td>
                 <td>{{appointmentUpdateLink(appointment)}}</td>
               </tr>
@@ -60,10 +59,10 @@
         <table>
           <thead>
           <tr>
+            <th scope="col">Type</th>
             <th scope="col">Description</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
-            <th scope="col">Type</th>
             <th scope="col">Status</th>
             <th scope="col"></th>
           </tr>
@@ -71,10 +70,10 @@
           <tbody>
           {% for appointment in data.appointments.pastAppts %}
           <tr>
+            <td>{{appointment.apptType}}</td>
             <td>{{appointment.apptDescription}}</td>
             <td>{{appointment.apptDateForDisplay}}</td>
             <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
-            <td>{{appointment.apptType}}</td>
             <td>{{appointment.apptStatus}}</td>
             <td>{{appointmentViewLink(appointment)}}</td>
           </tr>
@@ -100,6 +99,6 @@
 {% endmacro %}
 
 {% macro appointmentViewLink(appointment) %}
-{% set queryString = '?id=' + appointment.id  %}
-<a href="/appointments/view{{queryString}}">View</a>
+  {% set queryString = '?id=' + appointment.id  %}
+  <a href="/appointments/view{{queryString}}">View</a>
 {% endmacro %}

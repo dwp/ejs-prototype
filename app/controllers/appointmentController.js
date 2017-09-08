@@ -13,7 +13,7 @@ function appointmentsPage(req, res) {
   var apptsOut = {};
 
   for (var i = 0; i < apptsIn.length; i++) {
-    if ((apptsIn[i].apptStatus === 'Booked') || (apptsIn[i].apptStatus === 'Re-booked')) {
+    if (apptsIn[i].apptStatus === 'Booked') {
       futureAppointments.push(apptsIn[i]);
     } else {
       pastAppointments.push(apptsIn[i]);
