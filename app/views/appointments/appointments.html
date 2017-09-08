@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<script src="/public/javascripts/vendor/jquery.min.js"></script>
+
+<main id="content" role="main">
+  
+  {% include "includes/main_nav.html" %}
+  
+  <div class="main-content">
+    <h1 class="heading-large">Appointments summary -  Mr J Smith</h1>
+
+      {% set currentClaimantPage = 'appointments' %}
+      {% include "appointments/summary_nav_for_appts.html" %}
+
+    {% if data.appointments.futureAppts | length != 0 %}
+    <div class="grid-row">
+      <div class="column-full">
+        <legend class="form-label-bold">Future appointments</legend>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for appointment in data.appointments.futureAppts %}
+              <tr>
+                <td>{{appointment.apptType}}</td>
+                <td>{{appointment.apptDescription}}</td>
+                <td>{{appointment.apptDateForDisplay}}</td>
+                <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+                <td>{{appointment.apptStatus}}</td>
+                <td>{{appointmentUpdateLink(appointment)}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    {% endif %}
+    <br>
+    <br>
+    {% if data.appointments.pastAppts | length != 0 %}
+    <div class="grid-row">
+      <div class="column-full">
+        <legend class="form-label-bold">Previous appointments</legend>
+        <table>
+          <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for appointment in data.appointments.pastAppts %}
+          <tr>
+            <td>{{appointment.apptType}}</td>
+            <td>{{appointment.apptDescription}}</td>
+            <td>{{appointment.apptDateForDisplay}}</td>
+            <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+            <td>{{appointment.apptStatus}}</td>
+            <td>{{appointmentViewLink(appointment)}}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-full">
+        <br/>
+        <a href="/appointments/edit" class="button">Create appointment</a>
+      </div>
+    </div> 
+  </div>
+</main>
+{% endblock %}
+
+{% macro appointmentUpdateLink(appointment) %}
+  {% set queryString = '?id=' + appointment.id  %}
+  <a href="/appointments/edit{{queryString}}">View/Update</a>
+{% endmacro %}
+
+{% macro appointmentViewLink(appointment) %}
+  {% set queryString = '?id=' + appointment.id  %}
+  <a href="/appointments/view{{queryString}}">View</a>
+{% endmacro %}

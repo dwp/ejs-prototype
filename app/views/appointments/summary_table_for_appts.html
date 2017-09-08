@@ -112,14 +112,7 @@
 <div class="column-half">&nbsp;</div>
 
 <div class="column-half">
-  {% if claimStatus === 'Dormant' %}
-    <table>
-      <caption class="heading-small">Next appointment</caption>
-      <tr>
-        <td>None</td>
-      </tr>
-    </table>
-  {% elif data.hasAppointment %}
+  {% if data.hasAppt == 1 %}
     <table>
       <caption class="heading-small">Next appointment</caption>
       <tr>
@@ -129,22 +122,6 @@
       <tr>
         <td>Type</td>
         <td>Telephone</td>
-      </tr>
-      <tr>
-        <td>Date:</td>
-        <td>30/10/2015</td>
-      </tr>
-      <tr>   
-        <td>Time:</td>
-        <td>11:30</td>
-      </tr>
-    </table>
-  {% elif not data.hasAppointment and data.appointmentUpdate  == 'Failed to attend'%}
-    <table>
-      <caption class="heading-small">Last Appointment</caption>
-      <tr>
-        <td>Status:</td>
-        <td>{{data.appointmentUpdate}}</td>
       </tr>
       <tr>
         <td>Date:</td>

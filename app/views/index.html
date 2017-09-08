@@ -9,6 +9,24 @@
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
         <div class="grid-row">
+          {% set apptDiaryManagementScreens = [{
+          workTitle : 'View, create, and update appointments',
+          links: [{
+          link : 'appointments/summary', title : 'Appointments summary'
+          }, {
+          link : 'appointments/edit', title : 'Create appointment'
+          }, {
+          link : 'appointments/view?id=500', title : 'View appointment'
+          }, {
+          link : 'appointments/edit?id=500', title : 'Update appointment'
+          }]
+          }] %}
+
+          {{ sprintLinks( 'Diary & Appointment Management', apptDiaryManagementScreens) }}
+
+        </div>
+
+        <div class="grid-row">
           {% set whpSelectionToolWorkcoachScreens = [{ 
             workTitle : 'Work coach',
             links: [{ 
