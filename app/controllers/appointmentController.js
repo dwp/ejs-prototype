@@ -69,6 +69,7 @@ function appointmentEditPage(req, res) {
     res.locals.data.appointmentForUpdate = appointments[index];
   }
 
+  res.locals.data.hasAppointment = checkForBookedAppointments(appointments);
   res.render('appointments/appointment_edit');
 
 }
@@ -120,7 +121,7 @@ function checkForBookedAppointments(appointmentsListToCheck) {
   var apptsList = appointmentsListToCheck;
   var bookedAppointmentIndicator = 0;
   for (var i = 0; i < apptsList.length; i++) {
-    if (apptsList[i].apptStatus === 'Booked' || apptsList[i].apptStatus === 'Re-booked') {
+    if (apptsList[i].apptStatus === 'Booked') {
       bookedAppointmentIndicator = 1;
       break;
     }
@@ -131,7 +132,7 @@ function checkForBookedAppointments(appointmentsListToCheck) {
 function setInitialAppointmentsList(){
   var apptsList = [];
   var appointment;
-  appointment = new Appointment(8,'Face-to-face', '2017-12-01', '10', '15', 'Group information session', 'Booked', 'No', '');
+  appointment = new Appointment(8,'Face-to-face', '2017-12-01', '10', '15', 'Group information discussion', 'Booked', 'No', '');
   apptsList.push(appointment);
   appointment = new Appointment(7,'Telephone', '2017-07-09', '14', '10', 'Advisory discretion fund (ADF)', 'Failed to attend', 'No', '');
   apptsList.push(appointment);
