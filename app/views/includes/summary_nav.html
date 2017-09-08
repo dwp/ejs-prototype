@@ -12,10 +12,10 @@
 
       <li class="{% if currentClaimantPage === "appointments" %}selected{% endif %} {% if appointmentsDisabled %}disabled{% endif %}"> 
         {% if appointmentsDisabled %}
-          <span>Appointment</span>
+          <span>Appointments</span>
         {% else %}
-          <a id="appointments" href="/latest/job_next_new" class="menu-item">
-            Appointment {% if not data.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          <a id="appointments" href="/appointments/summary" class="menu-item">
+            Appointments {% if not data.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
           </a>
         {% endif %}
       </li>

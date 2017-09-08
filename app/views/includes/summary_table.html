@@ -123,6 +123,14 @@
     <table>
       <caption class="heading-small">Next appointment</caption>
       <tr>
+        <td>Description</td>
+        <td>Work focussed interview</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td>Telephone</td>
+      </tr>
+      <tr>
         <td>Date:</td>
         <td>30/10/2015</td>
       </tr>
@@ -152,12 +160,12 @@
       <caption class="heading-small red-cross">
         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;No appointment set!
         {% if not checkClaimantDetails %}
-          <a class="normal" href="job_next_new">Create one</a>
+          <a class="normal" href="/appointments/edit">Create one</a>
         {% endif %}
       </caption>
       <tr>
         {% if checkClaimantDetails %}
-          <td>Please check the claimant's details before you create an apppointment</td>
+          <td>Please check the claimant's details before you create an appointment</td>
         {% else %}
           <td>None</td>
         {% endif %}

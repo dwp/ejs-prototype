@@ -7,15 +7,34 @@ const Appointment = require('../models/appointment');
 function appointmentsPage(req, res) {
 
   var appointments = setInitialAppointmentsList();
-  req.session.appointments = req.session.appointments || appointments;
-  res.locals.data.appointments = req.session.appointments;
+  var pastAppointments = [];
+  var futureAppointments = [];
+  var apptsIn = req.session.appointments || appointments;
+  var apptsOut = {};
+
+  for (var i = 0; i < apptsIn.length; i++) {
+    if ((apptsIn[i].apptStatus === 'Booked') || (apptsIn[i].apptStatus === 'Re-booked')) {
+      futureAppointments.push(apptsIn[i]);
+    } else {
+      pastAppointments.push(apptsIn[i]);
+    }
+  }
+
+  apptsOut = { futureAppts : futureAppointments,
+               pastAppts : pastAppointments};
+
+  req.session.appointments = apptsIn;
+  res.locals.data.appointments = apptsOut;
+  res.locals.data.hasAppointment = checkForBookedAppointments(apptsIn);
+
   res.render('appointments/appointments');
 }
 
 function appointmentViewPage(req, res) {
 
-  var appointments = req.session.appointments || {};
+  var appointments = req.session.appointments || [];
   var dummyAppointmentForView = new Appointment(500, 'Telephone', '2018-01-01', '09', '00', 'Provision discussion', 'Booked', 'No', 'Claimant would like to discuss possible work experience opportunities')
+
 
   if (req.query.id === '500') {
     res.locals.data.appointmentForView = dummyAppointmentForView;
@@ -24,6 +43,7 @@ function appointmentViewPage(req, res) {
     res.locals.data.appointmentForView = appointments[index];
   }
 
+  res.locals.data.hasAppointment = 1;
   res.render('appointments/appointment_view');
 
 }
@@ -31,10 +51,8 @@ function appointmentViewPage(req, res) {
 // If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
 function appointmentEditPage(req, res) {
 
-  var appointments = req.session.appointments || {};
+  var appointments = req.session.appointments || [];
   var dummyAppointmentForUpdate = new Appointment(500, 'Telephone', '2018-01-01', '09', '00', 'Provision discussion', 'Booked', 'No', 'Claimant would like to discuss possible work experience opportunities')
-
-  console.log('req.query.id is:  ', req.query.id);
 
 // If new appointment, set new appointment marker and set up empty object to give to page
   if (!req.query.id) {
@@ -50,9 +68,6 @@ function appointmentEditPage(req, res) {
     var index = findPositionOfAppointmentInArray(req.query.id, appointments);
     res.locals.data.appointmentForUpdate = appointments[index];
   }
-
-  console.log('res.locals.data.appointmentForUpdate is: ', res.locals.data.appointmentForUpdate);
-  console.log('res.locals.data.newAppt is: ', res.locals.data.newAppt );
 
   res.render('appointments/appointment_edit');
 
@@ -78,33 +93,10 @@ function appointmentEditPageAction(req, res) {
     appointments.unshift(appointment);
   }
 
+  res.locals.data.hasAppointment = 1;
   req.session.appointments = appointments;
 
   res.redirect('/appointments/summary');
-
-}
-
-function setInitialAppointmentsList(){
-  var apptsList = [];
-  var appointment;
-  appointment = new Appointment(8,'Face-to-face', '2017-10-01', '10', '15', 'Provision sanction', 'Booked', 'No', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(7,'Telephone', '2017-07-09', '14', '10', 'Advisory discretion fund (ADF)', 'Failed to attend', 'No', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(6,'Face-to-face', '2017-06-01', '11', '05', 'Group information session', 'Attended', 'Yes', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(5,'Face-to-face', '2017-04-14', '14', '45', 'Provision referral', 'Booked', 'No', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(4,'Face-to-face', '2017-10-03', '10', '15', 'Provision discussion', 'Booked', 'Yes', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(3,'Digital', '2017-07-06', '09', '20', 'Provision referral', 'Failed to attend', 'No', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(2,'Face-to-face', '2017-06-01', '15', '20', 'Work focused interview', 'Re-booked', 'No', '');
-  apptsList.push(appointment);
-  appointment = new Appointment(1,'Digital', '2017-04-22', '11', '30', 'Provision referral', 'Failed to attend', 'No', '');
-  apptsList.push(appointment);
-
-  return apptsList;
 
 }
 
@@ -121,8 +113,43 @@ function findPositionOfAppointmentInArray(inputQueryId, appointments) {
     }
   }
 
-  console.log('Position in array is: ', positionOfApptInArray);
   return positionOfApptInArray;
+}
+
+function checkForBookedAppointments(appointmentsListToCheck) {
+  var apptsList = appointmentsListToCheck;
+  var bookedAppointmentIndicator = 0;
+  for (var i = 0; i < apptsList.length; i++) {
+    if (apptsList[i].apptStatus === 'Booked' || apptsList[i].apptStatus === 'Re-booked') {
+      bookedAppointmentIndicator = 1;
+      break;
+    }
+  }
+  return bookedAppointmentIndicator;
+}
+
+function setInitialAppointmentsList(){
+  var apptsList = [];
+  var appointment;
+  appointment = new Appointment(8,'Face-to-face', '2017-12-01', '10', '15', 'Group information session', 'Booked', 'No', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(7,'Telephone', '2017-07-09', '14', '10', 'Advisory discretion fund (ADF)', 'Failed to attend', 'No', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(6,'Face-to-face', '2017-06-01', '11', '05', 'Group information session', 'Attended', 'Yes', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(5,'Face-to-face', '2017-11-14', '14', '45', 'Work focussed interview', 'Booked', 'No', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(4,'Face-to-face', '2017-10-03', '10', '15', 'Provision discussion', 'Booked', 'Yes', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(3,'Digital', '2017-07-06', '09', '20', 'Provision referral', 'Failed to attend', 'No', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(2,'Face-to-face', '2017-06-01', '15', '20', 'Work focussed interview', 'Re-booked', 'No', '');
+  apptsList.push(appointment);
+  appointment = new Appointment(1,'Digital', '2017-04-22', '11', '30', 'Provision sanction', 'Failed to attend', 'No', '');
+  apptsList.push(appointment);
+
+  return apptsList;
+
 }
 
 module.exports.appointmentsPage = appointmentsPage;

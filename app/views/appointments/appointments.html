@@ -19,11 +19,13 @@
   <div class="main-content">
     <h1 class="heading-large">Appointments summary -  Mr J Smith</h1>
 
-    <div class="grid-row">
-      {% set currentClaimantPage = 'appointment' %}
+
+      {% set currentClaimantPage = 'appointments' %}
       {% include "includes/summary_nav.html" %}
 
+    <div class="grid-row">
       <div class="column-full">
+        <legend class="form-label-bold">Future appointments</legend>
         <table>
           <thead>
             <tr>
@@ -36,20 +38,47 @@
             </tr>
           </thead>
           <tbody>
-            {% for appointment in data.appointments %}
+            {% for appointment in data.appointments.futureAppts %}
               <tr>
                 <td>{{appointment.apptDescription}}</td>
                 <td>{{appointment.apptDateForDisplay}}</td>
                 <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
                 <td>{{appointment.apptType}}</td>
                 <td>{{appointment.apptStatus}}</td>
-                {% if appointment.apptStatus === 'Attended' or appointment.apptStatus === 'Failed to attend' %}
-                  <td>{{appointmentViewLink(appointment)}}</td>
-                {% else %}
-                  <td>{{appointmentUpdateLink(appointment)}}</td>
-                {% endif %}
+                <td>{{appointmentUpdateLink(appointment)}}</td>
               </tr>
             {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="grid-row">
+      <div class="column-full">
+        <legend class="form-label-bold">Previous appointments</legend>
+        <table>
+          <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for appointment in data.appointments.pastAppts %}
+          <tr>
+            <td>{{appointment.apptDescription}}</td>
+            <td>{{appointment.apptDateForDisplay}}</td>
+            <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+            <td>{{appointment.apptType}}</td>
+            <td>{{appointment.apptStatus}}</td>
+            <td>{{appointmentViewLink(appointment)}}</td>
+          </tr>
+          {% endfor %}
           </tbody>
         </table>
       </div>
