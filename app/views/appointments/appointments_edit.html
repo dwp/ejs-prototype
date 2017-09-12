@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototyping kit
+{% endblock %}
+
+{% block propositionHeader %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block content %}
+
+<script src="/public/javascripts/vendor/jquery.min.js"></script>
+
+<main id="content" role="main">
+  
+  {% include "includes/main_nav.html" %}
+  
+  <div class="main-content">
+    <h1 class="heading-large">Update appointments -  Mr J Smith</h1>
+
+      {% set currentClaimantPage = 'appointments' %}
+      {% include "appointments/summary_nav_for_appts.html" %}
+
+    <form action="/appointments/edit/multiple" method="POST" class="form">
+      {% if data.appointments.futureAppts | length != 0 %}
+      <div class="form-group grid-row">
+        <div class="column-full">
+          <legend class="form-label-bold">Booked appointments for update</legend>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for appointment in data.appointments.futureAppts %}
+              <input type="hidden" name="id-{{appointment.id}}" id="id-{{appointment.id}}" value={{appointment.id}}></input>
+                <tr>
+                  <td>{{appointment.apptType}}</td>
+                  <td>{{appointment.apptDescription}}</td>
+                  <td>{{appointment.apptDateForDisplay}}</td>
+                  <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+                  <td><select class="select form-control" name="appt-status-{{appointment.id}}" id="appt-status-{{appointment.id}}">
+                    <option value="Booked" {{ 'selected' if  appointment.apptStatus === 'Booked' else ''}}>Booked</option>
+                    <option value="Re-booked" {{ 'selected' if  appointment.apptStatus === 'Re-booked' else ''}}>Re-booked</option>
+                    <option value="Attended" {{ 'selected' if  appointment.apptStatus === 'Attended' else ''}}>Attended</option>
+                    <option value="Failed to attend" {{ 'selected' if  appointment.apptStatus === 'Failed to attend' else ''}}>Failed to attend</option>
+                  </select></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% else %}
+      <div class="form-group grid-row">
+        <p>There are no planned appointments available for update</p>
+      </div>
+      {% endif %}
+      <br>
+      <div class="form-group grid-row">
+        <input type="submit" class="button" value="Save changes">
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}

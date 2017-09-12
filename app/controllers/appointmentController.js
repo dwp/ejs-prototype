@@ -1,8 +1,8 @@
 const Appointment = require('../models/appointment');
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- /*                                        Appointment Page Controllers
- /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- */
+/*                                        Appointment Page Controllers
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 
 function appointmentsPage(req, res) {
 
@@ -48,10 +48,10 @@ function appointmentViewPage(req, res) {
 
 }
 
-// If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
 function appointmentEditPage(req, res) {
 
   var appointments = req.session.appointments || [];
+  // If not new appointment, but is an update direct from the index page (i.e. test appointment array has not yet been set up), use dummy appointment details
   var dummyAppointmentForUpdate = new Appointment(500, 'Telephone', '2018-01-01', '09', '00', 'Provision discussion', 'Booked', 'No', 'Claimant would like to discuss possible work experience opportunities')
 
 // If new appointment, set new appointment marker and set up empty object to give to page
@@ -100,6 +100,78 @@ function appointmentEditPageAction(req, res) {
   res.redirect('/appointments/summary');
 
 }
+
+function appointmentsEditMultiplePage(req, res) {
+  var pastAppointments = [];
+  var futureAppointments = [];
+  var apptsIn = req.session.appointments ? req.session.appointments : setInitialAppointmentsList();
+  var apptsOut = {};
+
+  for (var i = 0; i < apptsIn.length; i++) {
+    if (apptsIn[i].apptStatus === 'Booked') {
+      futureAppointments.push(apptsIn[i]);
+    } else {
+      pastAppointments.push(apptsIn[i]);
+    }
+  }
+
+  apptsOut = { futureAppts : futureAppointments,
+    pastAppts : pastAppointments};
+
+  req.session.appointments = apptsIn;
+  req.session.forUpdate = apptsOut.futureAppts;
+  res.locals.data.appointments = apptsOut;
+  res.locals.data.hasAppointment = checkForBookedAppointments(apptsIn);
+
+  res.render('appointments/appointments_edit');
+
+}
+
+function appointmentsEditMultiplePageAction(req, res) {
+
+  var appointmentsFullList = req.session.appointments ? req.session.appointments : setInitialAppointmentsList();
+  var appointments = req.session.forUpdate ? req.session.forUpdate : [];
+
+  if (appointments === []) {
+    console.log('Appointments to be updated is null array');
+    res.redirect('/appointments/summary');
+  } else {
+    for (var i = 0; i < appointments.length; i++) {
+      var id = req.body['id-' + appointments[i].id];
+      var numericId = parseInt(id);
+
+      if ((numericId !== null) && (numericId !== undefined) && (numericId > 0)) {
+
+        var index = findPositionOfAppointmentInArray(numericId, appointmentsFullList);
+        var type = appointmentsFullList[index].apptType;
+        var date = appointmentsFullList[index].apptDate;
+        var timeHrs = appointmentsFullList[index].apptTimeHrs;
+        var timeMins = appointmentsFullList[index].apptTimeMins
+        var desc = appointmentsFullList[index].apptDescription;
+        var status = req.body['appt-status-' + appointments[i].id];
+        var immediate = appointmentsFullList[index].apptImmediateMarker;
+        var notes = appointmentsFullList[index].apptNotes;
+        var appointment = new Appointment(numericId, type, date, timeHrs, timeMins, desc, status, immediate, notes);
+
+        appointmentsFullList[index] = appointment;
+
+      } else {
+        console.log('id is: ', id);
+        console.log('numericId is: ', numericId);
+      }
+    }
+
+    res.locals.data.hasAppointment = checkForBookedAppointments(appointmentsFullList);
+    req.session.appointments = appointmentsFullList;
+
+    res.redirect('/appointments/summary');
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*                                        Utilities
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
 
 function findPositionOfAppointmentInArray(inputQueryId, appointments) {
   var positionOfApptInArray;
@@ -157,3 +229,5 @@ module.exports.appointmentsPage = appointmentsPage;
 module.exports.appointmentViewPage = appointmentViewPage;
 module.exports.appointmentEditPage = appointmentEditPage;
 module.exports.appointmentEditPageAction = appointmentEditPageAction;
+module.exports.appointmentsEditMultiplePage = appointmentsEditMultiplePage;
+module.exports.appointmentsEditMultiplePageAction = appointmentsEditMultiplePageAction;
