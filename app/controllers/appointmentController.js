@@ -139,23 +139,22 @@ function appointmentsEditMultiplePageAction(req, res) {
     for (var i = 0; i < appointments.length; i++) {
       var id = req.body['id-' + appointments[i].id];
       var numericId = parseInt(id);
-      var type = req.body['appt-type-' + appointments[i].id];
-      var dateDay = req.body['appt-day-' + appointments[i].id];
-      var dateMonth = req.body['appt-month-' + appointments[i].id];
-      var dateYear = req.body['appt-year-' + appointments[i].id];
-      var date = dateYear + '-' + dateMonth + '-' + dateDay;
-      var timeHrs = req.body['appt-time-hrs-' + appointments[i].id];
-      var timeMins = req.body['appt-time-mins-' + appointments[i].id];
-      var desc = req.body['appt-desc-' + appointments[i].id];
-      console.log('id = ' + id + '....req.body for description = ' + (req.body['appt-desc-' + appointments[i].id]));
-      var status = req.body['appt-status-' + appointments[i].id];
-      var immediate = req.body['appt-immediate-' + appointments[i].id];
-      var notes = 'Default for now';
 
       if ((numericId !== null) && (numericId !== undefined) && (numericId > 0)) {
+
         var index = findPositionOfAppointmentInArray(numericId, appointmentsFullList);
+        var type = appointmentsFullList[index].apptType;
+        var date = appointmentsFullList[index].apptDate;
+        var timeHrs = appointmentsFullList[index].apptTimeHrs;
+        var timeMins = appointmentsFullList[index].apptTimeMins
+        var desc = appointmentsFullList[index].apptDescription;
+        var status = req.body['appt-status-' + appointments[i].id];
+        var immediate = appointmentsFullList[index].apptImmediateMarker;
+        var notes = appointmentsFullList[index].apptNotes;
         var appointment = new Appointment(numericId, type, date, timeHrs, timeMins, desc, status, immediate, notes);
+
         appointmentsFullList[index] = appointment;
+
       } else {
         console.log('id is: ', id);
         console.log('numericId is: ', numericId);

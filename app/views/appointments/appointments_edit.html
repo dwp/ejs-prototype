@@ -40,15 +40,6 @@
             <tbody>
               {% for appointment in data.appointments.futureAppts %}
               <input type="hidden" name="id-{{appointment.id}}" id="id-{{appointment.id}}" value={{appointment.id}}></input>
-              <input type="hidden" name="appt-type-{{appointment.id}}" id="appt-type-{{appointment.id}}" value={{appointment.apptType}}></input>
-              <input type="hidden" name="appt-day-{{appointment.id}}" id="appt-day-{{appointment.id}}" value={{appointment.apptDateDay}}></input>
-              <input type="hidden" name="appt-month-{{appointment.id}}" id="appt-month-{{appointment.id}}" value={{appointment.apptDateMonth}}></input>
-              <input type="hidden" name="appt-year-{{appointment.id}}" id="appt-year-{{appointment.id}}" value={{appointment.apptDateYear}}></input>
-              <input type="hidden" name="appt-time-hrs-{{appointment.id}}" id="appt-time-hrs-{{appointment.id}}" value={{appointment.apptTimeHrs}}></input>
-              <input type="hidden" name="appt-time-mins-{{appointment.id}}" id="appt-time-mins-{{appointment.id}}" value={{appointment.apptTimeMins}}></input>
-              <input type="hidden" name="appt-desc-{{appointment.id}}" id="appt-desc-{{appointment.id}}" value={{appointment.apptDescription}}></input>
-              <input type="hidden" name="appt-immediate-{{appointment.id}}" id="appt-immediate-{{appointment.id}}" value={{appointment.apptImmediateMarker}}></input>
-              <input type="hidden" name="appt-notes-{{appointment.id}}" id="appt-notes-{{appointment.id}}" value={{appointment.apptNotes}}></input>
                 <tr>
                   <td>{{appointment.apptType}}</td>
                   <td>{{appointment.apptDescription}}</td>
