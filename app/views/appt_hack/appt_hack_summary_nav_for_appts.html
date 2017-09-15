@@ -1,0 +1,46 @@
+<div class="column-full summary-nav-wrapper">   
+  <ul>
+    <li class="{% if currentClaimantPage === "summary" %}selected{% endif %}">
+      <a id="Summary" href="/appt_hack/appt_hack_claimant_summary?hasAppt={{data.hasAppointment}}" class="menu-item ">Summary</a>
+    </li>
+
+    
+    {% if data.user.role !== 'gatekeeper'%}
+      <li class="{% if currentClaimantPage === "edit" %}selected{% endif %}">
+        <a id="edit_record" href="/latest/job_edit" class="menu-item ">Claimant</a>
+      </li>
+
+      <li class="{% if currentClaimantPage === "appointments" %}selected{% endif %} {% if appointmentsDisabled %}disabled{% endif %}"> 
+        {% if appointmentsDisabled %}
+          <span>Appointments</span>
+        {% else %}
+          <a id="appointments" href="/appointments/summary" class="menu-item">
+            Appointments {% if not data.hasAppointment and not appointmentsDisabled %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+          </a>
+        {% endif %}
+      </li>
+
+      {% if claimStatus === 'Dormant' %}
+        {% set claimHref = 'job_claim_dormant' %}
+      {% else %}
+        {% set claimHref = 'job_claim_active' %}
+      {% endif %}
+      <li class="{% if currentClaimantPage === "claim" %}selected{% endif %}">
+        <a id="claim_active" href="/latest/{{claimHref}}" class="menu-item">
+          Claim
+        </a>
+      </li>
+      <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
+        <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+        </a>
+      </li>
+    {% else %}
+      <li class="{% if currentClaimantPage === "selectionTool" %}selected{% endif %}">
+        <a id="selection_tool" href="/latest/selection_tool" class="menu-item">
+          WHP selection tool {% if data.whpStatus === 'Action - refer to WHP (16 May 2017)' %}<i class="fa fa-exclamation-circle"></i>{% endif %}
+        </a>
+      </li>
+    {% endif %}
+  </ul> 
+</div>  

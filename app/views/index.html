@@ -9,6 +9,20 @@
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
         <div class="grid-row">
+          {% set apptBookingHackScreens = [{
+          workTitle : 'Update appt and view claimant summary',
+          links: [{
+          link : 'apptbookhack/update', title : 'Update appointment'
+          }, {
+          link : 'apptbookhack/summary', title : 'Claimant summary with appointment (if booked)'
+          }]
+          }] %}
+
+          {{ sprintLinks( 'Appointment Booking Hack', apptBookingHackScreens) }}
+
+        </div>
+
+        <div class="grid-row">
           {% set apptDiaryManagementScreens = [{
           workTitle : 'View, create, and update appointments',
           links: [{

@@ -12,5 +12,6 @@ require('./routes/whp-selection-tool')(router);
 require('./routes/whp-gatekeeper')(router);
 require('./routes/esa-claimant-commitment')(router);
 require('./routes/job-profile')(router);
+require('./routes/appt-booking-hack')(router);
 
 module.exports = router;
