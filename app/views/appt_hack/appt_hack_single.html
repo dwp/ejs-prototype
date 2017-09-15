@@ -17,7 +17,7 @@
   {% include "includes/main_nav.html" %}
   
   <div class="main-content">
-    <h1 class="heading-large">Update appointments -  Mr J Smith</h1>
+    <h1 class="heading-large">Update appointment -  Mr J Smith</h1>
 
       {% set currentClaimantPage = 'appointments' %}
       {% include "appt_hack/appt_hack_summary_nav_for_appts.html" %}
@@ -36,16 +36,16 @@
               </tr>
             </thead>
             <tbody>
-              <input type="hidden" name="id" id="id" value={{appointment.id}}></input>
+              <input type="hidden" name="id" id="id" value={{data.appointment.id}}></input>
                 <tr>
-                  <td>{{appointment.apptDateForDisplay}}</td>
-                  <td>{{appointment.apptTimeHrs}}:{{appointment.apptTimeMins}}</td>
+                  <td>{{data.appointment.apptDateForDisplay}}</td>
+                  <td>{{data.appointment.apptTimeHrs}}:{{data.appointment.apptTimeMins}}</td>
                   <td><select class="select form-control" name="appt-status" id="appt-status">
                     <option value="">Select</option>
-                    <option value="Re-book" {{ 'selected' if  appointment.apptStatus === 'Re-book' else ''}}>Re-book</option>
-                    <option value="Immediate" {{ 'selected' if  appointment.apptStatus === 'Immediate' else ''}}>Immediate</option>
-                    <option value="Attended" {{ 'selected' if  appointment.apptStatus === 'Attended' else ''}}>Attended</option>
-                    <option value="Failed to attend" {{ 'selected' if  appointment.apptStatus === 'Failed to attend' else ''}}>Failed to attend</option>
+                    <option value="Re-book" {{ 'selected' if  data.appointment.apptStatus === 'Re-book' else ''}}>Re-book</option>
+                    <option value="Immediate" {{ 'selected' if  data.appointment.apptStatus === 'Immediate' else ''}}>Immediate</option>
+                    <option value="Attended" {{ 'selected' if  data.appointment.apptStatus === 'Attended' else ''}}>Attended</option>
+                    <option value="Failed to attend" {{ 'selected' if  data.appointment.apptStatus === 'Failed to attend' else ''}}>Failed to attend</option>
                   </select></td>
                 </tr>
             </tbody>

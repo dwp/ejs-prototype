@@ -4,12 +4,12 @@ const request = require('request');
 function apptUpdatePage(req, res) {
 
   var claimId = 221;
-  var appt = {};
+  var appt;
   var apptToDisplay;
 
   const requestOpts = {
     method: 'POST',
-    url: `localhost:8200/appointment`,
+    url: `http://localhost:8200/appointment`,
     body: {
       claimId : claimId
     },
@@ -23,12 +23,14 @@ function apptUpdatePage(req, res) {
       console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     } else {
       appt = body;
-      if (appt) {
-        apptToDisplay = new Appt(appt.id, appt.aptDay, appt.aptMonth, appt.aptYear, appt.aptHour, appt.aptMinute, 'Booked');
+      console.log("appt.id is: ", appt.id);
+      if (appt.id !== '') {
+        apptToDisplay = new Appt(appt.id, appt.aptDay, appt.aptMonth, appt.aptYear, appt.aptHour, appt.aptMinute, '');
       } else {
         apptToDisplay = {};
       }
-      res.local.data.appointment = apptToDisplay;
+      console.log('apptToDisplay is: ', apptToDisplay);
+      res.locals.data.appointment = apptToDisplay;
       req.session.forUpdate = apptToDisplay;
 
       res.render('appt_hack/appt_hack_single');
@@ -64,7 +66,7 @@ function apptUpdatePageAction(req, res) {
 
       const requestOpts = {
         method: 'POST',
-        url   : `localhost:8200/appointment/edit`,
+        url   : `http://localhost:8200/appointment/edit`,
         body  : bodyAppt,
         json  : true
       };
@@ -76,11 +78,12 @@ function apptUpdatePageAction(req, res) {
         if (response.statusCode !== 200) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         } else {
-          if (status === '') {
-            res.local.data.hasAppt = 1;
-          } else {
-            res.local.data.hasAppt = 0;
-          }
+          console.log('status is: ', status);
+          //if (status === '') {
+          //  res.locals.data.hasAppt = 1;
+          //} else {
+          //  res.locals.data.hasAppt = 0;
+          //}
           req.session.appointment = appt;
           res.redirect('/apptbookhack/summary');
         }
@@ -98,9 +101,9 @@ function displayClaimantSummaryPageWithAppointmentFromApi (req, res) {
   var newAppt = new Appt(1, '22', '04', '2017', '11', '30', '');
   var appt = req.session.appointment ? req.session.appointment : newAppt;
   if (appt.apptStatus === '') {
-    res.locals.data.hasAppt = 0;
-  } else {
     res.locals.data.hasAppt = 1;
+  } else {
+    res.locals.data.hasAppt = 0;
   }
   res.render('appt_hack/appt_hack_claimant_summary');
 
