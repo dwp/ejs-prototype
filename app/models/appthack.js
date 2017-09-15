@@ -1,41 +1,20 @@
 class Appt {
-  constructor(id, type, desc, date, hrs, mins, status) {
+  constructor(id, day, month, year, hrs, mins, status) {
     this.id = id;
-    this.apptType = type;
-    this.apptDescription = desc;
-    this.apptDate = date;
-    this.apptDateDay;
-    this.apptDateMonth;
-    this.apptDateYear;
-    this.apptDateForDisplay = this.getApptDateForDisplay();
+    this.apptDateDay = day;
+    this.apptDateMonth = month;
+    this.apptDateYear = year;
+    this.apptDateForDisplay = this.getApptDateForDisplay(this.apptDateDay, this.apptDateMonth, this.apptDateYear);
     this.apptTimeHrs = hrs;
     this.apptTimeMins = mins;
     this.apptStatus = status;
   }
 
-  getApptDateForDisplay() {
-    let unformattedApptDate = new Date(this.apptDate);
-    let displayDate = this.formatDateForDisplay(unformattedApptDate);
+  getApptDateForDisplay(apptDateDay, apptDateMonth, apptDateYear) {
+    let month = parseInt(apptDateMonth);
+    let displayMonth = this.getApptMonthForDisplay(month - 1);
+    let displayDate = apptDateDay + ' ' + displayMonth + ' ' + apptDateYear;
     return displayDate;
-  }
-
-  getApptMonth(monthIn) {
-    var monthOut = new Array()
-    monthOut[0] = '01';
-    monthOut[1] = '02';
-    monthOut[2] = '03';
-    monthOut[3] = '04';
-    monthOut[4] = '05';
-    monthOut[5] = '06';
-    monthOut[6] = '07';
-    monthOut[7] = '08';
-    monthOut[8] = '09';
-    monthOut[9] = '10';
-    monthOut[10] = '11';
-    monthOut[11] = '12';
-
-    return monthOut[monthIn];
-
   }
 
   getApptMonthForDisplay(monthIn) {
@@ -55,16 +34,6 @@ class Appt {
 
     return monthOut[monthIn];
 
-  }
-
-  formatDateForDisplay (unformattedApptDate) {
-
-    this.apptDateDay = unformattedApptDate.getDate();
-    this.apptDateMonth = this.getApptMonth(unformattedApptDate.getMonth());
-    this.apptDateYear = unformattedApptDate.getFullYear();
-
-    let formattedDate = this.apptDateDay + ' ' + this.getApptMonthForDisplay(unformattedApptDate.getMonth()) + ' ' + this.apptDateYear;
-    return formattedDate;
   }
 }
 
