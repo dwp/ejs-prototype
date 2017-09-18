@@ -23,7 +23,11 @@
       {% include "appt_hack/appt_hack_summary_nav_for_appts.html" %}
 
     <form action="/apptbookhack/update" method="POST" class="form">
-      {% if data.appointment %}
+      {% if data.appointment.id == null %}
+      <div class="form-group grid-row">
+        <p>There are no planned appointments available for update</p>
+      </div>
+      {% else %}
       <div class="form-group grid-row">
         <div class="column-full">
           <legend class="form-label-bold">Booked appointments for update</legend>
@@ -51,10 +55,6 @@
             </tbody>
           </table>
         </div>
-      </div>
-      {% else %}
-      <div class="form-group grid-row">
-        <p>There are no planned appointments available for update</p>
       </div>
       {% endif %}
       <br>

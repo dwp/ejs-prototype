@@ -27,7 +27,7 @@ function apptUpdatePage(req, res) {
       if (appt.id !== '') {
         apptToDisplay = new Appt(appt.id, appt.aptDay, appt.aptMonth, appt.aptYear, appt.aptHour, appt.aptMinute, '');
       } else {
-        apptToDisplay = {};
+        apptToDisplay = {id : null};
       }
       console.log('apptToDisplay is: ', apptToDisplay);
       res.locals.data.appointment = apptToDisplay;
@@ -79,11 +79,6 @@ function apptUpdatePageAction(req, res) {
           console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         } else {
           console.log('status is: ', status);
-          //if (status === '') {
-          //  res.locals.data.hasAppt = 1;
-          //} else {
-          //  res.locals.data.hasAppt = 0;
-          //}
           req.session.appointment = appt;
           res.redirect('/apptbookhack/summary');
         }
