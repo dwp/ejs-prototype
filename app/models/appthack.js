@@ -5,8 +5,8 @@ class Appt {
     this.apptDateMonth = month;
     this.apptDateYear = year;
     this.apptDateForDisplay = this.getApptDateForDisplay(this.apptDateDay, this.apptDateMonth, this.apptDateYear);
-    this.apptTimeHrs = hrs < 10 ? "0" + hrs : hrs;
-    this.apptTimeMins = mins < 10 ? "0" + mins : mins;
+    this.apptTimeHrs = hrs < 10 ? '0' + hrs : hrs;
+    this.apptTimeMins = mins < 10 ? '0' + mins : mins;
     this.apptStatus = status;
   }
 
