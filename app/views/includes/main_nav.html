@@ -3,7 +3,7 @@
     <ul class="main-nav">
 
       {% if data.user.role !== 'gatekeeper'%}
-        <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="job">Search</a></li>
+        <li id="nav-home" {% if currentPage === "job" %}class="selected"{% endif %}><a href="/latest/job">Search</a></li>
         <li id="nav-case" {% if currentPage === "caseload" %}class="selected"{% endif %}><a href="performance">Caseload</a></li>
         <li id="nav-dash" {% if currentPage === "dashboard" %}class="selected"{% endif %}><a href="performance_dash">Dashboard</a></li>
 
