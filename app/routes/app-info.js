@@ -7,6 +7,6 @@ var appInfo = require("../controllers/appInfoController");
 module.exports = function(router) {
 
   // Application information routes
-  router.get('/application/release, appInfo.releaseInfoView');
+  router.get('/appInfo/release', appInfo.releaseInfoView);
   
 }
