@@ -9,7 +9,8 @@
 
 function releaseInfoView (req, res) {
 
-  const appRelease = app.locals.releaseVersion;
+  const appRelease = res.locals.releaseVersion;
 
   res.render('latest/releaseSplash_v1', appRelease);
 }
+module.exports.releaseInfoView = releaseInfoView;
