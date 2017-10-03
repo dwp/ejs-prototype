@@ -9,6 +9,18 @@
         <h1 class="heading-large">Digital Claimant Activity Messaging Service Prototype</h1>
 
         <div class="grid-row">
+          {% set releaseSplashScreen = [{
+          workTitle : 'Version 1',
+          links: [{
+          link : 'latest/releaseSplash_v1', title : 'Release splash page'
+          }]
+          }] %}
+
+          {{ sprintLinks( 'Release Splash Page', releaseSplashScreen) }}
+
+        </div>
+
+        <div class="grid-row">
           {% set apptDiaryManagementScreens = [{
           workTitle : 'View, create, and update appointments',
           links: [{
